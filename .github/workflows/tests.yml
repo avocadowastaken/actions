@@ -29,6 +29,7 @@ jobs:
       - uses: ./npm/install
         with:
           binaries: cypress
+          cache-key: npm-install-cypress-
           working-directory: ./examples/npm-install-cypress
 
       - run: yarn cypress cache path
