@@ -1,0 +1,17 @@
+{
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "compilerOptions": {
+    "strict": true,
+    "noEmit": true,
+    "target": "ESNext",
+    "moduleResolution": "Node",
+
+    "baseUrl": ".",
+    "paths": {
+      "utils/*": ["utils/*"]
+    }
+  }
+}

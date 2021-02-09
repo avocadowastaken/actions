@@ -1,0 +1,23 @@
+name: "NPM Install"
+description: "Zero config NPM package installer with caching"
+author: "umidbekk"
+
+inputs:
+  working-directory:
+    required: false
+    default: "${{ github.workspace }}"
+    description: "The default working directory"
+
+  cache-key:
+    required: false
+    default: "npm-v1-"
+    description: "An explicit key for restoring and saving the cache"
+
+  binaries:
+    default: ""
+    required: false
+    description: "Comma separated list of binaries to cache"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

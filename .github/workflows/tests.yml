@@ -1,0 +1,27 @@
+name: Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  npm-cache-key:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cache-key') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          cache-key: custom-cache-key-
+
+  npm-install-cypress:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cypress') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          binaries: cypress
+          working-directory: ./examples/npm-install-cypress
