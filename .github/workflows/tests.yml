@@ -27,4 +27,6 @@ jobs:
           working-directory: ./examples/npm-install-cypress
 
       - run: yarn cypress cache path
+        working-directory: ./examples/npm-install-cypress
       - run: yarn cypress verify
+        working-directory: ./examples/npm-install-cypress
