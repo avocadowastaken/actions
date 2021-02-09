@@ -48457,7 +48457,7 @@ var BlobServiceClient = function(_super) {
 }(StorageClient);
 
 // npm/install/index.ts
-var import_cache3 = __toModule(require_cache()), import_core2 = __toModule(require_core()), import_exec = __toModule(require_exec()), path = __toModule(require("path"));
+var import_cache3 = __toModule(require_cache()), import_core2 = __toModule(require_core()), import_exec = __toModule(require_exec()), path = __toModule(require("path")), import_util3 = __toModule(require("util"));
 
 // utils/fs.ts
 var import_crypto4 = __toModule(require("crypto")), import_fs = __toModule(require("fs"));
@@ -48479,8 +48479,8 @@ __name(hashFile, "hashFile");
 
 // utils/log.ts
 var import_core = __toModule(require_core()), util3 = __toModule(require("util"));
-function logInfo(format2, ...args) {
-  import_core.info(util3.format(format2, ...args));
+function logInfo(format3, ...args) {
+  import_core.info(util3.format(format3, ...args));
 }
 __name(logInfo, "logInfo");
 
@@ -48550,10 +48550,14 @@ __name(obtainBinaries, "obtainBinaries");
 function setCacheDirectories(cachePath, manager, binaries) {
   return import_core2.group("Update cache directories", async () => {
     let managerCachePath = path.join(cachePath, manager.name);
-    logInfo("Changing '%s' cache directory to '%s' \u2026", manager.name, managerCachePath), await manager.setCachePath(managerCachePath);
+    await import_core2.group(import_util3.format("Changing '%s' cache directory to '%s' \u2026", manager.name, managerCachePath), async () => {
+      await manager.setCachePath(managerCachePath);
+    });
     for (let {name, setCachePath} of binaries) {
       let packageCachePath = path.join(cachePath, name);
-      logInfo("Changing '%s' cache directory to '%s' \u2026", name, packageCachePath), await setCachePath(packageCachePath);
+      await import_core2.group(import_util3.format("Changing '%s' cache directory to '%s' \u2026", name, packageCachePath), async () => {
+        await setCachePath(packageCachePath);
+      });
     }
   });
 }
@@ -48582,9 +48586,11 @@ async function restoreMangerCache(config) {
 __name(restoreMangerCache, "restoreMangerCache");
 function installManagerDependencies(manager, binaries) {
   return import_core2.group("Install Dependencies", async () => {
-    logInfo("Installing '%s' dependencies\u2026", manager.name), await manager.install();
+    await import_core2.group(import_util3.format("Installing '%s' dependencies\u2026", manager.name), manager.install);
     for (let {name, postInstall} of binaries)
-      postInstall && (logInfo("Running post-install task for the '%s' \u2026", name), await postInstall());
+      postInstall && await import_core2.group(import_util3.format("Running post-install task for the '%s' \u2026", name), async () => {
+        await postInstall();
+      });
   });
 }
 __name(installManagerDependencies, "installManagerDependencies");

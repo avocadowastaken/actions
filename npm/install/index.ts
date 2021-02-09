@@ -8,6 +8,7 @@ import {
 } from "@actions/core";
 import { exec } from "@actions/exec";
 import * as path from "path";
+import { format } from "util";
 import { hashFile, isReadableFile } from "utils/fs";
 import { logInfo } from "utils/log";
 
@@ -125,24 +126,30 @@ function setCacheDirectories(
   return group("Update cache directories", async () => {
     const managerCachePath = path.join(cachePath, manager.name);
 
-    logInfo(
-      "Changing '%s' cache directory to '%s' …",
-      manager.name,
-      managerCachePath
+    await group(
+      format(
+        "Changing '%s' cache directory to '%s' …",
+        manager.name,
+        managerCachePath
+      ),
+      async () => {
+        await manager.setCachePath(managerCachePath);
+      }
     );
-
-    await manager.setCachePath(managerCachePath);
 
     for (const { name, setCachePath } of binaries) {
       const packageCachePath = path.join(cachePath, name);
 
-      logInfo(
-        "Changing '%s' cache directory to '%s' …",
-        name,
-        packageCachePath
+      await group(
+        format(
+          "Changing '%s' cache directory to '%s' …",
+          name,
+          packageCachePath
+        ),
+        async () => {
+          await setCachePath(packageCachePath);
+        }
       );
-
-      await setCachePath(packageCachePath);
     }
   });
 }
@@ -203,15 +210,19 @@ function installManagerDependencies(
   binaries: readonly Binary[]
 ): Promise<void> {
   return group("Install Dependencies", async () => {
-    logInfo("Installing '%s' dependencies…", manager.name);
-
-    await manager.install();
+    await group(
+      format("Installing '%s' dependencies…", manager.name),
+      manager.install
+    );
 
     for (const { name, postInstall } of binaries) {
       if (postInstall) {
-        logInfo("Running post-install task for the '%s' …", name);
-
-        await postInstall();
+        await group(
+          format("Running post-install task for the '%s' …", name),
+          async () => {
+            await postInstall();
+          }
+        );
       }
     }
   });
