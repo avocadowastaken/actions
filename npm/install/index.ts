@@ -92,18 +92,22 @@ function obtainBinaries(binariesCSV: string): Promise<readonly Binary[]> {
   return group("Obtain binaries", async () => {
     const binaries: Binary[] = [];
 
-    for (let name of binariesCSV.split(",")) {
-      const supportedBinary = supportedBinaries.find(
-        (binary) => binary.name === name
-      );
+    binariesCSV = binariesCSV.trim();
 
-      if (!supportedBinary) {
-        throw new Error(`"${name}" binary is not supported.`);
+    if (binariesCSV) {
+      for (let name of binariesCSV.split(",")) {
+        const supportedBinary = supportedBinaries.find(
+          (binary) => binary.name === name
+        );
+
+        if (!supportedBinary) {
+          throw new Error(`"${name}" binary is not supported.`);
+        }
+
+        logInfo("Adding %s binary caching rules…", name);
+
+        binaries.push(supportedBinary);
       }
-
-      logInfo("Adding %s binary caching rules…", name);
-
-      binaries.push(supportedBinary);
     }
 
     return binaries;

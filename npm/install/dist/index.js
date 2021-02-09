@@ -49519,12 +49519,13 @@ function obtainBinaries(binariesCSV) {
   ];
   return import_core2.group("Obtain binaries", async () => {
     let binaries = [];
-    for (let name of binariesCSV.split(",")) {
-      let supportedBinary = supportedBinaries.find((binary) => binary.name === name);
-      if (!supportedBinary)
-        throw new Error(`"${name}" binary is not supported.`);
-      logInfo("Adding %s binary caching rules\u2026", name), binaries.push(supportedBinary);
-    }
+    if (binariesCSV = binariesCSV.trim(), binariesCSV)
+      for (let name of binariesCSV.split(",")) {
+        let supportedBinary = supportedBinaries.find((binary) => binary.name === name);
+        if (!supportedBinary)
+          throw new Error(`"${name}" binary is not supported.`);
+        logInfo("Adding %s binary caching rules\u2026", name), binaries.push(supportedBinary);
+      }
     return binaries;
   });
 }
