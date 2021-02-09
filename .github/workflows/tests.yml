@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+jobs:
+  npm-install-cache-key:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cache-key') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          cache-key: custom-cache-key-${{ github.sha }}-
+
+  npm-install-cypress:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cypress') }}
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./examples/npm-install-cypress
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          binaries: cypress
+          cache-key: npm-install-cypress-${{ github.sha }}-
+          working-directory: ./examples/npm-install-cypress
+
+      - run: yarn cypress cache path
+      - run: yarn cypress verify
