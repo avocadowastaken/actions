@@ -1,13 +1,14 @@
 {
   "name": "actions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "git@github.com:umidbekk/actions.git",
   "license": "MIT",
   "author": "Umidbek Karimov",
   "main": "index.js",
   "scripts": {
     "build": "ts-node scripts/build.ts",
-    "lint": "prettier . --check"
+    "lint": "prettier . --check",
+    "release": "yarn version --new-version"
   },
   "dependencies": {
     "@actions/cache": "^1.0.6",
