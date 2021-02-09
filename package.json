@@ -8,6 +8,7 @@
   "scripts": {
     "build": "ts-node scripts/build.ts",
     "lint": "prettier . --check",
+    "prerelease": "yarn lint && yarn build",
     "release": "yarn version --new-version",
     "postrelease": "ts-node scripts/set-latest-tags.ts"
   },
