@@ -9,7 +9,7 @@
     "build": "ts-node scripts/build.ts",
     "lint": "prettier . --check",
     "prerelease": "yarn lint && yarn build",
-    "release": "yarn version --new-version",
+    "release": "np --no-publish",
     "postrelease": "ts-node scripts/set-latest-tags.ts"
   },
   "dependencies": {
@@ -17,11 +17,11 @@
     "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4",
     "@actions/glob": "^0.1.1",
-    "@actions/io": "^1.0.2",
-    "chalk": "^4.1.0"
+    "@actions/io": "^1.0.2"
   },
   "devDependencies": {
     "esbuild": "^0.8.43",
+    "np": "^7.3.0",
     "prettier": "^2.2.1",
     "prettier-plugin-organize-imports": "^1.1.1",
     "prettier-plugin-packagejson": "^2.2.9",
