@@ -13,7 +13,7 @@ jobs:
 
       - uses: ./npm/install
         with:
-          cache-key: custom-cache-key-
+          cache-key: custom-cache-key-${{ github.sha }}-
 
   npm-install-cypress:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cypress') }}
@@ -29,7 +29,7 @@ jobs:
       - uses: ./npm/install
         with:
           binaries: cypress
-          cache-key: npm-install-cypress-v1-
+          cache-key: npm-install-cypress-${{ github.sha }}-
           working-directory: ./examples/npm-install-cypress
 
       - run: yarn cypress cache path
