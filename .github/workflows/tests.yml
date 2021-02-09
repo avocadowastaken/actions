@@ -25,3 +25,6 @@ jobs:
         with:
           binaries: cypress
           working-directory: ./examples/npm-install-cypress
+
+      - run: yarn cypress cache path
+      - run: yarn cypress verify
