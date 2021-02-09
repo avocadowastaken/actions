@@ -48572,10 +48572,11 @@ function getCacheConfig(cwd, cacheKey, {lockFile}) {
 __name(getCacheConfig, "getCacheConfig");
 async function restoreMangerCache(config) {
   return import_core2.group("Restore cache", async () => {
+    logInfo("Restoring '%s' cache with key '%s'", config.path, config.primaryKey);
     let restoredKey = await import_cache3.restoreCache([config.path], config.primaryKey, [
       config.restoreKey
-    ]);
-    return restoredKey === config.primaryKey ? "valid" : restoredKey ? "stale" : "empty";
+    ]), state = restoredKey === config.primaryKey ? "valid" : restoredKey ? "stale" : "empty";
+    return logInfo("Cache restored with state '%s'", state), state;
   });
 }
 __name(restoreMangerCache, "restoreMangerCache");

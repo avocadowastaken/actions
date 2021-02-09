@@ -175,6 +175,12 @@ function getCacheConfig(
 
 async function restoreMangerCache(config: CacheConfig): Promise<CacheState> {
   return group("Restore cache", async () => {
+    logInfo(
+      "Restoring '%s' cache with key '%s'",
+      config.path,
+      config.primaryKey
+    );
+
     const restoredKey = await restoreCache([config.path], config.primaryKey, [
       config.restoreKey,
     ]);
