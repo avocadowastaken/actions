@@ -186,6 +186,8 @@ async function restoreMangerCache(config: CacheConfig): Promise<CacheState> {
         ? "stale"
         : "empty";
 
+    logInfo("Cache restored with state '%s'", state);
+
     return state;
   });
 }
