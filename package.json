@@ -1,0 +1,28 @@
+{
+  "name": "actions",
+  "version": "1.0.0",
+  "repository": "git@github.com:umidbekk/actions.git",
+  "license": "MIT",
+  "author": "Umidbek Karimov",
+  "main": "index.js",
+  "scripts": {
+    "build": "ts-node scripts/build.ts",
+    "lint": "prettier . --check"
+  },
+  "dependencies": {
+    "@actions/cache": "^1.0.6",
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/glob": "^0.1.1",
+    "@actions/io": "^1.0.2",
+    "chalk": "^4.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.8.43",
+    "prettier": "^2.2.1",
+    "prettier-plugin-organize-imports": "^1.1.1",
+    "prettier-plugin-packagejson": "^2.2.9",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
