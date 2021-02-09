@@ -6,23 +6,30 @@ import {
   setFailed,
   warning,
 } from "@actions/core";
-import { exec } from "@actions/exec";
+import { exec as execAsync } from "@actions/exec";
 import * as path from "path";
-import { format } from "util";
 import { hashFile, isReadableFile } from "utils/fs";
 import { logInfo } from "utils/log";
+
+const cwd = path.resolve(getInput("working-directory", { required: false }));
+const cacheKey = getInput("cache-key", { required: false });
+const binariesCSV = getInput("binaries", { required: false });
+
+async function exec(commandLine: string, args?: string[]): Promise<void> {
+  await execAsync(commandLine, args, { cwd });
+}
 
 interface Manager {
   name: string;
   lockFile: string;
-  install: () => Promise<void>;
-  setCachePath: (cachePath: string) => Promise<void>;
+  install(): Promise<void>;
+  setCachePath(cachePath: string): Promise<void>;
 }
 
 interface Binary {
   name: string;
-  setCachePath: (cachePath: string) => void | Promise<void>;
-  postInstall?: () => void | Promise<void>;
+  postInstall(): void | Promise<void>;
+  setCachePath(cachePath: string): void | Promise<void>;
 }
 
 function obtainPackageManager(cwd: string): Promise<Manager> {
@@ -30,24 +37,16 @@ function obtainPackageManager(cwd: string): Promise<Manager> {
     {
       name: "npm",
       lockFile: "package-lock.json",
-      install: async () => {
-        await exec("npm", ["ci"]);
-      },
-
-      setCachePath: async (cachePath) => {
-        await exec("npm", ["config", "set", "cache", cachePath]);
-      },
+      install: () => exec("npm", ["ci"]),
+      setCachePath: (cachePath) =>
+        exec("npm", ["config", "set", "cache", cachePath]),
     },
     {
       name: "yarn",
       lockFile: "yarn.lock",
-      install: async () => {
-        await exec("yarn", ["install", "--force", "--frozen-lockfile"]);
-      },
-
-      setCachePath: async (cachePath) => {
-        await exec("yarn", ["config", "set", "cache-folder", cachePath]);
-      },
+      install: () => exec("yarn", ["install", "--force", "--frozen-lockfile"]),
+      setCachePath: (cachePath) =>
+        exec("yarn", ["config", "set", "cache-folder", cachePath]),
     },
   ];
 
@@ -126,30 +125,24 @@ function setCacheDirectories(
   return group("Update cache directories", async () => {
     const managerCachePath = path.join(cachePath, manager.name);
 
-    await group(
-      format(
-        "Changing '%s' cache directory to '%s' …",
-        manager.name,
-        managerCachePath
-      ),
-      async () => {
-        await manager.setCachePath(managerCachePath);
-      }
+    logInfo(
+      "Changing '%s' cache directory to '%s' …",
+      manager.name,
+      managerCachePath
     );
 
-    for (const { name, setCachePath } of binaries) {
-      const packageCachePath = path.join(cachePath, name);
+    await manager.setCachePath(managerCachePath);
 
-      await group(
-        format(
-          "Changing '%s' cache directory to '%s' …",
-          name,
-          packageCachePath
-        ),
-        async () => {
-          await setCachePath(packageCachePath);
-        }
+    for (const binary of binaries) {
+      const packageCachePath = path.join(cachePath, binary.name);
+
+      logInfo(
+        "Changing '%s' cache directory to '%s' …",
+        binary.name,
+        packageCachePath
       );
+
+      await binary.setCachePath(packageCachePath);
     }
   });
 }
@@ -210,20 +203,14 @@ function installManagerDependencies(
   binaries: readonly Binary[]
 ): Promise<void> {
   return group("Install Dependencies", async () => {
-    await group(
-      format("Installing '%s' dependencies…", manager.name),
-      manager.install
-    );
+    logInfo("Installing '%s' dependencies…", manager.name);
 
-    for (const { name, postInstall } of binaries) {
-      if (postInstall) {
-        await group(
-          format("Running post-install task for the '%s' …", name),
-          async () => {
-            await postInstall();
-          }
-        );
-      }
+    await manager.install();
+
+    for (const binary of binaries) {
+      logInfo("Running post-install task for the '%s' …", binary.name);
+
+      await binary.postInstall();
     }
   });
 }
@@ -240,10 +227,6 @@ function saveManagerCache(config: CacheConfig): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const cwd = path.resolve(getInput("working-directory", { required: false }));
-  const cacheKey = getInput("cache-key", { required: false });
-  const binariesCSV = getInput("binaries", { required: false });
-
   const cachePath = path.join(cwd, "node_modules", ".cache");
 
   const manager = await obtainPackageManager(cwd);

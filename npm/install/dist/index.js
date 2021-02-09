@@ -967,11 +967,11 @@ var require_internal_path_helper = __commonJS((exports2) => {
       return itemPath;
     if (IS_WINDOWS) {
       if (itemPath.match(/^[A-Z]:[^\\/]|^[A-Z]:$/i)) {
-        let cwd = process.cwd();
-        return assert_1.default(cwd.match(/^[A-Z]:\\/i), `Expected current directory to start with an absolute drive root. Actual '${cwd}'`), itemPath[0].toUpperCase() === cwd[0].toUpperCase() ? itemPath.length === 2 ? `${itemPath[0]}:\\${cwd.substr(3)}` : (cwd.endsWith("\\") || (cwd += "\\"), `${itemPath[0]}:\\${cwd.substr(3)}${itemPath.substr(2)}`) : `${itemPath[0]}:\\${itemPath.substr(2)}`;
+        let cwd2 = process.cwd();
+        return assert_1.default(cwd2.match(/^[A-Z]:\\/i), `Expected current directory to start with an absolute drive root. Actual '${cwd2}'`), itemPath[0].toUpperCase() === cwd2[0].toUpperCase() ? itemPath.length === 2 ? `${itemPath[0]}:\\${cwd2.substr(3)}` : (cwd2.endsWith("\\") || (cwd2 += "\\"), `${itemPath[0]}:\\${cwd2.substr(3)}${itemPath.substr(2)}`) : `${itemPath[0]}:\\${itemPath.substr(2)}`;
       } else if (normalizeSeparators(itemPath).match(/^\\$|^\\[^\\]/)) {
-        let cwd = process.cwd();
-        return assert_1.default(cwd.match(/^[A-Z]:\\/i), `Expected current directory to start with an absolute drive root. Actual '${cwd}'`), `${cwd[0]}:\\${itemPath.substr(1)}`;
+        let cwd2 = process.cwd();
+        return assert_1.default(cwd2.match(/^[A-Z]:\\/i), `Expected current directory to start with an absolute drive root. Actual '${cwd2}'`), `${cwd2[0]}:\\${itemPath.substr(1)}`;
       }
     }
     return assert_1.default(hasAbsoluteRoot(root), "ensureAbsoluteRoot parameter 'root' must have an absolute root"), root.endsWith("/") || IS_WINDOWS && root.endsWith("\\") || (root += path2.sep), root + itemPath;
@@ -26775,10 +26775,10 @@ var require_tar = __commonJS((exports2) => {
     });
   }
   __name(getTarPath, "getTarPath");
-  function execTar(args, compressionMethod, cwd) {
+  function execTar(args, compressionMethod, cwd2) {
     return __awaiter2(this, void 0, void 0, function* () {
       try {
-        yield exec_1.exec(`"${yield getTarPath(args, compressionMethod)}"`, args, {cwd});
+        yield exec_1.exec(`"${yield getTarPath(args, compressionMethod)}"`, args, {cwd: cwd2});
       } catch (error) {
         throw new Error(`Tar failed with error: ${error == null ? void 0 : error.message}`);
       }
@@ -48457,7 +48457,7 @@ var BlobServiceClient = function(_super) {
 }(StorageClient);
 
 // npm/install/index.ts
-var import_cache3 = __toModule(require_cache()), import_core2 = __toModule(require_core()), import_exec = __toModule(require_exec()), path = __toModule(require("path")), import_util3 = __toModule(require("util"));
+var import_cache3 = __toModule(require_cache()), import_core2 = __toModule(require_core()), import_exec = __toModule(require_exec()), path = __toModule(require("path"));
 
 // utils/fs.ts
 var import_crypto4 = __toModule(require("crypto")), import_fs = __toModule(require("fs"));
@@ -48479,46 +48479,43 @@ __name(hashFile, "hashFile");
 
 // utils/log.ts
 var import_core = __toModule(require_core()), util3 = __toModule(require("util"));
-function logInfo(format3, ...args) {
-  import_core.info(util3.format(format3, ...args));
+function logInfo(format2, ...args) {
+  import_core.info(util3.format(format2, ...args));
 }
 __name(logInfo, "logInfo");
 
 // npm/install/index.ts
-function obtainPackageManager(cwd) {
+var cwd = path.resolve(import_core2.getInput("working-directory", {required: !1})), cacheKey = import_core2.getInput("cache-key", {required: !1}), binariesCSV = import_core2.getInput("binaries", {required: !1});
+async function exec(commandLine, args) {
+  await import_exec.exec(commandLine, args, {cwd});
+}
+__name(exec, "exec");
+function obtainPackageManager(cwd2) {
   let supportedManagers = [
     {
       name: "npm",
       lockFile: "package-lock.json",
-      install: async () => {
-        await import_exec.exec("npm", ["ci"]);
-      },
-      setCachePath: async (cachePath) => {
-        await import_exec.exec("npm", ["config", "set", "cache", cachePath]);
-      }
+      install: () => exec("npm", ["ci"]),
+      setCachePath: (cachePath) => exec("npm", ["config", "set", "cache", cachePath])
     },
     {
       name: "yarn",
       lockFile: "yarn.lock",
-      install: async () => {
-        await import_exec.exec("yarn", ["install", "--force", "--frozen-lockfile"]);
-      },
-      setCachePath: async (cachePath) => {
-        await import_exec.exec("yarn", ["config", "set", "cache-folder", cachePath]);
-      }
+      install: () => exec("yarn", ["install", "--force", "--frozen-lockfile"]),
+      setCachePath: (cachePath) => exec("yarn", ["config", "set", "cache-folder", cachePath])
     }
   ];
   return import_core2.group("Obtain package manager", async () => {
     for (let manager of supportedManagers) {
       let {name, lockFile} = manager;
-      if (logInfo("Checking for '%s' file in the '%s' \u2026", lockFile, cwd), await isReadableFile(path.join(cwd, lockFile)))
+      if (logInfo("Checking for '%s' file in the '%s' \u2026", lockFile, cwd2), await isReadableFile(path.join(cwd2, lockFile)))
         return logInfo("Setting '%s' as default manager\u2026", name), manager;
     }
     throw new Error("Lock file not found");
   });
 }
 __name(obtainPackageManager, "obtainPackageManager");
-function obtainBinaries(binariesCSV) {
+function obtainBinaries(binariesCSV2) {
   let supportedBinaries = [
     {
       name: "cypress",
@@ -48527,7 +48524,7 @@ function obtainBinaries(binariesCSV) {
       },
       postInstall: async () => {
         try {
-          logInfo("Removing obsolete 'cypress' binaries\u2026"), await import_exec.exec("cypress", ["cache", "prune"]);
+          logInfo("Removing obsolete 'cypress' binaries\u2026"), await exec("cypress", ["cache", "prune"]);
         } catch (error) {
           import_core2.warning(error);
         }
@@ -48536,8 +48533,8 @@ function obtainBinaries(binariesCSV) {
   ];
   return import_core2.group("Obtain binaries", async () => {
     let binaries = [];
-    if (binariesCSV = binariesCSV.trim(), binariesCSV)
-      for (let name of binariesCSV.split(",")) {
+    if (binariesCSV2 = binariesCSV2.trim(), binariesCSV2)
+      for (let name of binariesCSV2.split(",")) {
         let supportedBinary = supportedBinaries.find((binary) => binary.name === name);
         if (!supportedBinary)
           throw new Error(`'${name}' binary is not supported.`);
@@ -48550,26 +48547,22 @@ __name(obtainBinaries, "obtainBinaries");
 function setCacheDirectories(cachePath, manager, binaries) {
   return import_core2.group("Update cache directories", async () => {
     let managerCachePath = path.join(cachePath, manager.name);
-    await import_core2.group(import_util3.format("Changing '%s' cache directory to '%s' \u2026", manager.name, managerCachePath), async () => {
-      await manager.setCachePath(managerCachePath);
-    });
-    for (let {name, setCachePath} of binaries) {
-      let packageCachePath = path.join(cachePath, name);
-      await import_core2.group(import_util3.format("Changing '%s' cache directory to '%s' \u2026", name, packageCachePath), async () => {
-        await setCachePath(packageCachePath);
-      });
+    logInfo("Changing '%s' cache directory to '%s' \u2026", manager.name, managerCachePath), await manager.setCachePath(managerCachePath);
+    for (let binary of binaries) {
+      let packageCachePath = path.join(cachePath, binary.name);
+      logInfo("Changing '%s' cache directory to '%s' \u2026", binary.name, packageCachePath), await binary.setCachePath(packageCachePath);
     }
   });
 }
 __name(setCacheDirectories, "setCacheDirectories");
-function getCacheConfig(cwd, cacheKey, {lockFile}) {
+function getCacheConfig(cwd2, cacheKey2, {lockFile}) {
   return import_core2.group("Cache config", async () => {
     logInfo("Computing cache key for the '%s' \u2026", lockFile);
-    let hash = await hashFile(path.join(cwd, lockFile));
+    let hash = await hashFile(path.join(cwd2, lockFile));
     return {
-      primaryKey: `${cacheKey}-${hash}`,
-      restoreKey: cacheKey,
-      path: path.join(cwd, "node_modules")
+      primaryKey: `${cacheKey2}-${hash}`,
+      restoreKey: cacheKey2,
+      path: path.join(cwd2, "node_modules")
     };
   });
 }
@@ -48586,11 +48579,9 @@ async function restoreMangerCache(config) {
 __name(restoreMangerCache, "restoreMangerCache");
 function installManagerDependencies(manager, binaries) {
   return import_core2.group("Install Dependencies", async () => {
-    await import_core2.group(import_util3.format("Installing '%s' dependencies\u2026", manager.name), manager.install);
-    for (let {name, postInstall} of binaries)
-      postInstall && await import_core2.group(import_util3.format("Running post-install task for the '%s' \u2026", name), async () => {
-        await postInstall();
-      });
+    logInfo("Installing '%s' dependencies\u2026", manager.name), await manager.install();
+    for (let binary of binaries)
+      logInfo("Running post-install task for the '%s' \u2026", binary.name), await binary.postInstall();
   });
 }
 __name(installManagerDependencies, "installManagerDependencies");
@@ -48605,7 +48596,7 @@ function saveManagerCache(config) {
 }
 __name(saveManagerCache, "saveManagerCache");
 async function main() {
-  let cwd = path.resolve(import_core2.getInput("working-directory", {required: !1})), cacheKey = import_core2.getInput("cache-key", {required: !1}), binariesCSV = import_core2.getInput("binaries", {required: !1}), cachePath = path.join(cwd, "node_modules", ".cache"), manager = await obtainPackageManager(cwd), binaries = await obtainBinaries(binariesCSV);
+  let cachePath = path.join(cwd, "node_modules", ".cache"), manager = await obtainPackageManager(cwd), binaries = await obtainBinaries(binariesCSV);
   await setCacheDirectories(cachePath, manager, binaries);
   let cacheConfig = await getCacheConfig(cwd, cacheKey, manager);
   if (await restoreMangerCache(cacheConfig) === "valid") {
