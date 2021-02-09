@@ -1,5 +1,7 @@
 # umidbekk/actions
 
+![Checks](https://github.com/umidbekk/actions/workflows/Checks/badge.svg)
+
 Collection of reusable GitHub Actions
 
 ## NPM
