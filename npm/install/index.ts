@@ -221,7 +221,7 @@ function saveManagerCache(config: CacheConfig): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const cwd = getInput("working-directory", { required: false });
+  const cwd = path.resolve(getInput("working-directory", { required: false }));
   const cacheKey = getInput("cache-key", { required: false });
   const binariesCSV = getInput("binaries", { required: false });
 
