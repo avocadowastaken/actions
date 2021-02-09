@@ -7,7 +7,6 @@ import {
   warning,
 } from "@actions/core";
 import { exec } from "@actions/exec";
-import * as chalk from "chalk";
 import * as path from "path";
 import { hashFile, isReadableFile } from "utils/fs";
 import { logInfo } from "utils/log";
@@ -55,10 +54,10 @@ function obtainPackageManager(cwd: string): Promise<Manager> {
     for (const manager of supportedManagers) {
       const { name, lockFile } = manager;
 
-      logInfo("Checking for %s file in the %s…", lockFile, cwd);
+      logInfo("Checking for '%s' file in the '%s' …", lockFile, cwd);
 
       if (await isReadableFile(path.join(cwd, lockFile))) {
-        logInfo("Setting %s as default manager…", name);
+        logInfo("Setting '%s' as default manager…", name);
 
         return manager;
       }
@@ -78,7 +77,7 @@ function obtainBinaries(binariesCSV: string): Promise<readonly Binary[]> {
 
       postInstall: async () => {
         try {
-          logInfo("Removing obsolete %s binaries…", "cypress");
+          logInfo("Removing obsolete 'cypress' binaries…");
 
           await exec("cypress", ["cache", "prune"]);
         } catch (error: unknown) {
@@ -101,13 +100,17 @@ function obtainBinaries(binariesCSV: string): Promise<readonly Binary[]> {
         );
 
         if (!supportedBinary) {
-          throw new Error(`"${name}" binary is not supported.`);
+          throw new Error(`'${name}' binary is not supported.`);
         }
 
-        logInfo("Adding %s binary caching rules…", name);
+        logInfo("Adding '%s' binary caching rules…", name);
 
         binaries.push(supportedBinary);
       }
+    }
+
+    if (!binaries.length) {
+      logInfo("No extra binaries to cache");
     }
 
     return binaries;
@@ -123,7 +126,7 @@ function setCacheDirectories(
     const managerCachePath = path.join(cachePath, manager.name);
 
     logInfo(
-      "Changing %s cache directory to %s…",
+      "Changing '%s' cache directory to '%s' …",
       manager.name,
       managerCachePath
     );
@@ -133,7 +136,11 @@ function setCacheDirectories(
     for (const { name, setCachePath } of binaries) {
       const packageCachePath = path.join(cachePath, name);
 
-      logInfo("Changing %s cache directory to %s…", name, packageCachePath);
+      logInfo(
+        "Changing '%s' cache directory to '%s' …",
+        name,
+        packageCachePath
+      );
 
       await setCachePath(packageCachePath);
     }
@@ -153,7 +160,7 @@ function getCacheConfig(
   { lockFile }: Manager
 ): Promise<CacheConfig> {
   return group("Cache config", async () => {
-    logInfo("Computing cache key for the %s…", lockFile);
+    logInfo("Computing cache key for the '%s' …", lockFile);
 
     const hash = await hashFile(path.join(cwd, lockFile));
     const primaryKey = `${cacheKey}-${hash}`;
@@ -188,13 +195,13 @@ function installManagerDependencies(
   binaries: readonly Binary[]
 ): Promise<void> {
   return group("Install Dependencies", async () => {
-    logInfo("Installing %s dependencies…", manager.name);
+    logInfo("Installing '%s' dependencies…", manager.name);
 
     await manager.install();
 
     for (const { name, postInstall } of binaries) {
       if (postInstall) {
-        logInfo("Running post-install task fro the %s", name);
+        logInfo("Running post-install task for the '%s' …", name);
 
         await postInstall();
       }
@@ -229,7 +236,7 @@ async function main(): Promise<void> {
   const cacheState = await restoreMangerCache(cacheConfig);
 
   if (cacheState === "valid") {
-    logInfo("Cache state is %s, skipping install", chalk.green("valid"));
+    logInfo("Cache state is 'valid', skipping installation");
 
     return;
   }
