@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 jobs:
-  npm-cache-key:
+  npm-install-cache-key:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'Test npm-install-cache-key') }}
     runs-on: ubuntu-latest
     steps:
