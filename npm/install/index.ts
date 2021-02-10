@@ -1,4 +1,4 @@
-import { restoreCache, saveCache } from "@actions/cache";
+import { ReserveCacheError, restoreCache, saveCache } from "@actions/cache";
 import {
   endGroup,
   getInput,
@@ -130,8 +130,12 @@ class CacheManager {
 
       return true;
     } catch (error: unknown) {
-      // Ignore cache save errors.
-      warning(error as Error);
+      if (error instanceof ReserveCacheError) {
+        // Ignore cache save errors.
+        warning(error as Error);
+      } else {
+        throw error;
+      }
     }
 
     return false;

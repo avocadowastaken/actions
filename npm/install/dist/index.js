@@ -26615,13 +26615,13 @@ var require_cache = __commonJS((exports2) => {
     }
   };
   exports2.ValidationError = ValidationError;
-  var ReserveCacheError = class extends Error {
+  var ReserveCacheError2 = class extends Error {
     constructor(message) {
       super(message);
-      this.name = "ReserveCacheError", Object.setPrototypeOf(this, ReserveCacheError.prototype);
+      this.name = "ReserveCacheError", Object.setPrototypeOf(this, ReserveCacheError2.prototype);
     }
   };
-  exports2.ReserveCacheError = ReserveCacheError;
+  exports2.ReserveCacheError = ReserveCacheError2;
   function checkPaths(paths) {
     if (!paths || paths.length === 0)
       throw new ValidationError("Path Validation Error: At least one directory or file path is required");
@@ -26671,7 +26671,7 @@ var require_cache = __commonJS((exports2) => {
         compressionMethod
       });
       if (cacheId === -1)
-        throw new ReserveCacheError(`Unable to reserve cache with key ${key}, another job may be creating this cache.`);
+        throw new ReserveCacheError2(`Unable to reserve cache with key ${key}, another job may be creating this cache.`);
       core.debug(`Cache ID: ${cacheId}`);
       let cachePaths = yield utils6.resolvePaths(paths);
       core.debug("Cache Paths:"), core.debug(`${JSON.stringify(cachePaths)}`);
@@ -48009,7 +48009,10 @@ var PackageManager = class extends Executor {
     try {
       return await import_cache3.saveCache(this.paths, this.primaryKey), !0;
     } catch (error) {
-      import_core2.warning(error);
+      if (error instanceof import_cache3.ReserveCacheError)
+        import_core2.warning(error);
+      else
+        throw error;
     }
     return !1;
   }
