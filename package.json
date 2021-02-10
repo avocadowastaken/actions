@@ -9,8 +9,8 @@
     "build": "ts-node scripts/build.ts",
     "lint": "prettier . --check",
     "prerelease": "yarn lint && yarn build",
-    "release": "np --no-publish",
-    "postrelease": "ts-node scripts/set-latest-tags.ts"
+    "release": "np --no-publish --no-release-draft",
+    "postrelease": "ts-node scripts/post-release.ts"
   },
   "dependencies": {
     "@actions/cache": "^1.0.6",
