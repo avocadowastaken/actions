@@ -11,7 +11,6 @@ import * as path from "path";
 import { Executor } from "utils/Executor";
 import { hashFile, isReadableFile } from "utils/fs";
 import { logInfo } from "utils/log";
-import set = Reflect.set;
 
 //
 // Package Managers
@@ -195,23 +194,20 @@ class NpmInstallAction extends Executor {
       () => packageManager.getCachePath()
     );
 
-    const cacheManager = await group(
-      `Getting '${packageManager.id}' cache directory`,
-      async () => {
-        const nodeModulesPath = path.join(cwd, "node_modules");
-        const lockFileHash = await packageManager.getLockFileHash();
-        const manager = new CacheManager(
-          [nodeModulesPath, packageManagerCacheDir],
-          cacheKey + lockFileHash,
-          cacheKey
-        );
+    const cacheManager = await group("Getting cache config", async () => {
+      const nodeModulesPath = path.join(cwd, "node_modules");
+      const lockFileHash = await packageManager.getLockFileHash();
+      const manager = new CacheManager(
+        [nodeModulesPath, packageManagerCacheDir],
+        cacheKey + lockFileHash,
+        cacheKey
+      );
 
-        logInfo("Cache key set to: '%s'", manager.primaryKey);
-        logInfo("Cache paths set to: '%s'", manager.paths.join(", "));
+      logInfo("Cache key set to: '%s'", manager.primaryKey);
+      logInfo("Cache paths set to: '%s'", manager.paths.join(", "));
 
-        return manager;
-      }
-    );
+      return manager;
+    });
 
     const isValidCache = await group("Restoring cache", () =>
       cacheManager.restore()

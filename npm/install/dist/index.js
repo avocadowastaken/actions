@@ -28348,6 +28348,10 @@ function abortSignal(signal) {
     }), abortedMap.set(signal, !0);
   }
 }
+Object.defineProperty(AbortSignal, "name", {
+  configurable: !1,
+  value: "AbortSignal"
+});
 
 // node_modules/@azure/abort-controller/dist-esm/src/AbortController.js
 var AbortError2 = function(_super) {
@@ -48025,7 +48029,7 @@ var PackageManager = class extends Executor {
     throw new Error("Could not file any supported lock file");
   }
   async run() {
-    let {cwd, cacheKey} = this, packageManager = await import_core2.group("Getting current package manager", () => this.getManager()), packageManagerCacheDir = await import_core2.group(`Getting '${packageManager.id}' cache directory`, () => packageManager.getCachePath()), cacheManager = await import_core2.group(`Getting '${packageManager.id}' cache directory`, async () => {
+    let {cwd, cacheKey} = this, packageManager = await import_core2.group("Getting current package manager", () => this.getManager()), packageManagerCacheDir = await import_core2.group(`Getting '${packageManager.id}' cache directory`, () => packageManager.getCachePath()), cacheManager = await import_core2.group("Getting cache config", async () => {
       let nodeModulesPath = path.join(cwd, "node_modules"), lockFileHash = await packageManager.getLockFileHash(), manager = new CacheManager([nodeModulesPath, packageManagerCacheDir], cacheKey + lockFileHash, cacheKey);
       return logInfo("Cache key set to: '%s'", manager.primaryKey), logInfo("Cache paths set to: '%s'", manager.paths.join(", ")), manager;
     });

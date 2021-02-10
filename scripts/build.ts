@@ -1,8 +1,29 @@
 import { create as createGlob } from "@actions/glob";
-import { build } from "esbuild";
+import { build, Plugin } from "esbuild";
+import { promises as fs } from "fs";
 import * as path from "path";
 
 const ROOT_DIR = path.join(__dirname, "..");
+
+function injectAbortSignalName(): Plugin {
+  return {
+    name: "InjectAbortSignalName",
+    setup(plugin) {
+      plugin.onLoad({ filter: /AbortSignal\.js$/ }, async (args) => {
+        let fileContent = await fs.readFile(args.path, "utf8");
+
+        fileContent += `
+Object.defineProperty(AbortSignal, "name", {
+  configurable: false,
+  value: "AbortSignal",
+});       
+`;
+
+        return { contents: fileContent };
+      });
+    },
+  };
+}
 
 async function main(): Promise<void> {
   const glob = await createGlob(`
@@ -19,6 +40,7 @@ async function main(): Promise<void> {
       bundle: true,
       entryPoints: [entryPath],
       outfile: outPath,
+      plugins: [injectAbortSignalName()],
 
       target: "node12",
       platform: "node",
