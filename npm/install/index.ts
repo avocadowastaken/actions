@@ -198,9 +198,12 @@ class NpmInstallAction extends Executor {
   }
 }
 
+const cacheKey = getInput("cache-key", { required: false });
+const workingDirectory = getInput("working-directory", { required: false });
+
 const action = new NpmInstallAction(
-  getInput("cache-key", { required: false }),
-  getInput("working-directory", { required: false })
+  path.resolve(workingDirectory),
+  cacheKey || "npm-v1-"
 );
 
 action.run().catch(setFailed);
