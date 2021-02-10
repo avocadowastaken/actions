@@ -18,7 +18,6 @@ Collection of reusable GitHub Actions
 
 - `working-directory` – the default working directory
 - `cache-key` – an explicit key for restoring and saving the cache
-- `binaries` – comma separated list of binaries to cache
 
 #### Usage:
 

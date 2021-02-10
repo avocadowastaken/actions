@@ -9,12 +9,7 @@ inputs:
 
   cache-key:
     required: false
-    default: "npm-v1-"
     description: "An explicit key for restoring and saving the cache"
-
-  binaries:
-    required: false
-    description: "Comma separated list of binaries to cache"
 
 runs:
   using: "node12"
