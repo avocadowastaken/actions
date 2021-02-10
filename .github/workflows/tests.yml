@@ -28,7 +28,6 @@ jobs:
 
       - uses: ./npm/install
         with:
-          binaries: cypress
           cache-key: npm-install-cypress-${{ github.sha }}-
           working-directory: ./examples/npm-install-cypress
 

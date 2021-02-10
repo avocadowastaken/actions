@@ -33,9 +33,6 @@ async function main(): Promise<void> {
         // Optional dependency of the `node-fetch`.
         "encoding",
       ],
-
-      // Fix for the https://github.com/node-fetch/node-fetch/issues/784
-      keepNames: true,
     });
   }
 }
