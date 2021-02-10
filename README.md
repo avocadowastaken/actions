@@ -24,7 +24,7 @@ Collection of reusable GitHub Actions
 ```yaml
 steps:
   - uses: actions/checkout@v2
-  - uses: umidbekk/actions/npm/install
+  - uses: umidbekk/actions/npm/install@v1
 ```
 
 Passing `cache-key`
@@ -38,7 +38,7 @@ steps:
   - uses: actions/setup-node@v2
     with:
       node-version: ${{ matrix.node }}
-  - uses: umidbekk/actions/npm/install
+  - uses: umidbekk/actions/npm/install@v1
     with:
       cache-key: npm-${{ matrix.node }}-
 ```
