@@ -31,6 +31,5 @@ jobs:
           cache-key: npm-install-cypress-${{ github.sha }}-
           working-directory: ./examples/npm-install-cypress
 
-      - run: yarn cypress download
-      - run: yarn cypress cache path
+      - run: yarn cypress install
       - run: yarn cypress verify
