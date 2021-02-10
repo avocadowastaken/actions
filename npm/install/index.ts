@@ -75,33 +75,11 @@ class Yarn extends PackageManager {
 //
 
 class CacheManager {
-  static async create(
-    cwd: string,
-    cacheKey: string,
-    packageManager: PackageManager
-  ): Promise<CacheManager> {
-    const nodeModulesPath = path.join(cwd, "node_modules");
-    const managerCacheDir = await group(
-      `Getting '${packageManager.id}' cache directory`,
-      () => packageManager.getCachePath()
-    );
-
-    const lockFileHash = await packageManager.getLockFileHash();
-    const cacheManager = new CacheManager(
-      [nodeModulesPath, managerCacheDir],
-      cacheKey + lockFileHash,
-      cacheKey
-    );
-
-    logInfo("Cache key set to: '%s'", cacheManager.primaryKey);
-    logInfo("Cache paths set to: '%s'", cacheManager.paths.join(", "));
-
-    return cacheManager;
-  }
-
   paths: string[];
   primaryKey: string;
   fallbackKey: string;
+
+  protected cacheHit?: boolean;
 
   constructor(paths: string[], primaryKey: string, fallbackKey: string) {
     this.paths = paths;
@@ -110,14 +88,38 @@ class CacheManager {
   }
 
   async restore(): Promise<boolean> {
-    const restoredKey = await restoreCache(this.paths, this.primaryKey, [
-      this.fallbackKey,
-    ]);
+    if (this.cacheHit == null) {
+      logInfo("Restoring cache from key: '%s'", this.primaryKey);
 
-    return restoredKey === this.primaryKey;
+      const restoredKey = await restoreCache(this.paths, this.primaryKey, [
+        this.fallbackKey,
+      ]);
+
+      if (restoredKey) {
+        logInfo("Cache restored from key: %s", restoredKey);
+      } else {
+        logInfo(
+          "Cache not found for input keys: %s",
+          [this.primaryKey, this.fallbackKey].join(", ")
+        );
+      }
+
+      this.cacheHit = restoredKey === this.primaryKey;
+    }
+
+    return this.cacheHit;
   }
 
   async save(): Promise<boolean> {
+    if (this.cacheHit) {
+      logInfo(
+        "Cache hit occurred on the primary key '%s', not saving cache.",
+        this.primaryKey
+      );
+
+      return false;
+    }
+
     try {
       await saveCache(this.paths, this.primaryKey);
 
@@ -136,6 +138,24 @@ class CacheManager {
 //
 
 class NpmInstallAction extends Executor {
+  static create(): NpmInstallAction {
+    startGroup("Getting action config");
+    const cacheKey = getInput("cache-key", { required: false });
+    const workingDirectory = getInput("working-directory", { required: false });
+
+    const action = new NpmInstallAction(
+      path.resolve(workingDirectory),
+      cacheKey || "npm-v1-"
+    );
+
+    logInfo("Working directory set to '%s'", action.cwd);
+    logInfo("Cache restore key is '%s'", action.cacheKey);
+
+    endGroup();
+
+    return action;
+  }
+
   readonly cwd: string;
   readonly cacheKey: string;
 
@@ -144,13 +164,6 @@ class NpmInstallAction extends Executor {
 
     this.cwd = cwd;
     this.cacheKey = cacheKey;
-
-    startGroup("Getting action config");
-
-    logInfo("Working directory set to '%s'", this.cwd);
-    logInfo("Cache restore key is '%s'", this.cacheKey);
-
-    endGroup();
   }
 
   async getManager(): Promise<PackageManager> {
@@ -172,12 +185,32 @@ class NpmInstallAction extends Executor {
   }
 
   async run(): Promise<void> {
+    const { cwd, cacheKey } = this;
+
     const packageManager = await group("Getting current package manager", () =>
       this.getManager()
     );
+    const packageManagerCacheDir = await group(
+      `Getting '${packageManager.id}' cache directory`,
+      () => packageManager.getCachePath()
+    );
 
-    const cacheManager = await group("Getting cache config", () =>
-      CacheManager.create(this.cwd, this.cacheKey, packageManager)
+    const cacheManager = await group(
+      `Getting '${packageManager.id}' cache directory`,
+      async () => {
+        const nodeModulesPath = path.join(cwd, "node_modules");
+        const lockFileHash = await packageManager.getLockFileHash();
+        const manager = new CacheManager(
+          [nodeModulesPath, packageManagerCacheDir],
+          cacheKey + lockFileHash,
+          cacheKey
+        );
+
+        logInfo("Cache key set to: '%s'", manager.primaryKey);
+        logInfo("Cache paths set to: '%s'", manager.paths.join(", "));
+
+        return manager;
+      }
     );
 
     const isValidCache = await group("Restoring cache", () =>
@@ -194,16 +227,8 @@ class NpmInstallAction extends Executor {
       packageManager.install()
     );
 
-    await group("Save cache", () => cacheManager.save());
+    await group("Saving cache", () => cacheManager.save());
   }
 }
 
-const cacheKey = getInput("cache-key", { required: false });
-const workingDirectory = getInput("working-directory", { required: false });
-
-const action = new NpmInstallAction(
-  path.resolve(workingDirectory),
-  cacheKey || "npm-v1-"
-);
-
-action.run().catch(setFailed);
+NpmInstallAction.create().run().catch(setFailed);

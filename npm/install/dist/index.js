@@ -26490,8 +26490,8 @@ var require_tar = __commonJS((exports2) => {
   }
   function extractTar(archivePath, compressionMethod) {
     return __awaiter2(this, void 0, void 0, function* () {
-      let workingDirectory2 = getWorkingDirectory();
-      yield io.mkdirP(workingDirectory2);
+      let workingDirectory = getWorkingDirectory();
+      yield io.mkdirP(workingDirectory);
       function getCompressionProgram() {
         switch (compressionMethod) {
           case constants_1.CompressionMethod.Zstd:
@@ -26508,7 +26508,7 @@ var require_tar = __commonJS((exports2) => {
         archivePath.replace(new RegExp(`\\${path2.sep}`, "g"), "/"),
         "-P",
         "-C",
-        workingDirectory2.replace(new RegExp(`\\${path2.sep}`, "g"), "/")
+        workingDirectory.replace(new RegExp(`\\${path2.sep}`, "g"), "/")
       ];
       yield execTar(args, compressionMethod);
     });
@@ -26519,7 +26519,7 @@ var require_tar = __commonJS((exports2) => {
       let manifestFilename = "manifest.txt", cacheFileName = utils6.getCacheFileName(compressionMethod);
       fs_1.writeFileSync(path2.join(archiveFolder, manifestFilename), sourceDirectories.join(`
 `));
-      let workingDirectory2 = getWorkingDirectory();
+      let workingDirectory = getWorkingDirectory();
       function getCompressionProgram() {
         switch (compressionMethod) {
           case constants_1.CompressionMethod.Zstd:
@@ -26537,7 +26537,7 @@ var require_tar = __commonJS((exports2) => {
         cacheFileName.replace(new RegExp(`\\${path2.sep}`, "g"), "/"),
         "-P",
         "-C",
-        workingDirectory2.replace(new RegExp(`\\${path2.sep}`, "g"), "/"),
+        workingDirectory.replace(new RegExp(`\\${path2.sep}`, "g"), "/"),
         "--files-from",
         manifestFilename
       ];
@@ -47982,19 +47982,22 @@ var PackageManager = class extends Executor {
     await this.exec("yarn", ["install", "--force", "--frozen-lockfile"]);
   }
 }, CacheManager = class {
-  static async create(cwd, cacheKey2, packageManager) {
-    let nodeModulesPath = path.join(cwd, "node_modules"), managerCacheDir = await import_core2.group(`Getting '${packageManager.id}' cache directory`, () => packageManager.getCachePath()), lockFileHash = await packageManager.getLockFileHash(), cacheManager = new CacheManager([nodeModulesPath, managerCacheDir], cacheKey2 + lockFileHash, cacheKey2);
-    return logInfo("Cache key set to: '%s'", cacheManager.primaryKey), logInfo("Cache paths set to: '%s'", cacheManager.paths.join(", ")), cacheManager;
-  }
   constructor(paths, primaryKey, fallbackKey) {
     this.paths = paths, this.primaryKey = primaryKey, this.fallbackKey = fallbackKey;
   }
   async restore() {
-    return await import_cache3.restoreCache(this.paths, this.primaryKey, [
-      this.fallbackKey
-    ]) === this.primaryKey;
+    if (this.cacheHit == null) {
+      logInfo("Restoring cache from key: '%s'", this.primaryKey);
+      let restoredKey = await import_cache3.restoreCache(this.paths, this.primaryKey, [
+        this.fallbackKey
+      ]);
+      restoredKey ? logInfo("Cache restored from key: %s", restoredKey) : logInfo("Cache not found for input keys: %s", [this.primaryKey, this.fallbackKey].join(", ")), this.cacheHit = restoredKey === this.primaryKey;
+    }
+    return this.cacheHit;
   }
   async save() {
+    if (this.cacheHit)
+      return logInfo("Cache hit occurred on the primary key '%s', not saving cache.", this.primaryKey), !1;
     try {
       return await import_cache3.saveCache(this.paths, this.primaryKey), !0;
     } catch (error) {
@@ -48003,9 +48006,14 @@ var PackageManager = class extends Executor {
     return !1;
   }
 }, NpmInstallAction = class extends Executor {
-  constructor(cwd, cacheKey2) {
+  static create() {
+    import_core2.startGroup("Getting action config");
+    let cacheKey = import_core2.getInput("cache-key", {required: !1}), workingDirectory = import_core2.getInput("working-directory", {required: !1}), action = new NpmInstallAction(path.resolve(workingDirectory), cacheKey || "npm-v1-");
+    return logInfo("Working directory set to '%s'", action.cwd), logInfo("Cache restore key is '%s'", action.cacheKey), import_core2.endGroup(), action;
+  }
+  constructor(cwd, cacheKey) {
     super({cwd});
-    this.cwd = cwd, this.cacheKey = cacheKey2, import_core2.startGroup("Getting action config"), logInfo("Working directory set to '%s'", this.cwd), logInfo("Cache restore key is '%s'", this.cacheKey), import_core2.endGroup();
+    this.cwd = cwd, this.cacheKey = cacheKey;
   }
   async getManager() {
     let {cwd} = this;
@@ -48017,12 +48025,15 @@ var PackageManager = class extends Executor {
     throw new Error("Could not file any supported lock file");
   }
   async run() {
-    let packageManager = await import_core2.group("Getting current package manager", () => this.getManager()), cacheManager = await import_core2.group("Getting cache config", () => CacheManager.create(this.cwd, this.cacheKey, packageManager));
+    let {cwd, cacheKey} = this, packageManager = await import_core2.group("Getting current package manager", () => this.getManager()), packageManagerCacheDir = await import_core2.group(`Getting '${packageManager.id}' cache directory`, () => packageManager.getCachePath()), cacheManager = await import_core2.group(`Getting '${packageManager.id}' cache directory`, async () => {
+      let nodeModulesPath = path.join(cwd, "node_modules"), lockFileHash = await packageManager.getLockFileHash(), manager = new CacheManager([nodeModulesPath, packageManagerCacheDir], cacheKey + lockFileHash, cacheKey);
+      return logInfo("Cache key set to: '%s'", manager.primaryKey), logInfo("Cache paths set to: '%s'", manager.paths.join(", ")), manager;
+    });
     if (await import_core2.group("Restoring cache", () => cacheManager.restore())) {
       logInfo("Cache is valid, skipping installation");
       return;
     }
-    await import_core2.group(`Installing '${packageManager.id}' dependencies`, () => packageManager.install()), await import_core2.group("Save cache", () => cacheManager.save());
+    await import_core2.group(`Installing '${packageManager.id}' dependencies`, () => packageManager.install()), await import_core2.group("Saving cache", () => cacheManager.save());
   }
-}, cacheKey = import_core2.getInput("cache-key", {required: !1}), workingDirectory = import_core2.getInput("working-directory", {required: !1}), action = new NpmInstallAction(path.resolve(workingDirectory), cacheKey || "npm-v1-");
-action.run().catch(import_core2.setFailed);
+};
+NpmInstallAction.create().run().catch(import_core2.setFailed);
