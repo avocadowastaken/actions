@@ -47992,10 +47992,14 @@ var PackageManager = class extends Executor {
   async restore() {
     if (this.cacheHit == null) {
       logInfo("Restoring cache from key: '%s'", this.primaryKey);
-      let restoredKey = await import_cache3.restoreCache(this.paths, this.primaryKey, [
-        this.fallbackKey
-      ]);
-      restoredKey ? logInfo("Cache restored from key: %s", restoredKey) : logInfo("Cache not found for input keys: %s", [this.primaryKey, this.fallbackKey].join(", ")), this.cacheHit = restoredKey === this.primaryKey;
+      try {
+        let restoredKey = await import_cache3.restoreCache(this.paths, this.primaryKey, [
+          this.fallbackKey
+        ]);
+        restoredKey ? logInfo("Cache restored from key: %s", restoredKey) : logInfo("Cache not found for input keys: %s", [this.primaryKey, this.fallbackKey].join(", ")), this.cacheHit = restoredKey === this.primaryKey;
+      } catch (error) {
+        import_core2.warning(error), this.cacheHit = !1;
+      }
     }
     return this.cacheHit;
   }

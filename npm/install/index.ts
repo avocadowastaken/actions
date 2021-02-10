@@ -90,20 +90,26 @@ class CacheManager {
     if (this.cacheHit == null) {
       logInfo("Restoring cache from key: '%s'", this.primaryKey);
 
-      const restoredKey = await restoreCache(this.paths, this.primaryKey, [
-        this.fallbackKey,
-      ]);
+      try {
+        const restoredKey = await restoreCache(this.paths, this.primaryKey, [
+          this.fallbackKey,
+        ]);
 
-      if (restoredKey) {
-        logInfo("Cache restored from key: %s", restoredKey);
-      } else {
-        logInfo(
-          "Cache not found for input keys: %s",
-          [this.primaryKey, this.fallbackKey].join(", ")
-        );
+        if (restoredKey) {
+          logInfo("Cache restored from key: %s", restoredKey);
+        } else {
+          logInfo(
+            "Cache not found for input keys: %s",
+            [this.primaryKey, this.fallbackKey].join(", ")
+          );
+        }
+
+        this.cacheHit = restoredKey === this.primaryKey;
+      } catch (error: unknown) {
+        warning(error as Error);
+
+        this.cacheHit = false;
       }
-
-      this.cacheHit = restoredKey === this.primaryKey;
     }
 
     return this.cacheHit;
