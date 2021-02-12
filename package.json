@@ -8,7 +8,7 @@
   "scripts": {
     "build": "ts-node scripts/build.ts",
     "lint": "prettier . --check",
-    "prerelease": "yarn lint && yarn build",
+    "prerelease": "yarn install --frozen-lockfile && yarn tsc && yarn lint && yarn build",
     "release": "np --no-publish --no-release-draft",
     "postrelease": "ts-node scripts/post-release.ts"
   },
