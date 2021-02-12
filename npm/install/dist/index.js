@@ -48010,7 +48010,7 @@ var PackageManager = class extends Executor {
       return await import_cache3.saveCache(this.paths, this.primaryKey), !0;
     } catch (error) {
       if (error instanceof import_cache3.ReserveCacheError)
-        import_core2.warning(error);
+        logInfo(error.message);
       else
         throw error;
     }

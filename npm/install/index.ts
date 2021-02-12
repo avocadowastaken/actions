@@ -131,8 +131,7 @@ class CacheManager {
       return true;
     } catch (error: unknown) {
       if (error instanceof ReserveCacheError) {
-        // Ignore cache save errors.
-        warning(error as Error);
+        logInfo(error.message);
       } else {
         throw error;
       }
