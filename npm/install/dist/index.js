@@ -47960,8 +47960,14 @@ var PackageManager = class extends Executor {
     super({cwd});
     this.id = id, this.cwd = cwd, this.lockFile = lockFile;
   }
+  get lockFilePath() {
+    return path.join(this.cwd, this.lockFile);
+  }
+  hasLockFile() {
+    return isReadableFile(this.lockFilePath);
+  }
   getLockFileHash() {
-    return hashFile(path.join(this.cwd, this.lockFile));
+    return hashFile(this.lockFilePath);
   }
 }, NPM = class extends PackageManager {
   constructor(cwd) {
@@ -48028,11 +48034,9 @@ var PackageManager = class extends Executor {
   }
   async getManager() {
     let {cwd} = this;
-    for (let manager of [new NPM(cwd), new Yarn(cwd)]) {
-      let lockFilePath = path.join(cwd, manager.lockFile);
-      if (logInfo("Checking if '%s' exists", lockFilePath), await isReadableFile(lockFilePath))
+    for (let manager of [new NPM(cwd), new Yarn(cwd)])
+      if (logInfo("Checking if '%s' exists", manager.lockFile), await manager.hasLockFile())
         return logInfo("Setting '%s' as default manager\u2026", manager.id), manager;
-    }
     throw new Error("Could not file any supported lock file");
   }
   async run() {

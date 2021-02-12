@@ -29,8 +29,16 @@ abstract class PackageManager extends Executor {
     this.lockFile = lockFile;
   }
 
+  get lockFilePath(): string {
+    return path.join(this.cwd, this.lockFile);
+  }
+
+  hasLockFile(): Promise<boolean> {
+    return isReadableFile(this.lockFilePath);
+  }
+
   getLockFileHash(): Promise<string> {
-    return hashFile(path.join(this.cwd, this.lockFile));
+    return hashFile(this.lockFilePath);
   }
 
   abstract getCachePath(): Promise<string>;
@@ -178,11 +186,9 @@ class NpmInstallAction extends Executor {
     const { cwd } = this;
 
     for (const manager of [new NPM(cwd), new Yarn(cwd)]) {
-      const lockFilePath = path.join(cwd, manager.lockFile);
+      logInfo("Checking if '%s' exists", manager.lockFile);
 
-      logInfo("Checking if '%s' exists", lockFilePath);
-
-      if (await isReadableFile(lockFilePath)) {
+      if (await manager.hasLockFile()) {
         logInfo("Setting '%s' as default manager…", manager.id);
 
         return manager;
