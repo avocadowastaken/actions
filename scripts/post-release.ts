@@ -28,5 +28,3 @@ main().catch((error) => {
   console.error(error);
   process.exit(1);
 });
-
-// yarn np --release-draft-only
