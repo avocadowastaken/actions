@@ -13910,6 +13910,9 @@ var require_db = __commonJS((exports2, module2) => {
     "application/cfw": {
       source: "iana"
     },
+    "application/clr": {
+      source: "iana"
+    },
     "application/clue+xml": {
       source: "iana",
       compressible: !0
@@ -14075,6 +14078,15 @@ var require_db = __commonJS((exports2, module2) => {
     },
     "application/efi": {
       source: "iana"
+    },
+    "application/elm+json": {
+      source: "iana",
+      charset: "UTF-8",
+      compressible: !0
+    },
+    "application/elm+xml": {
+      source: "iana",
+      compressible: !0
     },
     "application/emergencycalldata.cap+xml": {
       source: "iana",
@@ -14334,6 +14346,10 @@ var require_db = __commonJS((exports2, module2) => {
       compressible: !0
     },
     "application/jrd+json": {
+      source: "iana",
+      compressible: !0
+    },
+    "application/jscalendar+json": {
       source: "iana",
       compressible: !0
     },
@@ -14844,6 +14860,10 @@ var require_db = __commonJS((exports2, module2) => {
     "application/prs.cww": {
       source: "iana",
       extensions: ["cww"]
+    },
+    "application/prs.cyn": {
+      source: "iana",
+      charset: "7-BIT"
     },
     "application/prs.hpub+zip": {
       source: "iana",
@@ -15364,6 +15384,9 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana",
       compressible: !0
     },
+    "application/vnd.3gpp.interworking-data": {
+      source: "iana"
+    },
     "application/vnd.3gpp.mc-signalling-ear": {
       source: "iana"
     },
@@ -15579,6 +15602,9 @@ var require_db = __commonJS((exports2, module2) => {
     "application/vnd.afpc.afplinedata-pagedef": {
       source: "iana"
     },
+    "application/vnd.afpc.cmoca-cmresource": {
+      source: "iana"
+    },
     "application/vnd.afpc.foca-charset": {
       source: "iana"
     },
@@ -15589,6 +15615,9 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana"
     },
     "application/vnd.afpc.modca": {
+      source: "iana"
+    },
+    "application/vnd.afpc.modca-cmtable": {
       source: "iana"
     },
     "application/vnd.afpc.modca-formdef": {
@@ -16007,6 +16036,14 @@ var require_db = __commonJS((exports2, module2) => {
     },
     "application/vnd.cybank": {
       source: "iana"
+    },
+    "application/vnd.cyclonedx+json": {
+      source: "iana",
+      compressible: !0
+    },
+    "application/vnd.cyclonedx+xml": {
+      source: "iana",
+      compressible: !0
     },
     "application/vnd.d2l.coursepackage1p0+zip": {
       source: "iana",
@@ -16530,6 +16567,9 @@ var require_db = __commonJS((exports2, module2) => {
     "application/vnd.geogebra.file": {
       source: "iana",
       extensions: ["ggb"]
+    },
+    "application/vnd.geogebra.slides": {
+      source: "iana"
     },
     "application/vnd.geogebra.tool": {
       source: "iana",
@@ -18486,6 +18526,10 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana",
       extensions: ["see"]
     },
+    "application/vnd.seis+json": {
+      source: "iana",
+      compressible: !0
+    },
     "application/vnd.sema": {
       source: "iana",
       extensions: ["sema"]
@@ -18905,6 +18949,9 @@ var require_db = __commonJS((exports2, module2) => {
     "application/vnd.webturbo": {
       source: "iana",
       extensions: ["wtb"]
+    },
+    "application/vnd.wfa.dpp": {
+      source: "iana"
     },
     "application/vnd.wfa.p2p": {
       source: "iana"
@@ -19840,7 +19887,8 @@ var require_db = __commonJS((exports2, module2) => {
       extensions: ["adp"]
     },
     "audio/amr": {
-      source: "iana"
+      source: "iana",
+      extensions: ["amr"]
     },
     "audio/amr-wb": {
       source: "iana"
@@ -20089,7 +20137,7 @@ var require_db = __commonJS((exports2, module2) => {
     "audio/ogg": {
       source: "iana",
       compressible: !1,
-      extensions: ["oga", "ogg", "spx"]
+      extensions: ["oga", "ogg", "spx", "opus"]
     },
     "audio/opus": {
       source: "iana"
@@ -20136,6 +20184,9 @@ var require_db = __commonJS((exports2, module2) => {
     "audio/s3m": {
       source: "apache",
       extensions: ["s3m"]
+    },
+    "audio/scip": {
+      source: "iana"
     },
     "audio/silk": {
       source: "apache",
@@ -20480,6 +20531,7 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana"
     },
     "image/avif": {
+      source: "iana",
       compressible: !1,
       extensions: ["avif"]
     },
@@ -21137,6 +21189,15 @@ var require_db = __commonJS((exports2, module2) => {
     "text/coffeescript": {
       extensions: ["coffee", "litcoffee"]
     },
+    "text/cql": {
+      source: "iana"
+    },
+    "text/cql-expression": {
+      source: "iana"
+    },
+    "text/cql-identifier": {
+      source: "iana"
+    },
     "text/css": {
       source: "iana",
       charset: "UTF-8",
@@ -21164,6 +21225,9 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana"
     },
     "text/enriched": {
+      source: "iana"
+    },
+    "text/fhirpath": {
       source: "iana"
     },
     "text/flexfec": {
@@ -21572,6 +21636,9 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana",
       extensions: ["3g2"]
     },
+    "video/av1": {
+      source: "iana"
+    },
     "video/bmpeg": {
       source: "iana"
     },
@@ -21618,7 +21685,8 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana"
     },
     "video/iso.segment": {
-      source: "iana"
+      source: "iana",
+      extensions: ["m4s"]
     },
     "video/jpeg": {
       source: "iana",
@@ -21696,6 +21764,9 @@ var require_db = __commonJS((exports2, module2) => {
       source: "iana"
     },
     "video/rtx": {
+      source: "iana"
+    },
+    "video/scip": {
       source: "iana"
     },
     "video/smpte291": {
@@ -22244,6 +22315,9 @@ var require_form_data = __commonJS((exports2, module2) => {
     for (header in userHeaders)
       userHeaders.hasOwnProperty(header) && (formHeaders[header.toLowerCase()] = userHeaders[header]);
     return formHeaders;
+  };
+  FormData2.prototype.setBoundary = function(boundary) {
+    this._boundary = boundary;
   };
   FormData2.prototype.getBoundary = function() {
     return this._boundary || this._generateBoundary(), this._boundary;
@@ -29982,7 +30056,6 @@ function retry(policy, request, response, retryData, requestError) {
           if (isAborted || requestError || !response)
             throw err = retryData.error || new RestError("Failed to send the request.", RestError.REQUEST_SEND_ERROR, response && response.status, response && response.request, response), err;
           return [2, response];
-          _a.label = 7;
         case 7:
           return [2];
       }
@@ -43458,9 +43531,7 @@ var ABORT_ERROR = new AbortError2("Reading from the avro stream was aborted."), 
           return [2, new Uint8Array()];
         if (!this._readable.readable)
           throw new Error("Stream no longer readable.");
-        if (chunk = this._readable.read(size), chunk)
-          return this._position += chunk.length, [2, this.toUint8Array(chunk)];
-        return [2, new Promise(function(resolve2, reject) {
+        return chunk = this._readable.read(size), chunk ? (this._position += chunk.length, [2, this.toUint8Array(chunk)]) : [2, new Promise(function(resolve2, reject) {
           var cleanUp = /* @__PURE__ */ __name(function() {
             _this._readable.removeListener("readable", readableCallback), _this._readable.removeListener("error", rejectCallback), _this._readable.removeListener("end", rejectCallback), _this._readable.removeListener("close", rejectCallback), options.abortSignal && options.abortSignal.removeEventListener("abort", abortHandler);
           }, "cleanUp"), readableCallback = /* @__PURE__ */ __name(function() {
@@ -43473,7 +43544,6 @@ var ABORT_ERROR = new AbortError2("Reading from the avro stream was aborted."), 
           }, "abortHandler");
           _this._readable.on("readable", readableCallback), _this._readable.once("error", rejectCallback), _this._readable.once("end", rejectCallback), _this._readable.once("close", rejectCallback), options.abortSignal && options.abortSignal.addEventListener("abort", abortHandler);
         })];
-        return [2];
       });
     });
   }, AvroReadableFromStream2;
