@@ -96,7 +96,7 @@ class CacheManager {
 
   async restore(): Promise<boolean> {
     if (this.cacheHit == null) {
-      logInfo("Restoring cache from key: '%s'", this.primaryKey);
+      logInfo("Restoring cache from key: %s", this.primaryKey);
 
       try {
         const restoredKey = await restoreCache(this.paths, this.primaryKey, [
@@ -218,8 +218,8 @@ class NpmInstallAction extends Executor {
         cacheKey
       );
 
-      logInfo("Cache key set to: '%s'", manager.primaryKey);
-      logInfo("Cache paths set to: '%s'", manager.paths.join(", "));
+      logInfo("Cache key set to: %s", manager.primaryKey);
+      logInfo("Cache paths set to: %s", manager.paths.join(", "));
 
       return manager;
     });

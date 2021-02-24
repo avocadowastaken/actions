@@ -48626,7 +48626,7 @@ var CacheManager = class {
   }
   async restore() {
     if (this.cacheHit == null) {
-      logInfo("Restoring cache from key: '%s'", this.primaryKey);
+      logInfo("Restoring cache from key: %s", this.primaryKey);
       try {
         let restoredKey = await import_cache3.restoreCache(this.paths, this.primaryKey, [
           this.fallbackKey
@@ -48673,7 +48673,7 @@ var NpmInstallAction = class extends Executor {
   async run() {
     let {cwd, cacheKey} = this, packageManager = await import_core2.group("Getting current package manager", () => this.getManager()), packageManagerCacheDir = await import_core2.group(`Getting '${packageManager.id}' cache directory`, () => packageManager.getCachePath()), cacheManager = await import_core2.group("Getting cache config", async () => {
       let nodeModulesPath = path.join(cwd, "node_modules"), lockFileHash = await packageManager.getLockFileHash(), manager = new CacheManager([nodeModulesPath, packageManagerCacheDir], cacheKey + lockFileHash, cacheKey);
-      return logInfo("Cache key set to: '%s'", manager.primaryKey), logInfo("Cache paths set to: '%s'", manager.paths.join(", ")), manager;
+      return logInfo("Cache key set to: %s", manager.primaryKey), logInfo("Cache paths set to: %s", manager.paths.join(", ")), manager;
     });
     if (await import_core2.group("Restoring cache", () => cacheManager.restore())) {
       logInfo("Cache is valid, skipping installation");
