@@ -26,6 +26,8 @@ const tasks = new Listr([
   {
     title: "Removing tags",
     task({ latestTags }, task) {
+      task.output = `Removing: ${latestTags.join(", ")}`;
+
       return execa("git", ["push", "--delete", "origin", ...latestTags]).catch(
         () => {
           task.skip(`Failed to remove tags: ${latestTags.join(", ")}`);
