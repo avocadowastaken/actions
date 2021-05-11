@@ -10,7 +10,7 @@
     "lint": "prettier . --check",
     "prerelease": "yarn install --force && yarn tsc && yarn lint && yarn build",
     "release": "np --no-publish --no-release-draft",
-    "postrelease": "ts-node scripts/post-release.ts"
+    "postrelease": "node scripts/post-release.js"
   },
   "dependencies": {
     "@actions/cache": "^1.0.7",
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.11.20",
+    "execa": "^5.0.0",
     "np": "^7.5.0",
     "prettier": "^2.3.0",
     "prettier-plugin-organize-imports": "^2.0.0",
