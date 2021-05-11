@@ -1,84 +1,67 @@
 "use strict";
 
+const Listr = require("listr");
 const execa = require("execa");
-const { version } = require("../package.json");
 
 /**
- * @param {string} arg
- * @param {...string} args
+ * @type {Listr<{ tag: string, latestTags: string[] }>}
  */
-async function exec(arg, ...args) {
-  console.log(`${arg} ${args.join(" ")}`);
-  try {
-    const { stdout, stderr } = await execa(arg, args);
-    if (stderr) console.warn(stderr);
-    if (stdout) console.log(stdout);
-  } catch (error) {
-    if (error.stdout) console.log(error.stdout);
-    if (error.stderr) console.error(error.stderr);
+const tasks = new Listr([
+  {
+    title: "Getting latest tags",
+    task(ctx, task) {
+      const { version } = require("../package.json");
+      task.output = `Parsing version: ${version}`;
 
-    throw error;
-  }
-}
+      const [major, minor] = version.split(".");
+      const currentTags = [`v${major}`, `v${major}.${minor}`];
 
-/**
- * @template {unknown} T
- * @param {string} message
- * @param {() => T | Promise<T>} fn
- * @returns {Promise<T>}
- */
-async function group(message, fn) {
-  console.group("Getting latest tags");
-  try {
-    return await fn();
-  } finally {
-    console.groupEnd();
-  }
-}
+      ctx.tag = `v${version}`;
+      ctx.latestTags = [`v${major}`, `v${major}.${minor}`];
 
-async function replaceLatestReleaseTags() {
-  const [tag, latestTags] = await group("Getting latest tags", () => {
-    console.log("Parsing version: %s", version);
-    const [major, minor] = version.split(".");
-    const nextTag = `v${version}`;
-    const currentTags = [`v${major}`, `v${major}.${minor}`];
-    console.log("Resolved tags: %s", currentTags);
-    return [nextTag, currentTags];
-  });
+      task.output = `Resolved tags: ${currentTags.join(", ")}`;
+    },
+  },
 
-  await group("Removing tags", async () => {
-    await exec("git", "push", "--delete", "origin", ...latestTags).catch(() => {
-      console.warn("Failed to remove tags: %s", latestTags);
-    });
-  });
+  {
+    title: "Removing tags",
+    task({ latestTags }, task) {
+      return execa("git", ["push", "--delete", "origin", ...latestTags]).catch(
+        () => {
+          task.skip(`Failed to remove tags: ${latestTags.join(", ")}`);
+        }
+      );
+    },
+  },
 
-  await group("Changing tag references", async () => {
-    for (const latestTag of latestTags) {
-      await exec("git", "tag", "--force", latestTag, tag);
-    }
+  {
+    title: "Changing tag references",
+    async task({ tag, latestTags }, task) {
+      for (const latestTag of latestTags) {
+        task.output = `Changing reference of ${latestTag} to ${tag}`;
+        await execa("git", ["tag", "--force", latestTag, tag]);
+      }
+    },
+  },
 
-    console.log("Pushing updated tags");
-  });
+  {
+    title: "Pushing updated tags",
+    task() {
+      return execa("git", ["push", "origin", "--tags"]);
+    },
+  },
 
-  await group("Pushing updated tags", async () => {
-    await exec("git", "push", "origin", "--tags");
-  });
-}
+  {
+    title: "Creating release draft",
+    task() {
+      return execa("npx", ["np", "--release-draft-only"]);
+    },
+  },
+]);
 
-async function main() {
-  await replaceLatestReleaseTags();
+tasks.run().catch((error) => {
+  process.exitCode = error.exitCode || 1;
 
-  await group("Creating release draft", async () => {
-    await exec("yarn", "--silent", "np", "--release-draft-only");
-  });
-}
-
-main().catch((error) => {
-  process.exitCode = 1;
-
-  if ("exitCode" in error) {
-    if (error.exitCode) process.exitCode = error.exitCode;
-  } else {
-    console.error(error);
-  }
+  if (error.stderr) console.error(error.stderr);
+  else console.error(error);
 });
