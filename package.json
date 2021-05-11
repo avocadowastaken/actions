@@ -6,7 +6,7 @@
   "author": "Umidbek Karimov",
   "main": "index.js",
   "scripts": {
-    "build": "ts-node scripts/build.ts",
+    "build": "ts-node scripts/build.js",
     "lint": "prettier . --check",
     "prerelease": "yarn install --force && yarn tsc && yarn lint && yarn build",
     "release": "np --no-publish --no-release-draft",
@@ -26,6 +26,7 @@
     "prettier": "^2.3.0",
     "prettier-plugin-organize-imports": "^2.0.0",
     "prettier-plugin-packagejson": "^2.2.11",
+    "rapidbundle": "^0.2.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
