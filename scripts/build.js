@@ -28,12 +28,26 @@ async function* walk(dir) {
 
 async function main() {
   const rootDir = path.join(__dirname, "..");
+  const notSyncedBuilds = [];
 
   for await (const dir of walk(rootDir)) {
     await execa("npx", ["rapidbundle"], {
       cwd: dir,
       stdio: "inherit",
     });
+
+    if (process.env.CI === "true") {
+      const { stdout } = await execa("git", ["status", "--porcelain"]);
+      if (stdout) notSyncedBuilds.push(dir.replace(rootDir, ""));
+    }
+  }
+
+  if (notSyncedBuilds.length > 0) {
+    throw new Error(
+      `Found not synchronized builds:\n${notSyncedBuilds
+        .map((name) => `  ${name}`)
+        .join("\n")}`
+    );
   }
 }
 
