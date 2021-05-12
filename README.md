@@ -1,6 +1,6 @@
 # umidbekk/actions
 
-![Checks](https://github.com/umidbekk/actions/workflows/Checks/badge.svg)
+[![Checks](https://github.com/umidbekk/actions/actions/workflows/checks.yml/badge.svg)](https://github.com/umidbekk/actions/actions/workflows/checks.yml)
 
 Collection of reusable GitHub Actions
 

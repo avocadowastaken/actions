@@ -38,9 +38,9 @@ var __toModule = (module2) => {
   return __reExport(__markAsModule(__defProp(module2 != null ? __create(__getProtoOf(module2)) : {}, "default", module2 && module2.__esModule && "default" in module2 ? {get: () => module2.default, enumerable: true} : {value: module2, enumerable: true})), module2);
 };
 
-// ../../node_modules/@actions/cache/node_modules/@actions/core/lib/utils.js
+// ../../node_modules/@actions/core/lib/utils.js
 var require_utils = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/core/lib/utils.js"(exports2) {
+  "../../node_modules/@actions/core/lib/utils.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     function toCommandValue(input) {
@@ -56,9 +56,9 @@ var require_utils = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/cache/node_modules/@actions/core/lib/command.js
+// ../../node_modules/@actions/core/lib/command.js
 var require_command = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/core/lib/command.js"(exports2) {
+  "../../node_modules/@actions/core/lib/command.js"(exports2) {
     "use strict";
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule)
@@ -131,9 +131,9 @@ var require_command = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/cache/node_modules/@actions/core/lib/file-command.js
+// ../../node_modules/@actions/core/lib/file-command.js
 var require_file_command = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/core/lib/file-command.js"(exports2) {
+  "../../node_modules/@actions/core/lib/file-command.js"(exports2) {
     "use strict";
     var __importStar = exports2 && exports2.__importStar || function(mod) {
       if (mod && mod.__esModule)
@@ -168,9 +168,9 @@ var require_file_command = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/cache/node_modules/@actions/core/lib/core.js
+// ../../node_modules/@actions/core/lib/core.js
 var require_core = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/core/lib/core.js"(exports2) {
+  "../../node_modules/@actions/core/lib/core.js"(exports2) {
     "use strict";
     var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
       function adopt(value) {
@@ -266,6 +266,7 @@ var require_core = __commonJS({
     __name(getInput2, "getInput");
     exports2.getInput = getInput2;
     function setOutput(name, value) {
+      process.stdout.write(os.EOL);
       command_1.issueCommand("set-output", {name}, value);
     }
     __name(setOutput, "setOutput");
@@ -343,9 +344,9 @@ var require_core = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/exec/node_modules/@actions/io/lib/io-util.js
+// ../../node_modules/@actions/io/lib/io-util.js
 var require_io_util = __commonJS({
-  "../../node_modules/@actions/exec/node_modules/@actions/io/lib/io-util.js"(exports2) {
+  "../../node_modules/@actions/io/lib/io-util.js"(exports2) {
     "use strict";
     var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
       function adopt(value) {
@@ -378,11 +379,23 @@ var require_io_util = __commonJS({
         step((generator = generator.apply(thisArg, _arguments || [])).next());
       });
     };
+    var __importStar = exports2 && exports2.__importStar || function(mod) {
+      if (mod && mod.__esModule)
+        return mod;
+      var result = {};
+      if (mod != null) {
+        for (var k in mod)
+          if (Object.hasOwnProperty.call(mod, k))
+            result[k] = mod[k];
+      }
+      result["default"] = mod;
+      return result;
+    };
     var _a;
     Object.defineProperty(exports2, "__esModule", {value: true});
     var assert_1 = require("assert");
-    var fs2 = require("fs");
-    var path2 = require("path");
+    var fs2 = __importStar(require("fs"));
+    var path2 = __importStar(require("path"));
     _a = fs2.promises, exports2.chmod = _a.chmod, exports2.copyFile = _a.copyFile, exports2.lstat = _a.lstat, exports2.mkdir = _a.mkdir, exports2.readdir = _a.readdir, exports2.readlink = _a.readlink, exports2.rename = _a.rename, exports2.rmdir = _a.rmdir, exports2.stat = _a.stat, exports2.symlink = _a.symlink, exports2.unlink = _a.unlink;
     exports2.IS_WINDOWS = process.platform === "win32";
     function exists(fsPath) {
@@ -528,9 +541,9 @@ var require_io_util = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/exec/node_modules/@actions/io/lib/io.js
+// ../../node_modules/@actions/io/lib/io.js
 var require_io = __commonJS({
-  "../../node_modules/@actions/exec/node_modules/@actions/io/lib/io.js"(exports2) {
+  "../../node_modules/@actions/io/lib/io.js"(exports2) {
     "use strict";
     var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
       function adopt(value) {
@@ -563,11 +576,23 @@ var require_io = __commonJS({
         step((generator = generator.apply(thisArg, _arguments || [])).next());
       });
     };
+    var __importStar = exports2 && exports2.__importStar || function(mod) {
+      if (mod && mod.__esModule)
+        return mod;
+      var result = {};
+      if (mod != null) {
+        for (var k in mod)
+          if (Object.hasOwnProperty.call(mod, k))
+            result[k] = mod[k];
+      }
+      result["default"] = mod;
+      return result;
+    };
     Object.defineProperty(exports2, "__esModule", {value: true});
-    var childProcess = require("child_process");
-    var path2 = require("path");
+    var childProcess = __importStar(require("child_process"));
+    var path2 = __importStar(require("path"));
     var util_1 = require("util");
-    var ioUtil = require_io_util();
+    var ioUtil = __importStar(require_io_util());
     var exec2 = util_1.promisify(childProcess.exec);
     function cp(source, dest, options = {}) {
       return __awaiter(this, void 0, void 0, function* () {
@@ -678,48 +703,60 @@ var require_io = __commonJS({
               throw new Error(`Unable to locate executable file: ${tool}. Please verify either the file path exists or the file can be found within a directory specified by the PATH environment variable. Also check the file mode to verify the file is executable.`);
             }
           }
+          return result;
         }
-        try {
-          const extensions = [];
-          if (ioUtil.IS_WINDOWS && process.env.PATHEXT) {
-            for (const extension of process.env.PATHEXT.split(path2.delimiter)) {
-              if (extension) {
-                extensions.push(extension);
-              }
-            }
-          }
-          if (ioUtil.isRooted(tool)) {
-            const filePath = yield ioUtil.tryGetExecutablePath(tool, extensions);
-            if (filePath) {
-              return filePath;
-            }
-            return "";
-          }
-          if (tool.includes("/") || ioUtil.IS_WINDOWS && tool.includes("\\")) {
-            return "";
-          }
-          const directories = [];
-          if (process.env.PATH) {
-            for (const p of process.env.PATH.split(path2.delimiter)) {
-              if (p) {
-                directories.push(p);
-              }
-            }
-          }
-          for (const directory of directories) {
-            const filePath = yield ioUtil.tryGetExecutablePath(directory + path2.sep + tool, extensions);
-            if (filePath) {
-              return filePath;
-            }
-          }
-          return "";
-        } catch (err) {
-          throw new Error(`which failed with message ${err.message}`);
+        const matches = yield findInPath(tool);
+        if (matches && matches.length > 0) {
+          return matches[0];
         }
+        return "";
       });
     }
     __name(which, "which");
     exports2.which = which;
+    function findInPath(tool) {
+      return __awaiter(this, void 0, void 0, function* () {
+        if (!tool) {
+          throw new Error("parameter 'tool' is required");
+        }
+        const extensions = [];
+        if (ioUtil.IS_WINDOWS && process.env["PATHEXT"]) {
+          for (const extension of process.env["PATHEXT"].split(path2.delimiter)) {
+            if (extension) {
+              extensions.push(extension);
+            }
+          }
+        }
+        if (ioUtil.isRooted(tool)) {
+          const filePath = yield ioUtil.tryGetExecutablePath(tool, extensions);
+          if (filePath) {
+            return [filePath];
+          }
+          return [];
+        }
+        if (tool.includes(path2.sep)) {
+          return [];
+        }
+        const directories = [];
+        if (process.env.PATH) {
+          for (const p of process.env.PATH.split(path2.delimiter)) {
+            if (p) {
+              directories.push(p);
+            }
+          }
+        }
+        const matches = [];
+        for (const directory of directories) {
+          const filePath = yield ioUtil.tryGetExecutablePath(path2.join(directory, tool), extensions);
+          if (filePath) {
+            matches.push(filePath);
+          }
+        }
+        return matches;
+      });
+    }
+    __name(findInPath, "findInPath");
+    exports2.findInPath = findInPath;
     function readCopyOptions(options) {
       const force = options.force == null ? true : options.force;
       const recursive = Boolean(options.recursive);
@@ -1302,311 +1339,6 @@ var require_exec = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/glob/node_modules/@actions/core/lib/utils.js
-var require_utils2 = __commonJS({
-  "../../node_modules/@actions/glob/node_modules/@actions/core/lib/utils.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    function toCommandValue(input) {
-      if (input === null || input === void 0) {
-        return "";
-      } else if (typeof input === "string" || input instanceof String) {
-        return input;
-      }
-      return JSON.stringify(input);
-    }
-    __name(toCommandValue, "toCommandValue");
-    exports2.toCommandValue = toCommandValue;
-  }
-});
-
-// ../../node_modules/@actions/glob/node_modules/@actions/core/lib/command.js
-var require_command2 = __commonJS({
-  "../../node_modules/@actions/glob/node_modules/@actions/core/lib/command.js"(exports2) {
-    "use strict";
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var os = __importStar(require("os"));
-    var utils_1 = require_utils2();
-    function issueCommand(command, properties, message) {
-      const cmd = new Command(command, properties, message);
-      process.stdout.write(cmd.toString() + os.EOL);
-    }
-    __name(issueCommand, "issueCommand");
-    exports2.issueCommand = issueCommand;
-    function issue(name, message = "") {
-      issueCommand(name, {}, message);
-    }
-    __name(issue, "issue");
-    exports2.issue = issue;
-    var CMD_STRING = "::";
-    var Command = class {
-      constructor(command, properties, message) {
-        if (!command) {
-          command = "missing.command";
-        }
-        this.command = command;
-        this.properties = properties;
-        this.message = message;
-      }
-      toString() {
-        let cmdStr = CMD_STRING + this.command;
-        if (this.properties && Object.keys(this.properties).length > 0) {
-          cmdStr += " ";
-          let first = true;
-          for (const key in this.properties) {
-            if (this.properties.hasOwnProperty(key)) {
-              const val = this.properties[key];
-              if (val) {
-                if (first) {
-                  first = false;
-                } else {
-                  cmdStr += ",";
-                }
-                cmdStr += `${key}=${escapeProperty(val)}`;
-              }
-            }
-          }
-        }
-        cmdStr += `${CMD_STRING}${escapeData(this.message)}`;
-        return cmdStr;
-      }
-    };
-    __name(Command, "Command");
-    function escapeData(s) {
-      return utils_1.toCommandValue(s).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
-    }
-    __name(escapeData, "escapeData");
-    function escapeProperty(s) {
-      return utils_1.toCommandValue(s).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A").replace(/:/g, "%3A").replace(/,/g, "%2C");
-    }
-    __name(escapeProperty, "escapeProperty");
-  }
-});
-
-// ../../node_modules/@actions/glob/node_modules/@actions/core/lib/file-command.js
-var require_file_command2 = __commonJS({
-  "../../node_modules/@actions/glob/node_modules/@actions/core/lib/file-command.js"(exports2) {
-    "use strict";
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var fs2 = __importStar(require("fs"));
-    var os = __importStar(require("os"));
-    var utils_1 = require_utils2();
-    function issueCommand(command, message) {
-      const filePath = process.env[`GITHUB_${command}`];
-      if (!filePath) {
-        throw new Error(`Unable to find environment variable for file command ${command}`);
-      }
-      if (!fs2.existsSync(filePath)) {
-        throw new Error(`Missing file at path: ${filePath}`);
-      }
-      fs2.appendFileSync(filePath, `${utils_1.toCommandValue(message)}${os.EOL}`, {
-        encoding: "utf8"
-      });
-    }
-    __name(issueCommand, "issueCommand");
-    exports2.issueCommand = issueCommand;
-  }
-});
-
-// ../../node_modules/@actions/glob/node_modules/@actions/core/lib/core.js
-var require_core2 = __commonJS({
-  "../../node_modules/@actions/glob/node_modules/@actions/core/lib/core.js"(exports2) {
-    "use strict";
-    var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
-      function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve2) {
-          resolve2(value);
-        });
-      }
-      __name(adopt, "adopt");
-      return new (P || (P = Promise))(function(resolve2, reject) {
-        function fulfilled(value) {
-          try {
-            step(generator.next(value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(fulfilled, "fulfilled");
-        function rejected(value) {
-          try {
-            step(generator["throw"](value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(rejected, "rejected");
-        function step(result) {
-          result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        __name(step, "step");
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-      });
-    };
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var command_1 = require_command2();
-    var file_command_1 = require_file_command2();
-    var utils_1 = require_utils2();
-    var os = __importStar(require("os"));
-    var path2 = __importStar(require("path"));
-    var ExitCode;
-    (function(ExitCode2) {
-      ExitCode2[ExitCode2["Success"] = 0] = "Success";
-      ExitCode2[ExitCode2["Failure"] = 1] = "Failure";
-    })(ExitCode = exports2.ExitCode || (exports2.ExitCode = {}));
-    function exportVariable(name, val) {
-      const convertedVal = utils_1.toCommandValue(val);
-      process.env[name] = convertedVal;
-      const filePath = process.env["GITHUB_ENV"] || "";
-      if (filePath) {
-        const delimiter = "_GitHubActionsFileCommandDelimeter_";
-        const commandValue = `${name}<<${delimiter}${os.EOL}${convertedVal}${os.EOL}${delimiter}`;
-        file_command_1.issueCommand("ENV", commandValue);
-      } else {
-        command_1.issueCommand("set-env", {name}, convertedVal);
-      }
-    }
-    __name(exportVariable, "exportVariable");
-    exports2.exportVariable = exportVariable;
-    function setSecret(secret) {
-      command_1.issueCommand("add-mask", {}, secret);
-    }
-    __name(setSecret, "setSecret");
-    exports2.setSecret = setSecret;
-    function addPath(inputPath) {
-      const filePath = process.env["GITHUB_PATH"] || "";
-      if (filePath) {
-        file_command_1.issueCommand("PATH", inputPath);
-      } else {
-        command_1.issueCommand("add-path", {}, inputPath);
-      }
-      process.env["PATH"] = `${inputPath}${path2.delimiter}${process.env["PATH"]}`;
-    }
-    __name(addPath, "addPath");
-    exports2.addPath = addPath;
-    function getInput2(name, options) {
-      const val = process.env[`INPUT_${name.replace(/ /g, "_").toUpperCase()}`] || "";
-      if (options && options.required && !val) {
-        throw new Error(`Input required and not supplied: ${name}`);
-      }
-      return val.trim();
-    }
-    __name(getInput2, "getInput");
-    exports2.getInput = getInput2;
-    function setOutput(name, value) {
-      command_1.issueCommand("set-output", {name}, value);
-    }
-    __name(setOutput, "setOutput");
-    exports2.setOutput = setOutput;
-    function setCommandEcho(enabled) {
-      command_1.issue("echo", enabled ? "on" : "off");
-    }
-    __name(setCommandEcho, "setCommandEcho");
-    exports2.setCommandEcho = setCommandEcho;
-    function setFailed2(message) {
-      process.exitCode = ExitCode.Failure;
-      error(message);
-    }
-    __name(setFailed2, "setFailed");
-    exports2.setFailed = setFailed2;
-    function isDebug() {
-      return process.env["RUNNER_DEBUG"] === "1";
-    }
-    __name(isDebug, "isDebug");
-    exports2.isDebug = isDebug;
-    function debug(message) {
-      command_1.issueCommand("debug", {}, message);
-    }
-    __name(debug, "debug");
-    exports2.debug = debug;
-    function error(message) {
-      command_1.issue("error", message instanceof Error ? message.toString() : message);
-    }
-    __name(error, "error");
-    exports2.error = error;
-    function warning2(message) {
-      command_1.issue("warning", message instanceof Error ? message.toString() : message);
-    }
-    __name(warning2, "warning");
-    exports2.warning = warning2;
-    function info2(message) {
-      process.stdout.write(message + os.EOL);
-    }
-    __name(info2, "info");
-    exports2.info = info2;
-    function startGroup2(name) {
-      command_1.issue("group", name);
-    }
-    __name(startGroup2, "startGroup");
-    exports2.startGroup = startGroup2;
-    function endGroup2() {
-      command_1.issue("endgroup");
-    }
-    __name(endGroup2, "endGroup");
-    exports2.endGroup = endGroup2;
-    function group2(name, fn) {
-      return __awaiter(this, void 0, void 0, function* () {
-        startGroup2(name);
-        let result;
-        try {
-          result = yield fn();
-        } finally {
-          endGroup2();
-        }
-        return result;
-      });
-    }
-    __name(group2, "group");
-    exports2.group = group2;
-    function saveState(name, value) {
-      command_1.issueCommand("save-state", {name}, value);
-    }
-    __name(saveState, "saveState");
-    exports2.saveState = saveState;
-    function getState(name) {
-      return process.env[`STATE_${name}`] || "";
-    }
-    __name(getState, "getState");
-    exports2.getState = getState;
-  }
-});
-
 // ../../node_modules/@actions/glob/lib/internal-glob-options-helper.js
 var require_internal_glob_options_helper = __commonJS({
   "../../node_modules/@actions/glob/lib/internal-glob-options-helper.js"(exports2) {
@@ -1624,7 +1356,7 @@ var require_internal_glob_options_helper = __commonJS({
       return result;
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
-    var core = __importStar(require_core2());
+    var core = __importStar(require_core());
     function getOptions(copy) {
       const result = {
         followSymbolicLinks: true,
@@ -1918,6 +1650,9 @@ var require_balanced_match = __commonJS({
       var bi = str.indexOf(b, ai + 1);
       var i = ai;
       if (ai >= 0 && bi > 0) {
+        if (a === b) {
+          return [ai, bi];
+        }
         begs = [];
         left = str.length;
         while (i >= 0 && !result) {
@@ -3062,7 +2797,7 @@ var require_internal_globber = __commonJS({
       return result;
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
-    var core = __importStar(require_core2());
+    var core = __importStar(require_core());
     var fs2 = __importStar(require("fs"));
     var globOptionsHelper = __importStar(require_internal_glob_options_helper());
     var path2 = __importStar(require("path"));
@@ -3255,433 +2990,6 @@ var require_glob = __commonJS({
     }
     __name(create, "create");
     exports2.create = create;
-  }
-});
-
-// ../../node_modules/@actions/cache/node_modules/@actions/io/lib/io-util.js
-var require_io_util2 = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/io/lib/io-util.js"(exports2) {
-    "use strict";
-    var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
-      function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve2) {
-          resolve2(value);
-        });
-      }
-      __name(adopt, "adopt");
-      return new (P || (P = Promise))(function(resolve2, reject) {
-        function fulfilled(value) {
-          try {
-            step(generator.next(value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(fulfilled, "fulfilled");
-        function rejected(value) {
-          try {
-            step(generator["throw"](value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(rejected, "rejected");
-        function step(result) {
-          result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        __name(step, "step");
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-      });
-    };
-    var _a;
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var assert_1 = require("assert");
-    var fs2 = require("fs");
-    var path2 = require("path");
-    _a = fs2.promises, exports2.chmod = _a.chmod, exports2.copyFile = _a.copyFile, exports2.lstat = _a.lstat, exports2.mkdir = _a.mkdir, exports2.readdir = _a.readdir, exports2.readlink = _a.readlink, exports2.rename = _a.rename, exports2.rmdir = _a.rmdir, exports2.stat = _a.stat, exports2.symlink = _a.symlink, exports2.unlink = _a.unlink;
-    exports2.IS_WINDOWS = process.platform === "win32";
-    function exists(fsPath) {
-      return __awaiter(this, void 0, void 0, function* () {
-        try {
-          yield exports2.stat(fsPath);
-        } catch (err) {
-          if (err.code === "ENOENT") {
-            return false;
-          }
-          throw err;
-        }
-        return true;
-      });
-    }
-    __name(exists, "exists");
-    exports2.exists = exists;
-    function isDirectory(fsPath, useStat = false) {
-      return __awaiter(this, void 0, void 0, function* () {
-        const stats = useStat ? yield exports2.stat(fsPath) : yield exports2.lstat(fsPath);
-        return stats.isDirectory();
-      });
-    }
-    __name(isDirectory, "isDirectory");
-    exports2.isDirectory = isDirectory;
-    function isRooted(p) {
-      p = normalizeSeparators(p);
-      if (!p) {
-        throw new Error('isRooted() parameter "p" cannot be empty');
-      }
-      if (exports2.IS_WINDOWS) {
-        return p.startsWith("\\") || /^[A-Z]:/i.test(p);
-      }
-      return p.startsWith("/");
-    }
-    __name(isRooted, "isRooted");
-    exports2.isRooted = isRooted;
-    function mkdirP(fsPath, maxDepth = 1e3, depth = 1) {
-      return __awaiter(this, void 0, void 0, function* () {
-        assert_1.ok(fsPath, "a path argument must be provided");
-        fsPath = path2.resolve(fsPath);
-        if (depth >= maxDepth)
-          return exports2.mkdir(fsPath);
-        try {
-          yield exports2.mkdir(fsPath);
-          return;
-        } catch (err) {
-          switch (err.code) {
-            case "ENOENT": {
-              yield mkdirP(path2.dirname(fsPath), maxDepth, depth + 1);
-              yield exports2.mkdir(fsPath);
-              return;
-            }
-            default: {
-              let stats;
-              try {
-                stats = yield exports2.stat(fsPath);
-              } catch (err2) {
-                throw err;
-              }
-              if (!stats.isDirectory())
-                throw err;
-            }
-          }
-        }
-      });
-    }
-    __name(mkdirP, "mkdirP");
-    exports2.mkdirP = mkdirP;
-    function tryGetExecutablePath(filePath, extensions) {
-      return __awaiter(this, void 0, void 0, function* () {
-        let stats = void 0;
-        try {
-          stats = yield exports2.stat(filePath);
-        } catch (err) {
-          if (err.code !== "ENOENT") {
-            console.log(`Unexpected error attempting to determine if executable file exists '${filePath}': ${err}`);
-          }
-        }
-        if (stats && stats.isFile()) {
-          if (exports2.IS_WINDOWS) {
-            const upperExt = path2.extname(filePath).toUpperCase();
-            if (extensions.some((validExt) => validExt.toUpperCase() === upperExt)) {
-              return filePath;
-            }
-          } else {
-            if (isUnixExecutable(stats)) {
-              return filePath;
-            }
-          }
-        }
-        const originalFilePath = filePath;
-        for (const extension of extensions) {
-          filePath = originalFilePath + extension;
-          stats = void 0;
-          try {
-            stats = yield exports2.stat(filePath);
-          } catch (err) {
-            if (err.code !== "ENOENT") {
-              console.log(`Unexpected error attempting to determine if executable file exists '${filePath}': ${err}`);
-            }
-          }
-          if (stats && stats.isFile()) {
-            if (exports2.IS_WINDOWS) {
-              try {
-                const directory = path2.dirname(filePath);
-                const upperName = path2.basename(filePath).toUpperCase();
-                for (const actualName of yield exports2.readdir(directory)) {
-                  if (upperName === actualName.toUpperCase()) {
-                    filePath = path2.join(directory, actualName);
-                    break;
-                  }
-                }
-              } catch (err) {
-                console.log(`Unexpected error attempting to determine the actual case of the file '${filePath}': ${err}`);
-              }
-              return filePath;
-            } else {
-              if (isUnixExecutable(stats)) {
-                return filePath;
-              }
-            }
-          }
-        }
-        return "";
-      });
-    }
-    __name(tryGetExecutablePath, "tryGetExecutablePath");
-    exports2.tryGetExecutablePath = tryGetExecutablePath;
-    function normalizeSeparators(p) {
-      p = p || "";
-      if (exports2.IS_WINDOWS) {
-        p = p.replace(/\//g, "\\");
-        return p.replace(/\\\\+/g, "\\");
-      }
-      return p.replace(/\/\/+/g, "/");
-    }
-    __name(normalizeSeparators, "normalizeSeparators");
-    function isUnixExecutable(stats) {
-      return (stats.mode & 1) > 0 || (stats.mode & 8) > 0 && stats.gid === process.getgid() || (stats.mode & 64) > 0 && stats.uid === process.getuid();
-    }
-    __name(isUnixExecutable, "isUnixExecutable");
-  }
-});
-
-// ../../node_modules/@actions/cache/node_modules/@actions/io/lib/io.js
-var require_io2 = __commonJS({
-  "../../node_modules/@actions/cache/node_modules/@actions/io/lib/io.js"(exports2) {
-    "use strict";
-    var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
-      function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve2) {
-          resolve2(value);
-        });
-      }
-      __name(adopt, "adopt");
-      return new (P || (P = Promise))(function(resolve2, reject) {
-        function fulfilled(value) {
-          try {
-            step(generator.next(value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(fulfilled, "fulfilled");
-        function rejected(value) {
-          try {
-            step(generator["throw"](value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(rejected, "rejected");
-        function step(result) {
-          result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        __name(step, "step");
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-      });
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var childProcess = require("child_process");
-    var path2 = require("path");
-    var util_1 = require("util");
-    var ioUtil = require_io_util2();
-    var exec2 = util_1.promisify(childProcess.exec);
-    function cp(source, dest, options = {}) {
-      return __awaiter(this, void 0, void 0, function* () {
-        const {force, recursive} = readCopyOptions(options);
-        const destStat = (yield ioUtil.exists(dest)) ? yield ioUtil.stat(dest) : null;
-        if (destStat && destStat.isFile() && !force) {
-          return;
-        }
-        const newDest = destStat && destStat.isDirectory() ? path2.join(dest, path2.basename(source)) : dest;
-        if (!(yield ioUtil.exists(source))) {
-          throw new Error(`no such file or directory: ${source}`);
-        }
-        const sourceStat = yield ioUtil.stat(source);
-        if (sourceStat.isDirectory()) {
-          if (!recursive) {
-            throw new Error(`Failed to copy. ${source} is a directory, but tried to copy without recursive flag.`);
-          } else {
-            yield cpDirRecursive(source, newDest, 0, force);
-          }
-        } else {
-          if (path2.relative(source, newDest) === "") {
-            throw new Error(`'${newDest}' and '${source}' are the same file`);
-          }
-          yield copyFile(source, newDest, force);
-        }
-      });
-    }
-    __name(cp, "cp");
-    exports2.cp = cp;
-    function mv(source, dest, options = {}) {
-      return __awaiter(this, void 0, void 0, function* () {
-        if (yield ioUtil.exists(dest)) {
-          let destExists = true;
-          if (yield ioUtil.isDirectory(dest)) {
-            dest = path2.join(dest, path2.basename(source));
-            destExists = yield ioUtil.exists(dest);
-          }
-          if (destExists) {
-            if (options.force == null || options.force) {
-              yield rmRF(dest);
-            } else {
-              throw new Error("Destination already exists");
-            }
-          }
-        }
-        yield mkdirP(path2.dirname(dest));
-        yield ioUtil.rename(source, dest);
-      });
-    }
-    __name(mv, "mv");
-    exports2.mv = mv;
-    function rmRF(inputPath) {
-      return __awaiter(this, void 0, void 0, function* () {
-        if (ioUtil.IS_WINDOWS) {
-          try {
-            if (yield ioUtil.isDirectory(inputPath, true)) {
-              yield exec2(`rd /s /q "${inputPath}"`);
-            } else {
-              yield exec2(`del /f /a "${inputPath}"`);
-            }
-          } catch (err) {
-            if (err.code !== "ENOENT")
-              throw err;
-          }
-          try {
-            yield ioUtil.unlink(inputPath);
-          } catch (err) {
-            if (err.code !== "ENOENT")
-              throw err;
-          }
-        } else {
-          let isDir = false;
-          try {
-            isDir = yield ioUtil.isDirectory(inputPath);
-          } catch (err) {
-            if (err.code !== "ENOENT")
-              throw err;
-            return;
-          }
-          if (isDir) {
-            yield exec2(`rm -rf "${inputPath}"`);
-          } else {
-            yield ioUtil.unlink(inputPath);
-          }
-        }
-      });
-    }
-    __name(rmRF, "rmRF");
-    exports2.rmRF = rmRF;
-    function mkdirP(fsPath) {
-      return __awaiter(this, void 0, void 0, function* () {
-        yield ioUtil.mkdirP(fsPath);
-      });
-    }
-    __name(mkdirP, "mkdirP");
-    exports2.mkdirP = mkdirP;
-    function which(tool, check) {
-      return __awaiter(this, void 0, void 0, function* () {
-        if (!tool) {
-          throw new Error("parameter 'tool' is required");
-        }
-        if (check) {
-          const result = yield which(tool, false);
-          if (!result) {
-            if (ioUtil.IS_WINDOWS) {
-              throw new Error(`Unable to locate executable file: ${tool}. Please verify either the file path exists or the file can be found within a directory specified by the PATH environment variable. Also verify the file has a valid extension for an executable file.`);
-            } else {
-              throw new Error(`Unable to locate executable file: ${tool}. Please verify either the file path exists or the file can be found within a directory specified by the PATH environment variable. Also check the file mode to verify the file is executable.`);
-            }
-          }
-        }
-        try {
-          const extensions = [];
-          if (ioUtil.IS_WINDOWS && process.env.PATHEXT) {
-            for (const extension of process.env.PATHEXT.split(path2.delimiter)) {
-              if (extension) {
-                extensions.push(extension);
-              }
-            }
-          }
-          if (ioUtil.isRooted(tool)) {
-            const filePath = yield ioUtil.tryGetExecutablePath(tool, extensions);
-            if (filePath) {
-              return filePath;
-            }
-            return "";
-          }
-          if (tool.includes("/") || ioUtil.IS_WINDOWS && tool.includes("\\")) {
-            return "";
-          }
-          const directories = [];
-          if (process.env.PATH) {
-            for (const p of process.env.PATH.split(path2.delimiter)) {
-              if (p) {
-                directories.push(p);
-              }
-            }
-          }
-          for (const directory of directories) {
-            const filePath = yield ioUtil.tryGetExecutablePath(directory + path2.sep + tool, extensions);
-            if (filePath) {
-              return filePath;
-            }
-          }
-          return "";
-        } catch (err) {
-          throw new Error(`which failed with message ${err.message}`);
-        }
-      });
-    }
-    __name(which, "which");
-    exports2.which = which;
-    function readCopyOptions(options) {
-      const force = options.force == null ? true : options.force;
-      const recursive = Boolean(options.recursive);
-      return {force, recursive};
-    }
-    __name(readCopyOptions, "readCopyOptions");
-    function cpDirRecursive(sourceDir, destDir, currentDepth, force) {
-      return __awaiter(this, void 0, void 0, function* () {
-        if (currentDepth >= 255)
-          return;
-        currentDepth++;
-        yield mkdirP(destDir);
-        const files = yield ioUtil.readdir(sourceDir);
-        for (const fileName of files) {
-          const srcFile = `${sourceDir}/${fileName}`;
-          const destFile = `${destDir}/${fileName}`;
-          const srcFileStat = yield ioUtil.lstat(srcFile);
-          if (srcFileStat.isDirectory()) {
-            yield cpDirRecursive(srcFile, destFile, currentDepth, force);
-          } else {
-            yield copyFile(srcFile, destFile, force);
-          }
-        }
-        yield ioUtil.chmod(destDir, (yield ioUtil.stat(sourceDir)).mode);
-      });
-    }
-    __name(cpDirRecursive, "cpDirRecursive");
-    function copyFile(srcFile, destFile, force) {
-      return __awaiter(this, void 0, void 0, function* () {
-        if ((yield ioUtil.lstat(srcFile)).isSymbolicLink()) {
-          try {
-            yield ioUtil.lstat(destFile);
-            yield ioUtil.unlink(destFile);
-          } catch (e) {
-            if (e.code === "EPERM") {
-              yield ioUtil.chmod(destFile, "0666");
-              yield ioUtil.unlink(destFile);
-            }
-          }
-          const symlinkFull = yield ioUtil.readlink(srcFile);
-          yield ioUtil.symlink(symlinkFull, destFile, ioUtil.IS_WINDOWS ? "junction" : null);
-        } else if (!(yield ioUtil.exists(destFile)) || force) {
-          yield ioUtil.copyFile(srcFile, destFile);
-        }
-      });
-    }
-    __name(copyFile, "copyFile");
   }
 });
 
@@ -5114,7 +4422,7 @@ var require_cacheUtils = __commonJS({
     var core = __importStar(require_core());
     var exec2 = __importStar(require_exec());
     var glob = __importStar(require_glob());
-    var io = __importStar(require_io2());
+    var io = __importStar(require_io());
     var fs2 = __importStar(require("fs"));
     var path2 = __importStar(require("path"));
     var semver = __importStar(require_semver());
@@ -5926,11 +5234,12 @@ var require_http_client = __commonJS({
           const agentOptions = {
             maxSockets,
             keepAlive: this._keepAlive,
-            proxy: {
-              proxyAuth: `${proxyUrl.username}:${proxyUrl.password}`,
+            proxy: __spreadProps(__spreadValues({}, (proxyUrl.username || proxyUrl.password) && {
+              proxyAuth: `${proxyUrl.username}:${proxyUrl.password}`
+            }), {
               host: proxyUrl.hostname,
               port: proxyUrl.port
-            }
+            })
           };
           let tunnelAgent;
           const overHttps = proxyUrl.protocol === "https:";
@@ -6473,18 +5782,21 @@ var require_tslib = __commonJS({
       __importDefault = /* @__PURE__ */ __name(function(mod) {
         return mod && mod.__esModule ? mod : {"default": mod};
       }, "__importDefault");
-      __classPrivateFieldGet = /* @__PURE__ */ __name(function(receiver, privateMap) {
-        if (!privateMap.has(receiver)) {
-          throw new TypeError("attempted to get private field on non-instance");
-        }
-        return privateMap.get(receiver);
+      __classPrivateFieldGet = /* @__PURE__ */ __name(function(receiver, state, kind, f) {
+        if (kind === "a" && !f)
+          throw new TypeError("Private accessor was defined without a getter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+          throw new TypeError("Cannot read private member from an object whose class did not declare it");
+        return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
       }, "__classPrivateFieldGet");
-      __classPrivateFieldSet = /* @__PURE__ */ __name(function(receiver, privateMap, value) {
-        if (!privateMap.has(receiver)) {
-          throw new TypeError("attempted to set private field on non-instance");
-        }
-        privateMap.set(receiver, value);
-        return value;
+      __classPrivateFieldSet = /* @__PURE__ */ __name(function(receiver, state, value, kind, f) {
+        if (kind === "m")
+          throw new TypeError("Private method is not writable");
+        if (kind === "a" && !f)
+          throw new TypeError("Private accessor was defined without a setter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+          throw new TypeError("Cannot write private member to an object whose class did not declare it");
+        return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
       }, "__classPrivateFieldSet");
       exporter("__extends", __extends);
       exporter("__assign", __assign);
@@ -18546,7 +17858,7 @@ var require_dist2 = __commonJS({
       }
       var listeners = listenersMap.get(signal);
       if (listeners) {
-        listeners.forEach(function(listener) {
+        listeners.slice().forEach(function(listener) {
           listener.call(signal, {type: "abort"});
         });
       }
@@ -19269,7 +18581,7 @@ var require_db = __commonJS({
       "application/ecmascript": {
         source: "iana",
         compressible: true,
-        extensions: ["ecma", "es"]
+        extensions: ["es", "ecma"]
       },
       "application/edi-consent": {
         source: "iana"
@@ -19814,13 +19126,11 @@ var require_db = __commonJS({
       },
       "application/mrb-consumer+xml": {
         source: "iana",
-        compressible: true,
-        extensions: ["xdf"]
+        compressible: true
       },
       "application/mrb-publish+xml": {
         source: "iana",
-        compressible: true,
-        extensions: ["xdf"]
+        compressible: true
       },
       "application/msc-ivr+xml": {
         source: "iana",
@@ -21199,6 +20509,9 @@ var require_db = __commonJS({
         compressible: true
       },
       "application/vnd.crypto-shade-file": {
+        source: "iana"
+      },
+      "application/vnd.cryptomator.encrypted": {
         source: "iana"
       },
       "application/vnd.ctc-posml": {
@@ -22665,6 +21978,9 @@ var require_db = __commonJS({
       "application/vnd.nearst.inv+json": {
         source: "iana",
         compressible: true
+      },
+      "application/vnd.nebumind.line": {
+        source: "iana"
       },
       "application/vnd.nervana": {
         source: "iana"
@@ -24951,8 +24267,7 @@ var require_db = __commonJS({
       },
       "application/xcap-error+xml": {
         source: "iana",
-        compressible: true,
-        extensions: ["xer"]
+        compressible: true
       },
       "application/xcap-ns+xml": {
         source: "iana",
@@ -26280,6 +25595,10 @@ var require_db = __commonJS({
       "model/vnd.rosette.annotated-data-model": {
         source: "iana"
       },
+      "model/vnd.sap.vds": {
+        source: "iana",
+        extensions: ["vds"]
+      },
       "model/vnd.usdz+zip": {
         source: "iana",
         compressible: false,
@@ -26858,6 +26177,9 @@ var require_db = __commonJS({
         source: "iana"
       },
       "video/encaprtp": {
+        source: "iana"
+      },
+      "video/ffv1": {
         source: "iana"
       },
       "video/flexfec": {
@@ -28151,6 +27473,63 @@ var require_dist4 = __commonJS({
       };
       return AzureKeyCredential2;
     }();
+    function isDefined(thing) {
+      return typeof thing !== "undefined" && thing !== null;
+    }
+    __name(isDefined, "isDefined");
+    function isObjectWithProperties(thing, properties) {
+      if (!isDefined(thing) || typeof thing !== "object") {
+        return false;
+      }
+      for (var _i = 0, properties_1 = properties; _i < properties_1.length; _i++) {
+        var property = properties_1[_i];
+        if (!objectHasProperty(thing, property)) {
+          return false;
+        }
+      }
+      return true;
+    }
+    __name(isObjectWithProperties, "isObjectWithProperties");
+    function objectHasProperty(thing, property) {
+      return typeof thing === "object" && property in thing;
+    }
+    __name(objectHasProperty, "objectHasProperty");
+    var AzureNamedKeyCredential = function() {
+      function AzureNamedKeyCredential2(name, key) {
+        if (!name || !key) {
+          throw new TypeError("name and key must be non-empty strings");
+        }
+        this._name = name;
+        this._key = key;
+      }
+      __name(AzureNamedKeyCredential2, "AzureNamedKeyCredential");
+      Object.defineProperty(AzureNamedKeyCredential2.prototype, "key", {
+        get: function() {
+          return this._key;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      Object.defineProperty(AzureNamedKeyCredential2.prototype, "name", {
+        get: function() {
+          return this._name;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      AzureNamedKeyCredential2.prototype.update = function(newName, newKey) {
+        if (!newName || !newKey) {
+          throw new TypeError("newName and newKey must be non-empty strings");
+        }
+        this._name = newName;
+        this._key = newKey;
+      };
+      return AzureNamedKeyCredential2;
+    }();
+    function isNamedKeyCredential(credential) {
+      return isObjectWithProperties(credential, ["name", "key"]) && typeof credential.key === "string" && typeof credential.name === "string";
+    }
+    __name(isNamedKeyCredential, "isNamedKeyCredential");
     var AzureSASCredential = function() {
       function AzureSASCredential2(signature) {
         if (!signature) {
@@ -28174,13 +27553,20 @@ var require_dist4 = __commonJS({
       };
       return AzureSASCredential2;
     }();
+    function isSASCredential(credential) {
+      return isObjectWithProperties(credential, ["signature"]) && typeof credential.signature === "string";
+    }
+    __name(isSASCredential, "isSASCredential");
     function isTokenCredential(credential) {
       var castCredential = credential;
       return castCredential && typeof castCredential.getToken === "function" && (castCredential.signRequest === void 0 || castCredential.getToken.length > 0);
     }
     __name(isTokenCredential, "isTokenCredential");
     exports2.AzureKeyCredential = AzureKeyCredential;
+    exports2.AzureNamedKeyCredential = AzureNamedKeyCredential;
     exports2.AzureSASCredential = AzureSASCredential;
+    exports2.isNamedKeyCredential = isNamedKeyCredential;
+    exports2.isSASCredential = isSASCredential;
     exports2.isTokenCredential = isTokenCredential;
   }
 });
@@ -34125,389 +33511,330 @@ var require_xml2js = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/common/Logger.js
-var require_Logger = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/common/Logger.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/internal/baggage.js
+var require_baggage = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/internal/baggage.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/common/Time.js
-var require_Time = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/common/Time.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/context/propagation/getter.js
-var require_getter = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/propagation/getter.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.defaultGetter = void 0;
-    function defaultGetter(carrier, key) {
-      return carrier[key];
-    }
-    __name(defaultGetter, "defaultGetter");
-    exports2.defaultGetter = defaultGetter;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/context/propagation/HttpTextPropagator.js
-var require_HttpTextPropagator = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/propagation/HttpTextPropagator.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/context/propagation/NoopHttpTextPropagator.js
-var require_NoopHttpTextPropagator = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/propagation/NoopHttpTextPropagator.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.NOOP_HTTP_TEXT_PROPAGATOR = exports2.NoopHttpTextPropagator = void 0;
-    var NoopHttpTextPropagator = function() {
-      function NoopHttpTextPropagator2() {
+    exports2.BaggageImpl = void 0;
+    var BaggageImpl = function() {
+      function BaggageImpl2(entries) {
+        this._entries = entries ? new Map(entries) : new Map();
       }
-      __name(NoopHttpTextPropagator2, "NoopHttpTextPropagator");
-      NoopHttpTextPropagator2.prototype.inject = function(context, carrier, setter) {
+      __name(BaggageImpl2, "BaggageImpl");
+      BaggageImpl2.prototype.getEntry = function(key) {
+        var entry = this._entries.get(key);
+        if (!entry) {
+          return void 0;
+        }
+        return Object.assign({}, entry);
       };
-      NoopHttpTextPropagator2.prototype.extract = function(context, carrier, getter) {
+      BaggageImpl2.prototype.getAllEntries = function() {
+        return Array.from(this._entries.entries()).map(function(_a) {
+          var k = _a[0], v = _a[1];
+          return [k, v];
+        });
+      };
+      BaggageImpl2.prototype.setEntry = function(key, entry) {
+        var newBaggage = new BaggageImpl2(this._entries);
+        newBaggage._entries.set(key, entry);
+        return newBaggage;
+      };
+      BaggageImpl2.prototype.removeEntry = function(key) {
+        var newBaggage = new BaggageImpl2(this._entries);
+        newBaggage._entries.delete(key);
+        return newBaggage;
+      };
+      BaggageImpl2.prototype.removeEntries = function() {
+        var keys = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          keys[_i] = arguments[_i];
+        }
+        var newBaggage = new BaggageImpl2(this._entries);
+        for (var _a = 0, keys_1 = keys; _a < keys_1.length; _a++) {
+          var key = keys_1[_a];
+          newBaggage._entries.delete(key);
+        }
+        return newBaggage;
+      };
+      BaggageImpl2.prototype.clear = function() {
+        return new BaggageImpl2();
+      };
+      return BaggageImpl2;
+    }();
+    exports2.BaggageImpl = BaggageImpl;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/internal/symbol.js
+var require_symbol = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/internal/symbol.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.baggageEntryMetadataSymbol = void 0;
+    exports2.baggageEntryMetadataSymbol = Symbol("BaggageEntryMetadata");
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/Baggage.js
+var require_Baggage = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/Baggage.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/Entry.js
+var require_Entry = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/Entry.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/index.js
+var require_baggage2 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/baggage/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.baggageEntryMetadataFromString = exports2.createBaggage = void 0;
+    var baggage_1 = require_baggage();
+    var symbol_1 = require_symbol();
+    __exportStar(require_Baggage(), exports2);
+    __exportStar(require_Entry(), exports2);
+    function createBaggage(entries) {
+      if (entries === void 0) {
+        entries = {};
+      }
+      return new baggage_1.BaggageImpl(new Map(Object.entries(entries)));
+    }
+    __name(createBaggage, "createBaggage");
+    exports2.createBaggage = createBaggage;
+    function baggageEntryMetadataFromString(str) {
+      if (typeof str !== "string") {
+        str = "";
+      }
+      return {
+        __TYPE__: symbol_1.baggageEntryMetadataSymbol,
+        toString: function() {
+          return str;
+        }
+      };
+    }
+    __name(baggageEntryMetadataFromString, "baggageEntryMetadataFromString");
+    exports2.baggageEntryMetadataFromString = baggageEntryMetadataFromString;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/common/Exception.js
+var require_Exception = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/common/Exception.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/common/Time.js
+var require_Time = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/common/Time.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/consoleLogger.js
+var require_consoleLogger = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/consoleLogger.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.DiagConsoleLogger = void 0;
+    var consoleMap = [
+      {n: "error", c: "error"},
+      {n: "warn", c: "warn"},
+      {n: "info", c: "info"},
+      {n: "debug", c: "debug"},
+      {n: "verbose", c: "trace"}
+    ];
+    var DiagConsoleLogger = function() {
+      function DiagConsoleLogger2() {
+        function _consoleFunc(funcName) {
+          return function() {
+            var orgArguments = arguments;
+            if (console) {
+              var theFunc = console[funcName];
+              if (typeof theFunc !== "function") {
+                theFunc = console.log;
+              }
+              if (typeof theFunc === "function") {
+                return theFunc.apply(console, orgArguments);
+              }
+            }
+          };
+        }
+        __name(_consoleFunc, "_consoleFunc");
+        for (var i = 0; i < consoleMap.length; i++) {
+          this[consoleMap[i].n] = _consoleFunc(consoleMap[i].c);
+        }
+      }
+      __name(DiagConsoleLogger2, "DiagConsoleLogger");
+      return DiagConsoleLogger2;
+    }();
+    exports2.DiagConsoleLogger = DiagConsoleLogger;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/types.js
+var require_types = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/types.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.DiagLogLevel = void 0;
+    var DiagLogLevel;
+    (function(DiagLogLevel2) {
+      DiagLogLevel2[DiagLogLevel2["NONE"] = 0] = "NONE";
+      DiagLogLevel2[DiagLogLevel2["ERROR"] = 30] = "ERROR";
+      DiagLogLevel2[DiagLogLevel2["WARN"] = 50] = "WARN";
+      DiagLogLevel2[DiagLogLevel2["INFO"] = 60] = "INFO";
+      DiagLogLevel2[DiagLogLevel2["DEBUG"] = 70] = "DEBUG";
+      DiagLogLevel2[DiagLogLevel2["VERBOSE"] = 80] = "VERBOSE";
+      DiagLogLevel2[DiagLogLevel2["ALL"] = 9999] = "ALL";
+    })(DiagLogLevel = exports2.DiagLogLevel || (exports2.DiagLogLevel = {}));
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/index.js
+var require_diag = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    __exportStar(require_consoleLogger(), exports2);
+    __exportStar(require_types(), exports2);
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js
+var require_NoopTextMapPropagator = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_TEXT_MAP_PROPAGATOR = exports2.NoopTextMapPropagator = void 0;
+    var NoopTextMapPropagator = function() {
+      function NoopTextMapPropagator2() {
+      }
+      __name(NoopTextMapPropagator2, "NoopTextMapPropagator");
+      NoopTextMapPropagator2.prototype.inject = function(_context, _carrier) {
+      };
+      NoopTextMapPropagator2.prototype.extract = function(context, _carrier) {
         return context;
       };
-      return NoopHttpTextPropagator2;
+      NoopTextMapPropagator2.prototype.fields = function() {
+        return [];
+      };
+      return NoopTextMapPropagator2;
     }();
-    exports2.NoopHttpTextPropagator = NoopHttpTextPropagator;
-    exports2.NOOP_HTTP_TEXT_PROPAGATOR = new NoopHttpTextPropagator();
+    exports2.NoopTextMapPropagator = NoopTextMapPropagator;
+    exports2.NOOP_TEXT_MAP_PROPAGATOR = new NoopTextMapPropagator();
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/context/propagation/setter.js
-var require_setter = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/propagation/setter.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js
+var require_TextMapPropagator = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/propagation/TextMapPropagator.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.defaultSetter = void 0;
-    function defaultSetter(carrier, key, value) {
-      carrier[key] = value;
-    }
-    __name(defaultSetter, "defaultSetter");
-    exports2.defaultSetter = defaultSetter;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/correlation_context/CorrelationContext.js
-var require_CorrelationContext = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/correlation_context/CorrelationContext.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/correlation_context/EntryValue.js
-var require_EntryValue = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/correlation_context/EntryValue.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.EntryTtl = void 0;
-    var EntryTtl;
-    (function(EntryTtl2) {
-      EntryTtl2[EntryTtl2["NO_PROPAGATION"] = 0] = "NO_PROPAGATION";
-      EntryTtl2[EntryTtl2["UNLIMITED_PROPAGATION"] = -1] = "UNLIMITED_PROPAGATION";
-    })(EntryTtl = exports2.EntryTtl || (exports2.EntryTtl = {}));
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/BatchObserverResult.js
-var require_BatchObserverResult = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/BatchObserverResult.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/BoundInstrument.js
-var require_BoundInstrument = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/BoundInstrument.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/Meter.js
-var require_Meter = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/Meter.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/MeterProvider.js
-var require_MeterProvider = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/MeterProvider.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/Metric.js
-var require_Metric = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/Metric.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.ValueType = void 0;
-    var ValueType;
-    (function(ValueType2) {
-      ValueType2[ValueType2["INT"] = 0] = "INT";
-      ValueType2[ValueType2["DOUBLE"] = 1] = "DOUBLE";
-    })(ValueType = exports2.ValueType || (exports2.ValueType = {}));
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js
-var require_NoopMeter = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js"(exports2) {
-    "use strict";
-    var __extends = exports2 && exports2.__extends || function() {
-      var extendStatics = /* @__PURE__ */ __name(function(d, b) {
-        extendStatics = Object.setPrototypeOf || {__proto__: []} instanceof Array && function(d2, b2) {
-          d2.__proto__ = b2;
-        } || function(d2, b2) {
-          for (var p in b2)
-            if (b2.hasOwnProperty(p))
-              d2[p] = b2[p];
-        };
-        return extendStatics(d, b);
-      }, "extendStatics");
-      return function(d, b) {
-        extendStatics(d, b);
-        function __() {
-          this.constructor = d;
+    exports2.defaultTextMapSetter = exports2.defaultTextMapGetter = void 0;
+    exports2.defaultTextMapGetter = {
+      get: function(carrier, key) {
+        if (carrier == null) {
+          return void 0;
         }
-        __name(__, "__");
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-      };
-    }();
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.NOOP_BATCH_OBSERVER_METRIC = exports2.NOOP_SUM_OBSERVER_METRIC = exports2.NOOP_UP_DOWN_SUM_OBSERVER_METRIC = exports2.NOOP_VALUE_OBSERVER_METRIC = exports2.NOOP_BOUND_BASE_OBSERVER = exports2.NOOP_VALUE_RECORDER_METRIC = exports2.NOOP_BOUND_VALUE_RECORDER = exports2.NOOP_COUNTER_METRIC = exports2.NOOP_BOUND_COUNTER = exports2.NOOP_METER = exports2.NoopBoundBaseObserver = exports2.NoopBoundValueRecorder = exports2.NoopBoundCounter = exports2.NoopBatchObserverMetric = exports2.NoopBaseObserverMetric = exports2.NoopValueRecorderMetric = exports2.NoopCounterMetric = exports2.NoopMetric = exports2.NoopMeter = void 0;
-    var NoopMeter = function() {
-      function NoopMeter2() {
-      }
-      __name(NoopMeter2, "NoopMeter");
-      NoopMeter2.prototype.createValueRecorder = function(name, options) {
-        return exports2.NOOP_VALUE_RECORDER_METRIC;
-      };
-      NoopMeter2.prototype.createCounter = function(name, options) {
-        return exports2.NOOP_COUNTER_METRIC;
-      };
-      NoopMeter2.prototype.createUpDownCounter = function(name, options) {
-        return exports2.NOOP_COUNTER_METRIC;
-      };
-      NoopMeter2.prototype.createValueObserver = function(name, options, callback) {
-        return exports2.NOOP_VALUE_OBSERVER_METRIC;
-      };
-      NoopMeter2.prototype.createBatchObserver = function(name, callback) {
-        return exports2.NOOP_BATCH_OBSERVER_METRIC;
-      };
-      return NoopMeter2;
-    }();
-    exports2.NoopMeter = NoopMeter;
-    var NoopMetric = function() {
-      function NoopMetric2(instrument) {
-        this._instrument = instrument;
-      }
-      __name(NoopMetric2, "NoopMetric");
-      NoopMetric2.prototype.bind = function(labels) {
-        return this._instrument;
-      };
-      NoopMetric2.prototype.unbind = function(labels) {
-        return;
-      };
-      NoopMetric2.prototype.clear = function() {
-        return;
-      };
-      return NoopMetric2;
-    }();
-    exports2.NoopMetric = NoopMetric;
-    var NoopCounterMetric = function(_super) {
-      __extends(NoopCounterMetric2, _super);
-      function NoopCounterMetric2() {
-        return _super !== null && _super.apply(this, arguments) || this;
-      }
-      __name(NoopCounterMetric2, "NoopCounterMetric");
-      NoopCounterMetric2.prototype.add = function(value, labels) {
-        this.bind(labels).add(value);
-      };
-      return NoopCounterMetric2;
-    }(NoopMetric);
-    exports2.NoopCounterMetric = NoopCounterMetric;
-    var NoopValueRecorderMetric = function(_super) {
-      __extends(NoopValueRecorderMetric2, _super);
-      function NoopValueRecorderMetric2() {
-        return _super !== null && _super.apply(this, arguments) || this;
-      }
-      __name(NoopValueRecorderMetric2, "NoopValueRecorderMetric");
-      NoopValueRecorderMetric2.prototype.record = function(value, labels, correlationContext, spanContext) {
-        if (typeof correlationContext === "undefined") {
-          this.bind(labels).record(value);
-        } else if (typeof spanContext === "undefined") {
-          this.bind(labels).record(value, correlationContext);
-        } else {
-          this.bind(labels).record(value, correlationContext, spanContext);
+        return carrier[key];
+      },
+      keys: function(carrier) {
+        if (carrier == null) {
+          return [];
         }
-      };
-      return NoopValueRecorderMetric2;
-    }(NoopMetric);
-    exports2.NoopValueRecorderMetric = NoopValueRecorderMetric;
-    var NoopBaseObserverMetric = function(_super) {
-      __extends(NoopBaseObserverMetric2, _super);
-      function NoopBaseObserverMetric2() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        return Object.keys(carrier);
       }
-      __name(NoopBaseObserverMetric2, "NoopBaseObserverMetric");
-      NoopBaseObserverMetric2.prototype.observation = function() {
-        return {
-          observer: this,
-          value: 0
-        };
-      };
-      return NoopBaseObserverMetric2;
-    }(NoopMetric);
-    exports2.NoopBaseObserverMetric = NoopBaseObserverMetric;
-    var NoopBatchObserverMetric = function(_super) {
-      __extends(NoopBatchObserverMetric2, _super);
-      function NoopBatchObserverMetric2() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    };
+    exports2.defaultTextMapSetter = {
+      set: function(carrier, key, value) {
+        if (carrier == null) {
+          return;
+        }
+        carrier[key] = value;
       }
-      __name(NoopBatchObserverMetric2, "NoopBatchObserverMetric");
-      return NoopBatchObserverMetric2;
-    }(NoopMetric);
-    exports2.NoopBatchObserverMetric = NoopBatchObserverMetric;
-    var NoopBoundCounter = function() {
-      function NoopBoundCounter2() {
-      }
-      __name(NoopBoundCounter2, "NoopBoundCounter");
-      NoopBoundCounter2.prototype.add = function(value) {
-        return;
-      };
-      return NoopBoundCounter2;
-    }();
-    exports2.NoopBoundCounter = NoopBoundCounter;
-    var NoopBoundValueRecorder = function() {
-      function NoopBoundValueRecorder2() {
-      }
-      __name(NoopBoundValueRecorder2, "NoopBoundValueRecorder");
-      NoopBoundValueRecorder2.prototype.record = function(value, correlationContext, spanContext) {
-        return;
-      };
-      return NoopBoundValueRecorder2;
-    }();
-    exports2.NoopBoundValueRecorder = NoopBoundValueRecorder;
-    var NoopBoundBaseObserver = function() {
-      function NoopBoundBaseObserver2() {
-      }
-      __name(NoopBoundBaseObserver2, "NoopBoundBaseObserver");
-      NoopBoundBaseObserver2.prototype.update = function(value) {
-      };
-      return NoopBoundBaseObserver2;
-    }();
-    exports2.NoopBoundBaseObserver = NoopBoundBaseObserver;
-    exports2.NOOP_METER = new NoopMeter();
-    exports2.NOOP_BOUND_COUNTER = new NoopBoundCounter();
-    exports2.NOOP_COUNTER_METRIC = new NoopCounterMetric(exports2.NOOP_BOUND_COUNTER);
-    exports2.NOOP_BOUND_VALUE_RECORDER = new NoopBoundValueRecorder();
-    exports2.NOOP_VALUE_RECORDER_METRIC = new NoopValueRecorderMetric(exports2.NOOP_BOUND_VALUE_RECORDER);
-    exports2.NOOP_BOUND_BASE_OBSERVER = new NoopBoundBaseObserver();
-    exports2.NOOP_VALUE_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
-    exports2.NOOP_UP_DOWN_SUM_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
-    exports2.NOOP_SUM_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
-    exports2.NOOP_BATCH_OBSERVER_METRIC = new NoopBatchObserverMetric();
+    };
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js
-var require_NoopMeterProvider = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.NOOP_METER_PROVIDER = exports2.NoopMeterProvider = void 0;
-    var NoopMeter_1 = require_NoopMeter();
-    var NoopMeterProvider = function() {
-      function NoopMeterProvider2() {
-      }
-      __name(NoopMeterProvider2, "NoopMeterProvider");
-      NoopMeterProvider2.prototype.getMeter = function(_name, _version) {
-        return NoopMeter_1.NOOP_METER;
-      };
-      return NoopMeterProvider2;
-    }();
-    exports2.NoopMeterProvider = NoopMeterProvider;
-    exports2.NOOP_METER_PROVIDER = new NoopMeterProvider();
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/Observation.js
-var require_Observation = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/Observation.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/metrics/ObserverResult.js
-var require_ObserverResult = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/metrics/ObserverResult.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/attributes.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/attributes.js
 var require_attributes = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/attributes.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/attributes.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/Event.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/Event.js
 var require_Event = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/Event.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/Event.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/instrumentation/Plugin.js
-var require_Plugin = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/instrumentation/Plugin.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/link_context.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/link_context.js
 var require_link_context = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/link_context.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/link_context.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/link.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/link.js
 var require_link = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/link.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/link.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
 var require_trace_flags = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.TraceFlags = void 0;
@@ -34519,24 +33846,51 @@ var require_trace_flags = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js
-var require_NoopSpan = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js
+var require_spancontext_utils = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.NOOP_SPAN = exports2.NoopSpan = exports2.INVALID_SPAN_ID = exports2.INVALID_TRACE_ID = void 0;
+    exports2.isSpanContextValid = exports2.isValidSpanId = exports2.isValidTraceId = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
     var trace_flags_1 = require_trace_flags();
-    exports2.INVALID_TRACE_ID = "0";
-    exports2.INVALID_SPAN_ID = "0";
-    var INVALID_SPAN_CONTEXT = {
-      traceId: exports2.INVALID_TRACE_ID,
-      spanId: exports2.INVALID_SPAN_ID,
+    var VALID_TRACEID_REGEX = /^([0-9a-f]{32})$/i;
+    var VALID_SPANID_REGEX = /^[0-9a-f]{16}$/i;
+    exports2.INVALID_SPANID = "0000000000000000";
+    exports2.INVALID_TRACEID = "00000000000000000000000000000000";
+    exports2.INVALID_SPAN_CONTEXT = {
+      traceId: exports2.INVALID_TRACEID,
+      spanId: exports2.INVALID_SPANID,
       traceFlags: trace_flags_1.TraceFlags.NONE
     };
+    function isValidTraceId(traceId) {
+      return VALID_TRACEID_REGEX.test(traceId) && traceId !== exports2.INVALID_TRACEID;
+    }
+    __name(isValidTraceId, "isValidTraceId");
+    exports2.isValidTraceId = isValidTraceId;
+    function isValidSpanId(spanId) {
+      return VALID_SPANID_REGEX.test(spanId) && spanId !== exports2.INVALID_SPANID;
+    }
+    __name(isValidSpanId, "isValidSpanId");
+    exports2.isValidSpanId = isValidSpanId;
+    function isSpanContextValid(spanContext) {
+      return isValidTraceId(spanContext.traceId) && isValidSpanId(spanContext.spanId);
+    }
+    __name(isSpanContextValid, "isSpanContextValid");
+    exports2.isSpanContextValid = isSpanContextValid;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js
+var require_NoopSpan = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NoopSpan = void 0;
+    var spancontext_utils_1 = require_spancontext_utils();
     var NoopSpan = function() {
       function NoopSpan2(_spanContext) {
         if (_spanContext === void 0) {
-          _spanContext = INVALID_SPAN_CONTEXT;
+          _spanContext = spancontext_utils_1.INVALID_SPAN_CONTEXT;
         }
         this._spanContext = _spanContext;
       }
@@ -34544,66 +33898,159 @@ var require_NoopSpan = __commonJS({
       NoopSpan2.prototype.context = function() {
         return this._spanContext;
       };
-      NoopSpan2.prototype.setAttribute = function(key, value) {
+      NoopSpan2.prototype.setAttribute = function(_key, _value) {
         return this;
       };
-      NoopSpan2.prototype.setAttributes = function(attributes) {
+      NoopSpan2.prototype.setAttributes = function(_attributes) {
         return this;
       };
-      NoopSpan2.prototype.addEvent = function(name, attributes) {
+      NoopSpan2.prototype.addEvent = function(_name, _attributes) {
         return this;
       };
-      NoopSpan2.prototype.setStatus = function(status) {
+      NoopSpan2.prototype.setStatus = function(_status) {
         return this;
       };
-      NoopSpan2.prototype.updateName = function(name) {
+      NoopSpan2.prototype.updateName = function(_name) {
         return this;
       };
-      NoopSpan2.prototype.end = function(endTime) {
+      NoopSpan2.prototype.end = function(_endTime) {
       };
       NoopSpan2.prototype.isRecording = function() {
         return false;
       };
+      NoopSpan2.prototype.recordException = function(_exception, _time) {
+      };
       return NoopSpan2;
     }();
     exports2.NoopSpan = NoopSpan;
-    exports2.NOOP_SPAN = new NoopSpan();
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/context.js
+var require_context = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/context.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.ROOT_CONTEXT = exports2.createContextKey = exports2.setBaggage = exports2.getBaggage = exports2.isInstrumentationSuppressed = exports2.unsuppressInstrumentation = exports2.suppressInstrumentation = exports2.getSpanContext = exports2.setSpanContext = exports2.setSpan = exports2.getSpan = void 0;
+    var NoopSpan_1 = require_NoopSpan();
+    var SPAN_KEY = createContextKey("OpenTelemetry Context Key SPAN");
+    var SUPPRESS_INSTRUMENTATION_KEY = createContextKey("OpenTelemetry Context Key SUPPRESS_INSTRUMENTATION");
+    var BAGGAGE_KEY = createContextKey("OpenTelemetry Baggage Key");
+    function getSpan(context) {
+      return context.getValue(SPAN_KEY) || void 0;
+    }
+    __name(getSpan, "getSpan");
+    exports2.getSpan = getSpan;
+    function setSpan(context, span) {
+      return context.setValue(SPAN_KEY, span);
+    }
+    __name(setSpan, "setSpan");
+    exports2.setSpan = setSpan;
+    function setSpanContext(context, spanContext) {
+      return setSpan(context, new NoopSpan_1.NoopSpan(spanContext));
+    }
+    __name(setSpanContext, "setSpanContext");
+    exports2.setSpanContext = setSpanContext;
+    function getSpanContext(context) {
+      var _a;
+      return (_a = getSpan(context)) === null || _a === void 0 ? void 0 : _a.context();
+    }
+    __name(getSpanContext, "getSpanContext");
+    exports2.getSpanContext = getSpanContext;
+    function suppressInstrumentation(context) {
+      return context.setValue(SUPPRESS_INSTRUMENTATION_KEY, true);
+    }
+    __name(suppressInstrumentation, "suppressInstrumentation");
+    exports2.suppressInstrumentation = suppressInstrumentation;
+    function unsuppressInstrumentation(context) {
+      return context.setValue(SUPPRESS_INSTRUMENTATION_KEY, false);
+    }
+    __name(unsuppressInstrumentation, "unsuppressInstrumentation");
+    exports2.unsuppressInstrumentation = unsuppressInstrumentation;
+    function isInstrumentationSuppressed(context) {
+      return Boolean(context.getValue(SUPPRESS_INSTRUMENTATION_KEY));
+    }
+    __name(isInstrumentationSuppressed, "isInstrumentationSuppressed");
+    exports2.isInstrumentationSuppressed = isInstrumentationSuppressed;
+    function getBaggage(context) {
+      return context.getValue(BAGGAGE_KEY) || void 0;
+    }
+    __name(getBaggage, "getBaggage");
+    exports2.getBaggage = getBaggage;
+    function setBaggage(context, baggage) {
+      return context.setValue(BAGGAGE_KEY, baggage);
+    }
+    __name(setBaggage, "setBaggage");
+    exports2.setBaggage = setBaggage;
+    function createContextKey(description) {
+      return Symbol.for(description);
+    }
+    __name(createContextKey, "createContextKey");
+    exports2.createContextKey = createContextKey;
+    var BaseContext = function() {
+      function BaseContext2(parentContext) {
+        var self2 = this;
+        self2._currentContext = parentContext ? new Map(parentContext) : new Map();
+        self2.getValue = function(key) {
+          return self2._currentContext.get(key);
+        };
+        self2.setValue = function(key, value) {
+          var context = new BaseContext2(self2._currentContext);
+          context._currentContext.set(key, value);
+          return context;
+        };
+        self2.deleteValue = function(key) {
+          var context = new BaseContext2(self2._currentContext);
+          context._currentContext.delete(key);
+          return context;
+        };
+      }
+      __name(BaseContext2, "BaseContext");
+      return BaseContext2;
+    }();
+    exports2.ROOT_CONTEXT = new BaseContext();
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js
 var require_NoopTracer = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.NOOP_TRACER = exports2.NoopTracer = void 0;
+    var context_1 = require_context();
     var NoopSpan_1 = require_NoopSpan();
+    var spancontext_utils_1 = require_spancontext_utils();
     var NoopTracer = function() {
       function NoopTracer2() {
       }
       __name(NoopTracer2, "NoopTracer");
-      NoopTracer2.prototype.getCurrentSpan = function() {
-        return NoopSpan_1.NOOP_SPAN;
-      };
-      NoopTracer2.prototype.startSpan = function(name, options) {
-        return NoopSpan_1.NOOP_SPAN;
-      };
-      NoopTracer2.prototype.withSpan = function(span, fn) {
-        return fn();
-      };
-      NoopTracer2.prototype.bind = function(target, span) {
-        return target;
+      NoopTracer2.prototype.startSpan = function(name, options, context) {
+        var root = Boolean(options === null || options === void 0 ? void 0 : options.root);
+        if (root) {
+          return new NoopSpan_1.NoopSpan();
+        }
+        var parentFromContext = context && context_1.getSpanContext(context);
+        if (isSpanContext(parentFromContext) && spancontext_utils_1.isSpanContextValid(parentFromContext)) {
+          return new NoopSpan_1.NoopSpan(parentFromContext);
+        } else {
+          return new NoopSpan_1.NoopSpan();
+        }
       };
       return NoopTracer2;
     }();
     exports2.NoopTracer = NoopTracer;
+    function isSpanContext(spanContext) {
+      return typeof spanContext === "object" && typeof spanContext["spanId"] === "string" && typeof spanContext["traceId"] === "string" && typeof spanContext["traceFlags"] === "number";
+    }
+    __name(isSpanContext, "isSpanContext");
     exports2.NOOP_TRACER = new NoopTracer();
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js
 var require_NoopTracerProvider = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.NOOP_TRACER_PROVIDER = exports2.NoopTracerProvider = void 0;
@@ -34622,17 +34069,84 @@ var require_NoopTracerProvider = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/Sampler.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js
+var require_ProxyTracer = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/ProxyTracer.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.ProxyTracer = void 0;
+    var NoopTracer_1 = require_NoopTracer();
+    var ProxyTracer = function() {
+      function ProxyTracer2(_provider, name, version) {
+        this._provider = _provider;
+        this.name = name;
+        this.version = version;
+      }
+      __name(ProxyTracer2, "ProxyTracer");
+      ProxyTracer2.prototype.startSpan = function(name, options, context) {
+        return this._getTracer().startSpan(name, options, context);
+      };
+      ProxyTracer2.prototype._getTracer = function() {
+        if (this._delegate) {
+          return this._delegate;
+        }
+        var tracer = this._provider.getDelegateTracer(this.name, this.version);
+        if (!tracer) {
+          return NoopTracer_1.NOOP_TRACER;
+        }
+        this._delegate = tracer;
+        return this._delegate;
+      };
+      return ProxyTracer2;
+    }();
+    exports2.ProxyTracer = ProxyTracer;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js
+var require_ProxyTracerProvider = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/ProxyTracerProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.ProxyTracerProvider = void 0;
+    var ProxyTracer_1 = require_ProxyTracer();
+    var NoopTracerProvider_1 = require_NoopTracerProvider();
+    var ProxyTracerProvider = function() {
+      function ProxyTracerProvider2() {
+      }
+      __name(ProxyTracerProvider2, "ProxyTracerProvider");
+      ProxyTracerProvider2.prototype.getTracer = function(name, version) {
+        var _a;
+        return (_a = this.getDelegateTracer(name, version)) !== null && _a !== void 0 ? _a : new ProxyTracer_1.ProxyTracer(this, name, version);
+      };
+      ProxyTracerProvider2.prototype.getDelegate = function() {
+        var _a;
+        return (_a = this._delegate) !== null && _a !== void 0 ? _a : NoopTracerProvider_1.NOOP_TRACER_PROVIDER;
+      };
+      ProxyTracerProvider2.prototype.setDelegate = function(delegate) {
+        this._delegate = delegate;
+      };
+      ProxyTracerProvider2.prototype.getDelegateTracer = function(name, version) {
+        var _a;
+        return (_a = this._delegate) === null || _a === void 0 ? void 0 : _a.getTracer(name, version);
+      };
+      return ProxyTracerProvider2;
+    }();
+    exports2.ProxyTracerProvider = ProxyTracerProvider;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/Sampler.js
 var require_Sampler = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/Sampler.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/Sampler.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js
 var require_SamplingResult = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.SamplingDecision = void 0;
@@ -34645,17 +34159,17 @@ var require_SamplingResult = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/span_context.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span_context.js
 var require_span_context = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/span_context.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span_context.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/span_kind.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span_kind.js
 var require_span_kind = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/span_kind.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span_kind.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.SpanKind = void 0;
@@ -34670,130 +34184,81 @@ var require_span_kind = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/span.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span.js
 var require_span = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/span.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/span.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js
 var require_SpanOptions = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/status.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/status.js
 var require_status = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/status.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/status.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.CanonicalCode = void 0;
-    var CanonicalCode;
-    (function(CanonicalCode2) {
-      CanonicalCode2[CanonicalCode2["OK"] = 0] = "OK";
-      CanonicalCode2[CanonicalCode2["CANCELLED"] = 1] = "CANCELLED";
-      CanonicalCode2[CanonicalCode2["UNKNOWN"] = 2] = "UNKNOWN";
-      CanonicalCode2[CanonicalCode2["INVALID_ARGUMENT"] = 3] = "INVALID_ARGUMENT";
-      CanonicalCode2[CanonicalCode2["DEADLINE_EXCEEDED"] = 4] = "DEADLINE_EXCEEDED";
-      CanonicalCode2[CanonicalCode2["NOT_FOUND"] = 5] = "NOT_FOUND";
-      CanonicalCode2[CanonicalCode2["ALREADY_EXISTS"] = 6] = "ALREADY_EXISTS";
-      CanonicalCode2[CanonicalCode2["PERMISSION_DENIED"] = 7] = "PERMISSION_DENIED";
-      CanonicalCode2[CanonicalCode2["RESOURCE_EXHAUSTED"] = 8] = "RESOURCE_EXHAUSTED";
-      CanonicalCode2[CanonicalCode2["FAILED_PRECONDITION"] = 9] = "FAILED_PRECONDITION";
-      CanonicalCode2[CanonicalCode2["ABORTED"] = 10] = "ABORTED";
-      CanonicalCode2[CanonicalCode2["OUT_OF_RANGE"] = 11] = "OUT_OF_RANGE";
-      CanonicalCode2[CanonicalCode2["UNIMPLEMENTED"] = 12] = "UNIMPLEMENTED";
-      CanonicalCode2[CanonicalCode2["INTERNAL"] = 13] = "INTERNAL";
-      CanonicalCode2[CanonicalCode2["UNAVAILABLE"] = 14] = "UNAVAILABLE";
-      CanonicalCode2[CanonicalCode2["DATA_LOSS"] = 15] = "DATA_LOSS";
-      CanonicalCode2[CanonicalCode2["UNAUTHENTICATED"] = 16] = "UNAUTHENTICATED";
-    })(CanonicalCode = exports2.CanonicalCode || (exports2.CanonicalCode = {}));
+    exports2.SpanStatusCode = void 0;
+    var SpanStatusCode;
+    (function(SpanStatusCode2) {
+      SpanStatusCode2[SpanStatusCode2["UNSET"] = 0] = "UNSET";
+      SpanStatusCode2[SpanStatusCode2["OK"] = 1] = "OK";
+      SpanStatusCode2[SpanStatusCode2["ERROR"] = 2] = "ERROR";
+    })(SpanStatusCode = exports2.SpanStatusCode || (exports2.SpanStatusCode = {}));
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js
 var require_TimedEvent = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/trace_state.js
 var require_trace_state = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/trace_state.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js
 var require_tracer_provider = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/tracer.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/tracer.js
 var require_tracer = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/tracer.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/trace/tracer.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
   }
 });
 
-// ../../node_modules/@opentelemetry/context-base/build/src/types.js
-var require_types = __commonJS({
-  "../../node_modules/@opentelemetry/context-base/build/src/types.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-  }
-});
-
-// ../../node_modules/@opentelemetry/context-base/build/src/context.js
-var require_context = __commonJS({
-  "../../node_modules/@opentelemetry/context-base/build/src/context.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.Context = void 0;
-    var Context = function() {
-      function Context2(parentContext) {
-        this._currentContext = parentContext ? new Map(parentContext) : new Map();
-      }
-      __name(Context2, "Context");
-      Context2.createKey = function(description) {
-        return Symbol(description);
-      };
-      Context2.prototype.getValue = function(key) {
-        return this._currentContext.get(key);
-      };
-      Context2.prototype.setValue = function(key, value) {
-        var context = new Context2(this._currentContext);
-        context._currentContext.set(key, value);
-        return context;
-      };
-      Context2.prototype.deleteValue = function(key) {
-        var context = new Context2(this._currentContext);
-        context._currentContext.delete(key);
-        return context;
-      };
-      Context2.ROOT_CONTEXT = new Context2();
-      Context2.TODO = Context2.ROOT_CONTEXT;
-      return Context2;
-    }();
-    exports2.Context = Context;
-  }
-});
-
-// ../../node_modules/@opentelemetry/context-base/build/src/NoopContextManager.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js
 var require_NoopContextManager = __commonJS({
-  "../../node_modules/@opentelemetry/context-base/build/src/NoopContextManager.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js"(exports2) {
     "use strict";
+    var __spreadArrays = exports2 && exports2.__spreadArrays || function() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+        s += arguments[i].length;
+      for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+          r[k] = a[j];
+      return r;
+    };
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.NoopContextManager = void 0;
     var context_1 = require_context();
@@ -34802,12 +34267,16 @@ var require_NoopContextManager = __commonJS({
       }
       __name(NoopContextManager2, "NoopContextManager");
       NoopContextManager2.prototype.active = function() {
-        return context_1.Context.ROOT_CONTEXT;
+        return context_1.ROOT_CONTEXT;
       };
-      NoopContextManager2.prototype.with = function(context, fn) {
-        return fn();
+      NoopContextManager2.prototype.with = function(_context, fn, thisArg) {
+        var args = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+          args[_i - 3] = arguments[_i];
+        }
+        return fn.call.apply(fn, __spreadArrays([thisArg], args));
       };
-      NoopContextManager2.prototype.bind = function(target, context) {
+      NoopContextManager2.prototype.bind = function(target, _context) {
         return target;
       };
       NoopContextManager2.prototype.enable = function() {
@@ -34822,36 +34291,17 @@ var require_NoopContextManager = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/context-base/build/src/index.js
-var require_src = __commonJS({
-  "../../node_modules/@opentelemetry/context-base/build/src/index.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/types.js
+var require_types2 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/context/types.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      Object.defineProperty(o, k2, {enumerable: true, get: function() {
-        return m[k];
-      }});
-    } : function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      o[k2] = m[k];
-    });
-    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-      for (var p in m)
-        if (p !== "default" && !exports3.hasOwnProperty(p))
-          __createBinding(exports3, m, p);
-    };
     Object.defineProperty(exports2, "__esModule", {value: true});
-    __exportStar(require_types(), exports2);
-    __exportStar(require_context(), exports2);
-    __exportStar(require_NoopContextManager(), exports2);
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js
 var require_globalThis = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2._globalThis = void 0;
@@ -34859,9 +34309,9 @@ var require_globalThis = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/platform/node/index.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/node/index.js
 var require_node = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/node/index.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/node/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -34876,7 +34326,7 @@ var require_node = __commonJS({
     });
     var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
       for (var p in m)
-        if (p !== "default" && !exports3.hasOwnProperty(p))
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
           __createBinding(exports3, m, p);
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
@@ -34884,9 +34334,9 @@ var require_node = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/platform/index.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/index.js
 var require_platform = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/index.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/platform/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -34901,7 +34351,7 @@ var require_platform = __commonJS({
     });
     var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
       for (var p in m)
-        if (p !== "default" && !exports3.hasOwnProperty(p))
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
           __createBinding(exports3, m, p);
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
@@ -34909,38 +34359,160 @@ var require_platform = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/api/global-utils.js
-var require_global_utils = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/global-utils.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/version.js
+var require_version3 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/version.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.API_BACKWARDS_COMPATIBILITY_VERSION = exports2.makeGetter = exports2._global = exports2.GLOBAL_TRACE_API_KEY = exports2.GLOBAL_PROPAGATION_API_KEY = exports2.GLOBAL_METRICS_API_KEY = exports2.GLOBAL_CONTEXT_MANAGER_API_KEY = void 0;
-    var platform_1 = require_platform();
-    exports2.GLOBAL_CONTEXT_MANAGER_API_KEY = Symbol.for("io.opentelemetry.js.api.context");
-    exports2.GLOBAL_METRICS_API_KEY = Symbol.for("io.opentelemetry.js.api.metrics");
-    exports2.GLOBAL_PROPAGATION_API_KEY = Symbol.for("io.opentelemetry.js.api.propagation");
-    exports2.GLOBAL_TRACE_API_KEY = Symbol.for("io.opentelemetry.js.api.trace");
-    exports2._global = platform_1._globalThis;
-    function makeGetter(requiredVersion, instance, fallback) {
-      return function(version) {
-        return version === requiredVersion ? instance : fallback;
-      };
-    }
-    __name(makeGetter, "makeGetter");
-    exports2.makeGetter = makeGetter;
-    exports2.API_BACKWARDS_COMPATIBILITY_VERSION = 0;
+    exports2.VERSION = void 0;
+    exports2.VERSION = "1.0.0-rc.0";
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/api/context.js
-var require_context2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/internal/semver.js
+var require_semver2 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/internal/semver.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.isCompatible = exports2._makeCompatibilityCheck = void 0;
+    var version_1 = require_version3();
+    var re = /^(\d+)\.(\d+)\.(\d+)(?:-(.*))?$/;
+    function _makeCompatibilityCheck(ownVersion) {
+      var acceptedVersions = new Set([ownVersion]);
+      var rejectedVersions = new Set();
+      var myVersionMatch = ownVersion.match(re);
+      if (!myVersionMatch) {
+        return function() {
+          return false;
+        };
+      }
+      var ownVersionParsed = {
+        major: +myVersionMatch[1],
+        minor: +myVersionMatch[2],
+        patch: +myVersionMatch[3]
+      };
+      function _reject(v) {
+        rejectedVersions.add(v);
+        return false;
+      }
+      __name(_reject, "_reject");
+      function _accept(v) {
+        acceptedVersions.add(v);
+        return true;
+      }
+      __name(_accept, "_accept");
+      return /* @__PURE__ */ __name(function isCompatible(globalVersion) {
+        if (acceptedVersions.has(globalVersion)) {
+          return true;
+        }
+        if (rejectedVersions.has(globalVersion)) {
+          return false;
+        }
+        var globalVersionMatch = globalVersion.match(re);
+        if (!globalVersionMatch) {
+          return _reject(globalVersion);
+        }
+        var globalVersionParsed = {
+          major: +globalVersionMatch[1],
+          minor: +globalVersionMatch[2],
+          patch: +globalVersionMatch[3]
+        };
+        if (ownVersionParsed.major !== globalVersionParsed.major) {
+          return _reject(globalVersion);
+        }
+        if (ownVersionParsed.major === 0) {
+          if (ownVersionParsed.minor === globalVersionParsed.minor && ownVersionParsed.patch <= globalVersionParsed.patch) {
+            return _accept(globalVersion);
+          }
+          return _reject(globalVersion);
+        }
+        if (ownVersionParsed.minor <= globalVersionParsed.minor) {
+          return _accept(globalVersion);
+        }
+        return _reject(globalVersion);
+      }, "isCompatible");
+    }
+    __name(_makeCompatibilityCheck, "_makeCompatibilityCheck");
+    exports2._makeCompatibilityCheck = _makeCompatibilityCheck;
+    exports2.isCompatible = _makeCompatibilityCheck(version_1.VERSION);
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/internal/global-utils.js
+var require_global_utils = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/internal/global-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.unregisterGlobal = exports2.getGlobal = exports2.registerGlobal = void 0;
+    var __1 = require_src();
+    var platform_1 = require_platform();
+    var version_1 = require_version3();
+    var semver_1 = require_semver2();
+    var major = version_1.VERSION.split(".")[0];
+    var GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for("io.opentelemetry.js.api." + major);
+    var _global = platform_1._globalThis;
+    function registerGlobal(type, instance, allowOverride) {
+      var _a;
+      if (allowOverride === void 0) {
+        allowOverride = false;
+      }
+      _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : {
+        version: version_1.VERSION
+      };
+      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
+      if (!allowOverride && api[type]) {
+        var err = new Error("@opentelemetry/api: Attempted duplicate registration of API: " + type);
+        __1.diag.error(err.stack || err.message);
+        return;
+      }
+      if (api.version !== version_1.VERSION) {
+        var err = new Error("@opentelemetry/api: All API registration versions must match");
+        __1.diag.error(err.stack || err.message);
+        return;
+      }
+      api[type] = instance;
+    }
+    __name(registerGlobal, "registerGlobal");
+    exports2.registerGlobal = registerGlobal;
+    function getGlobal(type) {
+      var _a, _b;
+      var globalVersion = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _a === void 0 ? void 0 : _a.version;
+      if (!globalVersion || !semver_1.isCompatible(globalVersion)) {
+        return;
+      }
+      return (_b = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _b === void 0 ? void 0 : _b[type];
+    }
+    __name(getGlobal, "getGlobal");
+    exports2.getGlobal = getGlobal;
+    function unregisterGlobal(type) {
+      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
+      if (api) {
+        delete api[type];
+      }
+    }
+    __name(unregisterGlobal, "unregisterGlobal");
+    exports2.unregisterGlobal = unregisterGlobal;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/context.js
+var require_context2 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+    "use strict";
+    var __spreadArrays = exports2 && exports2.__spreadArrays || function() {
+      for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+        s += arguments[i].length;
+      for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+          r[k] = a[j];
+      return r;
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.ContextAPI = void 0;
-    var context_base_1 = require_src();
+    var NoopContextManager_1 = require_NoopContextManager();
     var global_utils_1 = require_global_utils();
-    var NOOP_CONTEXT_MANAGER = new context_base_1.NoopContextManager();
+    var API_NAME = "context";
+    var NOOP_CONTEXT_MANAGER = new NoopContextManager_1.NoopContextManager();
     var ContextAPI = function() {
       function ContextAPI2() {
       }
@@ -34952,17 +34524,19 @@ var require_context2 = __commonJS({
         return this._instance;
       };
       ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
-        if (global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY]) {
-          return this._getContextManager();
-        }
-        global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, contextManager, NOOP_CONTEXT_MANAGER);
+        global_utils_1.registerGlobal(API_NAME, contextManager);
         return contextManager;
       };
       ContextAPI2.prototype.active = function() {
         return this._getContextManager().active();
       };
-      ContextAPI2.prototype.with = function(context, fn) {
-        return this._getContextManager().with(context, fn);
+      ContextAPI2.prototype.with = function(context, fn, thisArg) {
+        var _a;
+        var args = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+          args[_i - 3] = arguments[_i];
+        }
+        return (_a = this._getContextManager()).with.apply(_a, __spreadArrays([context, fn, thisArg], args));
       };
       ContextAPI2.prototype.bind = function(target, context) {
         if (context === void 0) {
@@ -34971,12 +34545,11 @@ var require_context2 = __commonJS({
         return this._getContextManager().bind(target, context);
       };
       ContextAPI2.prototype._getContextManager = function() {
-        var _a, _b;
-        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NOOP_CONTEXT_MANAGER;
+        return global_utils_1.getGlobal(API_NAME) || NOOP_CONTEXT_MANAGER;
       };
       ContextAPI2.prototype.disable = function() {
         this._getContextManager().disable();
-        delete global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY];
+        global_utils_1.unregisterGlobal(API_NAME);
       };
       return ContextAPI2;
     }();
@@ -34984,16 +34557,20 @@ var require_context2 = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/api/trace.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/trace.js
 var require_trace = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.TraceAPI = void 0;
-    var NoopTracerProvider_1 = require_NoopTracerProvider();
+    var ProxyTracerProvider_1 = require_ProxyTracerProvider();
+    var spancontext_utils_1 = require_spancontext_utils();
     var global_utils_1 = require_global_utils();
+    var API_NAME = "trace";
     var TraceAPI = function() {
       function TraceAPI2() {
+        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
+        this.isSpanContextValid = spancontext_utils_1.isSpanContextValid;
       }
       __name(TraceAPI2, "TraceAPI");
       TraceAPI2.getInstance = function() {
@@ -35003,21 +34580,19 @@ var require_trace = __commonJS({
         return this._instance;
       };
       TraceAPI2.prototype.setGlobalTracerProvider = function(provider) {
-        if (global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY]) {
-          return this.getTracerProvider();
-        }
-        global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, provider, NoopTracerProvider_1.NOOP_TRACER_PROVIDER);
-        return this.getTracerProvider();
+        this._proxyTracerProvider.setDelegate(provider);
+        global_utils_1.registerGlobal(API_NAME, this._proxyTracerProvider);
+        return this._proxyTracerProvider;
       };
       TraceAPI2.prototype.getTracerProvider = function() {
-        var _a, _b;
-        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopTracerProvider_1.NOOP_TRACER_PROVIDER;
+        return global_utils_1.getGlobal(API_NAME) || this._proxyTracerProvider;
       };
       TraceAPI2.prototype.getTracer = function(name, version) {
         return this.getTracerProvider().getTracer(name, version);
       };
       TraceAPI2.prototype.disable = function() {
-        delete global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY];
+        global_utils_1.unregisterGlobal(API_NAME);
+        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
       };
       return TraceAPI2;
     }();
@@ -35025,59 +34600,16 @@ var require_trace = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/api/metrics.js
-var require_metrics = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/metrics.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.MetricsAPI = void 0;
-    var NoopMeterProvider_1 = require_NoopMeterProvider();
-    var global_utils_1 = require_global_utils();
-    var MetricsAPI = function() {
-      function MetricsAPI2() {
-      }
-      __name(MetricsAPI2, "MetricsAPI");
-      MetricsAPI2.getInstance = function() {
-        if (!this._instance) {
-          this._instance = new MetricsAPI2();
-        }
-        return this._instance;
-      };
-      MetricsAPI2.prototype.setGlobalMeterProvider = function(provider) {
-        if (global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY]) {
-          return this.getMeterProvider();
-        }
-        global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, provider, NoopMeterProvider_1.NOOP_METER_PROVIDER);
-        return provider;
-      };
-      MetricsAPI2.prototype.getMeterProvider = function() {
-        var _a, _b;
-        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopMeterProvider_1.NOOP_METER_PROVIDER;
-      };
-      MetricsAPI2.prototype.getMeter = function(name, version) {
-        return this.getMeterProvider().getMeter(name, version);
-      };
-      MetricsAPI2.prototype.disable = function() {
-        delete global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY];
-      };
-      return MetricsAPI2;
-    }();
-    exports2.MetricsAPI = MetricsAPI;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/api/propagation.js
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/propagation.js
 var require_propagation = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/propagation.js"(exports2) {
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/propagation.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     exports2.PropagationAPI = void 0;
-    var getter_1 = require_getter();
-    var NoopHttpTextPropagator_1 = require_NoopHttpTextPropagator();
-    var setter_1 = require_setter();
-    var context_1 = require_context2();
+    var NoopTextMapPropagator_1 = require_NoopTextMapPropagator();
+    var TextMapPropagator_1 = require_TextMapPropagator();
     var global_utils_1 = require_global_utils();
-    var contextApi = context_1.ContextAPI.getInstance();
+    var API_NAME = "propagation";
     var PropagationAPI = function() {
       function PropagationAPI2() {
       }
@@ -35089,36 +34621,29 @@ var require_propagation = __commonJS({
         return this._instance;
       };
       PropagationAPI2.prototype.setGlobalPropagator = function(propagator) {
-        if (global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY]) {
-          return this._getGlobalPropagator();
-        }
-        global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, propagator, NoopHttpTextPropagator_1.NOOP_HTTP_TEXT_PROPAGATOR);
+        global_utils_1.registerGlobal(API_NAME, propagator);
         return propagator;
       };
-      PropagationAPI2.prototype.inject = function(carrier, setter, context) {
+      PropagationAPI2.prototype.inject = function(context, carrier, setter) {
         if (setter === void 0) {
-          setter = setter_1.defaultSetter;
-        }
-        if (context === void 0) {
-          context = contextApi.active();
+          setter = TextMapPropagator_1.defaultTextMapSetter;
         }
         return this._getGlobalPropagator().inject(context, carrier, setter);
       };
-      PropagationAPI2.prototype.extract = function(carrier, getter, context) {
+      PropagationAPI2.prototype.extract = function(context, carrier, getter) {
         if (getter === void 0) {
-          getter = getter_1.defaultGetter;
-        }
-        if (context === void 0) {
-          context = contextApi.active();
+          getter = TextMapPropagator_1.defaultTextMapGetter;
         }
         return this._getGlobalPropagator().extract(context, carrier, getter);
       };
+      PropagationAPI2.prototype.fields = function() {
+        return this._getGlobalPropagator().fields();
+      };
       PropagationAPI2.prototype.disable = function() {
-        delete global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY];
+        global_utils_1.unregisterGlobal(API_NAME);
       };
       PropagationAPI2.prototype._getGlobalPropagator = function() {
-        var _a, _b;
-        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopHttpTextPropagator_1.NOOP_HTTP_TEXT_PROPAGATOR;
+        return global_utils_1.getGlobal(API_NAME) || NoopTextMapPropagator_1.NOOP_TEXT_MAP_PROPAGATOR;
       };
       return PropagationAPI2;
     }();
@@ -35126,9 +34651,101 @@ var require_propagation = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/index.js
-var require_src2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/index.js"(exports2) {
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js
+var require_logLevelLogger = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.createLogLevelDiagLogger = void 0;
+    var types_1 = require_types();
+    function createLogLevelDiagLogger(maxLevel, logger) {
+      if (maxLevel < types_1.DiagLogLevel.NONE) {
+        maxLevel = types_1.DiagLogLevel.NONE;
+      } else if (maxLevel > types_1.DiagLogLevel.ALL) {
+        maxLevel = types_1.DiagLogLevel.ALL;
+      }
+      logger = logger || {};
+      function _filterFunc(funcName, theLevel) {
+        var theFunc = logger[funcName];
+        if (typeof theFunc === "function" && maxLevel >= theLevel) {
+          return theFunc.bind(logger);
+        }
+        return function() {
+        };
+      }
+      __name(_filterFunc, "_filterFunc");
+      return {
+        error: _filterFunc("error", types_1.DiagLogLevel.ERROR),
+        warn: _filterFunc("warn", types_1.DiagLogLevel.WARN),
+        info: _filterFunc("info", types_1.DiagLogLevel.INFO),
+        debug: _filterFunc("debug", types_1.DiagLogLevel.DEBUG),
+        verbose: _filterFunc("verbose", types_1.DiagLogLevel.VERBOSE)
+      };
+    }
+    __name(createLogLevelDiagLogger, "createLogLevelDiagLogger");
+    exports2.createLogLevelDiagLogger = createLogLevelDiagLogger;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/diag.js
+var require_diag2 = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/api/diag.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.DiagAPI = void 0;
+    var logLevelLogger_1 = require_logLevelLogger();
+    var types_1 = require_types();
+    var global_utils_1 = require_global_utils();
+    var API_NAME = "diag";
+    var DiagAPI = function() {
+      function DiagAPI2() {
+        function _logProxy(funcName) {
+          return function() {
+            var logger = global_utils_1.getGlobal("diag");
+            if (!logger)
+              return;
+            return logger[funcName].apply(logger, arguments);
+          };
+        }
+        __name(_logProxy, "_logProxy");
+        var self2 = this;
+        self2.setLogger = function(logger, logLevel) {
+          var _a;
+          if (logLevel === void 0) {
+            logLevel = types_1.DiagLogLevel.INFO;
+          }
+          if (logger === self2) {
+            var err = new Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");
+            self2.error((_a = err.stack) !== null && _a !== void 0 ? _a : err.message);
+            return;
+          }
+          global_utils_1.registerGlobal("diag", logLevelLogger_1.createLogLevelDiagLogger(logLevel, logger), true);
+        };
+        self2.disable = function() {
+          global_utils_1.unregisterGlobal(API_NAME);
+        };
+        self2.verbose = _logProxy("verbose");
+        self2.debug = _logProxy("debug");
+        self2.info = _logProxy("info");
+        self2.warn = _logProxy("warn");
+        self2.error = _logProxy("error");
+      }
+      __name(DiagAPI2, "DiagAPI");
+      DiagAPI2.instance = function() {
+        if (!this._instance) {
+          this._instance = new DiagAPI2();
+        }
+        return this._instance;
+      };
+      return DiagAPI2;
+    }();
+    exports2.DiagAPI = DiagAPI;
+  }
+});
+
+// ../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/index.js
+var require_src = __commonJS({
+  "../../node_modules/@azure/core-tracing/node_modules/@opentelemetry/api/build/src/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
       if (k2 === void 0)
@@ -35143,36 +34760,25 @@ var require_src2 = __commonJS({
     });
     var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
       for (var p in m)
-        if (p !== "default" && !exports3.hasOwnProperty(p))
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
           __createBinding(exports3, m, p);
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
-    exports2.propagation = exports2.metrics = exports2.trace = exports2.context = void 0;
-    __exportStar(require_Logger(), exports2);
+    exports2.diag = exports2.propagation = exports2.trace = exports2.context = exports2.isValidSpanId = exports2.isValidTraceId = exports2.isSpanContextValid = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
+    __exportStar(require_baggage2(), exports2);
+    __exportStar(require_Exception(), exports2);
     __exportStar(require_Time(), exports2);
-    __exportStar(require_getter(), exports2);
-    __exportStar(require_HttpTextPropagator(), exports2);
-    __exportStar(require_NoopHttpTextPropagator(), exports2);
-    __exportStar(require_setter(), exports2);
-    __exportStar(require_CorrelationContext(), exports2);
-    __exportStar(require_EntryValue(), exports2);
-    __exportStar(require_BatchObserverResult(), exports2);
-    __exportStar(require_BoundInstrument(), exports2);
-    __exportStar(require_Meter(), exports2);
-    __exportStar(require_MeterProvider(), exports2);
-    __exportStar(require_Metric(), exports2);
-    __exportStar(require_NoopMeter(), exports2);
-    __exportStar(require_NoopMeterProvider(), exports2);
-    __exportStar(require_Observation(), exports2);
-    __exportStar(require_ObserverResult(), exports2);
+    __exportStar(require_diag(), exports2);
+    __exportStar(require_NoopTextMapPropagator(), exports2);
+    __exportStar(require_TextMapPropagator(), exports2);
     __exportStar(require_attributes(), exports2);
     __exportStar(require_Event(), exports2);
-    __exportStar(require_Plugin(), exports2);
     __exportStar(require_link_context(), exports2);
     __exportStar(require_link(), exports2);
-    __exportStar(require_NoopSpan(), exports2);
     __exportStar(require_NoopTracer(), exports2);
     __exportStar(require_NoopTracerProvider(), exports2);
+    __exportStar(require_ProxyTracer(), exports2);
+    __exportStar(require_ProxyTracerProvider(), exports2);
     __exportStar(require_Sampler(), exports2);
     __exportStar(require_SamplingResult(), exports2);
     __exportStar(require_span_context(), exports2);
@@ -35185,23 +34791,41 @@ var require_src2 = __commonJS({
     __exportStar(require_trace_state(), exports2);
     __exportStar(require_tracer_provider(), exports2);
     __exportStar(require_tracer(), exports2);
-    var context_base_1 = require_src();
-    Object.defineProperty(exports2, "Context", {enumerable: true, get: function() {
-      return context_base_1.Context;
+    var spancontext_utils_1 = require_spancontext_utils();
+    Object.defineProperty(exports2, "INVALID_SPANID", {enumerable: true, get: function() {
+      return spancontext_utils_1.INVALID_SPANID;
     }});
+    Object.defineProperty(exports2, "INVALID_TRACEID", {enumerable: true, get: function() {
+      return spancontext_utils_1.INVALID_TRACEID;
+    }});
+    Object.defineProperty(exports2, "INVALID_SPAN_CONTEXT", {enumerable: true, get: function() {
+      return spancontext_utils_1.INVALID_SPAN_CONTEXT;
+    }});
+    Object.defineProperty(exports2, "isSpanContextValid", {enumerable: true, get: function() {
+      return spancontext_utils_1.isSpanContextValid;
+    }});
+    Object.defineProperty(exports2, "isValidTraceId", {enumerable: true, get: function() {
+      return spancontext_utils_1.isValidTraceId;
+    }});
+    Object.defineProperty(exports2, "isValidSpanId", {enumerable: true, get: function() {
+      return spancontext_utils_1.isValidSpanId;
+    }});
+    __exportStar(require_context(), exports2);
+    __exportStar(require_NoopContextManager(), exports2);
+    __exportStar(require_types2(), exports2);
     var context_1 = require_context2();
     exports2.context = context_1.ContextAPI.getInstance();
     var trace_1 = require_trace();
     exports2.trace = trace_1.TraceAPI.getInstance();
-    var metrics_1 = require_metrics();
-    exports2.metrics = metrics_1.MetricsAPI.getInstance();
     var propagation_1 = require_propagation();
     exports2.propagation = propagation_1.PropagationAPI.getInstance();
+    var diag_1 = require_diag2();
+    exports2.diag = diag_1.DiagAPI.instance();
     exports2.default = {
       trace: exports2.trace,
-      metrics: exports2.metrics,
       context: exports2.context,
-      propagation: exports2.propagation
+      propagation: exports2.propagation,
+      diag: exports2.diag
     };
   }
 });
@@ -35211,7 +34835,7 @@ var require_dist5 = __commonJS({
   "../../node_modules/@azure/core-tracing/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
-    var api = require_src2();
+    var api = require_src();
     var tslib = require_tslib();
     var NoOpSpan = function() {
       function NoOpSpan2() {
@@ -35221,7 +34845,7 @@ var require_dist5 = __commonJS({
         return {
           spanId: "",
           traceId: "",
-          traceFlags: api.TraceFlags.NONE
+          traceFlags: 0
         };
       };
       NoOpSpan2.prototype.end = function(_endTime) {
@@ -35243,6 +34867,8 @@ var require_dist5 = __commonJS({
       };
       NoOpSpan2.prototype.isRecording = function() {
         return false;
+      };
+      NoOpSpan2.prototype.recordException = function(_exception, _time) {
       };
       return NoOpSpan2;
     }();
@@ -35268,8 +34894,8 @@ var require_dist5 = __commonJS({
       return global;
     }
     __name(getGlobalObject, "getGlobalObject");
-    var GLOBAL_TRACER_VERSION = 3;
-    var GLOBAL_TRACER_SYMBOL = Symbol.for("@azure/core-tracing.tracerCache2");
+    var GLOBAL_TRACER_VERSION = 4;
+    var GLOBAL_TRACER_SYMBOL = Symbol.for("@azure/core-tracing.tracerCache3");
     var cache;
     function loadTracerCache() {
       var globalObj = getGlobalObject();
@@ -35324,6 +34950,35 @@ var require_dist5 = __commonJS({
       return cache2.tracer;
     }
     __name(getTracer, "getTracer");
+    (function(SpanKind) {
+      SpanKind[SpanKind["INTERNAL"] = 0] = "INTERNAL";
+      SpanKind[SpanKind["SERVER"] = 1] = "SERVER";
+      SpanKind[SpanKind["CLIENT"] = 2] = "CLIENT";
+      SpanKind[SpanKind["PRODUCER"] = 3] = "PRODUCER";
+      SpanKind[SpanKind["CONSUMER"] = 4] = "CONSUMER";
+    })(exports2.SpanKind || (exports2.SpanKind = {}));
+    function getSpan(context2) {
+      return api.getSpan(context2);
+    }
+    __name(getSpan, "getSpan");
+    function setSpan(context2, span) {
+      return api.setSpan(context2, span);
+    }
+    __name(setSpan, "setSpan");
+    function setSpanContext(context2, spanContext) {
+      return api.setSpanContext(context2, spanContext);
+    }
+    __name(setSpanContext, "setSpanContext");
+    function getSpanContext(context2) {
+      return api.getSpanContext(context2);
+    }
+    __name(getSpanContext, "getSpanContext");
+    var context = api.context;
+    (function(SpanStatusCode) {
+      SpanStatusCode[SpanStatusCode["UNSET"] = 0] = "UNSET";
+      SpanStatusCode[SpanStatusCode["OK"] = 1] = "OK";
+      SpanStatusCode[SpanStatusCode["ERROR"] = 2] = "ERROR";
+    })(exports2.SpanStatusCode || (exports2.SpanStatusCode = {}));
     var OpenCensusTraceStateWrapper = function() {
       function OpenCensusTraceStateWrapper2(state) {
         this._state = state;
@@ -35343,6 +34998,11 @@ var require_dist5 = __commonJS({
       };
       return OpenCensusTraceStateWrapper2;
     }();
+    var CanonicalCode;
+    (function(CanonicalCode2) {
+      CanonicalCode2[CanonicalCode2["OK"] = 0] = "OK";
+      CanonicalCode2[CanonicalCode2["INTERNAL"] = 13] = "INTERNAL";
+    })(CanonicalCode || (CanonicalCode = {}));
     function isWrappedSpan(span) {
       return !!span && span.getWrappedSpan !== void 0;
     }
@@ -35352,7 +35012,7 @@ var require_dist5 = __commonJS({
     }
     __name(isTracer, "isTracer");
     var OpenCensusSpanWrapper = function() {
-      function OpenCensusSpanWrapper2(tracerOrSpan, name, options) {
+      function OpenCensusSpanWrapper2(tracerOrSpan, name, options, context$1) {
         if (name === void 0) {
           name = "";
         }
@@ -35360,7 +35020,8 @@ var require_dist5 = __commonJS({
           options = {};
         }
         if (isTracer(tracerOrSpan)) {
-          var parent = isWrappedSpan(options.parent) ? options.parent.getWrappedSpan() : void 0;
+          var span = getSpan(context$1 !== null && context$1 !== void 0 ? context$1 : context.active());
+          var parent = isWrappedSpan(span) ? span.getWrappedSpan() : void 0;
           this._span = tracerOrSpan.getWrappedTracer().startChildSpan({
             name,
             childOf: parent
@@ -35404,7 +35065,19 @@ var require_dist5 = __commonJS({
         throw new Error("Method not implemented.");
       };
       OpenCensusSpanWrapper2.prototype.setStatus = function(status) {
-        this._span.setStatus(status.code, status.message);
+        switch (status.code) {
+          case exports2.SpanStatusCode.ERROR: {
+            this._span.setStatus(CanonicalCode.INTERNAL, status.message);
+            break;
+          }
+          case exports2.SpanStatusCode.OK: {
+            this._span.setStatus(CanonicalCode.OK, status.message);
+            break;
+          }
+          case exports2.SpanStatusCode.UNSET: {
+            break;
+          }
+        }
         return this;
       };
       OpenCensusSpanWrapper2.prototype.updateName = function(name) {
@@ -35413,6 +35086,9 @@ var require_dist5 = __commonJS({
       };
       OpenCensusSpanWrapper2.prototype.isRecording = function() {
         return !!this._span.traceId;
+      };
+      OpenCensusSpanWrapper2.prototype.recordException = function(_exception, _time) {
+        throw new Error("Method not implemented");
       };
       return OpenCensusSpanWrapper2;
     }();
@@ -35440,7 +35116,7 @@ var require_dist5 = __commonJS({
     }();
     var TestSpan = function(_super) {
       tslib.__extends(TestSpan2, _super);
-      function TestSpan2(parentTracer, name, context, kind, parentSpanId, startTime) {
+      function TestSpan2(parentTracer, name, context2, kind, parentSpanId, startTime) {
         if (startTime === void 0) {
           startTime = Date.now();
         }
@@ -35451,10 +35127,10 @@ var require_dist5 = __commonJS({
         _this.startTime = startTime;
         _this.parentSpanId = parentSpanId;
         _this.status = {
-          code: api.CanonicalCode.OK
+          code: exports2.SpanStatusCode.OK
         };
         _this.endCalled = false;
-        _this._context = context;
+        _this._context = context2;
         _this.attributes = {};
         return _this;
       }
@@ -35546,11 +35222,8 @@ var require_dist5 = __commonJS({
           roots
         };
       };
-      TestTracer2.prototype.startSpan = function(name, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        var parentContext = this._getParentContext(options);
+      TestTracer2.prototype.startSpan = function(name, options, context$1) {
+        var parentContext = getSpanContext(context$1 || context.active());
         var traceId;
         var isRootSpan = false;
         if (parentContext && parentContext.traceId) {
@@ -35559,32 +35232,43 @@ var require_dist5 = __commonJS({
           traceId = this.getNextTraceId();
           isRootSpan = true;
         }
-        var context = {
+        var spanContext = {
           traceId,
           spanId: this.getNextSpanId(),
-          traceFlags: api.TraceFlags.NONE
+          traceFlags: 0
         };
-        var span = new TestSpan(this, name, context, options.kind || api.SpanKind.INTERNAL, parentContext ? parentContext.spanId : void 0, options.startTime);
+        var span = new TestSpan(this, name, spanContext, (options === null || options === void 0 ? void 0 : options.kind) || exports2.SpanKind.INTERNAL, parentContext ? parentContext.spanId : void 0, options === null || options === void 0 ? void 0 : options.startTime);
         this.knownSpans.push(span);
         if (isRootSpan) {
           this.rootSpans.push(span);
         }
         return span;
       };
-      TestTracer2.prototype._getParentContext = function(options) {
-        var parent = options.parent;
-        var result;
-        if (parent) {
-          if ("traceId" in parent) {
-            result = parent;
-          } else {
-            result = parent.context();
-          }
-        }
-        return result;
-      };
       return TestTracer2;
     }(NoOpTracer);
+    function createSpanFunction(args) {
+      return function(operationName, operationOptions) {
+        var tracer = getTracer();
+        var tracingOptions = (operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions) || {};
+        var spanOptions = tslib.__assign({kind: exports2.SpanKind.INTERNAL}, tracingOptions.spanOptions);
+        var spanName = args.packagePrefix ? args.packagePrefix + "." + operationName : operationName;
+        var span = tracer.startSpan(spanName, spanOptions, tracingOptions.tracingContext);
+        if (args.namespace) {
+          span.setAttribute("az.namespace", args.namespace);
+        }
+        var newSpanOptions = tracingOptions.spanOptions || {};
+        if (span.isRecording() && args.namespace) {
+          newSpanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {attributes: tslib.__assign(tslib.__assign({}, spanOptions.attributes), {"az.namespace": args.namespace})});
+        }
+        var newTracingOptions = tslib.__assign(tslib.__assign({}, tracingOptions), {spanOptions: newSpanOptions, tracingContext: setSpan(tracingOptions.tracingContext || context.active(), span)});
+        var newOperationOptions = tslib.__assign(tslib.__assign({}, operationOptions), {tracingOptions: newTracingOptions});
+        return {
+          span,
+          updatedOptions: newOperationOptions
+        };
+      };
+    }
+    __name(createSpanFunction, "createSpanFunction");
     var VERSION = "00";
     function extractSpanContextFromTraceParentHeader(traceParentHeader) {
       var parts = traceParentHeader.split("-");
@@ -35627,10 +35311,26 @@ var require_dist5 = __commonJS({
     exports2.OpenCensusTracerWrapper = OpenCensusTracerWrapper;
     exports2.TestSpan = TestSpan;
     exports2.TestTracer = TestTracer;
+    exports2.context = context;
+    exports2.createSpanFunction = createSpanFunction;
     exports2.extractSpanContextFromTraceParentHeader = extractSpanContextFromTraceParentHeader;
+    exports2.getSpan = getSpan;
+    exports2.getSpanContext = getSpanContext;
     exports2.getTraceParentHeader = getTraceParentHeader;
     exports2.getTracer = getTracer;
+    exports2.setSpan = setSpan;
+    exports2.setSpanContext = setSpanContext;
     exports2.setTracer = setTracer;
+  }
+});
+
+// ../../node_modules/@azure/core-asynciterator-polyfill/dist-esm/index.js
+var require_dist_esm = __commonJS({
+  "../../node_modules/@azure/core-asynciterator-polyfill/dist-esm/index.js"() {
+    "use strict";
+    if (typeof Symbol === void 0 || !Symbol.asyncIterator) {
+      Symbol.asyncIterator = Symbol.for("Symbol.asyncIterator");
+    }
   }
 });
 
@@ -35660,7 +35360,7 @@ var require_dist6 = __commonJS({
     var xml2js = require_xml2js();
     var os = require("os");
     var coreTracing = require_dist5();
-    var api = require_src2();
+    require_dist_esm();
     function getHeaderKey(headerName) {
       return headerName.toLowerCase();
     }
@@ -35759,7 +35459,7 @@ var require_dist6 = __commonJS({
     }
     __name(decodeString, "decodeString");
     var Constants = {
-      coreHttpVersion: "1.2.3",
+      coreHttpVersion: "1.2.4",
       HTTP: "http:",
       HTTPS: "https:",
       HTTP_PROXY: "HTTP_PROXY",
@@ -36823,6 +36523,9 @@ var require_dist6 = __commonJS({
         if (options.spanOptions) {
           this.spanOptions = options.spanOptions;
         }
+        if (options.tracingContext) {
+          this.tracingContext = options.tracingContext;
+        }
         this.abortSignal = options.abortSignal;
         this.onDownloadProgress = options.onDownloadProgress;
         this.onUploadProgress = options.onUploadProgress;
@@ -37837,6 +37540,7 @@ var require_dist6 = __commonJS({
       }
       if (tracingOptions) {
         result.spanOptions = tracingOptions.spanOptions;
+        result.tracingContext = tracingOptions.tracingContext;
       }
       return result;
     }
@@ -38649,151 +38353,160 @@ var require_dist6 = __commonJS({
       });
     }
     __name(getRegistrationStatus, "getRegistrationStatus");
-    var TokenRefreshBufferMs = 2 * 60 * 1e3;
-    var ExpiringAccessTokenCache = function() {
-      function ExpiringAccessTokenCache2(tokenRefreshBufferMs) {
-        if (tokenRefreshBufferMs === void 0) {
-          tokenRefreshBufferMs = TokenRefreshBufferMs;
+    var DEFAULT_CYCLER_OPTIONS = {
+      forcedRefreshWindowInMs: 1e3,
+      retryIntervalInMs: 3e3,
+      refreshWindowInMs: 1e3 * 60 * 2
+    };
+    function beginRefresh(getAccessToken, retryIntervalInMs, timeoutInMs) {
+      return tslib.__awaiter(this, void 0, void 0, function() {
+        function tryGetAccessToken() {
+          return tslib.__awaiter(this, void 0, void 0, function() {
+            var _a, finalToken;
+            return tslib.__generator(this, function(_b) {
+              switch (_b.label) {
+                case 0:
+                  if (!(Date.now() < timeoutInMs))
+                    return [3, 5];
+                  _b.label = 1;
+                case 1:
+                  _b.trys.push([1, 3, , 4]);
+                  return [4, getAccessToken()];
+                case 2:
+                  return [2, _b.sent()];
+                case 3:
+                  _a = _b.sent();
+                  return [2, null];
+                case 4:
+                  return [3, 7];
+                case 5:
+                  return [4, getAccessToken()];
+                case 6:
+                  finalToken = _b.sent();
+                  if (finalToken === null) {
+                    throw new Error("Failed to refresh access token.");
+                  }
+                  return [2, finalToken];
+                case 7:
+                  return [2];
+              }
+            });
+          });
         }
-        this.cachedToken = void 0;
-        this.tokenRefreshBufferMs = tokenRefreshBufferMs;
+        __name(tryGetAccessToken, "tryGetAccessToken");
+        var token;
+        return tslib.__generator(this, function(_a) {
+          switch (_a.label) {
+            case 0:
+              return [4, tryGetAccessToken()];
+            case 1:
+              token = _a.sent();
+              _a.label = 2;
+            case 2:
+              if (!(token === null))
+                return [3, 5];
+              return [4, delay(retryIntervalInMs)];
+            case 3:
+              _a.sent();
+              return [4, tryGetAccessToken()];
+            case 4:
+              token = _a.sent();
+              return [3, 2];
+            case 5:
+              return [2, token];
+          }
+        });
+      });
+    }
+    __name(beginRefresh, "beginRefresh");
+    function createTokenCycler(credential, scopes, tokenCyclerOptions) {
+      var _this = this;
+      var refreshWorker = null;
+      var token = null;
+      var options = tslib.__assign(tslib.__assign({}, DEFAULT_CYCLER_OPTIONS), tokenCyclerOptions);
+      var cycler = {
+        get isRefreshing() {
+          return refreshWorker !== null;
+        },
+        get shouldRefresh() {
+          var _a;
+          return !cycler.isRefreshing && ((_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : 0) - options.refreshWindowInMs < Date.now();
+        },
+        get mustRefresh() {
+          return token === null || token.expiresOnTimestamp - options.forcedRefreshWindowInMs < Date.now();
+        }
+      };
+      function refresh(getTokenOptions) {
+        var _a;
+        if (!cycler.isRefreshing) {
+          var tryGetAccessToken = /* @__PURE__ */ __name(function() {
+            return credential.getToken(scopes, getTokenOptions);
+          }, "tryGetAccessToken");
+          refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs, (_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : Date.now()).then(function(_token) {
+            refreshWorker = null;
+            token = _token;
+            return token;
+          }).catch(function(reason) {
+            refreshWorker = null;
+            token = null;
+            throw reason;
+          });
+        }
+        return refreshWorker;
       }
-      __name(ExpiringAccessTokenCache2, "ExpiringAccessTokenCache");
-      ExpiringAccessTokenCache2.prototype.setCachedToken = function(accessToken) {
-        this.cachedToken = accessToken;
-      };
-      ExpiringAccessTokenCache2.prototype.getCachedToken = function() {
-        if (this.cachedToken && Date.now() + this.tokenRefreshBufferMs >= this.cachedToken.expiresOnTimestamp) {
-          this.cachedToken = void 0;
-        }
-        return this.cachedToken;
-      };
-      return ExpiringAccessTokenCache2;
-    }();
-    var AccessTokenRefresher = function() {
-      function AccessTokenRefresher2(credential, scopes, requiredMillisecondsBeforeNewRefresh) {
-        if (requiredMillisecondsBeforeNewRefresh === void 0) {
-          requiredMillisecondsBeforeNewRefresh = 3e4;
-        }
-        this.credential = credential;
-        this.scopes = scopes;
-        this.requiredMillisecondsBeforeNewRefresh = requiredMillisecondsBeforeNewRefresh;
-        this.lastCalled = 0;
-      }
-      __name(AccessTokenRefresher2, "AccessTokenRefresher");
-      AccessTokenRefresher2.prototype.isReady = function() {
-        return !this.lastCalled || Date.now() - this.lastCalled > this.requiredMillisecondsBeforeNewRefresh;
-      };
-      AccessTokenRefresher2.prototype.getToken = function(options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var token;
+      __name(refresh, "refresh");
+      return function(tokenOptions) {
+        return tslib.__awaiter(_this, void 0, void 0, function() {
           return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                this.lastCalled = Date.now();
-                return [4, this.credential.getToken(this.scopes, options)];
-              case 1:
-                token = _a.sent();
-                this.promise = void 0;
-                return [2, token || void 0];
+            if (cycler.mustRefresh)
+              return [2, refresh(tokenOptions)];
+            if (cycler.shouldRefresh) {
+              refresh(tokenOptions);
             }
+            return [2, token];
           });
         });
       };
-      AccessTokenRefresher2.prototype.refresh = function(options) {
-        if (!this.promise) {
-          this.promise = this.getToken(options);
-        }
-        return this.promise;
-      };
-      return AccessTokenRefresher2;
-    }();
-    var timeBetweenRefreshAttemptsInMs = 3e4;
+    }
+    __name(createTokenCycler, "createTokenCycler");
     function bearerTokenAuthenticationPolicy(credential, scopes) {
-      var tokenCache = new ExpiringAccessTokenCache();
-      var tokenRefresher = new AccessTokenRefresher(credential, scopes, timeBetweenRefreshAttemptsInMs);
+      var getToken = createTokenCycler(credential, scopes);
+      var BearerTokenAuthenticationPolicy = function(_super) {
+        tslib.__extends(BearerTokenAuthenticationPolicy2, _super);
+        function BearerTokenAuthenticationPolicy2(nextPolicy, options) {
+          return _super.call(this, nextPolicy, options) || this;
+        }
+        __name(BearerTokenAuthenticationPolicy2, "BearerTokenAuthenticationPolicy");
+        BearerTokenAuthenticationPolicy2.prototype.sendRequest = function(webResource) {
+          return tslib.__awaiter(this, void 0, void 0, function() {
+            var token;
+            return tslib.__generator(this, function(_a) {
+              switch (_a.label) {
+                case 0:
+                  return [4, getToken({
+                    abortSignal: webResource.abortSignal,
+                    tracingOptions: {
+                      spanOptions: webResource.spanOptions,
+                      tracingContext: webResource.tracingContext
+                    }
+                  })];
+                case 1:
+                  token = _a.sent().token;
+                  webResource.headers.set(Constants.HeaderConstants.AUTHORIZATION, "Bearer " + token);
+                  return [2, this._nextPolicy.sendRequest(webResource)];
+              }
+            });
+          });
+        };
+        return BearerTokenAuthenticationPolicy2;
+      }(BaseRequestPolicy);
       return {
         create: function(nextPolicy, options) {
-          return new BearerTokenAuthenticationPolicy(nextPolicy, options, tokenCache, tokenRefresher);
+          return new BearerTokenAuthenticationPolicy(nextPolicy, options);
         }
       };
     }
     __name(bearerTokenAuthenticationPolicy, "bearerTokenAuthenticationPolicy");
-    var BearerTokenAuthenticationPolicy = function(_super) {
-      tslib.__extends(BearerTokenAuthenticationPolicy2, _super);
-      function BearerTokenAuthenticationPolicy2(nextPolicy, options, tokenCache, tokenRefresher) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.tokenCache = tokenCache;
-        _this.tokenRefresher = tokenRefresher;
-        return _this;
-      }
-      __name(BearerTokenAuthenticationPolicy2, "BearerTokenAuthenticationPolicy");
-      BearerTokenAuthenticationPolicy2.prototype.sendRequest = function(webResource) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var token;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!webResource.headers)
-                  webResource.headers = new HttpHeaders();
-                return [4, this.getToken({
-                  abortSignal: webResource.abortSignal,
-                  tracingOptions: {
-                    spanOptions: webResource.spanOptions
-                  }
-                })];
-              case 1:
-                token = _a.sent();
-                webResource.headers.set(Constants.HeaderConstants.AUTHORIZATION, "Bearer " + token);
-                return [2, this._nextPolicy.sendRequest(webResource)];
-            }
-          });
-        });
-      };
-      BearerTokenAuthenticationPolicy2.prototype.updateTokenIfNeeded = function(options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var accessToken;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!this.tokenRefresher.isReady())
-                  return [3, 2];
-                return [4, this.tokenRefresher.refresh(options)];
-              case 1:
-                accessToken = _a.sent();
-                this.tokenCache.setCachedToken(accessToken);
-                _a.label = 2;
-              case 2:
-                return [2];
-            }
-          });
-        });
-      };
-      BearerTokenAuthenticationPolicy2.prototype.getToken = function(options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var accessToken;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                accessToken = this.tokenCache.getCachedToken();
-                if (!(accessToken === void 0))
-                  return [3, 2];
-                return [4, this.tokenRefresher.refresh(options)];
-              case 1:
-                accessToken = _a.sent();
-                this.tokenCache.setCachedToken(accessToken);
-                return [3, 3];
-              case 2:
-                this.updateTokenIfNeeded(options);
-                _a.label = 3;
-              case 3:
-                return [2, accessToken ? accessToken.token : void 0];
-            }
-          });
-        });
-      };
-      return BearerTokenAuthenticationPolicy2;
-    }(BaseRequestPolicy);
     function systemErrorRetryPolicy(retryCount, retryInterval, minRetryInterval, maxRetryInterval) {
       return {
         create: function(nextPolicy, options) {
@@ -39111,6 +38824,10 @@ var require_dist6 = __commonJS({
       };
       return KeepAlivePolicy2;
     }(BaseRequestPolicy);
+    var createSpan = coreTracing.createSpanFunction({
+      packagePrefix: "",
+      namespace: ""
+    });
     function tracingPolicy(tracingOptions) {
       if (tracingOptions === void 0) {
         tracingOptions = {};
@@ -39132,17 +38849,20 @@ var require_dist6 = __commonJS({
       __name(TracingPolicy2, "TracingPolicy");
       TracingPolicy2.prototype.sendRequest = function(request) {
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var tracer, spanOptions, path2, span, spanContext, traceParentHeader, traceState, response, serviceRequestId, err_1;
+          var path2, span, spanContext, traceParentHeader, traceState, response, serviceRequestId, err_1;
           return tslib.__generator(this, function(_a) {
             switch (_a.label) {
               case 0:
-                if (!request.spanOptions || !request.spanOptions.parent) {
+                if (!request.tracingContext) {
                   return [2, this._nextPolicy.sendRequest(request)];
                 }
-                tracer = coreTracing.getTracer();
-                spanOptions = tslib.__assign(tslib.__assign({}, request.spanOptions), {kind: api.SpanKind.CLIENT});
                 path2 = URLBuilder.parse(request.url).getPath() || "/";
-                span = tracer.startSpan(path2, spanOptions);
+                span = createSpan(path2, {
+                  tracingOptions: {
+                    spanOptions: tslib.__assign(tslib.__assign({}, request.spanOptions), {kind: coreTracing.SpanKind.CLIENT}),
+                    tracingContext: request.tracingContext
+                  }
+                }).span;
                 span.setAttributes({
                   "http.method": request.method,
                   "http.url": request.url,
@@ -39446,6 +39166,9 @@ var require_dist6 = __commonJS({
                   if (options.spanOptions) {
                     httpRequest.spanOptions = options.spanOptions;
                   }
+                  if (options.tracingContext) {
+                    httpRequest.tracingContext = options.tracingContext;
+                  }
                   if (options.shouldDeserialize !== void 0 && options.shouldDeserialize !== null) {
                     httpRequest.shouldDeserialize = options.shouldDeserialize;
                   }
@@ -39731,7 +39454,7 @@ var require_dist6 = __commonJS({
           return modelProperties_1[k].serializedName === "";
         });
         if (typeName === "Sequence" || isPageableResponse) {
-          var arrayResponse = tslib.__spreadArrays(_response.parsedBody || []);
+          var arrayResponse = tslib.__spreadArray([], _response.parsedBody || []);
           for (var _i = 0, _a = Object.keys(modelProperties_1); _i < _a.length; _i++) {
             var key = _a[_i];
             if (modelProperties_1[key].serializedName) {
@@ -39770,27 +39493,69 @@ var require_dist6 = __commonJS({
       return void 0;
     }
     __name(getCredentialScopes, "getCredentialScopes");
-    function createSpanFunction(_a) {
-      var packagePrefix = _a.packagePrefix, namespace = _a.namespace;
-      return function(operationName, operationOptions) {
-        var tracer = coreTracing.getTracer();
-        var tracingOptions = operationOptions.tracingOptions || {};
-        var spanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {kind: api.SpanKind.INTERNAL});
-        var span = tracer.startSpan(packagePrefix + "." + operationName, spanOptions);
-        span.setAttribute("az.namespace", namespace);
-        var newSpanOptions = tracingOptions.spanOptions || {};
-        if (span.isRecording()) {
-          newSpanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {parent: span.context(), attributes: tslib.__assign(tslib.__assign({}, spanOptions.attributes), {"az.namespace": namespace})});
-        }
-        var newTracingOptions = tslib.__assign(tslib.__assign({}, tracingOptions), {spanOptions: newSpanOptions});
-        var newOperationOptions = tslib.__assign(tslib.__assign({}, operationOptions), {tracingOptions: newTracingOptions});
-        return {
-          span,
-          updatedOptions: newOperationOptions
-        };
-      };
+    function createSpanFunction(args) {
+      return coreTracing.createSpanFunction(args);
     }
     __name(createSpanFunction, "createSpanFunction");
+    var TokenRefreshBufferMs = 2 * 60 * 1e3;
+    var ExpiringAccessTokenCache = function() {
+      function ExpiringAccessTokenCache2(tokenRefreshBufferMs) {
+        if (tokenRefreshBufferMs === void 0) {
+          tokenRefreshBufferMs = TokenRefreshBufferMs;
+        }
+        this.cachedToken = void 0;
+        this.tokenRefreshBufferMs = tokenRefreshBufferMs;
+      }
+      __name(ExpiringAccessTokenCache2, "ExpiringAccessTokenCache");
+      ExpiringAccessTokenCache2.prototype.setCachedToken = function(accessToken) {
+        this.cachedToken = accessToken;
+      };
+      ExpiringAccessTokenCache2.prototype.getCachedToken = function() {
+        if (this.cachedToken && Date.now() + this.tokenRefreshBufferMs >= this.cachedToken.expiresOnTimestamp) {
+          this.cachedToken = void 0;
+        }
+        return this.cachedToken;
+      };
+      return ExpiringAccessTokenCache2;
+    }();
+    var AccessTokenRefresher = function() {
+      function AccessTokenRefresher2(credential, scopes, requiredMillisecondsBeforeNewRefresh) {
+        if (requiredMillisecondsBeforeNewRefresh === void 0) {
+          requiredMillisecondsBeforeNewRefresh = 3e4;
+        }
+        this.credential = credential;
+        this.scopes = scopes;
+        this.requiredMillisecondsBeforeNewRefresh = requiredMillisecondsBeforeNewRefresh;
+        this.lastCalled = 0;
+      }
+      __name(AccessTokenRefresher2, "AccessTokenRefresher");
+      AccessTokenRefresher2.prototype.isReady = function() {
+        return !this.lastCalled || Date.now() - this.lastCalled > this.requiredMillisecondsBeforeNewRefresh;
+      };
+      AccessTokenRefresher2.prototype.getToken = function(options) {
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var token;
+          return tslib.__generator(this, function(_a) {
+            switch (_a.label) {
+              case 0:
+                this.lastCalled = Date.now();
+                return [4, this.credential.getToken(this.scopes, options)];
+              case 1:
+                token = _a.sent();
+                this.promise = void 0;
+                return [2, token || void 0];
+            }
+          });
+        });
+      };
+      AccessTokenRefresher2.prototype.refresh = function(options) {
+        if (!this.promise) {
+          this.promise = this.getToken(options);
+        }
+        return this.promise;
+      };
+      return AccessTokenRefresher2;
+    }();
     var HeaderConstants = Constants.HeaderConstants;
     var DEFAULT_AUTHORIZATION_SCHEME = "Basic";
     var BasicAuthenticationCredentials = function() {
@@ -39941,18 +39706,1541 @@ var require_dist6 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-asynciterator-polyfill/dist-esm/index.js
-var require_dist_esm = __commonJS({
-  "../../node_modules/@azure/core-asynciterator-polyfill/dist-esm/index.js"() {
+// ../../node_modules/@opentelemetry/api/build/src/common/Logger.js
+var require_Logger = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/common/Logger.js"(exports2) {
     "use strict";
-    if (typeof Symbol === void 0 || !Symbol.asyncIterator) {
-      Symbol.asyncIterator = Symbol.for("Symbol.asyncIterator");
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/common/Time.js
+var require_Time2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/common/Time.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/context/propagation/getter.js
+var require_getter = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/propagation/getter.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.defaultGetter = void 0;
+    function defaultGetter(carrier, key) {
+      return carrier[key];
     }
+    __name(defaultGetter, "defaultGetter");
+    exports2.defaultGetter = defaultGetter;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/context/propagation/HttpTextPropagator.js
+var require_HttpTextPropagator = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/propagation/HttpTextPropagator.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/context/propagation/NoopHttpTextPropagator.js
+var require_NoopHttpTextPropagator = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/propagation/NoopHttpTextPropagator.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_HTTP_TEXT_PROPAGATOR = exports2.NoopHttpTextPropagator = void 0;
+    var NoopHttpTextPropagator = function() {
+      function NoopHttpTextPropagator2() {
+      }
+      __name(NoopHttpTextPropagator2, "NoopHttpTextPropagator");
+      NoopHttpTextPropagator2.prototype.inject = function(context, carrier, setter) {
+      };
+      NoopHttpTextPropagator2.prototype.extract = function(context, carrier, getter) {
+        return context;
+      };
+      return NoopHttpTextPropagator2;
+    }();
+    exports2.NoopHttpTextPropagator = NoopHttpTextPropagator;
+    exports2.NOOP_HTTP_TEXT_PROPAGATOR = new NoopHttpTextPropagator();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/context/propagation/setter.js
+var require_setter = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/propagation/setter.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.defaultSetter = void 0;
+    function defaultSetter(carrier, key, value) {
+      carrier[key] = value;
+    }
+    __name(defaultSetter, "defaultSetter");
+    exports2.defaultSetter = defaultSetter;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/correlation_context/CorrelationContext.js
+var require_CorrelationContext = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/correlation_context/CorrelationContext.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/correlation_context/EntryValue.js
+var require_EntryValue = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/correlation_context/EntryValue.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.EntryTtl = void 0;
+    var EntryTtl;
+    (function(EntryTtl2) {
+      EntryTtl2[EntryTtl2["NO_PROPAGATION"] = 0] = "NO_PROPAGATION";
+      EntryTtl2[EntryTtl2["UNLIMITED_PROPAGATION"] = -1] = "UNLIMITED_PROPAGATION";
+    })(EntryTtl = exports2.EntryTtl || (exports2.EntryTtl = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/BatchObserverResult.js
+var require_BatchObserverResult = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/BatchObserverResult.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/BoundInstrument.js
+var require_BoundInstrument = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/BoundInstrument.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/Meter.js
+var require_Meter = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/Meter.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/MeterProvider.js
+var require_MeterProvider = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/MeterProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/Metric.js
+var require_Metric = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/Metric.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.ValueType = void 0;
+    var ValueType;
+    (function(ValueType2) {
+      ValueType2[ValueType2["INT"] = 0] = "INT";
+      ValueType2[ValueType2["DOUBLE"] = 1] = "DOUBLE";
+    })(ValueType = exports2.ValueType || (exports2.ValueType = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js
+var require_NoopMeter = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeter.js"(exports2) {
+    "use strict";
+    var __extends = exports2 && exports2.__extends || function() {
+      var extendStatics = /* @__PURE__ */ __name(function(d, b) {
+        extendStatics = Object.setPrototypeOf || {__proto__: []} instanceof Array && function(d2, b2) {
+          d2.__proto__ = b2;
+        } || function(d2, b2) {
+          for (var p in b2)
+            if (b2.hasOwnProperty(p))
+              d2[p] = b2[p];
+        };
+        return extendStatics(d, b);
+      }, "extendStatics");
+      return function(d, b) {
+        extendStatics(d, b);
+        function __() {
+          this.constructor = d;
+        }
+        __name(__, "__");
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+      };
+    }();
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_BATCH_OBSERVER_METRIC = exports2.NOOP_SUM_OBSERVER_METRIC = exports2.NOOP_UP_DOWN_SUM_OBSERVER_METRIC = exports2.NOOP_VALUE_OBSERVER_METRIC = exports2.NOOP_BOUND_BASE_OBSERVER = exports2.NOOP_VALUE_RECORDER_METRIC = exports2.NOOP_BOUND_VALUE_RECORDER = exports2.NOOP_COUNTER_METRIC = exports2.NOOP_BOUND_COUNTER = exports2.NOOP_METER = exports2.NoopBoundBaseObserver = exports2.NoopBoundValueRecorder = exports2.NoopBoundCounter = exports2.NoopBatchObserverMetric = exports2.NoopBaseObserverMetric = exports2.NoopValueRecorderMetric = exports2.NoopCounterMetric = exports2.NoopMetric = exports2.NoopMeter = void 0;
+    var NoopMeter = function() {
+      function NoopMeter2() {
+      }
+      __name(NoopMeter2, "NoopMeter");
+      NoopMeter2.prototype.createValueRecorder = function(name, options) {
+        return exports2.NOOP_VALUE_RECORDER_METRIC;
+      };
+      NoopMeter2.prototype.createCounter = function(name, options) {
+        return exports2.NOOP_COUNTER_METRIC;
+      };
+      NoopMeter2.prototype.createUpDownCounter = function(name, options) {
+        return exports2.NOOP_COUNTER_METRIC;
+      };
+      NoopMeter2.prototype.createValueObserver = function(name, options, callback) {
+        return exports2.NOOP_VALUE_OBSERVER_METRIC;
+      };
+      NoopMeter2.prototype.createBatchObserver = function(name, callback) {
+        return exports2.NOOP_BATCH_OBSERVER_METRIC;
+      };
+      return NoopMeter2;
+    }();
+    exports2.NoopMeter = NoopMeter;
+    var NoopMetric = function() {
+      function NoopMetric2(instrument) {
+        this._instrument = instrument;
+      }
+      __name(NoopMetric2, "NoopMetric");
+      NoopMetric2.prototype.bind = function(labels) {
+        return this._instrument;
+      };
+      NoopMetric2.prototype.unbind = function(labels) {
+        return;
+      };
+      NoopMetric2.prototype.clear = function() {
+        return;
+      };
+      return NoopMetric2;
+    }();
+    exports2.NoopMetric = NoopMetric;
+    var NoopCounterMetric = function(_super) {
+      __extends(NoopCounterMetric2, _super);
+      function NoopCounterMetric2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+      }
+      __name(NoopCounterMetric2, "NoopCounterMetric");
+      NoopCounterMetric2.prototype.add = function(value, labels) {
+        this.bind(labels).add(value);
+      };
+      return NoopCounterMetric2;
+    }(NoopMetric);
+    exports2.NoopCounterMetric = NoopCounterMetric;
+    var NoopValueRecorderMetric = function(_super) {
+      __extends(NoopValueRecorderMetric2, _super);
+      function NoopValueRecorderMetric2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+      }
+      __name(NoopValueRecorderMetric2, "NoopValueRecorderMetric");
+      NoopValueRecorderMetric2.prototype.record = function(value, labels, correlationContext, spanContext) {
+        if (typeof correlationContext === "undefined") {
+          this.bind(labels).record(value);
+        } else if (typeof spanContext === "undefined") {
+          this.bind(labels).record(value, correlationContext);
+        } else {
+          this.bind(labels).record(value, correlationContext, spanContext);
+        }
+      };
+      return NoopValueRecorderMetric2;
+    }(NoopMetric);
+    exports2.NoopValueRecorderMetric = NoopValueRecorderMetric;
+    var NoopBaseObserverMetric = function(_super) {
+      __extends(NoopBaseObserverMetric2, _super);
+      function NoopBaseObserverMetric2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+      }
+      __name(NoopBaseObserverMetric2, "NoopBaseObserverMetric");
+      NoopBaseObserverMetric2.prototype.observation = function() {
+        return {
+          observer: this,
+          value: 0
+        };
+      };
+      return NoopBaseObserverMetric2;
+    }(NoopMetric);
+    exports2.NoopBaseObserverMetric = NoopBaseObserverMetric;
+    var NoopBatchObserverMetric = function(_super) {
+      __extends(NoopBatchObserverMetric2, _super);
+      function NoopBatchObserverMetric2() {
+        return _super !== null && _super.apply(this, arguments) || this;
+      }
+      __name(NoopBatchObserverMetric2, "NoopBatchObserverMetric");
+      return NoopBatchObserverMetric2;
+    }(NoopMetric);
+    exports2.NoopBatchObserverMetric = NoopBatchObserverMetric;
+    var NoopBoundCounter = function() {
+      function NoopBoundCounter2() {
+      }
+      __name(NoopBoundCounter2, "NoopBoundCounter");
+      NoopBoundCounter2.prototype.add = function(value) {
+        return;
+      };
+      return NoopBoundCounter2;
+    }();
+    exports2.NoopBoundCounter = NoopBoundCounter;
+    var NoopBoundValueRecorder = function() {
+      function NoopBoundValueRecorder2() {
+      }
+      __name(NoopBoundValueRecorder2, "NoopBoundValueRecorder");
+      NoopBoundValueRecorder2.prototype.record = function(value, correlationContext, spanContext) {
+        return;
+      };
+      return NoopBoundValueRecorder2;
+    }();
+    exports2.NoopBoundValueRecorder = NoopBoundValueRecorder;
+    var NoopBoundBaseObserver = function() {
+      function NoopBoundBaseObserver2() {
+      }
+      __name(NoopBoundBaseObserver2, "NoopBoundBaseObserver");
+      NoopBoundBaseObserver2.prototype.update = function(value) {
+      };
+      return NoopBoundBaseObserver2;
+    }();
+    exports2.NoopBoundBaseObserver = NoopBoundBaseObserver;
+    exports2.NOOP_METER = new NoopMeter();
+    exports2.NOOP_BOUND_COUNTER = new NoopBoundCounter();
+    exports2.NOOP_COUNTER_METRIC = new NoopCounterMetric(exports2.NOOP_BOUND_COUNTER);
+    exports2.NOOP_BOUND_VALUE_RECORDER = new NoopBoundValueRecorder();
+    exports2.NOOP_VALUE_RECORDER_METRIC = new NoopValueRecorderMetric(exports2.NOOP_BOUND_VALUE_RECORDER);
+    exports2.NOOP_BOUND_BASE_OBSERVER = new NoopBoundBaseObserver();
+    exports2.NOOP_VALUE_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
+    exports2.NOOP_UP_DOWN_SUM_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
+    exports2.NOOP_SUM_OBSERVER_METRIC = new NoopBaseObserverMetric(exports2.NOOP_BOUND_BASE_OBSERVER);
+    exports2.NOOP_BATCH_OBSERVER_METRIC = new NoopBatchObserverMetric();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js
+var require_NoopMeterProvider = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/NoopMeterProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_METER_PROVIDER = exports2.NoopMeterProvider = void 0;
+    var NoopMeter_1 = require_NoopMeter();
+    var NoopMeterProvider = function() {
+      function NoopMeterProvider2() {
+      }
+      __name(NoopMeterProvider2, "NoopMeterProvider");
+      NoopMeterProvider2.prototype.getMeter = function(_name, _version) {
+        return NoopMeter_1.NOOP_METER;
+      };
+      return NoopMeterProvider2;
+    }();
+    exports2.NoopMeterProvider = NoopMeterProvider;
+    exports2.NOOP_METER_PROVIDER = new NoopMeterProvider();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/Observation.js
+var require_Observation = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/Observation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/metrics/ObserverResult.js
+var require_ObserverResult = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/metrics/ObserverResult.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/attributes.js
+var require_attributes2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/attributes.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/Event.js
+var require_Event2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/Event.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/instrumentation/Plugin.js
+var require_Plugin = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/instrumentation/Plugin.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/link_context.js
+var require_link_context2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/link_context.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/link.js
+var require_link2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/link.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
+var require_trace_flags2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.TraceFlags = void 0;
+    var TraceFlags;
+    (function(TraceFlags2) {
+      TraceFlags2[TraceFlags2["NONE"] = 0] = "NONE";
+      TraceFlags2[TraceFlags2["SAMPLED"] = 1] = "SAMPLED";
+    })(TraceFlags = exports2.TraceFlags || (exports2.TraceFlags = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js
+var require_NoopSpan2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_SPAN = exports2.NoopSpan = exports2.INVALID_SPAN_ID = exports2.INVALID_TRACE_ID = void 0;
+    var trace_flags_1 = require_trace_flags2();
+    exports2.INVALID_TRACE_ID = "0";
+    exports2.INVALID_SPAN_ID = "0";
+    var INVALID_SPAN_CONTEXT = {
+      traceId: exports2.INVALID_TRACE_ID,
+      spanId: exports2.INVALID_SPAN_ID,
+      traceFlags: trace_flags_1.TraceFlags.NONE
+    };
+    var NoopSpan = function() {
+      function NoopSpan2(_spanContext) {
+        if (_spanContext === void 0) {
+          _spanContext = INVALID_SPAN_CONTEXT;
+        }
+        this._spanContext = _spanContext;
+      }
+      __name(NoopSpan2, "NoopSpan");
+      NoopSpan2.prototype.context = function() {
+        return this._spanContext;
+      };
+      NoopSpan2.prototype.setAttribute = function(key, value) {
+        return this;
+      };
+      NoopSpan2.prototype.setAttributes = function(attributes) {
+        return this;
+      };
+      NoopSpan2.prototype.addEvent = function(name, attributes) {
+        return this;
+      };
+      NoopSpan2.prototype.setStatus = function(status) {
+        return this;
+      };
+      NoopSpan2.prototype.updateName = function(name) {
+        return this;
+      };
+      NoopSpan2.prototype.end = function(endTime) {
+      };
+      NoopSpan2.prototype.isRecording = function() {
+        return false;
+      };
+      return NoopSpan2;
+    }();
+    exports2.NoopSpan = NoopSpan;
+    exports2.NOOP_SPAN = new NoopSpan();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js
+var require_NoopTracer2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_TRACER = exports2.NoopTracer = void 0;
+    var NoopSpan_1 = require_NoopSpan2();
+    var NoopTracer = function() {
+      function NoopTracer2() {
+      }
+      __name(NoopTracer2, "NoopTracer");
+      NoopTracer2.prototype.getCurrentSpan = function() {
+        return NoopSpan_1.NOOP_SPAN;
+      };
+      NoopTracer2.prototype.startSpan = function(name, options) {
+        return NoopSpan_1.NOOP_SPAN;
+      };
+      NoopTracer2.prototype.withSpan = function(span, fn) {
+        return fn();
+      };
+      NoopTracer2.prototype.bind = function(target, span) {
+        return target;
+      };
+      return NoopTracer2;
+    }();
+    exports2.NoopTracer = NoopTracer;
+    exports2.NOOP_TRACER = new NoopTracer();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js
+var require_NoopTracerProvider2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NOOP_TRACER_PROVIDER = exports2.NoopTracerProvider = void 0;
+    var NoopTracer_1 = require_NoopTracer2();
+    var NoopTracerProvider = function() {
+      function NoopTracerProvider2() {
+      }
+      __name(NoopTracerProvider2, "NoopTracerProvider");
+      NoopTracerProvider2.prototype.getTracer = function(_name, _version) {
+        return NoopTracer_1.NOOP_TRACER;
+      };
+      return NoopTracerProvider2;
+    }();
+    exports2.NoopTracerProvider = NoopTracerProvider;
+    exports2.NOOP_TRACER_PROVIDER = new NoopTracerProvider();
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/Sampler.js
+var require_Sampler2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/Sampler.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js
+var require_SamplingResult2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/SamplingResult.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.SamplingDecision = void 0;
+    var SamplingDecision;
+    (function(SamplingDecision2) {
+      SamplingDecision2[SamplingDecision2["NOT_RECORD"] = 0] = "NOT_RECORD";
+      SamplingDecision2[SamplingDecision2["RECORD"] = 1] = "RECORD";
+      SamplingDecision2[SamplingDecision2["RECORD_AND_SAMPLED"] = 2] = "RECORD_AND_SAMPLED";
+    })(SamplingDecision = exports2.SamplingDecision || (exports2.SamplingDecision = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/span_context.js
+var require_span_context2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/span_context.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/span_kind.js
+var require_span_kind2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/span_kind.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.SpanKind = void 0;
+    var SpanKind;
+    (function(SpanKind2) {
+      SpanKind2[SpanKind2["INTERNAL"] = 0] = "INTERNAL";
+      SpanKind2[SpanKind2["SERVER"] = 1] = "SERVER";
+      SpanKind2[SpanKind2["CLIENT"] = 2] = "CLIENT";
+      SpanKind2[SpanKind2["PRODUCER"] = 3] = "PRODUCER";
+      SpanKind2[SpanKind2["CONSUMER"] = 4] = "CONSUMER";
+    })(SpanKind = exports2.SpanKind || (exports2.SpanKind = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/span.js
+var require_span2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/span.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js
+var require_SpanOptions2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/SpanOptions.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/status.js
+var require_status2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/status.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.CanonicalCode = void 0;
+    var CanonicalCode;
+    (function(CanonicalCode2) {
+      CanonicalCode2[CanonicalCode2["OK"] = 0] = "OK";
+      CanonicalCode2[CanonicalCode2["CANCELLED"] = 1] = "CANCELLED";
+      CanonicalCode2[CanonicalCode2["UNKNOWN"] = 2] = "UNKNOWN";
+      CanonicalCode2[CanonicalCode2["INVALID_ARGUMENT"] = 3] = "INVALID_ARGUMENT";
+      CanonicalCode2[CanonicalCode2["DEADLINE_EXCEEDED"] = 4] = "DEADLINE_EXCEEDED";
+      CanonicalCode2[CanonicalCode2["NOT_FOUND"] = 5] = "NOT_FOUND";
+      CanonicalCode2[CanonicalCode2["ALREADY_EXISTS"] = 6] = "ALREADY_EXISTS";
+      CanonicalCode2[CanonicalCode2["PERMISSION_DENIED"] = 7] = "PERMISSION_DENIED";
+      CanonicalCode2[CanonicalCode2["RESOURCE_EXHAUSTED"] = 8] = "RESOURCE_EXHAUSTED";
+      CanonicalCode2[CanonicalCode2["FAILED_PRECONDITION"] = 9] = "FAILED_PRECONDITION";
+      CanonicalCode2[CanonicalCode2["ABORTED"] = 10] = "ABORTED";
+      CanonicalCode2[CanonicalCode2["OUT_OF_RANGE"] = 11] = "OUT_OF_RANGE";
+      CanonicalCode2[CanonicalCode2["UNIMPLEMENTED"] = 12] = "UNIMPLEMENTED";
+      CanonicalCode2[CanonicalCode2["INTERNAL"] = 13] = "INTERNAL";
+      CanonicalCode2[CanonicalCode2["UNAVAILABLE"] = 14] = "UNAVAILABLE";
+      CanonicalCode2[CanonicalCode2["DATA_LOSS"] = 15] = "DATA_LOSS";
+      CanonicalCode2[CanonicalCode2["UNAUTHENTICATED"] = 16] = "UNAUTHENTICATED";
+    })(CanonicalCode = exports2.CanonicalCode || (exports2.CanonicalCode = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js
+var require_TimedEvent2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js
+var require_trace_state2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js
+var require_tracer_provider2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/tracer_provider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/tracer.js
+var require_tracer2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/tracer.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/context-base/build/src/types.js
+var require_types3 = __commonJS({
+  "../../node_modules/@opentelemetry/context-base/build/src/types.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+  }
+});
+
+// ../../node_modules/@opentelemetry/context-base/build/src/context.js
+var require_context3 = __commonJS({
+  "../../node_modules/@opentelemetry/context-base/build/src/context.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.Context = void 0;
+    var Context = function() {
+      function Context2(parentContext) {
+        this._currentContext = parentContext ? new Map(parentContext) : new Map();
+      }
+      __name(Context2, "Context");
+      Context2.createKey = function(description) {
+        return Symbol(description);
+      };
+      Context2.prototype.getValue = function(key) {
+        return this._currentContext.get(key);
+      };
+      Context2.prototype.setValue = function(key, value) {
+        var context = new Context2(this._currentContext);
+        context._currentContext.set(key, value);
+        return context;
+      };
+      Context2.prototype.deleteValue = function(key) {
+        var context = new Context2(this._currentContext);
+        context._currentContext.delete(key);
+        return context;
+      };
+      Context2.ROOT_CONTEXT = new Context2();
+      Context2.TODO = Context2.ROOT_CONTEXT;
+      return Context2;
+    }();
+    exports2.Context = Context;
+  }
+});
+
+// ../../node_modules/@opentelemetry/context-base/build/src/NoopContextManager.js
+var require_NoopContextManager2 = __commonJS({
+  "../../node_modules/@opentelemetry/context-base/build/src/NoopContextManager.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.NoopContextManager = void 0;
+    var context_1 = require_context3();
+    var NoopContextManager = function() {
+      function NoopContextManager2() {
+      }
+      __name(NoopContextManager2, "NoopContextManager");
+      NoopContextManager2.prototype.active = function() {
+        return context_1.Context.ROOT_CONTEXT;
+      };
+      NoopContextManager2.prototype.with = function(context, fn) {
+        return fn();
+      };
+      NoopContextManager2.prototype.bind = function(target, context) {
+        return target;
+      };
+      NoopContextManager2.prototype.enable = function() {
+        return this;
+      };
+      NoopContextManager2.prototype.disable = function() {
+        return this;
+      };
+      return NoopContextManager2;
+    }();
+    exports2.NoopContextManager = NoopContextManager;
+  }
+});
+
+// ../../node_modules/@opentelemetry/context-base/build/src/index.js
+var require_src2 = __commonJS({
+  "../../node_modules/@opentelemetry/context-base/build/src/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !exports3.hasOwnProperty(p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    __exportStar(require_types3(), exports2);
+    __exportStar(require_context3(), exports2);
+    __exportStar(require_NoopContextManager2(), exports2);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js
+var require_globalThis2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2._globalThis = void 0;
+    exports2._globalThis = typeof globalThis === "object" ? globalThis : global;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/platform/node/index.js
+var require_node2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/node/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !exports3.hasOwnProperty(p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    __exportStar(require_globalThis2(), exports2);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/platform/index.js
+var require_platform2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !exports3.hasOwnProperty(p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    __exportStar(require_node2(), exports2);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/global-utils.js
+var require_global_utils2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/global-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.API_BACKWARDS_COMPATIBILITY_VERSION = exports2.makeGetter = exports2._global = exports2.GLOBAL_TRACE_API_KEY = exports2.GLOBAL_PROPAGATION_API_KEY = exports2.GLOBAL_METRICS_API_KEY = exports2.GLOBAL_CONTEXT_MANAGER_API_KEY = void 0;
+    var platform_1 = require_platform2();
+    exports2.GLOBAL_CONTEXT_MANAGER_API_KEY = Symbol.for("io.opentelemetry.js.api.context");
+    exports2.GLOBAL_METRICS_API_KEY = Symbol.for("io.opentelemetry.js.api.metrics");
+    exports2.GLOBAL_PROPAGATION_API_KEY = Symbol.for("io.opentelemetry.js.api.propagation");
+    exports2.GLOBAL_TRACE_API_KEY = Symbol.for("io.opentelemetry.js.api.trace");
+    exports2._global = platform_1._globalThis;
+    function makeGetter(requiredVersion, instance, fallback) {
+      return function(version) {
+        return version === requiredVersion ? instance : fallback;
+      };
+    }
+    __name(makeGetter, "makeGetter");
+    exports2.makeGetter = makeGetter;
+    exports2.API_BACKWARDS_COMPATIBILITY_VERSION = 0;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/context.js
+var require_context4 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.ContextAPI = void 0;
+    var context_base_1 = require_src2();
+    var global_utils_1 = require_global_utils2();
+    var NOOP_CONTEXT_MANAGER = new context_base_1.NoopContextManager();
+    var ContextAPI = function() {
+      function ContextAPI2() {
+      }
+      __name(ContextAPI2, "ContextAPI");
+      ContextAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new ContextAPI2();
+        }
+        return this._instance;
+      };
+      ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
+        if (global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY]) {
+          return this._getContextManager();
+        }
+        global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, contextManager, NOOP_CONTEXT_MANAGER);
+        return contextManager;
+      };
+      ContextAPI2.prototype.active = function() {
+        return this._getContextManager().active();
+      };
+      ContextAPI2.prototype.with = function(context, fn) {
+        return this._getContextManager().with(context, fn);
+      };
+      ContextAPI2.prototype.bind = function(target, context) {
+        if (context === void 0) {
+          context = this.active();
+        }
+        return this._getContextManager().bind(target, context);
+      };
+      ContextAPI2.prototype._getContextManager = function() {
+        var _a, _b;
+        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NOOP_CONTEXT_MANAGER;
+      };
+      ContextAPI2.prototype.disable = function() {
+        this._getContextManager().disable();
+        delete global_utils_1._global[global_utils_1.GLOBAL_CONTEXT_MANAGER_API_KEY];
+      };
+      return ContextAPI2;
+    }();
+    exports2.ContextAPI = ContextAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/trace.js
+var require_trace2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.TraceAPI = void 0;
+    var NoopTracerProvider_1 = require_NoopTracerProvider2();
+    var global_utils_1 = require_global_utils2();
+    var TraceAPI = function() {
+      function TraceAPI2() {
+      }
+      __name(TraceAPI2, "TraceAPI");
+      TraceAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new TraceAPI2();
+        }
+        return this._instance;
+      };
+      TraceAPI2.prototype.setGlobalTracerProvider = function(provider) {
+        if (global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY]) {
+          return this.getTracerProvider();
+        }
+        global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, provider, NoopTracerProvider_1.NOOP_TRACER_PROVIDER);
+        return this.getTracerProvider();
+      };
+      TraceAPI2.prototype.getTracerProvider = function() {
+        var _a, _b;
+        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopTracerProvider_1.NOOP_TRACER_PROVIDER;
+      };
+      TraceAPI2.prototype.getTracer = function(name, version) {
+        return this.getTracerProvider().getTracer(name, version);
+      };
+      TraceAPI2.prototype.disable = function() {
+        delete global_utils_1._global[global_utils_1.GLOBAL_TRACE_API_KEY];
+      };
+      return TraceAPI2;
+    }();
+    exports2.TraceAPI = TraceAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/metrics.js
+var require_metrics = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/metrics.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.MetricsAPI = void 0;
+    var NoopMeterProvider_1 = require_NoopMeterProvider();
+    var global_utils_1 = require_global_utils2();
+    var MetricsAPI = function() {
+      function MetricsAPI2() {
+      }
+      __name(MetricsAPI2, "MetricsAPI");
+      MetricsAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new MetricsAPI2();
+        }
+        return this._instance;
+      };
+      MetricsAPI2.prototype.setGlobalMeterProvider = function(provider) {
+        if (global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY]) {
+          return this.getMeterProvider();
+        }
+        global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, provider, NoopMeterProvider_1.NOOP_METER_PROVIDER);
+        return provider;
+      };
+      MetricsAPI2.prototype.getMeterProvider = function() {
+        var _a, _b;
+        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopMeterProvider_1.NOOP_METER_PROVIDER;
+      };
+      MetricsAPI2.prototype.getMeter = function(name, version) {
+        return this.getMeterProvider().getMeter(name, version);
+      };
+      MetricsAPI2.prototype.disable = function() {
+        delete global_utils_1._global[global_utils_1.GLOBAL_METRICS_API_KEY];
+      };
+      return MetricsAPI2;
+    }();
+    exports2.MetricsAPI = MetricsAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/propagation.js
+var require_propagation2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/propagation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.PropagationAPI = void 0;
+    var getter_1 = require_getter();
+    var NoopHttpTextPropagator_1 = require_NoopHttpTextPropagator();
+    var setter_1 = require_setter();
+    var context_1 = require_context4();
+    var global_utils_1 = require_global_utils2();
+    var contextApi = context_1.ContextAPI.getInstance();
+    var PropagationAPI = function() {
+      function PropagationAPI2() {
+      }
+      __name(PropagationAPI2, "PropagationAPI");
+      PropagationAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new PropagationAPI2();
+        }
+        return this._instance;
+      };
+      PropagationAPI2.prototype.setGlobalPropagator = function(propagator) {
+        if (global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY]) {
+          return this._getGlobalPropagator();
+        }
+        global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY] = global_utils_1.makeGetter(global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION, propagator, NoopHttpTextPropagator_1.NOOP_HTTP_TEXT_PROPAGATOR);
+        return propagator;
+      };
+      PropagationAPI2.prototype.inject = function(carrier, setter, context) {
+        if (setter === void 0) {
+          setter = setter_1.defaultSetter;
+        }
+        if (context === void 0) {
+          context = contextApi.active();
+        }
+        return this._getGlobalPropagator().inject(context, carrier, setter);
+      };
+      PropagationAPI2.prototype.extract = function(carrier, getter, context) {
+        if (getter === void 0) {
+          getter = getter_1.defaultGetter;
+        }
+        if (context === void 0) {
+          context = contextApi.active();
+        }
+        return this._getGlobalPropagator().extract(context, carrier, getter);
+      };
+      PropagationAPI2.prototype.disable = function() {
+        delete global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY];
+      };
+      PropagationAPI2.prototype._getGlobalPropagator = function() {
+        var _a, _b;
+        return (_b = (_a = global_utils_1._global[global_utils_1.GLOBAL_PROPAGATION_API_KEY]) === null || _a === void 0 ? void 0 : _a.call(global_utils_1._global, global_utils_1.API_BACKWARDS_COMPATIBILITY_VERSION)) !== null && _b !== void 0 ? _b : NoopHttpTextPropagator_1.NOOP_HTTP_TEXT_PROPAGATOR;
+      };
+      return PropagationAPI2;
+    }();
+    exports2.PropagationAPI = PropagationAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/index.js
+var require_src3 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, {enumerable: true, get: function() {
+        return m[k];
+      }});
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !exports3.hasOwnProperty(p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    exports2.propagation = exports2.metrics = exports2.trace = exports2.context = void 0;
+    __exportStar(require_Logger(), exports2);
+    __exportStar(require_Time2(), exports2);
+    __exportStar(require_getter(), exports2);
+    __exportStar(require_HttpTextPropagator(), exports2);
+    __exportStar(require_NoopHttpTextPropagator(), exports2);
+    __exportStar(require_setter(), exports2);
+    __exportStar(require_CorrelationContext(), exports2);
+    __exportStar(require_EntryValue(), exports2);
+    __exportStar(require_BatchObserverResult(), exports2);
+    __exportStar(require_BoundInstrument(), exports2);
+    __exportStar(require_Meter(), exports2);
+    __exportStar(require_MeterProvider(), exports2);
+    __exportStar(require_Metric(), exports2);
+    __exportStar(require_NoopMeter(), exports2);
+    __exportStar(require_NoopMeterProvider(), exports2);
+    __exportStar(require_Observation(), exports2);
+    __exportStar(require_ObserverResult(), exports2);
+    __exportStar(require_attributes2(), exports2);
+    __exportStar(require_Event2(), exports2);
+    __exportStar(require_Plugin(), exports2);
+    __exportStar(require_link_context2(), exports2);
+    __exportStar(require_link2(), exports2);
+    __exportStar(require_NoopSpan2(), exports2);
+    __exportStar(require_NoopTracer2(), exports2);
+    __exportStar(require_NoopTracerProvider2(), exports2);
+    __exportStar(require_Sampler2(), exports2);
+    __exportStar(require_SamplingResult2(), exports2);
+    __exportStar(require_span_context2(), exports2);
+    __exportStar(require_span_kind2(), exports2);
+    __exportStar(require_span2(), exports2);
+    __exportStar(require_SpanOptions2(), exports2);
+    __exportStar(require_status2(), exports2);
+    __exportStar(require_TimedEvent2(), exports2);
+    __exportStar(require_trace_flags2(), exports2);
+    __exportStar(require_trace_state2(), exports2);
+    __exportStar(require_tracer_provider2(), exports2);
+    __exportStar(require_tracer2(), exports2);
+    var context_base_1 = require_src2();
+    Object.defineProperty(exports2, "Context", {enumerable: true, get: function() {
+      return context_base_1.Context;
+    }});
+    var context_1 = require_context4();
+    exports2.context = context_1.ContextAPI.getInstance();
+    var trace_1 = require_trace2();
+    exports2.trace = trace_1.TraceAPI.getInstance();
+    var metrics_1 = require_metrics();
+    exports2.metrics = metrics_1.MetricsAPI.getInstance();
+    var propagation_1 = require_propagation2();
+    exports2.propagation = propagation_1.PropagationAPI.getInstance();
+    exports2.default = {
+      trace: exports2.trace,
+      metrics: exports2.metrics,
+      context: exports2.context,
+      propagation: exports2.propagation
+    };
+  }
+});
+
+// ../../node_modules/@azure/storage-blob/node_modules/@azure/core-tracing/dist/index.js
+var require_dist7 = __commonJS({
+  "../../node_modules/@azure/storage-blob/node_modules/@azure/core-tracing/dist/index.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", {value: true});
+    var api = require_src3();
+    var tslib = require_tslib();
+    var NoOpSpan = function() {
+      function NoOpSpan2() {
+      }
+      __name(NoOpSpan2, "NoOpSpan");
+      NoOpSpan2.prototype.context = function() {
+        return {
+          spanId: "",
+          traceId: "",
+          traceFlags: api.TraceFlags.NONE
+        };
+      };
+      NoOpSpan2.prototype.end = function(_endTime) {
+      };
+      NoOpSpan2.prototype.setAttribute = function(_key, _value) {
+        return this;
+      };
+      NoOpSpan2.prototype.setAttributes = function(_attributes) {
+        return this;
+      };
+      NoOpSpan2.prototype.addEvent = function(_name, _attributes) {
+        return this;
+      };
+      NoOpSpan2.prototype.setStatus = function(_status) {
+        return this;
+      };
+      NoOpSpan2.prototype.updateName = function(_name) {
+        return this;
+      };
+      NoOpSpan2.prototype.isRecording = function() {
+        return false;
+      };
+      return NoOpSpan2;
+    }();
+    var NoOpTracer = function() {
+      function NoOpTracer2() {
+      }
+      __name(NoOpTracer2, "NoOpTracer");
+      NoOpTracer2.prototype.startSpan = function(_name, _options) {
+        return new NoOpSpan();
+      };
+      NoOpTracer2.prototype.getCurrentSpan = function() {
+        return new NoOpSpan();
+      };
+      NoOpTracer2.prototype.withSpan = function(_span, fn) {
+        return fn();
+      };
+      NoOpTracer2.prototype.bind = function(target, _span) {
+        return target;
+      };
+      return NoOpTracer2;
+    }();
+    function getGlobalObject() {
+      return global;
+    }
+    __name(getGlobalObject, "getGlobalObject");
+    var GLOBAL_TRACER_VERSION = 3;
+    var GLOBAL_TRACER_SYMBOL = Symbol.for("@azure/core-tracing.tracerCache2");
+    var cache;
+    function loadTracerCache() {
+      var globalObj = getGlobalObject();
+      var existingCache = globalObj[GLOBAL_TRACER_SYMBOL];
+      var setGlobalCache = true;
+      if (existingCache) {
+        if (existingCache.version === GLOBAL_TRACER_VERSION) {
+          cache = existingCache;
+        } else {
+          setGlobalCache = false;
+          if (existingCache.tracer) {
+            throw new Error("Two incompatible versions of @azure/core-tracing have been loaded.\n          This library is " + GLOBAL_TRACER_VERSION + ", existing is " + existingCache.version + ".");
+          }
+        }
+      }
+      if (!cache) {
+        cache = {
+          tracer: void 0,
+          version: GLOBAL_TRACER_VERSION
+        };
+      }
+      if (setGlobalCache) {
+        globalObj[GLOBAL_TRACER_SYMBOL] = cache;
+      }
+    }
+    __name(loadTracerCache, "loadTracerCache");
+    function getCache() {
+      if (!cache) {
+        loadTracerCache();
+      }
+      return cache;
+    }
+    __name(getCache, "getCache");
+    var defaultTracer;
+    function getDefaultTracer() {
+      if (!defaultTracer) {
+        defaultTracer = new NoOpTracer();
+      }
+      return defaultTracer;
+    }
+    __name(getDefaultTracer, "getDefaultTracer");
+    function setTracer(tracer) {
+      var cache2 = getCache();
+      cache2.tracer = tracer;
+    }
+    __name(setTracer, "setTracer");
+    function getTracer() {
+      var cache2 = getCache();
+      if (!cache2.tracer) {
+        return getDefaultTracer();
+      }
+      return cache2.tracer;
+    }
+    __name(getTracer, "getTracer");
+    var OpenCensusTraceStateWrapper = function() {
+      function OpenCensusTraceStateWrapper2(state) {
+        this._state = state;
+      }
+      __name(OpenCensusTraceStateWrapper2, "OpenCensusTraceStateWrapper");
+      OpenCensusTraceStateWrapper2.prototype.get = function(_key) {
+        throw new Error("Method not implemented.");
+      };
+      OpenCensusTraceStateWrapper2.prototype.set = function(_key, _value) {
+        throw new Error("Method not implemented.");
+      };
+      OpenCensusTraceStateWrapper2.prototype.unset = function(_key) {
+        throw new Error("Method not implemented");
+      };
+      OpenCensusTraceStateWrapper2.prototype.serialize = function() {
+        return this._state || "";
+      };
+      return OpenCensusTraceStateWrapper2;
+    }();
+    function isWrappedSpan(span) {
+      return !!span && span.getWrappedSpan !== void 0;
+    }
+    __name(isWrappedSpan, "isWrappedSpan");
+    function isTracer(tracerOrSpan) {
+      return tracerOrSpan.getWrappedTracer !== void 0;
+    }
+    __name(isTracer, "isTracer");
+    var OpenCensusSpanWrapper = function() {
+      function OpenCensusSpanWrapper2(tracerOrSpan, name, options) {
+        if (name === void 0) {
+          name = "";
+        }
+        if (options === void 0) {
+          options = {};
+        }
+        if (isTracer(tracerOrSpan)) {
+          var parent = isWrappedSpan(options.parent) ? options.parent.getWrappedSpan() : void 0;
+          this._span = tracerOrSpan.getWrappedTracer().startChildSpan({
+            name,
+            childOf: parent
+          });
+          this._span.start();
+          if (options.links) {
+            for (var _i = 0, _a = options.links; _i < _a.length; _i++) {
+              var link = _a[_i];
+              this._span.addLink(link.context.traceId, link.context.spanId, 0, link.attributes);
+            }
+          }
+        } else {
+          this._span = tracerOrSpan;
+        }
+      }
+      __name(OpenCensusSpanWrapper2, "OpenCensusSpanWrapper");
+      OpenCensusSpanWrapper2.prototype.getWrappedSpan = function() {
+        return this._span;
+      };
+      OpenCensusSpanWrapper2.prototype.end = function(_endTime) {
+        this._span.end();
+      };
+      OpenCensusSpanWrapper2.prototype.context = function() {
+        var openCensusSpanContext = this._span.spanContext;
+        return {
+          spanId: openCensusSpanContext.spanId,
+          traceId: openCensusSpanContext.traceId,
+          traceFlags: openCensusSpanContext.options,
+          traceState: new OpenCensusTraceStateWrapper(openCensusSpanContext.traceState)
+        };
+      };
+      OpenCensusSpanWrapper2.prototype.setAttribute = function(key, value) {
+        this._span.addAttribute(key, value);
+        return this;
+      };
+      OpenCensusSpanWrapper2.prototype.setAttributes = function(attributes) {
+        this._span.attributes = attributes;
+        return this;
+      };
+      OpenCensusSpanWrapper2.prototype.addEvent = function(_name, _attributes) {
+        throw new Error("Method not implemented.");
+      };
+      OpenCensusSpanWrapper2.prototype.setStatus = function(status) {
+        this._span.setStatus(status.code, status.message);
+        return this;
+      };
+      OpenCensusSpanWrapper2.prototype.updateName = function(name) {
+        this._span.name = name;
+        return this;
+      };
+      OpenCensusSpanWrapper2.prototype.isRecording = function() {
+        return !!this._span.traceId;
+      };
+      return OpenCensusSpanWrapper2;
+    }();
+    var OpenCensusTracerWrapper = function() {
+      function OpenCensusTracerWrapper2(tracer) {
+        this._tracer = tracer;
+      }
+      __name(OpenCensusTracerWrapper2, "OpenCensusTracerWrapper");
+      OpenCensusTracerWrapper2.prototype.getWrappedTracer = function() {
+        return this._tracer;
+      };
+      OpenCensusTracerWrapper2.prototype.startSpan = function(name, options) {
+        return new OpenCensusSpanWrapper(this, name, options);
+      };
+      OpenCensusTracerWrapper2.prototype.getCurrentSpan = function() {
+        return void 0;
+      };
+      OpenCensusTracerWrapper2.prototype.withSpan = function(_span, _fn) {
+        throw new Error("Method not implemented.");
+      };
+      OpenCensusTracerWrapper2.prototype.bind = function(_target, _span) {
+        throw new Error("Method not implemented.");
+      };
+      return OpenCensusTracerWrapper2;
+    }();
+    var TestSpan = function(_super) {
+      tslib.__extends(TestSpan2, _super);
+      function TestSpan2(parentTracer, name, context, kind, parentSpanId, startTime) {
+        if (startTime === void 0) {
+          startTime = Date.now();
+        }
+        var _this = _super.call(this) || this;
+        _this._tracer = parentTracer;
+        _this.name = name;
+        _this.kind = kind;
+        _this.startTime = startTime;
+        _this.parentSpanId = parentSpanId;
+        _this.status = {
+          code: api.CanonicalCode.OK
+        };
+        _this.endCalled = false;
+        _this._context = context;
+        _this.attributes = {};
+        return _this;
+      }
+      __name(TestSpan2, "TestSpan");
+      TestSpan2.prototype.tracer = function() {
+        return this._tracer;
+      };
+      TestSpan2.prototype.context = function() {
+        return this._context;
+      };
+      TestSpan2.prototype.end = function(_endTime) {
+        this.endCalled = true;
+      };
+      TestSpan2.prototype.setStatus = function(status) {
+        this.status = status;
+        return this;
+      };
+      TestSpan2.prototype.isRecording = function() {
+        return true;
+      };
+      TestSpan2.prototype.setAttribute = function(key, value) {
+        this.attributes[key] = value;
+        return this;
+      };
+      TestSpan2.prototype.setAttributes = function(attributes) {
+        for (var _i = 0, _a = Object.keys(attributes); _i < _a.length; _i++) {
+          var key = _a[_i];
+          this.attributes[key] = attributes[key];
+        }
+        return this;
+      };
+      return TestSpan2;
+    }(NoOpSpan);
+    var TestTracer = function(_super) {
+      tslib.__extends(TestTracer2, _super);
+      function TestTracer2() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.traceIdCounter = 0;
+        _this.spanIdCounter = 0;
+        _this.rootSpans = [];
+        _this.knownSpans = [];
+        return _this;
+      }
+      __name(TestTracer2, "TestTracer");
+      TestTracer2.prototype.getNextTraceId = function() {
+        this.traceIdCounter++;
+        return String(this.traceIdCounter);
+      };
+      TestTracer2.prototype.getNextSpanId = function() {
+        this.spanIdCounter++;
+        return String(this.spanIdCounter);
+      };
+      TestTracer2.prototype.getRootSpans = function() {
+        return this.rootSpans;
+      };
+      TestTracer2.prototype.getKnownSpans = function() {
+        return this.knownSpans;
+      };
+      TestTracer2.prototype.getActiveSpans = function() {
+        return this.knownSpans.filter(function(span) {
+          return !span.endCalled;
+        });
+      };
+      TestTracer2.prototype.getSpanGraph = function(traceId) {
+        var traceSpans = this.knownSpans.filter(function(span2) {
+          return span2.context().traceId === traceId;
+        });
+        var roots = [];
+        var nodeMap = new Map();
+        for (var _i = 0, traceSpans_1 = traceSpans; _i < traceSpans_1.length; _i++) {
+          var span = traceSpans_1[_i];
+          var spanId = span.context().spanId;
+          var node = {
+            name: span.name,
+            children: []
+          };
+          nodeMap.set(spanId, node);
+          if (span.parentSpanId) {
+            var parent = nodeMap.get(span.parentSpanId);
+            if (!parent) {
+              throw new Error("Span with name " + node.name + " has an unknown parentSpan with id " + span.parentSpanId);
+            }
+            parent.children.push(node);
+          } else {
+            roots.push(node);
+          }
+        }
+        return {
+          roots
+        };
+      };
+      TestTracer2.prototype.startSpan = function(name, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        var parentContext = this._getParentContext(options);
+        var traceId;
+        var isRootSpan = false;
+        if (parentContext && parentContext.traceId) {
+          traceId = parentContext.traceId;
+        } else {
+          traceId = this.getNextTraceId();
+          isRootSpan = true;
+        }
+        var context = {
+          traceId,
+          spanId: this.getNextSpanId(),
+          traceFlags: api.TraceFlags.NONE
+        };
+        var span = new TestSpan(this, name, context, options.kind || api.SpanKind.INTERNAL, parentContext ? parentContext.spanId : void 0, options.startTime);
+        this.knownSpans.push(span);
+        if (isRootSpan) {
+          this.rootSpans.push(span);
+        }
+        return span;
+      };
+      TestTracer2.prototype._getParentContext = function(options) {
+        var parent = options.parent;
+        var result;
+        if (parent) {
+          if ("traceId" in parent) {
+            result = parent;
+          } else {
+            result = parent.context();
+          }
+        }
+        return result;
+      };
+      return TestTracer2;
+    }(NoOpTracer);
+    function createSpanFunction(args) {
+      return function(operationName, operationOptions) {
+        var tracer = getTracer();
+        var tracingOptions = (operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions) || {};
+        var spanOptions = tslib.__assign({kind: api.SpanKind.INTERNAL}, tracingOptions.spanOptions);
+        var spanName = args.packagePrefix ? args.packagePrefix + "." + operationName : operationName;
+        var span = tracer.startSpan(spanName, spanOptions);
+        if (args.namespace) {
+          span.setAttribute("az.namespace", args.namespace);
+        }
+        var newSpanOptions = tracingOptions.spanOptions || {};
+        if (span.isRecording() && args.namespace) {
+          newSpanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {parent: span.context(), attributes: tslib.__assign(tslib.__assign({}, spanOptions.attributes), {"az.namespace": args.namespace})});
+        }
+        var newTracingOptions = tslib.__assign(tslib.__assign({}, tracingOptions), {spanOptions: newSpanOptions});
+        var newOperationOptions = tslib.__assign(tslib.__assign({}, operationOptions), {tracingOptions: newTracingOptions});
+        return {
+          span,
+          updatedOptions: newOperationOptions
+        };
+      };
+    }
+    __name(createSpanFunction, "createSpanFunction");
+    var VERSION = "00";
+    function extractSpanContextFromTraceParentHeader(traceParentHeader) {
+      var parts = traceParentHeader.split("-");
+      if (parts.length !== 4) {
+        return;
+      }
+      var version = parts[0], traceId = parts[1], spanId = parts[2], traceOptions = parts[3];
+      if (version !== VERSION) {
+        return;
+      }
+      var traceFlags = parseInt(traceOptions, 16);
+      var spanContext = {
+        spanId,
+        traceId,
+        traceFlags
+      };
+      return spanContext;
+    }
+    __name(extractSpanContextFromTraceParentHeader, "extractSpanContextFromTraceParentHeader");
+    function getTraceParentHeader(spanContext) {
+      var missingFields = [];
+      if (!spanContext.traceId) {
+        missingFields.push("traceId");
+      }
+      if (!spanContext.spanId) {
+        missingFields.push("spanId");
+      }
+      if (missingFields.length) {
+        return;
+      }
+      var flags = spanContext.traceFlags || 0;
+      var hexFlags = flags.toString(16);
+      var traceFlags = hexFlags.length === 1 ? "0" + hexFlags : hexFlags;
+      return VERSION + "-" + spanContext.traceId + "-" + spanContext.spanId + "-" + traceFlags;
+    }
+    __name(getTraceParentHeader, "getTraceParentHeader");
+    exports2.NoOpSpan = NoOpSpan;
+    exports2.NoOpTracer = NoOpTracer;
+    exports2.OpenCensusSpanWrapper = OpenCensusSpanWrapper;
+    exports2.OpenCensusTracerWrapper = OpenCensusTracerWrapper;
+    exports2.TestSpan = TestSpan;
+    exports2.TestTracer = TestTracer;
+    exports2.createSpanFunction = createSpanFunction;
+    exports2.extractSpanContextFromTraceParentHeader = extractSpanContextFromTraceParentHeader;
+    exports2.getTraceParentHeader = getTraceParentHeader;
+    exports2.getTracer = getTracer;
+    exports2.setTracer = setTracer;
   }
 });
 
 // ../../node_modules/@azure/core-paging/dist/index.js
-var require_dist7 = __commonJS({
+var require_dist8 = __commonJS({
   "../../node_modules/@azure/core-paging/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
@@ -39961,7 +41249,7 @@ var require_dist7 = __commonJS({
 });
 
 // ../../node_modules/@azure/core-lro/dist/index.js
-var require_dist8 = __commonJS({
+var require_dist9 = __commonJS({
   "../../node_modules/@azure/core-lro/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
@@ -40032,37 +41320,34 @@ var require_dist8 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var state, _a, e_1;
+          var _a, e_1;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                state = this.operation.state;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 4, , 5]);
+                _b.trys.push([0, 3, , 4]);
                 if (!!this.isDone())
-                  return [3, 3];
+                  return [3, 2];
                 _a = this;
                 return [4, this.operation.update({
                   abortSignal: options.abortSignal,
                   fireProgress: this.fireProgress.bind(this)
                 })];
-              case 2:
+              case 1:
                 _a.operation = _b.sent();
                 if (this.isDone() && this.resolve) {
-                  this.resolve(state.result);
+                  this.resolve(this.operation.state.result);
                 }
-                _b.label = 3;
+                _b.label = 2;
+              case 2:
+                return [3, 4];
               case 3:
-                return [3, 5];
-              case 4:
                 e_1 = _b.sent();
-                state.error = e_1;
+                this.operation.state.error = e_1;
                 if (this.reject) {
                   this.reject(e_1);
                 }
                 throw e_1;
-              case 5:
+              case 4:
                 return [2];
             }
           });
@@ -40176,22 +41461,22 @@ var require_dist8 = __commonJS({
 });
 
 // ../../node_modules/@azure/storage-blob/dist/index.js
-var require_dist9 = __commonJS({
+var require_dist10 = __commonJS({
   "../../node_modules/@azure/storage-blob/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {value: true});
     var coreHttp = require_dist6();
     var tslib = require_tslib();
-    var api = require_src2();
+    var api = require_src3();
     var logger$1 = require_dist3();
     var abortController = require_dist2();
     var os = require("os");
-    var stream = require("stream");
-    require_dist7();
     var crypto = require("crypto");
-    var coreLro = require_dist8();
+    var coreTracing = require_dist7();
+    var stream = require("stream");
+    require_dist8();
+    var coreLro = require_dist9();
     var events = require("events");
-    var coreTracing = require_dist5();
     var fs2 = require("fs");
     var util2 = require("util");
     var KeyInfo = {
@@ -42866,6 +44151,78 @@ var require_dist9 = __commonJS({
         }
       }
     };
+    var ContainerRenameHeaders = {
+      serializedName: "container-rename-headers",
+      type: {
+        name: "Composite",
+        className: "ContainerRenameHeaders",
+        modelProperties: {
+          clientRequestId: {
+            serializedName: "x-ms-client-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          requestId: {
+            serializedName: "x-ms-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          version: {
+            serializedName: "x-ms-version",
+            type: {
+              name: "String"
+            }
+          },
+          date: {
+            serializedName: "date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          errorCode: {
+            serializedName: "x-ms-error-code",
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    };
+    var ContainerSubmitBatchHeaders = {
+      serializedName: "container-submitbatch-headers",
+      type: {
+        name: "Composite",
+        className: "ContainerSubmitBatchHeaders",
+        modelProperties: {
+          contentType: {
+            serializedName: "content-type",
+            type: {
+              name: "String"
+            }
+          },
+          requestId: {
+            serializedName: "x-ms-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          version: {
+            serializedName: "x-ms-version",
+            type: {
+              name: "String"
+            }
+          },
+          errorCode: {
+            serializedName: "x-ms-error-code",
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    };
     var ContainerAcquireLeaseHeaders = {
       serializedName: "container-acquirelease-headers",
       type: {
@@ -43510,6 +44867,12 @@ var require_dist9 = __commonJS({
             serializedName: "x-ms-version-id",
             type: {
               name: "String"
+            }
+          },
+          isCurrentVersion: {
+            serializedName: "x-ms-is-current-version",
+            type: {
+              name: "Boolean"
             }
           },
           acceptRanges: {
@@ -47059,7 +48422,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "expiry",
+        defaultValue: "lease",
         type: {
           name: "String"
         }
@@ -47071,7 +48434,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "snapshot",
+        defaultValue: "expiry",
         type: {
           name: "String"
         }
@@ -47083,7 +48446,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "copy",
+        defaultValue: "snapshot",
         type: {
           name: "String"
         }
@@ -47095,7 +48458,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "tier",
+        defaultValue: "copy",
         type: {
           name: "String"
         }
@@ -47107,7 +48470,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "query",
+        defaultValue: "tier",
         type: {
           name: "String"
         }
@@ -47119,7 +48482,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "tags",
+        defaultValue: "query",
         type: {
           name: "String"
         }
@@ -47131,7 +48494,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "page",
+        defaultValue: "tags",
         type: {
           name: "String"
         }
@@ -47143,7 +48506,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "pagelist",
+        defaultValue: "page",
         type: {
           name: "String"
         }
@@ -47155,7 +48518,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "incrementalcopy",
+        defaultValue: "pagelist",
         type: {
           name: "String"
         }
@@ -47167,7 +48530,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "appendblock",
+        defaultValue: "incrementalcopy",
         type: {
           name: "String"
         }
@@ -47191,7 +48554,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "seal",
+        defaultValue: "appendblock",
         type: {
           name: "String"
         }
@@ -47203,13 +48566,25 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "block",
+        defaultValue: "seal",
         type: {
           name: "String"
         }
       }
     };
     var comp22 = {
+      parameterPath: "comp",
+      mapper: {
+        required: true,
+        isConstant: true,
+        serializedName: "comp",
+        defaultValue: "block",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var comp23 = {
       parameterPath: "comp",
       mapper: {
         required: true,
@@ -47299,7 +48674,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "comp",
-        defaultValue: "lease",
+        defaultValue: "rename",
         type: {
           name: "String"
         }
@@ -48160,6 +49535,16 @@ var require_dist9 = __commonJS({
         }
       }
     };
+    var sourceContainerName = {
+      parameterPath: "sourceContainerName",
+      mapper: {
+        required: true,
+        serializedName: "x-ms-source-container-name",
+        type: {
+          name: "String"
+        }
+      }
+    };
     var sourceContentCrc64 = {
       parameterPath: [
         "options",
@@ -48384,7 +49769,7 @@ var require_dist9 = __commonJS({
         required: true,
         isConstant: true,
         serializedName: "x-ms-version",
-        defaultValue: "2020-04-08",
+        defaultValue: "2020-06-12",
         type: {
           name: "String"
         }
@@ -48744,10 +50129,12 @@ var require_dist9 = __commonJS({
       ContainerListBlobFlatSegmentHeaders,
       ContainerListBlobHierarchySegmentHeaders,
       ContainerReleaseLeaseHeaders,
+      ContainerRenameHeaders,
       ContainerRenewLeaseHeaders,
       ContainerRestoreHeaders,
       ContainerSetAccessPolicyHeaders,
       ContainerSetMetadataHeaders,
+      ContainerSubmitBatchHeaders,
       ListBlobsFlatSegmentResponse,
       ListBlobsHierarchySegmentResponse,
       SignedIdentifier,
@@ -48792,6 +50179,20 @@ var require_dist9 = __commonJS({
         return this.client.sendOperationRequest({
           options
         }, restoreOperationSpec, callback);
+      };
+      Container2.prototype.rename = function(sourceContainerName2, options, callback) {
+        return this.client.sendOperationRequest({
+          sourceContainerName: sourceContainerName2,
+          options
+        }, renameOperationSpec, callback);
+      };
+      Container2.prototype.submitBatch = function(body, contentLength2, multipartContentType2, options, callback) {
+        return this.client.sendOperationRequest({
+          body,
+          contentLength: contentLength2,
+          multipartContentType: multipartContentType2,
+          options
+        }, submitBatchOperationSpec$1, callback);
       };
       Container2.prototype.acquireLease = function(options, callback) {
         return this.client.sendOperationRequest({
@@ -49079,6 +50480,81 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: serializer$1
     };
+    var renameOperationSpec = {
+      httpMethod: "PUT",
+      path: "{containerName}",
+      urlParameters: [
+        url
+      ],
+      queryParameters: [
+        timeoutInSeconds,
+        restype2,
+        comp9
+      ],
+      headerParameters: [
+        version,
+        requestId,
+        sourceContainerName,
+        sourceLeaseId
+      ],
+      responses: {
+        200: {
+          headersMapper: ContainerRenameHeaders
+        },
+        default: {
+          bodyMapper: StorageError,
+          headersMapper: ContainerRenameHeaders
+        }
+      },
+      isXML: true,
+      serializer: serializer$1
+    };
+    var submitBatchOperationSpec$1 = {
+      httpMethod: "POST",
+      path: "{containerName}",
+      urlParameters: [
+        url
+      ],
+      queryParameters: [
+        timeoutInSeconds,
+        restype2,
+        comp4
+      ],
+      headerParameters: [
+        contentLength,
+        multipartContentType,
+        version,
+        requestId
+      ],
+      requestBody: {
+        parameterPath: "body",
+        mapper: {
+          required: true,
+          serializedName: "body",
+          type: {
+            name: "Stream"
+          }
+        }
+      },
+      contentType: "application/xml; charset=utf-8",
+      responses: {
+        202: {
+          bodyMapper: {
+            serializedName: "parsedResponse",
+            type: {
+              name: "Stream"
+            }
+          },
+          headersMapper: ContainerSubmitBatchHeaders
+        },
+        default: {
+          bodyMapper: StorageError,
+          headersMapper: ContainerSubmitBatchHeaders
+        }
+      },
+      isXML: true,
+      serializer: serializer$1
+    };
     var acquireLeaseOperationSpec = {
       httpMethod: "PUT",
       path: "{containerName}",
@@ -49087,7 +50563,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9,
+        comp10,
         restype2
       ],
       headerParameters: [
@@ -49119,7 +50595,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9,
+        comp10,
         restype2
       ],
       headerParameters: [
@@ -49150,7 +50626,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9,
+        comp10,
         restype2
       ],
       headerParameters: [
@@ -49181,7 +50657,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9,
+        comp10,
         restype2
       ],
       headerParameters: [
@@ -49212,7 +50688,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9,
+        comp10,
         restype2
       ],
       headerParameters: [
@@ -49399,7 +50875,7 @@ var require_dist9 = __commonJS({
         return this.client.sendOperationRequest({
           renameSource: renameSource2,
           options
-        }, renameOperationSpec, callback);
+        }, renameOperationSpec$1, callback);
       };
       Blob2.prototype.undelete = function(options, callback) {
         return this.client.sendOperationRequest({
@@ -49695,7 +51171,7 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: serializer$2
     };
-    var renameOperationSpec = {
+    var renameOperationSpec$1 = {
       httpMethod: "PUT",
       path: "{filesystem}/{path}",
       urlParameters: [
@@ -49774,7 +51250,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp10
+        comp11
       ],
       headerParameters: [
         version,
@@ -49877,7 +51353,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9
+        comp10
       ],
       headerParameters: [
         duration,
@@ -49911,7 +51387,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9
+        comp10
       ],
       headerParameters: [
         leaseId1,
@@ -49944,7 +51420,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9
+        comp10
       ],
       headerParameters: [
         leaseId1,
@@ -49977,7 +51453,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9
+        comp10
       ],
       headerParameters: [
         leaseId1,
@@ -50011,7 +51487,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp9
+        comp10
       ],
       headerParameters: [
         breakPeriod,
@@ -50044,7 +51520,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp11
+        comp12
       ],
       headerParameters: [
         metadata,
@@ -50165,7 +51641,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         copyId,
         timeoutInSeconds,
-        comp12
+        comp13
       ],
       headerParameters: [
         version,
@@ -50195,7 +51671,7 @@ var require_dist9 = __commonJS({
         snapshot,
         versionId,
         timeoutInSeconds,
-        comp13
+        comp14
       ],
       headerParameters: [
         tier1,
@@ -50254,7 +51730,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         snapshot,
         timeoutInSeconds,
-        comp14
+        comp15
       ],
       headerParameters: [
         version,
@@ -50314,7 +51790,7 @@ var require_dist9 = __commonJS({
         timeoutInSeconds,
         snapshot,
         versionId,
-        comp15
+        comp16
       ],
       headerParameters: [
         version,
@@ -50344,7 +51820,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         versionId,
-        comp15
+        comp16
       ],
       headerParameters: [
         version,
@@ -50511,7 +51987,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp16
+        comp17
       ],
       headerParameters: [
         contentLength,
@@ -50566,7 +52042,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp16
+        comp17
       ],
       headerParameters: [
         contentLength,
@@ -50608,7 +52084,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp16
+        comp17
       ],
       headerParameters: [
         sourceUrl,
@@ -50659,7 +52135,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         snapshot,
         timeoutInSeconds,
-        comp17
+        comp18
       ],
       headerParameters: [
         range0,
@@ -50695,7 +52171,7 @@ var require_dist9 = __commonJS({
         snapshot,
         timeoutInSeconds,
         prevsnapshot,
-        comp17
+        comp18
       ],
       headerParameters: [
         prevSnapshotUrl,
@@ -50801,7 +52277,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp18
+        comp19
       ],
       headerParameters: [
         copySource,
@@ -50919,7 +52395,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp19
+        comp20
       ],
       headerParameters: [
         contentLength,
@@ -50971,7 +52447,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp19
+        comp20
       ],
       headerParameters: [
         sourceUrl,
@@ -51019,7 +52495,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp20
+        comp21
       ],
       headerParameters: [
         version,
@@ -51228,7 +52704,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         blockId,
         timeoutInSeconds,
-        comp21
+        comp22
       ],
       headerParameters: [
         contentLength,
@@ -51274,7 +52750,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         blockId,
         timeoutInSeconds,
-        comp21
+        comp22
       ],
       headerParameters: [
         contentLength,
@@ -51314,7 +52790,7 @@ var require_dist9 = __commonJS({
       ],
       queryParameters: [
         timeoutInSeconds,
-        comp22
+        comp23
       ],
       headerParameters: [
         transactionalContentMD5,
@@ -51368,7 +52844,7 @@ var require_dist9 = __commonJS({
         snapshot,
         listType,
         timeoutInSeconds,
-        comp22
+        comp23
       ],
       headerParameters: [
         version,
@@ -51390,8 +52866,8 @@ var require_dist9 = __commonJS({
       serializer: serializer$5
     };
     var logger = logger$1.createClientLogger("storage-blob");
-    var SDK_VERSION = "12.4.1";
-    var SERVICE_VERSION = "2020-04-08";
+    var SDK_VERSION = "12.5.0";
+    var SERVICE_VERSION = "2020-06-12";
     var BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES = 256 * 1024 * 1024;
     var BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES = 4e3 * 1024 * 1024;
     var BLOCK_BLOB_MAX_BLOCKS = 5e4;
@@ -52308,6 +53784,1085 @@ var require_dist9 = __commonJS({
       return new Pipeline(factories, pipelineOptions);
     }
     __name(newPipeline, "newPipeline");
+    var StorageSharedKeyCredentialPolicy = function(_super) {
+      tslib.__extends(StorageSharedKeyCredentialPolicy2, _super);
+      function StorageSharedKeyCredentialPolicy2(nextPolicy, options, factory) {
+        var _this = _super.call(this, nextPolicy, options) || this;
+        _this.factory = factory;
+        return _this;
+      }
+      __name(StorageSharedKeyCredentialPolicy2, "StorageSharedKeyCredentialPolicy");
+      StorageSharedKeyCredentialPolicy2.prototype.signRequest = function(request) {
+        request.headers.set(HeaderConstants.X_MS_DATE, new Date().toUTCString());
+        if (request.body && typeof request.body === "string" && request.body.length > 0) {
+          request.headers.set(HeaderConstants.CONTENT_LENGTH, Buffer.byteLength(request.body));
+        }
+        var stringToSign = [
+          request.method.toUpperCase(),
+          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_LANGUAGE),
+          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_ENCODING),
+          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_LENGTH),
+          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_MD5),
+          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_TYPE),
+          this.getHeaderValueToSign(request, HeaderConstants.DATE),
+          this.getHeaderValueToSign(request, HeaderConstants.IF_MODIFIED_SINCE),
+          this.getHeaderValueToSign(request, HeaderConstants.IF_MATCH),
+          this.getHeaderValueToSign(request, HeaderConstants.IF_NONE_MATCH),
+          this.getHeaderValueToSign(request, HeaderConstants.IF_UNMODIFIED_SINCE),
+          this.getHeaderValueToSign(request, HeaderConstants.RANGE)
+        ].join("\n") + "\n" + this.getCanonicalizedHeadersString(request) + this.getCanonicalizedResourceString(request);
+        var signature = this.factory.computeHMACSHA256(stringToSign);
+        request.headers.set(HeaderConstants.AUTHORIZATION, "SharedKey " + this.factory.accountName + ":" + signature);
+        return request;
+      };
+      StorageSharedKeyCredentialPolicy2.prototype.getHeaderValueToSign = function(request, headerName) {
+        var value = request.headers.get(headerName);
+        if (!value) {
+          return "";
+        }
+        if (headerName === HeaderConstants.CONTENT_LENGTH && value === "0") {
+          return "";
+        }
+        return value;
+      };
+      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedHeadersString = function(request) {
+        var headersArray = request.headers.headersArray().filter(function(value) {
+          return value.name.toLowerCase().startsWith(HeaderConstants.PREFIX_FOR_STORAGE);
+        });
+        headersArray.sort(function(a, b) {
+          return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+        });
+        headersArray = headersArray.filter(function(value, index, array) {
+          if (index > 0 && value.name.toLowerCase() === array[index - 1].name.toLowerCase()) {
+            return false;
+          }
+          return true;
+        });
+        var canonicalizedHeadersStringToSign = "";
+        headersArray.forEach(function(header) {
+          canonicalizedHeadersStringToSign += header.name.toLowerCase().trimRight() + ":" + header.value.trimLeft() + "\n";
+        });
+        return canonicalizedHeadersStringToSign;
+      };
+      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedResourceString = function(request) {
+        var path2 = getURLPath(request.url) || "/";
+        var canonicalizedResourceString = "";
+        canonicalizedResourceString += "/" + this.factory.accountName + path2;
+        var queries = getURLQueries(request.url);
+        var lowercaseQueries = {};
+        if (queries) {
+          var queryKeys = [];
+          for (var key in queries) {
+            if (queries.hasOwnProperty(key)) {
+              var lowercaseKey = key.toLowerCase();
+              lowercaseQueries[lowercaseKey] = queries[key];
+              queryKeys.push(lowercaseKey);
+            }
+          }
+          queryKeys.sort();
+          for (var _i = 0, queryKeys_1 = queryKeys; _i < queryKeys_1.length; _i++) {
+            var key = queryKeys_1[_i];
+            canonicalizedResourceString += "\n" + key + ":" + decodeURIComponent(lowercaseQueries[key]);
+          }
+        }
+        return canonicalizedResourceString;
+      };
+      return StorageSharedKeyCredentialPolicy2;
+    }(CredentialPolicy);
+    var StorageSharedKeyCredential = function(_super) {
+      tslib.__extends(StorageSharedKeyCredential2, _super);
+      function StorageSharedKeyCredential2(accountName, accountKey) {
+        var _this = _super.call(this) || this;
+        _this.accountName = accountName;
+        _this.accountKey = Buffer.from(accountKey, "base64");
+        return _this;
+      }
+      __name(StorageSharedKeyCredential2, "StorageSharedKeyCredential");
+      StorageSharedKeyCredential2.prototype.create = function(nextPolicy, options) {
+        return new StorageSharedKeyCredentialPolicy(nextPolicy, options, this);
+      };
+      StorageSharedKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
+        return crypto.createHmac("sha256", this.accountKey).update(stringToSign, "utf8").digest("base64");
+      };
+      return StorageSharedKeyCredential2;
+    }(Credential);
+    var packageName = "azure-storage-blob";
+    var packageVersion = "12.5.0";
+    var StorageClientContext = function(_super) {
+      tslib.__extends(StorageClientContext2, _super);
+      function StorageClientContext2(url2, options) {
+        var _this = this;
+        if (url2 == void 0) {
+          throw new Error("'url' cannot be null.");
+        }
+        if (!options) {
+          options = {};
+        }
+        if (!options.userAgent) {
+          var defaultUserAgent = coreHttp.getDefaultUserAgentValue();
+          options.userAgent = packageName + "/" + packageVersion + " " + defaultUserAgent;
+        }
+        _this = _super.call(this, void 0, options) || this;
+        _this.version = "2020-06-12";
+        _this.baseUri = "{url}";
+        _this.requestContentType = "application/json; charset=utf-8";
+        _this.url = url2;
+        return _this;
+      }
+      __name(StorageClientContext2, "StorageClientContext");
+      return StorageClientContext2;
+    }(coreHttp.ServiceClient);
+    var StorageClient = function() {
+      function StorageClient2(url2, pipeline) {
+        this.url = escapeURLPath(url2);
+        this.accountName = getAccountNameFromUrl(url2);
+        this.pipeline = pipeline;
+        this.storageClientContext = new StorageClientContext(this.url, pipeline.toServiceClientOptions());
+        this.isHttps = iEqual(getURLScheme(this.url) || "", "https");
+        this.credential = new AnonymousCredential();
+        for (var _i = 0, _a = this.pipeline.factories; _i < _a.length; _i++) {
+          var factory = _a[_i];
+          if (coreHttp.isNode && factory instanceof StorageSharedKeyCredential || factory instanceof AnonymousCredential) {
+            this.credential = factory;
+          } else if (coreHttp.isTokenCredential(factory.credential)) {
+            this.credential = factory.credential;
+          }
+        }
+        var storageClientContext = this.storageClientContext;
+        storageClientContext.requestContentType = void 0;
+      }
+      __name(StorageClient2, "StorageClient");
+      return StorageClient2;
+    }();
+    var createSpan = coreTracing.createSpanFunction({
+      packagePrefix: "Azure.Storage.Blob",
+      namespace: "Microsoft.Storage"
+    });
+    function convertTracingToRequestOptionsBase(options) {
+      var _a;
+      return {
+        spanOptions: (_a = options === null || options === void 0 ? void 0 : options.tracingOptions) === null || _a === void 0 ? void 0 : _a.spanOptions
+      };
+    }
+    __name(convertTracingToRequestOptionsBase, "convertTracingToRequestOptionsBase");
+    var BlobSASPermissions = function() {
+      function BlobSASPermissions2() {
+        this.read = false;
+        this.add = false;
+        this.create = false;
+        this.write = false;
+        this.delete = false;
+        this.deleteVersion = false;
+        this.tag = false;
+        this.move = false;
+        this.execute = false;
+      }
+      __name(BlobSASPermissions2, "BlobSASPermissions");
+      BlobSASPermissions2.parse = function(permissions) {
+        var blobSASPermissions = new BlobSASPermissions2();
+        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
+          var char = permissions_1[_i];
+          switch (char) {
+            case "r":
+              blobSASPermissions.read = true;
+              break;
+            case "a":
+              blobSASPermissions.add = true;
+              break;
+            case "c":
+              blobSASPermissions.create = true;
+              break;
+            case "w":
+              blobSASPermissions.write = true;
+              break;
+            case "d":
+              blobSASPermissions.delete = true;
+              break;
+            case "x":
+              blobSASPermissions.deleteVersion = true;
+              break;
+            case "t":
+              blobSASPermissions.tag = true;
+              break;
+            case "m":
+              blobSASPermissions.move = true;
+              break;
+            case "e":
+              blobSASPermissions.execute = true;
+              break;
+            default:
+              throw new RangeError("Invalid permission: " + char);
+          }
+        }
+        return blobSASPermissions;
+      };
+      BlobSASPermissions2.from = function(permissionLike) {
+        var blobSASPermissions = new BlobSASPermissions2();
+        if (permissionLike.read) {
+          blobSASPermissions.read = true;
+        }
+        if (permissionLike.add) {
+          blobSASPermissions.add = true;
+        }
+        if (permissionLike.create) {
+          blobSASPermissions.create = true;
+        }
+        if (permissionLike.write) {
+          blobSASPermissions.write = true;
+        }
+        if (permissionLike.delete) {
+          blobSASPermissions.delete = true;
+        }
+        if (permissionLike.deleteVersion) {
+          blobSASPermissions.deleteVersion = true;
+        }
+        if (permissionLike.tag) {
+          blobSASPermissions.tag = true;
+        }
+        if (permissionLike.move) {
+          blobSASPermissions.move = true;
+        }
+        if (permissionLike.execute) {
+          blobSASPermissions.execute = true;
+        }
+        return blobSASPermissions;
+      };
+      BlobSASPermissions2.prototype.toString = function() {
+        var permissions = [];
+        if (this.read) {
+          permissions.push("r");
+        }
+        if (this.add) {
+          permissions.push("a");
+        }
+        if (this.create) {
+          permissions.push("c");
+        }
+        if (this.write) {
+          permissions.push("w");
+        }
+        if (this.delete) {
+          permissions.push("d");
+        }
+        if (this.deleteVersion) {
+          permissions.push("x");
+        }
+        if (this.tag) {
+          permissions.push("t");
+        }
+        if (this.move) {
+          permissions.push("m");
+        }
+        if (this.execute) {
+          permissions.push("e");
+        }
+        return permissions.join("");
+      };
+      return BlobSASPermissions2;
+    }();
+    var ContainerSASPermissions = function() {
+      function ContainerSASPermissions2() {
+        this.read = false;
+        this.add = false;
+        this.create = false;
+        this.write = false;
+        this.delete = false;
+        this.deleteVersion = false;
+        this.list = false;
+        this.tag = false;
+        this.move = false;
+        this.execute = false;
+      }
+      __name(ContainerSASPermissions2, "ContainerSASPermissions");
+      ContainerSASPermissions2.parse = function(permissions) {
+        var containerSASPermissions = new ContainerSASPermissions2();
+        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
+          var char = permissions_1[_i];
+          switch (char) {
+            case "r":
+              containerSASPermissions.read = true;
+              break;
+            case "a":
+              containerSASPermissions.add = true;
+              break;
+            case "c":
+              containerSASPermissions.create = true;
+              break;
+            case "w":
+              containerSASPermissions.write = true;
+              break;
+            case "d":
+              containerSASPermissions.delete = true;
+              break;
+            case "l":
+              containerSASPermissions.list = true;
+              break;
+            case "t":
+              containerSASPermissions.tag = true;
+              break;
+            case "x":
+              containerSASPermissions.deleteVersion = true;
+              break;
+            case "m":
+              containerSASPermissions.move = true;
+              break;
+            case "e":
+              containerSASPermissions.execute = true;
+              break;
+            default:
+              throw new RangeError("Invalid permission " + char);
+          }
+        }
+        return containerSASPermissions;
+      };
+      ContainerSASPermissions2.from = function(permissionLike) {
+        var containerSASPermissions = new ContainerSASPermissions2();
+        if (permissionLike.read) {
+          containerSASPermissions.read = true;
+        }
+        if (permissionLike.add) {
+          containerSASPermissions.add = true;
+        }
+        if (permissionLike.create) {
+          containerSASPermissions.create = true;
+        }
+        if (permissionLike.write) {
+          containerSASPermissions.write = true;
+        }
+        if (permissionLike.delete) {
+          containerSASPermissions.delete = true;
+        }
+        if (permissionLike.list) {
+          containerSASPermissions.list = true;
+        }
+        if (permissionLike.deleteVersion) {
+          containerSASPermissions.deleteVersion = true;
+        }
+        if (permissionLike.tag) {
+          containerSASPermissions.tag = true;
+        }
+        if (permissionLike.move) {
+          containerSASPermissions.move = true;
+        }
+        if (permissionLike.execute) {
+          containerSASPermissions.execute = true;
+        }
+        return containerSASPermissions;
+      };
+      ContainerSASPermissions2.prototype.toString = function() {
+        var permissions = [];
+        if (this.read) {
+          permissions.push("r");
+        }
+        if (this.add) {
+          permissions.push("a");
+        }
+        if (this.create) {
+          permissions.push("c");
+        }
+        if (this.write) {
+          permissions.push("w");
+        }
+        if (this.delete) {
+          permissions.push("d");
+        }
+        if (this.deleteVersion) {
+          permissions.push("x");
+        }
+        if (this.list) {
+          permissions.push("l");
+        }
+        if (this.tag) {
+          permissions.push("t");
+        }
+        if (this.move) {
+          permissions.push("m");
+        }
+        if (this.execute) {
+          permissions.push("e");
+        }
+        return permissions.join("");
+      };
+      return ContainerSASPermissions2;
+    }();
+    var UserDelegationKeyCredential = function() {
+      function UserDelegationKeyCredential2(accountName, userDelegationKey) {
+        this.accountName = accountName;
+        this.userDelegationKey = userDelegationKey;
+        this.key = Buffer.from(userDelegationKey.value, "base64");
+      }
+      __name(UserDelegationKeyCredential2, "UserDelegationKeyCredential");
+      UserDelegationKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
+        return crypto.createHmac("sha256", this.key).update(stringToSign, "utf8").digest("base64");
+      };
+      return UserDelegationKeyCredential2;
+    }();
+    function ipRangeToString(ipRange) {
+      return ipRange.end ? ipRange.start + "-" + ipRange.end : ipRange.start;
+    }
+    __name(ipRangeToString, "ipRangeToString");
+    (function(SASProtocol) {
+      SASProtocol["Https"] = "https";
+      SASProtocol["HttpsAndHttp"] = "https,http";
+    })(exports2.SASProtocol || (exports2.SASProtocol = {}));
+    var SASQueryParameters = function() {
+      function SASQueryParameters2(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl2, contentDisposition2, contentEncoding2, contentLanguage2, contentType2, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
+        this.version = version2;
+        this.signature = signature;
+        if (permissionsOrOptions !== void 0 && typeof permissionsOrOptions !== "string") {
+          this.permissions = permissionsOrOptions.permissions;
+          this.services = permissionsOrOptions.services;
+          this.resourceTypes = permissionsOrOptions.resourceTypes;
+          this.protocol = permissionsOrOptions.protocol;
+          this.startsOn = permissionsOrOptions.startsOn;
+          this.expiresOn = permissionsOrOptions.expiresOn;
+          this.ipRangeInner = permissionsOrOptions.ipRange;
+          this.identifier = permissionsOrOptions.identifier;
+          this.resource = permissionsOrOptions.resource;
+          this.cacheControl = permissionsOrOptions.cacheControl;
+          this.contentDisposition = permissionsOrOptions.contentDisposition;
+          this.contentEncoding = permissionsOrOptions.contentEncoding;
+          this.contentLanguage = permissionsOrOptions.contentLanguage;
+          this.contentType = permissionsOrOptions.contentType;
+          if (permissionsOrOptions.userDelegationKey) {
+            this.signedOid = permissionsOrOptions.userDelegationKey.signedObjectId;
+            this.signedTenantId = permissionsOrOptions.userDelegationKey.signedTenantId;
+            this.signedStartsOn = permissionsOrOptions.userDelegationKey.signedStartsOn;
+            this.signedExpiresOn = permissionsOrOptions.userDelegationKey.signedExpiresOn;
+            this.signedService = permissionsOrOptions.userDelegationKey.signedService;
+            this.signedVersion = permissionsOrOptions.userDelegationKey.signedVersion;
+            this.preauthorizedAgentObjectId = permissionsOrOptions.preauthorizedAgentObjectId;
+            this.correlationId = permissionsOrOptions.correlationId;
+          }
+        } else {
+          this.services = services;
+          this.resourceTypes = resourceTypes;
+          this.expiresOn = expiresOn2;
+          this.permissions = permissionsOrOptions;
+          this.protocol = protocol;
+          this.startsOn = startsOn;
+          this.ipRangeInner = ipRange;
+          this.identifier = identifier;
+          this.resource = resource;
+          this.cacheControl = cacheControl2;
+          this.contentDisposition = contentDisposition2;
+          this.contentEncoding = contentEncoding2;
+          this.contentLanguage = contentLanguage2;
+          this.contentType = contentType2;
+          if (userDelegationKey) {
+            this.signedOid = userDelegationKey.signedObjectId;
+            this.signedTenantId = userDelegationKey.signedTenantId;
+            this.signedStartsOn = userDelegationKey.signedStartsOn;
+            this.signedExpiresOn = userDelegationKey.signedExpiresOn;
+            this.signedService = userDelegationKey.signedService;
+            this.signedVersion = userDelegationKey.signedVersion;
+            this.preauthorizedAgentObjectId = preauthorizedAgentObjectId;
+            this.correlationId = correlationId;
+          }
+        }
+      }
+      __name(SASQueryParameters2, "SASQueryParameters");
+      Object.defineProperty(SASQueryParameters2.prototype, "ipRange", {
+        get: function() {
+          if (this.ipRangeInner) {
+            return {
+              end: this.ipRangeInner.end,
+              start: this.ipRangeInner.start
+            };
+          }
+          return void 0;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      SASQueryParameters2.prototype.toString = function() {
+        var params = [
+          "sv",
+          "ss",
+          "srt",
+          "spr",
+          "st",
+          "se",
+          "sip",
+          "si",
+          "skoid",
+          "sktid",
+          "skt",
+          "ske",
+          "sks",
+          "skv",
+          "sr",
+          "sp",
+          "sig",
+          "rscc",
+          "rscd",
+          "rsce",
+          "rscl",
+          "rsct",
+          "saoid",
+          "scid"
+        ];
+        var queries = [];
+        for (var _i = 0, params_1 = params; _i < params_1.length; _i++) {
+          var param = params_1[_i];
+          switch (param) {
+            case "sv":
+              this.tryAppendQueryParameter(queries, param, this.version);
+              break;
+            case "ss":
+              this.tryAppendQueryParameter(queries, param, this.services);
+              break;
+            case "srt":
+              this.tryAppendQueryParameter(queries, param, this.resourceTypes);
+              break;
+            case "spr":
+              this.tryAppendQueryParameter(queries, param, this.protocol);
+              break;
+            case "st":
+              this.tryAppendQueryParameter(queries, param, this.startsOn ? truncatedISO8061Date(this.startsOn, false) : void 0);
+              break;
+            case "se":
+              this.tryAppendQueryParameter(queries, param, this.expiresOn ? truncatedISO8061Date(this.expiresOn, false) : void 0);
+              break;
+            case "sip":
+              this.tryAppendQueryParameter(queries, param, this.ipRange ? ipRangeToString(this.ipRange) : void 0);
+              break;
+            case "si":
+              this.tryAppendQueryParameter(queries, param, this.identifier);
+              break;
+            case "skoid":
+              this.tryAppendQueryParameter(queries, param, this.signedOid);
+              break;
+            case "sktid":
+              this.tryAppendQueryParameter(queries, param, this.signedTenantId);
+              break;
+            case "skt":
+              this.tryAppendQueryParameter(queries, param, this.signedStartsOn ? truncatedISO8061Date(this.signedStartsOn, false) : void 0);
+              break;
+            case "ske":
+              this.tryAppendQueryParameter(queries, param, this.signedExpiresOn ? truncatedISO8061Date(this.signedExpiresOn, false) : void 0);
+              break;
+            case "sks":
+              this.tryAppendQueryParameter(queries, param, this.signedService);
+              break;
+            case "skv":
+              this.tryAppendQueryParameter(queries, param, this.signedVersion);
+              break;
+            case "sr":
+              this.tryAppendQueryParameter(queries, param, this.resource);
+              break;
+            case "sp":
+              this.tryAppendQueryParameter(queries, param, this.permissions);
+              break;
+            case "sig":
+              this.tryAppendQueryParameter(queries, param, this.signature);
+              break;
+            case "rscc":
+              this.tryAppendQueryParameter(queries, param, this.cacheControl);
+              break;
+            case "rscd":
+              this.tryAppendQueryParameter(queries, param, this.contentDisposition);
+              break;
+            case "rsce":
+              this.tryAppendQueryParameter(queries, param, this.contentEncoding);
+              break;
+            case "rscl":
+              this.tryAppendQueryParameter(queries, param, this.contentLanguage);
+              break;
+            case "rsct":
+              this.tryAppendQueryParameter(queries, param, this.contentType);
+              break;
+            case "saoid":
+              this.tryAppendQueryParameter(queries, param, this.preauthorizedAgentObjectId);
+              break;
+            case "scid":
+              this.tryAppendQueryParameter(queries, param, this.correlationId);
+              break;
+          }
+        }
+        return queries.join("&");
+      };
+      SASQueryParameters2.prototype.tryAppendQueryParameter = function(queries, key, value) {
+        if (!value) {
+          return;
+        }
+        key = encodeURIComponent(key);
+        value = encodeURIComponent(value);
+        if (key.length > 0 && value.length > 0) {
+          queries.push(key + "=" + value);
+        }
+      };
+      return SASQueryParameters2;
+    }();
+    function generateBlobSASQueryParameters(blobSASSignatureValues, sharedKeyCredentialOrUserDelegationKey, accountName) {
+      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
+      var sharedKeyCredential = sharedKeyCredentialOrUserDelegationKey instanceof StorageSharedKeyCredential ? sharedKeyCredentialOrUserDelegationKey : void 0;
+      var userDelegationKeyCredential;
+      if (sharedKeyCredential === void 0 && accountName !== void 0) {
+        userDelegationKeyCredential = new UserDelegationKeyCredential(accountName, sharedKeyCredentialOrUserDelegationKey);
+      }
+      if (sharedKeyCredential === void 0 && userDelegationKeyCredential === void 0) {
+        throw TypeError("Invalid sharedKeyCredential, userDelegationKey or accountName.");
+      }
+      if (version2 >= "2018-11-09") {
+        if (sharedKeyCredential !== void 0) {
+          return generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential);
+        } else {
+          if (version2 >= "2020-02-10") {
+            return generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userDelegationKeyCredential);
+          } else {
+            return generateBlobSASQueryParametersUDK20181109(blobSASSignatureValues, userDelegationKeyCredential);
+          }
+        }
+      }
+      if (version2 >= "2015-04-05") {
+        if (sharedKeyCredential !== void 0) {
+          return generateBlobSASQueryParameters20150405(blobSASSignatureValues, sharedKeyCredential);
+        } else {
+          throw new RangeError("'version' must be >= '2018-11-09' when generating user delegation SAS using user delegation key.");
+        }
+      }
+      throw new RangeError("'version' must be >= '2015-04-05'.");
+    }
+    __name(generateBlobSASQueryParameters, "generateBlobSASQueryParameters");
+    function generateBlobSASQueryParameters20150405(blobSASSignatureValues, sharedKeyCredential) {
+      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
+      if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
+        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
+      }
+      var resource = "c";
+      if (blobSASSignatureValues.blobName) {
+        resource = "b";
+      }
+      var verifiedPermissions;
+      if (blobSASSignatureValues.permissions) {
+        if (blobSASSignatureValues.blobName) {
+          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        } else {
+          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+      }
+      var stringToSign = [
+        verifiedPermissions ? verifiedPermissions : "",
+        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
+        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
+        getCanonicalName(sharedKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
+        blobSASSignatureValues.identifier,
+        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
+        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
+        blobSASSignatureValues.version,
+        blobSASSignatureValues.cacheControl ? blobSASSignatureValues.cacheControl : "",
+        blobSASSignatureValues.contentDisposition ? blobSASSignatureValues.contentDisposition : "",
+        blobSASSignatureValues.contentEncoding ? blobSASSignatureValues.contentEncoding : "",
+        blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
+        blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
+      ].join("\n");
+      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
+    }
+    __name(generateBlobSASQueryParameters20150405, "generateBlobSASQueryParameters20150405");
+    function generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential) {
+      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
+      if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
+        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
+      }
+      var resource = "c";
+      var timestamp = blobSASSignatureValues.snapshotTime;
+      if (blobSASSignatureValues.blobName) {
+        resource = "b";
+        if (blobSASSignatureValues.snapshotTime) {
+          resource = "bs";
+        } else if (blobSASSignatureValues.versionId) {
+          resource = "bv";
+          timestamp = blobSASSignatureValues.versionId;
+        }
+      }
+      var verifiedPermissions;
+      if (blobSASSignatureValues.permissions) {
+        if (blobSASSignatureValues.blobName) {
+          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        } else {
+          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+      }
+      var stringToSign = [
+        verifiedPermissions ? verifiedPermissions : "",
+        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
+        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
+        getCanonicalName(sharedKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
+        blobSASSignatureValues.identifier,
+        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
+        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
+        blobSASSignatureValues.version,
+        resource,
+        timestamp,
+        blobSASSignatureValues.cacheControl ? blobSASSignatureValues.cacheControl : "",
+        blobSASSignatureValues.contentDisposition ? blobSASSignatureValues.contentDisposition : "",
+        blobSASSignatureValues.contentEncoding ? blobSASSignatureValues.contentEncoding : "",
+        blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
+        blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
+      ].join("\n");
+      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
+    }
+    __name(generateBlobSASQueryParameters20181109, "generateBlobSASQueryParameters20181109");
+    function generateBlobSASQueryParametersUDK20181109(blobSASSignatureValues, userDelegationKeyCredential) {
+      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
+      if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
+        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
+      }
+      var resource = "c";
+      var timestamp = blobSASSignatureValues.snapshotTime;
+      if (blobSASSignatureValues.blobName) {
+        resource = "b";
+        if (blobSASSignatureValues.snapshotTime) {
+          resource = "bs";
+        } else if (blobSASSignatureValues.versionId) {
+          resource = "bv";
+          timestamp = blobSASSignatureValues.versionId;
+        }
+      }
+      var verifiedPermissions;
+      if (blobSASSignatureValues.permissions) {
+        if (blobSASSignatureValues.blobName) {
+          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        } else {
+          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+      }
+      var stringToSign = [
+        verifiedPermissions ? verifiedPermissions : "",
+        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
+        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
+        getCanonicalName(userDelegationKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
+        userDelegationKeyCredential.userDelegationKey.signedObjectId,
+        userDelegationKeyCredential.userDelegationKey.signedTenantId,
+        userDelegationKeyCredential.userDelegationKey.signedStartsOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedStartsOn, false) : "",
+        userDelegationKeyCredential.userDelegationKey.signedExpiresOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedExpiresOn, false) : "",
+        userDelegationKeyCredential.userDelegationKey.signedService,
+        userDelegationKeyCredential.userDelegationKey.signedVersion,
+        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
+        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
+        blobSASSignatureValues.version,
+        resource,
+        timestamp,
+        blobSASSignatureValues.cacheControl,
+        blobSASSignatureValues.contentDisposition,
+        blobSASSignatureValues.contentEncoding,
+        blobSASSignatureValues.contentLanguage,
+        blobSASSignatureValues.contentType
+      ].join("\n");
+      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
+      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey);
+    }
+    __name(generateBlobSASQueryParametersUDK20181109, "generateBlobSASQueryParametersUDK20181109");
+    function generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userDelegationKeyCredential) {
+      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
+      if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
+        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
+      }
+      var resource = "c";
+      var timestamp = blobSASSignatureValues.snapshotTime;
+      if (blobSASSignatureValues.blobName) {
+        resource = "b";
+        if (blobSASSignatureValues.snapshotTime) {
+          resource = "bs";
+        } else if (blobSASSignatureValues.versionId) {
+          resource = "bv";
+          timestamp = blobSASSignatureValues.versionId;
+        }
+      }
+      var verifiedPermissions;
+      if (blobSASSignatureValues.permissions) {
+        if (blobSASSignatureValues.blobName) {
+          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        } else {
+          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
+        }
+      }
+      var stringToSign = [
+        verifiedPermissions ? verifiedPermissions : "",
+        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
+        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
+        getCanonicalName(userDelegationKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
+        userDelegationKeyCredential.userDelegationKey.signedObjectId,
+        userDelegationKeyCredential.userDelegationKey.signedTenantId,
+        userDelegationKeyCredential.userDelegationKey.signedStartsOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedStartsOn, false) : "",
+        userDelegationKeyCredential.userDelegationKey.signedExpiresOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedExpiresOn, false) : "",
+        userDelegationKeyCredential.userDelegationKey.signedService,
+        userDelegationKeyCredential.userDelegationKey.signedVersion,
+        blobSASSignatureValues.preauthorizedAgentObjectId,
+        void 0,
+        blobSASSignatureValues.correlationId,
+        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
+        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
+        blobSASSignatureValues.version,
+        resource,
+        timestamp,
+        blobSASSignatureValues.cacheControl,
+        blobSASSignatureValues.contentDisposition,
+        blobSASSignatureValues.contentEncoding,
+        blobSASSignatureValues.contentLanguage,
+        blobSASSignatureValues.contentType
+      ].join("\n");
+      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
+      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId);
+    }
+    __name(generateBlobSASQueryParametersUDK20200210, "generateBlobSASQueryParametersUDK20200210");
+    function getCanonicalName(accountName, containerName, blobName) {
+      var elements = ["/blob/" + accountName + "/" + containerName];
+      if (blobName) {
+        elements.push("/" + blobName);
+      }
+      return elements.join("");
+    }
+    __name(getCanonicalName, "getCanonicalName");
+    function SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues) {
+      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
+      if (blobSASSignatureValues.snapshotTime && version2 < "2018-11-09") {
+        throw RangeError("'version' must be >= '2018-11-09' when providing 'snapshotTime'.");
+      }
+      if (blobSASSignatureValues.blobName === void 0 && blobSASSignatureValues.snapshotTime) {
+        throw RangeError("Must provide 'blobName' when providing 'snapshotTime'.");
+      }
+      if (blobSASSignatureValues.versionId && version2 < "2019-10-10") {
+        throw RangeError("'version' must be >= '2019-10-10' when providing 'versionId'.");
+      }
+      if (blobSASSignatureValues.blobName === void 0 && blobSASSignatureValues.versionId) {
+        throw RangeError("Must provide 'blobName' when providing 'versionId'.");
+      }
+      if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.deleteVersion && version2 < "2019-10-10") {
+        throw RangeError("'version' must be >= '2019-10-10' when providing 'x' permission.");
+      }
+      if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.tag && version2 < "2019-12-12") {
+        throw RangeError("'version' must be >= '2019-12-12' when providing 't' permission.");
+      }
+      if (version2 < "2020-02-10" && blobSASSignatureValues.permissions && (blobSASSignatureValues.permissions.move || blobSASSignatureValues.permissions.execute)) {
+        throw RangeError("'version' must be >= '2020-02-10' when providing the 'm' or 'e' permission.");
+      }
+      if (version2 < "2020-02-10" && (blobSASSignatureValues.preauthorizedAgentObjectId || blobSASSignatureValues.correlationId)) {
+        throw RangeError("'version' must be >= '2020-02-10' when providing 'preauthorizedAgentObjectId' or 'correlationId'.");
+      }
+      blobSASSignatureValues.version = version2;
+      return blobSASSignatureValues;
+    }
+    __name(SASSignatureValuesSanityCheckAndAutofill, "SASSignatureValuesSanityCheckAndAutofill");
+    var BlobLeaseClient = function() {
+      function BlobLeaseClient2(client, leaseId) {
+        var clientContext = new StorageClientContext(client.url, client.pipeline.toServiceClientOptions());
+        this._url = client.url;
+        if (client.name === void 0) {
+          this._isContainer = true;
+          this._containerOrBlobOperation = new Container(clientContext);
+        } else {
+          this._isContainer = false;
+          this._containerOrBlobOperation = new Blob$1(clientContext);
+        }
+        if (!leaseId) {
+          leaseId = coreHttp.generateUuid();
+        }
+        this._leaseId = leaseId;
+      }
+      __name(BlobLeaseClient2, "BlobLeaseClient");
+      Object.defineProperty(BlobLeaseClient2.prototype, "leaseId", {
+        get: function() {
+          return this._leaseId;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      Object.defineProperty(BlobLeaseClient2.prototype, "url", {
+        get: function() {
+          return this._url;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      BlobLeaseClient2.prototype.acquireLease = function(duration2, options) {
+        var _a, _b, _c, _d, _e, _f;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _g, span, updatedOptions, e_1;
+          return tslib.__generator(this, function(_h) {
+            switch (_h.label) {
+              case 0:
+                _g = createSpan("BlobLeaseClient-acquireLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
+                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
+                }
+                _h.label = 1;
+              case 1:
+                _h.trys.push([1, 3, 4, 5]);
+                return [4, this._containerOrBlobOperation.acquireLease(tslib.__assign({abortSignal: options.abortSignal, duration: duration2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}), proposedLeaseId: this._leaseId}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _h.sent()];
+              case 3:
+                e_1 = _h.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_1.message
+                });
+                throw e_1;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      BlobLeaseClient2.prototype.changeLease = function(proposedLeaseId, options) {
+        var _a, _b, _c, _d, _e, _f;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _g, span, updatedOptions, response, e_2;
+          return tslib.__generator(this, function(_h) {
+            switch (_h.label) {
+              case 0:
+                _g = createSpan("BlobLeaseClient-changeLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
+                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
+                }
+                _h.label = 1;
+              case 1:
+                _h.trys.push([1, 3, 4, 5]);
+                return [4, this._containerOrBlobOperation.changeLease(this._leaseId, proposedLeaseId, tslib.__assign({abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                response = _h.sent();
+                this._leaseId = proposedLeaseId;
+                return [2, response];
+              case 3:
+                e_2 = _h.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_2.message
+                });
+                throw e_2;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      BlobLeaseClient2.prototype.releaseLease = function(options) {
+        var _a, _b, _c, _d, _e, _f;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _g, span, updatedOptions, e_3;
+          return tslib.__generator(this, function(_h) {
+            switch (_h.label) {
+              case 0:
+                _g = createSpan("BlobLeaseClient-releaseLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
+                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
+                }
+                _h.label = 1;
+              case 1:
+                _h.trys.push([1, 3, 4, 5]);
+                return [4, this._containerOrBlobOperation.releaseLease(this._leaseId, tslib.__assign({abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _h.sent()];
+              case 3:
+                e_3 = _h.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_3.message
+                });
+                throw e_3;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      BlobLeaseClient2.prototype.renewLease = function(options) {
+        var _a, _b, _c, _d, _e, _f;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _g, span, updatedOptions, e_4;
+          return tslib.__generator(this, function(_h) {
+            switch (_h.label) {
+              case 0:
+                _g = createSpan("BlobLeaseClient-renewLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
+                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
+                }
+                _h.label = 1;
+              case 1:
+                _h.trys.push([1, 3, 4, 5]);
+                return [4, this._containerOrBlobOperation.renewLease(this._leaseId, tslib.__assign({abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _h.sent()];
+              case 3:
+                e_4 = _h.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_4.message
+                });
+                throw e_4;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      BlobLeaseClient2.prototype.breakLease = function(breakPeriod2, options) {
+        var _a, _b, _c, _d, _e, _f;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _g, span, updatedOptions, operationOptions, e_5;
+          return tslib.__generator(this, function(_h) {
+            switch (_h.label) {
+              case 0:
+                _g = createSpan("BlobLeaseClient-breakLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
+                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
+                }
+                _h.label = 1;
+              case 1:
+                _h.trys.push([1, 3, 4, 5]);
+                operationOptions = tslib.__assign({abortSignal: options.abortSignal, breakPeriod: breakPeriod2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions));
+                return [4, this._containerOrBlobOperation.breakLease(operationOptions)];
+              case 2:
+                return [2, _h.sent()];
+              case 3:
+                e_5 = _h.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_5.message
+                });
+                throw e_5;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      return BlobLeaseClient2;
+    }();
     var RetriableReadableStream = function(_super) {
       tslib.__extends(RetriableReadableStream2, _super);
       function RetriableReadableStream2(source, getter, offset, count, options) {
@@ -52631,6 +55186,13 @@ var require_dist9 = __commonJS({
       Object.defineProperty(BlobDownloadResponse2.prototype, "versionId", {
         get: function() {
           return this.originalResponse.versionId;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      Object.defineProperty(BlobDownloadResponse2.prototype, "isCurrentVersion", {
+        get: function() {
+          return this.originalResponse.isCurrentVersion;
         },
         enumerable: false,
         configurable: true
@@ -53051,7 +55613,7 @@ var require_dist9 = __commonJS({
       }
       __name(AvroType2, "AvroType");
       AvroType2.fromSchema = function(schema) {
-        if (typeof schema == "string") {
+        if (typeof schema === "string") {
           return AvroType2.fromStringSchema(schema);
         } else if (Array.isArray(schema)) {
           return AvroType2.fromArraySchema(schema);
@@ -53994,134 +56556,6 @@ var require_dist9 = __commonJS({
       });
       return BlobQueryResponse2;
     }();
-    var StorageSharedKeyCredentialPolicy = function(_super) {
-      tslib.__extends(StorageSharedKeyCredentialPolicy2, _super);
-      function StorageSharedKeyCredentialPolicy2(nextPolicy, options, factory) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.factory = factory;
-        return _this;
-      }
-      __name(StorageSharedKeyCredentialPolicy2, "StorageSharedKeyCredentialPolicy");
-      StorageSharedKeyCredentialPolicy2.prototype.signRequest = function(request) {
-        request.headers.set(HeaderConstants.X_MS_DATE, new Date().toUTCString());
-        if (request.body && typeof request.body === "string" && request.body.length > 0) {
-          request.headers.set(HeaderConstants.CONTENT_LENGTH, Buffer.byteLength(request.body));
-        }
-        var stringToSign = [
-          request.method.toUpperCase(),
-          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_LANGUAGE),
-          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_ENCODING),
-          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_LENGTH),
-          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_MD5),
-          this.getHeaderValueToSign(request, HeaderConstants.CONTENT_TYPE),
-          this.getHeaderValueToSign(request, HeaderConstants.DATE),
-          this.getHeaderValueToSign(request, HeaderConstants.IF_MODIFIED_SINCE),
-          this.getHeaderValueToSign(request, HeaderConstants.IF_MATCH),
-          this.getHeaderValueToSign(request, HeaderConstants.IF_NONE_MATCH),
-          this.getHeaderValueToSign(request, HeaderConstants.IF_UNMODIFIED_SINCE),
-          this.getHeaderValueToSign(request, HeaderConstants.RANGE)
-        ].join("\n") + "\n" + this.getCanonicalizedHeadersString(request) + this.getCanonicalizedResourceString(request);
-        var signature = this.factory.computeHMACSHA256(stringToSign);
-        request.headers.set(HeaderConstants.AUTHORIZATION, "SharedKey " + this.factory.accountName + ":" + signature);
-        return request;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getHeaderValueToSign = function(request, headerName) {
-        var value = request.headers.get(headerName);
-        if (!value) {
-          return "";
-        }
-        if (headerName === HeaderConstants.CONTENT_LENGTH && value === "0") {
-          return "";
-        }
-        return value;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedHeadersString = function(request) {
-        var headersArray = request.headers.headersArray().filter(function(value) {
-          return value.name.toLowerCase().startsWith(HeaderConstants.PREFIX_FOR_STORAGE);
-        });
-        headersArray.sort(function(a, b) {
-          return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-        });
-        headersArray = headersArray.filter(function(value, index, array) {
-          if (index > 0 && value.name.toLowerCase() === array[index - 1].name.toLowerCase()) {
-            return false;
-          }
-          return true;
-        });
-        var canonicalizedHeadersStringToSign = "";
-        headersArray.forEach(function(header) {
-          canonicalizedHeadersStringToSign += header.name.toLowerCase().trimRight() + ":" + header.value.trimLeft() + "\n";
-        });
-        return canonicalizedHeadersStringToSign;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedResourceString = function(request) {
-        var path2 = getURLPath(request.url) || "/";
-        var canonicalizedResourceString = "";
-        canonicalizedResourceString += "/" + this.factory.accountName + path2;
-        var queries = getURLQueries(request.url);
-        var lowercaseQueries = {};
-        if (queries) {
-          var queryKeys = [];
-          for (var key in queries) {
-            if (queries.hasOwnProperty(key)) {
-              var lowercaseKey = key.toLowerCase();
-              lowercaseQueries[lowercaseKey] = queries[key];
-              queryKeys.push(lowercaseKey);
-            }
-          }
-          queryKeys.sort();
-          for (var _i = 0, queryKeys_1 = queryKeys; _i < queryKeys_1.length; _i++) {
-            var key = queryKeys_1[_i];
-            canonicalizedResourceString += "\n" + key + ":" + decodeURIComponent(lowercaseQueries[key]);
-          }
-        }
-        return canonicalizedResourceString;
-      };
-      return StorageSharedKeyCredentialPolicy2;
-    }(CredentialPolicy);
-    var StorageSharedKeyCredential = function(_super) {
-      tslib.__extends(StorageSharedKeyCredential2, _super);
-      function StorageSharedKeyCredential2(accountName, accountKey) {
-        var _this = _super.call(this) || this;
-        _this.accountName = accountName;
-        _this.accountKey = Buffer.from(accountKey, "base64");
-        return _this;
-      }
-      __name(StorageSharedKeyCredential2, "StorageSharedKeyCredential");
-      StorageSharedKeyCredential2.prototype.create = function(nextPolicy, options) {
-        return new StorageSharedKeyCredentialPolicy(nextPolicy, options, this);
-      };
-      StorageSharedKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
-        return crypto.createHmac("sha256", this.accountKey).update(stringToSign, "utf8").digest("base64");
-      };
-      return StorageSharedKeyCredential2;
-    }(Credential);
-    var packageName = "azure-storage-blob";
-    var packageVersion = "12.4.1";
-    var StorageClientContext = function(_super) {
-      tslib.__extends(StorageClientContext2, _super);
-      function StorageClientContext2(url2, options) {
-        var _this = this;
-        if (url2 == void 0) {
-          throw new Error("'url' cannot be null.");
-        }
-        if (!options) {
-          options = {};
-        }
-        if (!options.userAgent) {
-          var defaultUserAgent = coreHttp.getDefaultUserAgentValue();
-          options.userAgent = packageName + "/" + packageVersion + " " + defaultUserAgent;
-        }
-        _this = _super.call(this, void 0, options) || this;
-        _this.version = "2020-04-08";
-        _this.baseUri = "{url}";
-        _this.requestContentType = "application/json; charset=utf-8";
-        _this.url = url2;
-        return _this;
-      }
-      __name(StorageClientContext2, "StorageClientContext");
-      return StorageClientContext2;
-    }(coreHttp.ServiceClient);
     (function(BlockBlobTier) {
       BlockBlobTier["Hot"] = "Hot";
       BlockBlobTier["Cool"] = "Cool";
@@ -54320,28 +56754,6 @@ var require_dist9 = __commonJS({
       return iRange.count ? "bytes=" + iRange.offset + "-" + (iRange.offset + iRange.count - 1) : "bytes=" + iRange.offset + "-";
     }
     __name(rangeToString, "rangeToString");
-    var StorageClient = function() {
-      function StorageClient2(url2, pipeline) {
-        this.url = escapeURLPath(url2);
-        this.accountName = getAccountNameFromUrl(url2);
-        this.pipeline = pipeline;
-        this.storageClientContext = new StorageClientContext(this.url, pipeline.toServiceClientOptions());
-        this.isHttps = iEqual(getURLScheme(this.url) || "", "https");
-        this.credential = new AnonymousCredential();
-        for (var _i = 0, _a = this.pipeline.factories; _i < _a.length; _i++) {
-          var factory = _a[_i];
-          if (coreHttp.isNode && factory instanceof StorageSharedKeyCredential || factory instanceof AnonymousCredential) {
-            this.credential = factory;
-          } else if (coreHttp.isTokenCredential(factory.credential)) {
-            this.credential = factory.credential;
-          }
-        }
-        var storageClientContext = this.storageClientContext;
-        storageClientContext.requestContentType = void 0;
-      }
-      __name(StorageClient2, "StorageClient");
-      return StorageClient2;
-    }();
     var BatchStates;
     (function(BatchStates2) {
       BatchStates2[BatchStates2["Good"] = 0] = "Good";
@@ -54714,24 +57126,6 @@ var require_dist9 = __commonJS({
       };
       return BufferScheduler2;
     }();
-    function createSpan(operationName, tracingOptions) {
-      if (tracingOptions === void 0) {
-        tracingOptions = {};
-      }
-      var tracer = coreTracing.getTracer();
-      var spanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {kind: api.SpanKind.INTERNAL});
-      var span = tracer.startSpan("Azure.Storage.Blob." + operationName, spanOptions);
-      span.setAttribute("az.namespace", "Microsoft.Storage");
-      var newOptions = tracingOptions.spanOptions || {};
-      if (span.isRecording()) {
-        newOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), {parent: span.context(), attributes: tslib.__assign(tslib.__assign({}, spanOptions.attributes), {"az.namespace": "Microsoft.Storage"})});
-      }
-      return {
-        span,
-        spanOptions: newOptions
-      };
-    }
-    __name(createSpan, "createSpan");
     function streamToBuffer(stream2, buffer, offset, end, encoding) {
       return tslib.__awaiter(this, void 0, void 0, function() {
         var pos, count;
@@ -54818,708 +57212,6 @@ var require_dist9 = __commonJS({
     __name(readStreamToLocalFile, "readStreamToLocalFile");
     var fsStat = util2.promisify(fs2.stat);
     var fsCreateReadStream = fs2.createReadStream;
-    var BlobSASPermissions = function() {
-      function BlobSASPermissions2() {
-        this.read = false;
-        this.add = false;
-        this.create = false;
-        this.write = false;
-        this.delete = false;
-        this.deleteVersion = false;
-        this.tag = false;
-        this.move = false;
-        this.execute = false;
-      }
-      __name(BlobSASPermissions2, "BlobSASPermissions");
-      BlobSASPermissions2.parse = function(permissions) {
-        var blobSASPermissions = new BlobSASPermissions2();
-        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
-          var char = permissions_1[_i];
-          switch (char) {
-            case "r":
-              blobSASPermissions.read = true;
-              break;
-            case "a":
-              blobSASPermissions.add = true;
-              break;
-            case "c":
-              blobSASPermissions.create = true;
-              break;
-            case "w":
-              blobSASPermissions.write = true;
-              break;
-            case "d":
-              blobSASPermissions.delete = true;
-              break;
-            case "x":
-              blobSASPermissions.deleteVersion = true;
-              break;
-            case "t":
-              blobSASPermissions.tag = true;
-              break;
-            case "m":
-              blobSASPermissions.move = true;
-              break;
-            case "e":
-              blobSASPermissions.execute = true;
-              break;
-            default:
-              throw new RangeError("Invalid permission: " + char);
-          }
-        }
-        return blobSASPermissions;
-      };
-      BlobSASPermissions2.from = function(permissionLike) {
-        var blobSASPermissions = new BlobSASPermissions2();
-        if (permissionLike.read) {
-          blobSASPermissions.read = true;
-        }
-        if (permissionLike.add) {
-          blobSASPermissions.add = true;
-        }
-        if (permissionLike.create) {
-          blobSASPermissions.create = true;
-        }
-        if (permissionLike.write) {
-          blobSASPermissions.write = true;
-        }
-        if (permissionLike.delete) {
-          blobSASPermissions.delete = true;
-        }
-        if (permissionLike.deleteVersion) {
-          blobSASPermissions.deleteVersion = true;
-        }
-        if (permissionLike.tag) {
-          blobSASPermissions.tag = true;
-        }
-        if (permissionLike.move) {
-          blobSASPermissions.move = true;
-        }
-        if (permissionLike.execute) {
-          blobSASPermissions.execute = true;
-        }
-        return blobSASPermissions;
-      };
-      BlobSASPermissions2.prototype.toString = function() {
-        var permissions = [];
-        if (this.read) {
-          permissions.push("r");
-        }
-        if (this.add) {
-          permissions.push("a");
-        }
-        if (this.create) {
-          permissions.push("c");
-        }
-        if (this.write) {
-          permissions.push("w");
-        }
-        if (this.delete) {
-          permissions.push("d");
-        }
-        if (this.deleteVersion) {
-          permissions.push("x");
-        }
-        if (this.tag) {
-          permissions.push("t");
-        }
-        if (this.move) {
-          permissions.push("m");
-        }
-        if (this.execute) {
-          permissions.push("e");
-        }
-        return permissions.join("");
-      };
-      return BlobSASPermissions2;
-    }();
-    var ContainerSASPermissions = function() {
-      function ContainerSASPermissions2() {
-        this.read = false;
-        this.add = false;
-        this.create = false;
-        this.write = false;
-        this.delete = false;
-        this.deleteVersion = false;
-        this.list = false;
-        this.tag = false;
-        this.move = false;
-        this.execute = false;
-      }
-      __name(ContainerSASPermissions2, "ContainerSASPermissions");
-      ContainerSASPermissions2.parse = function(permissions) {
-        var containerSASPermissions = new ContainerSASPermissions2();
-        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
-          var char = permissions_1[_i];
-          switch (char) {
-            case "r":
-              containerSASPermissions.read = true;
-              break;
-            case "a":
-              containerSASPermissions.add = true;
-              break;
-            case "c":
-              containerSASPermissions.create = true;
-              break;
-            case "w":
-              containerSASPermissions.write = true;
-              break;
-            case "d":
-              containerSASPermissions.delete = true;
-              break;
-            case "l":
-              containerSASPermissions.list = true;
-              break;
-            case "t":
-              containerSASPermissions.tag = true;
-              break;
-            case "x":
-              containerSASPermissions.deleteVersion = true;
-              break;
-            case "m":
-              containerSASPermissions.move = true;
-              break;
-            case "e":
-              containerSASPermissions.execute = true;
-              break;
-            default:
-              throw new RangeError("Invalid permission " + char);
-          }
-        }
-        return containerSASPermissions;
-      };
-      ContainerSASPermissions2.from = function(permissionLike) {
-        var containerSASPermissions = new ContainerSASPermissions2();
-        if (permissionLike.read) {
-          containerSASPermissions.read = true;
-        }
-        if (permissionLike.add) {
-          containerSASPermissions.add = true;
-        }
-        if (permissionLike.create) {
-          containerSASPermissions.create = true;
-        }
-        if (permissionLike.write) {
-          containerSASPermissions.write = true;
-        }
-        if (permissionLike.delete) {
-          containerSASPermissions.delete = true;
-        }
-        if (permissionLike.list) {
-          containerSASPermissions.list = true;
-        }
-        if (permissionLike.deleteVersion) {
-          containerSASPermissions.deleteVersion = true;
-        }
-        if (permissionLike.tag) {
-          containerSASPermissions.tag = true;
-        }
-        if (permissionLike.move) {
-          containerSASPermissions.move = true;
-        }
-        if (permissionLike.execute) {
-          containerSASPermissions.execute = true;
-        }
-        return containerSASPermissions;
-      };
-      ContainerSASPermissions2.prototype.toString = function() {
-        var permissions = [];
-        if (this.read) {
-          permissions.push("r");
-        }
-        if (this.add) {
-          permissions.push("a");
-        }
-        if (this.create) {
-          permissions.push("c");
-        }
-        if (this.write) {
-          permissions.push("w");
-        }
-        if (this.delete) {
-          permissions.push("d");
-        }
-        if (this.deleteVersion) {
-          permissions.push("x");
-        }
-        if (this.list) {
-          permissions.push("l");
-        }
-        if (this.tag) {
-          permissions.push("t");
-        }
-        if (this.move) {
-          permissions.push("m");
-        }
-        if (this.execute) {
-          permissions.push("e");
-        }
-        return permissions.join("");
-      };
-      return ContainerSASPermissions2;
-    }();
-    var UserDelegationKeyCredential = function() {
-      function UserDelegationKeyCredential2(accountName, userDelegationKey) {
-        this.accountName = accountName;
-        this.userDelegationKey = userDelegationKey;
-        this.key = Buffer.from(userDelegationKey.value, "base64");
-      }
-      __name(UserDelegationKeyCredential2, "UserDelegationKeyCredential");
-      UserDelegationKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
-        return crypto.createHmac("sha256", this.key).update(stringToSign, "utf8").digest("base64");
-      };
-      return UserDelegationKeyCredential2;
-    }();
-    function ipRangeToString(ipRange) {
-      return ipRange.end ? ipRange.start + "-" + ipRange.end : ipRange.start;
-    }
-    __name(ipRangeToString, "ipRangeToString");
-    (function(SASProtocol) {
-      SASProtocol["Https"] = "https";
-      SASProtocol["HttpsAndHttp"] = "https,http";
-    })(exports2.SASProtocol || (exports2.SASProtocol = {}));
-    var SASQueryParameters = function() {
-      function SASQueryParameters2(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl2, contentDisposition2, contentEncoding2, contentLanguage2, contentType2, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
-        this.version = version2;
-        this.signature = signature;
-        if (permissionsOrOptions !== void 0 && typeof permissionsOrOptions !== "string") {
-          this.permissions = permissionsOrOptions.permissions;
-          this.services = permissionsOrOptions.services;
-          this.resourceTypes = permissionsOrOptions.resourceTypes;
-          this.protocol = permissionsOrOptions.protocol;
-          this.startsOn = permissionsOrOptions.startsOn;
-          this.expiresOn = permissionsOrOptions.expiresOn;
-          this.ipRangeInner = permissionsOrOptions.ipRange;
-          this.identifier = permissionsOrOptions.identifier;
-          this.resource = permissionsOrOptions.resource;
-          this.cacheControl = permissionsOrOptions.cacheControl;
-          this.contentDisposition = permissionsOrOptions.contentDisposition;
-          this.contentEncoding = permissionsOrOptions.contentEncoding;
-          this.contentLanguage = permissionsOrOptions.contentLanguage;
-          this.contentType = permissionsOrOptions.contentType;
-          if (permissionsOrOptions.userDelegationKey) {
-            this.signedOid = permissionsOrOptions.userDelegationKey.signedObjectId;
-            this.signedTenantId = permissionsOrOptions.userDelegationKey.signedTenantId;
-            this.signedStartsOn = permissionsOrOptions.userDelegationKey.signedStartsOn;
-            this.signedExpiresOn = permissionsOrOptions.userDelegationKey.signedExpiresOn;
-            this.signedService = permissionsOrOptions.userDelegationKey.signedService;
-            this.signedVersion = permissionsOrOptions.userDelegationKey.signedVersion;
-            this.preauthorizedAgentObjectId = permissionsOrOptions.preauthorizedAgentObjectId;
-            this.correlationId = permissionsOrOptions.correlationId;
-          }
-        } else {
-          this.services = services;
-          this.resourceTypes = resourceTypes;
-          this.expiresOn = expiresOn2;
-          this.permissions = permissionsOrOptions;
-          this.protocol = protocol;
-          this.startsOn = startsOn;
-          this.ipRangeInner = ipRange;
-          this.identifier = identifier;
-          this.resource = resource;
-          this.cacheControl = cacheControl2;
-          this.contentDisposition = contentDisposition2;
-          this.contentEncoding = contentEncoding2;
-          this.contentLanguage = contentLanguage2;
-          this.contentType = contentType2;
-          if (userDelegationKey) {
-            this.signedOid = userDelegationKey.signedObjectId;
-            this.signedTenantId = userDelegationKey.signedTenantId;
-            this.signedStartsOn = userDelegationKey.signedStartsOn;
-            this.signedExpiresOn = userDelegationKey.signedExpiresOn;
-            this.signedService = userDelegationKey.signedService;
-            this.signedVersion = userDelegationKey.signedVersion;
-            this.preauthorizedAgentObjectId = preauthorizedAgentObjectId;
-            this.correlationId = correlationId;
-          }
-        }
-      }
-      __name(SASQueryParameters2, "SASQueryParameters");
-      Object.defineProperty(SASQueryParameters2.prototype, "ipRange", {
-        get: function() {
-          if (this.ipRangeInner) {
-            return {
-              end: this.ipRangeInner.end,
-              start: this.ipRangeInner.start
-            };
-          }
-          return void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      SASQueryParameters2.prototype.toString = function() {
-        var params = [
-          "sv",
-          "ss",
-          "srt",
-          "spr",
-          "st",
-          "se",
-          "sip",
-          "si",
-          "skoid",
-          "sktid",
-          "skt",
-          "ske",
-          "sks",
-          "skv",
-          "sr",
-          "sp",
-          "sig",
-          "rscc",
-          "rscd",
-          "rsce",
-          "rscl",
-          "rsct",
-          "saoid",
-          "scid"
-        ];
-        var queries = [];
-        for (var _i = 0, params_1 = params; _i < params_1.length; _i++) {
-          var param = params_1[_i];
-          switch (param) {
-            case "sv":
-              this.tryAppendQueryParameter(queries, param, this.version);
-              break;
-            case "ss":
-              this.tryAppendQueryParameter(queries, param, this.services);
-              break;
-            case "srt":
-              this.tryAppendQueryParameter(queries, param, this.resourceTypes);
-              break;
-            case "spr":
-              this.tryAppendQueryParameter(queries, param, this.protocol);
-              break;
-            case "st":
-              this.tryAppendQueryParameter(queries, param, this.startsOn ? truncatedISO8061Date(this.startsOn, false) : void 0);
-              break;
-            case "se":
-              this.tryAppendQueryParameter(queries, param, this.expiresOn ? truncatedISO8061Date(this.expiresOn, false) : void 0);
-              break;
-            case "sip":
-              this.tryAppendQueryParameter(queries, param, this.ipRange ? ipRangeToString(this.ipRange) : void 0);
-              break;
-            case "si":
-              this.tryAppendQueryParameter(queries, param, this.identifier);
-              break;
-            case "skoid":
-              this.tryAppendQueryParameter(queries, param, this.signedOid);
-              break;
-            case "sktid":
-              this.tryAppendQueryParameter(queries, param, this.signedTenantId);
-              break;
-            case "skt":
-              this.tryAppendQueryParameter(queries, param, this.signedStartsOn ? truncatedISO8061Date(this.signedStartsOn, false) : void 0);
-              break;
-            case "ske":
-              this.tryAppendQueryParameter(queries, param, this.signedExpiresOn ? truncatedISO8061Date(this.signedExpiresOn, false) : void 0);
-              break;
-            case "sks":
-              this.tryAppendQueryParameter(queries, param, this.signedService);
-              break;
-            case "skv":
-              this.tryAppendQueryParameter(queries, param, this.signedVersion);
-              break;
-            case "sr":
-              this.tryAppendQueryParameter(queries, param, this.resource);
-              break;
-            case "sp":
-              this.tryAppendQueryParameter(queries, param, this.permissions);
-              break;
-            case "sig":
-              this.tryAppendQueryParameter(queries, param, this.signature);
-              break;
-            case "rscc":
-              this.tryAppendQueryParameter(queries, param, this.cacheControl);
-              break;
-            case "rscd":
-              this.tryAppendQueryParameter(queries, param, this.contentDisposition);
-              break;
-            case "rsce":
-              this.tryAppendQueryParameter(queries, param, this.contentEncoding);
-              break;
-            case "rscl":
-              this.tryAppendQueryParameter(queries, param, this.contentLanguage);
-              break;
-            case "rsct":
-              this.tryAppendQueryParameter(queries, param, this.contentType);
-              break;
-            case "saoid":
-              this.tryAppendQueryParameter(queries, param, this.preauthorizedAgentObjectId);
-              break;
-            case "scid":
-              this.tryAppendQueryParameter(queries, param, this.correlationId);
-              break;
-          }
-        }
-        return queries.join("&");
-      };
-      SASQueryParameters2.prototype.tryAppendQueryParameter = function(queries, key, value) {
-        if (!value) {
-          return;
-        }
-        key = encodeURIComponent(key);
-        value = encodeURIComponent(value);
-        if (key.length > 0 && value.length > 0) {
-          queries.push(key + "=" + value);
-        }
-      };
-      return SASQueryParameters2;
-    }();
-    function generateBlobSASQueryParameters(blobSASSignatureValues, sharedKeyCredentialOrUserDelegationKey, accountName) {
-      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
-      var sharedKeyCredential = sharedKeyCredentialOrUserDelegationKey instanceof StorageSharedKeyCredential ? sharedKeyCredentialOrUserDelegationKey : void 0;
-      var userDelegationKeyCredential;
-      if (sharedKeyCredential === void 0 && accountName !== void 0) {
-        userDelegationKeyCredential = new UserDelegationKeyCredential(accountName, sharedKeyCredentialOrUserDelegationKey);
-      }
-      if (sharedKeyCredential === void 0 && userDelegationKeyCredential === void 0) {
-        throw TypeError("Invalid sharedKeyCredential, userDelegationKey or accountName.");
-      }
-      if (version2 >= "2018-11-09") {
-        if (sharedKeyCredential !== void 0) {
-          return generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential);
-        } else {
-          if (version2 >= "2020-02-10") {
-            return generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userDelegationKeyCredential);
-          } else {
-            return generateBlobSASQueryParametersUDK20181109(blobSASSignatureValues, userDelegationKeyCredential);
-          }
-        }
-      }
-      if (version2 >= "2015-04-05") {
-        if (sharedKeyCredential !== void 0) {
-          return generateBlobSASQueryParameters20150405(blobSASSignatureValues, sharedKeyCredential);
-        } else {
-          throw new RangeError("'version' must be >= '2018-11-09' when generating user delegation SAS using user delegation key.");
-        }
-      }
-      throw new RangeError("'version' must be >= '2015-04-05'.");
-    }
-    __name(generateBlobSASQueryParameters, "generateBlobSASQueryParameters");
-    function generateBlobSASQueryParameters20150405(blobSASSignatureValues, sharedKeyCredential) {
-      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
-      if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
-        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
-      }
-      var resource = "c";
-      if (blobSASSignatureValues.blobName) {
-        resource = "b";
-      }
-      var verifiedPermissions;
-      if (blobSASSignatureValues.permissions) {
-        if (blobSASSignatureValues.blobName) {
-          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        } else {
-          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        }
-      }
-      var stringToSign = [
-        verifiedPermissions ? verifiedPermissions : "",
-        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
-        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
-        getCanonicalName(sharedKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
-        blobSASSignatureValues.identifier,
-        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
-        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
-        blobSASSignatureValues.version,
-        blobSASSignatureValues.cacheControl ? blobSASSignatureValues.cacheControl : "",
-        blobSASSignatureValues.contentDisposition ? blobSASSignatureValues.contentDisposition : "",
-        blobSASSignatureValues.contentEncoding ? blobSASSignatureValues.contentEncoding : "",
-        blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
-        blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
-      ].join("\n");
-      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
-      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
-    }
-    __name(generateBlobSASQueryParameters20150405, "generateBlobSASQueryParameters20150405");
-    function generateBlobSASQueryParameters20181109(blobSASSignatureValues, sharedKeyCredential) {
-      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
-      if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
-        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
-      }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
-      if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-          resource = "bs";
-        } else if (blobSASSignatureValues.versionId) {
-          resource = "bv";
-          timestamp = blobSASSignatureValues.versionId;
-        }
-      }
-      var verifiedPermissions;
-      if (blobSASSignatureValues.permissions) {
-        if (blobSASSignatureValues.blobName) {
-          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        } else {
-          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        }
-      }
-      var stringToSign = [
-        verifiedPermissions ? verifiedPermissions : "",
-        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
-        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
-        getCanonicalName(sharedKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
-        blobSASSignatureValues.identifier,
-        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
-        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
-        blobSASSignatureValues.version,
-        resource,
-        timestamp,
-        blobSASSignatureValues.cacheControl ? blobSASSignatureValues.cacheControl : "",
-        blobSASSignatureValues.contentDisposition ? blobSASSignatureValues.contentDisposition : "",
-        blobSASSignatureValues.contentEncoding ? blobSASSignatureValues.contentEncoding : "",
-        blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
-        blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
-      ].join("\n");
-      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
-      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
-    }
-    __name(generateBlobSASQueryParameters20181109, "generateBlobSASQueryParameters20181109");
-    function generateBlobSASQueryParametersUDK20181109(blobSASSignatureValues, userDelegationKeyCredential) {
-      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
-      if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
-        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
-      }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
-      if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-          resource = "bs";
-        } else if (blobSASSignatureValues.versionId) {
-          resource = "bv";
-          timestamp = blobSASSignatureValues.versionId;
-        }
-      }
-      var verifiedPermissions;
-      if (blobSASSignatureValues.permissions) {
-        if (blobSASSignatureValues.blobName) {
-          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        } else {
-          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        }
-      }
-      var stringToSign = [
-        verifiedPermissions ? verifiedPermissions : "",
-        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
-        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
-        getCanonicalName(userDelegationKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
-        userDelegationKeyCredential.userDelegationKey.signedObjectId,
-        userDelegationKeyCredential.userDelegationKey.signedTenantId,
-        userDelegationKeyCredential.userDelegationKey.signedStartsOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedStartsOn, false) : "",
-        userDelegationKeyCredential.userDelegationKey.signedExpiresOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedExpiresOn, false) : "",
-        userDelegationKeyCredential.userDelegationKey.signedService,
-        userDelegationKeyCredential.userDelegationKey.signedVersion,
-        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
-        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
-        blobSASSignatureValues.version,
-        resource,
-        timestamp,
-        blobSASSignatureValues.cacheControl,
-        blobSASSignatureValues.contentDisposition,
-        blobSASSignatureValues.contentEncoding,
-        blobSASSignatureValues.contentLanguage,
-        blobSASSignatureValues.contentType
-      ].join("\n");
-      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
-      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey);
-    }
-    __name(generateBlobSASQueryParametersUDK20181109, "generateBlobSASQueryParametersUDK20181109");
-    function generateBlobSASQueryParametersUDK20200210(blobSASSignatureValues, userDelegationKeyCredential) {
-      blobSASSignatureValues = SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues);
-      if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
-        throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
-      }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
-      if (blobSASSignatureValues.blobName) {
-        resource = "b";
-        if (blobSASSignatureValues.snapshotTime) {
-          resource = "bs";
-        } else if (blobSASSignatureValues.versionId) {
-          resource = "bv";
-          timestamp = blobSASSignatureValues.versionId;
-        }
-      }
-      var verifiedPermissions;
-      if (blobSASSignatureValues.permissions) {
-        if (blobSASSignatureValues.blobName) {
-          verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        } else {
-          verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
-        }
-      }
-      var stringToSign = [
-        verifiedPermissions ? verifiedPermissions : "",
-        blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
-        blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
-        getCanonicalName(userDelegationKeyCredential.accountName, blobSASSignatureValues.containerName, blobSASSignatureValues.blobName),
-        userDelegationKeyCredential.userDelegationKey.signedObjectId,
-        userDelegationKeyCredential.userDelegationKey.signedTenantId,
-        userDelegationKeyCredential.userDelegationKey.signedStartsOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedStartsOn, false) : "",
-        userDelegationKeyCredential.userDelegationKey.signedExpiresOn ? truncatedISO8061Date(userDelegationKeyCredential.userDelegationKey.signedExpiresOn, false) : "",
-        userDelegationKeyCredential.userDelegationKey.signedService,
-        userDelegationKeyCredential.userDelegationKey.signedVersion,
-        blobSASSignatureValues.preauthorizedAgentObjectId,
-        void 0,
-        blobSASSignatureValues.correlationId,
-        blobSASSignatureValues.ipRange ? ipRangeToString(blobSASSignatureValues.ipRange) : "",
-        blobSASSignatureValues.protocol ? blobSASSignatureValues.protocol : "",
-        blobSASSignatureValues.version,
-        resource,
-        timestamp,
-        blobSASSignatureValues.cacheControl,
-        blobSASSignatureValues.contentDisposition,
-        blobSASSignatureValues.contentEncoding,
-        blobSASSignatureValues.contentLanguage,
-        blobSASSignatureValues.contentType
-      ].join("\n");
-      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
-      return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId);
-    }
-    __name(generateBlobSASQueryParametersUDK20200210, "generateBlobSASQueryParametersUDK20200210");
-    function getCanonicalName(accountName, containerName, blobName) {
-      var elements = ["/blob/" + accountName + "/" + containerName];
-      if (blobName) {
-        elements.push("/" + blobName);
-      }
-      return elements.join("");
-    }
-    __name(getCanonicalName, "getCanonicalName");
-    function SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues) {
-      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
-      if (blobSASSignatureValues.snapshotTime && version2 < "2018-11-09") {
-        throw RangeError("'version' must be >= '2018-11-09' when providing 'snapshotTime'.");
-      }
-      if (blobSASSignatureValues.blobName === void 0 && blobSASSignatureValues.snapshotTime) {
-        throw RangeError("Must provide 'blobName' when providing 'snapshotTime'.");
-      }
-      if (blobSASSignatureValues.versionId && version2 < "2019-10-10") {
-        throw RangeError("'version' must be >= '2019-10-10' when providing 'versionId'.");
-      }
-      if (blobSASSignatureValues.blobName === void 0 && blobSASSignatureValues.versionId) {
-        throw RangeError("Must provide 'blobName' when providing 'versionId'.");
-      }
-      if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.deleteVersion && version2 < "2019-10-10") {
-        throw RangeError("'version' must be >= '2019-10-10' when providing 'x' permission.");
-      }
-      if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.tag && version2 < "2019-12-12") {
-        throw RangeError("'version' must be >= '2019-12-12' when providing 't' permission.");
-      }
-      if (version2 < "2020-02-10" && blobSASSignatureValues.permissions && (blobSASSignatureValues.permissions.move || blobSASSignatureValues.permissions.execute)) {
-        throw RangeError("'version' must be >= '2020-02-10' when providing the 'm' or 'e' permission.");
-      }
-      if (version2 < "2020-02-10" && (blobSASSignatureValues.preauthorizedAgentObjectId || blobSASSignatureValues.correlationId)) {
-        throw RangeError("'version' must be >= '2020-02-10' when providing 'preauthorizedAgentObjectId' or 'correlationId'.");
-      }
-      blobSASSignatureValues.version = version2;
-      return blobSASSignatureValues;
-    }
-    __name(SASSignatureValuesSanityCheckAndAutofill, "SASSignatureValuesSanityCheckAndAutofill");
     var BlobClient = function(_super) {
       tslib.__extends(BlobClient2, _super);
       function BlobClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
@@ -55604,7 +57296,7 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, res_1, wrappedRes, e_1;
+          var _b, span, updatedOptions, res_1, wrappedRes, e_1;
           var _this = this;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
@@ -55612,22 +57304,11 @@ var require_dist9 = __commonJS({
                 options.conditions = options.conditions || {};
                 options.conditions = options.conditions || {};
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                _b = createSpan("BlobClient-download", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-download", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.download({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  onDownloadProgress: coreHttp.isNode ? void 0 : options.onProgress,
-                  range: offset === 0 && !count ? void 0 : rangeToString({offset, count}),
-                  rangeGetContentMD5: options.rangeGetContentMD5,
-                  rangeGetContentCRC64: options.rangeGetContentCrc64,
-                  snapshot: options.snapshot,
-                  cpkInfo: options.customerProvidedKey,
-                  spanOptions
-                })];
+                return [4, this.blobContext.download(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), onDownloadProgress: coreHttp.isNode ? void 0 : options.onProgress, range: offset === 0 && !count ? void 0 : rangeToString({offset, count}), rangeGetContentMD5: options.rangeGetContentMD5, rangeGetContentCRC64: options.rangeGetContentCrc64, snapshot: options.snapshot, cpkInfo: options.customerProvidedKey}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 res_1 = _c.sent();
                 wrappedRes = tslib.__assign(tslib.__assign({}, res_1), {_response: res_1._response, objectReplicationDestinationPolicyId: res_1.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res_1.objectReplicationRules)});
@@ -55642,12 +57323,12 @@ var require_dist9 = __commonJS({
                 }
                 return [2, new BlobDownloadResponse(wrappedRes, function(start) {
                   return tslib.__awaiter(_this, void 0, void 0, function() {
-                    var updatedOptions;
+                    var updatedOptions2;
                     var _a2;
                     return tslib.__generator(this, function(_b2) {
                       switch (_b2.label) {
                         case 0:
-                          updatedOptions = {
+                          updatedOptions2 = {
                             leaseAccessConditions: options.conditions,
                             modifiedAccessConditions: {
                               ifMatch: options.conditions.ifMatch || res_1.etag,
@@ -55665,7 +57346,7 @@ var require_dist9 = __commonJS({
                             snapshot: options.snapshot,
                             cpkInfo: options.customerProvidedKey
                           };
-                          return [4, this.blobContext.download(tslib.__assign({abortSignal: options.abortSignal}, updatedOptions))];
+                          return [4, this.blobContext.download(tslib.__assign({abortSignal: options.abortSignal}, updatedOptions2))];
                         case 1:
                           return [2, _b2.sent().readableStreamBody];
                       }
@@ -55696,11 +57377,11 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_2;
+          var _a, span, updatedOptions, e_2;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobClient-exists", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobClient-exists", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
@@ -55709,7 +57390,7 @@ var require_dist9 = __commonJS({
                   abortSignal: options.abortSignal,
                   customerProvidedKey: options.customerProvidedKey,
                   conditions: options.conditions,
-                  tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})
+                  tracingOptions: updatedOptions.tracingOptions
                 })];
               case 2:
                 _b.sent();
@@ -55743,23 +57424,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, res, e_3;
+          var _b, span, updatedOptions, res, e_3;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-getProperties", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-getProperties", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 options.conditions = options.conditions || {};
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.getProperties({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  spanOptions
-                })];
+                return [4, this.blobContext.getProperties(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 res = _c.sent();
                 return [2, tslib.__assign(tslib.__assign({}, res), {_response: res._response, objectReplicationDestinationPolicyId: res.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res.objectReplicationRules)})];
@@ -55785,22 +57460,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_4;
+          var _b, span, updatedOptions, e_4;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-delete", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-delete", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.deleteMethod({
-                  abortSignal: options.abortSignal,
-                  deleteSnapshots: options.deleteSnapshots,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.blobContext.deleteMethod(tslib.__assign({abortSignal: options.abortSignal, deleteSnapshots: options.deleteSnapshots, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -55825,15 +57494,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, spanOptions, res, e_5;
+          var _c, span, updatedOptions, res, e_5;
           return tslib.__generator(this, function(_d) {
             switch (_d.label) {
               case 0:
-                _c = createSpan("BlobClient-deleteIfExists", options.tracingOptions), span = _c.span, spanOptions = _c.spanOptions;
+                _c = createSpan("BlobClient-deleteIfExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
                 _d.label = 1;
               case 1:
                 _d.trys.push([1, 3, 4, 5]);
-                return [4, this.delete(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.delete(updatedOptions)];
               case 2:
                 res = _d.sent();
                 return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
@@ -55867,18 +57536,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_6;
+          var _a, span, updatedOptions, e_6;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobClient-undelete", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobClient-undelete", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.undelete({
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                return [4, this.blobContext.undelete(tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -55903,24 +57569,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_7;
+          var _b, span, updatedOptions, e_7;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-setHTTPHeaders", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-setHTTPHeaders", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.setHTTPHeaders({
-                  abortSignal: options.abortSignal,
-                  blobHTTPHeaders,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  spanOptions
-                })];
+                return [4, this.blobContext.setHTTPHeaders(tslib.__assign({abortSignal: options.abortSignal, blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -55945,25 +57604,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_8;
+          var _b, span, updatedOptions, e_8;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-setMetadata", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-setMetadata", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.setMetadata({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  metadata: metadata2,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.blobContext.setMetadata(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -55988,21 +57639,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_9;
+          var _b, span, updatedOptions, e_9;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-setTags", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-setTags", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.setTags({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions,
-                  tags: toBlobTags(tags)
-                })];
+                return [4, this.blobContext.setTags(tslib.__assign(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)), {tags: toBlobTags(tags)}))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56027,20 +57672,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, response, wrappedResponse, e_10;
+          var _b, span, updatedOptions, response, wrappedResponse, e_10;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-getTags", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-getTags", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.getTags({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.blobContext.getTags(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 response = _c.sent();
                 wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, tags: toTags({blobTagSet: response.blobTagSet}) || {}});
@@ -56070,25 +57710,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_11;
+          var _b, span, updatedOptions, e_11;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-createSnapshot", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-createSnapshot", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.createSnapshot({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.blobContext.createSnapshot(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56161,19 +57793,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_12;
+          var _a, span, updatedOptions, e_12;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobClient-abortCopyFromURL", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobClient-abortCopyFromURL", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.abortCopyFromURL(copyId2, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  spanOptions
-                })];
+                return [4, this.blobContext.abortCopyFromURL(copyId2, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -56198,31 +57826,22 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_13;
+          var _b, span, updatedOptions, e_13;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-syncCopyFromURL", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-syncCopyFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 options.sourceConditions = options.sourceConditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.copyFromURL(copySource2, {
-                  abortSignal: options.abortSignal,
-                  metadata: options.metadata,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  sourceModifiedAccessConditions: {
-                    sourceIfMatch: options.sourceConditions.ifMatch,
-                    sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                    sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                    sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                  },
-                  sourceContentMD5: options.sourceContentMD5,
-                  blobTagsString: toBlobTagsString(options.tags),
-                  spanOptions
-                })];
+                return [4, this.blobContext.copyFromURL(copySource2, tslib.__assign({abortSignal: options.abortSignal, metadata: options.metadata, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), sourceModifiedAccessConditions: {
+                  sourceIfMatch: options.sourceConditions.ifMatch,
+                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+                }, sourceContentMD5: options.sourceContentMD5, blobTagsString: toBlobTagsString(options.tags)}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56247,21 +57866,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_14;
+          var _b, span, updatedOptions, e_14;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-setAccessTier", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-setAccessTier", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.setTier(toAccessTier(tier), {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  rehydratePriority: options.rehydratePriority,
-                  spanOptions
-                })];
+                return [4, this.blobContext.setTier(toAccessTier(tier), tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), rehydratePriority: options.rehydratePriority}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56285,7 +57898,7 @@ var require_dist9 = __commonJS({
           param4 = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var buffer, offset, count, options, _a, span, spanOptions, response, transferProgress_1, batch, _loop_1, off, e_15;
+          var buffer, offset, count, options, _a, span, updatedOptions, response, transferProgress_1, batch, _loop_1, off, e_15;
           var _this = this;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
@@ -56302,7 +57915,7 @@ var require_dist9 = __commonJS({
                   count = typeof param2 === "number" ? param2 : 0;
                   options = param3 || {};
                 }
-                _a = createSpan("BlobClient-downloadToBuffer", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobClient-downloadToBuffer", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 5, 6, 7]);
@@ -56319,14 +57932,14 @@ var require_dist9 = __commonJS({
                   throw new RangeError("offset option must be >= 0");
                 }
                 if (count && count <= 0) {
-                  throw new RangeError("count option must be > 0");
+                  throw new RangeError("count option must be greater than 0");
                 }
                 if (!options.conditions) {
                   options.conditions = {};
                 }
                 if (!!count)
                   return [3, 3];
-                return [4, this.getProperties(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.getProperties(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))}))];
               case 2:
                 response = _b.sent();
                 count = response.contentLength - offset;
@@ -56363,7 +57976,7 @@ var require_dist9 = __commonJS({
                               conditions: options.conditions,
                               maxRetryRequests: options.maxRetryRequestsPerBlock,
                               customerProvidedKey: options.customerProvidedKey,
-                              tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})
+                              tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))
                             })];
                           case 1:
                             response2 = _a2.sent();
@@ -56412,15 +58025,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, e_16;
+          var _a, span, updatedOptions, response, e_16;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobClient-downloadToFile", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobClient-downloadToFile", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 5, 6, 7]);
-                return [4, this.download(offset, count, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.download(offset, count, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))}))];
               case 2:
                 response = _b.sent();
                 if (!response.readableStreamBody)
@@ -56483,34 +58096,23 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_17;
+          var _b, span, updatedOptions, e_17;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlobClient-startCopyFromURL", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlobClient-startCopyFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 options.sourceConditions = options.sourceConditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.startCopyFromURL(copySource2, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  sourceModifiedAccessConditions: {
-                    sourceIfMatch: options.sourceConditions.ifMatch,
-                    sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                    sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                    sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
-                    sourceIfTags: options.sourceConditions.tagConditions
-                  },
-                  rehydratePriority: options.rehydratePriority,
-                  tier: toAccessTier(options.tier),
-                  blobTagsString: toBlobTagsString(options.tags),
-                  sealBlob: options.sealBlob,
-                  spanOptions
-                })];
+                return [4, this.blobContext.startCopyFromURL(copySource2, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), sourceModifiedAccessConditions: {
+                  sourceIfMatch: options.sourceConditions.ifMatch,
+                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
+                  sourceIfTags: options.sourceConditions.tagConditions
+                }, rehydratePriority: options.rehydratePriority, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), sealBlob: options.sealBlob}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56592,27 +58194,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_18;
+          var _b, span, updatedOptions, e_18;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("AppendBlobClient-create", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("AppendBlobClient-create", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.create(0, {
-                  abortSignal: options.abortSignal,
-                  blobHTTPHeaders: options.blobHTTPHeaders,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  blobTagsString: toBlobTagsString(options.tags),
-                  spanOptions
-                })];
+                return [4, this.appendBlobContext.create(0, tslib.__assign({abortSignal: options.abortSignal, blobHTTPHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, blobTagsString: toBlobTagsString(options.tags)}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56637,16 +58229,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, spanOptions, conditions, res, e_19;
+          var _c, span, updatedOptions, conditions, res, e_19;
           return tslib.__generator(this, function(_d) {
             switch (_d.label) {
               case 0:
-                _c = createSpan("AppendBlobClient-createIfNotExists", options.tracingOptions), span = _c.span, spanOptions = _c.spanOptions;
+                _c = createSpan("AppendBlobClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
                 conditions = {ifNoneMatch: ETagAny};
                 _d.label = 1;
               case 1:
                 _d.trys.push([1, 3, 4, 5]);
-                return [4, this.create(tslib.__assign(tslib.__assign({}, options), {conditions, tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.create(tslib.__assign(tslib.__assign({}, updatedOptions), {conditions}))];
               case 2:
                 res = _d.sent();
                 return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
@@ -56681,22 +58273,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_20;
+          var _b, span, updatedOptions, e_20;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("AppendBlobClient-seal", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("AppendBlobClient-seal", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.appendBlobContext.seal({
-                  abortSignal: options.abortSignal,
-                  appendPositionAccessConditions: options.conditions,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.appendBlobContext.seal(tslib.__assign({abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56721,28 +58307,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_21;
+          var _b, span, updatedOptions, e_21;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("AppendBlobClient-appendBlock", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("AppendBlobClient-appendBlock", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.appendBlock(body, contentLength2, {
-                  abortSignal: options.abortSignal,
-                  appendPositionAccessConditions: options.conditions,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  onUploadProgress: options.onProgress,
-                  transactionalContentMD5: options.transactionalContentMD5,
-                  transactionalContentCrc64: options.transactionalContentCrc64,
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.appendBlobContext.appendBlock(body, contentLength2, tslib.__assign({abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), onUploadProgress: options.onProgress, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56767,35 +58342,23 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_22;
+          var _b, span, updatedOptions, e_22;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("AppendBlobClient-appendBlockFromURL", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("AppendBlobClient-appendBlockFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 options.conditions = options.conditions || {};
                 options.sourceConditions = options.sourceConditions || {};
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.appendBlockFromUrl(sourceURL, 0, {
-                  abortSignal: options.abortSignal,
-                  sourceRange: rangeToString({offset: sourceOffset, count}),
-                  sourceContentMD5: options.sourceContentMD5,
-                  sourceContentCrc64: options.sourceContentCrc64,
-                  leaseAccessConditions: options.conditions,
-                  appendPositionAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  sourceModifiedAccessConditions: {
-                    sourceIfMatch: options.sourceConditions.ifMatch,
-                    sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                    sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                    sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                  },
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.appendBlobContext.appendBlockFromUrl(sourceURL, 0, tslib.__assign({abortSignal: options.abortSignal, sourceRange: rangeToString({offset: sourceOffset, count}), sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, appendPositionAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), sourceModifiedAccessConditions: {
+                  sourceIfMatch: options.sourceConditions.ifMatch,
+                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+                }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56868,26 +58431,20 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, response, e_23;
+          var _b, span, updatedOptions, response, e_23;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                _b = createSpan("BlockBlobClient-query", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlockBlobClient-query", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this._blobContext.query({
-                  abortSignal: options.abortSignal,
-                  queryRequest: {
-                    expression: query,
-                    inputSerialization: toQuerySerialization(options.inputTextConfiguration),
-                    outputSerialization: toQuerySerialization(options.outputTextConfiguration)
-                  },
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this._blobContext.query(tslib.__assign({abortSignal: options.abortSignal, queryRequest: {
+                  expression: query,
+                  inputSerialization: toQuerySerialization(options.inputTextConfiguration),
+                  outputSerialization: toQuerySerialization(options.outputTextConfiguration)
+                }, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 response = _c.sent();
                 return [2, new BlobQueryResponse(response, {
@@ -56917,29 +58474,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_24;
+          var _b, span, updatedOptions, e_24;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("BlockBlobClient-upload", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlockBlobClient-upload", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.upload(body, contentLength2, {
-                  abortSignal: options.abortSignal,
-                  blobHTTPHeaders: options.blobHTTPHeaders,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  onUploadProgress: options.onProgress,
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  tier: toAccessTier(options.tier),
-                  blobTagsString: toBlobTagsString(options.tags),
-                  spanOptions
-                })];
+                return [4, this.blockBlobContext.upload(body, contentLength2, tslib.__assign({abortSignal: options.abortSignal, blobHTTPHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), onUploadProgress: options.onProgress, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags)}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -56964,23 +58509,23 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _f, span, spanOptions, e_25;
+          var _f, span, updatedOptions, e_25;
           return tslib.__generator(this, function(_g) {
             switch (_g.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _f = createSpan("BlockBlobClient-syncUploadFromURL", options.tracingOptions), span = _f.span, spanOptions = _f.spanOptions;
+                _f = createSpan("BlockBlobClient-syncUploadFromURL", options), span = _f.span, updatedOptions = _f.updatedOptions;
                 _g.label = 1;
               case 1:
                 _g.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.putBlobFromUrl(0, sourceURL, tslib.__assign(tslib.__assign({}, options), {leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: options.conditions.tagConditions}), sourceModifiedAccessConditions: {
+                return [4, this.blockBlobContext.putBlobFromUrl(0, sourceURL, tslib.__assign(tslib.__assign(tslib.__assign({}, options), {leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: options.conditions.tagConditions}), sourceModifiedAccessConditions: {
                   sourceIfMatch: (_a = options.sourceConditions) === null || _a === void 0 ? void 0 : _a.ifMatch,
                   sourceIfModifiedSince: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifModifiedSince,
                   sourceIfNoneMatch: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch,
                   sourceIfUnmodifiedSince: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifUnmodifiedSince,
                   sourceIfTags: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.tagConditions
-                }, cpkInfo: options.customerProvidedKey, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), spanOptions}))];
+                }, cpkInfo: options.customerProvidedKey, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags)}), convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _g.sent()];
               case 3:
@@ -57004,25 +58549,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_26;
+          var _a, span, updatedOptions, e_26;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlockBlobClient-stageBlock", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-stageBlock", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.stageBlock(blockId2, contentLength2, body, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  onUploadProgress: options.onProgress,
-                  transactionalContentMD5: options.transactionalContentMD5,
-                  transactionalContentCrc64: options.transactionalContentCrc64,
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.blockBlobContext.stageBlock(blockId2, contentLength2, body, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, onUploadProgress: options.onProgress, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -57049,25 +58585,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_27;
+          var _a, span, updatedOptions, e_27;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlockBlobClient-stageBlockFromURL", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-stageBlockFromURL", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  sourceContentMD5: options.sourceContentMD5,
-                  sourceContentCrc64: options.sourceContentCrc64,
-                  sourceRange: offset === 0 && !count ? void 0 : rangeToString({offset, count}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, sourceRange: offset === 0 && !count ? void 0 : rangeToString({offset, count}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -57092,28 +58619,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_28;
+          var _b, span, updatedOptions, e_28;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("BlockBlobClient-commitBlockList", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlockBlobClient-commitBlockList", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.commitBlockList({latest: blocks}, {
-                  abortSignal: options.abortSignal,
-                  blobHTTPHeaders: options.blobHTTPHeaders,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  tier: toAccessTier(options.tier),
-                  blobTagsString: toBlobTagsString(options.tags),
-                  spanOptions
-                })];
+                return [4, this.blockBlobContext.commitBlockList({latest: blocks}, tslib.__assign({abortSignal: options.abortSignal, blobHTTPHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags)}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57138,20 +58654,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, res, e_29;
+          var _b, span, updatedOptions, res, e_29;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("BlockBlobClient-getBlockList", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("BlockBlobClient-getBlockList", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blockBlobContext.getBlockList(listType2, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.blockBlobContext.getBlockList(listType2, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 res = _c.sent();
                 if (!res.committedBlocks) {
@@ -57182,9 +58693,9 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, buffer_1, browserBlob_1;
+          var _a, span, updatedOptions, buffer_1, browserBlob_1;
           return tslib.__generator(this, function(_b) {
-            _a = createSpan("BlockBlobClient-uploadData", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+            _a = createSpan("BlockBlobClient-uploadData", options), span = _a.span, updatedOptions = _a.updatedOptions;
             try {
               if (true) {
                 if (data instanceof Buffer) {
@@ -57197,12 +58708,12 @@ var require_dist9 = __commonJS({
                 }
                 return [2, this.uploadSeekableInternal(function(offset, size) {
                   return buffer_1.slice(offset, offset + size);
-                }, buffer_1.byteLength, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                }, buffer_1.byteLength, updatedOptions)];
               } else {
                 browserBlob_1 = new Blob([data]);
                 return [2, this.uploadSeekableInternal(function(offset, size) {
                   return browserBlob_1.slice(offset, offset + size);
-                }, browserBlob_1.size, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                }, browserBlob_1.size, updatedOptions)];
               }
             } catch (e) {
               span.setStatus({
@@ -57222,18 +58733,18 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, browserBlob_2, e_30;
+          var _a, span, updatedOptions, browserBlob_2, e_30;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlockBlobClient-uploadBrowserData", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-uploadBrowserData", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 browserBlob_2 = new Blob([browserData]);
                 return [4, this.uploadSeekableInternal(function(offset, size) {
                   return browserBlob_2.slice(offset, offset + size);
-                }, browserBlob_2.size, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                }, browserBlob_2.size, updatedOptions)];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -57257,7 +58768,7 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, numBlocks_1, blockList_1, blockIDPrefix_1, transferProgress_2, batch, _loop_2, i, e_31;
+          var _a, span, updatedOptions, numBlocks_1, blockList_1, blockIDPrefix_1, transferProgress_2, batch, _loop_2, i, e_31;
           var _this = this;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
@@ -57291,13 +58802,13 @@ var require_dist9 = __commonJS({
                 if (!options.conditions) {
                   options.conditions = {};
                 }
-                _a = createSpan("BlockBlobClient-uploadSeekableInternal", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-uploadSeekableInternal", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 5, 6, 7]);
                 if (!(size <= options.maxSingleShotSize))
                   return [3, 3];
-                return [4, this.upload(bodyFactory(0, size), size, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.upload(bodyFactory(0, size), size, updatedOptions)];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -57325,7 +58836,7 @@ var require_dist9 = __commonJS({
                               abortSignal: options.abortSignal,
                               conditions: options.conditions,
                               encryptionScope: options.encryptionScope,
-                              tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})
+                              tracingOptions: updatedOptions.tracingOptions
                             })];
                           case 1:
                             _a2.sent();
@@ -57347,7 +58858,7 @@ var require_dist9 = __commonJS({
                 return [4, batch.do()];
               case 4:
                 _b.sent();
-                return [2, this.commitBlockList(blockList_1, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [2, this.commitBlockList(blockList_1, updatedOptions)];
               case 5:
                 e_31 = _b.sent();
                 span.setStatus({
@@ -57369,11 +58880,11 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, size, e_32;
+          var _a, span, updatedOptions, size, e_32;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlockBlobClient-uploadFile", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-uploadFile", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 4, 5, 6]);
@@ -57388,7 +58899,7 @@ var require_dist9 = __commonJS({
                       start: offset
                     });
                   };
-                }, size, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                }, size, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))}))];
               case 3:
                 return [2, _b.sent()];
               case 4:
@@ -57418,7 +58929,7 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, blockNum_1, blockIDPrefix_2, transferProgress_3, blockList_2, scheduler, e_33;
+          var _a, span, updatedOptions, blockNum_1, blockIDPrefix_2, transferProgress_3, blockList_2, scheduler, e_33;
           var _this = this;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
@@ -57429,7 +58940,7 @@ var require_dist9 = __commonJS({
                 if (!options.conditions) {
                   options.conditions = {};
                 }
-                _a = createSpan("BlockBlobClient-uploadStream", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlockBlobClient-uploadStream", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 4, 5, 6]);
@@ -57449,7 +58960,7 @@ var require_dist9 = __commonJS({
                           return [4, this.stageBlock(blockID, body, length, {
                             conditions: options.conditions,
                             encryptionScope: options.encryptionScope,
-                            tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})
+                            tracingOptions: updatedOptions.tracingOptions
                           })];
                         case 1:
                           _a2.sent();
@@ -57465,7 +58976,7 @@ var require_dist9 = __commonJS({
                 return [4, scheduler.do()];
               case 2:
                 _b.sent();
-                return [4, this.commitBlockList(blockList_2, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.commitBlockList(blockList_2, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))}))];
               case 3:
                 return [2, _b.sent()];
               case 4:
@@ -57537,29 +59048,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_34;
+          var _b, span, updatedOptions, e_34;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-create", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-create", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.create(0, size, {
-                  abortSignal: options.abortSignal,
-                  blobHTTPHeaders: options.blobHTTPHeaders,
-                  blobSequenceNumber: options.blobSequenceNumber,
-                  leaseAccessConditions: options.conditions,
-                  metadata: options.metadata,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  tier: toAccessTier(options.tier),
-                  blobTagsString: toBlobTagsString(options.tags),
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.create(0, size, tslib.__assign({abortSignal: options.abortSignal, blobHTTPHeaders: options.blobHTTPHeaders, blobSequenceNumber: options.blobSequenceNumber, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags)}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57584,16 +59083,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, spanOptions, conditions, res, e_35;
+          var _c, span, updatedOptions, conditions, res, e_35;
           return tslib.__generator(this, function(_d) {
             switch (_d.label) {
               case 0:
-                _c = createSpan("PageBlobClient-createIfNotExists", options.tracingOptions), span = _c.span, spanOptions = _c.spanOptions;
+                _c = createSpan("PageBlobClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
                 _d.label = 1;
               case 1:
                 _d.trys.push([1, 3, 4, 5]);
                 conditions = {ifNoneMatch: ETagAny};
-                return [4, this.create(size, tslib.__assign(tslib.__assign({}, options), {conditions, tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, this.create(size, tslib.__assign(tslib.__assign({}, options), {conditions, tracingOptions: updatedOptions.tracingOptions}))];
               case 2:
                 res = _d.sent();
                 return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
@@ -57628,29 +59127,17 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_36;
+          var _b, span, updatedOptions, e_36;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-uploadPages", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-uploadPages", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.uploadPages(body, count, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  onUploadProgress: options.onProgress,
-                  range: rangeToString({offset, count}),
-                  sequenceNumberAccessConditions: options.conditions,
-                  transactionalContentMD5: options.transactionalContentMD5,
-                  transactionalContentCrc64: options.transactionalContentCrc64,
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.uploadPages(body, count, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), onUploadProgress: options.onProgress, range: rangeToString({offset, count}), sequenceNumberAccessConditions: options.conditions, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57675,34 +59162,23 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_37;
+          var _b, span, updatedOptions, e_37;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
                 options.sourceConditions = options.sourceConditions || {};
-                _b = createSpan("PageBlobClient-uploadPagesFromURL", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-uploadPagesFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
                 ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.uploadPagesFromURL(sourceURL, rangeToString({offset: sourceOffset, count}), 0, rangeToString({offset: destOffset, count}), {
-                  abortSignal: options.abortSignal,
-                  sourceContentMD5: options.sourceContentMD5,
-                  sourceContentCrc64: options.sourceContentCrc64,
-                  leaseAccessConditions: options.conditions,
-                  sequenceNumberAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  sourceModifiedAccessConditions: {
-                    sourceIfMatch: options.sourceConditions.ifMatch,
-                    sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                    sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                    sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                  },
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.uploadPagesFromURL(sourceURL, rangeToString({offset: sourceOffset, count}), 0, rangeToString({offset: destOffset, count}), tslib.__assign({abortSignal: options.abortSignal, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, sequenceNumberAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), sourceModifiedAccessConditions: {
+                  sourceIfMatch: options.sourceConditions.ifMatch,
+                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+                }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57730,25 +59206,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_38;
+          var _b, span, updatedOptions, e_38;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-clearPages", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-clearPages", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.clearPages(0, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  range: rangeToString({offset, count}),
-                  sequenceNumberAccessConditions: options.conditions,
-                  cpkInfo: options.customerProvidedKey,
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.clearPages(0, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), range: rangeToString({offset, count}), sequenceNumberAccessConditions: options.conditions, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57776,22 +59243,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_39;
+          var _b, span, updatedOptions, e_39;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-getPageRanges", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-getPageRanges", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRanges({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  range: rangeToString({offset, count}),
-                  spanOptions
-                }).then(rangeResponseFromModel)];
+                return [4, this.pageBlobContext.getPageRanges(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), range: rangeToString({offset, count})}, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57816,23 +59277,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_40;
+          var _b, span, updatedOptions, e_40;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-getPageRangesDiff", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-getPageRangesDiff", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRangesDiff({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  prevsnapshot: prevSnapshot,
-                  range: rangeToString({offset, count}),
-                  spanOptions
-                }).then(rangeResponseFromModel)];
+                return [4, this.pageBlobContext.getPageRangesDiff(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), prevsnapshot: prevSnapshot, range: rangeToString({offset, count})}, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57857,23 +59311,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_41;
+          var _b, span, updatedOptions, e_41;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-GetPageRangesDiffForManagedDisks", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-GetPageRangesDiffForManagedDisks", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRangesDiff({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  prevSnapshotUrl: prevSnapshotUrl2,
-                  range: rangeToString({offset, count}),
-                  spanOptions
-                }).then(rangeResponseFromModel)];
+                return [4, this.pageBlobContext.getPageRangesDiff(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), prevSnapshotUrl: prevSnapshotUrl2, range: rangeToString({offset, count})}, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57898,22 +59345,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_42;
+          var _b, span, updatedOptions, e_42;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-resize", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-resize", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.resize(size, {
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  encryptionScope: options.encryptionScope,
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.resize(size, tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}), encryptionScope: options.encryptionScope}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57938,22 +59379,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_43;
+          var _b, span, updatedOptions, e_43;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
                 options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-updateSequenceNumber", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-updateSequenceNumber", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.updateSequenceNumber(sequenceNumberAction2, {
-                  abortSignal: options.abortSignal,
-                  blobSequenceNumber: sequenceNumber,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.updateSequenceNumber(sequenceNumberAction2, tslib.__assign({abortSignal: options.abortSignal, blobSequenceNumber: sequenceNumber, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -57978,19 +59413,15 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, spanOptions, e_44;
+          var _b, span, updatedOptions, e_44;
           return tslib.__generator(this, function(_c) {
             switch (_c.label) {
               case 0:
-                _b = createSpan("PageBlobClient-startCopyIncremental", options.tracingOptions), span = _b.span, spanOptions = _b.spanOptions;
+                _b = createSpan("PageBlobClient-startCopyIncremental", options), span = _b.span, updatedOptions = _b.updatedOptions;
                 _c.label = 1;
               case 1:
                 _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.copyIncremental(copySource2, {
-                  abortSignal: options.abortSignal,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions}),
-                  spanOptions
-                })];
+                return [4, this.pageBlobContext.copyIncremental(copySource2, tslib.__assign({abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions})}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _c.sent()];
               case 3:
@@ -58011,1197 +59442,6 @@ var require_dist9 = __commonJS({
       };
       return PageBlobClient2;
     }(BlobClient);
-    var BlobLeaseClient = function() {
-      function BlobLeaseClient2(client, leaseId) {
-        var clientContext = new StorageClientContext(client.url, client.pipeline.toServiceClientOptions());
-        this._url = client.url;
-        if (client instanceof ContainerClient) {
-          this._isContainer = true;
-          this._containerOrBlobOperation = new Container(clientContext);
-        } else {
-          this._isContainer = false;
-          this._containerOrBlobOperation = new Blob$1(clientContext);
-        }
-        if (!leaseId) {
-          leaseId = coreHttp.generateUuid();
-        }
-        this._leaseId = leaseId;
-      }
-      __name(BlobLeaseClient2, "BlobLeaseClient");
-      Object.defineProperty(BlobLeaseClient2.prototype, "leaseId", {
-        get: function() {
-          return this._leaseId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobLeaseClient2.prototype, "url", {
-        get: function() {
-          return this._url;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      BlobLeaseClient2.prototype.acquireLease = function(duration2, options) {
-        var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, spanOptions, e_45;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-acquireLease", options.tracingOptions), span = _g.span, spanOptions = _g.spanOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.acquireLease({
-                  abortSignal: options.abortSignal,
-                  duration: duration2,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}),
-                  proposedLeaseId: this._leaseId,
-                  spanOptions
-                })];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_45 = _h.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_45.message
-                });
-                throw e_45;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobLeaseClient2.prototype.changeLease = function(proposedLeaseId, options) {
-        var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, spanOptions, response, e_46;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-changeLease", options.tracingOptions), span = _g.span, spanOptions = _g.spanOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.changeLease(this._leaseId, proposedLeaseId, {
-                  abortSignal: options.abortSignal,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}),
-                  spanOptions
-                })];
-              case 2:
-                response = _h.sent();
-                this._leaseId = proposedLeaseId;
-                return [2, response];
-              case 3:
-                e_46 = _h.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_46.message
-                });
-                throw e_46;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobLeaseClient2.prototype.releaseLease = function(options) {
-        var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, spanOptions, e_47;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-releaseLease", options.tracingOptions), span = _g.span, spanOptions = _g.spanOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.releaseLease(this._leaseId, {
-                  abortSignal: options.abortSignal,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}),
-                  spanOptions
-                })];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_47 = _h.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_47.message
-                });
-                throw e_47;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobLeaseClient2.prototype.renewLease = function(options) {
-        var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, spanOptions, e_48;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-renewLease", options.tracingOptions), span = _g.span, spanOptions = _g.spanOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.renewLease(this._leaseId, {
-                  abortSignal: options.abortSignal,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}),
-                  spanOptions
-                })];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_48 = _h.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_48.message
-                });
-                throw e_48;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobLeaseClient2.prototype.breakLease = function(breakPeriod2, options) {
-        var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, spanOptions, operationOptions, e_49;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-breakLease", options.tracingOptions), span = _g.span, spanOptions = _g.spanOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                operationOptions = {
-                  abortSignal: options.abortSignal,
-                  breakPeriod: breakPeriod2,
-                  modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), {ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions}),
-                  spanOptions
-                };
-                return [4, this._containerOrBlobOperation.breakLease(operationOptions)];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_49 = _h.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_49.message
-                });
-                throw e_49;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      return BlobLeaseClient2;
-    }();
-    var ContainerClient = function(_super) {
-      tslib.__extends(ContainerClient2, _super);
-      function ContainerClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, options) {
-        var _this = this;
-        var pipeline;
-        var url2;
-        options = options || {};
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
-          url2 = urlOrConnectionString;
-          pipeline = credentialOrPipelineOrContainerName;
-        } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
-          url2 = urlOrConnectionString;
-          pipeline = newPipeline(credentialOrPipelineOrContainerName, options);
-        } else if (!credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName !== "string") {
-          url2 = urlOrConnectionString;
-          pipeline = newPipeline(new AnonymousCredential(), options);
-        } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
-          if (extractedCreds.kind === "AccountConnString") {
-            {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
-              url2 = appendToURLPath(extractedCreds.url, encodeURIComponent(containerName));
-              options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
-              pipeline = newPipeline(sharedKeyCredential, options);
-            }
-          } else if (extractedCreds.kind === "SASConnString") {
-            url2 = appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)) + "?" + extractedCreds.accountSas;
-            pipeline = newPipeline(new AnonymousCredential(), options);
-          } else {
-            throw new Error("Connection string must be either an Account connection string or a SAS connection string");
-          }
-        } else {
-          throw new Error("Expecting non-empty strings for containerName parameter");
-        }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this._containerName = _this.getContainerNameFromUrl();
-        _this.containerContext = new Container(_this.storageClientContext);
-        return _this;
-      }
-      __name(ContainerClient2, "ContainerClient");
-      Object.defineProperty(ContainerClient2.prototype, "containerName", {
-        get: function() {
-          return this._containerName;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      ContainerClient2.prototype.create = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_50;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-create", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.create(tslib.__assign(tslib.__assign({}, options), {spanOptions}))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_50 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_50.message
-                });
-                throw e_50;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.createIfNotExists = function(options) {
-        var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, spanOptions, res, e_51;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("ContainerClient-createIfNotExists", options.tracingOptions), span = _c.span, spanOptions = _c.spanOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.create(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_51 = _d.sent();
-                if (((_a = e_51.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerAlreadyExists") {
-                  span.setStatus({
-                    code: api.CanonicalCode.ALREADY_EXISTS,
-                    message: "Expected exception when creating a container only if it does not already exist."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({succeeded: false}, (_b = e_51.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), {_response: e_51.response})];
-                }
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_51.message
-                });
-                throw e_51;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.exists = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_52;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-exists", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.getProperties({
-                  abortSignal: options.abortSignal,
-                  tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})
-                })];
-              case 2:
-                _b.sent();
-                return [2, true];
-              case 3:
-                e_52 = _b.sent();
-                if (e_52.statusCode === 404) {
-                  span.setStatus({
-                    code: api.CanonicalCode.NOT_FOUND,
-                    message: "Expected exception when checking container existence"
-                  });
-                  return [2, false];
-                }
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_52.message
-                });
-                throw e_52;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.getBlobClient = function(blobName) {
-        return new BlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getAppendBlobClient = function(blobName) {
-        return new AppendBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getBlockBlobClient = function(blobName) {
-        return new BlockBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getPageBlobClient = function(blobName) {
-        return new PageBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getProperties = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_53;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-getProperties", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.getProperties(tslib.__assign(tslib.__assign({abortSignal: options.abortSignal}, options.conditions), {spanOptions}))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_53 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_53.message
-                });
-                throw e_53;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.delete = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_54;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-delete", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.deleteMethod({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: options.conditions,
-                  spanOptions
-                })];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_54 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_54.message
-                });
-                throw e_54;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.deleteIfExists = function(options) {
-        var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, spanOptions, res, e_55;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("ContainerClient-deleteIfExists", options.tracingOptions), span = _c.span, spanOptions = _c.spanOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.delete(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_55 = _d.sent();
-                if (((_a = e_55.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerNotFound") {
-                  span.setStatus({
-                    code: api.CanonicalCode.NOT_FOUND,
-                    message: "Expected exception when deleting a container only if it exists."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({succeeded: false}, (_b = e_55.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), {_response: e_55.response})];
-                }
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_55.message
-                });
-                throw e_55;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.setMetadata = function(metadata2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_56;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                if (options.conditions.ifUnmodifiedSince) {
-                  throw new RangeError("the IfUnmodifiedSince must have their default values because they are ignored by the blob service");
-                }
-                _a = createSpan("ContainerClient-setMetadata", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.setMetadata({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  metadata: metadata2,
-                  modifiedAccessConditions: options.conditions,
-                  spanOptions
-                })];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_56 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_56.message
-                });
-                throw e_56;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.getAccessPolicy = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, res, _i, response_1, identifier, accessPolicy, e_57;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-getAccessPolicy", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.getAccessPolicy({
-                  abortSignal: options.abortSignal,
-                  leaseAccessConditions: options.conditions,
-                  spanOptions
-                })];
-              case 2:
-                response = _b.sent();
-                res = {
-                  _response: response._response,
-                  blobPublicAccess: response.blobPublicAccess,
-                  date: response.date,
-                  etag: response.etag,
-                  errorCode: response.errorCode,
-                  lastModified: response.lastModified,
-                  requestId: response.requestId,
-                  clientRequestId: response.clientRequestId,
-                  signedIdentifiers: [],
-                  version: response.version
-                };
-                for (_i = 0, response_1 = response; _i < response_1.length; _i++) {
-                  identifier = response_1[_i];
-                  accessPolicy = void 0;
-                  if (identifier.accessPolicy) {
-                    accessPolicy = {
-                      permissions: identifier.accessPolicy.permissions
-                    };
-                    if (identifier.accessPolicy.expiresOn) {
-                      accessPolicy.expiresOn = new Date(identifier.accessPolicy.expiresOn);
-                    }
-                    if (identifier.accessPolicy.startsOn) {
-                      accessPolicy.startsOn = new Date(identifier.accessPolicy.startsOn);
-                    }
-                  }
-                  res.signedIdentifiers.push({
-                    accessPolicy,
-                    id: identifier.id
-                  });
-                }
-                return [2, res];
-              case 3:
-                e_57 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_57.message
-                });
-                throw e_57;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.setAccessPolicy = function(access2, containerAcl, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, acl, _i, _b, identifier, e_58;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _a = createSpan("ContainerClient-setAccessPolicy", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                acl = [];
-                for (_i = 0, _b = containerAcl || []; _i < _b.length; _i++) {
-                  identifier = _b[_i];
-                  acl.push({
-                    accessPolicy: {
-                      expiresOn: identifier.accessPolicy.expiresOn ? truncatedISO8061Date(identifier.accessPolicy.expiresOn) : "",
-                      permissions: identifier.accessPolicy.permissions,
-                      startsOn: identifier.accessPolicy.startsOn ? truncatedISO8061Date(identifier.accessPolicy.startsOn) : ""
-                    },
-                    id: identifier.id
-                  });
-                }
-                return [4, this.containerContext.setAccessPolicy({
-                  abortSignal: options.abortSignal,
-                  access: access2,
-                  containerAcl: acl,
-                  leaseAccessConditions: options.conditions,
-                  modifiedAccessConditions: options.conditions,
-                  spanOptions
-                })];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_58 = _c.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_58.message
-                });
-                throw e_58;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.getBlobLeaseClient = function(proposeLeaseId) {
-        return new BlobLeaseClient(this, proposeLeaseId);
-      };
-      ContainerClient2.prototype.uploadBlockBlob = function(blobName, body, contentLength2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, blockBlobClient, response, e_59;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-uploadBlockBlob", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                blockBlobClient = this.getBlockBlobClient(blobName);
-                return [4, blockBlobClient.upload(body, contentLength2, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
-              case 2:
-                response = _b.sent();
-                return [2, {
-                  blockBlobClient,
-                  response
-                }];
-              case 3:
-                e_59 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_59.message
-                });
-                throw e_59;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.deleteBlob = function(blobName, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, blobClient, e_60;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-deleteBlob", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                blobClient = this.getBlobClient(blobName);
-                if (options.versionId) {
-                  blobClient = blobClient.withVersion(options.versionId);
-                }
-                return [4, blobClient.delete(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_60 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_60.message
-                });
-                throw e_60;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.listBlobFlatSegment = function(marker, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, wrappedResponse, e_61;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-listBlobFlatSegment", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.listBlobFlatSegment(tslib.__assign(tslib.__assign({marker}, options), {spanOptions}))];
-              case 2:
-                response = _b.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), {blobItems: response.segment.blobItems.map(function(blobItemInteral) {
-                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), {tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata)});
-                  return blobItem;
-                })})});
-                return [2, wrappedResponse];
-              case 3:
-                e_61 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_61.message
-                });
-                throw e_61;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.listBlobHierarchySegment = function(delimiter2, marker, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, wrappedResponse, e_62;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-listBlobHierarchySegment", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.listBlobHierarchySegment(delimiter2, tslib.__assign(tslib.__assign({marker}, options), {spanOptions}))];
-              case 2:
-                response = _b.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), {blobItems: response.segment.blobItems.map(function(blobItemInteral) {
-                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), {tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata)});
-                  return blobItem;
-                })})});
-                return [2, wrappedResponse];
-              case 3:
-                e_62 = _b.sent();
-                span.setStatus({
-                  code: api.CanonicalCode.UNKNOWN,
-                  message: e_62.message
-                });
-                throw e_62;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.listSegments = function(marker, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listSegments_1() {
-          var listBlobsFlatSegmentResponse;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker || marker === void 0))
-                  return [3, 7];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.listBlobFlatSegment(marker, options))];
-              case 2:
-                listBlobsFlatSegmentResponse = _a.sent();
-                marker = listBlobsFlatSegmentResponse.continuationToken;
-                return [4, tslib.__await(listBlobsFlatSegmentResponse)];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_a.sent()])];
-              case 4:
-                return [4, _a.sent()];
-              case 5:
-                _a.sent();
-                _a.label = 6;
-              case 6:
-                if (marker)
-                  return [3, 1];
-                _a.label = 7;
-              case 7:
-                return [2];
-            }
-          });
-        }, "listSegments_1"));
-      };
-      ContainerClient2.prototype.listItems = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItems_1() {
-          var marker, _a, _b, listBlobsFlatSegmentResponse, e_63_1;
-          var e_63, _c;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _d.trys.push([0, 7, 8, 13]);
-                _a = tslib.__asyncValues(this.listSegments(marker, options));
-                _d.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _d.sent(), !_b.done))
-                  return [3, 6];
-                listBlobsFlatSegmentResponse = _b.value;
-                return [5, tslib.__values(tslib.__asyncDelegator(tslib.__asyncValues(listBlobsFlatSegmentResponse.segment.blobItems)))];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_d.sent()])];
-              case 4:
-                _d.sent();
-                _d.label = 5;
-              case 5:
-                return [3, 1];
-              case 6:
-                return [3, 13];
-              case 7:
-                e_63_1 = _d.sent();
-                e_63 = {error: e_63_1};
-                return [3, 13];
-              case 8:
-                _d.trys.push([8, , 11, 12]);
-                if (!(_b && !_b.done && (_c = _a.return)))
-                  return [3, 10];
-                return [4, tslib.__await(_c.call(_a))];
-              case 9:
-                _d.sent();
-                _d.label = 10;
-              case 10:
-                return [3, 12];
-              case 11:
-                if (e_63)
-                  throw e_63.error;
-                return [7];
-              case 12:
-                return [7];
-              case 13:
-                return [2];
-            }
-          });
-        }, "listItems_1"));
-      };
-      ContainerClient2.prototype.listBlobsFlat = function(options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
-        var include = [];
-        if (options.includeCopy) {
-          include.push("copy");
-        }
-        if (options.includeDeleted) {
-          include.push("deleted");
-        }
-        if (options.includeMetadata) {
-          include.push("metadata");
-        }
-        if (options.includeSnapshots) {
-          include.push("snapshots");
-        }
-        if (options.includeVersions) {
-          include.push("versions");
-        }
-        if (options.includeUncommitedBlobs) {
-          include.push("uncommittedblobs");
-        }
-        if (options.includeTags) {
-          include.push("tags");
-        }
-        if (options.prefix === "") {
-          options.prefix = void 0;
-        }
-        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include.length > 0 ? {include} : {});
-        var iter = this.listItems(updatedOptions);
-        return _a = {
-          next: function() {
-            return iter.next();
-          }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
-          }
-          return _this.listSegments(settings.continuationToken, tslib.__assign({maxPageSize: settings.maxPageSize}, updatedOptions));
-        }, _a;
-      };
-      ContainerClient2.prototype.listHierarchySegments = function(delimiter2, marker, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listHierarchySegments_1() {
-          var listBlobsHierarchySegmentResponse;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker || marker === void 0))
-                  return [3, 7];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.listBlobHierarchySegment(delimiter2, marker, options))];
-              case 2:
-                listBlobsHierarchySegmentResponse = _a.sent();
-                marker = listBlobsHierarchySegmentResponse.continuationToken;
-                return [4, tslib.__await(listBlobsHierarchySegmentResponse)];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_a.sent()])];
-              case 4:
-                return [4, _a.sent()];
-              case 5:
-                _a.sent();
-                _a.label = 6;
-              case 6:
-                if (marker)
-                  return [3, 1];
-                _a.label = 7;
-              case 7:
-                return [2];
-            }
-          });
-        }, "listHierarchySegments_1"));
-      };
-      ContainerClient2.prototype.listItemsByHierarchy = function(delimiter2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItemsByHierarchy_1() {
-          var marker, _a, _b, listBlobsHierarchySegmentResponse, segment, _i, _c, prefix2, _d, _e, blob, e_64_1;
-          var e_64, _f;
-          return tslib.__generator(this, function(_g) {
-            switch (_g.label) {
-              case 0:
-                _g.trys.push([0, 14, 15, 20]);
-                _a = tslib.__asyncValues(this.listHierarchySegments(delimiter2, marker, options));
-                _g.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _g.sent(), !_b.done))
-                  return [3, 13];
-                listBlobsHierarchySegmentResponse = _b.value;
-                segment = listBlobsHierarchySegmentResponse.segment;
-                if (!segment.blobPrefixes)
-                  return [3, 7];
-                _i = 0, _c = segment.blobPrefixes;
-                _g.label = 3;
-              case 3:
-                if (!(_i < _c.length))
-                  return [3, 7];
-                prefix2 = _c[_i];
-                return [4, tslib.__await(tslib.__assign({kind: "prefix"}, prefix2))];
-              case 4:
-                return [4, _g.sent()];
-              case 5:
-                _g.sent();
-                _g.label = 6;
-              case 6:
-                _i++;
-                return [3, 3];
-              case 7:
-                _d = 0, _e = segment.blobItems;
-                _g.label = 8;
-              case 8:
-                if (!(_d < _e.length))
-                  return [3, 12];
-                blob = _e[_d];
-                return [4, tslib.__await(tslib.__assign({kind: "blob"}, blob))];
-              case 9:
-                return [4, _g.sent()];
-              case 10:
-                _g.sent();
-                _g.label = 11;
-              case 11:
-                _d++;
-                return [3, 8];
-              case 12:
-                return [3, 1];
-              case 13:
-                return [3, 20];
-              case 14:
-                e_64_1 = _g.sent();
-                e_64 = {error: e_64_1};
-                return [3, 20];
-              case 15:
-                _g.trys.push([15, , 18, 19]);
-                if (!(_b && !_b.done && (_f = _a.return)))
-                  return [3, 17];
-                return [4, tslib.__await(_f.call(_a))];
-              case 16:
-                _g.sent();
-                _g.label = 17;
-              case 17:
-                return [3, 19];
-              case 18:
-                if (e_64)
-                  throw e_64.error;
-                return [7];
-              case 19:
-                return [7];
-              case 20:
-                return [2];
-            }
-          });
-        }, "listItemsByHierarchy_1"));
-      };
-      ContainerClient2.prototype.listBlobsByHierarchy = function(delimiter2, options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
-        if (delimiter2 === "") {
-          throw new RangeError("delimiter should contain one or more characters");
-        }
-        var include = [];
-        if (options.includeCopy) {
-          include.push("copy");
-        }
-        if (options.includeDeleted) {
-          include.push("deleted");
-        }
-        if (options.includeMetadata) {
-          include.push("metadata");
-        }
-        if (options.includeSnapshots) {
-          include.push("snapshots");
-        }
-        if (options.includeVersions) {
-          include.push("versions");
-        }
-        if (options.includeUncommitedBlobs) {
-          include.push("uncommittedblobs");
-        }
-        if (options.includeTags) {
-          include.push("tags");
-        }
-        if (options.prefix === "") {
-          options.prefix = void 0;
-        }
-        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include.length > 0 ? {include} : {});
-        var iter = this.listItemsByHierarchy(delimiter2, updatedOptions);
-        return _a = {
-          next: function() {
-            return tslib.__awaiter(this, void 0, void 0, function() {
-              return tslib.__generator(this, function(_a2) {
-                return [2, iter.next()];
-              });
-            });
-          }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
-          }
-          return _this.listHierarchySegments(delimiter2, settings.continuationToken, tslib.__assign({maxPageSize: settings.maxPageSize}, updatedOptions));
-        }, _a;
-      };
-      ContainerClient2.prototype.getContainerNameFromUrl = function() {
-        var containerName;
-        try {
-          var parsedUrl = coreHttp.URLBuilder.parse(this.url);
-          if (parsedUrl.getHost().split(".")[1] === "blob") {
-            containerName = parsedUrl.getPath().split("/")[1];
-          } else if (isIpEndpointStyle(parsedUrl)) {
-            containerName = parsedUrl.getPath().split("/")[2];
-          } else {
-            containerName = parsedUrl.getPath().split("/")[1];
-          }
-          containerName = decodeURIComponent(containerName);
-          if (!containerName) {
-            throw new Error("Provided containerName is invalid.");
-          }
-          return containerName;
-        } catch (error) {
-          throw new Error("Unable to extract containerName with provided information.");
-        }
-      };
-      ContainerClient2.prototype.generateSasUrl = function(options) {
-        var _this = this;
-        return new Promise(function(resolve2) {
-          if (!(_this.credential instanceof StorageSharedKeyCredential)) {
-            throw new RangeError("Can only generate the SAS when the client is initialized with a shared key credential");
-          }
-          var sas = generateBlobSASQueryParameters(tslib.__assign({containerName: _this._containerName}, options), _this.credential).toString();
-          resolve2(appendToURLQuery(_this.url, sas));
-        });
-      };
-      return ContainerClient2;
-    }(StorageClient);
     function getBodyAsText(batchResponse) {
       return tslib.__awaiter(this, void 0, void 0, function() {
         var buffer, responseLength;
@@ -59444,7 +59684,7 @@ var require_dist9 = __commonJS({
       };
       BlobBatch2.prototype.deleteBlob = function(urlOrBlobClient, credentialOrOptions, options) {
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var url2, credential, _a, span, spanOptions, e_1;
+          var url2, credential, _a, span, updatedOptions, e_1;
           var _this = this;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
@@ -59462,7 +59702,7 @@ var require_dist9 = __commonJS({
                 if (!options) {
                   options = {};
                 }
-                _a = createSpan("BatchDeleteRequest-addSubRequest", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BatchDeleteRequest-addSubRequest", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
@@ -59475,7 +59715,7 @@ var require_dist9 = __commonJS({
                     return tslib.__generator(this, function(_a2) {
                       switch (_a2.label) {
                         case 0:
-                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).delete(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).delete(updatedOptions)];
                         case 1:
                           _a2.sent();
                           return [2];
@@ -59504,7 +59744,7 @@ var require_dist9 = __commonJS({
       };
       BlobBatch2.prototype.setBlobAccessTier = function(urlOrBlobClient, credentialOrTier, tierOrOptions, options) {
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var url2, credential, tier, _a, span, spanOptions, e_2;
+          var url2, credential, tier, _a, span, updatedOptions, e_2;
           var _this = this;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
@@ -59524,7 +59764,7 @@ var require_dist9 = __commonJS({
                 if (!options) {
                   options = {};
                 }
-                _a = createSpan("BatchSetTierRequest-addSubRequest", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BatchSetTierRequest-addSubRequest", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
@@ -59537,7 +59777,7 @@ var require_dist9 = __commonJS({
                     return tslib.__generator(this, function(_a2) {
                       switch (_a2.label) {
                         case 0:
-                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).setAccessTier(tier, tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).setAccessTier(tier, updatedOptions)];
                         case 1:
                           _a2.sent();
                           return [2];
@@ -59711,7 +59951,12 @@ var require_dist9 = __commonJS({
           pipeline = newPipeline(credentialOrPipeline, options);
         }
         var storageClientContext = new StorageClientContext(url2, pipeline.toServiceClientOptions());
-        this._serviceContext = new Service(storageClientContext);
+        var path2 = getURLPath(url2);
+        if (path2 && path2 !== "/") {
+          this.serviceOrContainerContext = new Container(storageClientContext);
+        } else {
+          this.serviceOrContainerContext = new Service(storageClientContext);
+        }
       }
       __name(BlobBatchClient2, "BlobBatchClient");
       BlobBatchClient2.prototype.createBatch = function() {
@@ -59788,19 +60033,19 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, batchRequestBody, rawBatchResponse, batchResponseParser, responseSummary, res, e_1;
+          var _a, span, updatedOptions, batchRequestBody, rawBatchResponse, batchResponseParser, responseSummary, res, e_1;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
                 if (!batchRequest || batchRequest.getSubRequests().size == 0) {
                   throw new RangeError("Batch request should contain one or more sub requests.");
                 }
-                _a = createSpan("BlobBatchClient-submitBatch", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobBatchClient-submitBatch", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 4, 5, 6]);
                 batchRequestBody = batchRequest.getHttpRequestBody();
-                return [4, this._serviceContext.submitBatch(batchRequestBody, utf8ByteLength(batchRequestBody), batchRequest.getMultiPartContentType(), tslib.__assign(tslib.__assign({}, options), {spanOptions}))];
+                return [4, this.serviceOrContainerContext.submitBatch(batchRequestBody, utf8ByteLength(batchRequestBody), batchRequest.getMultiPartContentType(), tslib.__assign(tslib.__assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 rawBatchResponse = _b.sent();
                 batchResponseParser = new BatchResponseParser(rawBatchResponse, batchRequest.getSubRequests());
@@ -59837,6 +60082,939 @@ var require_dist9 = __commonJS({
       };
       return BlobBatchClient2;
     }();
+    var ContainerClient = function(_super) {
+      tslib.__extends(ContainerClient2, _super);
+      function ContainerClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, options) {
+        var _this = this;
+        var pipeline;
+        var url2;
+        options = options || {};
+        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+          url2 = urlOrConnectionString;
+          pipeline = credentialOrPipelineOrContainerName;
+        } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
+          url2 = urlOrConnectionString;
+          pipeline = newPipeline(credentialOrPipelineOrContainerName, options);
+        } else if (!credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName !== "string") {
+          url2 = urlOrConnectionString;
+          pipeline = newPipeline(new AnonymousCredential(), options);
+        } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string") {
+          var containerName = credentialOrPipelineOrContainerName;
+          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          if (extractedCreds.kind === "AccountConnString") {
+            {
+              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              url2 = appendToURLPath(extractedCreds.url, encodeURIComponent(containerName));
+              options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
+              pipeline = newPipeline(sharedKeyCredential, options);
+            }
+          } else if (extractedCreds.kind === "SASConnString") {
+            url2 = appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)) + "?" + extractedCreds.accountSas;
+            pipeline = newPipeline(new AnonymousCredential(), options);
+          } else {
+            throw new Error("Connection string must be either an Account connection string or a SAS connection string");
+          }
+        } else {
+          throw new Error("Expecting non-empty strings for containerName parameter");
+        }
+        _this = _super.call(this, url2, pipeline) || this;
+        _this._containerName = _this.getContainerNameFromUrl();
+        _this.containerContext = new Container(_this.storageClientContext);
+        return _this;
+      }
+      __name(ContainerClient2, "ContainerClient");
+      Object.defineProperty(ContainerClient2.prototype, "containerName", {
+        get: function() {
+          return this._containerName;
+        },
+        enumerable: false,
+        configurable: true
+      });
+      ContainerClient2.prototype.create = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_1;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-create", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.create(tslib.__assign(tslib.__assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_1 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_1.message
+                });
+                throw e_1;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.createIfNotExists = function(options) {
+        var _a, _b;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _c, span, updatedOptions, res, e_2;
+          return tslib.__generator(this, function(_d) {
+            switch (_d.label) {
+              case 0:
+                _c = createSpan("ContainerClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
+                _d.label = 1;
+              case 1:
+                _d.trys.push([1, 3, 4, 5]);
+                return [4, this.create(updatedOptions)];
+              case 2:
+                res = _d.sent();
+                return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
+                  _response: res._response
+                })];
+              case 3:
+                e_2 = _d.sent();
+                if (((_a = e_2.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerAlreadyExists") {
+                  span.setStatus({
+                    code: api.CanonicalCode.ALREADY_EXISTS,
+                    message: "Expected exception when creating a container only if it does not already exist."
+                  });
+                  return [2, tslib.__assign(tslib.__assign({succeeded: false}, (_b = e_2.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), {_response: e_2.response})];
+                }
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_2.message
+                });
+                throw e_2;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.exists = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_3;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-exists", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.getProperties({
+                  abortSignal: options.abortSignal,
+                  tracingOptions: updatedOptions.tracingOptions
+                })];
+              case 2:
+                _b.sent();
+                return [2, true];
+              case 3:
+                e_3 = _b.sent();
+                if (e_3.statusCode === 404) {
+                  span.setStatus({
+                    code: api.CanonicalCode.NOT_FOUND,
+                    message: "Expected exception when checking container existence"
+                  });
+                  return [2, false];
+                }
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_3.message
+                });
+                throw e_3;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.getBlobClient = function(blobName) {
+        return new BlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
+      };
+      ContainerClient2.prototype.getAppendBlobClient = function(blobName) {
+        return new AppendBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
+      };
+      ContainerClient2.prototype.getBlockBlobClient = function(blobName) {
+        return new BlockBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
+      };
+      ContainerClient2.prototype.getPageBlobClient = function(blobName) {
+        return new PageBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
+      };
+      ContainerClient2.prototype.getProperties = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_4;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                if (!options.conditions) {
+                  options.conditions = {};
+                }
+                _a = createSpan("ContainerClient-getProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.getProperties(tslib.__assign(tslib.__assign({abortSignal: options.abortSignal}, options.conditions), convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_4 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_4.message
+                });
+                throw e_4;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.delete = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_5;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                if (!options.conditions) {
+                  options.conditions = {};
+                }
+                _a = createSpan("ContainerClient-delete", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.deleteMethod(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_5 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_5.message
+                });
+                throw e_5;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.deleteIfExists = function(options) {
+        var _a, _b;
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _c, span, updatedOptions, res, e_6;
+          return tslib.__generator(this, function(_d) {
+            switch (_d.label) {
+              case 0:
+                _c = createSpan("ContainerClient-deleteIfExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
+                _d.label = 1;
+              case 1:
+                _d.trys.push([1, 3, 4, 5]);
+                return [4, this.delete(updatedOptions)];
+              case 2:
+                res = _d.sent();
+                return [2, tslib.__assign(tslib.__assign({succeeded: true}, res), {
+                  _response: res._response
+                })];
+              case 3:
+                e_6 = _d.sent();
+                if (((_a = e_6.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerNotFound") {
+                  span.setStatus({
+                    code: api.CanonicalCode.NOT_FOUND,
+                    message: "Expected exception when deleting a container only if it exists."
+                  });
+                  return [2, tslib.__assign(tslib.__assign({succeeded: false}, (_b = e_6.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), {_response: e_6.response})];
+                }
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_6.message
+                });
+                throw e_6;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.setMetadata = function(metadata2, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_7;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                if (!options.conditions) {
+                  options.conditions = {};
+                }
+                if (options.conditions.ifUnmodifiedSince) {
+                  throw new RangeError("the IfUnmodifiedSince must have their default values because they are ignored by the blob service");
+                }
+                _a = createSpan("ContainerClient-setMetadata", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.setMetadata(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: options.conditions}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_7 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_7.message
+                });
+                throw e_7;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.getAccessPolicy = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, response, res, _i, response_1, identifier, accessPolicy, e_8;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                if (!options.conditions) {
+                  options.conditions = {};
+                }
+                _a = createSpan("ContainerClient-getAccessPolicy", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.getAccessPolicy(tslib.__assign({abortSignal: options.abortSignal, leaseAccessConditions: options.conditions}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                response = _b.sent();
+                res = {
+                  _response: response._response,
+                  blobPublicAccess: response.blobPublicAccess,
+                  date: response.date,
+                  etag: response.etag,
+                  errorCode: response.errorCode,
+                  lastModified: response.lastModified,
+                  requestId: response.requestId,
+                  clientRequestId: response.clientRequestId,
+                  signedIdentifiers: [],
+                  version: response.version
+                };
+                for (_i = 0, response_1 = response; _i < response_1.length; _i++) {
+                  identifier = response_1[_i];
+                  accessPolicy = void 0;
+                  if (identifier.accessPolicy) {
+                    accessPolicy = {
+                      permissions: identifier.accessPolicy.permissions
+                    };
+                    if (identifier.accessPolicy.expiresOn) {
+                      accessPolicy.expiresOn = new Date(identifier.accessPolicy.expiresOn);
+                    }
+                    if (identifier.accessPolicy.startsOn) {
+                      accessPolicy.startsOn = new Date(identifier.accessPolicy.startsOn);
+                    }
+                  }
+                  res.signedIdentifiers.push({
+                    accessPolicy,
+                    id: identifier.id
+                  });
+                }
+                return [2, res];
+              case 3:
+                e_8 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_8.message
+                });
+                throw e_8;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.setAccessPolicy = function(access2, containerAcl, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, acl, _i, _b, identifier, e_9;
+          return tslib.__generator(this, function(_c) {
+            switch (_c.label) {
+              case 0:
+                options.conditions = options.conditions || {};
+                _a = createSpan("ContainerClient-setAccessPolicy", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _c.label = 1;
+              case 1:
+                _c.trys.push([1, 3, 4, 5]);
+                acl = [];
+                for (_i = 0, _b = containerAcl || []; _i < _b.length; _i++) {
+                  identifier = _b[_i];
+                  acl.push({
+                    accessPolicy: {
+                      expiresOn: identifier.accessPolicy.expiresOn ? truncatedISO8061Date(identifier.accessPolicy.expiresOn) : "",
+                      permissions: identifier.accessPolicy.permissions,
+                      startsOn: identifier.accessPolicy.startsOn ? truncatedISO8061Date(identifier.accessPolicy.startsOn) : ""
+                    },
+                    id: identifier.id
+                  });
+                }
+                return [4, this.containerContext.setAccessPolicy(tslib.__assign({abortSignal: options.abortSignal, access: access2, containerAcl: acl, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions}, convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _c.sent()];
+              case 3:
+                e_9 = _c.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_9.message
+                });
+                throw e_9;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.getBlobLeaseClient = function(proposeLeaseId) {
+        return new BlobLeaseClient(this, proposeLeaseId);
+      };
+      ContainerClient2.prototype.uploadBlockBlob = function(blobName, body, contentLength2, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, blockBlobClient, response, e_10;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-uploadBlockBlob", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                blockBlobClient = this.getBlockBlobClient(blobName);
+                return [4, blockBlobClient.upload(body, contentLength2, updatedOptions)];
+              case 2:
+                response = _b.sent();
+                return [2, {
+                  blockBlobClient,
+                  response
+                }];
+              case 3:
+                e_10 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_10.message
+                });
+                throw e_10;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.deleteBlob = function(blobName, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, blobClient, e_11;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-deleteBlob", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                blobClient = this.getBlobClient(blobName);
+                if (options.versionId) {
+                  blobClient = blobClient.withVersion(options.versionId);
+                }
+                return [4, blobClient.delete(updatedOptions)];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_11 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_11.message
+                });
+                throw e_11;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.listBlobFlatSegment = function(marker, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, response, wrappedResponse, e_12;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-listBlobFlatSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.listBlobFlatSegment(tslib.__assign(tslib.__assign({marker}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                response = _b.sent();
+                wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), {blobItems: response.segment.blobItems.map(function(blobItemInteral) {
+                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), {tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata)});
+                  return blobItem;
+                })})});
+                return [2, wrappedResponse];
+              case 3:
+                e_12 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_12.message
+                });
+                throw e_12;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.listBlobHierarchySegment = function(delimiter2, marker, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, response, wrappedResponse, e_13;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("ContainerClient-listBlobHierarchySegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.containerContext.listBlobHierarchySegment(delimiter2, tslib.__assign(tslib.__assign({marker}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                response = _b.sent();
+                wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), {blobItems: response.segment.blobItems.map(function(blobItemInteral) {
+                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), {tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata)});
+                  return blobItem;
+                })})});
+                return [2, wrappedResponse];
+              case 3:
+                e_13 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_13.message
+                });
+                throw e_13;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
+      ContainerClient2.prototype.listSegments = function(marker, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listSegments_1() {
+          var listBlobsFlatSegmentResponse;
+          return tslib.__generator(this, function(_a) {
+            switch (_a.label) {
+              case 0:
+                if (!(!!marker || marker === void 0))
+                  return [3, 7];
+                _a.label = 1;
+              case 1:
+                return [4, tslib.__await(this.listBlobFlatSegment(marker, options))];
+              case 2:
+                listBlobsFlatSegmentResponse = _a.sent();
+                marker = listBlobsFlatSegmentResponse.continuationToken;
+                return [4, tslib.__await(listBlobsFlatSegmentResponse)];
+              case 3:
+                return [4, tslib.__await.apply(void 0, [_a.sent()])];
+              case 4:
+                return [4, _a.sent()];
+              case 5:
+                _a.sent();
+                _a.label = 6;
+              case 6:
+                if (marker)
+                  return [3, 1];
+                _a.label = 7;
+              case 7:
+                return [2];
+            }
+          });
+        }, "listSegments_1"));
+      };
+      ContainerClient2.prototype.listItems = function(options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItems_1() {
+          var marker, _a, _b, listBlobsFlatSegmentResponse, e_14_1;
+          var e_14, _c;
+          return tslib.__generator(this, function(_d) {
+            switch (_d.label) {
+              case 0:
+                _d.trys.push([0, 7, 8, 13]);
+                _a = tslib.__asyncValues(this.listSegments(marker, options));
+                _d.label = 1;
+              case 1:
+                return [4, tslib.__await(_a.next())];
+              case 2:
+                if (!(_b = _d.sent(), !_b.done))
+                  return [3, 6];
+                listBlobsFlatSegmentResponse = _b.value;
+                return [5, tslib.__values(tslib.__asyncDelegator(tslib.__asyncValues(listBlobsFlatSegmentResponse.segment.blobItems)))];
+              case 3:
+                return [4, tslib.__await.apply(void 0, [_d.sent()])];
+              case 4:
+                _d.sent();
+                _d.label = 5;
+              case 5:
+                return [3, 1];
+              case 6:
+                return [3, 13];
+              case 7:
+                e_14_1 = _d.sent();
+                e_14 = {error: e_14_1};
+                return [3, 13];
+              case 8:
+                _d.trys.push([8, , 11, 12]);
+                if (!(_b && !_b.done && (_c = _a.return)))
+                  return [3, 10];
+                return [4, tslib.__await(_c.call(_a))];
+              case 9:
+                _d.sent();
+                _d.label = 10;
+              case 10:
+                return [3, 12];
+              case 11:
+                if (e_14)
+                  throw e_14.error;
+                return [7];
+              case 12:
+                return [7];
+              case 13:
+                return [2];
+            }
+          });
+        }, "listItems_1"));
+      };
+      ContainerClient2.prototype.listBlobsFlat = function(options) {
+        var _a;
+        var _this = this;
+        if (options === void 0) {
+          options = {};
+        }
+        var include = [];
+        if (options.includeCopy) {
+          include.push("copy");
+        }
+        if (options.includeDeleted) {
+          include.push("deleted");
+        }
+        if (options.includeMetadata) {
+          include.push("metadata");
+        }
+        if (options.includeSnapshots) {
+          include.push("snapshots");
+        }
+        if (options.includeVersions) {
+          include.push("versions");
+        }
+        if (options.includeUncommitedBlobs) {
+          include.push("uncommittedblobs");
+        }
+        if (options.includeTags) {
+          include.push("tags");
+        }
+        if (options.prefix === "") {
+          options.prefix = void 0;
+        }
+        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include.length > 0 ? {include} : {});
+        var iter = this.listItems(updatedOptions);
+        return _a = {
+          next: function() {
+            return iter.next();
+          }
+        }, _a[Symbol.asyncIterator] = function() {
+          return this;
+        }, _a.byPage = function(settings) {
+          if (settings === void 0) {
+            settings = {};
+          }
+          return _this.listSegments(settings.continuationToken, tslib.__assign({maxPageSize: settings.maxPageSize}, updatedOptions));
+        }, _a;
+      };
+      ContainerClient2.prototype.listHierarchySegments = function(delimiter2, marker, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listHierarchySegments_1() {
+          var listBlobsHierarchySegmentResponse;
+          return tslib.__generator(this, function(_a) {
+            switch (_a.label) {
+              case 0:
+                if (!(!!marker || marker === void 0))
+                  return [3, 7];
+                _a.label = 1;
+              case 1:
+                return [4, tslib.__await(this.listBlobHierarchySegment(delimiter2, marker, options))];
+              case 2:
+                listBlobsHierarchySegmentResponse = _a.sent();
+                marker = listBlobsHierarchySegmentResponse.continuationToken;
+                return [4, tslib.__await(listBlobsHierarchySegmentResponse)];
+              case 3:
+                return [4, tslib.__await.apply(void 0, [_a.sent()])];
+              case 4:
+                return [4, _a.sent()];
+              case 5:
+                _a.sent();
+                _a.label = 6;
+              case 6:
+                if (marker)
+                  return [3, 1];
+                _a.label = 7;
+              case 7:
+                return [2];
+            }
+          });
+        }, "listHierarchySegments_1"));
+      };
+      ContainerClient2.prototype.listItemsByHierarchy = function(delimiter2, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItemsByHierarchy_1() {
+          var marker, _a, _b, listBlobsHierarchySegmentResponse, segment, _i, _c, prefix2, _d, _e, blob, e_15_1;
+          var e_15, _f;
+          return tslib.__generator(this, function(_g) {
+            switch (_g.label) {
+              case 0:
+                _g.trys.push([0, 14, 15, 20]);
+                _a = tslib.__asyncValues(this.listHierarchySegments(delimiter2, marker, options));
+                _g.label = 1;
+              case 1:
+                return [4, tslib.__await(_a.next())];
+              case 2:
+                if (!(_b = _g.sent(), !_b.done))
+                  return [3, 13];
+                listBlobsHierarchySegmentResponse = _b.value;
+                segment = listBlobsHierarchySegmentResponse.segment;
+                if (!segment.blobPrefixes)
+                  return [3, 7];
+                _i = 0, _c = segment.blobPrefixes;
+                _g.label = 3;
+              case 3:
+                if (!(_i < _c.length))
+                  return [3, 7];
+                prefix2 = _c[_i];
+                return [4, tslib.__await(tslib.__assign({kind: "prefix"}, prefix2))];
+              case 4:
+                return [4, _g.sent()];
+              case 5:
+                _g.sent();
+                _g.label = 6;
+              case 6:
+                _i++;
+                return [3, 3];
+              case 7:
+                _d = 0, _e = segment.blobItems;
+                _g.label = 8;
+              case 8:
+                if (!(_d < _e.length))
+                  return [3, 12];
+                blob = _e[_d];
+                return [4, tslib.__await(tslib.__assign({kind: "blob"}, blob))];
+              case 9:
+                return [4, _g.sent()];
+              case 10:
+                _g.sent();
+                _g.label = 11;
+              case 11:
+                _d++;
+                return [3, 8];
+              case 12:
+                return [3, 1];
+              case 13:
+                return [3, 20];
+              case 14:
+                e_15_1 = _g.sent();
+                e_15 = {error: e_15_1};
+                return [3, 20];
+              case 15:
+                _g.trys.push([15, , 18, 19]);
+                if (!(_b && !_b.done && (_f = _a.return)))
+                  return [3, 17];
+                return [4, tslib.__await(_f.call(_a))];
+              case 16:
+                _g.sent();
+                _g.label = 17;
+              case 17:
+                return [3, 19];
+              case 18:
+                if (e_15)
+                  throw e_15.error;
+                return [7];
+              case 19:
+                return [7];
+              case 20:
+                return [2];
+            }
+          });
+        }, "listItemsByHierarchy_1"));
+      };
+      ContainerClient2.prototype.listBlobsByHierarchy = function(delimiter2, options) {
+        var _a;
+        var _this = this;
+        if (options === void 0) {
+          options = {};
+        }
+        if (delimiter2 === "") {
+          throw new RangeError("delimiter should contain one or more characters");
+        }
+        var include = [];
+        if (options.includeCopy) {
+          include.push("copy");
+        }
+        if (options.includeDeleted) {
+          include.push("deleted");
+        }
+        if (options.includeMetadata) {
+          include.push("metadata");
+        }
+        if (options.includeSnapshots) {
+          include.push("snapshots");
+        }
+        if (options.includeVersions) {
+          include.push("versions");
+        }
+        if (options.includeUncommitedBlobs) {
+          include.push("uncommittedblobs");
+        }
+        if (options.includeTags) {
+          include.push("tags");
+        }
+        if (options.prefix === "") {
+          options.prefix = void 0;
+        }
+        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include.length > 0 ? {include} : {});
+        var iter = this.listItemsByHierarchy(delimiter2, updatedOptions);
+        return _a = {
+          next: function() {
+            return tslib.__awaiter(this, void 0, void 0, function() {
+              return tslib.__generator(this, function(_a2) {
+                return [2, iter.next()];
+              });
+            });
+          }
+        }, _a[Symbol.asyncIterator] = function() {
+          return this;
+        }, _a.byPage = function(settings) {
+          if (settings === void 0) {
+            settings = {};
+          }
+          return _this.listHierarchySegments(delimiter2, settings.continuationToken, tslib.__assign({maxPageSize: settings.maxPageSize}, updatedOptions));
+        }, _a;
+      };
+      ContainerClient2.prototype.getContainerNameFromUrl = function() {
+        var containerName;
+        try {
+          var parsedUrl = coreHttp.URLBuilder.parse(this.url);
+          if (parsedUrl.getHost().split(".")[1] === "blob") {
+            containerName = parsedUrl.getPath().split("/")[1];
+          } else if (isIpEndpointStyle(parsedUrl)) {
+            containerName = parsedUrl.getPath().split("/")[2];
+          } else {
+            containerName = parsedUrl.getPath().split("/")[1];
+          }
+          containerName = decodeURIComponent(containerName);
+          if (!containerName) {
+            throw new Error("Provided containerName is invalid.");
+          }
+          return containerName;
+        } catch (error) {
+          throw new Error("Unable to extract containerName with provided information.");
+        }
+      };
+      ContainerClient2.prototype.generateSasUrl = function(options) {
+        var _this = this;
+        return new Promise(function(resolve2) {
+          if (!(_this.credential instanceof StorageSharedKeyCredential)) {
+            throw new RangeError("Can only generate the SAS when the client is initialized with a shared key credential");
+          }
+          var sas = generateBlobSASQueryParameters(tslib.__assign({containerName: _this._containerName}, options), _this.credential).toString();
+          resolve2(appendToURLQuery(_this.url, sas));
+        });
+      };
+      ContainerClient2.prototype.getBlobBatchClient = function() {
+        return new BlobBatchClient(this.url, this.pipeline);
+      };
+      return ContainerClient2;
+    }(StorageClient);
     var AccountSASPermissions = function() {
       function AccountSASPermissions2() {
         this.read = false;
@@ -60135,16 +61313,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, containerClient, containerCreateResponse, e_1;
+          var _a, span, updatedOptions, containerClient, containerCreateResponse, e_1;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-createContainer", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-createContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 containerClient = this.getContainerClient(containerName);
-                return [4, containerClient.create(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, containerClient.create(updatedOptions)];
               case 2:
                 containerCreateResponse = _b.sent();
                 return [2, {
@@ -60172,16 +61350,16 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, containerClient, e_2;
+          var _a, span, updatedOptions, containerClient, e_2;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-deleteContainer", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-deleteContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 containerClient = this.getContainerClient(containerName);
-                return [4, containerClient.delete(tslib.__assign(tslib.__assign({}, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                return [4, containerClient.delete(updatedOptions)];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -60205,20 +61383,20 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, containerClient, containerContext, containerUndeleteResponse, e_3;
+          var _a, span, updatedOptions, containerClient, containerContext, containerUndeleteResponse, e_3;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-undeleteContainer", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-undeleteContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 containerClient = this.getContainerClient(options.destinationContainerName || deletedContainerName2);
                 containerContext = new Container(containerClient["storageClientContext"]);
-                return [4, containerContext.restore(tslib.__assign(tslib.__assign({
+                return [4, containerContext.restore(tslib.__assign({
                   deletedContainerName: deletedContainerName2,
                   deletedContainerVersion: deletedContainerVersion2
-                }, options), {tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), {spanOptions})}))];
+                }, updatedOptions))];
               case 2:
                 containerUndeleteResponse = _b.sent();
                 return [2, {containerClient, containerUndeleteResponse}];
@@ -60238,27 +61416,28 @@ var require_dist9 = __commonJS({
           });
         });
       };
-      BlobServiceClient2.prototype.getProperties = function(options) {
+      BlobServiceClient2.prototype.renameContainer = function(sourceContainerName2, destinationContainerName, options) {
+        var _a;
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_4;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
+          var _b, span, updatedOptions, containerClient, containerContext, containerRenameResponse, e_4;
+          return tslib.__generator(this, function(_c) {
+            switch (_c.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-getProperties", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
-                _b.label = 1;
+                _b = createSpan("BlobServiceClient-renameContainer", options), span = _b.span, updatedOptions = _b.updatedOptions;
+                _c.label = 1;
               case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getProperties({
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                _c.trys.push([1, 3, 4, 5]);
+                containerClient = this.getContainerClient(destinationContainerName);
+                containerContext = new Container(containerClient["storageClientContext"]);
+                return [4, containerContext.rename(sourceContainerName2, tslib.__assign(tslib.__assign({}, updatedOptions), {sourceLeaseId: (_a = options.sourceCondition) === null || _a === void 0 ? void 0 : _a.leaseId}))];
               case 2:
-                return [2, _b.sent()];
+                containerRenameResponse = _c.sent();
+                return [2, {containerClient, containerRenameResponse}];
               case 3:
-                e_4 = _b.sent();
+                e_4 = _c.sent();
                 span.setStatus({
                   code: api.CanonicalCode.UNKNOWN,
                   message: e_4.message
@@ -60273,23 +61452,20 @@ var require_dist9 = __commonJS({
           });
         });
       };
-      BlobServiceClient2.prototype.setProperties = function(properties, options) {
+      BlobServiceClient2.prototype.getProperties = function(options) {
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_5;
+          var _a, span, updatedOptions, e_5;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-setProperties", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-getProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.setProperties(properties, {
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                return [4, this.serviceContext.getProperties(tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -60308,23 +61484,20 @@ var require_dist9 = __commonJS({
           });
         });
       };
-      BlobServiceClient2.prototype.getStatistics = function(options) {
+      BlobServiceClient2.prototype.setProperties = function(properties, options) {
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_6;
+          var _a, span, updatedOptions, e_6;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-getStatistics", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-setProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getStatistics({
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                return [4, this.serviceContext.setProperties(properties, tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -60343,23 +61516,20 @@ var require_dist9 = __commonJS({
           });
         });
       };
-      BlobServiceClient2.prototype.getAccountInfo = function(options) {
+      BlobServiceClient2.prototype.getStatistics = function(options) {
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_7;
+          var _a, span, updatedOptions, e_7;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-getAccountInfo", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-getStatistics", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getAccountInfo({
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                return [4, this.serviceContext.getStatistics(tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -60378,20 +61548,20 @@ var require_dist9 = __commonJS({
           });
         });
       };
-      BlobServiceClient2.prototype.listContainersSegment = function(marker, options) {
+      BlobServiceClient2.prototype.getAccountInfo = function(options) {
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, e_8;
+          var _a, span, updatedOptions, e_8;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-listContainersSegment", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-getAccountInfo", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.listContainersSegment(tslib.__assign(tslib.__assign({abortSignal: options.abortSignal, marker}, options), {include: typeof options.include === "string" ? [options.include] : options.include, spanOptions}))];
+                return [4, this.serviceContext.getAccountInfo(tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 return [2, _b.sent()];
               case 3:
@@ -60410,26 +61580,52 @@ var require_dist9 = __commonJS({
           });
         });
       };
+      BlobServiceClient2.prototype.listContainersSegment = function(marker, options) {
+        if (options === void 0) {
+          options = {};
+        }
+        return tslib.__awaiter(this, void 0, void 0, function() {
+          var _a, span, updatedOptions, e_9;
+          return tslib.__generator(this, function(_b) {
+            switch (_b.label) {
+              case 0:
+                _a = createSpan("BlobServiceClient-listContainersSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
+                _b.label = 1;
+              case 1:
+                _b.trys.push([1, 3, 4, 5]);
+                return [4, this.serviceContext.listContainersSegment(tslib.__assign(tslib.__assign(tslib.__assign({abortSignal: options.abortSignal, marker}, options), {include: typeof options.include === "string" ? [options.include] : options.include}), convertTracingToRequestOptionsBase(updatedOptions)))];
+              case 2:
+                return [2, _b.sent()];
+              case 3:
+                e_9 = _b.sent();
+                span.setStatus({
+                  code: api.CanonicalCode.UNKNOWN,
+                  message: e_9.message
+                });
+                throw e_9;
+              case 4:
+                span.end();
+                return [7];
+              case 5:
+                return [2];
+            }
+          });
+        });
+      };
       BlobServiceClient2.prototype.findBlobsByTagsSegment = function(tagFilterSqlExpression, marker, options) {
         if (options === void 0) {
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, wrappedResponse, e_9;
+          var _a, span, updatedOptions, response, wrappedResponse, e_10;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-findBlobsByTagsSegment", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-findBlobsByTagsSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.filterBlobs({
-                  abortSignal: options.abortSignal,
-                  where: tagFilterSqlExpression,
-                  marker,
-                  maxPageSize: options.maxPageSize,
-                  spanOptions
-                })];
+                return [4, this.serviceContext.filterBlobs(tslib.__assign({abortSignal: options.abortSignal, where: tagFilterSqlExpression, marker, maxPageSize: options.maxPageSize}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 response = _b.sent();
                 wrappedResponse = tslib.__assign(tslib.__assign({}, response), {_response: response._response, blobs: response.blobs.map(function(blob) {
@@ -60442,12 +61638,12 @@ var require_dist9 = __commonJS({
                 })});
                 return [2, wrappedResponse];
               case 3:
-                e_9 = _b.sent();
+                e_10 = _b.sent();
                 span.setStatus({
                   code: api.CanonicalCode.UNKNOWN,
-                  message: e_9.message
+                  message: e_10.message
                 });
-                throw e_9;
+                throw e_10;
               case 4:
                 span.end();
                 return [7];
@@ -60496,8 +61692,8 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function findBlobsByTagsItems_1() {
-          var marker, _a, _b, segment, e_10_1;
-          var e_10, _c;
+          var marker, _a, _b, segment, e_11_1;
+          var e_11, _c;
           return tslib.__generator(this, function(_d) {
             switch (_d.label) {
               case 0:
@@ -60521,8 +61717,8 @@ var require_dist9 = __commonJS({
               case 6:
                 return [3, 13];
               case 7:
-                e_10_1 = _d.sent();
-                e_10 = {error: e_10_1};
+                e_11_1 = _d.sent();
+                e_11 = {error: e_11_1};
                 return [3, 13];
               case 8:
                 _d.trys.push([8, , 11, 12]);
@@ -60535,8 +61731,8 @@ var require_dist9 = __commonJS({
               case 10:
                 return [3, 12];
               case 11:
-                if (e_10)
-                  throw e_10.error;
+                if (e_11)
+                  throw e_11.error;
                 return [7];
               case 12:
                 return [7];
@@ -60608,8 +61804,8 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItems_1() {
-          var marker, _a, _b, segment, e_11_1;
-          var e_11, _c;
+          var marker, _a, _b, segment, e_12_1;
+          var e_12, _c;
           return tslib.__generator(this, function(_d) {
             switch (_d.label) {
               case 0:
@@ -60633,8 +61829,8 @@ var require_dist9 = __commonJS({
               case 6:
                 return [3, 13];
               case 7:
-                e_11_1 = _d.sent();
-                e_11 = {error: e_11_1};
+                e_12_1 = _d.sent();
+                e_12 = {error: e_12_1};
                 return [3, 13];
               case 8:
                 _d.trys.push([8, , 11, 12]);
@@ -60647,8 +61843,8 @@ var require_dist9 = __commonJS({
               case 10:
                 return [3, 12];
               case 11:
-                if (e_11)
-                  throw e_11.error;
+                if (e_12)
+                  throw e_12.error;
                 return [7];
               case 12:
                 return [7];
@@ -60694,21 +61890,18 @@ var require_dist9 = __commonJS({
           options = {};
         }
         return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, spanOptions, response, userDelegationKey, res, e_12;
+          var _a, span, updatedOptions, response, userDelegationKey, res, e_13;
           return tslib.__generator(this, function(_b) {
             switch (_b.label) {
               case 0:
-                _a = createSpan("BlobServiceClient-getUserDelegationKey", options.tracingOptions), span = _a.span, spanOptions = _a.spanOptions;
+                _a = createSpan("BlobServiceClient-getUserDelegationKey", options), span = _a.span, updatedOptions = _a.updatedOptions;
                 _b.label = 1;
               case 1:
                 _b.trys.push([1, 3, 4, 5]);
                 return [4, this.serviceContext.getUserDelegationKey({
                   startsOn: truncatedISO8061Date(startsOn, false),
                   expiresOn: truncatedISO8061Date(expiresOn2, false)
-                }, {
-                  abortSignal: options.abortSignal,
-                  spanOptions
-                })];
+                }, tslib.__assign({abortSignal: options.abortSignal}, convertTracingToRequestOptionsBase(updatedOptions)))];
               case 2:
                 response = _b.sent();
                 userDelegationKey = {
@@ -60723,12 +61916,12 @@ var require_dist9 = __commonJS({
                 res = tslib.__assign({_response: response._response, requestId: response.requestId, clientRequestId: response.clientRequestId, version: response.version, date: response.date, errorCode: response.errorCode}, userDelegationKey);
                 return [2, res];
               case 3:
-                e_12 = _b.sent();
+                e_13 = _b.sent();
                 span.setStatus({
                   code: api.CanonicalCode.UNKNOWN,
-                  message: e_12.message
+                  message: e_13.message
                 });
-                throw e_12;
+                throw e_13;
               case 4:
                 span.end();
                 return [7];
@@ -61041,7 +62234,7 @@ var require_downloadUtils = __commonJS({
     Object.defineProperty(exports2, "__esModule", {value: true});
     var core = __importStar(require_core());
     var http_client_1 = require_http_client();
-    var storage_blob_1 = require_dist9();
+    var storage_blob_1 = require_dist10();
     var buffer = __importStar(require("buffer"));
     var fs2 = __importStar(require("fs"));
     var stream = __importStar(require("stream"));
@@ -61536,7 +62729,7 @@ var require_tar = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", {value: true});
     var exec_1 = require_exec();
-    var io = __importStar(require_io2());
+    var io = __importStar(require_io());
     var fs_1 = require("fs");
     var path2 = __importStar(require("path"));
     var utils = __importStar(require_cacheUtils());
@@ -61842,315 +63035,9 @@ var require_cache = __commonJS({
   }
 });
 
-// ../../node_modules/@actions/core/lib/utils.js
-var require_utils3 = __commonJS({
-  "../../node_modules/@actions/core/lib/utils.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    function toCommandValue(input) {
-      if (input === null || input === void 0) {
-        return "";
-      } else if (typeof input === "string" || input instanceof String) {
-        return input;
-      }
-      return JSON.stringify(input);
-    }
-    __name(toCommandValue, "toCommandValue");
-    exports2.toCommandValue = toCommandValue;
-  }
-});
-
-// ../../node_modules/@actions/core/lib/command.js
-var require_command3 = __commonJS({
-  "../../node_modules/@actions/core/lib/command.js"(exports2) {
-    "use strict";
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var os = __importStar(require("os"));
-    var utils_1 = require_utils3();
-    function issueCommand(command, properties, message) {
-      const cmd = new Command(command, properties, message);
-      process.stdout.write(cmd.toString() + os.EOL);
-    }
-    __name(issueCommand, "issueCommand");
-    exports2.issueCommand = issueCommand;
-    function issue(name, message = "") {
-      issueCommand(name, {}, message);
-    }
-    __name(issue, "issue");
-    exports2.issue = issue;
-    var CMD_STRING = "::";
-    var Command = class {
-      constructor(command, properties, message) {
-        if (!command) {
-          command = "missing.command";
-        }
-        this.command = command;
-        this.properties = properties;
-        this.message = message;
-      }
-      toString() {
-        let cmdStr = CMD_STRING + this.command;
-        if (this.properties && Object.keys(this.properties).length > 0) {
-          cmdStr += " ";
-          let first = true;
-          for (const key in this.properties) {
-            if (this.properties.hasOwnProperty(key)) {
-              const val = this.properties[key];
-              if (val) {
-                if (first) {
-                  first = false;
-                } else {
-                  cmdStr += ",";
-                }
-                cmdStr += `${key}=${escapeProperty(val)}`;
-              }
-            }
-          }
-        }
-        cmdStr += `${CMD_STRING}${escapeData(this.message)}`;
-        return cmdStr;
-      }
-    };
-    __name(Command, "Command");
-    function escapeData(s) {
-      return utils_1.toCommandValue(s).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
-    }
-    __name(escapeData, "escapeData");
-    function escapeProperty(s) {
-      return utils_1.toCommandValue(s).replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A").replace(/:/g, "%3A").replace(/,/g, "%2C");
-    }
-    __name(escapeProperty, "escapeProperty");
-  }
-});
-
-// ../../node_modules/@actions/core/lib/file-command.js
-var require_file_command3 = __commonJS({
-  "../../node_modules/@actions/core/lib/file-command.js"(exports2) {
-    "use strict";
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var fs2 = __importStar(require("fs"));
-    var os = __importStar(require("os"));
-    var utils_1 = require_utils3();
-    function issueCommand(command, message) {
-      const filePath = process.env[`GITHUB_${command}`];
-      if (!filePath) {
-        throw new Error(`Unable to find environment variable for file command ${command}`);
-      }
-      if (!fs2.existsSync(filePath)) {
-        throw new Error(`Missing file at path: ${filePath}`);
-      }
-      fs2.appendFileSync(filePath, `${utils_1.toCommandValue(message)}${os.EOL}`, {
-        encoding: "utf8"
-      });
-    }
-    __name(issueCommand, "issueCommand");
-    exports2.issueCommand = issueCommand;
-  }
-});
-
-// ../../node_modules/@actions/core/lib/core.js
-var require_core3 = __commonJS({
-  "../../node_modules/@actions/core/lib/core.js"(exports2) {
-    "use strict";
-    var __awaiter = exports2 && exports2.__awaiter || function(thisArg, _arguments, P, generator) {
-      function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve2) {
-          resolve2(value);
-        });
-      }
-      __name(adopt, "adopt");
-      return new (P || (P = Promise))(function(resolve2, reject) {
-        function fulfilled(value) {
-          try {
-            step(generator.next(value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(fulfilled, "fulfilled");
-        function rejected(value) {
-          try {
-            step(generator["throw"](value));
-          } catch (e) {
-            reject(e);
-          }
-        }
-        __name(rejected, "rejected");
-        function step(result) {
-          result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        __name(step, "step");
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-      });
-    };
-    var __importStar = exports2 && exports2.__importStar || function(mod) {
-      if (mod && mod.__esModule)
-        return mod;
-      var result = {};
-      if (mod != null) {
-        for (var k in mod)
-          if (Object.hasOwnProperty.call(mod, k))
-            result[k] = mod[k];
-      }
-      result["default"] = mod;
-      return result;
-    };
-    Object.defineProperty(exports2, "__esModule", {value: true});
-    var command_1 = require_command3();
-    var file_command_1 = require_file_command3();
-    var utils_1 = require_utils3();
-    var os = __importStar(require("os"));
-    var path2 = __importStar(require("path"));
-    var ExitCode;
-    (function(ExitCode2) {
-      ExitCode2[ExitCode2["Success"] = 0] = "Success";
-      ExitCode2[ExitCode2["Failure"] = 1] = "Failure";
-    })(ExitCode = exports2.ExitCode || (exports2.ExitCode = {}));
-    function exportVariable(name, val) {
-      const convertedVal = utils_1.toCommandValue(val);
-      process.env[name] = convertedVal;
-      const filePath = process.env["GITHUB_ENV"] || "";
-      if (filePath) {
-        const delimiter = "_GitHubActionsFileCommandDelimeter_";
-        const commandValue = `${name}<<${delimiter}${os.EOL}${convertedVal}${os.EOL}${delimiter}`;
-        file_command_1.issueCommand("ENV", commandValue);
-      } else {
-        command_1.issueCommand("set-env", {name}, convertedVal);
-      }
-    }
-    __name(exportVariable, "exportVariable");
-    exports2.exportVariable = exportVariable;
-    function setSecret(secret) {
-      command_1.issueCommand("add-mask", {}, secret);
-    }
-    __name(setSecret, "setSecret");
-    exports2.setSecret = setSecret;
-    function addPath(inputPath) {
-      const filePath = process.env["GITHUB_PATH"] || "";
-      if (filePath) {
-        file_command_1.issueCommand("PATH", inputPath);
-      } else {
-        command_1.issueCommand("add-path", {}, inputPath);
-      }
-      process.env["PATH"] = `${inputPath}${path2.delimiter}${process.env["PATH"]}`;
-    }
-    __name(addPath, "addPath");
-    exports2.addPath = addPath;
-    function getInput2(name, options) {
-      const val = process.env[`INPUT_${name.replace(/ /g, "_").toUpperCase()}`] || "";
-      if (options && options.required && !val) {
-        throw new Error(`Input required and not supplied: ${name}`);
-      }
-      return val.trim();
-    }
-    __name(getInput2, "getInput");
-    exports2.getInput = getInput2;
-    function setOutput(name, value) {
-      process.stdout.write(os.EOL);
-      command_1.issueCommand("set-output", {name}, value);
-    }
-    __name(setOutput, "setOutput");
-    exports2.setOutput = setOutput;
-    function setCommandEcho(enabled) {
-      command_1.issue("echo", enabled ? "on" : "off");
-    }
-    __name(setCommandEcho, "setCommandEcho");
-    exports2.setCommandEcho = setCommandEcho;
-    function setFailed2(message) {
-      process.exitCode = ExitCode.Failure;
-      error(message);
-    }
-    __name(setFailed2, "setFailed");
-    exports2.setFailed = setFailed2;
-    function isDebug() {
-      return process.env["RUNNER_DEBUG"] === "1";
-    }
-    __name(isDebug, "isDebug");
-    exports2.isDebug = isDebug;
-    function debug(message) {
-      command_1.issueCommand("debug", {}, message);
-    }
-    __name(debug, "debug");
-    exports2.debug = debug;
-    function error(message) {
-      command_1.issue("error", message instanceof Error ? message.toString() : message);
-    }
-    __name(error, "error");
-    exports2.error = error;
-    function warning2(message) {
-      command_1.issue("warning", message instanceof Error ? message.toString() : message);
-    }
-    __name(warning2, "warning");
-    exports2.warning = warning2;
-    function info2(message) {
-      process.stdout.write(message + os.EOL);
-    }
-    __name(info2, "info");
-    exports2.info = info2;
-    function startGroup2(name) {
-      command_1.issue("group", name);
-    }
-    __name(startGroup2, "startGroup");
-    exports2.startGroup = startGroup2;
-    function endGroup2() {
-      command_1.issue("endgroup");
-    }
-    __name(endGroup2, "endGroup");
-    exports2.endGroup = endGroup2;
-    function group2(name, fn) {
-      return __awaiter(this, void 0, void 0, function* () {
-        startGroup2(name);
-        let result;
-        try {
-          result = yield fn();
-        } finally {
-          endGroup2();
-        }
-        return result;
-      });
-    }
-    __name(group2, "group");
-    exports2.group = group2;
-    function saveState(name, value) {
-      command_1.issueCommand("save-state", {name}, value);
-    }
-    __name(saveState, "saveState");
-    exports2.saveState = saveState;
-    function getState(name) {
-      return process.env[`STATE_${name}`] || "";
-    }
-    __name(getState, "getState");
-    exports2.getState = getState;
-  }
-});
-
 // src/index.ts
 var import_cache = __toModule(require_cache());
-var import_core2 = __toModule(require_core3());
+var import_core2 = __toModule(require_core());
 var path = __toModule(require("path"));
 
 // ../../utils/Executor.ts
@@ -62199,7 +63086,7 @@ async function hashFile(filepath) {
 __name(hashFile, "hashFile");
 
 // ../../utils/log.ts
-var import_core = __toModule(require_core3());
+var import_core = __toModule(require_core());
 var util = __toModule(require("util"));
 function logInfo(format2, ...args) {
   (0, import_core.info)(util.format(format2, ...args));
@@ -62411,7 +63298,7 @@ NpmInstallAction.create().run().catch(import_core2.setFailed);
  * Licensed under the MIT License. See License.txt in the project root for
  * license information.
  * 
- * Azure Core LRO SDK for JavaScript - 1.0.3
+ * Azure Core LRO SDK for JavaScript - 1.0.5
  */
 /*!
  * mime-db
