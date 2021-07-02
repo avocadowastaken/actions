@@ -21,14 +21,14 @@
   },
   "devDependencies": {
     "@types/listr": "^0.14.3",
-    "esbuild": "^0.12.13",
+    "esbuild": "^0.12.14",
     "execa": "^5.1.1",
     "listr": "^0.14.3",
     "np": "^7.5.0",
     "prettier": "^2.3.2",
     "prettier-plugin-organize-imports": "^2.2.0",
     "prettier-plugin-packagejson": "^2.2.11",
-    "rapidbundle": "^0.8.0",
+    "rapidbundle": "^0.10.3",
     "typescript": "^4.3.5"
   }
 }
