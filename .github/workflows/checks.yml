@@ -10,20 +10,13 @@ on:
 
 jobs:
   checks:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: styfle/cancel-workflow-action@0.9.1
       - uses: actions/checkout@v2
 
       - uses: ./npm/install
-        with:
-          cache-key: npm-${{ matrix.os }}-
 
       - run: yarn tsc
       - run: yarn lint
