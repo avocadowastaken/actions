@@ -21,8 +21,3 @@ jobs:
       - run: yarn tsc
       - run: yarn lint
       - run: yarn build
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        if: failure()
-        with:
-          commit_message: "fix: Apply build changes."
