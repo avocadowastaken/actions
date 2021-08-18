@@ -1,5 +1,6 @@
 {
   "extends": ["config:js-lib", "group:all"],
+  "dependencyDashboard": true,
   "postUpdateOptions": ["yarnDedupeHighest"],
   "lockFileMaintenance": { "enabled": true, "automerge": true },
   "packageRules": [
