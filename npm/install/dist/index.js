@@ -4449,9 +4449,9 @@ var require_semver = __commonJS({
   }
 });
 
-// ../../node_modules/uuid/lib/rng.js
+// ../../node_modules/@actions/cache/node_modules/uuid/lib/rng.js
 var require_rng = __commonJS({
-  "../../node_modules/uuid/lib/rng.js"(exports2, module2) {
+  "../../node_modules/@actions/cache/node_modules/uuid/lib/rng.js"(exports2, module2) {
     var crypto = require("crypto");
     module2.exports = /* @__PURE__ */ __name(function nodeRNG() {
       return crypto.randomBytes(16);
@@ -4459,9 +4459,9 @@ var require_rng = __commonJS({
   }
 });
 
-// ../../node_modules/uuid/lib/bytesToUuid.js
+// ../../node_modules/@actions/cache/node_modules/uuid/lib/bytesToUuid.js
 var require_bytesToUuid = __commonJS({
-  "../../node_modules/uuid/lib/bytesToUuid.js"(exports2, module2) {
+  "../../node_modules/@actions/cache/node_modules/uuid/lib/bytesToUuid.js"(exports2, module2) {
     var byteToHex = [];
     for (i = 0; i < 256; ++i) {
       byteToHex[i] = (i + 256).toString(16).substr(1);
@@ -4498,9 +4498,9 @@ var require_bytesToUuid = __commonJS({
   }
 });
 
-// ../../node_modules/uuid/v1.js
+// ../../node_modules/@actions/cache/node_modules/uuid/v1.js
 var require_v1 = __commonJS({
-  "../../node_modules/uuid/v1.js"(exports2, module2) {
+  "../../node_modules/@actions/cache/node_modules/uuid/v1.js"(exports2, module2) {
     var rng = require_rng();
     var bytesToUuid = require_bytesToUuid();
     var _nodeId;
@@ -4567,9 +4567,9 @@ var require_v1 = __commonJS({
   }
 });
 
-// ../../node_modules/uuid/v4.js
+// ../../node_modules/@actions/cache/node_modules/uuid/v4.js
 var require_v4 = __commonJS({
-  "../../node_modules/uuid/v4.js"(exports2, module2) {
+  "../../node_modules/@actions/cache/node_modules/uuid/v4.js"(exports2, module2) {
     var rng = require_rng();
     var bytesToUuid = require_bytesToUuid();
     function v4(options, buf, offset) {
@@ -4594,9 +4594,9 @@ var require_v4 = __commonJS({
   }
 });
 
-// ../../node_modules/uuid/index.js
+// ../../node_modules/@actions/cache/node_modules/uuid/index.js
 var require_uuid = __commonJS({
-  "../../node_modules/uuid/index.js"(exports2, module2) {
+  "../../node_modules/@actions/cache/node_modules/uuid/index.js"(exports2, module2) {
     var v1 = require_v1();
     var v4 = require_v4();
     var uuid = v4;
@@ -5665,455 +5665,9 @@ var require_auth = __commonJS({
   }
 });
 
-// ../../node_modules/tslib/tslib.js
-var require_tslib = __commonJS({
-  "../../node_modules/tslib/tslib.js"(exports2, module2) {
-    var __extends;
-    var __assign;
-    var __rest;
-    var __decorate;
-    var __param;
-    var __metadata;
-    var __awaiter;
-    var __generator;
-    var __exportStar;
-    var __values2;
-    var __read;
-    var __spread;
-    var __spreadArrays;
-    var __spreadArray;
-    var __await;
-    var __asyncGenerator;
-    var __asyncDelegator;
-    var __asyncValues;
-    var __makeTemplateObject;
-    var __importStar;
-    var __importDefault;
-    var __classPrivateFieldGet;
-    var __classPrivateFieldSet;
-    var __createBinding;
-    (function(factory) {
-      var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
-      if (typeof define === "function" && define.amd) {
-        define("tslib", ["exports"], function(exports3) {
-          factory(createExporter(root, createExporter(exports3)));
-        });
-      } else if (typeof module2 === "object" && typeof module2.exports === "object") {
-        factory(createExporter(root, createExporter(module2.exports)));
-      } else {
-        factory(createExporter(root));
-      }
-      function createExporter(exports3, previous) {
-        if (exports3 !== root) {
-          if (typeof Object.create === "function") {
-            Object.defineProperty(exports3, "__esModule", { value: true });
-          } else {
-            exports3.__esModule = true;
-          }
-        }
-        return function(id, v) {
-          return exports3[id] = previous ? previous(id, v) : v;
-        };
-      }
-      __name(createExporter, "createExporter");
-    })(function(exporter) {
-      var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d, b) {
-        d.__proto__ = b;
-      } || function(d, b) {
-        for (var p in b)
-          if (Object.prototype.hasOwnProperty.call(b, p))
-            d[p] = b[p];
-      };
-      __extends = /* @__PURE__ */ __name(function(d, b) {
-        if (typeof b !== "function" && b !== null)
-          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() {
-          this.constructor = d;
-        }
-        __name(__, "__");
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-      }, "__extends");
-      __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-          s = arguments[i];
-          for (var p in s)
-            if (Object.prototype.hasOwnProperty.call(s, p))
-              t[p] = s[p];
-        }
-        return t;
-      };
-      __rest = /* @__PURE__ */ __name(function(s, e) {
-        var t = {};
-        for (var p in s)
-          if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-            t[p] = s[p];
-        if (s != null && typeof Object.getOwnPropertySymbols === "function")
-          for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-              t[p[i]] = s[p[i]];
-          }
-        return t;
-      }, "__rest");
-      __decorate = /* @__PURE__ */ __name(function(decorators, target, key, desc) {
-        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
-          r = Reflect.decorate(decorators, target, key, desc);
-        else
-          for (var i = decorators.length - 1; i >= 0; i--)
-            if (d = decorators[i])
-              r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-        return c > 3 && r && Object.defineProperty(target, key, r), r;
-      }, "__decorate");
-      __param = /* @__PURE__ */ __name(function(paramIndex, decorator) {
-        return function(target, key) {
-          decorator(target, key, paramIndex);
-        };
-      }, "__param");
-      __metadata = /* @__PURE__ */ __name(function(metadataKey, metadataValue) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
-          return Reflect.metadata(metadataKey, metadataValue);
-      }, "__metadata");
-      __awaiter = /* @__PURE__ */ __name(function(thisArg, _arguments, P, generator) {
-        function adopt(value) {
-          return value instanceof P ? value : new P(function(resolve2) {
-            resolve2(value);
-          });
-        }
-        __name(adopt, "adopt");
-        return new (P || (P = Promise))(function(resolve2, reject) {
-          function fulfilled(value) {
-            try {
-              step(generator.next(value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-          __name(fulfilled, "fulfilled");
-          function rejected(value) {
-            try {
-              step(generator["throw"](value));
-            } catch (e) {
-              reject(e);
-            }
-          }
-          __name(rejected, "rejected");
-          function step(result) {
-            result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-          }
-          __name(step, "step");
-          step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-      }, "__awaiter");
-      __generator = /* @__PURE__ */ __name(function(thisArg, body) {
-        var _ = { label: 0, sent: function() {
-          if (t[0] & 1)
-            throw t[1];
-          return t[1];
-        }, trys: [], ops: [] }, f, y, t, g;
-        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
-          return this;
-        }), g;
-        function verb(n) {
-          return function(v) {
-            return step([n, v]);
-          };
-        }
-        __name(verb, "verb");
-        function step(op) {
-          if (f)
-            throw new TypeError("Generator is already executing.");
-          while (_)
-            try {
-              if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
-                return t;
-              if (y = 0, t)
-                op = [op[0] & 2, t.value];
-              switch (op[0]) {
-                case 0:
-                case 1:
-                  t = op;
-                  break;
-                case 4:
-                  _.label++;
-                  return { value: op[1], done: false };
-                case 5:
-                  _.label++;
-                  y = op[1];
-                  op = [0];
-                  continue;
-                case 7:
-                  op = _.ops.pop();
-                  _.trys.pop();
-                  continue;
-                default:
-                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-                    _ = 0;
-                    continue;
-                  }
-                  if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-                    _.label = op[1];
-                    break;
-                  }
-                  if (op[0] === 6 && _.label < t[1]) {
-                    _.label = t[1];
-                    t = op;
-                    break;
-                  }
-                  if (t && _.label < t[2]) {
-                    _.label = t[2];
-                    _.ops.push(op);
-                    break;
-                  }
-                  if (t[2])
-                    _.ops.pop();
-                  _.trys.pop();
-                  continue;
-              }
-              op = body.call(thisArg, _);
-            } catch (e) {
-              op = [6, e];
-              y = 0;
-            } finally {
-              f = t = 0;
-            }
-          if (op[0] & 5)
-            throw op[1];
-          return { value: op[0] ? op[1] : void 0, done: true };
-        }
-        __name(step, "step");
-      }, "__generator");
-      __exportStar = /* @__PURE__ */ __name(function(m, o) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p))
-            __createBinding(o, m, p);
-      }, "__exportStar");
-      __createBinding = Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        Object.defineProperty(o, k2, { enumerable: true, get: function() {
-          return m[k];
-        } });
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      };
-      __values2 = /* @__PURE__ */ __name(function(o) {
-        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-        if (m)
-          return m.call(o);
-        if (o && typeof o.length === "number")
-          return {
-            next: function() {
-              if (o && i >= o.length)
-                o = void 0;
-              return { value: o && o[i++], done: !o };
-            }
-          };
-        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-      }, "__values");
-      __read = /* @__PURE__ */ __name(function(o, n) {
-        var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m)
-          return o;
-        var i = m.call(o), r, ar = [], e;
-        try {
-          while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
-            ar.push(r.value);
-        } catch (error) {
-          e = { error };
-        } finally {
-          try {
-            if (r && !r.done && (m = i["return"]))
-              m.call(i);
-          } finally {
-            if (e)
-              throw e.error;
-          }
-        }
-        return ar;
-      }, "__read");
-      __spread = /* @__PURE__ */ __name(function() {
-        for (var ar = [], i = 0; i < arguments.length; i++)
-          ar = ar.concat(__read(arguments[i]));
-        return ar;
-      }, "__spread");
-      __spreadArrays = /* @__PURE__ */ __name(function() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++)
-          s += arguments[i].length;
-        for (var r = Array(s), k = 0, i = 0; i < il; i++)
-          for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-        return r;
-      }, "__spreadArrays");
-      __spreadArray = /* @__PURE__ */ __name(function(to, from, pack) {
-        if (pack || arguments.length === 2)
-          for (var i = 0, l = from.length, ar; i < l; i++) {
-            if (ar || !(i in from)) {
-              if (!ar)
-                ar = Array.prototype.slice.call(from, 0, i);
-              ar[i] = from[i];
-            }
-          }
-        return to.concat(ar || from);
-      }, "__spreadArray");
-      __await = /* @__PURE__ */ __name(function(v) {
-        return this instanceof __await ? (this.v = v, this) : new __await(v);
-      }, "__await");
-      __asyncGenerator = /* @__PURE__ */ __name(function(thisArg, _arguments, generator) {
-        if (!Symbol.asyncIterator)
-          throw new TypeError("Symbol.asyncIterator is not defined.");
-        var g = generator.apply(thisArg, _arguments || []), i, q = [];
-        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-          return this;
-        }, i;
-        function verb(n) {
-          if (g[n])
-            i[n] = function(v) {
-              return new Promise(function(a, b) {
-                q.push([n, v, a, b]) > 1 || resume(n, v);
-              });
-            };
-        }
-        __name(verb, "verb");
-        function resume(n, v) {
-          try {
-            step(g[n](v));
-          } catch (e) {
-            settle(q[0][3], e);
-          }
-        }
-        __name(resume, "resume");
-        function step(r) {
-          r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
-        }
-        __name(step, "step");
-        function fulfill(value) {
-          resume("next", value);
-        }
-        __name(fulfill, "fulfill");
-        function reject(value) {
-          resume("throw", value);
-        }
-        __name(reject, "reject");
-        function settle(f, v) {
-          if (f(v), q.shift(), q.length)
-            resume(q[0][0], q[0][1]);
-        }
-        __name(settle, "settle");
-      }, "__asyncGenerator");
-      __asyncDelegator = /* @__PURE__ */ __name(function(o) {
-        var i, p;
-        return i = {}, verb("next"), verb("throw", function(e) {
-          throw e;
-        }), verb("return"), i[Symbol.iterator] = function() {
-          return this;
-        }, i;
-        function verb(n, f) {
-          i[n] = o[n] ? function(v) {
-            return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v;
-          } : f;
-        }
-        __name(verb, "verb");
-      }, "__asyncDelegator");
-      __asyncValues = /* @__PURE__ */ __name(function(o) {
-        if (!Symbol.asyncIterator)
-          throw new TypeError("Symbol.asyncIterator is not defined.");
-        var m = o[Symbol.asyncIterator], i;
-        return m ? m.call(o) : (o = typeof __values2 === "function" ? __values2(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
-          return this;
-        }, i);
-        function verb(n) {
-          i[n] = o[n] && function(v) {
-            return new Promise(function(resolve2, reject) {
-              v = o[n](v), settle(resolve2, reject, v.done, v.value);
-            });
-          };
-        }
-        __name(verb, "verb");
-        function settle(resolve2, reject, d, v) {
-          Promise.resolve(v).then(function(v2) {
-            resolve2({ value: v2, done: d });
-          }, reject);
-        }
-        __name(settle, "settle");
-      }, "__asyncValues");
-      __makeTemplateObject = /* @__PURE__ */ __name(function(cooked, raw) {
-        if (Object.defineProperty) {
-          Object.defineProperty(cooked, "raw", { value: raw });
-        } else {
-          cooked.raw = raw;
-        }
-        return cooked;
-      }, "__makeTemplateObject");
-      var __setModuleDefault = Object.create ? function(o, v) {
-        Object.defineProperty(o, "default", { enumerable: true, value: v });
-      } : function(o, v) {
-        o["default"] = v;
-      };
-      __importStar = /* @__PURE__ */ __name(function(mod) {
-        if (mod && mod.__esModule)
-          return mod;
-        var result = {};
-        if (mod != null) {
-          for (var k in mod)
-            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
-              __createBinding(result, mod, k);
-        }
-        __setModuleDefault(result, mod);
-        return result;
-      }, "__importStar");
-      __importDefault = /* @__PURE__ */ __name(function(mod) {
-        return mod && mod.__esModule ? mod : { "default": mod };
-      }, "__importDefault");
-      __classPrivateFieldGet = /* @__PURE__ */ __name(function(receiver, state, kind, f) {
-        if (kind === "a" && !f)
-          throw new TypeError("Private accessor was defined without a getter");
-        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
-          throw new TypeError("Cannot read private member from an object whose class did not declare it");
-        return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-      }, "__classPrivateFieldGet");
-      __classPrivateFieldSet = /* @__PURE__ */ __name(function(receiver, state, value, kind, f) {
-        if (kind === "m")
-          throw new TypeError("Private method is not writable");
-        if (kind === "a" && !f)
-          throw new TypeError("Private accessor was defined without a setter");
-        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
-          throw new TypeError("Cannot write private member to an object whose class did not declare it");
-        return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
-      }, "__classPrivateFieldSet");
-      exporter("__extends", __extends);
-      exporter("__assign", __assign);
-      exporter("__rest", __rest);
-      exporter("__decorate", __decorate);
-      exporter("__param", __param);
-      exporter("__metadata", __metadata);
-      exporter("__awaiter", __awaiter);
-      exporter("__generator", __generator);
-      exporter("__exportStar", __exportStar);
-      exporter("__createBinding", __createBinding);
-      exporter("__values", __values2);
-      exporter("__read", __read);
-      exporter("__spread", __spread);
-      exporter("__spreadArrays", __spreadArrays);
-      exporter("__spreadArray", __spreadArray);
-      exporter("__await", __await);
-      exporter("__asyncGenerator", __asyncGenerator);
-      exporter("__asyncDelegator", __asyncDelegator);
-      exporter("__asyncValues", __asyncValues);
-      exporter("__makeTemplateObject", __makeTemplateObject);
-      exporter("__importStar", __importStar);
-      exporter("__importDefault", __importDefault);
-      exporter("__classPrivateFieldGet", __classPrivateFieldGet);
-      exporter("__classPrivateFieldSet", __classPrivateFieldSet);
-    });
-  }
-});
-
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/rng.js
+// ../../node_modules/uuid/dist/rng.js
 var require_rng2 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/rng.js"(exports2) {
+  "../../node_modules/uuid/dist/rng.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6137,9 +5691,9 @@ var require_rng2 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/regex.js
+// ../../node_modules/uuid/dist/regex.js
 var require_regex = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/regex.js"(exports2) {
+  "../../node_modules/uuid/dist/regex.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6150,9 +5704,9 @@ var require_regex = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/validate.js
+// ../../node_modules/uuid/dist/validate.js
 var require_validate = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/validate.js"(exports2) {
+  "../../node_modules/uuid/dist/validate.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6172,9 +5726,9 @@ var require_validate = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/stringify.js
+// ../../node_modules/uuid/dist/stringify.js
 var require_stringify = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/stringify.js"(exports2) {
+  "../../node_modules/uuid/dist/stringify.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6202,9 +5756,9 @@ var require_stringify = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/v1.js
+// ../../node_modules/uuid/dist/v1.js
 var require_v12 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/v1.js"(exports2) {
+  "../../node_modules/uuid/dist/v1.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6274,9 +5828,9 @@ var require_v12 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/parse.js
+// ../../node_modules/uuid/dist/parse.js
 var require_parse = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/parse.js"(exports2) {
+  "../../node_modules/uuid/dist/parse.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6317,9 +5871,9 @@ var require_parse = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/v35.js
+// ../../node_modules/uuid/dist/v35.js
 var require_v35 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/v35.js"(exports2) {
+  "../../node_modules/uuid/dist/v35.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6384,9 +5938,9 @@ var require_v35 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/md5.js
+// ../../node_modules/uuid/dist/md5.js
 var require_md5 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/md5.js"(exports2) {
+  "../../node_modules/uuid/dist/md5.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6411,9 +5965,9 @@ var require_md5 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/v3.js
+// ../../node_modules/uuid/dist/v3.js
 var require_v3 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/v3.js"(exports2) {
+  "../../node_modules/uuid/dist/v3.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6431,9 +5985,9 @@ var require_v3 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/v4.js
+// ../../node_modules/uuid/dist/v4.js
 var require_v42 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/v4.js"(exports2) {
+  "../../node_modules/uuid/dist/v4.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6465,9 +6019,9 @@ var require_v42 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/sha1.js
+// ../../node_modules/uuid/dist/sha1.js
 var require_sha1 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/sha1.js"(exports2) {
+  "../../node_modules/uuid/dist/sha1.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6492,9 +6046,9 @@ var require_sha1 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/v5.js
+// ../../node_modules/uuid/dist/v5.js
 var require_v5 = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/v5.js"(exports2) {
+  "../../node_modules/uuid/dist/v5.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6512,9 +6066,9 @@ var require_v5 = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/nil.js
+// ../../node_modules/uuid/dist/nil.js
 var require_nil = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/nil.js"(exports2) {
+  "../../node_modules/uuid/dist/nil.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6525,9 +6079,9 @@ var require_nil = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/version.js
+// ../../node_modules/uuid/dist/version.js
 var require_version = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/version.js"(exports2) {
+  "../../node_modules/uuid/dist/version.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -6550,9 +6104,9 @@ var require_version = __commonJS({
   }
 });
 
-// ../../node_modules/@azure/core-http/node_modules/uuid/dist/index.js
+// ../../node_modules/uuid/dist/index.js
 var require_dist = __commonJS({
-  "../../node_modules/@azure/core-http/node_modules/uuid/dist/index.js"(exports2) {
+  "../../node_modules/uuid/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", {
       value: true
@@ -18080,6 +17634,452 @@ var require_lib = __commonJS({
   }
 });
 
+// ../../node_modules/tslib/tslib.js
+var require_tslib = __commonJS({
+  "../../node_modules/tslib/tslib.js"(exports2, module2) {
+    var __extends;
+    var __assign;
+    var __rest;
+    var __decorate;
+    var __param;
+    var __metadata;
+    var __awaiter;
+    var __generator;
+    var __exportStar;
+    var __values2;
+    var __read;
+    var __spread;
+    var __spreadArrays;
+    var __spreadArray;
+    var __await;
+    var __asyncGenerator;
+    var __asyncDelegator;
+    var __asyncValues;
+    var __makeTemplateObject;
+    var __importStar;
+    var __importDefault;
+    var __classPrivateFieldGet;
+    var __classPrivateFieldSet;
+    var __createBinding;
+    (function(factory) {
+      var root = typeof global === "object" ? global : typeof self === "object" ? self : typeof this === "object" ? this : {};
+      if (typeof define === "function" && define.amd) {
+        define("tslib", ["exports"], function(exports3) {
+          factory(createExporter(root, createExporter(exports3)));
+        });
+      } else if (typeof module2 === "object" && typeof module2.exports === "object") {
+        factory(createExporter(root, createExporter(module2.exports)));
+      } else {
+        factory(createExporter(root));
+      }
+      function createExporter(exports3, previous) {
+        if (exports3 !== root) {
+          if (typeof Object.create === "function") {
+            Object.defineProperty(exports3, "__esModule", { value: true });
+          } else {
+            exports3.__esModule = true;
+          }
+        }
+        return function(id, v) {
+          return exports3[id] = previous ? previous(id, v) : v;
+        };
+      }
+      __name(createExporter, "createExporter");
+    })(function(exporter) {
+      var extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d, b) {
+        d.__proto__ = b;
+      } || function(d, b) {
+        for (var p in b)
+          if (Object.prototype.hasOwnProperty.call(b, p))
+            d[p] = b[p];
+      };
+      __extends = /* @__PURE__ */ __name(function(d, b) {
+        if (typeof b !== "function" && b !== null)
+          throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() {
+          this.constructor = d;
+        }
+        __name(__, "__");
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+      }, "__extends");
+      __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
+        }
+        return t;
+      };
+      __rest = /* @__PURE__ */ __name(function(s, e) {
+        var t = {};
+        for (var p in s)
+          if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+            t[p] = s[p];
+        if (s != null && typeof Object.getOwnPropertySymbols === "function")
+          for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+              t[p[i]] = s[p[i]];
+          }
+        return t;
+      }, "__rest");
+      __decorate = /* @__PURE__ */ __name(function(decorators, target, key, desc) {
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+          r = Reflect.decorate(decorators, target, key, desc);
+        else
+          for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+              r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
+      }, "__decorate");
+      __param = /* @__PURE__ */ __name(function(paramIndex, decorator) {
+        return function(target, key) {
+          decorator(target, key, paramIndex);
+        };
+      }, "__param");
+      __metadata = /* @__PURE__ */ __name(function(metadataKey, metadataValue) {
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+          return Reflect.metadata(metadataKey, metadataValue);
+      }, "__metadata");
+      __awaiter = /* @__PURE__ */ __name(function(thisArg, _arguments, P, generator) {
+        function adopt(value) {
+          return value instanceof P ? value : new P(function(resolve2) {
+            resolve2(value);
+          });
+        }
+        __name(adopt, "adopt");
+        return new (P || (P = Promise))(function(resolve2, reject) {
+          function fulfilled(value) {
+            try {
+              step(generator.next(value));
+            } catch (e) {
+              reject(e);
+            }
+          }
+          __name(fulfilled, "fulfilled");
+          function rejected(value) {
+            try {
+              step(generator["throw"](value));
+            } catch (e) {
+              reject(e);
+            }
+          }
+          __name(rejected, "rejected");
+          function step(result) {
+            result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
+          }
+          __name(step, "step");
+          step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+      }, "__awaiter");
+      __generator = /* @__PURE__ */ __name(function(thisArg, body) {
+        var _ = { label: 0, sent: function() {
+          if (t[0] & 1)
+            throw t[1];
+          return t[1];
+        }, trys: [], ops: [] }, f, y, t, g;
+        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() {
+          return this;
+        }), g;
+        function verb(n) {
+          return function(v) {
+            return step([n, v]);
+          };
+        }
+        __name(verb, "verb");
+        function step(op) {
+          if (f)
+            throw new TypeError("Generator is already executing.");
+          while (_)
+            try {
+              if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
+                return t;
+              if (y = 0, t)
+                op = [op[0] & 2, t.value];
+              switch (op[0]) {
+                case 0:
+                case 1:
+                  t = op;
+                  break;
+                case 4:
+                  _.label++;
+                  return { value: op[1], done: false };
+                case 5:
+                  _.label++;
+                  y = op[1];
+                  op = [0];
+                  continue;
+                case 7:
+                  op = _.ops.pop();
+                  _.trys.pop();
+                  continue;
+                default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                    _ = 0;
+                    continue;
+                  }
+                  if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+                    _.label = op[1];
+                    break;
+                  }
+                  if (op[0] === 6 && _.label < t[1]) {
+                    _.label = t[1];
+                    t = op;
+                    break;
+                  }
+                  if (t && _.label < t[2]) {
+                    _.label = t[2];
+                    _.ops.push(op);
+                    break;
+                  }
+                  if (t[2])
+                    _.ops.pop();
+                  _.trys.pop();
+                  continue;
+              }
+              op = body.call(thisArg, _);
+            } catch (e) {
+              op = [6, e];
+              y = 0;
+            } finally {
+              f = t = 0;
+            }
+          if (op[0] & 5)
+            throw op[1];
+          return { value: op[0] ? op[1] : void 0, done: true };
+        }
+        __name(step, "step");
+      }, "__generator");
+      __exportStar = /* @__PURE__ */ __name(function(m, o) {
+        for (var p in m)
+          if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p))
+            __createBinding(o, m, p);
+      }, "__exportStar");
+      __createBinding = Object.create ? function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        Object.defineProperty(o, k2, { enumerable: true, get: function() {
+          return m[k];
+        } });
+      } : function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        o[k2] = m[k];
+      };
+      __values2 = /* @__PURE__ */ __name(function(o) {
+        var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+        if (m)
+          return m.call(o);
+        if (o && typeof o.length === "number")
+          return {
+            next: function() {
+              if (o && i >= o.length)
+                o = void 0;
+              return { value: o && o[i++], done: !o };
+            }
+          };
+        throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+      }, "__values");
+      __read = /* @__PURE__ */ __name(function(o, n) {
+        var m = typeof Symbol === "function" && o[Symbol.iterator];
+        if (!m)
+          return o;
+        var i = m.call(o), r, ar = [], e;
+        try {
+          while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+            ar.push(r.value);
+        } catch (error) {
+          e = { error };
+        } finally {
+          try {
+            if (r && !r.done && (m = i["return"]))
+              m.call(i);
+          } finally {
+            if (e)
+              throw e.error;
+          }
+        }
+        return ar;
+      }, "__read");
+      __spread = /* @__PURE__ */ __name(function() {
+        for (var ar = [], i = 0; i < arguments.length; i++)
+          ar = ar.concat(__read(arguments[i]));
+        return ar;
+      }, "__spread");
+      __spreadArrays = /* @__PURE__ */ __name(function() {
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+          s += arguments[i].length;
+        for (var r = Array(s), k = 0, i = 0; i < il; i++)
+          for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+        return r;
+      }, "__spreadArrays");
+      __spreadArray = /* @__PURE__ */ __name(function(to, from, pack) {
+        if (pack || arguments.length === 2)
+          for (var i = 0, l = from.length, ar; i < l; i++) {
+            if (ar || !(i in from)) {
+              if (!ar)
+                ar = Array.prototype.slice.call(from, 0, i);
+              ar[i] = from[i];
+            }
+          }
+        return to.concat(ar || Array.prototype.slice.call(from));
+      }, "__spreadArray");
+      __await = /* @__PURE__ */ __name(function(v) {
+        return this instanceof __await ? (this.v = v, this) : new __await(v);
+      }, "__await");
+      __asyncGenerator = /* @__PURE__ */ __name(function(thisArg, _arguments, generator) {
+        if (!Symbol.asyncIterator)
+          throw new TypeError("Symbol.asyncIterator is not defined.");
+        var g = generator.apply(thisArg, _arguments || []), i, q = [];
+        return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+          return this;
+        }, i;
+        function verb(n) {
+          if (g[n])
+            i[n] = function(v) {
+              return new Promise(function(a, b) {
+                q.push([n, v, a, b]) > 1 || resume(n, v);
+              });
+            };
+        }
+        __name(verb, "verb");
+        function resume(n, v) {
+          try {
+            step(g[n](v));
+          } catch (e) {
+            settle(q[0][3], e);
+          }
+        }
+        __name(resume, "resume");
+        function step(r) {
+          r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r);
+        }
+        __name(step, "step");
+        function fulfill(value) {
+          resume("next", value);
+        }
+        __name(fulfill, "fulfill");
+        function reject(value) {
+          resume("throw", value);
+        }
+        __name(reject, "reject");
+        function settle(f, v) {
+          if (f(v), q.shift(), q.length)
+            resume(q[0][0], q[0][1]);
+        }
+        __name(settle, "settle");
+      }, "__asyncGenerator");
+      __asyncDelegator = /* @__PURE__ */ __name(function(o) {
+        var i, p;
+        return i = {}, verb("next"), verb("throw", function(e) {
+          throw e;
+        }), verb("return"), i[Symbol.iterator] = function() {
+          return this;
+        }, i;
+        function verb(n, f) {
+          i[n] = o[n] ? function(v) {
+            return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v;
+          } : f;
+        }
+        __name(verb, "verb");
+      }, "__asyncDelegator");
+      __asyncValues = /* @__PURE__ */ __name(function(o) {
+        if (!Symbol.asyncIterator)
+          throw new TypeError("Symbol.asyncIterator is not defined.");
+        var m = o[Symbol.asyncIterator], i;
+        return m ? m.call(o) : (o = typeof __values2 === "function" ? __values2(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function() {
+          return this;
+        }, i);
+        function verb(n) {
+          i[n] = o[n] && function(v) {
+            return new Promise(function(resolve2, reject) {
+              v = o[n](v), settle(resolve2, reject, v.done, v.value);
+            });
+          };
+        }
+        __name(verb, "verb");
+        function settle(resolve2, reject, d, v) {
+          Promise.resolve(v).then(function(v2) {
+            resolve2({ value: v2, done: d });
+          }, reject);
+        }
+        __name(settle, "settle");
+      }, "__asyncValues");
+      __makeTemplateObject = /* @__PURE__ */ __name(function(cooked, raw) {
+        if (Object.defineProperty) {
+          Object.defineProperty(cooked, "raw", { value: raw });
+        } else {
+          cooked.raw = raw;
+        }
+        return cooked;
+      }, "__makeTemplateObject");
+      var __setModuleDefault = Object.create ? function(o, v) {
+        Object.defineProperty(o, "default", { enumerable: true, value: v });
+      } : function(o, v) {
+        o["default"] = v;
+      };
+      __importStar = /* @__PURE__ */ __name(function(mod) {
+        if (mod && mod.__esModule)
+          return mod;
+        var result = {};
+        if (mod != null) {
+          for (var k in mod)
+            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
+              __createBinding(result, mod, k);
+        }
+        __setModuleDefault(result, mod);
+        return result;
+      }, "__importStar");
+      __importDefault = /* @__PURE__ */ __name(function(mod) {
+        return mod && mod.__esModule ? mod : { "default": mod };
+      }, "__importDefault");
+      __classPrivateFieldGet = /* @__PURE__ */ __name(function(receiver, state, kind, f) {
+        if (kind === "a" && !f)
+          throw new TypeError("Private accessor was defined without a getter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+          throw new TypeError("Cannot read private member from an object whose class did not declare it");
+        return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+      }, "__classPrivateFieldGet");
+      __classPrivateFieldSet = /* @__PURE__ */ __name(function(receiver, state, value, kind, f) {
+        if (kind === "m")
+          throw new TypeError("Private method is not writable");
+        if (kind === "a" && !f)
+          throw new TypeError("Private accessor was defined without a setter");
+        if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver))
+          throw new TypeError("Cannot write private member to an object whose class did not declare it");
+        return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
+      }, "__classPrivateFieldSet");
+      exporter("__extends", __extends);
+      exporter("__assign", __assign);
+      exporter("__rest", __rest);
+      exporter("__decorate", __decorate);
+      exporter("__param", __param);
+      exporter("__metadata", __metadata);
+      exporter("__awaiter", __awaiter);
+      exporter("__generator", __generator);
+      exporter("__exportStar", __exportStar);
+      exporter("__createBinding", __createBinding);
+      exporter("__values", __values2);
+      exporter("__read", __read);
+      exporter("__spread", __spread);
+      exporter("__spreadArrays", __spreadArrays);
+      exporter("__spreadArray", __spreadArray);
+      exporter("__await", __await);
+      exporter("__asyncGenerator", __asyncGenerator);
+      exporter("__asyncDelegator", __asyncDelegator);
+      exporter("__asyncValues", __asyncValues);
+      exporter("__makeTemplateObject", __makeTemplateObject);
+      exporter("__importStar", __importStar);
+      exporter("__importDefault", __importDefault);
+      exporter("__classPrivateFieldGet", __classPrivateFieldGet);
+      exporter("__classPrivateFieldSet", __classPrivateFieldSet);
+    });
+  }
+});
+
 // ../../node_modules/@azure/abort-controller/dist/index.js
 var require_dist2 = __commonJS({
   "../../node_modules/@azure/abort-controller/dist/index.js"(exports2) {
@@ -19254,6 +19254,7 @@ var require_db = __commonJS({
         extensions: ["mads"]
       },
       "application/manifest+json": {
+        source: "iana",
         charset: "UTF-8",
         compressible: true,
         extensions: ["webmanifest"]
@@ -19371,6 +19372,9 @@ var require_db = __commonJS({
         source: "iana"
       },
       "application/mipc": {
+        source: "iana"
+      },
+      "application/missing-blocks+cbor-seq": {
         source: "iana"
       },
       "application/mmt-aei+xml": {
@@ -19538,6 +19542,10 @@ var require_db = __commonJS({
       "application/oxps": {
         source: "iana",
         extensions: ["oxps"]
+      },
+      "application/p21+zip": {
+        source: "iana",
+        compressible: false
       },
       "application/p2p-overlay+xml": {
         source: "iana",
@@ -20117,7 +20125,8 @@ var require_db = __commonJS({
         source: "iana"
       },
       "application/trig": {
-        source: "iana"
+        source: "iana",
+        extensions: ["trig"]
       },
       "application/ttml+xml": {
         source: "iana",
@@ -20529,6 +20538,12 @@ var require_db = __commonJS({
       "application/vnd.antix.game-component": {
         source: "iana",
         extensions: ["atx"]
+      },
+      "application/vnd.apache.arrow.file": {
+        source: "iana"
+      },
+      "application/vnd.apache.arrow.stream": {
+        source: "iana"
       },
       "application/vnd.apache.thrift.binary": {
         source: "iana"
@@ -22765,6 +22780,9 @@ var require_db = __commonJS({
         compressible: true,
         extensions: ["osm"]
       },
+      "application/vnd.opentimestamps.ots": {
+        source: "iana"
+      },
       "application/vnd.openxmlformats-officedocument.custom-properties+xml": {
         source: "iana",
         compressible: true
@@ -23296,6 +23314,9 @@ var require_db = __commonJS({
       "application/vnd.renlearn.rlprint": {
         source: "iana"
       },
+      "application/vnd.resilient.logic": {
+        source: "iana"
+      },
       "application/vnd.restful+json": {
         source: "iana",
         compressible: true
@@ -23759,6 +23780,10 @@ var require_db = __commonJS({
       },
       "application/vnd.verimatrix.vcas": {
         source: "iana"
+      },
+      "application/vnd.veritone.aion+json": {
+        source: "iana",
+        compressible: true
       },
       "application/vnd.veryant.thin": {
         source: "iana"
@@ -25878,6 +25903,16 @@ var require_db = __commonJS({
         source: "iana",
         extensions: ["obj"]
       },
+      "model/step+zip": {
+        source: "iana",
+        compressible: false,
+        extensions: ["stpz"]
+      },
+      "model/step-xml+zip": {
+        source: "iana",
+        compressible: false,
+        extensions: ["stpxz"]
+      },
       "model/stl": {
         source: "iana",
         extensions: ["stl"]
@@ -26773,6 +26808,9 @@ var require_db = __commonJS({
         source: "iana"
       },
       "video/vp8": {
+        source: "iana"
+      },
+      "video/vp9": {
         source: "iana"
       },
       "video/webm": {
@@ -33832,9 +33870,17 @@ var require_xml2js = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage.js
-var require_baggage = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage.js"(exports2) {
+// ../../node_modules/@opentelemetry/api/build/src/baggage/types.js
+var require_types = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/baggage/types.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js
+var require_baggage_impl = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.BaggageImpl = void 0;
@@ -33897,58 +33943,26 @@ var require_symbol = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/baggage/Baggage.js
-var require_Baggage = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/baggage/Baggage.js"(exports2) {
+// ../../node_modules/@opentelemetry/api/build/src/baggage/utils.js
+var require_utils2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/baggage/utils.js"(exports2) {
     "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/baggage/Entry.js
-var require_Entry = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/baggage/Entry.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/baggage/index.js
-var require_baggage2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/baggage/index.js"(exports2) {
-    "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      Object.defineProperty(o, k2, { enumerable: true, get: function() {
-        return m[k];
-      } });
-    } : function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      o[k2] = m[k];
-    });
-    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-      for (var p in m)
-        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
-          __createBinding(exports3, m, p);
-    };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.baggageEntryMetadataFromString = exports2.createBaggage = void 0;
-    var baggage_1 = require_baggage();
+    var __1 = require_src();
+    var baggage_impl_1 = require_baggage_impl();
     var symbol_1 = require_symbol();
-    __exportStar(require_Baggage(), exports2);
-    __exportStar(require_Entry(), exports2);
     function createBaggage(entries) {
       if (entries === void 0) {
         entries = {};
       }
-      return new baggage_1.BaggageImpl(new Map(Object.entries(entries)));
+      return new baggage_impl_1.BaggageImpl(new Map(Object.entries(entries)));
     }
     __name(createBaggage, "createBaggage");
     exports2.createBaggage = createBaggage;
     function baggageEntryMetadataFromString(str) {
       if (typeof str !== "string") {
+        __1.diag.error("Cannot create baggage metadata from unknown type: " + typeof str);
         str = "";
       }
       return {
@@ -34021,7 +34035,7 @@ var require_consoleLogger = __commonJS({
 });
 
 // ../../node_modules/@opentelemetry/api/build/src/diag/types.js
-var require_types = __commonJS({
+var require_types2 = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/diag/types.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
@@ -34061,32 +34075,7 @@ var require_diag = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     __exportStar(require_consoleLogger(), exports2);
-    __exportStar(require_types(), exports2);
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js
-var require_NoopTextMapPropagator = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.NOOP_TEXT_MAP_PROPAGATOR = exports2.NoopTextMapPropagator = void 0;
-    var NoopTextMapPropagator = function() {
-      function NoopTextMapPropagator2() {
-      }
-      __name(NoopTextMapPropagator2, "NoopTextMapPropagator");
-      NoopTextMapPropagator2.prototype.inject = function(_context, _carrier) {
-      };
-      NoopTextMapPropagator2.prototype.extract = function(context, _carrier) {
-        return context;
-      };
-      NoopTextMapPropagator2.prototype.fields = function() {
-        return [];
-      };
-      return NoopTextMapPropagator2;
-    }();
-    exports2.NoopTextMapPropagator = NoopTextMapPropagator;
-    exports2.NOOP_TEXT_MAP_PROPAGATOR = new NoopTextMapPropagator();
+    __exportStar(require_types2(), exports2);
   }
 });
 
@@ -34129,22 +34118,6 @@ var require_attributes = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/Event.js
-var require_Event = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/Event.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/link_context.js
-var require_link_context = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/link_context.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-  }
-});
-
 // ../../node_modules/@opentelemetry/api/build/src/trace/link.js
 var require_link = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/trace/link.js"(exports2) {
@@ -34153,156 +34126,12 @@ var require_link = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
-var require_trace_flags = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.TraceFlags = void 0;
-    var TraceFlags;
-    (function(TraceFlags2) {
-      TraceFlags2[TraceFlags2["NONE"] = 0] = "NONE";
-      TraceFlags2[TraceFlags2["SAMPLED"] = 1] = "SAMPLED";
-    })(TraceFlags = exports2.TraceFlags || (exports2.TraceFlags = {}));
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js
-var require_spancontext_utils = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.isSpanContextValid = exports2.isValidSpanId = exports2.isValidTraceId = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
-    var trace_flags_1 = require_trace_flags();
-    var VALID_TRACEID_REGEX = /^([0-9a-f]{32})$/i;
-    var VALID_SPANID_REGEX = /^[0-9a-f]{16}$/i;
-    exports2.INVALID_SPANID = "0000000000000000";
-    exports2.INVALID_TRACEID = "00000000000000000000000000000000";
-    exports2.INVALID_SPAN_CONTEXT = {
-      traceId: exports2.INVALID_TRACEID,
-      spanId: exports2.INVALID_SPANID,
-      traceFlags: trace_flags_1.TraceFlags.NONE
-    };
-    function isValidTraceId(traceId) {
-      return VALID_TRACEID_REGEX.test(traceId) && traceId !== exports2.INVALID_TRACEID;
-    }
-    __name(isValidTraceId, "isValidTraceId");
-    exports2.isValidTraceId = isValidTraceId;
-    function isValidSpanId(spanId) {
-      return VALID_SPANID_REGEX.test(spanId) && spanId !== exports2.INVALID_SPANID;
-    }
-    __name(isValidSpanId, "isValidSpanId");
-    exports2.isValidSpanId = isValidSpanId;
-    function isSpanContextValid(spanContext) {
-      return isValidTraceId(spanContext.traceId) && isValidSpanId(spanContext.spanId);
-    }
-    __name(isSpanContextValid, "isSpanContextValid");
-    exports2.isSpanContextValid = isSpanContextValid;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js
-var require_NoopSpan = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/NoopSpan.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.NoopSpan = void 0;
-    var spancontext_utils_1 = require_spancontext_utils();
-    var NoopSpan = function() {
-      function NoopSpan2(_spanContext) {
-        if (_spanContext === void 0) {
-          _spanContext = spancontext_utils_1.INVALID_SPAN_CONTEXT;
-        }
-        this._spanContext = _spanContext;
-      }
-      __name(NoopSpan2, "NoopSpan");
-      NoopSpan2.prototype.context = function() {
-        return this._spanContext;
-      };
-      NoopSpan2.prototype.setAttribute = function(_key, _value) {
-        return this;
-      };
-      NoopSpan2.prototype.setAttributes = function(_attributes) {
-        return this;
-      };
-      NoopSpan2.prototype.addEvent = function(_name, _attributes) {
-        return this;
-      };
-      NoopSpan2.prototype.setStatus = function(_status) {
-        return this;
-      };
-      NoopSpan2.prototype.updateName = function(_name) {
-        return this;
-      };
-      NoopSpan2.prototype.end = function(_endTime) {
-      };
-      NoopSpan2.prototype.isRecording = function() {
-        return false;
-      };
-      NoopSpan2.prototype.recordException = function(_exception, _time) {
-      };
-      return NoopSpan2;
-    }();
-    exports2.NoopSpan = NoopSpan;
-  }
-});
-
 // ../../node_modules/@opentelemetry/api/build/src/context/context.js
 var require_context = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/context/context.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.ROOT_CONTEXT = exports2.createContextKey = exports2.setBaggage = exports2.getBaggage = exports2.isInstrumentationSuppressed = exports2.unsuppressInstrumentation = exports2.suppressInstrumentation = exports2.getSpanContext = exports2.setSpanContext = exports2.setSpan = exports2.getSpan = void 0;
-    var NoopSpan_1 = require_NoopSpan();
-    var SPAN_KEY = createContextKey("OpenTelemetry Context Key SPAN");
-    var SUPPRESS_INSTRUMENTATION_KEY = createContextKey("OpenTelemetry Context Key SUPPRESS_INSTRUMENTATION");
-    var BAGGAGE_KEY = createContextKey("OpenTelemetry Baggage Key");
-    function getSpan(context) {
-      return context.getValue(SPAN_KEY) || void 0;
-    }
-    __name(getSpan, "getSpan");
-    exports2.getSpan = getSpan;
-    function setSpan(context, span) {
-      return context.setValue(SPAN_KEY, span);
-    }
-    __name(setSpan, "setSpan");
-    exports2.setSpan = setSpan;
-    function setSpanContext(context, spanContext) {
-      return setSpan(context, new NoopSpan_1.NoopSpan(spanContext));
-    }
-    __name(setSpanContext, "setSpanContext");
-    exports2.setSpanContext = setSpanContext;
-    function getSpanContext(context) {
-      var _a;
-      return (_a = getSpan(context)) === null || _a === void 0 ? void 0 : _a.context();
-    }
-    __name(getSpanContext, "getSpanContext");
-    exports2.getSpanContext = getSpanContext;
-    function suppressInstrumentation(context) {
-      return context.setValue(SUPPRESS_INSTRUMENTATION_KEY, true);
-    }
-    __name(suppressInstrumentation, "suppressInstrumentation");
-    exports2.suppressInstrumentation = suppressInstrumentation;
-    function unsuppressInstrumentation(context) {
-      return context.setValue(SUPPRESS_INSTRUMENTATION_KEY, false);
-    }
-    __name(unsuppressInstrumentation, "unsuppressInstrumentation");
-    exports2.unsuppressInstrumentation = unsuppressInstrumentation;
-    function isInstrumentationSuppressed(context) {
-      return Boolean(context.getValue(SUPPRESS_INSTRUMENTATION_KEY));
-    }
-    __name(isInstrumentationSuppressed, "isInstrumentationSuppressed");
-    exports2.isInstrumentationSuppressed = isInstrumentationSuppressed;
-    function getBaggage(context) {
-      return context.getValue(BAGGAGE_KEY) || void 0;
-    }
-    __name(getBaggage, "getBaggage");
-    exports2.getBaggage = getBaggage;
-    function setBaggage(context, baggage) {
-      return context.setValue(BAGGAGE_KEY, baggage);
-    }
-    __name(setBaggage, "setBaggage");
-    exports2.setBaggage = setBaggage;
+    exports2.ROOT_CONTEXT = exports2.createContextKey = void 0;
     function createContextKey(description) {
       return Symbol.for(description);
     }
@@ -34333,14 +34162,153 @@ var require_context = __commonJS({
   }
 });
 
+// ../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
+var require_trace_flags = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TraceFlags = void 0;
+    var TraceFlags;
+    (function(TraceFlags2) {
+      TraceFlags2[TraceFlags2["NONE"] = 0] = "NONE";
+      TraceFlags2[TraceFlags2["SAMPLED"] = 1] = "SAMPLED";
+    })(TraceFlags = exports2.TraceFlags || (exports2.TraceFlags = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js
+var require_spancontext_utils = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.wrapSpanContext = exports2.isSpanContextValid = exports2.isValidSpanId = exports2.isValidTraceId = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
+    var NonRecordingSpan_1 = require_NonRecordingSpan();
+    var trace_flags_1 = require_trace_flags();
+    var VALID_TRACEID_REGEX = /^([0-9a-f]{32})$/i;
+    var VALID_SPANID_REGEX = /^[0-9a-f]{16}$/i;
+    exports2.INVALID_SPANID = "0000000000000000";
+    exports2.INVALID_TRACEID = "00000000000000000000000000000000";
+    exports2.INVALID_SPAN_CONTEXT = {
+      traceId: exports2.INVALID_TRACEID,
+      spanId: exports2.INVALID_SPANID,
+      traceFlags: trace_flags_1.TraceFlags.NONE
+    };
+    function isValidTraceId(traceId) {
+      return VALID_TRACEID_REGEX.test(traceId) && traceId !== exports2.INVALID_TRACEID;
+    }
+    __name(isValidTraceId, "isValidTraceId");
+    exports2.isValidTraceId = isValidTraceId;
+    function isValidSpanId(spanId) {
+      return VALID_SPANID_REGEX.test(spanId) && spanId !== exports2.INVALID_SPANID;
+    }
+    __name(isValidSpanId, "isValidSpanId");
+    exports2.isValidSpanId = isValidSpanId;
+    function isSpanContextValid(spanContext) {
+      return isValidTraceId(spanContext.traceId) && isValidSpanId(spanContext.spanId);
+    }
+    __name(isSpanContextValid, "isSpanContextValid");
+    exports2.isSpanContextValid = isSpanContextValid;
+    function wrapSpanContext(spanContext) {
+      return new NonRecordingSpan_1.NonRecordingSpan(spanContext);
+    }
+    __name(wrapSpanContext, "wrapSpanContext");
+    exports2.wrapSpanContext = wrapSpanContext;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js
+var require_NonRecordingSpan = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/NonRecordingSpan.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.NonRecordingSpan = void 0;
+    var spancontext_utils_1 = require_spancontext_utils();
+    var NonRecordingSpan = function() {
+      function NonRecordingSpan2(_spanContext) {
+        if (_spanContext === void 0) {
+          _spanContext = spancontext_utils_1.INVALID_SPAN_CONTEXT;
+        }
+        this._spanContext = _spanContext;
+      }
+      __name(NonRecordingSpan2, "NonRecordingSpan");
+      NonRecordingSpan2.prototype.spanContext = function() {
+        return this._spanContext;
+      };
+      NonRecordingSpan2.prototype.setAttribute = function(_key, _value) {
+        return this;
+      };
+      NonRecordingSpan2.prototype.setAttributes = function(_attributes) {
+        return this;
+      };
+      NonRecordingSpan2.prototype.addEvent = function(_name, _attributes) {
+        return this;
+      };
+      NonRecordingSpan2.prototype.setStatus = function(_status) {
+        return this;
+      };
+      NonRecordingSpan2.prototype.updateName = function(_name) {
+        return this;
+      };
+      NonRecordingSpan2.prototype.end = function(_endTime) {
+      };
+      NonRecordingSpan2.prototype.isRecording = function() {
+        return false;
+      };
+      NonRecordingSpan2.prototype.recordException = function(_exception, _time) {
+      };
+      return NonRecordingSpan2;
+    }();
+    exports2.NonRecordingSpan = NonRecordingSpan;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/context-utils.js
+var require_context_utils = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/context-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.getSpanContext = exports2.setSpanContext = exports2.deleteSpan = exports2.setSpan = exports2.getSpan = void 0;
+    var context_1 = require_context();
+    var NonRecordingSpan_1 = require_NonRecordingSpan();
+    var SPAN_KEY = context_1.createContextKey("OpenTelemetry Context Key SPAN");
+    function getSpan(context) {
+      return context.getValue(SPAN_KEY) || void 0;
+    }
+    __name(getSpan, "getSpan");
+    exports2.getSpan = getSpan;
+    function setSpan(context, span) {
+      return context.setValue(SPAN_KEY, span);
+    }
+    __name(setSpan, "setSpan");
+    exports2.setSpan = setSpan;
+    function deleteSpan(context) {
+      return context.deleteValue(SPAN_KEY);
+    }
+    __name(deleteSpan, "deleteSpan");
+    exports2.deleteSpan = deleteSpan;
+    function setSpanContext(context, spanContext) {
+      return setSpan(context, new NonRecordingSpan_1.NonRecordingSpan(spanContext));
+    }
+    __name(setSpanContext, "setSpanContext");
+    exports2.setSpanContext = setSpanContext;
+    function getSpanContext(context) {
+      var _a;
+      return (_a = getSpan(context)) === null || _a === void 0 ? void 0 : _a.spanContext();
+    }
+    __name(getSpanContext, "getSpanContext");
+    exports2.getSpanContext = getSpanContext;
+  }
+});
+
 // ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js
 var require_NoopTracer = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.NOOP_TRACER = exports2.NoopTracer = void 0;
-    var context_1 = require_context();
-    var NoopSpan_1 = require_NoopSpan();
+    exports2.NoopTracer = void 0;
+    var __1 = require_src();
+    var context_utils_1 = require_context_utils();
+    var NonRecordingSpan_1 = require_NonRecordingSpan();
     var spancontext_utils_1 = require_spancontext_utils();
     var NoopTracer = function() {
       function NoopTracer2() {
@@ -34349,14 +34317,35 @@ var require_NoopTracer = __commonJS({
       NoopTracer2.prototype.startSpan = function(name, options, context) {
         var root = Boolean(options === null || options === void 0 ? void 0 : options.root);
         if (root) {
-          return new NoopSpan_1.NoopSpan();
+          return new NonRecordingSpan_1.NonRecordingSpan();
         }
-        var parentFromContext = context && context_1.getSpanContext(context);
+        var parentFromContext = context && context_utils_1.getSpanContext(context);
         if (isSpanContext(parentFromContext) && spancontext_utils_1.isSpanContextValid(parentFromContext)) {
-          return new NoopSpan_1.NoopSpan(parentFromContext);
+          return new NonRecordingSpan_1.NonRecordingSpan(parentFromContext);
         } else {
-          return new NoopSpan_1.NoopSpan();
+          return new NonRecordingSpan_1.NonRecordingSpan();
         }
+      };
+      NoopTracer2.prototype.startActiveSpan = function(name, arg2, arg3, arg4) {
+        var opts;
+        var ctx;
+        var fn;
+        if (arguments.length < 2) {
+          return;
+        } else if (arguments.length === 2) {
+          fn = arg2;
+        } else if (arguments.length === 3) {
+          opts = arg2;
+          fn = arg3;
+        } else {
+          opts = arg2;
+          ctx = arg3;
+          fn = arg4;
+        }
+        var parentContext = ctx !== null && ctx !== void 0 ? ctx : __1.context.active();
+        var span = this.startSpan(name, opts, parentContext);
+        var contextWithSpanSet = context_utils_1.setSpan(parentContext, span);
+        return __1.context.with(contextWithSpanSet, fn, void 0, span);
       };
       return NoopTracer2;
     }();
@@ -34365,28 +34354,6 @@ var require_NoopTracer = __commonJS({
       return typeof spanContext === "object" && typeof spanContext["spanId"] === "string" && typeof spanContext["traceId"] === "string" && typeof spanContext["traceFlags"] === "number";
     }
     __name(isSpanContext, "isSpanContext");
-    exports2.NOOP_TRACER = new NoopTracer();
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js
-var require_NoopTracerProvider = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.NOOP_TRACER_PROVIDER = exports2.NoopTracerProvider = void 0;
-    var NoopTracer_1 = require_NoopTracer();
-    var NoopTracerProvider = function() {
-      function NoopTracerProvider2() {
-      }
-      __name(NoopTracerProvider2, "NoopTracerProvider");
-      NoopTracerProvider2.prototype.getTracer = function(_name, _version) {
-        return NoopTracer_1.NOOP_TRACER;
-      };
-      return NoopTracerProvider2;
-    }();
-    exports2.NoopTracerProvider = NoopTracerProvider;
-    exports2.NOOP_TRACER_PROVIDER = new NoopTracerProvider();
   }
 });
 
@@ -34397,6 +34364,7 @@ var require_ProxyTracer = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.ProxyTracer = void 0;
     var NoopTracer_1 = require_NoopTracer();
+    var NOOP_TRACER = new NoopTracer_1.NoopTracer();
     var ProxyTracer = function() {
       function ProxyTracer2(_provider, name, version) {
         this._provider = _provider;
@@ -34407,13 +34375,17 @@ var require_ProxyTracer = __commonJS({
       ProxyTracer2.prototype.startSpan = function(name, options, context) {
         return this._getTracer().startSpan(name, options, context);
       };
+      ProxyTracer2.prototype.startActiveSpan = function(_name, _options, _context, _fn) {
+        var tracer = this._getTracer();
+        return Reflect.apply(tracer.startActiveSpan, tracer, arguments);
+      };
       ProxyTracer2.prototype._getTracer = function() {
         if (this._delegate) {
           return this._delegate;
         }
         var tracer = this._provider.getDelegateTracer(this.name, this.version);
         if (!tracer) {
-          return NoopTracer_1.NOOP_TRACER;
+          return NOOP_TRACER;
         }
         this._delegate = tracer;
         return this._delegate;
@@ -34421,6 +34393,26 @@ var require_ProxyTracer = __commonJS({
       return ProxyTracer2;
     }();
     exports2.ProxyTracer = ProxyTracer;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js
+var require_NoopTracerProvider = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracerProvider.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.NoopTracerProvider = void 0;
+    var NoopTracer_1 = require_NoopTracer();
+    var NoopTracerProvider = function() {
+      function NoopTracerProvider2() {
+      }
+      __name(NoopTracerProvider2, "NoopTracerProvider");
+      NoopTracerProvider2.prototype.getTracer = function(_name, _version) {
+        return new NoopTracer_1.NoopTracer();
+      };
+      return NoopTracerProvider2;
+    }();
+    exports2.NoopTracerProvider = NoopTracerProvider;
   }
 });
 
@@ -34432,6 +34424,7 @@ var require_ProxyTracerProvider = __commonJS({
     exports2.ProxyTracerProvider = void 0;
     var ProxyTracer_1 = require_ProxyTracer();
     var NoopTracerProvider_1 = require_NoopTracerProvider();
+    var NOOP_TRACER_PROVIDER = new NoopTracerProvider_1.NoopTracerProvider();
     var ProxyTracerProvider = function() {
       function ProxyTracerProvider2() {
       }
@@ -34442,7 +34435,7 @@ var require_ProxyTracerProvider = __commonJS({
       };
       ProxyTracerProvider2.prototype.getDelegate = function() {
         var _a;
-        return (_a = this._delegate) !== null && _a !== void 0 ? _a : NoopTracerProvider_1.NOOP_TRACER_PROVIDER;
+        return (_a = this._delegate) !== null && _a !== void 0 ? _a : NOOP_TRACER_PROVIDER;
       };
       ProxyTracerProvider2.prototype.setDelegate = function(delegate) {
         this._delegate = delegate;
@@ -34536,14 +34529,6 @@ var require_status = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js
-var require_TimedEvent = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/TimedEvent.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-  }
-});
-
 // ../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js
 var require_trace_state = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/trace/trace_state.js"(exports2) {
@@ -34568,17 +34553,22 @@ var require_tracer = __commonJS({
   }
 });
 
+// ../../node_modules/@opentelemetry/api/build/src/context/types.js
+var require_types3 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/types.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+  }
+});
+
 // ../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js
 var require_NoopContextManager = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js"(exports2) {
     "use strict";
-    var __spreadArrays = exports2 && exports2.__spreadArrays || function() {
-      for (var s = 0, i = 0, il = arguments.length; i < il; i++)
-        s += arguments[i].length;
-      for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-          r[k] = a[j];
-      return r;
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
+      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+      return to;
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.NoopContextManager = void 0;
@@ -34595,9 +34585,9 @@ var require_NoopContextManager = __commonJS({
         for (var _i = 3; _i < arguments.length; _i++) {
           args[_i - 3] = arguments[_i];
         }
-        return fn.call.apply(fn, __spreadArrays([thisArg], args));
+        return fn.call.apply(fn, __spreadArray([thisArg], args));
       };
-      NoopContextManager2.prototype.bind = function(target, _context) {
+      NoopContextManager2.prototype.bind = function(_context, target) {
         return target;
       };
       NoopContextManager2.prototype.enable = function() {
@@ -34609,14 +34599,6 @@ var require_NoopContextManager = __commonJS({
       return NoopContextManager2;
     }();
     exports2.NoopContextManager = NoopContextManager;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/context/types.js
-var require_types2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/types.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
   }
 });
 
@@ -34686,7 +34668,7 @@ var require_version3 = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.VERSION = void 0;
-    exports2.VERSION = "1.0.0-rc.0";
+    exports2.VERSION = "1.0.2";
   }
 });
 
@@ -34697,7 +34679,7 @@ var require_semver2 = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.isCompatible = exports2._makeCompatibilityCheck = void 0;
     var version_1 = require_version3();
-    var re = /^(\d+)\.(\d+)\.(\d+)(?:-(.*))?$/;
+    var re = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
     function _makeCompatibilityCheck(ownVersion) {
       var acceptedVersions = new Set([ownVersion]);
       var rejectedVersions = new Set();
@@ -34710,8 +34692,14 @@ var require_semver2 = __commonJS({
       var ownVersionParsed = {
         major: +myVersionMatch[1],
         minor: +myVersionMatch[2],
-        patch: +myVersionMatch[3]
+        patch: +myVersionMatch[3],
+        prerelease: myVersionMatch[4]
       };
+      if (ownVersionParsed.prerelease != null) {
+        return /* @__PURE__ */ __name(function isExactmatch(globalVersion) {
+          return globalVersion === ownVersion;
+        }, "isExactmatch");
+      }
       function _reject(v) {
         rejectedVersions.add(v);
         return false;
@@ -34736,8 +34724,12 @@ var require_semver2 = __commonJS({
         var globalVersionParsed = {
           major: +globalVersionMatch[1],
           minor: +globalVersionMatch[2],
-          patch: +globalVersionMatch[3]
+          patch: +globalVersionMatch[3],
+          prerelease: globalVersionMatch[4]
         };
+        if (globalVersionParsed.prerelease != null) {
+          return _reject(globalVersion);
+        }
         if (ownVersionParsed.major !== globalVersionParsed.major) {
           return _reject(globalVersion);
         }
@@ -34765,33 +34757,33 @@ var require_global_utils = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.unregisterGlobal = exports2.getGlobal = exports2.registerGlobal = void 0;
-    var __1 = require_src();
     var platform_1 = require_platform();
     var version_1 = require_version3();
     var semver_1 = require_semver2();
     var major = version_1.VERSION.split(".")[0];
-    var GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for("io.opentelemetry.js.api." + major);
+    var GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for("opentelemetry.js.api." + major);
     var _global = platform_1._globalThis;
-    function registerGlobal(type, instance, allowOverride) {
+    function registerGlobal(type, instance, diag, allowOverride) {
       var _a;
       if (allowOverride === void 0) {
         allowOverride = false;
       }
-      _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : {
+      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : {
         version: version_1.VERSION
       };
-      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
       if (!allowOverride && api[type]) {
         var err = new Error("@opentelemetry/api: Attempted duplicate registration of API: " + type);
-        __1.diag.error(err.stack || err.message);
-        return;
+        diag.error(err.stack || err.message);
+        return false;
       }
       if (api.version !== version_1.VERSION) {
         var err = new Error("@opentelemetry/api: All API registration versions must match");
-        __1.diag.error(err.stack || err.message);
-        return;
+        diag.error(err.stack || err.message);
+        return false;
       }
       api[type] = instance;
+      diag.debug("@opentelemetry/api: Registered a global for " + type + " v" + version_1.VERSION + ".");
+      return true;
     }
     __name(registerGlobal, "registerGlobal");
     exports2.registerGlobal = registerGlobal;
@@ -34805,7 +34797,8 @@ var require_global_utils = __commonJS({
     }
     __name(getGlobal, "getGlobal");
     exports2.getGlobal = getGlobal;
-    function unregisterGlobal(type) {
+    function unregisterGlobal(type, diag) {
+      diag.debug("@opentelemetry/api: Unregistering a global for " + type + " v" + version_1.VERSION + ".");
       var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
       if (api) {
         delete api[type];
@@ -34816,159 +34809,65 @@ var require_global_utils = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/api/context.js
-var require_context2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+// ../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js
+var require_ComponentLogger = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js"(exports2) {
     "use strict";
-    var __spreadArrays = exports2 && exports2.__spreadArrays || function() {
-      for (var s = 0, i = 0, il = arguments.length; i < il; i++)
-        s += arguments[i].length;
-      for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-          r[k] = a[j];
-      return r;
-    };
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.ContextAPI = void 0;
-    var NoopContextManager_1 = require_NoopContextManager();
+    exports2.DiagComponentLogger = void 0;
     var global_utils_1 = require_global_utils();
-    var API_NAME = "context";
-    var NOOP_CONTEXT_MANAGER = new NoopContextManager_1.NoopContextManager();
-    var ContextAPI = function() {
-      function ContextAPI2() {
+    var DiagComponentLogger = function() {
+      function DiagComponentLogger2(props) {
+        this._namespace = props.namespace || "DiagComponentLogger";
       }
-      __name(ContextAPI2, "ContextAPI");
-      ContextAPI2.getInstance = function() {
-        if (!this._instance) {
-          this._instance = new ContextAPI2();
-        }
-        return this._instance;
-      };
-      ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
-        global_utils_1.registerGlobal(API_NAME, contextManager);
-        return contextManager;
-      };
-      ContextAPI2.prototype.active = function() {
-        return this._getContextManager().active();
-      };
-      ContextAPI2.prototype.with = function(context, fn, thisArg) {
-        var _a;
+      __name(DiagComponentLogger2, "DiagComponentLogger");
+      DiagComponentLogger2.prototype.debug = function() {
         var args = [];
-        for (var _i = 3; _i < arguments.length; _i++) {
-          args[_i - 3] = arguments[_i];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
         }
-        return (_a = this._getContextManager()).with.apply(_a, __spreadArrays([context, fn, thisArg], args));
+        return logProxy("debug", this._namespace, args);
       };
-      ContextAPI2.prototype.bind = function(target, context) {
-        if (context === void 0) {
-          context = this.active();
+      DiagComponentLogger2.prototype.error = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
         }
-        return this._getContextManager().bind(target, context);
+        return logProxy("error", this._namespace, args);
       };
-      ContextAPI2.prototype._getContextManager = function() {
-        return global_utils_1.getGlobal(API_NAME) || NOOP_CONTEXT_MANAGER;
+      DiagComponentLogger2.prototype.info = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("info", this._namespace, args);
       };
-      ContextAPI2.prototype.disable = function() {
-        this._getContextManager().disable();
-        global_utils_1.unregisterGlobal(API_NAME);
+      DiagComponentLogger2.prototype.warn = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("warn", this._namespace, args);
       };
-      return ContextAPI2;
+      DiagComponentLogger2.prototype.verbose = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("verbose", this._namespace, args);
+      };
+      return DiagComponentLogger2;
     }();
-    exports2.ContextAPI = ContextAPI;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/api/trace.js
-var require_trace = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.TraceAPI = void 0;
-    var ProxyTracerProvider_1 = require_ProxyTracerProvider();
-    var spancontext_utils_1 = require_spancontext_utils();
-    var global_utils_1 = require_global_utils();
-    var API_NAME = "trace";
-    var TraceAPI = function() {
-      function TraceAPI2() {
-        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
-        this.isSpanContextValid = spancontext_utils_1.isSpanContextValid;
+    exports2.DiagComponentLogger = DiagComponentLogger;
+    function logProxy(funcName, namespace, args) {
+      var logger = global_utils_1.getGlobal("diag");
+      if (!logger) {
+        return;
       }
-      __name(TraceAPI2, "TraceAPI");
-      TraceAPI2.getInstance = function() {
-        if (!this._instance) {
-          this._instance = new TraceAPI2();
-        }
-        return this._instance;
-      };
-      TraceAPI2.prototype.setGlobalTracerProvider = function(provider) {
-        this._proxyTracerProvider.setDelegate(provider);
-        global_utils_1.registerGlobal(API_NAME, this._proxyTracerProvider);
-        return this._proxyTracerProvider;
-      };
-      TraceAPI2.prototype.getTracerProvider = function() {
-        return global_utils_1.getGlobal(API_NAME) || this._proxyTracerProvider;
-      };
-      TraceAPI2.prototype.getTracer = function(name, version) {
-        return this.getTracerProvider().getTracer(name, version);
-      };
-      TraceAPI2.prototype.disable = function() {
-        global_utils_1.unregisterGlobal(API_NAME);
-        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
-      };
-      return TraceAPI2;
-    }();
-    exports2.TraceAPI = TraceAPI;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/api/propagation.js
-var require_propagation = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/propagation.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.PropagationAPI = void 0;
-    var NoopTextMapPropagator_1 = require_NoopTextMapPropagator();
-    var TextMapPropagator_1 = require_TextMapPropagator();
-    var global_utils_1 = require_global_utils();
-    var API_NAME = "propagation";
-    var PropagationAPI = function() {
-      function PropagationAPI2() {
-      }
-      __name(PropagationAPI2, "PropagationAPI");
-      PropagationAPI2.getInstance = function() {
-        if (!this._instance) {
-          this._instance = new PropagationAPI2();
-        }
-        return this._instance;
-      };
-      PropagationAPI2.prototype.setGlobalPropagator = function(propagator) {
-        global_utils_1.registerGlobal(API_NAME, propagator);
-        return propagator;
-      };
-      PropagationAPI2.prototype.inject = function(context, carrier, setter) {
-        if (setter === void 0) {
-          setter = TextMapPropagator_1.defaultTextMapSetter;
-        }
-        return this._getGlobalPropagator().inject(context, carrier, setter);
-      };
-      PropagationAPI2.prototype.extract = function(context, carrier, getter) {
-        if (getter === void 0) {
-          getter = TextMapPropagator_1.defaultTextMapGetter;
-        }
-        return this._getGlobalPropagator().extract(context, carrier, getter);
-      };
-      PropagationAPI2.prototype.fields = function() {
-        return this._getGlobalPropagator().fields();
-      };
-      PropagationAPI2.prototype.disable = function() {
-        global_utils_1.unregisterGlobal(API_NAME);
-      };
-      PropagationAPI2.prototype._getGlobalPropagator = function() {
-        return global_utils_1.getGlobal(API_NAME) || NoopTextMapPropagator_1.NOOP_TEXT_MAP_PROPAGATOR;
-      };
-      return PropagationAPI2;
-    }();
-    exports2.PropagationAPI = PropagationAPI;
+      args.unshift(namespace);
+      return logger[funcName].apply(logger, args);
+    }
+    __name(logProxy, "logProxy");
   }
 });
 
@@ -34978,7 +34877,7 @@ var require_logLevelLogger = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.createLogLevelDiagLogger = void 0;
-    var types_1 = require_types();
+    var types_1 = require_types2();
     function createLogLevelDiagLogger(maxLevel, logger) {
       if (maxLevel < types_1.DiagLogLevel.NONE) {
         maxLevel = types_1.DiagLogLevel.NONE;
@@ -35014,8 +34913,9 @@ var require_diag2 = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.DiagAPI = void 0;
+    var ComponentLogger_1 = require_ComponentLogger();
     var logLevelLogger_1 = require_logLevelLogger();
-    var types_1 = require_types();
+    var types_1 = require_types2();
     var global_utils_1 = require_global_utils();
     var API_NAME = "diag";
     var DiagAPI = function() {
@@ -35031,19 +34931,29 @@ var require_diag2 = __commonJS({
         __name(_logProxy, "_logProxy");
         var self2 = this;
         self2.setLogger = function(logger, logLevel) {
-          var _a;
+          var _a, _b;
           if (logLevel === void 0) {
             logLevel = types_1.DiagLogLevel.INFO;
           }
           if (logger === self2) {
             var err = new Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");
             self2.error((_a = err.stack) !== null && _a !== void 0 ? _a : err.message);
-            return;
+            return false;
           }
-          global_utils_1.registerGlobal("diag", logLevelLogger_1.createLogLevelDiagLogger(logLevel, logger), true);
+          var oldLogger = global_utils_1.getGlobal("diag");
+          var newLogger = logLevelLogger_1.createLogLevelDiagLogger(logLevel, logger);
+          if (oldLogger) {
+            var stack = (_b = new Error().stack) !== null && _b !== void 0 ? _b : "<failed to generate stacktrace>";
+            oldLogger.warn("Current logger will be overwritten from " + stack);
+            newLogger.warn("Current logger will overwrite one already registered from " + stack);
+          }
+          return global_utils_1.registerGlobal("diag", newLogger, self2, true);
         };
         self2.disable = function() {
-          global_utils_1.unregisterGlobal(API_NAME);
+          global_utils_1.unregisterGlobal(API_NAME, self2);
+        };
+        self2.createComponentLogger = function(options) {
+          return new ComponentLogger_1.DiagComponentLogger(options);
         };
         self2.verbose = _logProxy("verbose");
         self2.debug = _logProxy("debug");
@@ -35061,6 +34971,223 @@ var require_diag2 = __commonJS({
       return DiagAPI2;
     }();
     exports2.DiagAPI = DiagAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/context.js
+var require_context2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+    "use strict";
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
+      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+      return to;
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ContextAPI = void 0;
+    var NoopContextManager_1 = require_NoopContextManager();
+    var global_utils_1 = require_global_utils();
+    var diag_1 = require_diag2();
+    var API_NAME = "context";
+    var NOOP_CONTEXT_MANAGER = new NoopContextManager_1.NoopContextManager();
+    var ContextAPI = function() {
+      function ContextAPI2() {
+      }
+      __name(ContextAPI2, "ContextAPI");
+      ContextAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new ContextAPI2();
+        }
+        return this._instance;
+      };
+      ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
+        return global_utils_1.registerGlobal(API_NAME, contextManager, diag_1.DiagAPI.instance());
+      };
+      ContextAPI2.prototype.active = function() {
+        return this._getContextManager().active();
+      };
+      ContextAPI2.prototype.with = function(context, fn, thisArg) {
+        var _a;
+        var args = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+          args[_i - 3] = arguments[_i];
+        }
+        return (_a = this._getContextManager()).with.apply(_a, __spreadArray([context, fn, thisArg], args));
+      };
+      ContextAPI2.prototype.bind = function(context, target) {
+        return this._getContextManager().bind(context, target);
+      };
+      ContextAPI2.prototype._getContextManager = function() {
+        return global_utils_1.getGlobal(API_NAME) || NOOP_CONTEXT_MANAGER;
+      };
+      ContextAPI2.prototype.disable = function() {
+        this._getContextManager().disable();
+        global_utils_1.unregisterGlobal(API_NAME, diag_1.DiagAPI.instance());
+      };
+      return ContextAPI2;
+    }();
+    exports2.ContextAPI = ContextAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/trace.js
+var require_trace = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.TraceAPI = void 0;
+    var global_utils_1 = require_global_utils();
+    var ProxyTracerProvider_1 = require_ProxyTracerProvider();
+    var spancontext_utils_1 = require_spancontext_utils();
+    var context_utils_1 = require_context_utils();
+    var diag_1 = require_diag2();
+    var API_NAME = "trace";
+    var TraceAPI = function() {
+      function TraceAPI2() {
+        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
+        this.wrapSpanContext = spancontext_utils_1.wrapSpanContext;
+        this.isSpanContextValid = spancontext_utils_1.isSpanContextValid;
+        this.deleteSpan = context_utils_1.deleteSpan;
+        this.getSpan = context_utils_1.getSpan;
+        this.getSpanContext = context_utils_1.getSpanContext;
+        this.setSpan = context_utils_1.setSpan;
+        this.setSpanContext = context_utils_1.setSpanContext;
+      }
+      __name(TraceAPI2, "TraceAPI");
+      TraceAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new TraceAPI2();
+        }
+        return this._instance;
+      };
+      TraceAPI2.prototype.setGlobalTracerProvider = function(provider) {
+        var success = global_utils_1.registerGlobal(API_NAME, this._proxyTracerProvider, diag_1.DiagAPI.instance());
+        if (success) {
+          this._proxyTracerProvider.setDelegate(provider);
+        }
+        return success;
+      };
+      TraceAPI2.prototype.getTracerProvider = function() {
+        return global_utils_1.getGlobal(API_NAME) || this._proxyTracerProvider;
+      };
+      TraceAPI2.prototype.getTracer = function(name, version) {
+        return this.getTracerProvider().getTracer(name, version);
+      };
+      TraceAPI2.prototype.disable = function() {
+        global_utils_1.unregisterGlobal(API_NAME, diag_1.DiagAPI.instance());
+        this._proxyTracerProvider = new ProxyTracerProvider_1.ProxyTracerProvider();
+      };
+      return TraceAPI2;
+    }();
+    exports2.TraceAPI = TraceAPI;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js
+var require_NoopTextMapPropagator = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/propagation/NoopTextMapPropagator.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.NoopTextMapPropagator = void 0;
+    var NoopTextMapPropagator = function() {
+      function NoopTextMapPropagator2() {
+      }
+      __name(NoopTextMapPropagator2, "NoopTextMapPropagator");
+      NoopTextMapPropagator2.prototype.inject = function(_context, _carrier) {
+      };
+      NoopTextMapPropagator2.prototype.extract = function(context, _carrier) {
+        return context;
+      };
+      NoopTextMapPropagator2.prototype.fields = function() {
+        return [];
+      };
+      return NoopTextMapPropagator2;
+    }();
+    exports2.NoopTextMapPropagator = NoopTextMapPropagator;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/baggage/context-helpers.js
+var require_context_helpers = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/baggage/context-helpers.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.deleteBaggage = exports2.setBaggage = exports2.getBaggage = void 0;
+    var context_1 = require_context();
+    var BAGGAGE_KEY = context_1.createContextKey("OpenTelemetry Baggage Key");
+    function getBaggage(context) {
+      return context.getValue(BAGGAGE_KEY) || void 0;
+    }
+    __name(getBaggage, "getBaggage");
+    exports2.getBaggage = getBaggage;
+    function setBaggage(context, baggage) {
+      return context.setValue(BAGGAGE_KEY, baggage);
+    }
+    __name(setBaggage, "setBaggage");
+    exports2.setBaggage = setBaggage;
+    function deleteBaggage(context) {
+      return context.deleteValue(BAGGAGE_KEY);
+    }
+    __name(deleteBaggage, "deleteBaggage");
+    exports2.deleteBaggage = deleteBaggage;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/propagation.js
+var require_propagation = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/propagation.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.PropagationAPI = void 0;
+    var global_utils_1 = require_global_utils();
+    var NoopTextMapPropagator_1 = require_NoopTextMapPropagator();
+    var TextMapPropagator_1 = require_TextMapPropagator();
+    var context_helpers_1 = require_context_helpers();
+    var utils_1 = require_utils2();
+    var diag_1 = require_diag2();
+    var API_NAME = "propagation";
+    var NOOP_TEXT_MAP_PROPAGATOR = new NoopTextMapPropagator_1.NoopTextMapPropagator();
+    var PropagationAPI = function() {
+      function PropagationAPI2() {
+        this.createBaggage = utils_1.createBaggage;
+        this.getBaggage = context_helpers_1.getBaggage;
+        this.setBaggage = context_helpers_1.setBaggage;
+        this.deleteBaggage = context_helpers_1.deleteBaggage;
+      }
+      __name(PropagationAPI2, "PropagationAPI");
+      PropagationAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new PropagationAPI2();
+        }
+        return this._instance;
+      };
+      PropagationAPI2.prototype.setGlobalPropagator = function(propagator) {
+        return global_utils_1.registerGlobal(API_NAME, propagator, diag_1.DiagAPI.instance());
+      };
+      PropagationAPI2.prototype.inject = function(context, carrier, setter) {
+        if (setter === void 0) {
+          setter = TextMapPropagator_1.defaultTextMapSetter;
+        }
+        return this._getGlobalPropagator().inject(context, carrier, setter);
+      };
+      PropagationAPI2.prototype.extract = function(context, carrier, getter) {
+        if (getter === void 0) {
+          getter = TextMapPropagator_1.defaultTextMapGetter;
+        }
+        return this._getGlobalPropagator().extract(context, carrier, getter);
+      };
+      PropagationAPI2.prototype.fields = function() {
+        return this._getGlobalPropagator().fields();
+      };
+      PropagationAPI2.prototype.disable = function() {
+        global_utils_1.unregisterGlobal(API_NAME, diag_1.DiagAPI.instance());
+      };
+      PropagationAPI2.prototype._getGlobalPropagator = function() {
+        return global_utils_1.getGlobal(API_NAME) || NOOP_TEXT_MAP_PROPAGATOR;
+      };
+      return PropagationAPI2;
+    }();
+    exports2.PropagationAPI = PropagationAPI;
   }
 });
 
@@ -35085,19 +35212,18 @@ var require_src = __commonJS({
           __createBinding(exports3, m, p);
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.diag = exports2.propagation = exports2.trace = exports2.context = exports2.isValidSpanId = exports2.isValidTraceId = exports2.isSpanContextValid = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
-    __exportStar(require_baggage2(), exports2);
+    exports2.diag = exports2.propagation = exports2.trace = exports2.context = exports2.isValidSpanId = exports2.isValidTraceId = exports2.isSpanContextValid = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = exports2.baggageEntryMetadataFromString = void 0;
+    __exportStar(require_types(), exports2);
+    var utils_1 = require_utils2();
+    Object.defineProperty(exports2, "baggageEntryMetadataFromString", { enumerable: true, get: function() {
+      return utils_1.baggageEntryMetadataFromString;
+    } });
     __exportStar(require_Exception(), exports2);
     __exportStar(require_Time(), exports2);
     __exportStar(require_diag(), exports2);
-    __exportStar(require_NoopTextMapPropagator(), exports2);
     __exportStar(require_TextMapPropagator(), exports2);
     __exportStar(require_attributes(), exports2);
-    __exportStar(require_Event(), exports2);
-    __exportStar(require_link_context(), exports2);
     __exportStar(require_link(), exports2);
-    __exportStar(require_NoopTracer(), exports2);
-    __exportStar(require_NoopTracerProvider(), exports2);
     __exportStar(require_ProxyTracer(), exports2);
     __exportStar(require_ProxyTracerProvider(), exports2);
     __exportStar(require_Sampler(), exports2);
@@ -35107,7 +35233,6 @@ var require_src = __commonJS({
     __exportStar(require_span(), exports2);
     __exportStar(require_SpanOptions(), exports2);
     __exportStar(require_status(), exports2);
-    __exportStar(require_TimedEvent(), exports2);
     __exportStar(require_trace_flags(), exports2);
     __exportStar(require_trace_state(), exports2);
     __exportStar(require_tracer_provider(), exports2);
@@ -35132,8 +35257,7 @@ var require_src = __commonJS({
       return spancontext_utils_1.isValidSpanId;
     } });
     __exportStar(require_context(), exports2);
-    __exportStar(require_NoopContextManager(), exports2);
-    __exportStar(require_types2(), exports2);
+    __exportStar(require_types3(), exports2);
     var context_1 = require_context2();
     exports2.context = context_1.ContextAPI.getInstance();
     var trace_1 = require_trace();
@@ -35157,120 +35281,6 @@ var require_dist5 = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     var api = require_src();
-    var tslib = require_tslib();
-    var NoOpSpan = function() {
-      function NoOpSpan2() {
-      }
-      __name(NoOpSpan2, "NoOpSpan");
-      NoOpSpan2.prototype.context = function() {
-        return {
-          spanId: "",
-          traceId: "",
-          traceFlags: 0
-        };
-      };
-      NoOpSpan2.prototype.end = function(_endTime) {
-      };
-      NoOpSpan2.prototype.setAttribute = function(_key, _value) {
-        return this;
-      };
-      NoOpSpan2.prototype.setAttributes = function(_attributes) {
-        return this;
-      };
-      NoOpSpan2.prototype.addEvent = function(_name, _attributes) {
-        return this;
-      };
-      NoOpSpan2.prototype.setStatus = function(_status) {
-        return this;
-      };
-      NoOpSpan2.prototype.updateName = function(_name) {
-        return this;
-      };
-      NoOpSpan2.prototype.isRecording = function() {
-        return false;
-      };
-      NoOpSpan2.prototype.recordException = function(_exception, _time) {
-      };
-      return NoOpSpan2;
-    }();
-    var NoOpTracer = function() {
-      function NoOpTracer2() {
-      }
-      __name(NoOpTracer2, "NoOpTracer");
-      NoOpTracer2.prototype.startSpan = function(_name, _options) {
-        return new NoOpSpan();
-      };
-      NoOpTracer2.prototype.getCurrentSpan = function() {
-        return new NoOpSpan();
-      };
-      NoOpTracer2.prototype.withSpan = function(_span, fn) {
-        return fn();
-      };
-      NoOpTracer2.prototype.bind = function(target, _span) {
-        return target;
-      };
-      return NoOpTracer2;
-    }();
-    function getGlobalObject() {
-      return global;
-    }
-    __name(getGlobalObject, "getGlobalObject");
-    var GLOBAL_TRACER_VERSION = 4;
-    var GLOBAL_TRACER_SYMBOL = Symbol.for("@azure/core-tracing.tracerCache3");
-    var cache;
-    function loadTracerCache() {
-      var globalObj = getGlobalObject();
-      var existingCache = globalObj[GLOBAL_TRACER_SYMBOL];
-      var setGlobalCache = true;
-      if (existingCache) {
-        if (existingCache.version === GLOBAL_TRACER_VERSION) {
-          cache = existingCache;
-        } else {
-          setGlobalCache = false;
-          if (existingCache.tracer) {
-            throw new Error("Two incompatible versions of @azure/core-tracing have been loaded.\n          This library is " + GLOBAL_TRACER_VERSION + ", existing is " + existingCache.version + ".");
-          }
-        }
-      }
-      if (!cache) {
-        cache = {
-          tracer: void 0,
-          version: GLOBAL_TRACER_VERSION
-        };
-      }
-      if (setGlobalCache) {
-        globalObj[GLOBAL_TRACER_SYMBOL] = cache;
-      }
-    }
-    __name(loadTracerCache, "loadTracerCache");
-    function getCache() {
-      if (!cache) {
-        loadTracerCache();
-      }
-      return cache;
-    }
-    __name(getCache, "getCache");
-    var defaultTracer;
-    function getDefaultTracer() {
-      if (!defaultTracer) {
-        defaultTracer = new NoOpTracer();
-      }
-      return defaultTracer;
-    }
-    __name(getDefaultTracer, "getDefaultTracer");
-    function setTracer(tracer) {
-      var cache2 = getCache();
-      cache2.tracer = tracer;
-    }
-    __name(setTracer, "setTracer");
-    function getTracer() {
-      var cache2 = getCache();
-      if (!cache2.tracer) {
-        return getDefaultTracer();
-      }
-      return cache2.tracer;
-    }
-    __name(getTracer, "getTracer");
     (function(SpanKind) {
       SpanKind[SpanKind["INTERNAL"] = 0] = "INTERNAL";
       SpanKind[SpanKind["SERVER"] = 1] = "SERVER";
@@ -35279,310 +35289,68 @@ var require_dist5 = __commonJS({
       SpanKind[SpanKind["CONSUMER"] = 4] = "CONSUMER";
     })(exports2.SpanKind || (exports2.SpanKind = {}));
     function getSpan(context2) {
-      return api.getSpan(context2);
+      return api.trace.getSpan(context2);
     }
     __name(getSpan, "getSpan");
     function setSpan(context2, span) {
-      return api.setSpan(context2, span);
+      return api.trace.setSpan(context2, span);
     }
     __name(setSpan, "setSpan");
     function setSpanContext(context2, spanContext) {
-      return api.setSpanContext(context2, spanContext);
+      return api.trace.setSpanContext(context2, spanContext);
     }
     __name(setSpanContext, "setSpanContext");
     function getSpanContext(context2) {
-      return api.getSpanContext(context2);
+      return api.trace.getSpanContext(context2);
     }
     __name(getSpanContext, "getSpanContext");
+    function isSpanContextValid(context2) {
+      return api.trace.isSpanContextValid(context2);
+    }
+    __name(isSpanContextValid, "isSpanContextValid");
+    function getTracer(name, version) {
+      return api.trace.getTracer(name || "azure/core-tracing", version);
+    }
+    __name(getTracer, "getTracer");
     var context = api.context;
     (function(SpanStatusCode) {
       SpanStatusCode[SpanStatusCode["UNSET"] = 0] = "UNSET";
       SpanStatusCode[SpanStatusCode["OK"] = 1] = "OK";
       SpanStatusCode[SpanStatusCode["ERROR"] = 2] = "ERROR";
     })(exports2.SpanStatusCode || (exports2.SpanStatusCode = {}));
-    var OpenCensusTraceStateWrapper = function() {
-      function OpenCensusTraceStateWrapper2(state) {
-        this._state = state;
+    function isTracingDisabled() {
+      var _a;
+      if (typeof process === "undefined") {
+        return false;
       }
-      __name(OpenCensusTraceStateWrapper2, "OpenCensusTraceStateWrapper");
-      OpenCensusTraceStateWrapper2.prototype.get = function(_key) {
-        throw new Error("Method not implemented.");
-      };
-      OpenCensusTraceStateWrapper2.prototype.set = function(_key, _value) {
-        throw new Error("Method not implemented.");
-      };
-      OpenCensusTraceStateWrapper2.prototype.unset = function(_key) {
-        throw new Error("Method not implemented");
-      };
-      OpenCensusTraceStateWrapper2.prototype.serialize = function() {
-        return this._state || "";
-      };
-      return OpenCensusTraceStateWrapper2;
-    }();
-    var CanonicalCode;
-    (function(CanonicalCode2) {
-      CanonicalCode2[CanonicalCode2["OK"] = 0] = "OK";
-      CanonicalCode2[CanonicalCode2["INTERNAL"] = 13] = "INTERNAL";
-    })(CanonicalCode || (CanonicalCode = {}));
-    function isWrappedSpan(span) {
-      return !!span && span.getWrappedSpan !== void 0;
+      const azureTracingDisabledValue = (_a = process.env.AZURE_TRACING_DISABLED) === null || _a === void 0 ? void 0 : _a.toLowerCase();
+      if (azureTracingDisabledValue === "false" || azureTracingDisabledValue === "0") {
+        return false;
+      }
+      return Boolean(azureTracingDisabledValue);
     }
-    __name(isWrappedSpan, "isWrappedSpan");
-    function isTracer(tracerOrSpan) {
-      return tracerOrSpan.getWrappedTracer !== void 0;
-    }
-    __name(isTracer, "isTracer");
-    var OpenCensusSpanWrapper = function() {
-      function OpenCensusSpanWrapper2(tracerOrSpan, name, options, context$1) {
-        if (name === void 0) {
-          name = "";
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        if (isTracer(tracerOrSpan)) {
-          var span = getSpan(context$1 !== null && context$1 !== void 0 ? context$1 : context.active());
-          var parent = isWrappedSpan(span) ? span.getWrappedSpan() : void 0;
-          this._span = tracerOrSpan.getWrappedTracer().startChildSpan({
-            name,
-            childOf: parent
-          });
-          this._span.start();
-          if (options.links) {
-            for (var _i = 0, _a = options.links; _i < _a.length; _i++) {
-              var link = _a[_i];
-              this._span.addLink(link.context.traceId, link.context.spanId, 0, link.attributes);
-            }
-          }
-        } else {
-          this._span = tracerOrSpan;
-        }
-      }
-      __name(OpenCensusSpanWrapper2, "OpenCensusSpanWrapper");
-      OpenCensusSpanWrapper2.prototype.getWrappedSpan = function() {
-        return this._span;
-      };
-      OpenCensusSpanWrapper2.prototype.end = function(_endTime) {
-        this._span.end();
-      };
-      OpenCensusSpanWrapper2.prototype.context = function() {
-        var openCensusSpanContext = this._span.spanContext;
-        return {
-          spanId: openCensusSpanContext.spanId,
-          traceId: openCensusSpanContext.traceId,
-          traceFlags: openCensusSpanContext.options,
-          traceState: new OpenCensusTraceStateWrapper(openCensusSpanContext.traceState)
-        };
-      };
-      OpenCensusSpanWrapper2.prototype.setAttribute = function(key, value) {
-        this._span.addAttribute(key, value);
-        return this;
-      };
-      OpenCensusSpanWrapper2.prototype.setAttributes = function(attributes) {
-        this._span.attributes = attributes;
-        return this;
-      };
-      OpenCensusSpanWrapper2.prototype.addEvent = function(_name, _attributes) {
-        throw new Error("Method not implemented.");
-      };
-      OpenCensusSpanWrapper2.prototype.setStatus = function(status) {
-        switch (status.code) {
-          case exports2.SpanStatusCode.ERROR: {
-            this._span.setStatus(CanonicalCode.INTERNAL, status.message);
-            break;
-          }
-          case exports2.SpanStatusCode.OK: {
-            this._span.setStatus(CanonicalCode.OK, status.message);
-            break;
-          }
-          case exports2.SpanStatusCode.UNSET: {
-            break;
-          }
-        }
-        return this;
-      };
-      OpenCensusSpanWrapper2.prototype.updateName = function(name) {
-        this._span.name = name;
-        return this;
-      };
-      OpenCensusSpanWrapper2.prototype.isRecording = function() {
-        return !!this._span.traceId;
-      };
-      OpenCensusSpanWrapper2.prototype.recordException = function(_exception, _time) {
-        throw new Error("Method not implemented");
-      };
-      return OpenCensusSpanWrapper2;
-    }();
-    var OpenCensusTracerWrapper = function() {
-      function OpenCensusTracerWrapper2(tracer) {
-        this._tracer = tracer;
-      }
-      __name(OpenCensusTracerWrapper2, "OpenCensusTracerWrapper");
-      OpenCensusTracerWrapper2.prototype.getWrappedTracer = function() {
-        return this._tracer;
-      };
-      OpenCensusTracerWrapper2.prototype.startSpan = function(name, options) {
-        return new OpenCensusSpanWrapper(this, name, options);
-      };
-      OpenCensusTracerWrapper2.prototype.getCurrentSpan = function() {
-        return void 0;
-      };
-      OpenCensusTracerWrapper2.prototype.withSpan = function(_span, _fn) {
-        throw new Error("Method not implemented.");
-      };
-      OpenCensusTracerWrapper2.prototype.bind = function(_target, _span) {
-        throw new Error("Method not implemented.");
-      };
-      return OpenCensusTracerWrapper2;
-    }();
-    var TestSpan = function(_super) {
-      tslib.__extends(TestSpan2, _super);
-      function TestSpan2(parentTracer, name, context2, kind, parentSpanId, startTime) {
-        if (startTime === void 0) {
-          startTime = Date.now();
-        }
-        var _this = _super.call(this) || this;
-        _this._tracer = parentTracer;
-        _this.name = name;
-        _this.kind = kind;
-        _this.startTime = startTime;
-        _this.parentSpanId = parentSpanId;
-        _this.status = {
-          code: exports2.SpanStatusCode.OK
-        };
-        _this.endCalled = false;
-        _this._context = context2;
-        _this.attributes = {};
-        return _this;
-      }
-      __name(TestSpan2, "TestSpan");
-      TestSpan2.prototype.tracer = function() {
-        return this._tracer;
-      };
-      TestSpan2.prototype.context = function() {
-        return this._context;
-      };
-      TestSpan2.prototype.end = function(_endTime) {
-        this.endCalled = true;
-      };
-      TestSpan2.prototype.setStatus = function(status) {
-        this.status = status;
-        return this;
-      };
-      TestSpan2.prototype.isRecording = function() {
-        return true;
-      };
-      TestSpan2.prototype.setAttribute = function(key, value) {
-        this.attributes[key] = value;
-        return this;
-      };
-      TestSpan2.prototype.setAttributes = function(attributes) {
-        for (var _i = 0, _a = Object.keys(attributes); _i < _a.length; _i++) {
-          var key = _a[_i];
-          this.attributes[key] = attributes[key];
-        }
-        return this;
-      };
-      return TestSpan2;
-    }(NoOpSpan);
-    var TestTracer = function(_super) {
-      tslib.__extends(TestTracer2, _super);
-      function TestTracer2() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.traceIdCounter = 0;
-        _this.spanIdCounter = 0;
-        _this.rootSpans = [];
-        _this.knownSpans = [];
-        return _this;
-      }
-      __name(TestTracer2, "TestTracer");
-      TestTracer2.prototype.getNextTraceId = function() {
-        this.traceIdCounter++;
-        return String(this.traceIdCounter);
-      };
-      TestTracer2.prototype.getNextSpanId = function() {
-        this.spanIdCounter++;
-        return String(this.spanIdCounter);
-      };
-      TestTracer2.prototype.getRootSpans = function() {
-        return this.rootSpans;
-      };
-      TestTracer2.prototype.getKnownSpans = function() {
-        return this.knownSpans;
-      };
-      TestTracer2.prototype.getActiveSpans = function() {
-        return this.knownSpans.filter(function(span) {
-          return !span.endCalled;
-        });
-      };
-      TestTracer2.prototype.getSpanGraph = function(traceId) {
-        var traceSpans = this.knownSpans.filter(function(span2) {
-          return span2.context().traceId === traceId;
-        });
-        var roots = [];
-        var nodeMap = new Map();
-        for (var _i = 0, traceSpans_1 = traceSpans; _i < traceSpans_1.length; _i++) {
-          var span = traceSpans_1[_i];
-          var spanId = span.context().spanId;
-          var node = {
-            name: span.name,
-            children: []
-          };
-          nodeMap.set(spanId, node);
-          if (span.parentSpanId) {
-            var parent = nodeMap.get(span.parentSpanId);
-            if (!parent) {
-              throw new Error("Span with name " + node.name + " has an unknown parentSpan with id " + span.parentSpanId);
-            }
-            parent.children.push(node);
-          } else {
-            roots.push(node);
-          }
-        }
-        return {
-          roots
-        };
-      };
-      TestTracer2.prototype.startSpan = function(name, options, context$1) {
-        var parentContext = getSpanContext(context$1 || context.active());
-        var traceId;
-        var isRootSpan = false;
-        if (parentContext && parentContext.traceId) {
-          traceId = parentContext.traceId;
-        } else {
-          traceId = this.getNextTraceId();
-          isRootSpan = true;
-        }
-        var spanContext = {
-          traceId,
-          spanId: this.getNextSpanId(),
-          traceFlags: 0
-        };
-        var span = new TestSpan(this, name, spanContext, (options === null || options === void 0 ? void 0 : options.kind) || exports2.SpanKind.INTERNAL, parentContext ? parentContext.spanId : void 0, options === null || options === void 0 ? void 0 : options.startTime);
-        this.knownSpans.push(span);
-        if (isRootSpan) {
-          this.rootSpans.push(span);
-        }
-        return span;
-      };
-      return TestTracer2;
-    }(NoOpTracer);
+    __name(isTracingDisabled, "isTracingDisabled");
     function createSpanFunction(args) {
       return function(operationName, operationOptions) {
-        var tracer = getTracer();
-        var tracingOptions = (operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions) || {};
-        var spanOptions = tslib.__assign({ kind: exports2.SpanKind.INTERNAL }, tracingOptions.spanOptions);
-        var spanName = args.packagePrefix ? args.packagePrefix + "." + operationName : operationName;
-        var span = tracer.startSpan(spanName, spanOptions, tracingOptions.tracingContext);
+        const tracer = getTracer();
+        const tracingOptions = (operationOptions === null || operationOptions === void 0 ? void 0 : operationOptions.tracingOptions) || {};
+        const spanOptions = Object.assign({ kind: exports2.SpanKind.INTERNAL }, tracingOptions.spanOptions);
+        const spanName = args.packagePrefix ? `${args.packagePrefix}.${operationName}` : operationName;
+        let span;
+        if (isTracingDisabled()) {
+          span = api.trace.wrapSpanContext(api.INVALID_SPAN_CONTEXT);
+        } else {
+          span = tracer.startSpan(spanName, spanOptions, tracingOptions.tracingContext);
+        }
         if (args.namespace) {
           span.setAttribute("az.namespace", args.namespace);
         }
-        var newSpanOptions = tracingOptions.spanOptions || {};
+        let newSpanOptions = tracingOptions.spanOptions || {};
         if (span.isRecording() && args.namespace) {
-          newSpanOptions = tslib.__assign(tslib.__assign({}, tracingOptions.spanOptions), { attributes: tslib.__assign(tslib.__assign({}, spanOptions.attributes), { "az.namespace": args.namespace }) });
+          newSpanOptions = Object.assign(Object.assign({}, tracingOptions.spanOptions), { attributes: Object.assign(Object.assign({}, spanOptions.attributes), { "az.namespace": args.namespace }) });
         }
-        var newTracingOptions = tslib.__assign(tslib.__assign({}, tracingOptions), { spanOptions: newSpanOptions, tracingContext: setSpan(tracingOptions.tracingContext || context.active(), span) });
-        var newOperationOptions = tslib.__assign(tslib.__assign({}, operationOptions), { tracingOptions: newTracingOptions });
+        const newTracingOptions = Object.assign(Object.assign({}, tracingOptions), { spanOptions: newSpanOptions, tracingContext: setSpan(tracingOptions.tracingContext || context.active(), span) });
+        const newOperationOptions = Object.assign(Object.assign({}, operationOptions), { tracingOptions: newTracingOptions });
         return {
           span,
           updatedOptions: newOperationOptions
@@ -35592,16 +35360,16 @@ var require_dist5 = __commonJS({
     __name(createSpanFunction, "createSpanFunction");
     var VERSION = "00";
     function extractSpanContextFromTraceParentHeader(traceParentHeader) {
-      var parts = traceParentHeader.split("-");
+      const parts = traceParentHeader.split("-");
       if (parts.length !== 4) {
         return;
       }
-      var version = parts[0], traceId = parts[1], spanId = parts[2], traceOptions = parts[3];
+      const [version, traceId, spanId, traceOptions] = parts;
       if (version !== VERSION) {
         return;
       }
-      var traceFlags = parseInt(traceOptions, 16);
-      var spanContext = {
+      const traceFlags = parseInt(traceOptions, 16);
+      const spanContext = {
         spanId,
         traceId,
         traceFlags
@@ -35610,7 +35378,7 @@ var require_dist5 = __commonJS({
     }
     __name(extractSpanContextFromTraceParentHeader, "extractSpanContextFromTraceParentHeader");
     function getTraceParentHeader(spanContext) {
-      var missingFields = [];
+      const missingFields = [];
       if (!spanContext.traceId) {
         missingFields.push("traceId");
       }
@@ -35620,18 +35388,12 @@ var require_dist5 = __commonJS({
       if (missingFields.length) {
         return;
       }
-      var flags = spanContext.traceFlags || 0;
-      var hexFlags = flags.toString(16);
-      var traceFlags = hexFlags.length === 1 ? "0" + hexFlags : hexFlags;
-      return VERSION + "-" + spanContext.traceId + "-" + spanContext.spanId + "-" + traceFlags;
+      const flags = spanContext.traceFlags || 0;
+      const hexFlags = flags.toString(16);
+      const traceFlags = hexFlags.length === 1 ? `0${hexFlags}` : hexFlags;
+      return `${VERSION}-${spanContext.traceId}-${spanContext.spanId}-${traceFlags}`;
     }
     __name(getTraceParentHeader, "getTraceParentHeader");
-    exports2.NoOpSpan = NoOpSpan;
-    exports2.NoOpTracer = NoOpTracer;
-    exports2.OpenCensusSpanWrapper = OpenCensusSpanWrapper;
-    exports2.OpenCensusTracerWrapper = OpenCensusTracerWrapper;
-    exports2.TestSpan = TestSpan;
-    exports2.TestTracer = TestTracer;
     exports2.context = context;
     exports2.createSpanFunction = createSpanFunction;
     exports2.extractSpanContextFromTraceParentHeader = extractSpanContextFromTraceParentHeader;
@@ -35639,9 +35401,9 @@ var require_dist5 = __commonJS({
     exports2.getSpanContext = getSpanContext;
     exports2.getTraceParentHeader = getTraceParentHeader;
     exports2.getTracer = getTracer;
+    exports2.isSpanContextValid = isSpanContextValid;
     exports2.setSpan = setSpan;
     exports2.setSpanContext = setSpanContext;
-    exports2.setTracer = setTracer;
   }
 });
 
@@ -35664,7 +35426,6 @@ var require_dist6 = __commonJS({
       return ex && typeof ex === "object" && "default" in ex ? ex["default"] : ex;
     }
     __name(_interopDefault, "_interopDefault");
-    var tslib = require_tslib();
     var uuid = require_dist();
     var tough = require_cookie();
     var http = require("http");
@@ -35677,6 +35438,7 @@ var require_dist6 = __commonJS({
     var stream = require("stream");
     var logger$1 = require_dist3();
     var tunnel = require_tunnel2();
+    var tslib = require_tslib();
     var coreAuth = require_dist4();
     var xml2js = require_xml2js();
     var os = require("os");
@@ -35688,7 +35450,7 @@ var require_dist6 = __commonJS({
     __name(getHeaderKey, "getHeaderKey");
     function isHttpHeadersLike(object) {
       if (object && typeof object === "object") {
-        var castObject = object;
+        const castObject = object;
         if (typeof castObject.rawHeaders === "function" && typeof castObject.clone === "function" && typeof castObject.get === "function" && typeof castObject.set === "function" && typeof castObject.contains === "function" && typeof castObject.remove === "function" && typeof castObject.headersArray === "function" && typeof castObject.headerValues === "function" && typeof castObject.headerNames === "function" && typeof castObject.toJson === "function") {
           return true;
         }
@@ -35696,82 +35458,81 @@ var require_dist6 = __commonJS({
       return false;
     }
     __name(isHttpHeadersLike, "isHttpHeadersLike");
-    var HttpHeaders = function() {
-      function HttpHeaders2(rawHeaders) {
+    var HttpHeaders = class {
+      constructor(rawHeaders) {
         this._headersMap = {};
         if (rawHeaders) {
-          for (var headerName in rawHeaders) {
+          for (const headerName in rawHeaders) {
             this.set(headerName, rawHeaders[headerName]);
           }
         }
       }
-      __name(HttpHeaders2, "HttpHeaders");
-      HttpHeaders2.prototype.set = function(headerName, headerValue) {
+      set(headerName, headerValue) {
         this._headersMap[getHeaderKey(headerName)] = {
           name: headerName,
           value: headerValue.toString()
         };
-      };
-      HttpHeaders2.prototype.get = function(headerName) {
-        var header = this._headersMap[getHeaderKey(headerName)];
+      }
+      get(headerName) {
+        const header = this._headersMap[getHeaderKey(headerName)];
         return !header ? void 0 : header.value;
-      };
-      HttpHeaders2.prototype.contains = function(headerName) {
+      }
+      contains(headerName) {
         return !!this._headersMap[getHeaderKey(headerName)];
-      };
-      HttpHeaders2.prototype.remove = function(headerName) {
-        var result = this.contains(headerName);
+      }
+      remove(headerName) {
+        const result = this.contains(headerName);
         delete this._headersMap[getHeaderKey(headerName)];
         return result;
-      };
-      HttpHeaders2.prototype.rawHeaders = function() {
-        var result = {};
-        for (var headerKey in this._headersMap) {
-          var header = this._headersMap[headerKey];
+      }
+      rawHeaders() {
+        const result = {};
+        for (const headerKey in this._headersMap) {
+          const header = this._headersMap[headerKey];
           result[header.name.toLowerCase()] = header.value;
         }
         return result;
-      };
-      HttpHeaders2.prototype.headersArray = function() {
-        var headers = [];
-        for (var headerKey in this._headersMap) {
+      }
+      headersArray() {
+        const headers = [];
+        for (const headerKey in this._headersMap) {
           headers.push(this._headersMap[headerKey]);
         }
         return headers;
-      };
-      HttpHeaders2.prototype.headerNames = function() {
-        var headerNames = [];
-        var headers = this.headersArray();
-        for (var i = 0; i < headers.length; ++i) {
+      }
+      headerNames() {
+        const headerNames = [];
+        const headers = this.headersArray();
+        for (let i = 0; i < headers.length; ++i) {
           headerNames.push(headers[i].name);
         }
         return headerNames;
-      };
-      HttpHeaders2.prototype.headerValues = function() {
-        var headerValues = [];
-        var headers = this.headersArray();
-        for (var i = 0; i < headers.length; ++i) {
+      }
+      headerValues() {
+        const headerValues = [];
+        const headers = this.headersArray();
+        for (let i = 0; i < headers.length; ++i) {
           headerValues.push(headers[i].value);
         }
         return headerValues;
-      };
-      HttpHeaders2.prototype.toJson = function() {
+      }
+      toJson() {
         return this.rawHeaders();
-      };
-      HttpHeaders2.prototype.toString = function() {
+      }
+      toString() {
         return JSON.stringify(this.toJson());
-      };
-      HttpHeaders2.prototype.clone = function() {
-        return new HttpHeaders2(this.rawHeaders());
-      };
-      return HttpHeaders2;
-    }();
+      }
+      clone() {
+        return new HttpHeaders(this.rawHeaders());
+      }
+    };
+    __name(HttpHeaders, "HttpHeaders");
     function encodeString(value) {
       return Buffer.from(value).toString("base64");
     }
     __name(encodeString, "encodeString");
     function encodeByteArray(value) {
-      var bufferValue = value instanceof Buffer ? value : Buffer.from(value.buffer);
+      const bufferValue = value instanceof Buffer ? value : Buffer.from(value.buffer);
       return bufferValue.toString("base64");
     }
     __name(encodeByteArray, "encodeByteArray");
@@ -35780,7 +35541,7 @@ var require_dist6 = __commonJS({
     }
     __name(decodeString, "decodeString");
     var Constants = {
-      coreHttpVersion: "1.2.6",
+      coreHttpVersion: "2.1.0",
       HTTP: "http:",
       HTTPS: "https:",
       HTTP_PROXY: "HTTP_PROXY",
@@ -35798,7 +35559,8 @@ var require_dist6 = __commonJS({
           PATCH: "PATCH"
         },
         StatusCodes: {
-          TooManyRequests: 429
+          TooManyRequests: 429,
+          ServiceUnavailable: 503
         }
       },
       HeaderConstants: {
@@ -35817,7 +35579,7 @@ var require_dist6 = __commonJS({
     }
     __name(encodeUri, "encodeUri");
     function stripResponse(response) {
-      var strippedResponse = {};
+      const strippedResponse = {};
       strippedResponse.body = response.bodyAsText;
       strippedResponse.headers = response.headers;
       strippedResponse.status = response.status;
@@ -35825,7 +35587,7 @@ var require_dist6 = __commonJS({
     }
     __name(stripResponse, "stripResponse");
     function stripRequest(request) {
-      var strippedRequest = request.clone();
+      const strippedRequest = request.clone();
       if (strippedRequest.headers) {
         strippedRequest.headers.remove("authorization");
       }
@@ -35841,29 +35603,21 @@ var require_dist6 = __commonJS({
     }
     __name(generateUuid, "generateUuid");
     function executePromisesSequentially(promiseFactories, kickstart) {
-      var result = Promise.resolve(kickstart);
-      promiseFactories.forEach(function(promiseFactory) {
+      let result = Promise.resolve(kickstart);
+      promiseFactories.forEach((promiseFactory) => {
         result = result.then(promiseFactory);
       });
       return result;
     }
     __name(executePromisesSequentially, "executePromisesSequentially");
-    function delay(t, value) {
-      return new Promise(function(resolve2) {
-        return setTimeout(function() {
-          return resolve2(value);
-        }, t);
-      });
-    }
-    __name(delay, "delay");
     function promiseToCallback(promise) {
       if (typeof promise.then !== "function") {
         throw new Error("The provided input is not a Promise.");
       }
-      return function(cb) {
-        promise.then(function(data) {
+      return (cb) => {
+        promise.then((data) => {
           return cb(void 0, data);
-        }).catch(function(err) {
+        }).catch((err) => {
           cb(err);
         });
       };
@@ -35873,32 +35627,31 @@ var require_dist6 = __commonJS({
       if (typeof promise.then !== "function") {
         throw new Error("The provided input is not a Promise.");
       }
-      return function(cb) {
-        promise.then(function(data) {
+      return (cb) => {
+        promise.then((data) => {
           return process.nextTick(cb, void 0, data.parsedBody, data.request, data);
-        }).catch(function(err) {
+        }).catch((err) => {
           process.nextTick(cb, err);
         });
       };
     }
     __name(promiseToServiceCallback, "promiseToServiceCallback");
     function prepareXMLRootList(obj, elementName, xmlNamespaceKey, xmlNamespace) {
-      var _a, _b, _c;
       if (!Array.isArray(obj)) {
         obj = [obj];
       }
       if (!xmlNamespaceKey || !xmlNamespace) {
-        return _a = {}, _a[elementName] = obj, _a;
+        return { [elementName]: obj };
       }
-      var result = (_b = {}, _b[elementName] = obj, _b);
-      result[XML_ATTRKEY] = (_c = {}, _c[xmlNamespaceKey] = xmlNamespace, _c);
+      const result = { [elementName]: obj };
+      result[XML_ATTRKEY] = { [xmlNamespaceKey]: xmlNamespace };
       return result;
     }
     __name(prepareXMLRootList, "prepareXMLRootList");
     function applyMixins(targetCtorParam, sourceCtors) {
-      var castTargetCtorParam = targetCtorParam;
-      sourceCtors.forEach(function(sourceCtor) {
-        Object.getOwnPropertyNames(sourceCtor.prototype).forEach(function(name) {
+      const castTargetCtorParam = targetCtorParam;
+      sourceCtors.forEach((sourceCtor) => {
+        Object.getOwnPropertyNames(sourceCtor.prototype).forEach((name) => {
           castTargetCtorParam.prototype[name] = sourceCtor.prototype[name];
         });
       });
@@ -35930,22 +35683,18 @@ var require_dist6 = __commonJS({
       return typeof input === "object" && input !== null && !Array.isArray(input) && !(input instanceof RegExp) && !(input instanceof Date);
     }
     __name(isObject, "isObject");
-    var Serializer = function() {
-      function Serializer2(modelMappers, isXML) {
-        if (modelMappers === void 0) {
-          modelMappers = {};
-        }
+    var Serializer = class {
+      constructor(modelMappers = {}, isXML) {
         this.modelMappers = modelMappers;
         this.isXML = isXML;
       }
-      __name(Serializer2, "Serializer");
-      Serializer2.prototype.validateConstraints = function(mapper, value, objectName) {
-        var failValidation = /* @__PURE__ */ __name(function(constraintName, constraintValue) {
-          throw new Error('"' + objectName + '" with value "' + value + '" should satisfy the constraint "' + constraintName + '": ' + constraintValue + ".");
+      validateConstraints(mapper, value, objectName) {
+        const failValidation = /* @__PURE__ */ __name((constraintName, constraintValue) => {
+          throw new Error(`"${objectName}" with value "${value}" should satisfy the constraint "${constraintName}": ${constraintValue}.`);
         }, "failValidation");
         if (mapper.constraints && value != void 0) {
-          var valueAsNumber = value;
-          var _a = mapper.constraints, ExclusiveMaximum = _a.ExclusiveMaximum, ExclusiveMinimum = _a.ExclusiveMinimum, InclusiveMaximum = _a.InclusiveMaximum, InclusiveMinimum = _a.InclusiveMinimum, MaxItems = _a.MaxItems, MaxLength = _a.MaxLength, MinItems = _a.MinItems, MinLength = _a.MinLength, MultipleOf = _a.MultipleOf, Pattern = _a.Pattern, UniqueItems = _a.UniqueItems;
+          const valueAsNumber = value;
+          const { ExclusiveMaximum, ExclusiveMinimum, InclusiveMaximum, InclusiveMinimum, MaxItems, MaxLength, MinItems, MinLength, MultipleOf, Pattern, UniqueItems } = mapper.constraints;
           if (ExclusiveMaximum != void 0 && valueAsNumber >= ExclusiveMaximum) {
             failValidation("ExclusiveMaximum", ExclusiveMaximum);
           }
@@ -35958,7 +35707,7 @@ var require_dist6 = __commonJS({
           if (InclusiveMinimum != void 0 && valueAsNumber < InclusiveMinimum) {
             failValidation("InclusiveMinimum", InclusiveMinimum);
           }
-          var valueAsArray = value;
+          const valueAsArray = value;
           if (MaxItems != void 0 && valueAsArray.length > MaxItems) {
             failValidation("MaxItems", MaxItems);
           }
@@ -35975,30 +35724,25 @@ var require_dist6 = __commonJS({
             failValidation("MultipleOf", MultipleOf);
           }
           if (Pattern) {
-            var pattern = typeof Pattern === "string" ? new RegExp(Pattern) : Pattern;
+            const pattern = typeof Pattern === "string" ? new RegExp(Pattern) : Pattern;
             if (typeof value !== "string" || value.match(pattern) === null) {
               failValidation("Pattern", Pattern);
             }
           }
-          if (UniqueItems && valueAsArray.some(function(item, i, ar) {
-            return ar.indexOf(item) !== i;
-          })) {
+          if (UniqueItems && valueAsArray.some((item, i, ar) => ar.indexOf(item) !== i)) {
             failValidation("UniqueItems", UniqueItems);
           }
         }
-      };
-      Serializer2.prototype.serialize = function(mapper, object, objectName, options) {
+      }
+      serialize(mapper, object, objectName, options = {}) {
         var _a, _b, _c;
-        if (options === void 0) {
-          options = {};
-        }
-        var updatedOptions = {
+        const updatedOptions = {
           rootName: (_a = options.rootName) !== null && _a !== void 0 ? _a : "",
           includeRoot: (_b = options.includeRoot) !== null && _b !== void 0 ? _b : false,
           xmlCharKey: (_c = options.xmlCharKey) !== null && _c !== void 0 ? _c : XML_CHARKEY
         };
-        var payload = {};
-        var mapperType = mapper.type.name;
+        let payload = {};
+        const mapperType = mapper.type.name;
         if (!objectName) {
           objectName = mapper.serializedName;
         }
@@ -36008,15 +35752,15 @@ var require_dist6 = __commonJS({
         if (mapper.isConstant) {
           object = mapper.defaultValue;
         }
-        var required = mapper.required, nullable = mapper.nullable;
+        const { required, nullable } = mapper;
         if (required && nullable && object === void 0) {
-          throw new Error(objectName + " cannot be undefined.");
+          throw new Error(`${objectName} cannot be undefined.`);
         }
         if (required && !nullable && object == void 0) {
-          throw new Error(objectName + " cannot be null or undefined.");
+          throw new Error(`${objectName} cannot be null or undefined.`);
         }
         if (!required && nullable === false && object === null) {
-          throw new Error(objectName + " cannot be null.");
+          throw new Error(`${objectName} cannot be null.`);
         }
         if (object == void 0) {
           payload = object;
@@ -36027,7 +35771,7 @@ var require_dist6 = __commonJS({
           } else if (mapperType.match(/^(Number|String|Boolean|Object|Stream|Uuid)$/i) !== null) {
             payload = serializeBasicTypes(mapperType, objectName, object);
           } else if (mapperType.match(/^Enum$/i) !== null) {
-            var enumMapper = mapper;
+            const enumMapper = mapper;
             payload = serializeEnumType(objectName, enumMapper.type.allowedValues, object);
           } else if (mapperType.match(/^(Date|DateTime|TimeSpan|DateTimeRfc1123|UnixTime)$/i) !== null) {
             payload = serializeDateTypes(mapperType, object, objectName);
@@ -36044,13 +35788,10 @@ var require_dist6 = __commonJS({
           }
         }
         return payload;
-      };
-      Serializer2.prototype.deserialize = function(mapper, responseBody, objectName, options) {
+      }
+      deserialize(mapper, responseBody, objectName, options = {}) {
         var _a, _b, _c;
-        if (options === void 0) {
-          options = {};
-        }
-        var updatedOptions = {
+        const updatedOptions = {
           rootName: (_a = options.rootName) !== null && _a !== void 0 ? _a : "",
           includeRoot: (_b = options.includeRoot) !== null && _b !== void 0 ? _b : false,
           xmlCharKey: (_c = options.xmlCharKey) !== null && _c !== void 0 ? _c : XML_CHARKEY
@@ -36064,8 +35805,8 @@ var require_dist6 = __commonJS({
           }
           return responseBody;
         }
-        var payload;
-        var mapperType = mapper.type.name;
+        let payload;
+        const mapperType = mapper.type.name;
         if (!objectName) {
           objectName = mapper.serializedName;
         }
@@ -36073,8 +35814,8 @@ var require_dist6 = __commonJS({
           payload = deserializeCompositeType(this, mapper, responseBody, objectName, updatedOptions);
         } else {
           if (this.isXML) {
-            var xmlCharKey = updatedOptions.xmlCharKey;
-            var castResponseBody = responseBody;
+            const xmlCharKey = updatedOptions.xmlCharKey;
+            const castResponseBody = responseBody;
             if (castResponseBody[XML_ATTRKEY] != void 0 && castResponseBody[xmlCharKey] != void 0) {
               responseBody = castResponseBody[xmlCharKey];
             }
@@ -36112,11 +35853,11 @@ var require_dist6 = __commonJS({
           payload = mapper.defaultValue;
         }
         return payload;
-      };
-      return Serializer2;
-    }();
+      }
+    };
+    __name(Serializer, "Serializer");
     function trimEnd(str, ch) {
-      var len = str.length;
+      let len = str.length;
       while (len - 1 >= 0 && str[len - 1] === ch) {
         --len;
       }
@@ -36128,9 +35869,9 @@ var require_dist6 = __commonJS({
         return void 0;
       }
       if (!(buffer instanceof Uint8Array)) {
-        throw new Error("Please provide an input of type Uint8Array for converting to Base64Url.");
+        throw new Error(`Please provide an input of type Uint8Array for converting to Base64Url.`);
       }
-      var str = encodeByteArray(buffer);
+      const str = encodeByteArray(buffer);
       return trimEnd(str, "=").replace(/\+/g, "-").replace(/\//g, "_");
     }
     __name(bufferToBase64Url, "bufferToBase64Url");
@@ -36146,12 +35887,11 @@ var require_dist6 = __commonJS({
     }
     __name(base64UrlToByteArray, "base64UrlToByteArray");
     function splitSerializeName(prop) {
-      var classes = [];
-      var partialclass = "";
+      const classes = [];
+      let partialclass = "";
       if (prop) {
-        var subwords = prop.split(".");
-        for (var _i = 0, subwords_1 = subwords; _i < subwords_1.length; _i++) {
-          var item = subwords_1[_i];
+        const subwords = prop.split(".");
+        for (const item of subwords) {
           if (item.charAt(item.length - 1) === "\\") {
             partialclass += item.substr(0, item.length - 1) + ".";
           } else {
@@ -36185,24 +35925,24 @@ var require_dist6 = __commonJS({
       if (value !== null && value !== void 0) {
         if (typeName.match(/^Number$/i) !== null) {
           if (typeof value !== "number") {
-            throw new Error(objectName + " with value " + value + " must be of type number.");
+            throw new Error(`${objectName} with value ${value} must be of type number.`);
           }
         } else if (typeName.match(/^String$/i) !== null) {
           if (typeof value.valueOf() !== "string") {
-            throw new Error(objectName + ' with value "' + value + '" must be of type string.');
+            throw new Error(`${objectName} with value "${value}" must be of type string.`);
           }
         } else if (typeName.match(/^Uuid$/i) !== null) {
           if (!(typeof value.valueOf() === "string" && isValidUuid(value))) {
-            throw new Error(objectName + ' with value "' + value + '" must be of type string and a valid uuid.');
+            throw new Error(`${objectName} with value "${value}" must be of type string and a valid uuid.`);
           }
         } else if (typeName.match(/^Boolean$/i) !== null) {
           if (typeof value !== "boolean") {
-            throw new Error(objectName + " with value " + value + " must be of type boolean.");
+            throw new Error(`${objectName} with value ${value} must be of type boolean.`);
           }
         } else if (typeName.match(/^Stream$/i) !== null) {
-          var objectType = typeof value;
+          const objectType = typeof value;
           if (objectType !== "string" && objectType !== "function" && !(value instanceof ArrayBuffer) && !ArrayBuffer.isView(value) && !((typeof Blob === "function" || typeof Blob === "object") && value instanceof Blob)) {
-            throw new Error(objectName + " must be a string, Blob, ArrayBuffer, ArrayBufferView, or a function returning NodeJS.ReadableStream.");
+            throw new Error(`${objectName} must be a string, Blob, ArrayBuffer, ArrayBufferView, or a function returning NodeJS.ReadableStream.`);
           }
         }
       }
@@ -36211,25 +35951,25 @@ var require_dist6 = __commonJS({
     __name(serializeBasicTypes, "serializeBasicTypes");
     function serializeEnumType(objectName, allowedValues, value) {
       if (!allowedValues) {
-        throw new Error("Please provide a set of allowedValues to validate " + objectName + " as an Enum Type.");
+        throw new Error(`Please provide a set of allowedValues to validate ${objectName} as an Enum Type.`);
       }
-      var isPresent = allowedValues.some(function(item) {
+      const isPresent = allowedValues.some((item) => {
         if (typeof item.valueOf() === "string") {
           return item.toLowerCase() === value.toLowerCase();
         }
         return item === value;
       });
       if (!isPresent) {
-        throw new Error(value + " is not a valid value for " + objectName + ". The valid values are: " + JSON.stringify(allowedValues) + ".");
+        throw new Error(`${value} is not a valid value for ${objectName}. The valid values are: ${JSON.stringify(allowedValues)}.`);
       }
       return value;
     }
     __name(serializeEnumType, "serializeEnumType");
     function serializeByteArrayType(objectName, value) {
-      var returnValue = "";
+      let returnValue = "";
       if (value != void 0) {
         if (!(value instanceof Uint8Array)) {
-          throw new Error(objectName + " must be of type Uint8Array.");
+          throw new Error(`${objectName} must be of type Uint8Array.`);
         }
         returnValue = encodeByteArray(value);
       }
@@ -36237,10 +35977,10 @@ var require_dist6 = __commonJS({
     }
     __name(serializeByteArrayType, "serializeByteArrayType");
     function serializeBase64UrlType(objectName, value) {
-      var returnValue = "";
+      let returnValue = "";
       if (value != void 0) {
         if (!(value instanceof Uint8Array)) {
-          throw new Error(objectName + " must be of type Uint8Array.");
+          throw new Error(`${objectName} must be of type Uint8Array.`);
         }
         returnValue = bufferToBase64Url(value) || "";
       }
@@ -36251,27 +35991,27 @@ var require_dist6 = __commonJS({
       if (value != void 0) {
         if (typeName.match(/^Date$/i) !== null) {
           if (!(value instanceof Date || typeof value.valueOf() === "string" && !isNaN(Date.parse(value)))) {
-            throw new Error(objectName + " must be an instanceof Date or a string in ISO8601 format.");
+            throw new Error(`${objectName} must be an instanceof Date or a string in ISO8601 format.`);
           }
           value = value instanceof Date ? value.toISOString().substring(0, 10) : new Date(value).toISOString().substring(0, 10);
         } else if (typeName.match(/^DateTime$/i) !== null) {
           if (!(value instanceof Date || typeof value.valueOf() === "string" && !isNaN(Date.parse(value)))) {
-            throw new Error(objectName + " must be an instanceof Date or a string in ISO8601 format.");
+            throw new Error(`${objectName} must be an instanceof Date or a string in ISO8601 format.`);
           }
           value = value instanceof Date ? value.toISOString() : new Date(value).toISOString();
         } else if (typeName.match(/^DateTimeRfc1123$/i) !== null) {
           if (!(value instanceof Date || typeof value.valueOf() === "string" && !isNaN(Date.parse(value)))) {
-            throw new Error(objectName + " must be an instanceof Date or a string in RFC-1123 format.");
+            throw new Error(`${objectName} must be an instanceof Date or a string in RFC-1123 format.`);
           }
           value = value instanceof Date ? value.toUTCString() : new Date(value).toUTCString();
         } else if (typeName.match(/^UnixTime$/i) !== null) {
           if (!(value instanceof Date || typeof value.valueOf() === "string" && !isNaN(Date.parse(value)))) {
-            throw new Error(objectName + " must be an instanceof Date or a string in RFC-1123/ISO8601 format for it to be serialized in UnixTime/Epoch format.");
+            throw new Error(`${objectName} must be an instanceof Date or a string in RFC-1123/ISO8601 format for it to be serialized in UnixTime/Epoch format.`);
           }
           value = dateToUnixTime(value);
         } else if (typeName.match(/^TimeSpan$/i) !== null) {
           if (!isDuration(value)) {
-            throw new Error(objectName + ' must be a string in ISO 8601 format. Instead was "' + value + '".');
+            throw new Error(`${objectName} must be a string in ISO 8601 format. Instead was "${value}".`);
           }
         }
       }
@@ -36279,26 +36019,25 @@ var require_dist6 = __commonJS({
     }
     __name(serializeDateTypes, "serializeDateTypes");
     function serializeSequenceType(serializer, mapper, object, objectName, isXml, options) {
-      var _a, _b;
       if (!Array.isArray(object)) {
-        throw new Error(objectName + " must be of type Array.");
+        throw new Error(`${objectName} must be of type Array.`);
       }
-      var elementType = mapper.type.element;
+      const elementType = mapper.type.element;
       if (!elementType || typeof elementType !== "object") {
-        throw new Error('element" metadata for an Array must be defined in the ' + ('mapper and it must of type "object" in ' + objectName + "."));
+        throw new Error(`element" metadata for an Array must be defined in the mapper and it must of type "object" in ${objectName}.`);
       }
-      var tempArray = [];
-      for (var i = 0; i < object.length; i++) {
-        var serializedValue = serializer.serialize(elementType, object[i], objectName, options);
+      const tempArray = [];
+      for (let i = 0; i < object.length; i++) {
+        const serializedValue = serializer.serialize(elementType, object[i], objectName, options);
         if (isXml && elementType.xmlNamespace) {
-          var xmlnsKey = elementType.xmlNamespacePrefix ? "xmlns:" + elementType.xmlNamespacePrefix : "xmlns";
+          const xmlnsKey = elementType.xmlNamespacePrefix ? `xmlns:${elementType.xmlNamespacePrefix}` : "xmlns";
           if (elementType.type.name === "Composite") {
-            tempArray[i] = tslib.__assign({}, serializedValue);
-            tempArray[i][XML_ATTRKEY] = (_a = {}, _a[xmlnsKey] = elementType.xmlNamespace, _a);
+            tempArray[i] = Object.assign({}, serializedValue);
+            tempArray[i][XML_ATTRKEY] = { [xmlnsKey]: elementType.xmlNamespace };
           } else {
             tempArray[i] = {};
             tempArray[i][options.xmlCharKey] = serializedValue;
-            tempArray[i][XML_ATTRKEY] = (_b = {}, _b[xmlnsKey] = elementType.xmlNamespace, _b);
+            tempArray[i][XML_ATTRKEY] = { [xmlnsKey]: elementType.xmlNamespace };
           }
         } else {
           tempArray[i] = serializedValue;
@@ -36308,77 +36047,73 @@ var require_dist6 = __commonJS({
     }
     __name(serializeSequenceType, "serializeSequenceType");
     function serializeDictionaryType(serializer, mapper, object, objectName, isXml, options) {
-      var _a;
       if (typeof object !== "object") {
-        throw new Error(objectName + " must be of type object.");
+        throw new Error(`${objectName} must be of type object.`);
       }
-      var valueType = mapper.type.value;
+      const valueType = mapper.type.value;
       if (!valueType || typeof valueType !== "object") {
-        throw new Error('"value" metadata for a Dictionary must be defined in the ' + ('mapper and it must of type "object" in ' + objectName + "."));
+        throw new Error(`"value" metadata for a Dictionary must be defined in the mapper and it must of type "object" in ${objectName}.`);
       }
-      var tempDictionary = {};
-      for (var _i = 0, _b = Object.keys(object); _i < _b.length; _i++) {
-        var key = _b[_i];
-        var serializedValue = serializer.serialize(valueType, object[key], objectName, options);
+      const tempDictionary = {};
+      for (const key of Object.keys(object)) {
+        const serializedValue = serializer.serialize(valueType, object[key], objectName, options);
         tempDictionary[key] = getXmlObjectValue(valueType, serializedValue, isXml, options);
       }
       if (isXml && mapper.xmlNamespace) {
-        var xmlnsKey = mapper.xmlNamespacePrefix ? "xmlns:" + mapper.xmlNamespacePrefix : "xmlns";
-        var result = tempDictionary;
-        result[XML_ATTRKEY] = (_a = {}, _a[xmlnsKey] = mapper.xmlNamespace, _a);
+        const xmlnsKey = mapper.xmlNamespacePrefix ? `xmlns:${mapper.xmlNamespacePrefix}` : "xmlns";
+        const result = tempDictionary;
+        result[XML_ATTRKEY] = { [xmlnsKey]: mapper.xmlNamespace };
         return result;
       }
       return tempDictionary;
     }
     __name(serializeDictionaryType, "serializeDictionaryType");
     function resolveAdditionalProperties(serializer, mapper, objectName) {
-      var additionalProperties = mapper.type.additionalProperties;
+      const additionalProperties = mapper.type.additionalProperties;
       if (!additionalProperties && mapper.type.className) {
-        var modelMapper = resolveReferencedMapper(serializer, mapper, objectName);
+        const modelMapper = resolveReferencedMapper(serializer, mapper, objectName);
         return modelMapper === null || modelMapper === void 0 ? void 0 : modelMapper.type.additionalProperties;
       }
       return additionalProperties;
     }
     __name(resolveAdditionalProperties, "resolveAdditionalProperties");
     function resolveReferencedMapper(serializer, mapper, objectName) {
-      var className = mapper.type.className;
+      const className = mapper.type.className;
       if (!className) {
-        throw new Error('Class name for model "' + objectName + '" is not provided in the mapper "' + JSON.stringify(mapper, void 0, 2) + '".');
+        throw new Error(`Class name for model "${objectName}" is not provided in the mapper "${JSON.stringify(mapper, void 0, 2)}".`);
       }
       return serializer.modelMappers[className];
     }
     __name(resolveReferencedMapper, "resolveReferencedMapper");
     function resolveModelProperties(serializer, mapper, objectName) {
-      var modelProps = mapper.type.modelProperties;
+      let modelProps = mapper.type.modelProperties;
       if (!modelProps) {
-        var modelMapper = resolveReferencedMapper(serializer, mapper, objectName);
+        const modelMapper = resolveReferencedMapper(serializer, mapper, objectName);
         if (!modelMapper) {
-          throw new Error('mapper() cannot be null or undefined for model "' + mapper.type.className + '".');
+          throw new Error(`mapper() cannot be null or undefined for model "${mapper.type.className}".`);
         }
         modelProps = modelMapper === null || modelMapper === void 0 ? void 0 : modelMapper.type.modelProperties;
         if (!modelProps) {
-          throw new Error("modelProperties cannot be null or undefined in the " + ('mapper "' + JSON.stringify(modelMapper) + '" of type "' + mapper.type.className + '" for object "' + objectName + '".'));
+          throw new Error(`modelProperties cannot be null or undefined in the mapper "${JSON.stringify(modelMapper)}" of type "${mapper.type.className}" for object "${objectName}".`);
         }
       }
       return modelProps;
     }
     __name(resolveModelProperties, "resolveModelProperties");
     function serializeCompositeType(serializer, mapper, object, objectName, isXml, options) {
-      var _a, _b;
       if (getPolymorphicDiscriminatorRecursively(serializer, mapper)) {
         mapper = getPolymorphicMapper(serializer, mapper, object, "clientName");
       }
       if (object != void 0) {
-        var payload = {};
-        var modelProps = resolveModelProperties(serializer, mapper, objectName);
-        for (var _i = 0, _c = Object.keys(modelProps); _i < _c.length; _i++) {
-          var key = _c[_i];
-          var propertyMapper = modelProps[key];
+        const payload = {};
+        const modelProps = resolveModelProperties(serializer, mapper, objectName);
+        for (const key of Object.keys(modelProps)) {
+          const propertyMapper = modelProps[key];
           if (propertyMapper.readOnly) {
             continue;
           }
-          var propName = void 0;
-          var parentObject = payload;
+          let propName;
+          let parentObject = payload;
           if (serializer.isXML) {
             if (propertyMapper.xmlIsWrapped) {
               propName = propertyMapper.xmlName;
@@ -36386,11 +36121,10 @@ var require_dist6 = __commonJS({
               propName = propertyMapper.xmlElementName || propertyMapper.xmlName;
             }
           } else {
-            var paths = splitSerializeName(propertyMapper.serializedName);
+            const paths = splitSerializeName(propertyMapper.serializedName);
             propName = paths.pop();
-            for (var _d = 0, paths_1 = paths; _d < paths_1.length; _d++) {
-              var pathName = paths_1[_d];
-              var childObject = parentObject[pathName];
+            for (const pathName of paths) {
+              const childObject = parentObject[pathName];
               if (childObject == void 0 && (object[key] != void 0 || propertyMapper.defaultValue !== void 0)) {
                 parentObject[pathName] = {};
               }
@@ -36399,42 +36133,37 @@ var require_dist6 = __commonJS({
           }
           if (parentObject != void 0) {
             if (isXml && mapper.xmlNamespace) {
-              var xmlnsKey = mapper.xmlNamespacePrefix ? "xmlns:" + mapper.xmlNamespacePrefix : "xmlns";
-              parentObject[XML_ATTRKEY] = tslib.__assign(tslib.__assign({}, parentObject[XML_ATTRKEY]), (_a = {}, _a[xmlnsKey] = mapper.xmlNamespace, _a));
+              const xmlnsKey = mapper.xmlNamespacePrefix ? `xmlns:${mapper.xmlNamespacePrefix}` : "xmlns";
+              parentObject[XML_ATTRKEY] = Object.assign(Object.assign({}, parentObject[XML_ATTRKEY]), { [xmlnsKey]: mapper.xmlNamespace });
             }
-            var propertyObjectName = propertyMapper.serializedName !== "" ? objectName + "." + propertyMapper.serializedName : objectName;
-            var toSerialize = object[key];
-            var polymorphicDiscriminator = getPolymorphicDiscriminatorRecursively(serializer, mapper);
+            const propertyObjectName = propertyMapper.serializedName !== "" ? objectName + "." + propertyMapper.serializedName : objectName;
+            let toSerialize = object[key];
+            const polymorphicDiscriminator = getPolymorphicDiscriminatorRecursively(serializer, mapper);
             if (polymorphicDiscriminator && polymorphicDiscriminator.clientName === key && toSerialize == void 0) {
               toSerialize = mapper.serializedName;
             }
-            var serializedValue = serializer.serialize(propertyMapper, toSerialize, propertyObjectName, options);
+            const serializedValue = serializer.serialize(propertyMapper, toSerialize, propertyObjectName, options);
             if (serializedValue !== void 0 && propName != void 0) {
-              var value = getXmlObjectValue(propertyMapper, serializedValue, isXml, options);
+              const value = getXmlObjectValue(propertyMapper, serializedValue, isXml, options);
               if (isXml && propertyMapper.xmlIsAttribute) {
                 parentObject[XML_ATTRKEY] = parentObject[XML_ATTRKEY] || {};
                 parentObject[XML_ATTRKEY][propName] = serializedValue;
               } else if (isXml && propertyMapper.xmlIsWrapped) {
-                parentObject[propName] = (_b = {}, _b[propertyMapper.xmlElementName] = value, _b);
+                parentObject[propName] = { [propertyMapper.xmlElementName]: value };
               } else {
                 parentObject[propName] = value;
               }
             }
           }
         }
-        var additionalPropertiesMapper = resolveAdditionalProperties(serializer, mapper, objectName);
+        const additionalPropertiesMapper = resolveAdditionalProperties(serializer, mapper, objectName);
         if (additionalPropertiesMapper) {
-          var propNames = Object.keys(modelProps);
-          var _loop_1 = /* @__PURE__ */ __name(function(clientPropName2) {
-            var isAdditionalProperty = propNames.every(function(pn) {
-              return pn !== clientPropName2;
-            });
+          const propNames = Object.keys(modelProps);
+          for (const clientPropName in object) {
+            const isAdditionalProperty = propNames.every((pn) => pn !== clientPropName);
             if (isAdditionalProperty) {
-              payload[clientPropName2] = serializer.serialize(additionalPropertiesMapper, object[clientPropName2], objectName + '["' + clientPropName2 + '"]', options);
+              payload[clientPropName] = serializer.serialize(additionalPropertiesMapper, object[clientPropName], objectName + '["' + clientPropName + '"]', options);
             }
-          }, "_loop_1");
-          for (var clientPropName in object) {
-            _loop_1(clientPropName);
           }
         }
         return payload;
@@ -36443,22 +36172,21 @@ var require_dist6 = __commonJS({
     }
     __name(serializeCompositeType, "serializeCompositeType");
     function getXmlObjectValue(propertyMapper, serializedValue, isXml, options) {
-      var _a;
       if (!isXml || !propertyMapper.xmlNamespace) {
         return serializedValue;
       }
-      var xmlnsKey = propertyMapper.xmlNamespacePrefix ? "xmlns:" + propertyMapper.xmlNamespacePrefix : "xmlns";
-      var xmlNamespace = (_a = {}, _a[xmlnsKey] = propertyMapper.xmlNamespace, _a);
+      const xmlnsKey = propertyMapper.xmlNamespacePrefix ? `xmlns:${propertyMapper.xmlNamespacePrefix}` : "xmlns";
+      const xmlNamespace = { [xmlnsKey]: propertyMapper.xmlNamespace };
       if (["Composite"].includes(propertyMapper.type.name)) {
         if (serializedValue[XML_ATTRKEY]) {
           return serializedValue;
         } else {
-          var result_1 = tslib.__assign({}, serializedValue);
-          result_1[XML_ATTRKEY] = xmlNamespace;
-          return result_1;
+          const result2 = Object.assign({}, serializedValue);
+          result2[XML_ATTRKEY] = xmlNamespace;
+          return result2;
         }
       }
-      var result = {};
+      const result = {};
       result[options.xmlCharKey] = serializedValue;
       result[XML_ATTRKEY] = xmlNamespace;
       return result;
@@ -36473,24 +36201,22 @@ var require_dist6 = __commonJS({
       if (getPolymorphicDiscriminatorRecursively(serializer, mapper)) {
         mapper = getPolymorphicMapper(serializer, mapper, responseBody, "serializedName");
       }
-      var modelProps = resolveModelProperties(serializer, mapper, objectName);
-      var instance = {};
-      var handledPropertyNames = [];
-      for (var _i = 0, _b = Object.keys(modelProps); _i < _b.length; _i++) {
-        var key = _b[_i];
-        var propertyMapper = modelProps[key];
-        var paths = splitSerializeName(modelProps[key].serializedName);
+      const modelProps = resolveModelProperties(serializer, mapper, objectName);
+      let instance = {};
+      const handledPropertyNames = [];
+      for (const key of Object.keys(modelProps)) {
+        const propertyMapper = modelProps[key];
+        const paths = splitSerializeName(modelProps[key].serializedName);
         handledPropertyNames.push(paths[0]);
-        var serializedName = propertyMapper.serializedName, xmlName = propertyMapper.xmlName, xmlElementName = propertyMapper.xmlElementName;
-        var propertyObjectName = objectName;
+        const { serializedName, xmlName, xmlElementName } = propertyMapper;
+        let propertyObjectName = objectName;
         if (serializedName !== "" && serializedName !== void 0) {
           propertyObjectName = objectName + "." + serializedName;
         }
-        var headerCollectionPrefix = propertyMapper.headerCollectionPrefix;
+        const headerCollectionPrefix = propertyMapper.headerCollectionPrefix;
         if (headerCollectionPrefix) {
-          var dictionary = {};
-          for (var _c = 0, _d = Object.keys(responseBody); _c < _d.length; _c++) {
-            var headerKey = _d[_c];
+          const dictionary = {};
+          for (const headerKey of Object.keys(responseBody)) {
             if (headerKey.startsWith(headerCollectionPrefix)) {
               dictionary[headerKey.substring(headerCollectionPrefix.length)] = serializer.deserialize(propertyMapper.type.value, responseBody[headerKey], propertyObjectName, options);
             }
@@ -36501,36 +36227,34 @@ var require_dist6 = __commonJS({
           if (propertyMapper.xmlIsAttribute && responseBody[XML_ATTRKEY]) {
             instance[key] = serializer.deserialize(propertyMapper, responseBody[XML_ATTRKEY][xmlName], propertyObjectName, options);
           } else {
-            var propertyName = xmlElementName || xmlName || serializedName;
+            const propertyName = xmlElementName || xmlName || serializedName;
             if (propertyMapper.xmlIsWrapped) {
-              var wrapped = responseBody[xmlName];
-              var elementList = (_a = wrapped === null || wrapped === void 0 ? void 0 : wrapped[xmlElementName]) !== null && _a !== void 0 ? _a : [];
+              const wrapped = responseBody[xmlName];
+              const elementList = (_a = wrapped === null || wrapped === void 0 ? void 0 : wrapped[xmlElementName]) !== null && _a !== void 0 ? _a : [];
               instance[key] = serializer.deserialize(propertyMapper, elementList, propertyObjectName, options);
             } else {
-              var property = responseBody[propertyName];
+              const property = responseBody[propertyName];
               instance[key] = serializer.deserialize(propertyMapper, property, propertyObjectName, options);
             }
           }
         } else {
-          var propertyInstance = void 0;
-          var res = responseBody;
-          for (var _e = 0, paths_2 = paths; _e < paths_2.length; _e++) {
-            var item = paths_2[_e];
+          let propertyInstance;
+          let res = responseBody;
+          for (const item of paths) {
             if (!res)
               break;
             res = res[item];
           }
           propertyInstance = res;
-          var polymorphicDiscriminator = mapper.type.polymorphicDiscriminator;
+          const polymorphicDiscriminator = mapper.type.polymorphicDiscriminator;
           if (polymorphicDiscriminator && key === polymorphicDiscriminator.clientName && propertyInstance == void 0) {
             propertyInstance = mapper.serializedName;
           }
-          var serializedValue = void 0;
+          let serializedValue;
           if (Array.isArray(responseBody[key]) && modelProps[key].serializedName === "") {
             propertyInstance = responseBody[key];
-            var arrayInstance = serializer.deserialize(propertyMapper, propertyInstance, propertyObjectName, options);
-            for (var _f = 0, _g = Object.entries(instance); _f < _g.length; _f++) {
-              var _h = _g[_f], k = _h[0], v = _h[1];
+            const arrayInstance = serializer.deserialize(propertyMapper, propertyInstance, propertyObjectName, options);
+            for (const [k, v] of Object.entries(instance)) {
               if (!Object.prototype.hasOwnProperty.call(arrayInstance, k)) {
                 arrayInstance[k] = v;
               }
@@ -36542,25 +36266,24 @@ var require_dist6 = __commonJS({
           }
         }
       }
-      var additionalPropertiesMapper = mapper.type.additionalProperties;
+      const additionalPropertiesMapper = mapper.type.additionalProperties;
       if (additionalPropertiesMapper) {
-        var isAdditionalProperty = /* @__PURE__ */ __name(function(responsePropName2) {
-          for (var clientPropName in modelProps) {
-            var paths2 = splitSerializeName(modelProps[clientPropName].serializedName);
-            if (paths2[0] === responsePropName2) {
+        const isAdditionalProperty = /* @__PURE__ */ __name((responsePropName) => {
+          for (const clientPropName in modelProps) {
+            const paths = splitSerializeName(modelProps[clientPropName].serializedName);
+            if (paths[0] === responsePropName) {
               return false;
             }
           }
           return true;
         }, "isAdditionalProperty");
-        for (var responsePropName in responseBody) {
+        for (const responsePropName in responseBody) {
           if (isAdditionalProperty(responsePropName)) {
             instance[responsePropName] = serializer.deserialize(additionalPropertiesMapper, responseBody[responsePropName], objectName + '["' + responsePropName + '"]', options);
           }
         }
       } else if (responseBody) {
-        for (var _j = 0, _k = Object.keys(responseBody); _j < _k.length; _j++) {
-          var key = _k[_j];
+        for (const key of Object.keys(responseBody)) {
           if (instance[key] === void 0 && !handledPropertyNames.includes(key) && !isSpecialXmlProperty(key, options)) {
             instance[key] = responseBody[key];
           }
@@ -36570,14 +36293,13 @@ var require_dist6 = __commonJS({
     }
     __name(deserializeCompositeType, "deserializeCompositeType");
     function deserializeDictionaryType(serializer, mapper, responseBody, objectName, options) {
-      var value = mapper.type.value;
+      const value = mapper.type.value;
       if (!value || typeof value !== "object") {
-        throw new Error('"value" metadata for a Dictionary must be defined in the ' + ('mapper and it must of type "object" in ' + objectName));
+        throw new Error(`"value" metadata for a Dictionary must be defined in the mapper and it must of type "object" in ${objectName}`);
       }
       if (responseBody) {
-        var tempDictionary = {};
-        for (var _i = 0, _a = Object.keys(responseBody); _i < _a.length; _i++) {
-          var key = _a[_i];
+        const tempDictionary = {};
+        for (const key of Object.keys(responseBody)) {
           tempDictionary[key] = serializer.deserialize(value, responseBody[key], objectName, options);
         }
         return tempDictionary;
@@ -36586,17 +36308,17 @@ var require_dist6 = __commonJS({
     }
     __name(deserializeDictionaryType, "deserializeDictionaryType");
     function deserializeSequenceType(serializer, mapper, responseBody, objectName, options) {
-      var element = mapper.type.element;
+      const element = mapper.type.element;
       if (!element || typeof element !== "object") {
-        throw new Error('element" metadata for an Array must be defined in the ' + ('mapper and it must of type "object" in ' + objectName));
+        throw new Error(`element" metadata for an Array must be defined in the mapper and it must of type "object" in ${objectName}`);
       }
       if (responseBody) {
         if (!Array.isArray(responseBody)) {
           responseBody = [responseBody];
         }
-        var tempArray = [];
-        for (var i = 0; i < responseBody.length; i++) {
-          tempArray[i] = serializer.deserialize(element, responseBody[i], objectName + "[" + i + "]", options);
+        const tempArray = [];
+        for (let i = 0; i < responseBody.length; i++) {
+          tempArray[i] = serializer.deserialize(element, responseBody[i], `${objectName}[${i}]`, options);
         }
         return tempArray;
       }
@@ -36604,15 +36326,15 @@ var require_dist6 = __commonJS({
     }
     __name(deserializeSequenceType, "deserializeSequenceType");
     function getPolymorphicMapper(serializer, mapper, object, polymorphicPropertyName) {
-      var polymorphicDiscriminator = getPolymorphicDiscriminatorRecursively(serializer, mapper);
+      const polymorphicDiscriminator = getPolymorphicDiscriminatorRecursively(serializer, mapper);
       if (polymorphicDiscriminator) {
-        var discriminatorName = polymorphicDiscriminator[polymorphicPropertyName];
+        const discriminatorName = polymorphicDiscriminator[polymorphicPropertyName];
         if (discriminatorName != void 0) {
-          var discriminatorValue = object[discriminatorName];
+          const discriminatorValue = object[discriminatorName];
           if (discriminatorValue != void 0) {
-            var typeName = mapper.type.uberParent || mapper.type.className;
-            var indexDiscriminator = discriminatorValue === typeName ? discriminatorValue : typeName + "." + discriminatorValue;
-            var polymorphicMapper = serializer.modelMappers.discriminators[indexDiscriminator];
+            const typeName = mapper.type.uberParent || mapper.type.className;
+            const indexDiscriminator = discriminatorValue === typeName ? discriminatorValue : typeName + "." + discriminatorValue;
+            const polymorphicMapper = serializer.modelMappers.discriminators[indexDiscriminator];
             if (polymorphicMapper) {
               mapper = polymorphicMapper;
             }
@@ -36631,7 +36353,7 @@ var require_dist6 = __commonJS({
     }
     __name(getPolymorphicDiscriminatorSafely, "getPolymorphicDiscriminatorSafely");
     function serializeObject(toSerialize) {
-      var castToSerialize = toSerialize;
+      const castToSerialize = toSerialize;
       if (toSerialize == void 0)
         return void 0;
       if (toSerialize instanceof Uint8Array) {
@@ -36640,14 +36362,14 @@ var require_dist6 = __commonJS({
       } else if (toSerialize instanceof Date) {
         return toSerialize.toISOString();
       } else if (Array.isArray(toSerialize)) {
-        var array = [];
-        for (var i = 0; i < toSerialize.length; i++) {
+        const array = [];
+        for (let i = 0; i < toSerialize.length; i++) {
           array.push(serializeObject(toSerialize[i]));
         }
         return array;
       } else if (typeof toSerialize === "object") {
-        var dictionary = {};
-        for (var property in toSerialize) {
+        const dictionary = {};
+        for (const property in toSerialize) {
           dictionary[property] = serializeObject(castToSerialize[property]);
         }
         return dictionary;
@@ -36656,9 +36378,8 @@ var require_dist6 = __commonJS({
     }
     __name(serializeObject, "serializeObject");
     function strEnum(o) {
-      var result = {};
-      for (var _i = 0, o_1 = o; _i < o_1.length; _i++) {
-        var key = o_1[_i];
+      const result = {};
+      for (const key of o) {
         result[key] = key;
       }
       return result;
@@ -36684,7 +36405,7 @@ var require_dist6 = __commonJS({
     ]);
     function isWebResourceLike(object) {
       if (object && typeof object === "object") {
-        var castObject = object;
+        const castObject = object;
         if (typeof castObject.url === "string" && typeof castObject.method === "string" && typeof castObject.headers === "object" && isHttpHeadersLike(castObject.headers) && typeof castObject.validateRequestProperties === "function" && typeof castObject.prepare === "function" && typeof castObject.clone === "function") {
           return true;
         }
@@ -36692,8 +36413,8 @@ var require_dist6 = __commonJS({
       return false;
     }
     __name(isWebResourceLike, "isWebResourceLike");
-    var WebResource = function() {
-      function WebResource2(url2, method, body, query, headers, streamResponseBody, withCredentials, abortSignal, timeout, onUploadProgress, onDownloadProgress, proxySettings, keepAlive, decompressResponse, streamResponseStatusCodes) {
+    var WebResource = class {
+      constructor(url2, method, body, query, headers, streamResponseBody, withCredentials, abortSignal, timeout, onUploadProgress, onDownloadProgress, proxySettings, keepAlive, decompressResponse, streamResponseStatusCodes) {
         this.streamResponseBody = streamResponseBody;
         this.streamResponseStatusCodes = streamResponseStatusCodes;
         this.url = url2 || "";
@@ -36712,16 +36433,15 @@ var require_dist6 = __commonJS({
         this.decompressResponse = decompressResponse;
         this.requestId = this.headers.get("x-ms-client-request-id") || generateUuid();
       }
-      __name(WebResource2, "WebResource");
-      WebResource2.prototype.validateRequestProperties = function() {
+      validateRequestProperties() {
         if (!this.method) {
           throw new Error("WebResource.method is required.");
         }
         if (!this.url) {
           throw new Error("WebResource.url is required.");
         }
-      };
-      WebResource2.prototype.prepare = function(options) {
+      }
+      prepare(options) {
         if (!options) {
           throw new Error("options object is required");
         }
@@ -36741,70 +36461,70 @@ var require_dist6 = __commonJS({
           this.url = options.url;
         }
         if (options.method) {
-          var validMethods = ["GET", "PUT", "HEAD", "DELETE", "OPTIONS", "POST", "PATCH", "TRACE"];
+          const validMethods = ["GET", "PUT", "HEAD", "DELETE", "OPTIONS", "POST", "PATCH", "TRACE"];
           if (validMethods.indexOf(options.method.toUpperCase()) === -1) {
             throw new Error('The provided method "' + options.method + '" is invalid. Supported HTTP methods are: ' + JSON.stringify(validMethods));
           }
         }
         this.method = options.method.toUpperCase();
         if (options.pathTemplate) {
-          var pathTemplate_1 = options.pathTemplate, pathParameters_1 = options.pathParameters;
-          if (typeof pathTemplate_1 !== "string") {
+          const { pathTemplate, pathParameters } = options;
+          if (typeof pathTemplate !== "string") {
             throw new Error('options.pathTemplate must be of type "string".');
           }
           if (!options.baseUrl) {
             options.baseUrl = "https://management.azure.com";
           }
-          var baseUrl = options.baseUrl;
-          var url_1 = baseUrl + (baseUrl.endsWith("/") ? "" : "/") + (pathTemplate_1.startsWith("/") ? pathTemplate_1.slice(1) : pathTemplate_1);
-          var segments = url_1.match(/({[\w-]*\s*[\w-]*})/gi);
+          const baseUrl = options.baseUrl;
+          let url2 = baseUrl + (baseUrl.endsWith("/") ? "" : "/") + (pathTemplate.startsWith("/") ? pathTemplate.slice(1) : pathTemplate);
+          const segments = url2.match(/({[\w-]*\s*[\w-]*})/gi);
           if (segments && segments.length) {
-            if (!pathParameters_1) {
-              throw new Error("pathTemplate: " + pathTemplate_1 + " has been provided. Hence, options.pathParameters must also be provided.");
+            if (!pathParameters) {
+              throw new Error(`pathTemplate: ${pathTemplate} has been provided. Hence, options.pathParameters must also be provided.`);
             }
             segments.forEach(function(item) {
-              var pathParamName = item.slice(1, -1);
-              var pathParam = pathParameters_1[pathParamName];
+              const pathParamName = item.slice(1, -1);
+              const pathParam = pathParameters[pathParamName];
               if (pathParam === null || pathParam === void 0 || !(typeof pathParam === "string" || typeof pathParam === "object")) {
-                var stringifiedPathParameters = JSON.stringify(pathParameters_1, void 0, 2);
-                throw new Error("pathTemplate: " + pathTemplate_1 + " contains the path parameter " + pathParamName + (" however, it is not present in parameters: " + stringifiedPathParameters + ".") + ('The value of the path parameter can either be a "string" of the form { ' + pathParamName + ': "some sample value" } or ') + ('it can be an "object" of the form { "' + pathParamName + '": { value: "some sample value", skipUrlEncoding: true } }.'));
+                const stringifiedPathParameters = JSON.stringify(pathParameters, void 0, 2);
+                throw new Error(`pathTemplate: ${pathTemplate} contains the path parameter ${pathParamName} however, it is not present in parameters: ${stringifiedPathParameters}.The value of the path parameter can either be a "string" of the form { ${pathParamName}: "some sample value" } or it can be an "object" of the form { "${pathParamName}": { value: "some sample value", skipUrlEncoding: true } }.`);
               }
               if (typeof pathParam.valueOf() === "string") {
-                url_1 = url_1.replace(item, encodeURIComponent(pathParam));
+                url2 = url2.replace(item, encodeURIComponent(pathParam));
               }
               if (typeof pathParam.valueOf() === "object") {
                 if (!pathParam.value) {
-                  throw new Error("options.pathParameters[" + pathParamName + '] is of type "object" but it does not contain a "value" property.');
+                  throw new Error(`options.pathParameters[${pathParamName}] is of type "object" but it does not contain a "value" property.`);
                 }
                 if (pathParam.skipUrlEncoding) {
-                  url_1 = url_1.replace(item, pathParam.value);
+                  url2 = url2.replace(item, pathParam.value);
                 } else {
-                  url_1 = url_1.replace(item, encodeURIComponent(pathParam.value));
+                  url2 = url2.replace(item, encodeURIComponent(pathParam.value));
                 }
               }
             });
           }
-          this.url = url_1;
+          this.url = url2;
         }
         if (options.queryParameters) {
-          var queryParameters = options.queryParameters;
+          const queryParameters = options.queryParameters;
           if (typeof queryParameters !== "object") {
-            throw new Error('options.queryParameters must be of type object. It should be a JSON object of "query-parameter-name" as the key and the "query-parameter-value" as the value. The "query-parameter-value" may be fo type "string" or an "object" of the form { value: "query-parameter-value", skipUrlEncoding: true }.');
+            throw new Error(`options.queryParameters must be of type object. It should be a JSON object of "query-parameter-name" as the key and the "query-parameter-value" as the value. The "query-parameter-value" may be fo type "string" or an "object" of the form { value: "query-parameter-value", skipUrlEncoding: true }.`);
           }
           if (this.url && this.url.indexOf("?") === -1) {
             this.url += "?";
           }
-          var queryParams = [];
+          const queryParams = [];
           this.query = {};
-          for (var queryParamName in queryParameters) {
-            var queryParam = queryParameters[queryParamName];
+          for (const queryParamName in queryParameters) {
+            const queryParam = queryParameters[queryParamName];
             if (queryParam) {
               if (typeof queryParam === "string") {
                 queryParams.push(queryParamName + "=" + encodeURIComponent(queryParam));
                 this.query[queryParamName] = encodeURIComponent(queryParam);
               } else if (typeof queryParam === "object") {
                 if (!queryParam.value) {
-                  throw new Error("options.queryParameters[" + queryParamName + '] is of type "object" but it does not contain a "value" property.');
+                  throw new Error(`options.queryParameters[${queryParamName}] is of type "object" but it does not contain a "value" property.`);
                 }
                 if (queryParam.skipUrlEncoding) {
                   queryParams.push(queryParamName + "=" + queryParam.value);
@@ -36819,9 +36539,8 @@ var require_dist6 = __commonJS({
           this.url += queryParams.join("&");
         }
         if (options.headers) {
-          var headers = options.headers;
-          for (var _i = 0, _a = Object.keys(options.headers); _i < _a.length; _i++) {
-            var headerName = _a[_i];
+          const headers = options.headers;
+          for (const headerName of Object.keys(options.headers)) {
             this.headers.set(headerName, headers[headerName]);
           }
         }
@@ -36862,9 +36581,9 @@ var require_dist6 = __commonJS({
         this.onDownloadProgress = options.onDownloadProgress;
         this.onUploadProgress = options.onUploadProgress;
         return this;
-      };
-      WebResource2.prototype.clone = function() {
-        var result = new WebResource2(this.url, this.method, this.body, this.query, this.headers && this.headers.clone(), this.streamResponseBody, this.withCredentials, this.abortSignal, this.timeout, this.onUploadProgress, this.onDownloadProgress, this.proxySettings, this.keepAlive, this.decompressResponse, this.streamResponseStatusCodes);
+      }
+      clone() {
+        const result = new WebResource(this.url, this.method, this.body, this.query, this.headers && this.headers.clone(), this.streamResponseBody, this.withCredentials, this.abortSignal, this.timeout, this.onUploadProgress, this.onDownloadProgress, this.proxySettings, this.keepAlive, this.decompressResponse, this.streamResponseStatusCodes);
         if (this.formData) {
           result.formData = this.formData;
         }
@@ -36878,66 +36597,64 @@ var require_dist6 = __commonJS({
           result.operationResponseGetter = this.operationResponseGetter;
         }
         return result;
-      };
-      return WebResource2;
-    }();
+      }
+    };
+    __name(WebResource, "WebResource");
     var custom = util2.inspect.custom;
-    var URLQuery = function() {
-      function URLQuery2() {
+    var URLQuery = class {
+      constructor() {
         this._rawQuery = {};
       }
-      __name(URLQuery2, "URLQuery");
-      URLQuery2.prototype.any = function() {
+      any() {
         return Object.keys(this._rawQuery).length > 0;
-      };
-      URLQuery2.prototype.keys = function() {
+      }
+      keys() {
         return Object.keys(this._rawQuery);
-      };
-      URLQuery2.prototype.set = function(parameterName, parameterValue) {
-        var caseParameterValue = parameterValue;
+      }
+      set(parameterName, parameterValue) {
+        const caseParameterValue = parameterValue;
         if (parameterName) {
           if (caseParameterValue !== void 0 && caseParameterValue !== null) {
-            var newValue = Array.isArray(caseParameterValue) ? caseParameterValue : caseParameterValue.toString();
+            const newValue = Array.isArray(caseParameterValue) ? caseParameterValue : caseParameterValue.toString();
             this._rawQuery[parameterName] = newValue;
           } else {
             delete this._rawQuery[parameterName];
           }
         }
-      };
-      URLQuery2.prototype.get = function(parameterName) {
+      }
+      get(parameterName) {
         return parameterName ? this._rawQuery[parameterName] : void 0;
-      };
-      URLQuery2.prototype.toString = function() {
-        var result = "";
-        for (var parameterName in this._rawQuery) {
+      }
+      toString() {
+        let result = "";
+        for (const parameterName in this._rawQuery) {
           if (result) {
             result += "&";
           }
-          var parameterValue = this._rawQuery[parameterName];
+          const parameterValue = this._rawQuery[parameterName];
           if (Array.isArray(parameterValue)) {
-            var parameterStrings = [];
-            for (var _i = 0, parameterValue_1 = parameterValue; _i < parameterValue_1.length; _i++) {
-              var parameterValueElement = parameterValue_1[_i];
-              parameterStrings.push(parameterName + "=" + parameterValueElement);
+            const parameterStrings = [];
+            for (const parameterValueElement of parameterValue) {
+              parameterStrings.push(`${parameterName}=${parameterValueElement}`);
             }
             result += parameterStrings.join("&");
           } else {
-            result += parameterName + "=" + parameterValue;
+            result += `${parameterName}=${parameterValue}`;
           }
         }
         return result;
-      };
-      URLQuery2.parse = function(text) {
-        var result = new URLQuery2();
+      }
+      static parse(text) {
+        const result = new URLQuery();
         if (text) {
           if (text.startsWith("?")) {
             text = text.substring(1);
           }
-          var currentState = "ParameterName";
-          var parameterName = "";
-          var parameterValue = "";
-          for (var i = 0; i < text.length; ++i) {
-            var currentCharacter = text[i];
+          let currentState = "ParameterName";
+          let parameterName = "";
+          let parameterValue = "";
+          for (let i = 0; i < text.length; ++i) {
+            const currentCharacter = text[i];
             switch (currentState) {
               case "ParameterName":
                 switch (currentCharacter) {
@@ -36975,59 +36692,56 @@ var require_dist6 = __commonJS({
           }
         }
         return result;
-      };
-      return URLQuery2;
-    }();
-    var URLBuilder = function() {
-      function URLBuilder2() {
       }
-      __name(URLBuilder2, "URLBuilder");
-      URLBuilder2.prototype.setScheme = function(scheme) {
+    };
+    __name(URLQuery, "URLQuery");
+    var URLBuilder = class {
+      setScheme(scheme) {
         if (!scheme) {
           this._scheme = void 0;
         } else {
           this.set(scheme, "SCHEME");
         }
-      };
-      URLBuilder2.prototype.getScheme = function() {
+      }
+      getScheme() {
         return this._scheme;
-      };
-      URLBuilder2.prototype.setHost = function(host) {
+      }
+      setHost(host) {
         if (!host) {
           this._host = void 0;
         } else {
           this.set(host, "SCHEME_OR_HOST");
         }
-      };
-      URLBuilder2.prototype.getHost = function() {
+      }
+      getHost() {
         return this._host;
-      };
-      URLBuilder2.prototype.setPort = function(port) {
+      }
+      setPort(port) {
         if (port === void 0 || port === null || port === "") {
           this._port = void 0;
         } else {
           this.set(port.toString(), "PORT");
         }
-      };
-      URLBuilder2.prototype.getPort = function() {
+      }
+      getPort() {
         return this._port;
-      };
-      URLBuilder2.prototype.setPath = function(path2) {
+      }
+      setPath(path2) {
         if (!path2) {
           this._path = void 0;
         } else {
-          var schemeIndex = path2.indexOf("://");
+          const schemeIndex = path2.indexOf("://");
           if (schemeIndex !== -1) {
-            var schemeStart = path2.lastIndexOf("/", schemeIndex);
+            const schemeStart = path2.lastIndexOf("/", schemeIndex);
             this.set(schemeStart === -1 ? path2 : path2.substr(schemeStart + 1), "SCHEME");
           } else {
             this.set(path2, "PATH");
           }
         }
-      };
-      URLBuilder2.prototype.appendPath = function(path2) {
+      }
+      appendPath(path2) {
         if (path2) {
-          var currentPath = this.getPath();
+          let currentPath = this.getPath();
           if (currentPath) {
             if (!currentPath.endsWith("/")) {
               currentPath += "/";
@@ -37039,36 +36753,36 @@ var require_dist6 = __commonJS({
           }
           this.set(path2, "PATH");
         }
-      };
-      URLBuilder2.prototype.getPath = function() {
+      }
+      getPath() {
         return this._path;
-      };
-      URLBuilder2.prototype.setQuery = function(query) {
+      }
+      setQuery(query) {
         if (!query) {
           this._query = void 0;
         } else {
           this._query = URLQuery.parse(query);
         }
-      };
-      URLBuilder2.prototype.setQueryParameter = function(queryParameterName, queryParameterValue) {
+      }
+      setQueryParameter(queryParameterName, queryParameterValue) {
         if (queryParameterName) {
           if (!this._query) {
             this._query = new URLQuery();
           }
           this._query.set(queryParameterName, queryParameterValue);
         }
-      };
-      URLBuilder2.prototype.getQueryParameterValue = function(queryParameterName) {
+      }
+      getQueryParameterValue(queryParameterName) {
         return this._query ? this._query.get(queryParameterName) : void 0;
-      };
-      URLBuilder2.prototype.getQuery = function() {
+      }
+      getQuery() {
         return this._query ? this._query.toString() : void 0;
-      };
-      URLBuilder2.prototype.set = function(text, startState) {
-        var tokenizer = new URLTokenizer(text, startState);
+      }
+      set(text, startState) {
+        const tokenizer = new URLTokenizer(text, startState);
         while (tokenizer.next()) {
-          var token = tokenizer.current();
-          var tokenPath = void 0;
+          const token = tokenizer.current();
+          let tokenPath;
           if (token) {
             switch (token.type) {
               case "SCHEME":
@@ -37090,21 +36804,21 @@ var require_dist6 = __commonJS({
                 this._query = URLQuery.parse(token.text);
                 break;
               default:
-                throw new Error("Unrecognized URLTokenType: " + token.type);
+                throw new Error(`Unrecognized URLTokenType: ${token.type}`);
             }
           }
         }
-      };
-      URLBuilder2.prototype.toString = function() {
-        var result = "";
+      }
+      toString() {
+        let result = "";
         if (this._scheme) {
-          result += this._scheme + "://";
+          result += `${this._scheme}://`;
         }
         if (this._host) {
           result += this._host;
         }
         if (this._port) {
-          result += ":" + this._port;
+          result += `:${this._port}`;
         }
         if (this._path) {
           if (!this._path.startsWith("/")) {
@@ -37113,11 +36827,11 @@ var require_dist6 = __commonJS({
           result += this._path;
         }
         if (this._query && this._query.any()) {
-          result += "?" + this._query.toString();
+          result += `?${this._query.toString()}`;
         }
         return result;
-      };
-      URLBuilder2.prototype.replaceAll = function(searchValue, replaceValue) {
+      }
+      replaceAll(searchValue, replaceValue) {
         if (searchValue) {
           this.setScheme(replaceAll(this.getScheme(), searchValue, replaceValue));
           this.setHost(replaceAll(this.getHost(), searchValue, replaceValue));
@@ -37125,54 +36839,52 @@ var require_dist6 = __commonJS({
           this.setPath(replaceAll(this.getPath(), searchValue, replaceValue));
           this.setQuery(replaceAll(this.getQuery(), searchValue, replaceValue));
         }
-      };
-      URLBuilder2.parse = function(text) {
-        var result = new URLBuilder2();
+      }
+      static parse(text) {
+        const result = new URLBuilder();
         result.set(text, "SCHEME_OR_HOST");
         return result;
-      };
-      return URLBuilder2;
-    }();
-    var URLToken = function() {
-      function URLToken2(text, type) {
+      }
+    };
+    __name(URLBuilder, "URLBuilder");
+    var URLToken = class {
+      constructor(text, type) {
         this.text = text;
         this.type = type;
       }
-      __name(URLToken2, "URLToken");
-      URLToken2.scheme = function(text) {
-        return new URLToken2(text, "SCHEME");
-      };
-      URLToken2.host = function(text) {
-        return new URLToken2(text, "HOST");
-      };
-      URLToken2.port = function(text) {
-        return new URLToken2(text, "PORT");
-      };
-      URLToken2.path = function(text) {
-        return new URLToken2(text, "PATH");
-      };
-      URLToken2.query = function(text) {
-        return new URLToken2(text, "QUERY");
-      };
-      return URLToken2;
-    }();
+      static scheme(text) {
+        return new URLToken(text, "SCHEME");
+      }
+      static host(text) {
+        return new URLToken(text, "HOST");
+      }
+      static port(text) {
+        return new URLToken(text, "PORT");
+      }
+      static path(text) {
+        return new URLToken(text, "PATH");
+      }
+      static query(text) {
+        return new URLToken(text, "QUERY");
+      }
+    };
+    __name(URLToken, "URLToken");
     function isAlphaNumericCharacter(character) {
-      var characterCode = character.charCodeAt(0);
+      const characterCode = character.charCodeAt(0);
       return 48 <= characterCode && characterCode <= 57 || 65 <= characterCode && characterCode <= 90 || 97 <= characterCode && characterCode <= 122;
     }
     __name(isAlphaNumericCharacter, "isAlphaNumericCharacter");
-    var URLTokenizer = function() {
-      function URLTokenizer2(_text, state) {
+    var URLTokenizer = class {
+      constructor(_text, state) {
         this._text = _text;
         this._textLength = _text ? _text.length : 0;
         this._currentState = state !== void 0 && state !== null ? state : "SCHEME_OR_HOST";
         this._currentIndex = 0;
       }
-      __name(URLTokenizer2, "URLTokenizer");
-      URLTokenizer2.prototype.current = function() {
+      current() {
         return this._currentToken;
-      };
-      URLTokenizer2.prototype.next = function() {
+      }
+      next() {
         if (!hasCurrentCharacter(this)) {
           this._currentToken = void 0;
         } else {
@@ -37196,15 +36908,15 @@ var require_dist6 = __commonJS({
               nextQuery(this);
               break;
             default:
-              throw new Error("Unrecognized URLTokenizerState: " + this._currentState);
+              throw new Error(`Unrecognized URLTokenizerState: ${this._currentState}`);
           }
         }
         return !!this._currentToken;
-      };
-      return URLTokenizer2;
-    }();
+      }
+    };
+    __name(URLTokenizer, "URLTokenizer");
     function readRemaining(tokenizer) {
-      var result = "";
+      let result = "";
       if (tokenizer._currentIndex < tokenizer._textLength) {
         result = tokenizer._text.substring(tokenizer._currentIndex);
         tokenizer._currentIndex = tokenizer._textLength;
@@ -37230,7 +36942,7 @@ var require_dist6 = __commonJS({
     }
     __name(nextCharacter, "nextCharacter");
     function peekCharacters(tokenizer, charactersToPeek) {
-      var endIndex = tokenizer._currentIndex + charactersToPeek;
+      let endIndex = tokenizer._currentIndex + charactersToPeek;
       if (tokenizer._textLength < endIndex) {
         endIndex = tokenizer._textLength;
       }
@@ -37238,9 +36950,9 @@ var require_dist6 = __commonJS({
     }
     __name(peekCharacters, "peekCharacters");
     function readWhile(tokenizer, condition) {
-      var result = "";
+      let result = "";
       while (hasCurrentCharacter(tokenizer)) {
-        var currentCharacter = getCurrentCharacter(tokenizer);
+        const currentCharacter = getCurrentCharacter(tokenizer);
         if (!condition(currentCharacter)) {
           break;
         } else {
@@ -37252,23 +36964,15 @@ var require_dist6 = __commonJS({
     }
     __name(readWhile, "readWhile");
     function readWhileLetterOrDigit(tokenizer) {
-      return readWhile(tokenizer, function(character) {
-        return isAlphaNumericCharacter(character);
-      });
+      return readWhile(tokenizer, (character) => isAlphaNumericCharacter(character));
     }
     __name(readWhileLetterOrDigit, "readWhileLetterOrDigit");
-    function readUntilCharacter(tokenizer) {
-      var terminatingCharacters = [];
-      for (var _i = 1; _i < arguments.length; _i++) {
-        terminatingCharacters[_i - 1] = arguments[_i];
-      }
-      return readWhile(tokenizer, function(character) {
-        return terminatingCharacters.indexOf(character) === -1;
-      });
+    function readUntilCharacter(tokenizer, ...terminatingCharacters) {
+      return readWhile(tokenizer, (character) => terminatingCharacters.indexOf(character) === -1);
     }
     __name(readUntilCharacter, "readUntilCharacter");
     function nextScheme(tokenizer) {
-      var scheme = readWhileLetterOrDigit(tokenizer);
+      const scheme = readWhileLetterOrDigit(tokenizer);
       tokenizer._currentToken = URLToken.scheme(scheme);
       if (!hasCurrentCharacter(tokenizer)) {
         tokenizer._currentState = "DONE";
@@ -37278,7 +36982,7 @@ var require_dist6 = __commonJS({
     }
     __name(nextScheme, "nextScheme");
     function nextSchemeOrHost(tokenizer) {
-      var schemeOrHost = readUntilCharacter(tokenizer, ":", "/", "?");
+      const schemeOrHost = readUntilCharacter(tokenizer, ":", "/", "?");
       if (!hasCurrentCharacter(tokenizer)) {
         tokenizer._currentToken = URLToken.host(schemeOrHost);
         tokenizer._currentState = "DONE";
@@ -37304,7 +37008,7 @@ var require_dist6 = __commonJS({
       if (peekCharacters(tokenizer, 3) === "://") {
         nextCharacter(tokenizer, 3);
       }
-      var host = readUntilCharacter(tokenizer, ":", "/", "?");
+      const host = readUntilCharacter(tokenizer, ":", "/", "?");
       tokenizer._currentToken = URLToken.host(host);
       if (!hasCurrentCharacter(tokenizer)) {
         tokenizer._currentState = "DONE";
@@ -37321,7 +37025,7 @@ var require_dist6 = __commonJS({
       if (getCurrentCharacter(tokenizer) === ":") {
         nextCharacter(tokenizer);
       }
-      var port = readUntilCharacter(tokenizer, "/", "?");
+      const port = readUntilCharacter(tokenizer, "/", "?");
       tokenizer._currentToken = URLToken.port(port);
       if (!hasCurrentCharacter(tokenizer)) {
         tokenizer._currentState = "DONE";
@@ -37333,7 +37037,7 @@ var require_dist6 = __commonJS({
     }
     __name(nextPort, "nextPort");
     function nextPath(tokenizer) {
-      var path2 = readUntilCharacter(tokenizer, "?");
+      const path2 = readUntilCharacter(tokenizer, "?");
       tokenizer._currentToken = URLToken.path(path2);
       if (!hasCurrentCharacter(tokenizer)) {
         tokenizer._currentState = "DONE";
@@ -37346,7 +37050,7 @@ var require_dist6 = __commonJS({
       if (getCurrentCharacter(tokenizer) === "?") {
         nextCharacter(tokenizer);
       }
-      var query = readRemaining(tokenizer);
+      const query = readRemaining(tokenizer);
       tokenizer._currentToken = URLToken.query(query);
       tokenizer._currentState = "DONE";
     }
@@ -37393,32 +37097,25 @@ var require_dist6 = __commonJS({
       "User-Agent"
     ];
     var defaultAllowedQueryParameters = ["api-version"];
-    var Sanitizer = function() {
-      function Sanitizer2(_a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.allowedHeaderNames, allowedHeaderNames = _c === void 0 ? [] : _c, _d = _b.allowedQueryParameters, allowedQueryParameters = _d === void 0 ? [] : _d;
+    var Sanitizer = class {
+      constructor({ allowedHeaderNames = [], allowedQueryParameters = [] } = {}) {
         allowedHeaderNames = Array.isArray(allowedHeaderNames) ? defaultAllowedHeaderNames.concat(allowedHeaderNames) : defaultAllowedHeaderNames;
         allowedQueryParameters = Array.isArray(allowedQueryParameters) ? defaultAllowedQueryParameters.concat(allowedQueryParameters) : defaultAllowedQueryParameters;
-        this.allowedHeaderNames = new Set(allowedHeaderNames.map(function(n) {
-          return n.toLowerCase();
-        }));
-        this.allowedQueryParameters = new Set(allowedQueryParameters.map(function(p) {
-          return p.toLowerCase();
-        }));
+        this.allowedHeaderNames = new Set(allowedHeaderNames.map((n) => n.toLowerCase()));
+        this.allowedQueryParameters = new Set(allowedQueryParameters.map((p) => p.toLowerCase()));
       }
-      __name(Sanitizer2, "Sanitizer");
-      Sanitizer2.prototype.sanitize = function(obj) {
-        var _this = this;
-        var seen = new Set();
-        return JSON.stringify(obj, function(key, value) {
+      sanitize(obj) {
+        const seen = new Set();
+        return JSON.stringify(obj, (key, value) => {
           if (value instanceof Error) {
-            return tslib.__assign(tslib.__assign({}, value), { name: value.name, message: value.message });
+            return Object.assign(Object.assign({}, value), { name: value.name, message: value.message });
           }
           if (key === "_headersMap") {
-            return _this.sanitizeHeaders(value);
+            return this.sanitizeHeaders(value);
           } else if (key === "url") {
-            return _this.sanitizeUrl(value);
+            return this.sanitizeUrl(value);
           } else if (key === "query") {
-            return _this.sanitizeQuery(value);
+            return this.sanitizeQuery(value);
           } else if (key === "body") {
             return void 0;
           } else if (key === "response") {
@@ -37433,24 +37130,19 @@ var require_dist6 = __commonJS({
           }
           return value;
         }, 2);
-      };
-      Sanitizer2.prototype.sanitizeHeaders = function(value) {
-        return this.sanitizeObject(value, this.allowedHeaderNames, function(v, k) {
-          return v[k].value;
-        });
-      };
-      Sanitizer2.prototype.sanitizeQuery = function(value) {
-        return this.sanitizeObject(value, this.allowedQueryParameters, function(v, k) {
-          return v[k];
-        });
-      };
-      Sanitizer2.prototype.sanitizeObject = function(value, allowedKeys, accessor) {
+      }
+      sanitizeHeaders(value) {
+        return this.sanitizeObject(value, this.allowedHeaderNames, (v, k) => v[k].value);
+      }
+      sanitizeQuery(value) {
+        return this.sanitizeObject(value, this.allowedQueryParameters, (v, k) => v[k]);
+      }
+      sanitizeObject(value, allowedKeys, accessor) {
         if (typeof value !== "object" || value === null) {
           return value;
         }
-        var sanitized = {};
-        for (var _i = 0, _a = Object.keys(value); _i < _a.length; _i++) {
-          var k = _a[_i];
+        const sanitized = {};
+        for (const k of Object.keys(value)) {
           if (allowedKeys.has(k.toLowerCase())) {
             sanitized[k] = accessor(value, k);
           } else {
@@ -37458,234 +37150,196 @@ var require_dist6 = __commonJS({
           }
         }
         return sanitized;
-      };
-      Sanitizer2.prototype.sanitizeUrl = function(value) {
+      }
+      sanitizeUrl(value) {
         if (typeof value !== "string" || value === null) {
           return value;
         }
-        var urlBuilder = URLBuilder.parse(value);
-        var queryString = urlBuilder.getQuery();
+        const urlBuilder = URLBuilder.parse(value);
+        const queryString = urlBuilder.getQuery();
         if (!queryString) {
           return value;
         }
-        var query = URLQuery.parse(queryString);
-        for (var _i = 0, _a = query.keys(); _i < _a.length; _i++) {
-          var k = _a[_i];
+        const query = URLQuery.parse(queryString);
+        for (const k of query.keys()) {
           if (!this.allowedQueryParameters.has(k.toLowerCase())) {
             query.set(k, RedactedString);
           }
         }
         urlBuilder.setQuery(query.toString());
         return urlBuilder.toString();
-      };
-      return Sanitizer2;
-    }();
+      }
+    };
+    __name(Sanitizer, "Sanitizer");
     var errorSanitizer = new Sanitizer();
-    var RestError = function(_super) {
-      tslib.__extends(RestError2, _super);
-      function RestError2(message, code, statusCode, request, response) {
-        var _this = _super.call(this, message) || this;
-        _this.name = "RestError";
-        _this.code = code;
-        _this.statusCode = statusCode;
-        _this.request = request;
-        _this.response = response;
-        Object.setPrototypeOf(_this, RestError2.prototype);
-        return _this;
+    var RestError = class extends Error {
+      constructor(message, code, statusCode, request, response) {
+        super(message);
+        this.name = "RestError";
+        this.code = code;
+        this.statusCode = statusCode;
+        this.request = request;
+        this.response = response;
+        Object.setPrototypeOf(this, RestError.prototype);
       }
-      __name(RestError2, "RestError");
-      RestError2.prototype[custom] = function() {
-        return "RestError: " + this.message + " \n " + errorSanitizer.sanitize(this);
-      };
-      RestError2.REQUEST_SEND_ERROR = "REQUEST_SEND_ERROR";
-      RestError2.PARSE_ERROR = "PARSE_ERROR";
-      return RestError2;
-    }(Error);
+      [custom]() {
+        return `RestError: ${this.message} 
+ ${errorSanitizer.sanitize(this)}`;
+      }
+    };
+    __name(RestError, "RestError");
+    RestError.REQUEST_SEND_ERROR = "REQUEST_SEND_ERROR";
+    RestError.PARSE_ERROR = "PARSE_ERROR";
     var logger = logger$1.createClientLogger("core-http");
-    var ReportTransform = function(_super) {
-      tslib.__extends(ReportTransform2, _super);
-      function ReportTransform2(progressCallback) {
-        var _this = _super.call(this) || this;
-        _this.progressCallback = progressCallback;
-        _this.loadedBytes = 0;
-        return _this;
+    var ReportTransform = class extends stream.Transform {
+      constructor(progressCallback) {
+        super();
+        this.progressCallback = progressCallback;
+        this.loadedBytes = 0;
       }
-      __name(ReportTransform2, "ReportTransform");
-      ReportTransform2.prototype._transform = function(chunk, _encoding, callback) {
+      _transform(chunk, _encoding, callback) {
         this.push(chunk);
         this.loadedBytes += chunk.length;
         this.progressCallback({ loadedBytes: this.loadedBytes });
         callback(void 0);
-      };
-      return ReportTransform2;
-    }(stream.Transform);
-    var FetchHttpClient = function() {
-      function FetchHttpClient2() {
       }
-      __name(FetchHttpClient2, "FetchHttpClient");
-      FetchHttpClient2.prototype.sendRequest = function(httpRequest) {
+    };
+    __name(ReportTransform, "ReportTransform");
+    var FetchHttpClient = class {
+      async sendRequest(httpRequest) {
         var _a;
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var abortController$1, abortListener, formData, requestForm_1, appendFormValue, _i, _b, formKey, formValue, j, contentType, body, onUploadProgress, uploadReportStream, platformSpecificRequestInit, requestInit, operationResponse, response, headers, streaming, _c, onDownloadProgress, responseBody, downloadReportStream, length_1, error_1, fetchError, uploadStreamDone, downloadStreamDone;
-          var _d;
-          return tslib.__generator(this, function(_e) {
-            switch (_e.label) {
-              case 0:
-                if (!httpRequest && typeof httpRequest !== "object") {
-                  throw new Error("'httpRequest' (WebResourceLike) cannot be null or undefined and must be of type object.");
-                }
-                abortController$1 = new abortController.AbortController();
-                if (httpRequest.abortSignal) {
-                  if (httpRequest.abortSignal.aborted) {
-                    throw new abortController.AbortError("The operation was aborted.");
-                  }
-                  abortListener = /* @__PURE__ */ __name(function(event) {
-                    if (event.type === "abort") {
-                      abortController$1.abort();
-                    }
-                  }, "abortListener");
-                  httpRequest.abortSignal.addEventListener("abort", abortListener);
-                }
-                if (httpRequest.timeout) {
-                  setTimeout(function() {
-                    abortController$1.abort();
-                  }, httpRequest.timeout);
-                }
-                if (httpRequest.formData) {
-                  formData = httpRequest.formData;
-                  requestForm_1 = new FormData();
-                  appendFormValue = /* @__PURE__ */ __name(function(key, value) {
-                    if (typeof value === "function") {
-                      value = value();
-                    }
-                    if (value && Object.prototype.hasOwnProperty.call(value, "value") && Object.prototype.hasOwnProperty.call(value, "options")) {
-                      requestForm_1.append(key, value.value, value.options);
-                    } else {
-                      requestForm_1.append(key, value);
-                    }
-                  }, "appendFormValue");
-                  for (_i = 0, _b = Object.keys(formData); _i < _b.length; _i++) {
-                    formKey = _b[_i];
-                    formValue = formData[formKey];
-                    if (Array.isArray(formValue)) {
-                      for (j = 0; j < formValue.length; j++) {
-                        appendFormValue(formKey, formValue[j]);
-                      }
-                    } else {
-                      appendFormValue(formKey, formValue);
-                    }
-                  }
-                  httpRequest.body = requestForm_1;
-                  httpRequest.formData = void 0;
-                  contentType = httpRequest.headers.get("Content-Type");
-                  if (contentType && contentType.indexOf("multipart/form-data") !== -1) {
-                    if (typeof requestForm_1.getBoundary === "function") {
-                      httpRequest.headers.set("Content-Type", "multipart/form-data; boundary=" + requestForm_1.getBoundary());
-                    } else {
-                      httpRequest.headers.remove("Content-Type");
-                    }
-                  }
-                }
-                body = httpRequest.body ? typeof httpRequest.body === "function" ? httpRequest.body() : httpRequest.body : void 0;
-                if (httpRequest.onUploadProgress && httpRequest.body) {
-                  onUploadProgress = httpRequest.onUploadProgress;
-                  uploadReportStream = new ReportTransform(onUploadProgress);
-                  if (isReadableStream(body)) {
-                    body.pipe(uploadReportStream);
-                  } else {
-                    uploadReportStream.end(body);
-                  }
-                  body = uploadReportStream;
-                }
-                return [4, this.prepareRequest(httpRequest)];
-              case 1:
-                platformSpecificRequestInit = _e.sent();
-                requestInit = tslib.__assign({ body, headers: httpRequest.headers.rawHeaders(), method: httpRequest.method, signal: abortController$1.signal, redirect: "manual" }, platformSpecificRequestInit);
-                _e.label = 2;
-              case 2:
-                _e.trys.push([2, 8, 9, 10]);
-                return [4, this.fetch(httpRequest.url, requestInit)];
-              case 3:
-                response = _e.sent();
-                headers = parseHeaders(response.headers);
-                streaming = ((_a = httpRequest.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(response.status)) || httpRequest.streamResponseBody;
-                _d = {
-                  headers,
-                  request: httpRequest,
-                  status: response.status,
-                  readableStreamBody: streaming ? response.body : void 0
-                };
-                if (!!streaming)
-                  return [3, 5];
-                return [4, response.text()];
-              case 4:
-                _c = _e.sent();
-                return [3, 6];
-              case 5:
-                _c = void 0;
-                _e.label = 6;
-              case 6:
-                operationResponse = (_d.bodyAsText = _c, _d);
-                onDownloadProgress = httpRequest.onDownloadProgress;
-                if (onDownloadProgress) {
-                  responseBody = response.body || void 0;
-                  if (isReadableStream(responseBody)) {
-                    downloadReportStream = new ReportTransform(onDownloadProgress);
-                    responseBody.pipe(downloadReportStream);
-                    operationResponse.readableStreamBody = downloadReportStream;
-                  } else {
-                    length_1 = parseInt(headers.get("Content-Length")) || void 0;
-                    if (length_1) {
-                      onDownloadProgress({ loadedBytes: length_1 });
-                    }
-                  }
-                }
-                return [4, this.processRequest(operationResponse)];
-              case 7:
-                _e.sent();
-                return [2, operationResponse];
-              case 8:
-                error_1 = _e.sent();
-                fetchError = error_1;
-                if (fetchError.code === "ENOTFOUND") {
-                  throw new RestError(fetchError.message, RestError.REQUEST_SEND_ERROR, void 0, httpRequest);
-                } else if (fetchError.type === "aborted") {
-                  throw new abortController.AbortError("The operation was aborted.");
-                }
-                throw fetchError;
-              case 9:
-                if (httpRequest.abortSignal && abortListener) {
-                  uploadStreamDone = Promise.resolve();
-                  if (isReadableStream(body)) {
-                    uploadStreamDone = isStreamComplete(body);
-                  }
-                  downloadStreamDone = Promise.resolve();
-                  if (isReadableStream(operationResponse === null || operationResponse === void 0 ? void 0 : operationResponse.readableStreamBody)) {
-                    downloadStreamDone = isStreamComplete(operationResponse.readableStreamBody);
-                  }
-                  Promise.all([uploadStreamDone, downloadStreamDone]).then(function() {
-                    var _a2;
-                    (_a2 = httpRequest.abortSignal) === null || _a2 === void 0 ? void 0 : _a2.removeEventListener("abort", abortListener);
-                    return;
-                  }).catch(function(e) {
-                    logger.warning("Error when cleaning up abortListener on httpRequest", e);
-                  });
-                }
-                return [7];
-              case 10:
-                return [2];
+        if (!httpRequest && typeof httpRequest !== "object") {
+          throw new Error("'httpRequest' (WebResourceLike) cannot be null or undefined and must be of type object.");
+        }
+        const abortController$1 = new abortController.AbortController();
+        let abortListener;
+        if (httpRequest.abortSignal) {
+          if (httpRequest.abortSignal.aborted) {
+            throw new abortController.AbortError("The operation was aborted.");
+          }
+          abortListener = /* @__PURE__ */ __name((event) => {
+            if (event.type === "abort") {
+              abortController$1.abort();
             }
-          });
-        });
-      };
-      return FetchHttpClient2;
-    }();
+          }, "abortListener");
+          httpRequest.abortSignal.addEventListener("abort", abortListener);
+        }
+        if (httpRequest.timeout) {
+          setTimeout(() => {
+            abortController$1.abort();
+          }, httpRequest.timeout);
+        }
+        if (httpRequest.formData) {
+          const formData = httpRequest.formData;
+          const requestForm = new FormData();
+          const appendFormValue = /* @__PURE__ */ __name((key, value) => {
+            if (typeof value === "function") {
+              value = value();
+            }
+            if (value && Object.prototype.hasOwnProperty.call(value, "value") && Object.prototype.hasOwnProperty.call(value, "options")) {
+              requestForm.append(key, value.value, value.options);
+            } else {
+              requestForm.append(key, value);
+            }
+          }, "appendFormValue");
+          for (const formKey of Object.keys(formData)) {
+            const formValue = formData[formKey];
+            if (Array.isArray(formValue)) {
+              for (let j = 0; j < formValue.length; j++) {
+                appendFormValue(formKey, formValue[j]);
+              }
+            } else {
+              appendFormValue(formKey, formValue);
+            }
+          }
+          httpRequest.body = requestForm;
+          httpRequest.formData = void 0;
+          const contentType = httpRequest.headers.get("Content-Type");
+          if (contentType && contentType.indexOf("multipart/form-data") !== -1) {
+            if (typeof requestForm.getBoundary === "function") {
+              httpRequest.headers.set("Content-Type", `multipart/form-data; boundary=${requestForm.getBoundary()}`);
+            } else {
+              httpRequest.headers.remove("Content-Type");
+            }
+          }
+        }
+        let body = httpRequest.body ? typeof httpRequest.body === "function" ? httpRequest.body() : httpRequest.body : void 0;
+        if (httpRequest.onUploadProgress && httpRequest.body) {
+          const onUploadProgress = httpRequest.onUploadProgress;
+          const uploadReportStream = new ReportTransform(onUploadProgress);
+          if (isReadableStream(body)) {
+            body.pipe(uploadReportStream);
+          } else {
+            uploadReportStream.end(body);
+          }
+          body = uploadReportStream;
+        }
+        const platformSpecificRequestInit = await this.prepareRequest(httpRequest);
+        const requestInit = Object.assign({ body, headers: httpRequest.headers.rawHeaders(), method: httpRequest.method, signal: abortController$1.signal, redirect: "manual" }, platformSpecificRequestInit);
+        let operationResponse;
+        try {
+          const response = await this.fetch(httpRequest.url, requestInit);
+          const headers = parseHeaders(response.headers);
+          const streaming = ((_a = httpRequest.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(response.status)) || httpRequest.streamResponseBody;
+          operationResponse = {
+            headers,
+            request: httpRequest,
+            status: response.status,
+            readableStreamBody: streaming ? response.body : void 0,
+            bodyAsText: !streaming ? await response.text() : void 0
+          };
+          const onDownloadProgress = httpRequest.onDownloadProgress;
+          if (onDownloadProgress) {
+            const responseBody = response.body || void 0;
+            if (isReadableStream(responseBody)) {
+              const downloadReportStream = new ReportTransform(onDownloadProgress);
+              responseBody.pipe(downloadReportStream);
+              operationResponse.readableStreamBody = downloadReportStream;
+            } else {
+              const length = parseInt(headers.get("Content-Length")) || void 0;
+              if (length) {
+                onDownloadProgress({ loadedBytes: length });
+              }
+            }
+          }
+          await this.processRequest(operationResponse);
+          return operationResponse;
+        } catch (error) {
+          const fetchError = error;
+          if (fetchError.code === "ENOTFOUND") {
+            throw new RestError(fetchError.message, RestError.REQUEST_SEND_ERROR, void 0, httpRequest);
+          } else if (fetchError.type === "aborted") {
+            throw new abortController.AbortError("The operation was aborted.");
+          }
+          throw fetchError;
+        } finally {
+          if (httpRequest.abortSignal && abortListener) {
+            let uploadStreamDone = Promise.resolve();
+            if (isReadableStream(body)) {
+              uploadStreamDone = isStreamComplete(body);
+            }
+            let downloadStreamDone = Promise.resolve();
+            if (isReadableStream(operationResponse === null || operationResponse === void 0 ? void 0 : operationResponse.readableStreamBody)) {
+              downloadStreamDone = isStreamComplete(operationResponse.readableStreamBody);
+            }
+            Promise.all([uploadStreamDone, downloadStreamDone]).then(() => {
+              var _a2;
+              (_a2 = httpRequest.abortSignal) === null || _a2 === void 0 ? void 0 : _a2.removeEventListener("abort", abortListener);
+              return;
+            }).catch((e) => {
+              logger.warning("Error when cleaning up abortListener on httpRequest", e);
+            });
+          }
+        }
+      }
+    };
+    __name(FetchHttpClient, "FetchHttpClient");
     function isReadableStream(body) {
       return body && typeof body.pipe === "function";
     }
     __name(isReadableStream, "isReadableStream");
     function isStreamComplete(stream2) {
-      return new Promise(function(resolve2) {
+      return new Promise((resolve2) => {
         stream2.on("close", resolve2);
         stream2.on("end", resolve2);
         stream2.on("error", resolve2);
@@ -37693,22 +37347,22 @@ var require_dist6 = __commonJS({
     }
     __name(isStreamComplete, "isStreamComplete");
     function parseHeaders(headers) {
-      var httpHeaders = new HttpHeaders();
-      headers.forEach(function(value, key) {
+      const httpHeaders = new HttpHeaders();
+      headers.forEach((value, key) => {
         httpHeaders.set(key, value);
       });
       return httpHeaders;
     }
     __name(parseHeaders, "parseHeaders");
     function createProxyAgent(requestUrl, proxySettings, headers) {
-      var host = URLBuilder.parse(proxySettings.host).getHost();
+      const host = URLBuilder.parse(proxySettings.host).getHost();
       if (!host) {
         throw new Error("Expecting a non-empty host in proxy settings.");
       }
       if (!isValidPort(proxySettings.port)) {
         throw new Error("Expecting a valid port number in the range of [0, 65535] in proxy settings.");
       }
-      var tunnelOptions = {
+      const tunnelOptions = {
         proxy: {
           host,
           port: proxySettings.port,
@@ -37716,11 +37370,13 @@ var require_dist6 = __commonJS({
         }
       };
       if (proxySettings.username && proxySettings.password) {
-        tunnelOptions.proxy.proxyAuth = proxySettings.username + ":" + proxySettings.password;
+        tunnelOptions.proxy.proxyAuth = `${proxySettings.username}:${proxySettings.password}`;
+      } else if (proxySettings.username) {
+        tunnelOptions.proxy.proxyAuth = `${proxySettings.username}`;
       }
-      var isRequestHttps = isUrlHttps(requestUrl);
-      var isProxyHttps = isUrlHttps(proxySettings.host);
-      var proxyAgent = {
+      const isRequestHttps = isUrlHttps(requestUrl);
+      const isProxyHttps = isUrlHttps(proxySettings.host);
+      const proxyAgent = {
         isHttps: isRequestHttps,
         agent: createTunnel(isRequestHttps, isProxyHttps, tunnelOptions)
       };
@@ -37728,7 +37384,7 @@ var require_dist6 = __commonJS({
     }
     __name(createProxyAgent, "createProxyAgent");
     function isUrlHttps(url2) {
-      var urlScheme = URLBuilder.parse(url2).getScheme() || "";
+      const urlScheme = URLBuilder.parse(url2).getScheme() || "";
       return urlScheme.toLowerCase() === "https";
     }
     __name(isUrlHttps, "isUrlHttps");
@@ -37752,24 +37408,21 @@ var require_dist6 = __commonJS({
       return isHttps ? agentCache.httpsAgent : agentCache.httpAgent;
     }
     __name(getCachedAgent, "getCachedAgent");
-    var NodeFetchHttpClient = function(_super) {
-      tslib.__extends(NodeFetchHttpClient2, _super);
-      function NodeFetchHttpClient2() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.proxyAgents = {};
-        _this.keepAliveAgents = {};
-        _this.cookieJar = new tough.CookieJar(void 0, { looseMode: true });
-        return _this;
+    var NodeFetchHttpClient = class extends FetchHttpClient {
+      constructor() {
+        super(...arguments);
+        this.proxyAgents = {};
+        this.keepAliveAgents = {};
+        this.cookieJar = new tough.CookieJar(void 0, { looseMode: true });
       }
-      __name(NodeFetchHttpClient2, "NodeFetchHttpClient");
-      NodeFetchHttpClient2.prototype.getOrCreateAgent = function(httpRequest) {
-        var isHttps = isUrlHttps(httpRequest.url);
+      getOrCreateAgent(httpRequest) {
+        const isHttps = isUrlHttps(httpRequest.url);
         if (httpRequest.proxySettings) {
-          var agent = getCachedAgent(isHttps, this.proxyAgents);
+          let agent = getCachedAgent(isHttps, this.proxyAgents);
           if (agent) {
             return agent;
           }
-          var tunnel2 = createProxyAgent(httpRequest.url, httpRequest.proxySettings, httpRequest.headers);
+          const tunnel2 = createProxyAgent(httpRequest.url, httpRequest.proxySettings, httpRequest.headers);
           agent = tunnel2.agent;
           if (tunnel2.isHttps) {
             this.proxyAgents.httpsAgent = tunnel2.agent;
@@ -37778,11 +37431,11 @@ var require_dist6 = __commonJS({
           }
           return agent;
         } else if (httpRequest.keepAlive) {
-          var agent = getCachedAgent(isHttps, this.keepAliveAgents);
+          let agent = getCachedAgent(isHttps, this.keepAliveAgents);
           if (agent) {
             return agent;
           }
-          var agentOptions = {
+          const agentOptions = {
             keepAlive: httpRequest.keepAlive
           };
           if (isHttps) {
@@ -37794,77 +37447,46 @@ var require_dist6 = __commonJS({
         } else {
           return isHttps ? https.globalAgent : http.globalAgent;
         }
-      };
-      NodeFetchHttpClient2.prototype.fetch = function(input, init) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            return [2, node_fetch(input, init)];
+      }
+      async fetch(input, init) {
+        return node_fetch(input, init);
+      }
+      async prepareRequest(httpRequest) {
+        const requestInit = {};
+        if (this.cookieJar && !httpRequest.headers.get("Cookie")) {
+          const cookieString = await new Promise((resolve2, reject) => {
+            this.cookieJar.getCookieString(httpRequest.url, (err, cookie) => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve2(cookie);
+              }
+            });
           });
-        });
-      };
-      NodeFetchHttpClient2.prototype.prepareRequest = function(httpRequest) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var requestInit, cookieString;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                requestInit = {};
-                if (!(this.cookieJar && !httpRequest.headers.get("Cookie")))
-                  return [3, 2];
-                return [4, new Promise(function(resolve2, reject) {
-                  _this.cookieJar.getCookieString(httpRequest.url, function(err, cookie) {
-                    if (err) {
-                      reject(err);
-                    } else {
-                      resolve2(cookie);
-                    }
-                  });
-                })];
-              case 1:
-                cookieString = _a.sent();
-                httpRequest.headers.set("Cookie", cookieString);
-                _a.label = 2;
-              case 2:
-                requestInit.agent = this.getOrCreateAgent(httpRequest);
-                requestInit.compress = httpRequest.decompressResponse;
-                return [2, requestInit];
-            }
-          });
-        });
-      };
-      NodeFetchHttpClient2.prototype.processRequest = function(operationResponse) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var setCookieHeader_1;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!this.cookieJar)
-                  return [3, 2];
-                setCookieHeader_1 = operationResponse.headers.get("Set-Cookie");
-                if (!(setCookieHeader_1 !== void 0))
-                  return [3, 2];
-                return [4, new Promise(function(resolve2, reject) {
-                  _this.cookieJar.setCookie(setCookieHeader_1, operationResponse.request.url, { ignoreError: true }, function(err) {
-                    if (err) {
-                      reject(err);
-                    } else {
-                      resolve2();
-                    }
-                  });
-                })];
-              case 1:
-                _a.sent();
-                _a.label = 2;
-              case 2:
-                return [2];
-            }
-          });
-        });
-      };
-      return NodeFetchHttpClient2;
-    }(FetchHttpClient);
+          httpRequest.headers.set("Cookie", cookieString);
+        }
+        requestInit.agent = this.getOrCreateAgent(httpRequest);
+        requestInit.compress = httpRequest.decompressResponse;
+        return requestInit;
+      }
+      async processRequest(operationResponse) {
+        if (this.cookieJar) {
+          const setCookieHeader = operationResponse.headers.get("Set-Cookie");
+          if (setCookieHeader !== void 0) {
+            await new Promise((resolve2, reject) => {
+              this.cookieJar.setCookie(setCookieHeader, operationResponse.request.url, { ignoreError: true }, (err) => {
+                if (err) {
+                  reject(err);
+                } else {
+                  resolve2();
+                }
+              });
+            });
+          }
+        }
+      }
+    };
+    __name(NodeFetchHttpClient, "NodeFetchHttpClient");
     (function(HttpPipelineLogLevel) {
       HttpPipelineLogLevel[HttpPipelineLogLevel["OFF"] = 0] = "OFF";
       HttpPipelineLogLevel[HttpPipelineLogLevel["ERROR"] = 1] = "ERROR";
@@ -37872,10 +37494,10 @@ var require_dist6 = __commonJS({
       HttpPipelineLogLevel[HttpPipelineLogLevel["INFO"] = 3] = "INFO";
     })(exports2.HttpPipelineLogLevel || (exports2.HttpPipelineLogLevel = {}));
     function operationOptionsToRequestOptionsBase(opts) {
-      var requestOptions = opts.requestOptions, tracingOptions = opts.tracingOptions, additionalOptions = tslib.__rest(opts, ["requestOptions", "tracingOptions"]);
-      var result = additionalOptions;
+      const { requestOptions, tracingOptions } = opts, additionalOptions = tslib.__rest(opts, ["requestOptions", "tracingOptions"]);
+      let result = additionalOptions;
       if (requestOptions) {
-        result = tslib.__assign(tslib.__assign({}, result), requestOptions);
+        result = Object.assign(Object.assign({}, result), requestOptions);
       }
       if (tracingOptions) {
         result.spanOptions = tracingOptions.spanOptions;
@@ -37884,101 +37506,81 @@ var require_dist6 = __commonJS({
       return result;
     }
     __name(operationOptionsToRequestOptionsBase, "operationOptionsToRequestOptionsBase");
-    var BaseRequestPolicy = function() {
-      function BaseRequestPolicy2(_nextPolicy, _options) {
+    var BaseRequestPolicy = class {
+      constructor(_nextPolicy, _options) {
         this._nextPolicy = _nextPolicy;
         this._options = _options;
       }
-      __name(BaseRequestPolicy2, "BaseRequestPolicy");
-      BaseRequestPolicy2.prototype.shouldLog = function(logLevel) {
+      shouldLog(logLevel) {
         return this._options.shouldLog(logLevel);
-      };
-      BaseRequestPolicy2.prototype.log = function(logLevel, message) {
+      }
+      log(logLevel, message) {
         this._options.log(logLevel, message);
-      };
-      return BaseRequestPolicy2;
-    }();
-    var RequestPolicyOptions = function() {
-      function RequestPolicyOptions2(_logger) {
+      }
+    };
+    __name(BaseRequestPolicy, "BaseRequestPolicy");
+    var RequestPolicyOptions = class {
+      constructor(_logger) {
         this._logger = _logger;
       }
-      __name(RequestPolicyOptions2, "RequestPolicyOptions");
-      RequestPolicyOptions2.prototype.shouldLog = function(logLevel) {
+      shouldLog(logLevel) {
         return !!this._logger && logLevel !== exports2.HttpPipelineLogLevel.OFF && logLevel <= this._logger.minimumLogLevel;
-      };
-      RequestPolicyOptions2.prototype.log = function(logLevel, message) {
+      }
+      log(logLevel, message) {
         if (this._logger && this.shouldLog(logLevel)) {
           this._logger.log(logLevel, message);
         }
-      };
-      return RequestPolicyOptions2;
-    }();
-    function logPolicy(loggingOptions) {
-      if (loggingOptions === void 0) {
-        loggingOptions = {};
       }
+    };
+    __name(RequestPolicyOptions, "RequestPolicyOptions");
+    function logPolicy(loggingOptions = {}) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new LogPolicy(nextPolicy, options, loggingOptions);
         }
       };
     }
     __name(logPolicy, "logPolicy");
-    var LogPolicy = function(_super) {
-      tslib.__extends(LogPolicy2, _super);
-      function LogPolicy2(nextPolicy, options, _a) {
-        var _b = _a === void 0 ? {} : _a, _c = _b.logger, logger$12 = _c === void 0 ? logger.info : _c, _d = _b.allowedHeaderNames, allowedHeaderNames = _d === void 0 ? [] : _d, _e = _b.allowedQueryParameters, allowedQueryParameters = _e === void 0 ? [] : _e;
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.logger = logger$12;
-        _this.sanitizer = new Sanitizer({ allowedHeaderNames, allowedQueryParameters });
-        return _this;
+    var LogPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, { logger: logger$12 = logger.info, allowedHeaderNames = [], allowedQueryParameters = [] } = {}) {
+        super(nextPolicy, options);
+        this.logger = logger$12;
+        this.sanitizer = new Sanitizer({ allowedHeaderNames, allowedQueryParameters });
       }
-      __name(LogPolicy2, "LogPolicy");
-      Object.defineProperty(LogPolicy2.prototype, "allowedHeaderNames", {
-        get: function() {
-          return this.sanitizer.allowedHeaderNames;
-        },
-        set: function(allowedHeaderNames) {
-          this.sanitizer.allowedHeaderNames = allowedHeaderNames;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(LogPolicy2.prototype, "allowedQueryParameters", {
-        get: function() {
-          return this.sanitizer.allowedQueryParameters;
-        },
-        set: function(allowedQueryParameters) {
-          this.sanitizer.allowedQueryParameters = allowedQueryParameters;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      LogPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
+      get allowedHeaderNames() {
+        return this.sanitizer.allowedHeaderNames;
+      }
+      set allowedHeaderNames(allowedHeaderNames) {
+        this.sanitizer.allowedHeaderNames = allowedHeaderNames;
+      }
+      get allowedQueryParameters() {
+        return this.sanitizer.allowedQueryParameters;
+      }
+      set allowedQueryParameters(allowedQueryParameters) {
+        this.sanitizer.allowedQueryParameters = allowedQueryParameters;
+      }
+      sendRequest(request) {
         if (!this.logger.enabled)
           return this._nextPolicy.sendRequest(request);
         this.logRequest(request);
-        return this._nextPolicy.sendRequest(request).then(function(response) {
-          return _this.logResponse(response);
-        });
-      };
-      LogPolicy2.prototype.logRequest = function(request) {
-        this.logger("Request: " + this.sanitizer.sanitize(request));
-      };
-      LogPolicy2.prototype.logResponse = function(response) {
-        this.logger("Response status code: " + response.status);
-        this.logger("Headers: " + this.sanitizer.sanitize(response.headers));
+        return this._nextPolicy.sendRequest(request).then((response) => this.logResponse(response));
+      }
+      logRequest(request) {
+        this.logger(`Request: ${this.sanitizer.sanitize(request)}`);
+      }
+      logResponse(response) {
+        this.logger(`Response status code: ${response.status}`);
+        this.logger(`Headers: ${this.sanitizer.sanitize(response.headers)}`);
         return response;
-      };
-      return LogPolicy2;
-    }(BaseRequestPolicy);
+      }
+    };
+    __name(LogPolicy, "LogPolicy");
     function getPathStringFromParameter(parameter) {
       return getPathStringFromParameterPath(parameter.parameterPath, parameter.mapper);
     }
     __name(getPathStringFromParameter, "getPathStringFromParameter");
     function getPathStringFromParameterPath(parameterPath, mapper) {
-      var result;
+      let result;
       if (typeof parameterPath === "string") {
         result = parameterPath;
       } else if (Array.isArray(parameterPath)) {
@@ -37990,9 +37592,9 @@ var require_dist6 = __commonJS({
     }
     __name(getPathStringFromParameterPath, "getPathStringFromParameterPath");
     function getStreamResponseStatusCodes(operationSpec) {
-      var result = new Set();
-      for (var statusCode in operationSpec.responses) {
-        var operationResponse = operationSpec.responses[statusCode];
+      const result = new Set();
+      for (const statusCode in operationSpec.responses) {
+        const operationResponse = operationSpec.responses[statusCode];
         if (operationResponse.bodyMapper && operationResponse.bodyMapper.type.name === MapperType.Stream) {
           result.add(Number(statusCode));
         }
@@ -38047,30 +37649,24 @@ var require_dist6 = __commonJS({
     xml2jsBuilderSettings.renderOpts = {
       pretty: false
     };
-    function stringifyXML(obj, opts) {
+    function stringifyXML(obj, opts = {}) {
       var _a;
-      if (opts === void 0) {
-        opts = {};
-      }
       xml2jsBuilderSettings.rootName = opts.rootName;
       xml2jsBuilderSettings.charkey = (_a = opts.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY;
-      var builder = new xml2js.Builder(xml2jsBuilderSettings);
+      const builder = new xml2js.Builder(xml2jsBuilderSettings);
       return builder.buildObject(obj);
     }
     __name(stringifyXML, "stringifyXML");
-    function parseXML(str, opts) {
+    function parseXML(str, opts = {}) {
       var _a;
-      if (opts === void 0) {
-        opts = {};
-      }
       xml2jsParserSettings.explicitRoot = !!opts.includeRoot;
       xml2jsParserSettings.charkey = (_a = opts.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY;
-      var xmlParser = new xml2js.Parser(xml2jsParserSettings);
-      return new Promise(function(resolve2, reject) {
+      const xmlParser = new xml2js.Parser(xml2jsParserSettings);
+      return new Promise((resolve2, reject) => {
         if (!str) {
           reject(new Error("Document is empty"));
         } else {
-          xmlParser.parseString(str, function(err, res) {
+          xmlParser.parseString(str, (err, res) => {
             if (err) {
               reject(err);
             } else {
@@ -38083,7 +37679,7 @@ var require_dist6 = __commonJS({
     __name(parseXML, "parseXML");
     function deserializationPolicy(deserializationContentTypes, parsingOptions) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new DeserializationPolicy(nextPolicy, options, deserializationContentTypes, parsingOptions);
         }
       };
@@ -38097,40 +37693,27 @@ var require_dist6 = __commonJS({
         xml: defaultXmlContentTypes
       }
     };
-    var DeserializationPolicy = function(_super) {
-      tslib.__extends(DeserializationPolicy2, _super);
-      function DeserializationPolicy2(nextPolicy, requestPolicyOptions, deserializationContentTypes, parsingOptions) {
-        if (parsingOptions === void 0) {
-          parsingOptions = {};
-        }
+    var DeserializationPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, requestPolicyOptions, deserializationContentTypes, parsingOptions = {}) {
         var _a;
-        var _this = _super.call(this, nextPolicy, requestPolicyOptions) || this;
-        _this.jsonContentTypes = deserializationContentTypes && deserializationContentTypes.json || defaultJsonContentTypes;
-        _this.xmlContentTypes = deserializationContentTypes && deserializationContentTypes.xml || defaultXmlContentTypes;
-        _this.xmlCharKey = (_a = parsingOptions.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY;
-        return _this;
+        super(nextPolicy, requestPolicyOptions);
+        this.jsonContentTypes = deserializationContentTypes && deserializationContentTypes.json || defaultJsonContentTypes;
+        this.xmlContentTypes = deserializationContentTypes && deserializationContentTypes.xml || defaultXmlContentTypes;
+        this.xmlCharKey = (_a = parsingOptions.xmlCharKey) !== null && _a !== void 0 ? _a : XML_CHARKEY;
       }
-      __name(DeserializationPolicy2, "DeserializationPolicy");
-      DeserializationPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            return [2, this._nextPolicy.sendRequest(request).then(function(response) {
-              return deserializeResponseBody(_this.jsonContentTypes, _this.xmlContentTypes, response, {
-                xmlCharKey: _this.xmlCharKey
-              });
-            })];
-          });
-        });
-      };
-      return DeserializationPolicy2;
-    }(BaseRequestPolicy);
+      async sendRequest(request) {
+        return this._nextPolicy.sendRequest(request).then((response) => deserializeResponseBody(this.jsonContentTypes, this.xmlContentTypes, response, {
+          xmlCharKey: this.xmlCharKey
+        }));
+      }
+    };
+    __name(DeserializationPolicy, "DeserializationPolicy");
     function getOperationResponse(parsedResponse) {
-      var result;
-      var request = parsedResponse.request;
-      var operationSpec = request.operationSpec;
+      let result;
+      const request = parsedResponse.request;
+      const operationSpec = request.operationSpec;
       if (operationSpec) {
-        var operationResponseGetter = request.operationResponseGetter;
+        const operationResponseGetter = request.operationResponseGetter;
         if (!operationResponseGetter) {
           result = operationSpec.responses[parsedResponse.status];
         } else {
@@ -38141,8 +37724,8 @@ var require_dist6 = __commonJS({
     }
     __name(getOperationResponse, "getOperationResponse");
     function shouldDeserializeResponse(parsedResponse) {
-      var shouldDeserialize = parsedResponse.request.shouldDeserialize;
-      var result;
+      const shouldDeserialize = parsedResponse.request.shouldDeserialize;
+      let result;
       if (shouldDeserialize === void 0) {
         result = true;
       } else if (typeof shouldDeserialize === "boolean") {
@@ -38153,26 +37736,23 @@ var require_dist6 = __commonJS({
       return result;
     }
     __name(shouldDeserializeResponse, "shouldDeserializeResponse");
-    function deserializeResponseBody(jsonContentTypes, xmlContentTypes, response, options) {
+    function deserializeResponseBody(jsonContentTypes, xmlContentTypes, response, options = {}) {
       var _a, _b, _c;
-      if (options === void 0) {
-        options = {};
-      }
-      var updatedOptions = {
+      const updatedOptions = {
         rootName: (_a = options.rootName) !== null && _a !== void 0 ? _a : "",
         includeRoot: (_b = options.includeRoot) !== null && _b !== void 0 ? _b : false,
         xmlCharKey: (_c = options.xmlCharKey) !== null && _c !== void 0 ? _c : XML_CHARKEY
       };
-      return parse(jsonContentTypes, xmlContentTypes, response, updatedOptions).then(function(parsedResponse) {
+      return parse(jsonContentTypes, xmlContentTypes, response, updatedOptions).then((parsedResponse) => {
         if (!shouldDeserializeResponse(parsedResponse)) {
           return parsedResponse;
         }
-        var operationSpec = parsedResponse.request.operationSpec;
+        const operationSpec = parsedResponse.request.operationSpec;
         if (!operationSpec || !operationSpec.responses) {
           return parsedResponse;
         }
-        var responseSpec = getOperationResponse(parsedResponse);
-        var _a2 = handleErrorResponse(parsedResponse, operationSpec, responseSpec), error = _a2.error, shouldReturnResponse = _a2.shouldReturnResponse;
+        const responseSpec = getOperationResponse(parsedResponse);
+        const { error, shouldReturnResponse } = handleErrorResponse(parsedResponse, operationSpec, responseSpec);
         if (error) {
           throw error;
         } else if (shouldReturnResponse) {
@@ -38180,14 +37760,14 @@ var require_dist6 = __commonJS({
         }
         if (responseSpec) {
           if (responseSpec.bodyMapper) {
-            var valueToDeserialize = parsedResponse.parsedBody;
+            let valueToDeserialize = parsedResponse.parsedBody;
             if (operationSpec.isXML && responseSpec.bodyMapper.type.name === MapperType.Sequence) {
               valueToDeserialize = typeof valueToDeserialize === "object" ? valueToDeserialize[responseSpec.bodyMapper.xmlElementName] : [];
             }
             try {
               parsedResponse.parsedBody = operationSpec.serializer.deserialize(responseSpec.bodyMapper, valueToDeserialize, "operationRes.parsedBody", options);
             } catch (innerError) {
-              var restError = new RestError("Error " + innerError + " occurred in deserializing the responseBody - " + parsedResponse.bodyAsText, void 0, parsedResponse.status, parsedResponse.request, parsedResponse);
+              const restError = new RestError(`Error ${innerError} occurred in deserializing the responseBody - ${parsedResponse.bodyAsText}`, void 0, parsedResponse.status, parsedResponse.request, parsedResponse);
               throw restError;
             }
           } else if (operationSpec.httpMethod === "HEAD") {
@@ -38202,14 +37782,14 @@ var require_dist6 = __commonJS({
     }
     __name(deserializeResponseBody, "deserializeResponseBody");
     function isOperationSpecEmpty(operationSpec) {
-      var expectedStatusCodes = Object.keys(operationSpec.responses);
+      const expectedStatusCodes = Object.keys(operationSpec.responses);
       return expectedStatusCodes.length === 0 || expectedStatusCodes.length === 1 && expectedStatusCodes[0] === "default";
     }
     __name(isOperationSpecEmpty, "isOperationSpecEmpty");
     function handleErrorResponse(parsedResponse, operationSpec, responseSpec) {
       var _a;
-      var isSuccessByStatus = 200 <= parsedResponse.status && parsedResponse.status < 300;
-      var isExpectedStatusCode = isOperationSpecEmpty(operationSpec) ? isSuccessByStatus : !!responseSpec;
+      const isSuccessByStatus = 200 <= parsedResponse.status && parsedResponse.status < 300;
+      const isExpectedStatusCode = isOperationSpecEmpty(operationSpec) ? isSuccessByStatus : !!responseSpec;
       if (isExpectedStatusCode) {
         if (responseSpec) {
           if (!responseSpec.isError) {
@@ -38219,27 +37799,27 @@ var require_dist6 = __commonJS({
           return { error: null, shouldReturnResponse: false };
         }
       }
-      var errorResponseSpec = responseSpec !== null && responseSpec !== void 0 ? responseSpec : operationSpec.responses.default;
-      var streaming = ((_a = parsedResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(parsedResponse.status)) || parsedResponse.request.streamResponseBody;
-      var initialErrorMessage = streaming ? "Unexpected status code: " + parsedResponse.status : parsedResponse.bodyAsText;
-      var error = new RestError(initialErrorMessage, void 0, parsedResponse.status, parsedResponse.request, parsedResponse);
+      const errorResponseSpec = responseSpec !== null && responseSpec !== void 0 ? responseSpec : operationSpec.responses.default;
+      const streaming = ((_a = parsedResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(parsedResponse.status)) || parsedResponse.request.streamResponseBody;
+      const initialErrorMessage = streaming ? `Unexpected status code: ${parsedResponse.status}` : parsedResponse.bodyAsText;
+      const error = new RestError(initialErrorMessage, void 0, parsedResponse.status, parsedResponse.request, parsedResponse);
       if (!errorResponseSpec) {
         throw error;
       }
-      var defaultBodyMapper = errorResponseSpec.bodyMapper;
-      var defaultHeadersMapper = errorResponseSpec.headersMapper;
+      const defaultBodyMapper = errorResponseSpec.bodyMapper;
+      const defaultHeadersMapper = errorResponseSpec.headersMapper;
       try {
         if (parsedResponse.parsedBody) {
-          var parsedBody = parsedResponse.parsedBody;
-          var parsedError = void 0;
+          const parsedBody = parsedResponse.parsedBody;
+          let parsedError;
           if (defaultBodyMapper) {
-            var valueToDeserialize = parsedBody;
+            let valueToDeserialize = parsedBody;
             if (operationSpec.isXML && defaultBodyMapper.type.name === MapperType.Sequence) {
               valueToDeserialize = typeof parsedBody === "object" ? parsedBody[defaultBodyMapper.xmlElementName] : [];
             }
             parsedError = operationSpec.serializer.deserialize(defaultBodyMapper, valueToDeserialize, "error.response.parsedBody");
           }
-          var internalError = parsedBody.error || parsedError || parsedBody;
+          const internalError = parsedBody.error || parsedError || parsedBody;
           error.code = internalError.code;
           if (internalError.message) {
             error.message = internalError.message;
@@ -38252,37 +37832,31 @@ var require_dist6 = __commonJS({
           error.response.parsedHeaders = operationSpec.serializer.deserialize(defaultHeadersMapper, parsedResponse.headers.rawHeaders(), "operationRes.parsedHeaders");
         }
       } catch (defaultError) {
-        error.message = 'Error "' + defaultError.message + '" occurred in deserializing the responseBody - "' + parsedResponse.bodyAsText + '" for the default response.';
+        error.message = `Error "${defaultError.message}" occurred in deserializing the responseBody - "${parsedResponse.bodyAsText}" for the default response.`;
       }
       return { error, shouldReturnResponse: false };
     }
     __name(handleErrorResponse, "handleErrorResponse");
     function parse(jsonContentTypes, xmlContentTypes, operationResponse, opts) {
       var _a;
-      var errorHandler = /* @__PURE__ */ __name(function(err) {
-        var msg = 'Error "' + err + '" occurred while parsing the response body - ' + operationResponse.bodyAsText + ".";
-        var errCode = err.code || RestError.PARSE_ERROR;
-        var e = new RestError(msg, errCode, operationResponse.status, operationResponse.request, operationResponse);
+      const errorHandler = /* @__PURE__ */ __name((err) => {
+        const msg = `Error "${err}" occurred while parsing the response body - ${operationResponse.bodyAsText}.`;
+        const errCode = err.code || RestError.PARSE_ERROR;
+        const e = new RestError(msg, errCode, operationResponse.status, operationResponse.request, operationResponse);
         return Promise.reject(e);
       }, "errorHandler");
-      var streaming = ((_a = operationResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(operationResponse.status)) || operationResponse.request.streamResponseBody;
+      const streaming = ((_a = operationResponse.request.streamResponseStatusCodes) === null || _a === void 0 ? void 0 : _a.has(operationResponse.status)) || operationResponse.request.streamResponseBody;
       if (!streaming && operationResponse.bodyAsText) {
-        var text_1 = operationResponse.bodyAsText;
-        var contentType = operationResponse.headers.get("Content-Type") || "";
-        var contentComponents = !contentType ? [] : contentType.split(";").map(function(component) {
-          return component.toLowerCase();
-        });
-        if (contentComponents.length === 0 || contentComponents.some(function(component) {
-          return jsonContentTypes.indexOf(component) !== -1;
-        })) {
-          return new Promise(function(resolve2) {
-            operationResponse.parsedBody = JSON.parse(text_1);
+        const text = operationResponse.bodyAsText;
+        const contentType = operationResponse.headers.get("Content-Type") || "";
+        const contentComponents = !contentType ? [] : contentType.split(";").map((component) => component.toLowerCase());
+        if (contentComponents.length === 0 || contentComponents.some((component) => jsonContentTypes.indexOf(component) !== -1)) {
+          return new Promise((resolve2) => {
+            operationResponse.parsedBody = JSON.parse(text);
             resolve2(operationResponse);
           }).catch(errorHandler);
-        } else if (contentComponents.some(function(component) {
-          return xmlContentTypes.indexOf(component) !== -1;
-        })) {
-          return parseXML(text_1, opts).then(function(body) {
+        } else if (contentComponents.some((component) => xmlContentTypes.indexOf(component) !== -1)) {
+          return parseXML(text, opts).then((body) => {
             operationResponse.parsedBody = body;
             return operationResponse;
           }).catch(errorHandler);
@@ -38306,10 +37880,7 @@ var require_dist6 = __commonJS({
       return retryData.retryCount < retryLimit;
     }
     __name(shouldRetry, "shouldRetry");
-    function updateRetryData(retryOptions, retryData, err) {
-      if (retryData === void 0) {
-        retryData = { retryCount: 0, retryInterval: 0 };
-      }
+    function updateRetryData(retryOptions, retryData = { retryCount: 0, retryInterval: 0 }, err) {
       if (err) {
         if (retryData.error) {
           err.innerError = retryData.error;
@@ -38317,16 +37888,53 @@ var require_dist6 = __commonJS({
         retryData.error = err;
       }
       retryData.retryCount++;
-      var incrementDelta = Math.pow(2, retryData.retryCount - 1) - 1;
-      var boundedRandDelta = retryOptions.retryInterval * 0.8 + Math.floor(Math.random() * (retryOptions.retryInterval * 0.4));
+      let incrementDelta = Math.pow(2, retryData.retryCount - 1) - 1;
+      const boundedRandDelta = retryOptions.retryInterval * 0.8 + Math.floor(Math.random() * (retryOptions.retryInterval * 0.4));
       incrementDelta *= boundedRandDelta;
       retryData.retryInterval = Math.min(retryOptions.minRetryInterval + incrementDelta, retryOptions.maxRetryInterval);
       return retryData;
     }
     __name(updateRetryData, "updateRetryData");
+    function isDefined(thing) {
+      return typeof thing !== "undefined" && thing !== null;
+    }
+    __name(isDefined, "isDefined");
+    var StandardAbortMessage = "The operation was aborted.";
+    function delay(delayInMs, value, options) {
+      return new Promise((resolve2, reject) => {
+        let timer = void 0;
+        let onAborted = void 0;
+        const rejectOnAbort = /* @__PURE__ */ __name(() => {
+          return reject(new abortController.AbortError((options === null || options === void 0 ? void 0 : options.abortErrorMsg) ? options === null || options === void 0 ? void 0 : options.abortErrorMsg : StandardAbortMessage));
+        }, "rejectOnAbort");
+        const removeListeners = /* @__PURE__ */ __name(() => {
+          if ((options === null || options === void 0 ? void 0 : options.abortSignal) && onAborted) {
+            options.abortSignal.removeEventListener("abort", onAborted);
+          }
+        }, "removeListeners");
+        onAborted = /* @__PURE__ */ __name(() => {
+          if (isDefined(timer)) {
+            clearTimeout(timer);
+          }
+          removeListeners();
+          return rejectOnAbort();
+        }, "onAborted");
+        if ((options === null || options === void 0 ? void 0 : options.abortSignal) && options.abortSignal.aborted) {
+          return rejectOnAbort();
+        }
+        timer = setTimeout(() => {
+          removeListeners();
+          resolve2(value);
+        }, delayInMs);
+        if (options === null || options === void 0 ? void 0 : options.abortSignal) {
+          options.abortSignal.addEventListener("abort", onAborted);
+        }
+      });
+    }
+    __name(delay, "delay");
     function exponentialRetryPolicy(retryCount, retryInterval, maxRetryInterval) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new ExponentialRetryPolicy(nextPolicy, options, retryCount, retryInterval, maxRetryInterval);
         }
       };
@@ -38340,276 +37948,208 @@ var require_dist6 = __commonJS({
       retryDelayInMs: DEFAULT_CLIENT_RETRY_INTERVAL,
       maxRetryDelayInMs: DEFAULT_CLIENT_MAX_RETRY_INTERVAL
     };
-    var ExponentialRetryPolicy = function(_super) {
-      tslib.__extends(ExponentialRetryPolicy2, _super);
-      function ExponentialRetryPolicy2(nextPolicy, options, retryCount, retryInterval, maxRetryInterval) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.retryCount = isNumber(retryCount) ? retryCount : DEFAULT_CLIENT_RETRY_COUNT;
-        _this.retryInterval = isNumber(retryInterval) ? retryInterval : DEFAULT_CLIENT_RETRY_INTERVAL;
-        _this.maxRetryInterval = isNumber(maxRetryInterval) ? maxRetryInterval : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
-        return _this;
+    var ExponentialRetryPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, retryCount, retryInterval, maxRetryInterval) {
+        super(nextPolicy, options);
+        this.retryCount = isNumber(retryCount) ? retryCount : DEFAULT_CLIENT_RETRY_COUNT;
+        this.retryInterval = isNumber(retryInterval) ? retryInterval : DEFAULT_CLIENT_RETRY_INTERVAL;
+        this.maxRetryInterval = isNumber(maxRetryInterval) ? maxRetryInterval : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
       }
-      __name(ExponentialRetryPolicy2, "ExponentialRetryPolicy");
-      ExponentialRetryPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
-        return this._nextPolicy.sendRequest(request.clone()).then(function(response) {
-          return retry(_this, request, response);
-        }).catch(function(error) {
-          return retry(_this, request, error.response, void 0, error);
-        });
-      };
-      return ExponentialRetryPolicy2;
-    }(BaseRequestPolicy);
-    function retry(policy, request, response, retryData, requestError) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        function shouldPolicyRetry(responseParam) {
-          var statusCode = responseParam === null || responseParam === void 0 ? void 0 : responseParam.status;
-          if (statusCode === void 0 || statusCode < 500 && statusCode !== 408 || statusCode === 501 || statusCode === 505) {
-            return false;
-          }
-          return true;
+      sendRequest(request) {
+        return this._nextPolicy.sendRequest(request.clone()).then((response) => retry(this, request, response)).catch((error) => retry(this, request, error.response, void 0, error));
+      }
+    };
+    __name(ExponentialRetryPolicy, "ExponentialRetryPolicy");
+    async function retry(policy, request, response, retryData, requestError) {
+      function shouldPolicyRetry(responseParam) {
+        const statusCode = responseParam === null || responseParam === void 0 ? void 0 : responseParam.status;
+        if (statusCode === 503 && (response === null || response === void 0 ? void 0 : response.headers.get(Constants.HeaderConstants.RETRY_AFTER))) {
+          return false;
         }
-        __name(shouldPolicyRetry, "shouldPolicyRetry");
-        var isAborted, res, err_1, err;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              retryData = updateRetryData({
-                retryInterval: policy.retryInterval,
-                minRetryInterval: 0,
-                maxRetryInterval: policy.maxRetryInterval
-              }, retryData, requestError);
-              isAborted = request.abortSignal && request.abortSignal.aborted;
-              if (!(!isAborted && shouldRetry(policy.retryCount, shouldPolicyRetry, retryData, response)))
-                return [3, 6];
-              logger.info("Retrying request in " + retryData.retryInterval);
-              _a.label = 1;
-            case 1:
-              _a.trys.push([1, 4, , 5]);
-              return [4, delay(retryData.retryInterval)];
-            case 2:
-              _a.sent();
-              return [4, policy._nextPolicy.sendRequest(request.clone())];
-            case 3:
-              res = _a.sent();
-              return [2, retry(policy, request, res, retryData)];
-            case 4:
-              err_1 = _a.sent();
-              return [2, retry(policy, request, response, retryData, err_1)];
-            case 5:
-              return [3, 7];
-            case 6:
-              if (isAborted || requestError || !response) {
-                err = retryData.error || new RestError("Failed to send the request.", RestError.REQUEST_SEND_ERROR, response && response.status, response && response.request, response);
-                throw err;
-              } else {
-                return [2, response];
-              }
-            case 7:
-              return [2];
-          }
-        });
-      });
+        if (statusCode === void 0 || statusCode < 500 && statusCode !== 408 || statusCode === 501 || statusCode === 505) {
+          return false;
+        }
+        return true;
+      }
+      __name(shouldPolicyRetry, "shouldPolicyRetry");
+      retryData = updateRetryData({
+        retryInterval: policy.retryInterval,
+        minRetryInterval: 0,
+        maxRetryInterval: policy.maxRetryInterval
+      }, retryData, requestError);
+      const isAborted = request.abortSignal && request.abortSignal.aborted;
+      if (!isAborted && shouldRetry(policy.retryCount, shouldPolicyRetry, retryData, response)) {
+        logger.info(`Retrying request in ${retryData.retryInterval}`);
+        try {
+          await delay(retryData.retryInterval);
+          const res = await policy._nextPolicy.sendRequest(request.clone());
+          return retry(policy, request, res, retryData);
+        } catch (err) {
+          return retry(policy, request, response, retryData, err);
+        }
+      } else if (isAborted || requestError || !response) {
+        const err = retryData.error || new RestError("Failed to send the request.", RestError.REQUEST_SEND_ERROR, response && response.status, response && response.request, response);
+        throw err;
+      } else {
+        return response;
+      }
     }
     __name(retry, "retry");
-    function generateClientRequestIdPolicy(requestIdHeaderName) {
-      if (requestIdHeaderName === void 0) {
-        requestIdHeaderName = "x-ms-client-request-id";
-      }
+    function generateClientRequestIdPolicy(requestIdHeaderName = "x-ms-client-request-id") {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new GenerateClientRequestIdPolicy(nextPolicy, options, requestIdHeaderName);
         }
       };
     }
     __name(generateClientRequestIdPolicy, "generateClientRequestIdPolicy");
-    var GenerateClientRequestIdPolicy = function(_super) {
-      tslib.__extends(GenerateClientRequestIdPolicy2, _super);
-      function GenerateClientRequestIdPolicy2(nextPolicy, options, _requestIdHeaderName) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this._requestIdHeaderName = _requestIdHeaderName;
-        return _this;
+    var GenerateClientRequestIdPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, _requestIdHeaderName) {
+        super(nextPolicy, options);
+        this._requestIdHeaderName = _requestIdHeaderName;
       }
-      __name(GenerateClientRequestIdPolicy2, "GenerateClientRequestIdPolicy");
-      GenerateClientRequestIdPolicy2.prototype.sendRequest = function(request) {
+      sendRequest(request) {
         if (!request.headers.contains(this._requestIdHeaderName)) {
           request.headers.set(this._requestIdHeaderName, request.requestId);
         }
         return this._nextPolicy.sendRequest(request);
-      };
-      return GenerateClientRequestIdPolicy2;
-    }(BaseRequestPolicy);
+      }
+    };
+    __name(GenerateClientRequestIdPolicy, "GenerateClientRequestIdPolicy");
     function getDefaultUserAgentKey() {
       return Constants.HeaderConstants.USER_AGENT;
     }
     __name(getDefaultUserAgentKey, "getDefaultUserAgentKey");
     function getPlatformSpecificData() {
-      var runtimeInfo = {
+      const runtimeInfo = {
         key: "Node",
         value: process.version
       };
-      var osInfo = {
+      const osInfo = {
         key: "OS",
-        value: "(" + os.arch() + "-" + os.type() + "-" + os.release() + ")"
+        value: `(${os.arch()}-${os.type()}-${os.release()})`
       };
       return [runtimeInfo, osInfo];
     }
     __name(getPlatformSpecificData, "getPlatformSpecificData");
     function getRuntimeInfo() {
-      var msRestRuntime = {
+      const msRestRuntime = {
         key: "core-http",
         value: Constants.coreHttpVersion
       };
       return [msRestRuntime];
     }
     __name(getRuntimeInfo, "getRuntimeInfo");
-    function getUserAgentString(telemetryInfo, keySeparator, valueSeparator) {
-      if (keySeparator === void 0) {
-        keySeparator = " ";
-      }
-      if (valueSeparator === void 0) {
-        valueSeparator = "/";
-      }
-      return telemetryInfo.map(function(info2) {
-        var value = info2.value ? "" + valueSeparator + info2.value : "";
-        return "" + info2.key + value;
+    function getUserAgentString(telemetryInfo, keySeparator = " ", valueSeparator = "/") {
+      return telemetryInfo.map((info2) => {
+        const value = info2.value ? `${valueSeparator}${info2.value}` : "";
+        return `${info2.key}${value}`;
       }).join(keySeparator);
     }
     __name(getUserAgentString, "getUserAgentString");
     var getDefaultUserAgentHeaderName = getDefaultUserAgentKey;
     function getDefaultUserAgentValue() {
-      var runtimeInfo = getRuntimeInfo();
-      var platformSpecificData = getPlatformSpecificData();
-      var userAgent = getUserAgentString(runtimeInfo.concat(platformSpecificData));
+      const runtimeInfo = getRuntimeInfo();
+      const platformSpecificData = getPlatformSpecificData();
+      const userAgent = getUserAgentString(runtimeInfo.concat(platformSpecificData));
       return userAgent;
     }
     __name(getDefaultUserAgentValue, "getDefaultUserAgentValue");
     function userAgentPolicy(userAgentData) {
-      var key = !userAgentData || userAgentData.key === void 0 || userAgentData.key === null ? getDefaultUserAgentKey() : userAgentData.key;
-      var value = !userAgentData || userAgentData.value === void 0 || userAgentData.value === null ? getDefaultUserAgentValue() : userAgentData.value;
+      const key = !userAgentData || userAgentData.key === void 0 || userAgentData.key === null ? getDefaultUserAgentKey() : userAgentData.key;
+      const value = !userAgentData || userAgentData.value === void 0 || userAgentData.value === null ? getDefaultUserAgentValue() : userAgentData.value;
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new UserAgentPolicy(nextPolicy, options, key, value);
         }
       };
     }
     __name(userAgentPolicy, "userAgentPolicy");
-    var UserAgentPolicy = function(_super) {
-      tslib.__extends(UserAgentPolicy2, _super);
-      function UserAgentPolicy2(_nextPolicy, _options, headerKey, headerValue) {
-        var _this = _super.call(this, _nextPolicy, _options) || this;
-        _this._nextPolicy = _nextPolicy;
-        _this._options = _options;
-        _this.headerKey = headerKey;
-        _this.headerValue = headerValue;
-        return _this;
+    var UserAgentPolicy = class extends BaseRequestPolicy {
+      constructor(_nextPolicy, _options, headerKey, headerValue) {
+        super(_nextPolicy, _options);
+        this._nextPolicy = _nextPolicy;
+        this._options = _options;
+        this.headerKey = headerKey;
+        this.headerValue = headerValue;
       }
-      __name(UserAgentPolicy2, "UserAgentPolicy");
-      UserAgentPolicy2.prototype.sendRequest = function(request) {
+      sendRequest(request) {
         this.addUserAgentHeader(request);
         return this._nextPolicy.sendRequest(request);
-      };
-      UserAgentPolicy2.prototype.addUserAgentHeader = function(request) {
+      }
+      addUserAgentHeader(request) {
         if (!request.headers) {
           request.headers = new HttpHeaders();
         }
         if (!request.headers.get(this.headerKey) && this.headerValue) {
           request.headers.set(this.headerKey, this.headerValue);
         }
-      };
-      return UserAgentPolicy2;
-    }(BaseRequestPolicy);
+      }
+    };
+    __name(UserAgentPolicy, "UserAgentPolicy");
     var allowedRedirect = ["GET", "HEAD"];
     var DefaultRedirectOptions = {
       handleRedirects: true,
       maxRetries: 20
     };
-    function redirectPolicy(maximumRetries) {
-      if (maximumRetries === void 0) {
-        maximumRetries = 20;
-      }
+    function redirectPolicy(maximumRetries = 20) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new RedirectPolicy(nextPolicy, options, maximumRetries);
         }
       };
     }
     __name(redirectPolicy, "redirectPolicy");
-    var RedirectPolicy = function(_super) {
-      tslib.__extends(RedirectPolicy2, _super);
-      function RedirectPolicy2(nextPolicy, options, maxRetries) {
-        if (maxRetries === void 0) {
-          maxRetries = 20;
-        }
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.maxRetries = maxRetries;
-        return _this;
+    var RedirectPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, maxRetries = 20) {
+        super(nextPolicy, options);
+        this.maxRetries = maxRetries;
       }
-      __name(RedirectPolicy2, "RedirectPolicy");
-      RedirectPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
-        return this._nextPolicy.sendRequest(request).then(function(response) {
-          return handleRedirect(_this, response, 0);
-        });
-      };
-      return RedirectPolicy2;
-    }(BaseRequestPolicy);
+      sendRequest(request) {
+        return this._nextPolicy.sendRequest(request).then((response) => handleRedirect(this, response, 0));
+      }
+    };
+    __name(RedirectPolicy, "RedirectPolicy");
     function handleRedirect(policy, response, currentRetries) {
-      var request = response.request, status = response.status;
-      var locationHeader = response.headers.get("location");
+      const { request, status } = response;
+      const locationHeader = response.headers.get("location");
       if (locationHeader && (status === 300 || status === 301 && allowedRedirect.includes(request.method) || status === 302 && allowedRedirect.includes(request.method) || status === 303 && request.method === "POST" || status === 307) && (!policy.maxRetries || currentRetries < policy.maxRetries)) {
-        var builder = URLBuilder.parse(request.url);
+        const builder = URLBuilder.parse(request.url);
         builder.setPath(locationHeader);
         request.url = builder.toString();
         if (status === 303) {
           request.method = "GET";
           delete request.body;
         }
-        return policy._nextPolicy.sendRequest(request).then(function(res) {
-          return handleRedirect(policy, res, currentRetries + 1);
-        });
+        return policy._nextPolicy.sendRequest(request).then((res) => handleRedirect(policy, res, currentRetries + 1));
       }
       return Promise.resolve(response);
     }
     __name(handleRedirect, "handleRedirect");
-    function rpRegistrationPolicy(retryTimeout) {
-      if (retryTimeout === void 0) {
-        retryTimeout = 30;
-      }
+    function rpRegistrationPolicy(retryTimeout = 30) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new RPRegistrationPolicy(nextPolicy, options, retryTimeout);
         }
       };
     }
     __name(rpRegistrationPolicy, "rpRegistrationPolicy");
-    var RPRegistrationPolicy = function(_super) {
-      tslib.__extends(RPRegistrationPolicy2, _super);
-      function RPRegistrationPolicy2(nextPolicy, options, _retryTimeout) {
-        if (_retryTimeout === void 0) {
-          _retryTimeout = 30;
-        }
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this._retryTimeout = _retryTimeout;
-        return _this;
+    var RPRegistrationPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, _retryTimeout = 30) {
+        super(nextPolicy, options);
+        this._retryTimeout = _retryTimeout;
       }
-      __name(RPRegistrationPolicy2, "RPRegistrationPolicy");
-      RPRegistrationPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
-        return this._nextPolicy.sendRequest(request.clone()).then(function(response) {
-          return registerIfNeeded(_this, request, response);
-        });
-      };
-      return RPRegistrationPolicy2;
-    }(BaseRequestPolicy);
+      sendRequest(request) {
+        return this._nextPolicy.sendRequest(request.clone()).then((response) => registerIfNeeded(this, request, response));
+      }
+    };
+    __name(RPRegistrationPolicy, "RPRegistrationPolicy");
     function registerIfNeeded(policy, request, response) {
       if (response.status === 409) {
-        var rpName = checkRPNotRegisteredError(response.bodyAsText);
+        const rpName = checkRPNotRegisteredError(response.bodyAsText);
         if (rpName) {
-          var urlPrefix = extractSubscriptionUrl(request.url);
-          return registerRP(policy, urlPrefix, rpName, request).catch(function() {
-            return false;
-          }).then(function(registrationStatus) {
+          const urlPrefix = extractSubscriptionUrl(request.url);
+          return registerRP(policy, urlPrefix, rpName, request).catch(() => false).then((registrationStatus) => {
             if (registrationStatus) {
               request.headers.set("x-ms-client-request-id", generateUuid());
               return policy._nextPolicy.sendRequest(request.clone());
@@ -38621,11 +38161,8 @@ var require_dist6 = __commonJS({
       return Promise.resolve(response);
     }
     __name(registerIfNeeded, "registerIfNeeded");
-    function getRequestEssentials(originalRequest, reuseUrlToo) {
-      if (reuseUrlToo === void 0) {
-        reuseUrlToo = false;
-      }
-      var reqOptions = originalRequest.clone();
+    function getRequestEssentials(originalRequest, reuseUrlToo = false) {
+      const reqOptions = originalRequest.clone();
       if (reuseUrlToo) {
         reqOptions.url = originalRequest.url;
       }
@@ -38635,14 +38172,14 @@ var require_dist6 = __commonJS({
     }
     __name(getRequestEssentials, "getRequestEssentials");
     function checkRPNotRegisteredError(body) {
-      var result, responseBody;
+      let result, responseBody;
       if (body) {
         try {
           responseBody = JSON.parse(body);
         } catch (err) {
         }
         if (responseBody && responseBody.error && responseBody.error.message && responseBody.error.code && responseBody.error.code === "MissingSubscriptionRegistration") {
-          var matchRes = responseBody.error.message.match(/.*'(.*)'/i);
+          const matchRes = responseBody.error.message.match(/.*'(.*)'/i);
           if (matchRes) {
             result = matchRes.pop();
           }
@@ -38652,44 +38189,41 @@ var require_dist6 = __commonJS({
     }
     __name(checkRPNotRegisteredError, "checkRPNotRegisteredError");
     function extractSubscriptionUrl(url2) {
-      var result;
-      var matchRes = url2.match(/.*\/subscriptions\/[a-f0-9-]+\//gi);
+      let result;
+      const matchRes = url2.match(/.*\/subscriptions\/[a-f0-9-]+\//gi);
       if (matchRes && matchRes[0]) {
         result = matchRes[0];
       } else {
-        throw new Error("Unable to extract subscriptionId from the given url - " + url2 + ".");
+        throw new Error(`Unable to extract subscriptionId from the given url - ${url2}.`);
       }
       return result;
     }
     __name(extractSubscriptionUrl, "extractSubscriptionUrl");
-    function registerRP(policy, urlPrefix, provider, originalRequest) {
-      var postUrl = urlPrefix + "providers/" + provider + "/register?api-version=2016-02-01";
-      var getUrl = urlPrefix + "providers/" + provider + "?api-version=2016-02-01";
-      var reqOptions = getRequestEssentials(originalRequest);
+    async function registerRP(policy, urlPrefix, provider, originalRequest) {
+      const postUrl = `${urlPrefix}providers/${provider}/register?api-version=2016-02-01`;
+      const getUrl = `${urlPrefix}providers/${provider}?api-version=2016-02-01`;
+      const reqOptions = getRequestEssentials(originalRequest);
       reqOptions.method = "POST";
       reqOptions.url = postUrl;
-      return policy._nextPolicy.sendRequest(reqOptions).then(function(response) {
-        if (response.status !== 200) {
-          throw new Error("Autoregistration of " + provider + " failed. Please try registering manually.");
-        }
-        return getRegistrationStatus(policy, getUrl, originalRequest);
-      });
+      const response = await policy._nextPolicy.sendRequest(reqOptions);
+      if (response.status !== 200) {
+        throw new Error(`Autoregistration of ${provider} failed. Please try registering manually.`);
+      }
+      return getRegistrationStatus(policy, getUrl, originalRequest);
     }
     __name(registerRP, "registerRP");
-    function getRegistrationStatus(policy, url2, originalRequest) {
-      var reqOptions = getRequestEssentials(originalRequest);
+    async function getRegistrationStatus(policy, url2, originalRequest) {
+      const reqOptions = getRequestEssentials(originalRequest);
       reqOptions.url = url2;
       reqOptions.method = "GET";
-      return policy._nextPolicy.sendRequest(reqOptions).then(function(res) {
-        var obj = res.parsedBody;
-        if (res.parsedBody && obj.registrationState && obj.registrationState === "Registered") {
-          return true;
-        } else {
-          return delay(policy._retryTimeout * 1e3).then(function() {
-            return getRegistrationStatus(policy, url2, originalRequest);
-          });
-        }
-      });
+      const res = await policy._nextPolicy.sendRequest(reqOptions);
+      const obj = res.parsedBody;
+      if (res.parsedBody && obj.registrationState && obj.registrationState === "Registered") {
+        return true;
+      } else {
+        await delay(policy._retryTimeout * 1e3);
+        return getRegistrationStatus(policy, url2, originalRequest);
+      }
     }
     __name(getRegistrationStatus, "getRegistrationStatus");
     var DEFAULT_CYCLER_OPTIONS = {
@@ -38697,73 +38231,36 @@ var require_dist6 = __commonJS({
       retryIntervalInMs: 3e3,
       refreshWindowInMs: 1e3 * 60 * 2
     };
-    function beginRefresh(getAccessToken, retryIntervalInMs, timeoutInMs) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        function tryGetAccessToken() {
-          return tslib.__awaiter(this, void 0, void 0, function() {
-            var _a, finalToken;
-            return tslib.__generator(this, function(_b) {
-              switch (_b.label) {
-                case 0:
-                  if (!(Date.now() < timeoutInMs))
-                    return [3, 5];
-                  _b.label = 1;
-                case 1:
-                  _b.trys.push([1, 3, , 4]);
-                  return [4, getAccessToken()];
-                case 2:
-                  return [2, _b.sent()];
-                case 3:
-                  _a = _b.sent();
-                  return [2, null];
-                case 4:
-                  return [3, 7];
-                case 5:
-                  return [4, getAccessToken()];
-                case 6:
-                  finalToken = _b.sent();
-                  if (finalToken === null) {
-                    throw new Error("Failed to refresh access token.");
-                  }
-                  return [2, finalToken];
-                case 7:
-                  return [2];
-              }
-            });
-          });
-        }
-        __name(tryGetAccessToken, "tryGetAccessToken");
-        var token;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              return [4, tryGetAccessToken()];
-            case 1:
-              token = _a.sent();
-              _a.label = 2;
-            case 2:
-              if (!(token === null))
-                return [3, 5];
-              return [4, delay(retryIntervalInMs)];
-            case 3:
-              _a.sent();
-              return [4, tryGetAccessToken()];
-            case 4:
-              token = _a.sent();
-              return [3, 2];
-            case 5:
-              return [2, token];
+    async function beginRefresh(getAccessToken, retryIntervalInMs, timeoutInMs) {
+      async function tryGetAccessToken() {
+        if (Date.now() < timeoutInMs) {
+          try {
+            return await getAccessToken();
+          } catch (_a) {
+            return null;
           }
-        });
-      });
+        } else {
+          const finalToken = await getAccessToken();
+          if (finalToken === null) {
+            throw new Error("Failed to refresh access token.");
+          }
+          return finalToken;
+        }
+      }
+      __name(tryGetAccessToken, "tryGetAccessToken");
+      let token = await tryGetAccessToken();
+      while (token === null) {
+        await delay(retryIntervalInMs);
+        token = await tryGetAccessToken();
+      }
+      return token;
     }
     __name(beginRefresh, "beginRefresh");
     function createTokenCycler(credential, scopes, tokenCyclerOptions) {
-      var _this = this;
-      var refreshWorker = null;
-      var token = null;
-      var options = tslib.__assign(tslib.__assign({}, DEFAULT_CYCLER_OPTIONS), tokenCyclerOptions);
-      var cycler = {
+      let refreshWorker = null;
+      let token = null;
+      const options = Object.assign(Object.assign({}, DEFAULT_CYCLER_OPTIONS), tokenCyclerOptions);
+      const cycler = {
         get isRefreshing() {
           return refreshWorker !== null;
         },
@@ -38778,14 +38275,12 @@ var require_dist6 = __commonJS({
       function refresh(getTokenOptions) {
         var _a;
         if (!cycler.isRefreshing) {
-          var tryGetAccessToken = /* @__PURE__ */ __name(function() {
-            return credential.getToken(scopes, getTokenOptions);
-          }, "tryGetAccessToken");
-          refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs, (_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : Date.now()).then(function(_token) {
+          const tryGetAccessToken = /* @__PURE__ */ __name(() => credential.getToken(scopes, getTokenOptions), "tryGetAccessToken");
+          refreshWorker = beginRefresh(tryGetAccessToken, options.retryIntervalInMs, (_a = token === null || token === void 0 ? void 0 : token.expiresOnTimestamp) !== null && _a !== void 0 ? _a : Date.now()).then((_token) => {
             refreshWorker = null;
             token = _token;
             return token;
-          }).catch(function(reason) {
+          }).catch((reason) => {
             refreshWorker = null;
             token = null;
             throw reason;
@@ -38794,53 +38289,40 @@ var require_dist6 = __commonJS({
         return refreshWorker;
       }
       __name(refresh, "refresh");
-      return function(tokenOptions) {
-        return tslib.__awaiter(_this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            if (cycler.mustRefresh)
-              return [2, refresh(tokenOptions)];
-            if (cycler.shouldRefresh) {
-              refresh(tokenOptions);
-            }
-            return [2, token];
-          });
-        });
+      return async (tokenOptions) => {
+        if (cycler.mustRefresh)
+          return refresh(tokenOptions);
+        if (cycler.shouldRefresh) {
+          refresh(tokenOptions);
+        }
+        return token;
       };
     }
     __name(createTokenCycler, "createTokenCycler");
     function bearerTokenAuthenticationPolicy(credential, scopes) {
-      var getToken = createTokenCycler(credential, scopes);
-      var BearerTokenAuthenticationPolicy = function(_super) {
-        tslib.__extends(BearerTokenAuthenticationPolicy2, _super);
-        function BearerTokenAuthenticationPolicy2(nextPolicy, options) {
-          return _super.call(this, nextPolicy, options) || this;
+      const getToken = createTokenCycler(credential, scopes);
+      class BearerTokenAuthenticationPolicy extends BaseRequestPolicy {
+        constructor(nextPolicy, options) {
+          super(nextPolicy, options);
         }
-        __name(BearerTokenAuthenticationPolicy2, "BearerTokenAuthenticationPolicy");
-        BearerTokenAuthenticationPolicy2.prototype.sendRequest = function(webResource) {
-          return tslib.__awaiter(this, void 0, void 0, function() {
-            var token;
-            return tslib.__generator(this, function(_a) {
-              switch (_a.label) {
-                case 0:
-                  return [4, getToken({
-                    abortSignal: webResource.abortSignal,
-                    tracingOptions: {
-                      spanOptions: webResource.spanOptions,
-                      tracingContext: webResource.tracingContext
-                    }
-                  })];
-                case 1:
-                  token = _a.sent().token;
-                  webResource.headers.set(Constants.HeaderConstants.AUTHORIZATION, "Bearer " + token);
-                  return [2, this._nextPolicy.sendRequest(webResource)];
-              }
-            });
+        async sendRequest(webResource) {
+          if (!webResource.url.toLowerCase().startsWith("https://")) {
+            throw new Error("Bearer token authentication is not permitted for non-TLS protected (non-https) URLs.");
+          }
+          const { token } = await getToken({
+            abortSignal: webResource.abortSignal,
+            tracingOptions: {
+              spanOptions: webResource.spanOptions,
+              tracingContext: webResource.tracingContext
+            }
           });
-        };
-        return BearerTokenAuthenticationPolicy2;
-      }(BaseRequestPolicy);
+          webResource.headers.set(Constants.HeaderConstants.AUTHORIZATION, `Bearer ${token}`);
+          return this._nextPolicy.sendRequest(webResource);
+        }
+      }
+      __name(BearerTokenAuthenticationPolicy, "BearerTokenAuthenticationPolicy");
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new BearerTokenAuthenticationPolicy(nextPolicy, options);
         }
       };
@@ -38848,69 +38330,47 @@ var require_dist6 = __commonJS({
     __name(bearerTokenAuthenticationPolicy, "bearerTokenAuthenticationPolicy");
     function systemErrorRetryPolicy(retryCount, retryInterval, minRetryInterval, maxRetryInterval) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new SystemErrorRetryPolicy(nextPolicy, options, retryCount, retryInterval, minRetryInterval, maxRetryInterval);
         }
       };
     }
     __name(systemErrorRetryPolicy, "systemErrorRetryPolicy");
-    var SystemErrorRetryPolicy = function(_super) {
-      tslib.__extends(SystemErrorRetryPolicy2, _super);
-      function SystemErrorRetryPolicy2(nextPolicy, options, retryCount, retryInterval, minRetryInterval, maxRetryInterval) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.retryCount = isNumber(retryCount) ? retryCount : DEFAULT_CLIENT_RETRY_COUNT;
-        _this.retryInterval = isNumber(retryInterval) ? retryInterval : DEFAULT_CLIENT_RETRY_INTERVAL;
-        _this.minRetryInterval = isNumber(minRetryInterval) ? minRetryInterval : DEFAULT_CLIENT_MIN_RETRY_INTERVAL;
-        _this.maxRetryInterval = isNumber(maxRetryInterval) ? maxRetryInterval : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
-        return _this;
+    var SystemErrorRetryPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, retryCount, retryInterval, minRetryInterval, maxRetryInterval) {
+        super(nextPolicy, options);
+        this.retryCount = isNumber(retryCount) ? retryCount : DEFAULT_CLIENT_RETRY_COUNT;
+        this.retryInterval = isNumber(retryInterval) ? retryInterval : DEFAULT_CLIENT_RETRY_INTERVAL;
+        this.minRetryInterval = isNumber(minRetryInterval) ? minRetryInterval : DEFAULT_CLIENT_MIN_RETRY_INTERVAL;
+        this.maxRetryInterval = isNumber(maxRetryInterval) ? maxRetryInterval : DEFAULT_CLIENT_MAX_RETRY_INTERVAL;
       }
-      __name(SystemErrorRetryPolicy2, "SystemErrorRetryPolicy");
-      SystemErrorRetryPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
-        return this._nextPolicy.sendRequest(request.clone()).catch(function(error) {
-          return retry$1(_this, request, error.response, error);
-        });
-      };
-      return SystemErrorRetryPolicy2;
-    }(BaseRequestPolicy);
-    function retry$1(policy, request, operationResponse, err, retryData) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        function shouldPolicyRetry(_response, error) {
-          if (error && error.code && (error.code === "ETIMEDOUT" || error.code === "ESOCKETTIMEDOUT" || error.code === "ECONNREFUSED" || error.code === "ECONNRESET" || error.code === "ENOENT")) {
-            return true;
-          }
-          return false;
+      sendRequest(request) {
+        return this._nextPolicy.sendRequest(request.clone()).catch((error) => retry$1(this, request, error.response, error));
+      }
+    };
+    __name(SystemErrorRetryPolicy, "SystemErrorRetryPolicy");
+    async function retry$1(policy, request, operationResponse, err, retryData) {
+      retryData = updateRetryData(policy, retryData, err);
+      function shouldPolicyRetry(_response, error) {
+        if (error && error.code && (error.code === "ETIMEDOUT" || error.code === "ESOCKETTIMEDOUT" || error.code === "ECONNREFUSED" || error.code === "ECONNRESET" || error.code === "ENOENT")) {
+          return true;
         }
-        __name(shouldPolicyRetry, "shouldPolicyRetry");
-        var nestedErr_1;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              retryData = updateRetryData(policy, retryData, err);
-              if (!shouldRetry(policy.retryCount, shouldPolicyRetry, retryData, operationResponse, err))
-                return [3, 5];
-              _a.label = 1;
-            case 1:
-              _a.trys.push([1, 3, , 4]);
-              return [4, delay(retryData.retryInterval)];
-            case 2:
-              _a.sent();
-              return [2, policy._nextPolicy.sendRequest(request.clone())];
-            case 3:
-              nestedErr_1 = _a.sent();
-              return [2, retry$1(policy, request, operationResponse, nestedErr_1, retryData)];
-            case 4:
-              return [3, 6];
-            case 5:
-              if (err) {
-                return [2, Promise.reject(retryData.error)];
-              }
-              return [2, operationResponse];
-            case 6:
-              return [2];
-          }
-        });
-      });
+        return false;
+      }
+      __name(shouldPolicyRetry, "shouldPolicyRetry");
+      if (shouldRetry(policy.retryCount, shouldPolicyRetry, retryData, operationResponse, err)) {
+        try {
+          await delay(retryData.retryInterval);
+          return policy._nextPolicy.sendRequest(request.clone());
+        } catch (nestedErr) {
+          return retry$1(policy, request, operationResponse, nestedErr, retryData);
+        }
+      } else {
+        if (err) {
+          return Promise.reject(retryData.error);
+        }
+        return operationResponse;
+      }
     }
     __name(retry$1, "retry$1");
     (function(QueryCollectionFormat) {
@@ -38920,30 +38380,29 @@ var require_dist6 = __commonJS({
       QueryCollectionFormat["Pipes"] = "|";
       QueryCollectionFormat["Multi"] = "Multi";
     })(exports2.QueryCollectionFormat || (exports2.QueryCollectionFormat = {}));
-    var noProxyList = [];
+    var globalNoProxyList = [];
     var noProxyListLoaded = false;
-    var byPassedList = new Map();
+    var globalBypassedMap = new Map();
     function loadEnvironmentProxyValue() {
       if (!process) {
         return void 0;
       }
-      var httpsProxy = getEnvironmentValue(Constants.HTTPS_PROXY);
-      var allProxy = getEnvironmentValue(Constants.ALL_PROXY);
-      var httpProxy = getEnvironmentValue(Constants.HTTP_PROXY);
+      const httpsProxy = getEnvironmentValue(Constants.HTTPS_PROXY);
+      const allProxy = getEnvironmentValue(Constants.ALL_PROXY);
+      const httpProxy = getEnvironmentValue(Constants.HTTP_PROXY);
       return httpsProxy || allProxy || httpProxy;
     }
     __name(loadEnvironmentProxyValue, "loadEnvironmentProxyValue");
-    function isBypassed(uri) {
+    function isBypassed(uri, noProxyList, bypassedMap) {
       if (noProxyList.length === 0) {
         return false;
       }
-      var host = URLBuilder.parse(uri).getHost();
-      if (byPassedList.has(host)) {
-        return byPassedList.get(host);
+      const host = URLBuilder.parse(uri).getHost();
+      if (bypassedMap === null || bypassedMap === void 0 ? void 0 : bypassedMap.has(host)) {
+        return bypassedMap.get(host);
       }
-      var isBypassedFlag = false;
-      for (var _i = 0, noProxyList_1 = noProxyList; _i < noProxyList_1.length; _i++) {
-        var pattern = noProxyList_1[_i];
+      let isBypassedFlag = false;
+      for (const pattern of noProxyList) {
         if (pattern[0] === ".") {
           if (host.endsWith(pattern)) {
             isBypassedFlag = true;
@@ -38958,19 +38417,15 @@ var require_dist6 = __commonJS({
           }
         }
       }
-      byPassedList.set(host, isBypassedFlag);
+      bypassedMap === null || bypassedMap === void 0 ? void 0 : bypassedMap.set(host, isBypassedFlag);
       return isBypassedFlag;
     }
     __name(isBypassed, "isBypassed");
     function loadNoProxy() {
-      var noProxy = getEnvironmentValue(Constants.NO_PROXY);
+      const noProxy = getEnvironmentValue(Constants.NO_PROXY);
       noProxyListLoaded = true;
       if (noProxy) {
-        return noProxy.split(",").map(function(item) {
-          return item.trim();
-        }).filter(function(item) {
-          return item.length;
-        });
+        return noProxy.split(",").map((item) => item.trim()).filter((item) => item.length);
       }
       return [];
     }
@@ -38982,9 +38437,9 @@ var require_dist6 = __commonJS({
           return void 0;
         }
       }
-      var _a = extractAuthFromUrl(proxyUrl), username = _a.username, password = _a.password, urlWithoutAuth = _a.urlWithoutAuth;
-      var parsedUrl = URLBuilder.parse(urlWithoutAuth);
-      var schema = parsedUrl.getScheme() ? parsedUrl.getScheme() + "://" : "";
+      const { username, password, urlWithoutAuth } = extractAuthFromUrl(proxyUrl);
+      const parsedUrl = URLBuilder.parse(urlWithoutAuth);
+      const schema = parsedUrl.getScheme() ? parsedUrl.getScheme() + "://" : "";
       return {
         host: schema + parsedUrl.getHost(),
         port: Number.parseInt(parsedUrl.getPort() || "80"),
@@ -38993,33 +38448,33 @@ var require_dist6 = __commonJS({
       };
     }
     __name(getDefaultProxySettings, "getDefaultProxySettings");
-    function proxyPolicy(proxySettings) {
+    function proxyPolicy(proxySettings, options) {
       if (!proxySettings) {
         proxySettings = getDefaultProxySettings();
       }
       if (!noProxyListLoaded) {
-        noProxyList.push.apply(noProxyList, loadNoProxy());
+        globalNoProxyList.push(...loadNoProxy());
       }
       return {
-        create: function(nextPolicy, options) {
-          return new ProxyPolicy(nextPolicy, options, proxySettings);
+        create: (nextPolicy, requestPolicyOptions) => {
+          return new ProxyPolicy(nextPolicy, requestPolicyOptions, proxySettings, options === null || options === void 0 ? void 0 : options.customNoProxyList);
         }
       };
     }
     __name(proxyPolicy, "proxyPolicy");
     function extractAuthFromUrl(url2) {
-      var atIndex = url2.indexOf("@");
+      const atIndex = url2.indexOf("@");
       if (atIndex === -1) {
         return { urlWithoutAuth: url2 };
       }
-      var schemeIndex = url2.indexOf("://");
-      var authStart = schemeIndex !== -1 ? schemeIndex + 3 : 0;
-      var auth = url2.substring(authStart, atIndex);
-      var colonIndex = auth.indexOf(":");
-      var hasPassword = colonIndex !== -1;
-      var username = hasPassword ? auth.substring(0, colonIndex) : auth;
-      var password = hasPassword ? auth.substring(colonIndex + 1) : void 0;
-      var urlWithoutAuth = url2.substring(0, authStart) + url2.substring(atIndex + 1);
+      const schemeIndex = url2.indexOf("://");
+      const authStart = schemeIndex !== -1 ? schemeIndex + 3 : 0;
+      const auth = url2.substring(authStart, atIndex);
+      const colonIndex = auth.indexOf(":");
+      const hasPassword = colonIndex !== -1;
+      const username = hasPassword ? auth.substring(0, colonIndex) : auth;
+      const password = hasPassword ? auth.substring(colonIndex + 1) : void 0;
+      const urlWithoutAuth = url2.substring(0, authStart) + url2.substring(atIndex + 1);
       return {
         username,
         password,
@@ -39027,293 +38482,242 @@ var require_dist6 = __commonJS({
       };
     }
     __name(extractAuthFromUrl, "extractAuthFromUrl");
-    var ProxyPolicy = function(_super) {
-      tslib.__extends(ProxyPolicy2, _super);
-      function ProxyPolicy2(nextPolicy, options, proxySettings) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.proxySettings = proxySettings;
-        return _this;
+    var ProxyPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, proxySettings, customNoProxyList) {
+        super(nextPolicy, options);
+        this.proxySettings = proxySettings;
+        this.customNoProxyList = customNoProxyList;
       }
-      __name(ProxyPolicy2, "ProxyPolicy");
-      ProxyPolicy2.prototype.sendRequest = function(request) {
-        if (!request.proxySettings && !isBypassed(request.url)) {
+      sendRequest(request) {
+        var _a;
+        if (!request.proxySettings && !isBypassed(request.url, (_a = this.customNoProxyList) !== null && _a !== void 0 ? _a : globalNoProxyList, this.customNoProxyList ? void 0 : globalBypassedMap)) {
           request.proxySettings = this.proxySettings;
         }
         return this._nextPolicy.sendRequest(request);
-      };
-      return ProxyPolicy2;
-    }(BaseRequestPolicy);
+      }
+    };
+    __name(ProxyPolicy, "ProxyPolicy");
+    var DEFAULT_CLIENT_MAX_RETRY_COUNT = 3;
     var StatusCodes = Constants.HttpConstants.StatusCodes;
     function throttlingRetryPolicy() {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new ThrottlingRetryPolicy(nextPolicy, options);
         }
       };
     }
     __name(throttlingRetryPolicy, "throttlingRetryPolicy");
-    var ThrottlingRetryPolicy = function(_super) {
-      tslib.__extends(ThrottlingRetryPolicy2, _super);
-      function ThrottlingRetryPolicy2(nextPolicy, options, _handleResponse) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this._handleResponse = _handleResponse || _this._defaultResponseHandler;
-        return _this;
+    var StandardAbortMessage$1 = "The operation was aborted.";
+    var ThrottlingRetryPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, _handleResponse) {
+        super(nextPolicy, options);
+        this.numberOfRetries = 0;
+        this._handleResponse = _handleResponse || this._defaultResponseHandler;
       }
-      __name(ThrottlingRetryPolicy2, "ThrottlingRetryPolicy");
-      ThrottlingRetryPolicy2.prototype.sendRequest = function(httpRequest) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            return [2, this._nextPolicy.sendRequest(httpRequest.clone()).then(function(response) {
-              if (response.status !== StatusCodes.TooManyRequests) {
-                return response;
-              } else {
-                return _this._handleResponse(httpRequest, response);
-              }
-            })];
-          });
-        });
-      };
-      ThrottlingRetryPolicy2.prototype._defaultResponseHandler = function(httpRequest, httpResponse) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var retryAfterHeader, delayInMs;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            retryAfterHeader = httpResponse.headers.get(Constants.HeaderConstants.RETRY_AFTER);
-            if (retryAfterHeader) {
-              delayInMs = ThrottlingRetryPolicy2.parseRetryAfterHeader(retryAfterHeader);
-              if (delayInMs) {
-                return [2, delay(delayInMs).then(function(_) {
-                  return _this._nextPolicy.sendRequest(httpRequest);
-                })];
-              }
+      async sendRequest(httpRequest) {
+        const response = await this._nextPolicy.sendRequest(httpRequest.clone());
+        if (response.status !== StatusCodes.TooManyRequests && response.status !== StatusCodes.ServiceUnavailable) {
+          return response;
+        } else {
+          return this._handleResponse(httpRequest, response);
+        }
+      }
+      async _defaultResponseHandler(httpRequest, httpResponse) {
+        var _a;
+        const retryAfterHeader = httpResponse.headers.get(Constants.HeaderConstants.RETRY_AFTER);
+        if (retryAfterHeader) {
+          const delayInMs = ThrottlingRetryPolicy.parseRetryAfterHeader(retryAfterHeader);
+          if (delayInMs) {
+            this.numberOfRetries += 1;
+            await delay(delayInMs, void 0, {
+              abortSignal: httpRequest.abortSignal,
+              abortErrorMsg: StandardAbortMessage$1
+            });
+            if ((_a = httpRequest.abortSignal) === null || _a === void 0 ? void 0 : _a.aborted) {
+              throw new abortController.AbortError(StandardAbortMessage$1);
             }
-            return [2, httpResponse];
-          });
-        });
-      };
-      ThrottlingRetryPolicy2.parseRetryAfterHeader = function(headerValue) {
-        var retryAfterInSeconds = Number(headerValue);
+            if (this.numberOfRetries < DEFAULT_CLIENT_MAX_RETRY_COUNT) {
+              return this.sendRequest(httpRequest);
+            } else {
+              return this._nextPolicy.sendRequest(httpRequest);
+            }
+          }
+        }
+        return httpResponse;
+      }
+      static parseRetryAfterHeader(headerValue) {
+        const retryAfterInSeconds = Number(headerValue);
         if (Number.isNaN(retryAfterInSeconds)) {
-          return ThrottlingRetryPolicy2.parseDateRetryAfterHeader(headerValue);
+          return ThrottlingRetryPolicy.parseDateRetryAfterHeader(headerValue);
         } else {
           return retryAfterInSeconds * 1e3;
         }
-      };
-      ThrottlingRetryPolicy2.parseDateRetryAfterHeader = function(headerValue) {
+      }
+      static parseDateRetryAfterHeader(headerValue) {
         try {
-          var now = Date.now();
-          var date = Date.parse(headerValue);
-          var diff = date - now;
+          const now = Date.now();
+          const date = Date.parse(headerValue);
+          const diff = date - now;
           return Number.isNaN(diff) ? void 0 : diff;
         } catch (error) {
           return void 0;
         }
-      };
-      return ThrottlingRetryPolicy2;
-    }(BaseRequestPolicy);
+      }
+    };
+    __name(ThrottlingRetryPolicy, "ThrottlingRetryPolicy");
     function signingPolicy(authenticationProvider) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new SigningPolicy(nextPolicy, options, authenticationProvider);
         }
       };
     }
     __name(signingPolicy, "signingPolicy");
-    var SigningPolicy = function(_super) {
-      tslib.__extends(SigningPolicy2, _super);
-      function SigningPolicy2(nextPolicy, options, authenticationProvider) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.authenticationProvider = authenticationProvider;
-        return _this;
+    var SigningPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, authenticationProvider) {
+        super(nextPolicy, options);
+        this.authenticationProvider = authenticationProvider;
       }
-      __name(SigningPolicy2, "SigningPolicy");
-      SigningPolicy2.prototype.signRequest = function(request) {
+      signRequest(request) {
         return this.authenticationProvider.signRequest(request);
-      };
-      SigningPolicy2.prototype.sendRequest = function(request) {
-        var _this = this;
-        return this.signRequest(request).then(function(nextRequest) {
-          return _this._nextPolicy.sendRequest(nextRequest);
-        });
-      };
-      return SigningPolicy2;
-    }(BaseRequestPolicy);
+      }
+      sendRequest(request) {
+        return this.signRequest(request).then((nextRequest) => this._nextPolicy.sendRequest(nextRequest));
+      }
+    };
+    __name(SigningPolicy, "SigningPolicy");
     var DefaultKeepAliveOptions = {
       enable: true
     };
     function keepAlivePolicy(keepAliveOptions) {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new KeepAlivePolicy(nextPolicy, options, keepAliveOptions || DefaultKeepAliveOptions);
         }
       };
     }
     __name(keepAlivePolicy, "keepAlivePolicy");
-    var KeepAlivePolicy = function(_super) {
-      tslib.__extends(KeepAlivePolicy2, _super);
-      function KeepAlivePolicy2(nextPolicy, options, keepAliveOptions) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.keepAliveOptions = keepAliveOptions;
-        return _this;
+    var KeepAlivePolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, keepAliveOptions) {
+        super(nextPolicy, options);
+        this.keepAliveOptions = keepAliveOptions;
       }
-      __name(KeepAlivePolicy2, "KeepAlivePolicy");
-      KeepAlivePolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            request.keepAlive = this.keepAliveOptions.enable;
-            return [2, this._nextPolicy.sendRequest(request)];
-          });
-        });
-      };
-      return KeepAlivePolicy2;
-    }(BaseRequestPolicy);
+      async sendRequest(request) {
+        request.keepAlive = this.keepAliveOptions.enable;
+        return this._nextPolicy.sendRequest(request);
+      }
+    };
+    __name(KeepAlivePolicy, "KeepAlivePolicy");
     var createSpan = coreTracing.createSpanFunction({
       packagePrefix: "",
       namespace: ""
     });
-    function tracingPolicy(tracingOptions) {
-      if (tracingOptions === void 0) {
-        tracingOptions = {};
-      }
+    function tracingPolicy(tracingOptions = {}) {
       return {
-        create: function(nextPolicy, options) {
+        create(nextPolicy, options) {
           return new TracingPolicy(nextPolicy, options, tracingOptions);
         }
       };
     }
     __name(tracingPolicy, "tracingPolicy");
-    var TracingPolicy = function(_super) {
-      tslib.__extends(TracingPolicy2, _super);
-      function TracingPolicy2(nextPolicy, options, tracingOptions) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.userAgent = tracingOptions.userAgent;
-        return _this;
+    var TracingPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options, tracingOptions) {
+        super(nextPolicy, options);
+        this.userAgent = tracingOptions.userAgent;
       }
-      __name(TracingPolicy2, "TracingPolicy");
-      TracingPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var path2, span, spanContext, traceParentHeader, traceState, response, serviceRequestId, err_1;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!request.tracingContext) {
-                  return [2, this._nextPolicy.sendRequest(request)];
-                }
-                path2 = URLBuilder.parse(request.url).getPath() || "/";
-                span = createSpan(path2, {
-                  tracingOptions: {
-                    spanOptions: tslib.__assign(tslib.__assign({}, request.spanOptions), { kind: coreTracing.SpanKind.CLIENT }),
-                    tracingContext: request.tracingContext
-                  }
-                }).span;
-                span.setAttributes({
-                  "http.method": request.method,
-                  "http.url": request.url,
-                  requestId: request.requestId
-                });
-                if (this.userAgent) {
-                  span.setAttribute("http.user_agent", this.userAgent);
-                }
-                _a.label = 1;
-              case 1:
-                _a.trys.push([1, 3, 4, 5]);
-                spanContext = span.context();
-                traceParentHeader = coreTracing.getTraceParentHeader(spanContext);
-                if (traceParentHeader) {
-                  request.headers.set("traceparent", traceParentHeader);
-                  traceState = spanContext.traceState && spanContext.traceState.serialize();
-                  if (traceState) {
-                    request.headers.set("tracestate", traceState);
-                  }
-                }
-                return [4, this._nextPolicy.sendRequest(request)];
-              case 2:
-                response = _a.sent();
-                span.setAttribute("http.status_code", response.status);
-                serviceRequestId = response.headers.get("x-ms-request-id");
-                if (serviceRequestId) {
-                  span.setAttribute("serviceRequestId", serviceRequestId);
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.OK
-                });
-                return [2, response];
-              case 3:
-                err_1 = _a.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: err_1.message
-                });
-                span.setAttribute("http.status_code", err_1.statusCode);
-                throw err_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
+      async sendRequest(request) {
+        if (!request.tracingContext) {
+          return this._nextPolicy.sendRequest(request);
+        }
+        const path2 = URLBuilder.parse(request.url).getPath() || "/";
+        const { span } = createSpan(path2, {
+          tracingOptions: {
+            spanOptions: Object.assign(Object.assign({}, request.spanOptions), { kind: coreTracing.SpanKind.CLIENT }),
+            tracingContext: request.tracingContext
+          }
         });
-      };
-      return TracingPolicy2;
-    }(BaseRequestPolicy);
+        span.setAttributes({
+          "http.method": request.method,
+          "http.url": request.url,
+          requestId: request.requestId
+        });
+        if (this.userAgent) {
+          span.setAttribute("http.user_agent", this.userAgent);
+        }
+        try {
+          const spanContext = span.spanContext();
+          const traceParentHeader = coreTracing.getTraceParentHeader(spanContext);
+          if (traceParentHeader && coreTracing.isSpanContextValid(spanContext)) {
+            request.headers.set("traceparent", traceParentHeader);
+            const traceState = spanContext.traceState && spanContext.traceState.serialize();
+            if (traceState) {
+              request.headers.set("tracestate", traceState);
+            }
+          }
+          const response = await this._nextPolicy.sendRequest(request);
+          span.setAttribute("http.status_code", response.status);
+          const serviceRequestId = response.headers.get("x-ms-request-id");
+          if (serviceRequestId) {
+            span.setAttribute("serviceRequestId", serviceRequestId);
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.OK
+          });
+          return response;
+        } catch (err) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: err.message
+          });
+          span.setAttribute("http.status_code", err.statusCode);
+          throw err;
+        } finally {
+          span.end();
+        }
+      }
+    };
+    __name(TracingPolicy, "TracingPolicy");
     function disableResponseDecompressionPolicy() {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new DisableResponseDecompressionPolicy(nextPolicy, options);
         }
       };
     }
     __name(disableResponseDecompressionPolicy, "disableResponseDecompressionPolicy");
-    var DisableResponseDecompressionPolicy = function(_super) {
-      tslib.__extends(DisableResponseDecompressionPolicy2, _super);
-      function DisableResponseDecompressionPolicy2(nextPolicy, options) {
-        return _super.call(this, nextPolicy, options) || this;
+    var DisableResponseDecompressionPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options) {
+        super(nextPolicy, options);
       }
-      __name(DisableResponseDecompressionPolicy2, "DisableResponseDecompressionPolicy");
-      DisableResponseDecompressionPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            request.decompressResponse = false;
-            return [2, this._nextPolicy.sendRequest(request)];
-          });
-        });
-      };
-      return DisableResponseDecompressionPolicy2;
-    }(BaseRequestPolicy);
+      async sendRequest(request) {
+        request.decompressResponse = false;
+        return this._nextPolicy.sendRequest(request);
+      }
+    };
+    __name(DisableResponseDecompressionPolicy, "DisableResponseDecompressionPolicy");
     function ndJsonPolicy() {
       return {
-        create: function(nextPolicy, options) {
+        create: (nextPolicy, options) => {
           return new NdJsonPolicy(nextPolicy, options);
         }
       };
     }
     __name(ndJsonPolicy, "ndJsonPolicy");
-    var NdJsonPolicy = function(_super) {
-      tslib.__extends(NdJsonPolicy2, _super);
-      function NdJsonPolicy2(nextPolicy, options) {
-        return _super.call(this, nextPolicy, options) || this;
+    var NdJsonPolicy = class extends BaseRequestPolicy {
+      constructor(nextPolicy, options) {
+        super(nextPolicy, options);
       }
-      __name(NdJsonPolicy2, "NdJsonPolicy");
-      NdJsonPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var body;
-          return tslib.__generator(this, function(_a) {
-            if (typeof request.body === "string" && request.body.startsWith("[")) {
-              body = JSON.parse(request.body);
-              if (Array.isArray(body)) {
-                request.body = body.map(function(item) {
-                  return JSON.stringify(item) + "\n";
-                }).join("");
-              }
-            }
-            return [2, this._nextPolicy.sendRequest(request)];
-          });
-        });
-      };
-      return NdJsonPolicy2;
-    }(BaseRequestPolicy);
+      async sendRequest(request) {
+        if (typeof request.body === "string" && request.body.startsWith("[")) {
+          const body = JSON.parse(request.body);
+          if (Array.isArray(body)) {
+            request.body = body.map((item) => JSON.stringify(item) + "\n").join("");
+          }
+        }
+        return this._nextPolicy.sendRequest(request);
+      }
+    };
+    __name(NdJsonPolicy, "NdJsonPolicy");
     var cachedHttpClient;
     function getCachedDefaultHttpClient() {
       if (!cachedHttpClient) {
@@ -39322,32 +38726,31 @@ var require_dist6 = __commonJS({
       return cachedHttpClient;
     }
     __name(getCachedDefaultHttpClient, "getCachedDefaultHttpClient");
-    var ServiceClient = function() {
-      function ServiceClient2(credentials, options) {
-        var _this = this;
+    var ServiceClient = class {
+      constructor(credentials, options) {
         if (!options) {
           options = {};
         }
         this._withCredentials = options.withCredentials || false;
         this._httpClient = options.httpClient || getCachedDefaultHttpClient();
         this._requestPolicyOptions = new RequestPolicyOptions(options.httpPipelineLogger);
-        var requestPolicyFactories;
+        let requestPolicyFactories;
         if (Array.isArray(options.requestPolicyFactories)) {
           logger.info("ServiceClient: using custom request policies");
           requestPolicyFactories = options.requestPolicyFactories;
         } else {
-          var authPolicyFactory = void 0;
+          let authPolicyFactory = void 0;
           if (coreAuth.isTokenCredential(credentials)) {
             logger.info("ServiceClient: creating bearer token authentication policy from provided credentials");
-            var wrappedPolicyFactory = /* @__PURE__ */ __name(function() {
-              var bearerTokenPolicyFactory = void 0;
-              var serviceClient = _this;
-              var serviceClientOptions = options;
+            const wrappedPolicyFactory = /* @__PURE__ */ __name(() => {
+              let bearerTokenPolicyFactory = void 0;
+              const serviceClient = this;
+              const serviceClientOptions = options;
               return {
-                create: function(nextPolicy, createOptions) {
-                  var credentialScopes = getCredentialScopes(serviceClientOptions, serviceClient.baseUri);
+                create(nextPolicy, createOptions) {
+                  const credentialScopes = getCredentialScopes(serviceClientOptions, serviceClient.baseUri);
                   if (!credentialScopes) {
-                    throw new Error("When using credential, the ServiceClient must contain a baseUri or a credentialScopes in ServiceClientOptions. Unable to create a bearerTokenAuthenticationPolicy");
+                    throw new Error(`When using credential, the ServiceClient must contain a baseUri or a credentialScopes in ServiceClientOptions. Unable to create a bearerTokenAuthenticationPolicy`);
                   }
                   if (bearerTokenPolicyFactory === void 0 || bearerTokenPolicyFactory === null) {
                     bearerTokenPolicyFactory = bearerTokenAuthenticationPolicy(credentials, credentialScopes);
@@ -39366,7 +38769,7 @@ var require_dist6 = __commonJS({
           logger.info("ServiceClient: using default request policies");
           requestPolicyFactories = createDefaultRequestPolicyFactories(authPolicyFactory, options);
           if (options.requestPolicyFactories) {
-            var newRequestPolicyFactories = options.requestPolicyFactories(requestPolicyFactories);
+            const newRequestPolicyFactories = options.requestPolicyFactories(requestPolicyFactories);
             if (newRequestPolicyFactories) {
               requestPolicyFactories = newRequestPolicyFactories;
             }
@@ -39374,12 +38777,11 @@ var require_dist6 = __commonJS({
         }
         this._requestPolicyFactories = requestPolicyFactories;
       }
-      __name(ServiceClient2, "ServiceClient");
-      ServiceClient2.prototype.sendRequest = function(options) {
+      sendRequest(options) {
         if (options === null || options === void 0 || typeof options !== "object") {
           throw new Error("options cannot be null or undefined and it must be of type object.");
         }
-        var httpRequest;
+        let httpRequest;
         try {
           if (isWebResourceLike(options)) {
             options.validateRequestProperties();
@@ -39391,211 +38793,184 @@ var require_dist6 = __commonJS({
         } catch (error) {
           return Promise.reject(error);
         }
-        var httpPipeline = this._httpClient;
+        let httpPipeline = this._httpClient;
         if (this._requestPolicyFactories && this._requestPolicyFactories.length > 0) {
-          for (var i = this._requestPolicyFactories.length - 1; i >= 0; --i) {
+          for (let i = this._requestPolicyFactories.length - 1; i >= 0; --i) {
             httpPipeline = this._requestPolicyFactories[i].create(httpPipeline, this._requestPolicyOptions);
           }
         }
         return httpPipeline.sendRequest(httpRequest);
-      };
-      ServiceClient2.prototype.sendOperationRequest = function(operationArguments, operationSpec, callback) {
+      }
+      async sendOperationRequest(operationArguments, operationSpec, callback) {
         var _a;
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var serializerOptions, httpRequest, result, baseUri, requestUrl, _i, _b, urlParameter, urlParameterValue, _c, _d, queryParameter, queryParameterValue, index, item, index, contentType, _e, _f, headerParameter, headerValue, headerCollectionPrefix, _g, _h, key, options, customHeaderName, rawResponse, sendRequestError, error_1, error_2, cb;
-          return tslib.__generator(this, function(_j) {
-            switch (_j.label) {
-              case 0:
-                if (typeof operationArguments.options === "function") {
-                  callback = operationArguments.options;
-                  operationArguments.options = void 0;
-                }
-                serializerOptions = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions;
-                httpRequest = new WebResource();
-                _j.label = 1;
-              case 1:
-                _j.trys.push([1, 6, , 7]);
-                baseUri = operationSpec.baseUrl || this.baseUri;
-                if (!baseUri) {
-                  throw new Error("If operationSpec.baseUrl is not specified, then the ServiceClient must have a baseUri string property that contains the base URL to use.");
-                }
-                httpRequest.method = operationSpec.httpMethod;
-                httpRequest.operationSpec = operationSpec;
-                requestUrl = URLBuilder.parse(baseUri);
-                if (operationSpec.path) {
-                  requestUrl.appendPath(operationSpec.path);
-                }
-                if (operationSpec.urlParameters && operationSpec.urlParameters.length > 0) {
-                  for (_i = 0, _b = operationSpec.urlParameters; _i < _b.length; _i++) {
-                    urlParameter = _b[_i];
-                    urlParameterValue = getOperationArgumentValueFromParameter(this, operationArguments, urlParameter, operationSpec.serializer);
-                    urlParameterValue = operationSpec.serializer.serialize(urlParameter.mapper, urlParameterValue, getPathStringFromParameter(urlParameter), serializerOptions);
-                    if (!urlParameter.skipEncoding) {
-                      urlParameterValue = encodeURIComponent(urlParameterValue);
-                    }
-                    requestUrl.replaceAll("{" + (urlParameter.mapper.serializedName || getPathStringFromParameter(urlParameter)) + "}", urlParameterValue);
-                  }
-                }
-                if (operationSpec.queryParameters && operationSpec.queryParameters.length > 0) {
-                  for (_c = 0, _d = operationSpec.queryParameters; _c < _d.length; _c++) {
-                    queryParameter = _d[_c];
-                    queryParameterValue = getOperationArgumentValueFromParameter(this, operationArguments, queryParameter, operationSpec.serializer);
-                    if (queryParameterValue !== void 0 && queryParameterValue !== null) {
-                      queryParameterValue = operationSpec.serializer.serialize(queryParameter.mapper, queryParameterValue, getPathStringFromParameter(queryParameter), serializerOptions);
-                      if (queryParameter.collectionFormat !== void 0 && queryParameter.collectionFormat !== null) {
-                        if (queryParameter.collectionFormat === exports2.QueryCollectionFormat.Multi) {
-                          if (queryParameterValue.length === 0) {
-                            continue;
-                          } else {
-                            for (index in queryParameterValue) {
-                              item = queryParameterValue[index];
-                              queryParameterValue[index] = item === void 0 || item === null ? "" : item.toString();
-                            }
-                          }
-                        } else if (queryParameter.collectionFormat === exports2.QueryCollectionFormat.Ssv || queryParameter.collectionFormat === exports2.QueryCollectionFormat.Tsv) {
-                          queryParameterValue = queryParameterValue.join(queryParameter.collectionFormat);
-                        }
-                      }
-                      if (!queryParameter.skipEncoding) {
-                        if (Array.isArray(queryParameterValue)) {
-                          for (index in queryParameterValue) {
-                            if (queryParameterValue[index] !== void 0 && queryParameterValue[index] !== null) {
-                              queryParameterValue[index] = encodeURIComponent(queryParameterValue[index]);
-                            }
-                          }
-                        } else {
-                          queryParameterValue = encodeURIComponent(queryParameterValue);
-                        }
-                      }
-                      if (queryParameter.collectionFormat !== void 0 && queryParameter.collectionFormat !== null && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Multi && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Ssv && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Tsv) {
-                        queryParameterValue = queryParameterValue.join(queryParameter.collectionFormat);
-                      }
-                      requestUrl.setQueryParameter(queryParameter.mapper.serializedName || getPathStringFromParameter(queryParameter), queryParameterValue);
-                    }
-                  }
-                }
-                httpRequest.url = requestUrl.toString();
-                contentType = operationSpec.contentType || this.requestContentType;
-                if (contentType && operationSpec.requestBody) {
-                  httpRequest.headers.set("Content-Type", contentType);
-                }
-                if (operationSpec.headerParameters) {
-                  for (_e = 0, _f = operationSpec.headerParameters; _e < _f.length; _e++) {
-                    headerParameter = _f[_e];
-                    headerValue = getOperationArgumentValueFromParameter(this, operationArguments, headerParameter, operationSpec.serializer);
-                    if (headerValue !== void 0 && headerValue !== null) {
-                      headerValue = operationSpec.serializer.serialize(headerParameter.mapper, headerValue, getPathStringFromParameter(headerParameter), serializerOptions);
-                      headerCollectionPrefix = headerParameter.mapper.headerCollectionPrefix;
-                      if (headerCollectionPrefix) {
-                        for (_g = 0, _h = Object.keys(headerValue); _g < _h.length; _g++) {
-                          key = _h[_g];
-                          httpRequest.headers.set(headerCollectionPrefix + key, headerValue[key]);
-                        }
-                      } else {
-                        httpRequest.headers.set(headerParameter.mapper.serializedName || getPathStringFromParameter(headerParameter), headerValue);
-                      }
-                    }
-                  }
-                }
-                options = operationArguments.options;
-                if (options) {
-                  if (options.customHeaders) {
-                    for (customHeaderName in options.customHeaders) {
-                      httpRequest.headers.set(customHeaderName, options.customHeaders[customHeaderName]);
-                    }
-                  }
-                  if (options.abortSignal) {
-                    httpRequest.abortSignal = options.abortSignal;
-                  }
-                  if (options.timeout) {
-                    httpRequest.timeout = options.timeout;
-                  }
-                  if (options.onUploadProgress) {
-                    httpRequest.onUploadProgress = options.onUploadProgress;
-                  }
-                  if (options.onDownloadProgress) {
-                    httpRequest.onDownloadProgress = options.onDownloadProgress;
-                  }
-                  if (options.spanOptions) {
-                    httpRequest.spanOptions = options.spanOptions;
-                  }
-                  if (options.tracingContext) {
-                    httpRequest.tracingContext = options.tracingContext;
-                  }
-                  if (options.shouldDeserialize !== void 0 && options.shouldDeserialize !== null) {
-                    httpRequest.shouldDeserialize = options.shouldDeserialize;
-                  }
-                }
-                httpRequest.withCredentials = this._withCredentials;
-                serializeRequestBody(this, httpRequest, operationArguments, operationSpec);
-                if (httpRequest.streamResponseStatusCodes === void 0) {
-                  httpRequest.streamResponseStatusCodes = getStreamResponseStatusCodes(operationSpec);
-                }
-                rawResponse = void 0;
-                sendRequestError = void 0;
-                _j.label = 2;
-              case 2:
-                _j.trys.push([2, 4, , 5]);
-                return [4, this.sendRequest(httpRequest)];
-              case 3:
-                rawResponse = _j.sent();
-                return [3, 5];
-              case 4:
-                error_1 = _j.sent();
-                sendRequestError = error_1;
-                return [3, 5];
-              case 5:
-                if (sendRequestError) {
-                  if (sendRequestError.response) {
-                    sendRequestError.details = flattenResponse(sendRequestError.response, operationSpec.responses[sendRequestError.statusCode] || operationSpec.responses["default"]);
-                  }
-                  result = Promise.reject(sendRequestError);
-                } else {
-                  result = Promise.resolve(flattenResponse(rawResponse, operationSpec.responses[rawResponse.status]));
-                }
-                return [3, 7];
-              case 6:
-                error_2 = _j.sent();
-                result = Promise.reject(error_2);
-                return [3, 7];
-              case 7:
-                cb = callback;
-                if (cb) {
-                  result.then(function(res) {
-                    return cb(null, res._response.parsedBody, res._response.request, res._response);
-                  }).catch(function(err) {
-                    return cb(err);
-                  });
-                }
-                return [2, result];
+        if (typeof operationArguments.options === "function") {
+          callback = operationArguments.options;
+          operationArguments.options = void 0;
+        }
+        const serializerOptions = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions;
+        const httpRequest = new WebResource();
+        let result;
+        try {
+          const baseUri = operationSpec.baseUrl || this.baseUri;
+          if (!baseUri) {
+            throw new Error("If operationSpec.baseUrl is not specified, then the ServiceClient must have a baseUri string property that contains the base URL to use.");
+          }
+          httpRequest.method = operationSpec.httpMethod;
+          httpRequest.operationSpec = operationSpec;
+          const requestUrl = URLBuilder.parse(baseUri);
+          if (operationSpec.path) {
+            requestUrl.appendPath(operationSpec.path);
+          }
+          if (operationSpec.urlParameters && operationSpec.urlParameters.length > 0) {
+            for (const urlParameter of operationSpec.urlParameters) {
+              let urlParameterValue = getOperationArgumentValueFromParameter(this, operationArguments, urlParameter, operationSpec.serializer);
+              urlParameterValue = operationSpec.serializer.serialize(urlParameter.mapper, urlParameterValue, getPathStringFromParameter(urlParameter), serializerOptions);
+              if (!urlParameter.skipEncoding) {
+                urlParameterValue = encodeURIComponent(urlParameterValue);
+              }
+              requestUrl.replaceAll(`{${urlParameter.mapper.serializedName || getPathStringFromParameter(urlParameter)}}`, urlParameterValue);
             }
-          });
-        });
-      };
-      return ServiceClient2;
-    }();
+          }
+          if (operationSpec.queryParameters && operationSpec.queryParameters.length > 0) {
+            for (const queryParameter of operationSpec.queryParameters) {
+              let queryParameterValue = getOperationArgumentValueFromParameter(this, operationArguments, queryParameter, operationSpec.serializer);
+              if (queryParameterValue !== void 0 && queryParameterValue !== null) {
+                queryParameterValue = operationSpec.serializer.serialize(queryParameter.mapper, queryParameterValue, getPathStringFromParameter(queryParameter), serializerOptions);
+                if (queryParameter.collectionFormat !== void 0 && queryParameter.collectionFormat !== null) {
+                  if (queryParameter.collectionFormat === exports2.QueryCollectionFormat.Multi) {
+                    if (queryParameterValue.length === 0) {
+                      continue;
+                    } else {
+                      for (const index in queryParameterValue) {
+                        const item = queryParameterValue[index];
+                        queryParameterValue[index] = item === void 0 || item === null ? "" : item.toString();
+                      }
+                    }
+                  } else if (queryParameter.collectionFormat === exports2.QueryCollectionFormat.Ssv || queryParameter.collectionFormat === exports2.QueryCollectionFormat.Tsv) {
+                    queryParameterValue = queryParameterValue.join(queryParameter.collectionFormat);
+                  }
+                }
+                if (!queryParameter.skipEncoding) {
+                  if (Array.isArray(queryParameterValue)) {
+                    for (const index in queryParameterValue) {
+                      if (queryParameterValue[index] !== void 0 && queryParameterValue[index] !== null) {
+                        queryParameterValue[index] = encodeURIComponent(queryParameterValue[index]);
+                      }
+                    }
+                  } else {
+                    queryParameterValue = encodeURIComponent(queryParameterValue);
+                  }
+                }
+                if (queryParameter.collectionFormat !== void 0 && queryParameter.collectionFormat !== null && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Multi && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Ssv && queryParameter.collectionFormat !== exports2.QueryCollectionFormat.Tsv) {
+                  queryParameterValue = queryParameterValue.join(queryParameter.collectionFormat);
+                }
+                requestUrl.setQueryParameter(queryParameter.mapper.serializedName || getPathStringFromParameter(queryParameter), queryParameterValue);
+              }
+            }
+          }
+          httpRequest.url = requestUrl.toString();
+          const contentType = operationSpec.contentType || this.requestContentType;
+          if (contentType && operationSpec.requestBody) {
+            httpRequest.headers.set("Content-Type", contentType);
+          }
+          if (operationSpec.headerParameters) {
+            for (const headerParameter of operationSpec.headerParameters) {
+              let headerValue = getOperationArgumentValueFromParameter(this, operationArguments, headerParameter, operationSpec.serializer);
+              if (headerValue !== void 0 && headerValue !== null) {
+                headerValue = operationSpec.serializer.serialize(headerParameter.mapper, headerValue, getPathStringFromParameter(headerParameter), serializerOptions);
+                const headerCollectionPrefix = headerParameter.mapper.headerCollectionPrefix;
+                if (headerCollectionPrefix) {
+                  for (const key of Object.keys(headerValue)) {
+                    httpRequest.headers.set(headerCollectionPrefix + key, headerValue[key]);
+                  }
+                } else {
+                  httpRequest.headers.set(headerParameter.mapper.serializedName || getPathStringFromParameter(headerParameter), headerValue);
+                }
+              }
+            }
+          }
+          const options = operationArguments.options;
+          if (options) {
+            if (options.customHeaders) {
+              for (const customHeaderName in options.customHeaders) {
+                httpRequest.headers.set(customHeaderName, options.customHeaders[customHeaderName]);
+              }
+            }
+            if (options.abortSignal) {
+              httpRequest.abortSignal = options.abortSignal;
+            }
+            if (options.timeout) {
+              httpRequest.timeout = options.timeout;
+            }
+            if (options.onUploadProgress) {
+              httpRequest.onUploadProgress = options.onUploadProgress;
+            }
+            if (options.onDownloadProgress) {
+              httpRequest.onDownloadProgress = options.onDownloadProgress;
+            }
+            if (options.spanOptions) {
+              httpRequest.spanOptions = options.spanOptions;
+            }
+            if (options.tracingContext) {
+              httpRequest.tracingContext = options.tracingContext;
+            }
+            if (options.shouldDeserialize !== void 0 && options.shouldDeserialize !== null) {
+              httpRequest.shouldDeserialize = options.shouldDeserialize;
+            }
+          }
+          httpRequest.withCredentials = this._withCredentials;
+          serializeRequestBody(this, httpRequest, operationArguments, operationSpec);
+          if (httpRequest.streamResponseStatusCodes === void 0) {
+            httpRequest.streamResponseStatusCodes = getStreamResponseStatusCodes(operationSpec);
+          }
+          let rawResponse;
+          let sendRequestError;
+          try {
+            rawResponse = await this.sendRequest(httpRequest);
+          } catch (error) {
+            sendRequestError = error;
+          }
+          if (sendRequestError) {
+            if (sendRequestError.response) {
+              sendRequestError.details = flattenResponse(sendRequestError.response, operationSpec.responses[sendRequestError.statusCode] || operationSpec.responses["default"]);
+            }
+            result = Promise.reject(sendRequestError);
+          } else {
+            result = Promise.resolve(flattenResponse(rawResponse, operationSpec.responses[rawResponse.status]));
+          }
+        } catch (error) {
+          result = Promise.reject(error);
+        }
+        const cb = callback;
+        if (cb) {
+          result.then((res) => cb(null, res._response.parsedBody, res._response.request, res._response)).catch((err) => cb(err));
+        }
+        return result;
+      }
+    };
+    __name(ServiceClient, "ServiceClient");
     function serializeRequestBody(serviceClient, httpRequest, operationArguments, operationSpec) {
       var _a, _b, _c, _d, _e, _f;
-      var serializerOptions = (_b = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions) !== null && _b !== void 0 ? _b : {};
-      var updatedOptions = {
+      const serializerOptions = (_b = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions) !== null && _b !== void 0 ? _b : {};
+      const updatedOptions = {
         rootName: (_c = serializerOptions.rootName) !== null && _c !== void 0 ? _c : "",
         includeRoot: (_d = serializerOptions.includeRoot) !== null && _d !== void 0 ? _d : false,
         xmlCharKey: (_e = serializerOptions.xmlCharKey) !== null && _e !== void 0 ? _e : XML_CHARKEY
       };
-      var xmlCharKey = serializerOptions.xmlCharKey;
+      const xmlCharKey = serializerOptions.xmlCharKey;
       if (operationSpec.requestBody && operationSpec.requestBody.mapper) {
         httpRequest.body = getOperationArgumentValueFromParameter(serviceClient, operationArguments, operationSpec.requestBody, operationSpec.serializer);
-        var bodyMapper = operationSpec.requestBody.mapper;
-        var required = bodyMapper.required, xmlName = bodyMapper.xmlName, xmlElementName = bodyMapper.xmlElementName, serializedName = bodyMapper.serializedName, xmlNamespace = bodyMapper.xmlNamespace, xmlNamespacePrefix = bodyMapper.xmlNamespacePrefix;
-        var typeName = bodyMapper.type.name;
+        const bodyMapper = operationSpec.requestBody.mapper;
+        const { required, xmlName, xmlElementName, serializedName, xmlNamespace, xmlNamespacePrefix } = bodyMapper;
+        const typeName = bodyMapper.type.name;
         try {
           if (httpRequest.body !== void 0 && httpRequest.body !== null || required) {
-            var requestBodyParameterPathString = getPathStringFromParameter(operationSpec.requestBody);
+            const requestBodyParameterPathString = getPathStringFromParameter(operationSpec.requestBody);
             httpRequest.body = operationSpec.serializer.serialize(bodyMapper, httpRequest.body, requestBodyParameterPathString, updatedOptions);
-            var isStream = typeName === MapperType.Stream;
+            const isStream = typeName === MapperType.Stream;
             if (operationSpec.isXML) {
-              var xmlnsKey = xmlNamespacePrefix ? "xmlns:" + xmlNamespacePrefix : "xmlns";
-              var value = getXmlValueWithNamespace(xmlNamespace, xmlnsKey, typeName, httpRequest.body, updatedOptions);
+              const xmlnsKey = xmlNamespacePrefix ? `xmlns:${xmlNamespacePrefix}` : "xmlns";
+              const value = getXmlValueWithNamespace(xmlNamespace, xmlnsKey, typeName, httpRequest.body, updatedOptions);
               if (typeName === MapperType.Sequence) {
                 httpRequest.body = stringifyXML(prepareXMLRootList(value, xmlElementName || xmlName || serializedName, xmlnsKey, xmlNamespace), {
                   rootName: xmlName || serializedName,
@@ -39614,15 +38989,14 @@ var require_dist6 = __commonJS({
             }
           }
         } catch (error) {
-          throw new Error('Error "' + error.message + '" occurred in serializing the payload - ' + JSON.stringify(serializedName, void 0, "  ") + ".");
+          throw new Error(`Error "${error.message}" occurred in serializing the payload - ${JSON.stringify(serializedName, void 0, "  ")}.`);
         }
       } else if (operationSpec.formDataParameters && operationSpec.formDataParameters.length > 0) {
         httpRequest.formData = {};
-        for (var _i = 0, _g = operationSpec.formDataParameters; _i < _g.length; _i++) {
-          var formDataParameter = _g[_i];
-          var formDataParameterValue = getOperationArgumentValueFromParameter(serviceClient, operationArguments, formDataParameter, operationSpec.serializer);
+        for (const formDataParameter of operationSpec.formDataParameters) {
+          const formDataParameterValue = getOperationArgumentValueFromParameter(serviceClient, operationArguments, formDataParameter, operationSpec.serializer);
           if (formDataParameterValue !== void 0 && formDataParameterValue !== null) {
-            var formDataParameterPropertyName = formDataParameter.mapper.serializedName || getPathStringFromParameter(formDataParameter);
+            const formDataParameterPropertyName = formDataParameter.mapper.serializedName || getPathStringFromParameter(formDataParameter);
             httpRequest.formData[formDataParameterPropertyName] = operationSpec.serializer.serialize(formDataParameter.mapper, formDataParameterValue, getPathStringFromParameter(formDataParameter), updatedOptions);
           }
         }
@@ -39630,18 +39004,17 @@ var require_dist6 = __commonJS({
     }
     __name(serializeRequestBody, "serializeRequestBody");
     function getXmlValueWithNamespace(xmlNamespace, xmlnsKey, typeName, serializedValue, options) {
-      var _a;
       if (xmlNamespace && !["Composite", "Sequence", "Dictionary"].includes(typeName)) {
-        var result = {};
+        const result = {};
         result[options.xmlCharKey] = serializedValue;
-        result[XML_ATTRKEY] = (_a = {}, _a[xmlnsKey] = xmlNamespace, _a);
+        result[XML_ATTRKEY] = { [xmlnsKey]: xmlNamespace };
         return result;
       }
       return serializedValue;
     }
     __name(getXmlValueWithNamespace, "getXmlValueWithNamespace");
     function getValueOrFunctionResult(value, defaultValueCreator) {
-      var result;
+      let result;
       if (typeof value === "string") {
         result = value;
       } else {
@@ -39654,15 +39027,15 @@ var require_dist6 = __commonJS({
     }
     __name(getValueOrFunctionResult, "getValueOrFunctionResult");
     function createDefaultRequestPolicyFactories(authPolicyFactory, options) {
-      var factories = [];
+      const factories = [];
       if (options.generateClientRequestIdHeader) {
         factories.push(generateClientRequestIdPolicy(options.clientRequestIdHeaderName));
       }
       if (authPolicyFactory) {
         factories.push(authPolicyFactory);
       }
-      var userAgentHeaderName = getValueOrFunctionResult(options.userAgentHeaderName, getDefaultUserAgentHeaderName);
-      var userAgentHeaderValue = getValueOrFunctionResult(options.userAgent, getDefaultUserAgentValue);
+      const userAgentHeaderName = getValueOrFunctionResult(options.userAgentHeaderName, getDefaultUserAgentHeaderName);
+      const userAgentHeaderValue = getValueOrFunctionResult(options.userAgent, getDefaultUserAgentValue);
       if (userAgentHeaderName && userAgentHeaderValue) {
         factories.push(userAgentPolicy({ key: userAgentHeaderName, value: userAgentHeaderValue }));
       }
@@ -39674,7 +39047,7 @@ var require_dist6 = __commonJS({
         factories.push(throttlingRetryPolicy());
       }
       factories.push(deserializationPolicy(options.deserializationContentTypes));
-      {
+      if (isNode) {
         factories.push(proxyPolicy(options.proxySettings));
       }
       factories.push(logPolicy({ logger: logger.info }));
@@ -39682,28 +39055,28 @@ var require_dist6 = __commonJS({
     }
     __name(createDefaultRequestPolicyFactories, "createDefaultRequestPolicyFactories");
     function createPipelineFromOptions(pipelineOptions, authPolicyFactory) {
-      var requestPolicyFactories = [];
+      const requestPolicyFactories = [];
       if (pipelineOptions.sendStreamingJson) {
         requestPolicyFactories.push(ndJsonPolicy());
       }
-      var userAgentValue = void 0;
+      let userAgentValue = void 0;
       if (pipelineOptions.userAgentOptions && pipelineOptions.userAgentOptions.userAgentPrefix) {
-        var userAgentInfo = [];
+        const userAgentInfo = [];
         userAgentInfo.push(pipelineOptions.userAgentOptions.userAgentPrefix);
-        var defaultUserAgentInfo = getDefaultUserAgentValue();
+        const defaultUserAgentInfo = getDefaultUserAgentValue();
         if (userAgentInfo.indexOf(defaultUserAgentInfo) === -1) {
           userAgentInfo.push(defaultUserAgentInfo);
         }
         userAgentValue = userAgentInfo.join(" ");
       }
-      var keepAliveOptions = tslib.__assign(tslib.__assign({}, DefaultKeepAliveOptions), pipelineOptions.keepAliveOptions);
-      var retryOptions = tslib.__assign(tslib.__assign({}, DefaultRetryOptions), pipelineOptions.retryOptions);
-      var redirectOptions = tslib.__assign(tslib.__assign({}, DefaultRedirectOptions), pipelineOptions.redirectOptions);
-      {
+      const keepAliveOptions = Object.assign(Object.assign({}, DefaultKeepAliveOptions), pipelineOptions.keepAliveOptions);
+      const retryOptions = Object.assign(Object.assign({}, DefaultRetryOptions), pipelineOptions.retryOptions);
+      const redirectOptions = Object.assign(Object.assign({}, DefaultRedirectOptions), pipelineOptions.redirectOptions);
+      if (isNode) {
         requestPolicyFactories.push(proxyPolicy(pipelineOptions.proxyOptions));
       }
-      var deserializationOptions = tslib.__assign(tslib.__assign({}, DefaultDeserializationOptions), pipelineOptions.deserializationOptions);
-      var loggingOptions = tslib.__assign({}, pipelineOptions.loggingOptions);
+      const deserializationOptions = Object.assign(Object.assign({}, DefaultDeserializationOptions), pipelineOptions.deserializationOptions);
+      const loggingOptions = Object.assign({}, pipelineOptions.loggingOptions);
       requestPolicyFactories.push(tracingPolicy({ userAgent: userAgentValue }), keepAlivePolicy(keepAliveOptions), userAgentPolicy({ value: userAgentValue }), generateClientRequestIdPolicy(), deserializationPolicy(deserializationOptions.expectedContentTypes), throttlingRetryPolicy(), systemErrorRetryPolicy(), exponentialRetryPolicy(retryOptions.maxRetries, retryOptions.retryDelayInMs, retryOptions.maxRetryDelayInMs));
       if (redirectOptions.handleRedirects) {
         requestPolicyFactories.push(redirectPolicy(redirectOptions.maxRetries));
@@ -39727,38 +39100,38 @@ var require_dist6 = __commonJS({
     __name(getOperationArgumentValueFromParameter, "getOperationArgumentValueFromParameter");
     function getOperationArgumentValueFromParameterPath(serviceClient, operationArguments, parameterPath, parameterMapper, serializer) {
       var _a;
-      var value;
+      let value;
       if (typeof parameterPath === "string") {
         parameterPath = [parameterPath];
       }
-      var serializerOptions = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions;
+      const serializerOptions = (_a = operationArguments.options) === null || _a === void 0 ? void 0 : _a.serializerOptions;
       if (Array.isArray(parameterPath)) {
         if (parameterPath.length > 0) {
           if (parameterMapper.isConstant) {
             value = parameterMapper.defaultValue;
           } else {
-            var propertySearchResult = getPropertyFromParameterPath(operationArguments, parameterPath);
+            let propertySearchResult = getPropertyFromParameterPath(operationArguments, parameterPath);
             if (!propertySearchResult.propertyFound) {
               propertySearchResult = getPropertyFromParameterPath(serviceClient, parameterPath);
             }
-            var useDefaultValue = false;
+            let useDefaultValue = false;
             if (!propertySearchResult.propertyFound) {
               useDefaultValue = parameterMapper.required || parameterPath[0] === "options" && parameterPath.length === 2;
             }
             value = useDefaultValue ? parameterMapper.defaultValue : propertySearchResult.propertyValue;
           }
-          var parameterPathString = getPathStringFromParameterPath(parameterPath, parameterMapper);
+          const parameterPathString = getPathStringFromParameterPath(parameterPath, parameterMapper);
           serializer.serialize(parameterMapper, value, parameterPathString, serializerOptions);
         }
       } else {
         if (parameterMapper.required) {
           value = {};
         }
-        for (var propertyName in parameterPath) {
-          var propertyMapper = parameterMapper.type.modelProperties[propertyName];
-          var propertyPath = parameterPath[propertyName];
-          var propertyValue = getOperationArgumentValueFromParameterPath(serviceClient, operationArguments, propertyPath, propertyMapper, serializer);
-          var propertyPathString = getPathStringFromParameterPath(propertyPath, propertyMapper);
+        for (const propertyName in parameterPath) {
+          const propertyMapper = parameterMapper.type.modelProperties[propertyName];
+          const propertyPath = parameterPath[propertyName];
+          const propertyValue = getOperationArgumentValueFromParameterPath(serviceClient, operationArguments, propertyPath, propertyMapper, serializer);
+          const propertyPathString = getPathStringFromParameterPath(propertyPath, propertyMapper);
           serializer.serialize(propertyMapper, propertyValue, propertyPathString, serializerOptions);
           if (propertyValue !== void 0 && propertyValue !== null) {
             if (!value) {
@@ -39772,10 +39145,10 @@ var require_dist6 = __commonJS({
     }
     __name(getOperationArgumentValueFromParameterPath, "getOperationArgumentValueFromParameterPath");
     function getPropertyFromParameterPath(parent, parameterPath) {
-      var result = { propertyFound: false };
-      var i = 0;
+      const result = { propertyFound: false };
+      let i = 0;
       for (; i < parameterPath.length; ++i) {
-        var parameterPathPart = parameterPath[i];
+        const parameterPathPart = parameterPath[i];
         if (parent !== void 0 && parent !== null && parameterPathPart in parent) {
           parent = parent[parameterPathPart];
         } else {
@@ -39790,33 +39163,29 @@ var require_dist6 = __commonJS({
     }
     __name(getPropertyFromParameterPath, "getPropertyFromParameterPath");
     function flattenResponse(_response, responseSpec) {
-      var parsedHeaders = _response.parsedHeaders;
-      var bodyMapper = responseSpec && responseSpec.bodyMapper;
-      var addOperationResponse = /* @__PURE__ */ __name(function(obj) {
+      const parsedHeaders = _response.parsedHeaders;
+      const bodyMapper = responseSpec && responseSpec.bodyMapper;
+      const addOperationResponse = /* @__PURE__ */ __name((obj) => {
         return Object.defineProperty(obj, "_response", {
           value: _response
         });
       }, "addOperationResponse");
       if (bodyMapper) {
-        var typeName = bodyMapper.type.name;
+        const typeName = bodyMapper.type.name;
         if (typeName === "Stream") {
-          return addOperationResponse(tslib.__assign(tslib.__assign({}, parsedHeaders), { blobBody: _response.blobBody, readableStreamBody: _response.readableStreamBody }));
+          return addOperationResponse(Object.assign(Object.assign({}, parsedHeaders), { blobBody: _response.blobBody, readableStreamBody: _response.readableStreamBody }));
         }
-        var modelProperties_1 = typeName === "Composite" && bodyMapper.type.modelProperties || {};
-        var isPageableResponse = Object.keys(modelProperties_1).some(function(k) {
-          return modelProperties_1[k].serializedName === "";
-        });
+        const modelProperties = typeName === "Composite" && bodyMapper.type.modelProperties || {};
+        const isPageableResponse = Object.keys(modelProperties).some((k) => modelProperties[k].serializedName === "");
         if (typeName === "Sequence" || isPageableResponse) {
-          var arrayResponse = tslib.__spreadArray([], _response.parsedBody || []);
-          for (var _i = 0, _a = Object.keys(modelProperties_1); _i < _a.length; _i++) {
-            var key = _a[_i];
-            if (modelProperties_1[key].serializedName) {
+          const arrayResponse = [..._response.parsedBody || []];
+          for (const key of Object.keys(modelProperties)) {
+            if (modelProperties[key].serializedName) {
               arrayResponse[key] = _response.parsedBody[key];
             }
           }
           if (parsedHeaders) {
-            for (var _b = 0, _c = Object.keys(parsedHeaders); _b < _c.length; _b++) {
-              var key = _c[_b];
+            for (const key of Object.keys(parsedHeaders)) {
               arrayResponse[key] = parsedHeaders[key];
             }
           }
@@ -39824,24 +39193,22 @@ var require_dist6 = __commonJS({
           return arrayResponse;
         }
         if (typeName === "Composite" || typeName === "Dictionary") {
-          return addOperationResponse(tslib.__assign(tslib.__assign({}, parsedHeaders), _response.parsedBody));
+          return addOperationResponse(Object.assign(Object.assign({}, parsedHeaders), _response.parsedBody));
         }
       }
       if (bodyMapper || _response.request.method === "HEAD" || isPrimitiveType(_response.parsedBody)) {
-        return addOperationResponse(tslib.__assign(tslib.__assign({}, parsedHeaders), { body: _response.parsedBody }));
+        return addOperationResponse(Object.assign(Object.assign({}, parsedHeaders), { body: _response.parsedBody }));
       }
-      return addOperationResponse(tslib.__assign(tslib.__assign({}, parsedHeaders), _response.parsedBody));
+      return addOperationResponse(Object.assign(Object.assign({}, parsedHeaders), _response.parsedBody));
     }
     __name(flattenResponse, "flattenResponse");
     function getCredentialScopes(options, baseUri) {
       if (options === null || options === void 0 ? void 0 : options.credentialScopes) {
-        var scopes = options.credentialScopes;
-        return Array.isArray(scopes) ? scopes.map(function(scope) {
-          return new url.URL(scope).toString();
-        }) : new url.URL(scopes).toString();
+        const scopes = options.credentialScopes;
+        return Array.isArray(scopes) ? scopes.map((scope) => new url.URL(scope).toString()) : new url.URL(scopes).toString();
       }
       if (baseUri) {
-        return baseUri + "/.default";
+        return `${baseUri}/.default`;
       }
       return void 0;
     }
@@ -39851,71 +39218,50 @@ var require_dist6 = __commonJS({
     }
     __name(createSpanFunction, "createSpanFunction");
     var TokenRefreshBufferMs = 2 * 60 * 1e3;
-    var ExpiringAccessTokenCache = function() {
-      function ExpiringAccessTokenCache2(tokenRefreshBufferMs) {
-        if (tokenRefreshBufferMs === void 0) {
-          tokenRefreshBufferMs = TokenRefreshBufferMs;
-        }
+    var ExpiringAccessTokenCache = class {
+      constructor(tokenRefreshBufferMs = TokenRefreshBufferMs) {
         this.cachedToken = void 0;
         this.tokenRefreshBufferMs = tokenRefreshBufferMs;
       }
-      __name(ExpiringAccessTokenCache2, "ExpiringAccessTokenCache");
-      ExpiringAccessTokenCache2.prototype.setCachedToken = function(accessToken) {
+      setCachedToken(accessToken) {
         this.cachedToken = accessToken;
-      };
-      ExpiringAccessTokenCache2.prototype.getCachedToken = function() {
+      }
+      getCachedToken() {
         if (this.cachedToken && Date.now() + this.tokenRefreshBufferMs >= this.cachedToken.expiresOnTimestamp) {
           this.cachedToken = void 0;
         }
         return this.cachedToken;
-      };
-      return ExpiringAccessTokenCache2;
-    }();
-    var AccessTokenRefresher = function() {
-      function AccessTokenRefresher2(credential, scopes, requiredMillisecondsBeforeNewRefresh) {
-        if (requiredMillisecondsBeforeNewRefresh === void 0) {
-          requiredMillisecondsBeforeNewRefresh = 3e4;
-        }
+      }
+    };
+    __name(ExpiringAccessTokenCache, "ExpiringAccessTokenCache");
+    var AccessTokenRefresher = class {
+      constructor(credential, scopes, requiredMillisecondsBeforeNewRefresh = 3e4) {
         this.credential = credential;
         this.scopes = scopes;
         this.requiredMillisecondsBeforeNewRefresh = requiredMillisecondsBeforeNewRefresh;
         this.lastCalled = 0;
       }
-      __name(AccessTokenRefresher2, "AccessTokenRefresher");
-      AccessTokenRefresher2.prototype.isReady = function() {
+      isReady() {
         return !this.lastCalled || Date.now() - this.lastCalled > this.requiredMillisecondsBeforeNewRefresh;
-      };
-      AccessTokenRefresher2.prototype.getToken = function(options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var token;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                this.lastCalled = Date.now();
-                return [4, this.credential.getToken(this.scopes, options)];
-              case 1:
-                token = _a.sent();
-                this.promise = void 0;
-                return [2, token || void 0];
-            }
-          });
-        });
-      };
-      AccessTokenRefresher2.prototype.refresh = function(options) {
+      }
+      async getToken(options) {
+        this.lastCalled = Date.now();
+        const token = await this.credential.getToken(this.scopes, options);
+        this.promise = void 0;
+        return token || void 0;
+      }
+      refresh(options) {
         if (!this.promise) {
           this.promise = this.getToken(options);
         }
         return this.promise;
-      };
-      return AccessTokenRefresher2;
-    }();
+      }
+    };
+    __name(AccessTokenRefresher, "AccessTokenRefresher");
     var HeaderConstants = Constants.HeaderConstants;
     var DEFAULT_AUTHORIZATION_SCHEME = "Basic";
-    var BasicAuthenticationCredentials = function() {
-      function BasicAuthenticationCredentials2(userName, password, authorizationScheme) {
-        if (authorizationScheme === void 0) {
-          authorizationScheme = DEFAULT_AUTHORIZATION_SCHEME;
-        }
+    var BasicAuthenticationCredentials = class {
+      constructor(userName, password, authorizationScheme = DEFAULT_AUTHORIZATION_SCHEME) {
         this.authorizationScheme = DEFAULT_AUTHORIZATION_SCHEME;
         if (userName === null || userName === void 0 || typeof userName.valueOf() !== "string") {
           throw new Error("userName cannot be null or undefined and must be of type string.");
@@ -39927,74 +39273,68 @@ var require_dist6 = __commonJS({
         this.password = password;
         this.authorizationScheme = authorizationScheme;
       }
-      __name(BasicAuthenticationCredentials2, "BasicAuthenticationCredentials");
-      BasicAuthenticationCredentials2.prototype.signRequest = function(webResource) {
-        var credentials = this.userName + ":" + this.password;
-        var encodedCredentials = this.authorizationScheme + " " + encodeString(credentials);
+      signRequest(webResource) {
+        const credentials = `${this.userName}:${this.password}`;
+        const encodedCredentials = `${this.authorizationScheme} ${encodeString(credentials)}`;
         if (!webResource.headers)
           webResource.headers = new HttpHeaders();
         webResource.headers.set(HeaderConstants.AUTHORIZATION, encodedCredentials);
         return Promise.resolve(webResource);
-      };
-      return BasicAuthenticationCredentials2;
-    }();
-    var ApiKeyCredentials = function() {
-      function ApiKeyCredentials2(options) {
+      }
+    };
+    __name(BasicAuthenticationCredentials, "BasicAuthenticationCredentials");
+    var ApiKeyCredentials = class {
+      constructor(options) {
         if (!options || options && !options.inHeader && !options.inQuery) {
-          throw new Error('options cannot be null or undefined. Either "inHeader" or "inQuery" property of the options object needs to be provided.');
+          throw new Error(`options cannot be null or undefined. Either "inHeader" or "inQuery" property of the options object needs to be provided.`);
         }
         this.inHeader = options.inHeader;
         this.inQuery = options.inQuery;
       }
-      __name(ApiKeyCredentials2, "ApiKeyCredentials");
-      ApiKeyCredentials2.prototype.signRequest = function(webResource) {
+      signRequest(webResource) {
         if (!webResource) {
-          return Promise.reject(new Error('webResource cannot be null or undefined and must be of type "object".'));
+          return Promise.reject(new Error(`webResource cannot be null or undefined and must be of type "object".`));
         }
         if (this.inHeader) {
           if (!webResource.headers) {
             webResource.headers = new HttpHeaders();
           }
-          for (var headerName in this.inHeader) {
+          for (const headerName in this.inHeader) {
             webResource.headers.set(headerName, this.inHeader[headerName]);
           }
         }
         if (this.inQuery) {
           if (!webResource.url) {
-            return Promise.reject(new Error("url cannot be null in the request object."));
+            return Promise.reject(new Error(`url cannot be null in the request object.`));
           }
           if (webResource.url.indexOf("?") < 0) {
             webResource.url += "?";
           }
-          for (var key in this.inQuery) {
+          for (const key in this.inQuery) {
             if (!webResource.url.endsWith("?")) {
               webResource.url += "&";
             }
-            webResource.url += key + "=" + this.inQuery[key];
+            webResource.url += `${key}=${this.inQuery[key]}`;
           }
         }
         return Promise.resolve(webResource);
-      };
-      return ApiKeyCredentials2;
-    }();
-    var TopicCredentials = function(_super) {
-      tslib.__extends(TopicCredentials2, _super);
-      function TopicCredentials2(topicKey) {
-        var _this = this;
+      }
+    };
+    __name(ApiKeyCredentials, "ApiKeyCredentials");
+    var TopicCredentials = class extends ApiKeyCredentials {
+      constructor(topicKey) {
         if (!topicKey || topicKey && typeof topicKey !== "string") {
           throw new Error("topicKey cannot be null or undefined and must be of type string.");
         }
-        var options = {
+        const options = {
           inHeader: {
             "aeg-sas-key": topicKey
           }
         };
-        _this = _super.call(this, options) || this;
-        return _this;
+        super(options);
       }
-      __name(TopicCredentials2, "TopicCredentials");
-      return TopicCredentials2;
-    }(ApiKeyCredentials);
+    };
+    __name(TopicCredentials, "TopicCredentials");
     Object.defineProperty(exports2, "isTokenCredential", {
       enumerable: true,
       get: function() {
@@ -40073,185 +39413,112 @@ var require_dist8 = __commonJS({
   "../../node_modules/@azure/core-lro/dist/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    var tslib = require_tslib();
-    var PollerStoppedError = function(_super) {
-      tslib.__extends(PollerStoppedError2, _super);
-      function PollerStoppedError2(message) {
-        var _this = _super.call(this, message) || this;
-        _this.name = "PollerStoppedError";
-        Object.setPrototypeOf(_this, PollerStoppedError2.prototype);
-        return _this;
+    var logger$1 = require_dist3();
+    var PollerStoppedError = class extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "PollerStoppedError";
+        Object.setPrototypeOf(this, PollerStoppedError.prototype);
       }
-      __name(PollerStoppedError2, "PollerStoppedError");
-      return PollerStoppedError2;
-    }(Error);
-    var PollerCancelledError = function(_super) {
-      tslib.__extends(PollerCancelledError2, _super);
-      function PollerCancelledError2(message) {
-        var _this = _super.call(this, message) || this;
-        _this.name = "PollerCancelledError";
-        Object.setPrototypeOf(_this, PollerCancelledError2.prototype);
-        return _this;
+    };
+    __name(PollerStoppedError, "PollerStoppedError");
+    var PollerCancelledError = class extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "PollerCancelledError";
+        Object.setPrototypeOf(this, PollerCancelledError.prototype);
       }
-      __name(PollerCancelledError2, "PollerCancelledError");
-      return PollerCancelledError2;
-    }(Error);
-    var Poller = function() {
-      function Poller2(operation) {
-        var _this = this;
+    };
+    __name(PollerCancelledError, "PollerCancelledError");
+    var Poller = class {
+      constructor(operation) {
         this.stopped = true;
         this.pollProgressCallbacks = [];
         this.operation = operation;
-        this.promise = new Promise(function(resolve2, reject) {
-          _this.resolve = resolve2;
-          _this.reject = reject;
+        this.promise = new Promise((resolve2, reject) => {
+          this.resolve = resolve2;
+          this.reject = reject;
         });
-        this.promise.catch(function() {
+        this.promise.catch(() => {
         });
       }
-      __name(Poller2, "Poller");
-      Poller2.prototype.startPolling = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (this.stopped) {
-                  this.stopped = false;
-                }
-                _a.label = 1;
-              case 1:
-                if (!(!this.isStopped() && !this.isDone()))
-                  return [3, 4];
-                return [4, this.poll()];
-              case 2:
-                _a.sent();
-                return [4, this.delay()];
-              case 3:
-                _a.sent();
-                return [3, 1];
-              case 4:
-                return [2];
-            }
-          });
-        });
-      };
-      Poller2.prototype.pollOnce = function(options) {
-        if (options === void 0) {
-          options = {};
+      async startPolling() {
+        if (this.stopped) {
+          this.stopped = false;
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, e_1;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _b.trys.push([0, 3, , 4]);
-                if (!!this.isDone())
-                  return [3, 2];
-                _a = this;
-                return [4, this.operation.update({
-                  abortSignal: options.abortSignal,
-                  fireProgress: this.fireProgress.bind(this)
-                })];
-              case 1:
-                _a.operation = _b.sent();
-                if (this.isDone() && this.resolve) {
-                  this.resolve(this.operation.state.result);
-                }
-                _b.label = 2;
-              case 2:
-                return [3, 4];
-              case 3:
-                e_1 = _b.sent();
-                this.operation.state.error = e_1;
-                if (this.reject) {
-                  this.reject(e_1);
-                }
-                throw e_1;
-              case 4:
-                return [2];
+        while (!this.isStopped() && !this.isDone()) {
+          await this.poll();
+          await this.delay();
+        }
+      }
+      async pollOnce(options = {}) {
+        try {
+          if (!this.isDone()) {
+            this.operation = await this.operation.update({
+              abortSignal: options.abortSignal,
+              fireProgress: this.fireProgress.bind(this)
+            });
+            if (this.isDone() && this.resolve) {
+              this.resolve(this.operation.state.result);
             }
-          });
-        });
-      };
-      Poller2.prototype.fireProgress = function(state) {
-        for (var _i = 0, _a = this.pollProgressCallbacks; _i < _a.length; _i++) {
-          var callback = _a[_i];
+          }
+        } catch (e) {
+          this.operation.state.error = e;
+          if (this.reject) {
+            this.reject(e);
+          }
+          throw e;
+        }
+      }
+      fireProgress(state) {
+        for (const callback of this.pollProgressCallbacks) {
           callback(state);
         }
-      };
-      Poller2.prototype.cancelOnce = function(options) {
-        if (options === void 0) {
-          options = {};
+      }
+      async cancelOnce(options = {}) {
+        this.operation = await this.operation.cancel(options);
+        if (this.reject) {
+          this.reject(new PollerCancelledError("Poller cancelled"));
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = this;
-                return [4, this.operation.cancel(options)];
-              case 1:
-                _a.operation = _b.sent();
-                if (this.reject) {
-                  this.reject(new PollerCancelledError("Poller cancelled"));
-                }
-                return [2];
-            }
-          });
-        });
-      };
-      Poller2.prototype.poll = function(options) {
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
+      }
+      poll(options = {}) {
         if (!this.pollOncePromise) {
           this.pollOncePromise = this.pollOnce(options);
-          var clearPollOncePromise = /* @__PURE__ */ __name(function() {
-            _this.pollOncePromise = void 0;
+          const clearPollOncePromise = /* @__PURE__ */ __name(() => {
+            this.pollOncePromise = void 0;
           }, "clearPollOncePromise");
           this.pollOncePromise.then(clearPollOncePromise, clearPollOncePromise).catch(this.reject);
         }
         return this.pollOncePromise;
-      };
-      Poller2.prototype.pollUntilDone = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            if (this.stopped) {
-              this.startPolling().catch(this.reject);
-            }
-            return [2, this.promise];
-          });
-        });
-      };
-      Poller2.prototype.onProgress = function(callback) {
-        var _this = this;
+      }
+      async pollUntilDone() {
+        if (this.stopped) {
+          this.startPolling().catch(this.reject);
+        }
+        return this.promise;
+      }
+      onProgress(callback) {
         this.pollProgressCallbacks.push(callback);
-        return function() {
-          _this.pollProgressCallbacks = _this.pollProgressCallbacks.filter(function(c) {
-            return c !== callback;
-          });
+        return () => {
+          this.pollProgressCallbacks = this.pollProgressCallbacks.filter((c) => c !== callback);
         };
-      };
-      Poller2.prototype.isDone = function() {
-        var state = this.operation.state;
+      }
+      isDone() {
+        const state = this.operation.state;
         return Boolean(state.isCompleted || state.isCancelled || state.error);
-      };
-      Poller2.prototype.stopPolling = function() {
+      }
+      stopPolling() {
         if (!this.stopped) {
           this.stopped = true;
           if (this.reject) {
             this.reject(new PollerStoppedError("This poller is already stopped"));
           }
         }
-      };
-      Poller2.prototype.isStopped = function() {
+      }
+      isStopped() {
         return this.stopped;
-      };
-      Poller2.prototype.cancelOperation = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
+      }
+      cancelOperation(options = {}) {
         if (!this.stopped) {
           this.stopped = true;
         }
@@ -40261,19 +39528,297 @@ var require_dist8 = __commonJS({
           throw new Error("A cancel request is currently pending");
         }
         return this.cancelPromise;
-      };
-      Poller2.prototype.getOperationState = function() {
+      }
+      getOperationState() {
         return this.operation.state;
-      };
-      Poller2.prototype.getResult = function() {
-        var state = this.operation.state;
+      }
+      getResult() {
+        const state = this.operation.state;
         return state.result;
-      };
-      Poller2.prototype.toString = function() {
+      }
+      toString() {
         return this.operation.toString();
+      }
+    };
+    __name(Poller, "Poller");
+    var logger = logger$1.createClientLogger("core-lro");
+    function getPollingUrl(rawResponse, defaultPath) {
+      var _a, _b, _c;
+      return (_c = (_b = (_a = getAzureAsyncOperation(rawResponse)) !== null && _a !== void 0 ? _a : getLocation(rawResponse)) !== null && _b !== void 0 ? _b : getOperationLocation(rawResponse)) !== null && _c !== void 0 ? _c : defaultPath;
+    }
+    __name(getPollingUrl, "getPollingUrl");
+    function getLocation(rawResponse) {
+      return rawResponse.headers["location"];
+    }
+    __name(getLocation, "getLocation");
+    function getOperationLocation(rawResponse) {
+      return rawResponse.headers["operation-location"];
+    }
+    __name(getOperationLocation, "getOperationLocation");
+    function getAzureAsyncOperation(rawResponse) {
+      return rawResponse.headers["azure-asyncoperation"];
+    }
+    __name(getAzureAsyncOperation, "getAzureAsyncOperation");
+    function inferLroMode(requestPath, requestMethod, rawResponse) {
+      if (getAzureAsyncOperation(rawResponse) !== void 0) {
+        return {
+          mode: "AzureAsync",
+          resourceLocation: requestMethod === "PUT" ? requestPath : requestMethod === "POST" ? getLocation(rawResponse) : void 0
+        };
+      } else if (getLocation(rawResponse) !== void 0 || getOperationLocation(rawResponse) !== void 0) {
+        return {
+          mode: "Location"
+        };
+      } else if (["PUT", "PATCH"].includes(requestMethod)) {
+        return {
+          mode: "Body"
+        };
+      }
+      return {};
+    }
+    __name(inferLroMode, "inferLroMode");
+    var SimpleRestError = class extends Error {
+      constructor(message, statusCode) {
+        super(message);
+        this.name = "RestError";
+        this.statusCode = statusCode;
+        Object.setPrototypeOf(this, SimpleRestError.prototype);
+      }
+    };
+    __name(SimpleRestError, "SimpleRestError");
+    function isUnexpectedInitialResponse(rawResponse) {
+      const code = rawResponse.statusCode;
+      if (![203, 204, 202, 201, 200, 500].includes(code)) {
+        throw new SimpleRestError(`Received unexpected HTTP status code ${code} in the initial response. This may indicate a server issue.`, code);
+      }
+      return false;
+    }
+    __name(isUnexpectedInitialResponse, "isUnexpectedInitialResponse");
+    function isUnexpectedPollingResponse(rawResponse) {
+      const code = rawResponse.statusCode;
+      if (![202, 201, 200, 500].includes(code)) {
+        throw new SimpleRestError(`Received unexpected HTTP status code ${code} while polling. This may indicate a server issue.`, code);
+      }
+      return false;
+    }
+    __name(isUnexpectedPollingResponse, "isUnexpectedPollingResponse");
+    var successStates = ["succeeded"];
+    var failureStates = ["failed", "canceled", "cancelled"];
+    function getResponseStatus(rawResponse) {
+      var _a, _b;
+      const { status } = (_a = rawResponse.body) !== null && _a !== void 0 ? _a : {};
+      return (_b = status === null || status === void 0 ? void 0 : status.toLowerCase()) !== null && _b !== void 0 ? _b : "succeeded";
+    }
+    __name(getResponseStatus, "getResponseStatus");
+    function isAzureAsyncPollingDone(rawResponse) {
+      const state = getResponseStatus(rawResponse);
+      if (isUnexpectedPollingResponse(rawResponse) || failureStates.includes(state)) {
+        throw new Error(`The long running operation has failed. The provisioning state: ${state}.`);
+      }
+      return successStates.includes(state);
+    }
+    __name(isAzureAsyncPollingDone, "isAzureAsyncPollingDone");
+    async function sendFinalRequest(lro, resourceLocation, lroResourceLocationConfig) {
+      switch (lroResourceLocationConfig) {
+        case "original-uri":
+          return lro.sendPollRequest(lro.requestPath);
+        case "azure-async-operation":
+          return void 0;
+        case "location":
+        default:
+          return lro.sendPollRequest(resourceLocation !== null && resourceLocation !== void 0 ? resourceLocation : lro.requestPath);
+      }
+    }
+    __name(sendFinalRequest, "sendFinalRequest");
+    function processAzureAsyncOperationResult(lro, resourceLocation, lroResourceLocationConfig) {
+      return (response) => {
+        if (isAzureAsyncPollingDone(response.rawResponse)) {
+          if (resourceLocation === void 0) {
+            return Object.assign(Object.assign({}, response), { done: true });
+          } else {
+            return Object.assign(Object.assign({}, response), { done: false, next: async () => {
+              const finalResponse = await sendFinalRequest(lro, resourceLocation, lroResourceLocationConfig);
+              return Object.assign(Object.assign({}, finalResponse !== null && finalResponse !== void 0 ? finalResponse : response), { done: true });
+            } });
+          }
+        }
+        return Object.assign(Object.assign({}, response), { done: false });
       };
-      return Poller2;
-    }();
+    }
+    __name(processAzureAsyncOperationResult, "processAzureAsyncOperationResult");
+    function getProvisioningState(rawResponse) {
+      var _a, _b, _c;
+      const { properties, provisioningState } = (_a = rawResponse.body) !== null && _a !== void 0 ? _a : {};
+      const state = (_b = properties === null || properties === void 0 ? void 0 : properties.provisioningState) !== null && _b !== void 0 ? _b : provisioningState;
+      return (_c = state === null || state === void 0 ? void 0 : state.toLowerCase()) !== null && _c !== void 0 ? _c : "succeeded";
+    }
+    __name(getProvisioningState, "getProvisioningState");
+    function isBodyPollingDone(rawResponse) {
+      const state = getProvisioningState(rawResponse);
+      if (isUnexpectedPollingResponse(rawResponse) || failureStates.includes(state)) {
+        throw new Error(`The long running operation has failed. The provisioning state: ${state}.`);
+      }
+      return successStates.includes(state);
+    }
+    __name(isBodyPollingDone, "isBodyPollingDone");
+    function processBodyPollingOperationResult(response) {
+      return Object.assign(Object.assign({}, response), { done: isBodyPollingDone(response.rawResponse) });
+    }
+    __name(processBodyPollingOperationResult, "processBodyPollingOperationResult");
+    function isLocationPollingDone(rawResponse) {
+      return !isUnexpectedPollingResponse(rawResponse) && rawResponse.statusCode !== 202;
+    }
+    __name(isLocationPollingDone, "isLocationPollingDone");
+    function processLocationPollingOperationResult(response) {
+      return Object.assign(Object.assign({}, response), { done: isLocationPollingDone(response.rawResponse) });
+    }
+    __name(processLocationPollingOperationResult, "processLocationPollingOperationResult");
+    function processPassthroughOperationResult(response) {
+      return Object.assign(Object.assign({}, response), { done: true });
+    }
+    __name(processPassthroughOperationResult, "processPassthroughOperationResult");
+    function createGetLroStatusFromResponse(lroPrimitives, config, lroResourceLocationConfig) {
+      switch (config.mode) {
+        case "AzureAsync": {
+          return processAzureAsyncOperationResult(lroPrimitives, config.resourceLocation, lroResourceLocationConfig);
+        }
+        case "Location": {
+          return processLocationPollingOperationResult;
+        }
+        case "Body": {
+          return processBodyPollingOperationResult;
+        }
+        default: {
+          return processPassthroughOperationResult;
+        }
+      }
+    }
+    __name(createGetLroStatusFromResponse, "createGetLroStatusFromResponse");
+    function createPoll(lroPrimitives) {
+      return async (path2, pollerConfig, getLroStatusFromResponse) => {
+        const response = await lroPrimitives.sendPollRequest(path2);
+        const retryAfter = response.rawResponse.headers["retry-after"];
+        if (retryAfter !== void 0) {
+          const retryAfterInMs = parseInt(retryAfter);
+          pollerConfig.intervalInMs = isNaN(retryAfterInMs) ? calculatePollingIntervalFromDate(new Date(retryAfter), pollerConfig.intervalInMs) : retryAfterInMs;
+        }
+        return getLroStatusFromResponse(response);
+      };
+    }
+    __name(createPoll, "createPoll");
+    function calculatePollingIntervalFromDate(retryAfterDate, defaultIntervalInMs) {
+      const timeNow = Math.floor(new Date().getTime());
+      const retryAfterTime = retryAfterDate.getTime();
+      if (timeNow < retryAfterTime) {
+        return retryAfterTime - timeNow;
+      }
+      return defaultIntervalInMs;
+    }
+    __name(calculatePollingIntervalFromDate, "calculatePollingIntervalFromDate");
+    function createInitializeState(state, requestPath, requestMethod) {
+      return (response) => {
+        if (isUnexpectedInitialResponse(response.rawResponse))
+          ;
+        state.initialRawResponse = response.rawResponse;
+        state.isStarted = true;
+        state.pollingURL = getPollingUrl(state.initialRawResponse, requestPath);
+        state.config = inferLroMode(requestPath, requestMethod, state.initialRawResponse);
+        if (state.config.mode === void 0 || state.config.mode === "Body" && isBodyPollingDone(state.initialRawResponse)) {
+          state.result = response.flatResponse;
+          state.isCompleted = true;
+        }
+        logger.verbose(`LRO: initial state: ${JSON.stringify(state)}`);
+        return Boolean(state.isCompleted);
+      };
+    }
+    __name(createInitializeState, "createInitializeState");
+    var GenericPollOperation = class {
+      constructor(state, lro, lroResourceLocationConfig, processResult, updateState, isDone) {
+        this.state = state;
+        this.lro = lro;
+        this.lroResourceLocationConfig = lroResourceLocationConfig;
+        this.processResult = processResult;
+        this.updateState = updateState;
+        this.isDone = isDone;
+      }
+      setPollerConfig(pollerConfig) {
+        this.pollerConfig = pollerConfig;
+      }
+      async update(options) {
+        var _a, _b, _c;
+        const state = this.state;
+        let lastResponse = void 0;
+        if (!state.isStarted) {
+          const initializeState = createInitializeState(state, this.lro.requestPath, this.lro.requestMethod);
+          lastResponse = await this.lro.sendInitialRequest();
+          initializeState(lastResponse);
+        }
+        if (!state.isCompleted) {
+          if (!this.poll || !this.getLroStatusFromResponse) {
+            if (!state.config) {
+              throw new Error("Bad state: LRO mode is undefined. Please check if the serialized state is well-formed.");
+            }
+            const isDone = this.isDone;
+            this.getLroStatusFromResponse = isDone ? (response) => Object.assign(Object.assign({}, response), { done: isDone(response.flatResponse, this.state) }) : createGetLroStatusFromResponse(this.lro, state.config, this.lroResourceLocationConfig);
+            this.poll = createPoll(this.lro);
+          }
+          if (!state.pollingURL) {
+            throw new Error("Bad state: polling URL is undefined. Please check if the serialized state is well-formed.");
+          }
+          const currentState = await this.poll(state.pollingURL, this.pollerConfig, this.getLroStatusFromResponse);
+          logger.verbose(`LRO: polling response: ${JSON.stringify(currentState.rawResponse)}`);
+          if (currentState.done) {
+            state.result = this.processResult ? this.processResult(currentState.flatResponse, state) : currentState.flatResponse;
+            state.isCompleted = true;
+          } else {
+            this.poll = (_a = currentState.next) !== null && _a !== void 0 ? _a : this.poll;
+            state.pollingURL = getPollingUrl(currentState.rawResponse, state.pollingURL);
+          }
+          lastResponse = currentState;
+        }
+        logger.verbose(`LRO: current state: ${JSON.stringify(state)}`);
+        if (lastResponse) {
+          (_b = this.updateState) === null || _b === void 0 ? void 0 : _b.call(this, state, lastResponse === null || lastResponse === void 0 ? void 0 : lastResponse.rawResponse);
+        } else {
+          logger.error(`LRO: no response was received`);
+        }
+        (_c = options === null || options === void 0 ? void 0 : options.fireProgress) === null || _c === void 0 ? void 0 : _c.call(options, state);
+        return this;
+      }
+      async cancel() {
+        this.state.isCancelled = true;
+        return this;
+      }
+      toString() {
+        return JSON.stringify({
+          state: this.state
+        });
+      }
+    };
+    __name(GenericPollOperation, "GenericPollOperation");
+    function deserializeState(serializedState) {
+      try {
+        return JSON.parse(serializedState).state;
+      } catch (e) {
+        throw new Error(`LroEngine: Unable to deserialize state: ${serializedState}`);
+      }
+    }
+    __name(deserializeState, "deserializeState");
+    var LroEngine = class extends Poller {
+      constructor(lro, options) {
+        const { intervalInMs = 2e3, resumeFrom } = options || {};
+        const state = resumeFrom ? deserializeState(resumeFrom) : {};
+        const operation = new GenericPollOperation(state, lro, options === null || options === void 0 ? void 0 : options.lroResourceLocationConfig, options === null || options === void 0 ? void 0 : options.processResult, options === null || options === void 0 ? void 0 : options.updateState, options === null || options === void 0 ? void 0 : options.isDone);
+        super(operation);
+        this.config = { intervalInMs };
+        operation.setPollerConfig(this.config);
+      }
+      delay() {
+        return new Promise((resolve2) => setTimeout(() => resolve2(), this.config.intervalInMs));
+      }
+    };
+    __name(LroEngine, "LroEngine");
+    exports2.LroEngine = LroEngine;
     exports2.Poller = Poller;
     exports2.PollerCancelledError = PollerCancelledError;
     exports2.PollerStoppedError = PollerStoppedError;
@@ -50724,66 +50269,65 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var Service = function() {
-      function Service2(client) {
+    var Service = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(Service2, "Service");
-      Service2.prototype.setProperties = function(blobServiceProperties2, options) {
-        var operationArguments = {
+      setProperties(blobServiceProperties2, options) {
+        const operationArguments = {
           blobServiceProperties: blobServiceProperties2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setPropertiesOperationSpec);
-      };
-      Service2.prototype.getProperties = function(options) {
-        var operationArguments = {
+      }
+      getProperties(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getPropertiesOperationSpec);
-      };
-      Service2.prototype.getStatistics = function(options) {
-        var operationArguments = {
+      }
+      getStatistics(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getStatisticsOperationSpec);
-      };
-      Service2.prototype.listContainersSegment = function(options) {
-        var operationArguments = {
+      }
+      listContainersSegment(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, listContainersSegmentOperationSpec);
-      };
-      Service2.prototype.getUserDelegationKey = function(keyInfo2, options) {
-        var operationArguments = {
+      }
+      getUserDelegationKey(keyInfo2, options) {
+        const operationArguments = {
           keyInfo: keyInfo2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getUserDelegationKeyOperationSpec);
-      };
-      Service2.prototype.getAccountInfo = function(options) {
-        var operationArguments = {
+      }
+      getAccountInfo(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getAccountInfoOperationSpec);
-      };
-      Service2.prototype.submitBatch = function(contentLength2, multipartContentType2, body2, options) {
-        var operationArguments = {
+      }
+      submitBatch(contentLength2, multipartContentType2, body2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           multipartContentType: multipartContentType2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, submitBatchOperationSpec);
-      };
-      Service2.prototype.filterBlobs = function(options) {
-        var operationArguments = {
+      }
+      filterBlobs(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, filterBlobsOperationSpec);
-      };
-      return Service2;
-    }();
+      }
+    };
+    __name(Service, "Service");
     var xmlSerializer = new coreHttp.Serializer(Mappers, true);
     var setPropertiesOperationSpec = {
       path: "/",
@@ -51009,124 +50553,123 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: xmlSerializer
     };
-    var Container = function() {
-      function Container2(client) {
+    var Container = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(Container2, "Container");
-      Container2.prototype.create = function(options) {
-        var operationArguments = {
+      create(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, createOperationSpec);
-      };
-      Container2.prototype.getProperties = function(options) {
-        var operationArguments = {
+      }
+      getProperties(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getPropertiesOperationSpec$1);
-      };
-      Container2.prototype.delete = function(options) {
-        var operationArguments = {
+      }
+      delete(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, deleteOperationSpec);
-      };
-      Container2.prototype.setMetadata = function(options) {
-        var operationArguments = {
+      }
+      setMetadata(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setMetadataOperationSpec);
-      };
-      Container2.prototype.getAccessPolicy = function(options) {
-        var operationArguments = {
+      }
+      getAccessPolicy(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getAccessPolicyOperationSpec);
-      };
-      Container2.prototype.setAccessPolicy = function(options) {
-        var operationArguments = {
+      }
+      setAccessPolicy(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setAccessPolicyOperationSpec);
-      };
-      Container2.prototype.restore = function(options) {
-        var operationArguments = {
+      }
+      restore(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, restoreOperationSpec);
-      };
-      Container2.prototype.rename = function(sourceContainerName2, options) {
-        var operationArguments = {
+      }
+      rename(sourceContainerName2, options) {
+        const operationArguments = {
           sourceContainerName: sourceContainerName2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, renameOperationSpec);
-      };
-      Container2.prototype.submitBatch = function(contentLength2, multipartContentType2, body2, options) {
-        var operationArguments = {
+      }
+      submitBatch(contentLength2, multipartContentType2, body2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           multipartContentType: multipartContentType2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, submitBatchOperationSpec$1);
-      };
-      Container2.prototype.acquireLease = function(options) {
-        var operationArguments = {
+      }
+      acquireLease(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, acquireLeaseOperationSpec);
-      };
-      Container2.prototype.releaseLease = function(leaseId2, options) {
-        var operationArguments = {
+      }
+      releaseLease(leaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, releaseLeaseOperationSpec);
-      };
-      Container2.prototype.renewLease = function(leaseId2, options) {
-        var operationArguments = {
+      }
+      renewLease(leaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, renewLeaseOperationSpec);
-      };
-      Container2.prototype.breakLease = function(options) {
-        var operationArguments = {
+      }
+      breakLease(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, breakLeaseOperationSpec);
-      };
-      Container2.prototype.changeLease = function(leaseId2, proposedLeaseId2, options) {
-        var operationArguments = {
+      }
+      changeLease(leaseId2, proposedLeaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           proposedLeaseId: proposedLeaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, changeLeaseOperationSpec);
-      };
-      Container2.prototype.listBlobFlatSegment = function(options) {
-        var operationArguments = {
+      }
+      listBlobFlatSegment(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, listBlobFlatSegmentOperationSpec);
-      };
-      Container2.prototype.listBlobHierarchySegment = function(delimiter2, options) {
-        var operationArguments = {
+      }
+      listBlobHierarchySegment(delimiter2, options) {
+        const operationArguments = {
           delimiter: delimiter2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, listBlobHierarchySegmentOperationSpec);
-      };
-      Container2.prototype.getAccountInfo = function(options) {
-        var operationArguments = {
+      }
+      getAccountInfo(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getAccountInfoOperationSpec$1);
-      };
-      return Container2;
-    }();
+      }
+    };
+    __name(Container, "Container");
     var xmlSerializer$1 = new coreHttp.Serializer(Mappers, true);
     var createOperationSpec = {
       path: "/{containerName}",
@@ -51629,167 +51172,166 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: xmlSerializer$1
     };
-    var Blob$1 = function() {
-      function Blob2(client) {
+    var Blob$1 = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(Blob2, "Blob");
-      Blob2.prototype.download = function(options) {
-        var operationArguments = {
+      download(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, downloadOperationSpec);
-      };
-      Blob2.prototype.getProperties = function(options) {
-        var operationArguments = {
+      }
+      getProperties(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getPropertiesOperationSpec$2);
-      };
-      Blob2.prototype.delete = function(options) {
-        var operationArguments = {
+      }
+      delete(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, deleteOperationSpec$1);
-      };
-      Blob2.prototype.setAccessControl = function(options) {
-        var operationArguments = {
+      }
+      setAccessControl(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setAccessControlOperationSpec);
-      };
-      Blob2.prototype.getAccessControl = function(options) {
-        var operationArguments = {
+      }
+      getAccessControl(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getAccessControlOperationSpec);
-      };
-      Blob2.prototype.rename = function(renameSource2, options) {
-        var operationArguments = {
+      }
+      rename(renameSource2, options) {
+        const operationArguments = {
           renameSource: renameSource2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, renameOperationSpec$1);
-      };
-      Blob2.prototype.undelete = function(options) {
-        var operationArguments = {
+      }
+      undelete(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, undeleteOperationSpec);
-      };
-      Blob2.prototype.setExpiry = function(expiryOptions2, options) {
-        var operationArguments = {
+      }
+      setExpiry(expiryOptions2, options) {
+        const operationArguments = {
           expiryOptions: expiryOptions2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setExpiryOperationSpec);
-      };
-      Blob2.prototype.setHttpHeaders = function(options) {
-        var operationArguments = {
+      }
+      setHttpHeaders(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setHttpHeadersOperationSpec);
-      };
-      Blob2.prototype.setMetadata = function(options) {
-        var operationArguments = {
+      }
+      setMetadata(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setMetadataOperationSpec$1);
-      };
-      Blob2.prototype.acquireLease = function(options) {
-        var operationArguments = {
+      }
+      acquireLease(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, acquireLeaseOperationSpec$1);
-      };
-      Blob2.prototype.releaseLease = function(leaseId2, options) {
-        var operationArguments = {
+      }
+      releaseLease(leaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, releaseLeaseOperationSpec$1);
-      };
-      Blob2.prototype.renewLease = function(leaseId2, options) {
-        var operationArguments = {
+      }
+      renewLease(leaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, renewLeaseOperationSpec$1);
-      };
-      Blob2.prototype.changeLease = function(leaseId2, proposedLeaseId2, options) {
-        var operationArguments = {
+      }
+      changeLease(leaseId2, proposedLeaseId2, options) {
+        const operationArguments = {
           leaseId: leaseId2,
           proposedLeaseId: proposedLeaseId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, changeLeaseOperationSpec$1);
-      };
-      Blob2.prototype.breakLease = function(options) {
-        var operationArguments = {
+      }
+      breakLease(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, breakLeaseOperationSpec$1);
-      };
-      Blob2.prototype.createSnapshot = function(options) {
-        var operationArguments = {
+      }
+      createSnapshot(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, createSnapshotOperationSpec);
-      };
-      Blob2.prototype.startCopyFromURL = function(copySource2, options) {
-        var operationArguments = {
+      }
+      startCopyFromURL(copySource2, options) {
+        const operationArguments = {
           copySource: copySource2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, startCopyFromURLOperationSpec);
-      };
-      Blob2.prototype.copyFromURL = function(copySource2, options) {
-        var operationArguments = {
+      }
+      copyFromURL(copySource2, options) {
+        const operationArguments = {
           copySource: copySource2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, copyFromURLOperationSpec);
-      };
-      Blob2.prototype.abortCopyFromURL = function(copyId2, options) {
-        var operationArguments = {
+      }
+      abortCopyFromURL(copyId2, options) {
+        const operationArguments = {
           copyId: copyId2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, abortCopyFromURLOperationSpec);
-      };
-      Blob2.prototype.setTier = function(tier2, options) {
-        var operationArguments = {
+      }
+      setTier(tier2, options) {
+        const operationArguments = {
           tier: tier2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setTierOperationSpec);
-      };
-      Blob2.prototype.getAccountInfo = function(options) {
-        var operationArguments = {
+      }
+      getAccountInfo(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getAccountInfoOperationSpec$2);
-      };
-      Blob2.prototype.query = function(options) {
-        var operationArguments = {
+      }
+      query(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, queryOperationSpec);
-      };
-      Blob2.prototype.getTags = function(options) {
-        var operationArguments = {
+      }
+      getTags(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getTagsOperationSpec);
-      };
-      Blob2.prototype.setTags = function(options) {
-        var operationArguments = {
+      }
+      setTags(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setTagsOperationSpec);
-      };
-      return Blob2;
-    }();
+      }
+    };
+    __name(Blob$1, "Blob$1");
     var xmlSerializer$2 = new coreHttp.Serializer(Mappers, true);
     var downloadOperationSpec = {
       path: "/{containerName}/{blob}",
@@ -52576,36 +52118,35 @@ var require_dist9 = __commonJS({
       mediaType: "xml",
       serializer: xmlSerializer$2
     };
-    var PageBlob = function() {
-      function PageBlob2(client) {
+    var PageBlob = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(PageBlob2, "PageBlob");
-      PageBlob2.prototype.create = function(contentLength2, blobContentLength2, options) {
-        var operationArguments = {
+      create(contentLength2, blobContentLength2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           blobContentLength: blobContentLength2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, createOperationSpec$1);
-      };
-      PageBlob2.prototype.uploadPages = function(contentLength2, body2, options) {
-        var operationArguments = {
+      }
+      uploadPages(contentLength2, body2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, uploadPagesOperationSpec);
-      };
-      PageBlob2.prototype.clearPages = function(contentLength2, options) {
-        var operationArguments = {
+      }
+      clearPages(contentLength2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, clearPagesOperationSpec);
-      };
-      PageBlob2.prototype.uploadPagesFromURL = function(sourceUrl2, sourceRange2, contentLength2, range2, options) {
-        var operationArguments = {
+      }
+      uploadPagesFromURL(sourceUrl2, sourceRange2, contentLength2, range2, options) {
+        const operationArguments = {
           sourceUrl: sourceUrl2,
           sourceRange: sourceRange2,
           contentLength: contentLength2,
@@ -52613,42 +52154,42 @@ var require_dist9 = __commonJS({
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, uploadPagesFromURLOperationSpec);
-      };
-      PageBlob2.prototype.getPageRanges = function(options) {
-        var operationArguments = {
+      }
+      getPageRanges(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getPageRangesOperationSpec);
-      };
-      PageBlob2.prototype.getPageRangesDiff = function(options) {
-        var operationArguments = {
+      }
+      getPageRangesDiff(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getPageRangesDiffOperationSpec);
-      };
-      PageBlob2.prototype.resize = function(blobContentLength2, options) {
-        var operationArguments = {
+      }
+      resize(blobContentLength2, options) {
+        const operationArguments = {
           blobContentLength: blobContentLength2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, resizeOperationSpec);
-      };
-      PageBlob2.prototype.updateSequenceNumber = function(sequenceNumberAction2, options) {
-        var operationArguments = {
+      }
+      updateSequenceNumber(sequenceNumberAction2, options) {
+        const operationArguments = {
           sequenceNumberAction: sequenceNumberAction2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, updateSequenceNumberOperationSpec);
-      };
-      PageBlob2.prototype.copyIncremental = function(copySource2, options) {
-        var operationArguments = {
+      }
+      copyIncremental(copySource2, options) {
+        const operationArguments = {
           copySource: copySource2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, copyIncrementalOperationSpec);
-      };
-      return PageBlob2;
-    }();
+      }
+    };
+    __name(PageBlob, "PageBlob");
     var xmlSerializer$3 = new coreHttp.Serializer(Mappers, true);
     var serializer = new coreHttp.Serializer(Mappers, false);
     var createOperationSpec$1 = {
@@ -52983,42 +52524,41 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: xmlSerializer$3
     };
-    var AppendBlob = function() {
-      function AppendBlob2(client) {
+    var AppendBlob = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(AppendBlob2, "AppendBlob");
-      AppendBlob2.prototype.create = function(contentLength2, options) {
-        var operationArguments = {
+      create(contentLength2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, createOperationSpec$2);
-      };
-      AppendBlob2.prototype.appendBlock = function(contentLength2, body2, options) {
-        var operationArguments = {
+      }
+      appendBlock(contentLength2, body2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, appendBlockOperationSpec);
-      };
-      AppendBlob2.prototype.appendBlockFromUrl = function(sourceUrl2, contentLength2, options) {
-        var operationArguments = {
+      }
+      appendBlockFromUrl(sourceUrl2, contentLength2, options) {
+        const operationArguments = {
           sourceUrl: sourceUrl2,
           contentLength: contentLength2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, appendBlockFromUrlOperationSpec);
-      };
-      AppendBlob2.prototype.seal = function(options) {
-        var operationArguments = {
+      }
+      seal(options) {
+        const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, sealOperationSpec);
-      };
-      return AppendBlob2;
-    }();
+      }
+    };
+    __name(AppendBlob, "AppendBlob");
     var xmlSerializer$4 = new coreHttp.Serializer(Mappers, true);
     var serializer$1 = new coreHttp.Serializer(Mappers, false);
     var createOperationSpec$2 = {
@@ -53174,61 +52714,60 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: xmlSerializer$4
     };
-    var BlockBlob = function() {
-      function BlockBlob2(client) {
+    var BlockBlob = class {
+      constructor(client) {
         this.client = client;
       }
-      __name(BlockBlob2, "BlockBlob");
-      BlockBlob2.prototype.upload = function(contentLength2, body2, options) {
-        var operationArguments = {
+      upload(contentLength2, body2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, uploadOperationSpec);
-      };
-      BlockBlob2.prototype.putBlobFromUrl = function(contentLength2, copySource2, options) {
-        var operationArguments = {
+      }
+      putBlobFromUrl(contentLength2, copySource2, options) {
+        const operationArguments = {
           contentLength: contentLength2,
           copySource: copySource2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, putBlobFromUrlOperationSpec);
-      };
-      BlockBlob2.prototype.stageBlock = function(blockId2, contentLength2, body2, options) {
-        var operationArguments = {
+      }
+      stageBlock(blockId2, contentLength2, body2, options) {
+        const operationArguments = {
           blockId: blockId2,
           contentLength: contentLength2,
           body: body2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, stageBlockOperationSpec);
-      };
-      BlockBlob2.prototype.stageBlockFromURL = function(blockId2, contentLength2, sourceUrl2, options) {
-        var operationArguments = {
+      }
+      stageBlockFromURL(blockId2, contentLength2, sourceUrl2, options) {
+        const operationArguments = {
           blockId: blockId2,
           contentLength: contentLength2,
           sourceUrl: sourceUrl2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, stageBlockFromURLOperationSpec);
-      };
-      BlockBlob2.prototype.commitBlockList = function(blocks2, options) {
-        var operationArguments = {
+      }
+      commitBlockList(blocks2, options) {
+        const operationArguments = {
           blocks: blocks2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, commitBlockListOperationSpec);
-      };
-      BlockBlob2.prototype.getBlockList = function(listType2, options) {
-        var operationArguments = {
+      }
+      getBlockList(listType2, options) {
+        const operationArguments = {
           listType: listType2,
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, getBlockListOperationSpec);
-      };
-      return BlockBlob2;
-    }();
+      }
+    };
+    __name(BlockBlob, "BlockBlob");
     var xmlSerializer$5 = new coreHttp.Serializer(Mappers, true);
     var serializer$2 = new coreHttp.Serializer(Mappers, false);
     var uploadOperationSpec = {
@@ -53483,7 +53022,7 @@ var require_dist9 = __commonJS({
       serializer: xmlSerializer$5
     };
     var logger = logger$1.createClientLogger("storage-blob");
-    var SDK_VERSION = "12.6.0";
+    var SDK_VERSION = "12.7.0";
     var SERVICE_VERSION = "2020-08-04";
     var BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES = 256 * 1024 * 1024;
     var BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES = 4e3 * 1024 * 1024;
@@ -53541,7 +53080,7 @@ var require_dist9 = __commonJS({
     var HTTP_LINE_ENDING = "\r\n";
     var HTTP_VERSION_1_1 = "HTTP/1.1";
     var EncryptionAlgorithmAES25 = "AES256";
-    var DevelopmentConnectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;";
+    var DevelopmentConnectionString = `DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;`;
     var StorageBlobLoggingAllowedHeaderNames = [
       "Access-Control-Allow-Origin",
       "Cache-Control",
@@ -53674,8 +53213,8 @@ var require_dist9 = __commonJS({
       "snapshot"
     ];
     function escapeURLPath(url2) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
-      var path2 = urlParsed.getPath();
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
+      let path2 = urlParsed.getPath();
       path2 = path2 || "/";
       path2 = escape(path2);
       urlParsed.setPath(path2);
@@ -53683,11 +53222,10 @@ var require_dist9 = __commonJS({
     }
     __name(escapeURLPath, "escapeURLPath");
     function getProxyUriFromDevConnString(connectionString) {
-      var proxyUri = "";
+      let proxyUri = "";
       if (connectionString.search("DevelopmentStorageProxyUri=") !== -1) {
-        var matchCredentials = connectionString.split(";");
-        for (var _i = 0, matchCredentials_1 = matchCredentials; _i < matchCredentials_1.length; _i++) {
-          var element = matchCredentials_1[_i];
+        const matchCredentials = connectionString.split(";");
+        for (const element of matchCredentials) {
           if (element.trim().startsWith("DevelopmentStorageProxyUri=")) {
             proxyUri = element.trim().match("DevelopmentStorageProxyUri=(.*)")[1];
           }
@@ -53697,9 +53235,8 @@ var require_dist9 = __commonJS({
     }
     __name(getProxyUriFromDevConnString, "getProxyUriFromDevConnString");
     function getValueInConnString(connectionString, argument) {
-      var elements = connectionString.split(";");
-      for (var _i = 0, elements_1 = elements; _i < elements_1.length; _i++) {
-        var element = elements_1[_i];
+      const elements = connectionString.split(";");
+      for (const element of elements) {
         if (element.trim().startsWith(argument)) {
           return element.trim().match(argument + "=(.*)")[1];
         }
@@ -53708,23 +53245,23 @@ var require_dist9 = __commonJS({
     }
     __name(getValueInConnString, "getValueInConnString");
     function extractConnectionStringParts(connectionString) {
-      var proxyUri = "";
+      let proxyUri = "";
       if (connectionString.startsWith("UseDevelopmentStorage=true")) {
         proxyUri = getProxyUriFromDevConnString(connectionString);
         connectionString = DevelopmentConnectionString;
       }
-      var blobEndpoint = getValueInConnString(connectionString, "BlobEndpoint");
+      let blobEndpoint = getValueInConnString(connectionString, "BlobEndpoint");
       blobEndpoint = blobEndpoint.endsWith("/") ? blobEndpoint.slice(0, -1) : blobEndpoint;
       if (connectionString.search("DefaultEndpointsProtocol=") !== -1 && connectionString.search("AccountKey=") !== -1) {
-        var defaultEndpointsProtocol = "";
-        var accountName = "";
-        var accountKey = Buffer.from("accountKey", "base64");
-        var endpointSuffix = "";
+        let defaultEndpointsProtocol = "";
+        let accountName = "";
+        let accountKey = Buffer.from("accountKey", "base64");
+        let endpointSuffix = "";
         accountName = getValueInConnString(connectionString, "AccountName");
         accountKey = Buffer.from(getValueInConnString(connectionString, "AccountKey"), "base64");
         if (!blobEndpoint) {
           defaultEndpointsProtocol = getValueInConnString(connectionString, "DefaultEndpointsProtocol");
-          var protocol = defaultEndpointsProtocol.toLowerCase();
+          const protocol = defaultEndpointsProtocol.toLowerCase();
           if (protocol !== "https" && protocol !== "http") {
             throw new Error("Invalid DefaultEndpointsProtocol in the provided Connection String. Expecting 'https' or 'http'");
           }
@@ -53732,7 +53269,7 @@ var require_dist9 = __commonJS({
           if (!endpointSuffix) {
             throw new Error("Invalid EndpointSuffix in the provided Connection String");
           }
-          blobEndpoint = defaultEndpointsProtocol + "://" + accountName + ".blob." + endpointSuffix;
+          blobEndpoint = `${defaultEndpointsProtocol}://${accountName}.blob.${endpointSuffix}`;
         }
         if (!accountName) {
           throw new Error("Invalid AccountName in the provided Connection String");
@@ -53747,8 +53284,8 @@ var require_dist9 = __commonJS({
           proxyUri
         };
       } else {
-        var accountSas = getValueInConnString(connectionString, "SharedAccessSignature");
-        var accountName = getAccountNameFromUrl(blobEndpoint);
+        const accountSas = getValueInConnString(connectionString, "SharedAccessSignature");
+        const accountName = getAccountNameFromUrl(blobEndpoint);
         if (!blobEndpoint) {
           throw new Error("Invalid BlobEndpoint in the provided SAS Connection String");
         } else if (!accountSas) {
@@ -53763,81 +53300,80 @@ var require_dist9 = __commonJS({
     }
     __name(escape, "escape");
     function appendToURLPath(url2, name) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
-      var path2 = urlParsed.getPath();
-      path2 = path2 ? path2.endsWith("/") ? "" + path2 + name : path2 + "/" + name : name;
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
+      let path2 = urlParsed.getPath();
+      path2 = path2 ? path2.endsWith("/") ? `${path2}${name}` : `${path2}/${name}` : name;
       urlParsed.setPath(path2);
       return urlParsed.toString();
     }
     __name(appendToURLPath, "appendToURLPath");
     function setURLParameter(url2, name, value) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
       urlParsed.setQueryParameter(name, value);
       return urlParsed.toString();
     }
     __name(setURLParameter, "setURLParameter");
     function getURLParameter(url2, name) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
       return urlParsed.getQueryParameterValue(name);
     }
     __name(getURLParameter, "getURLParameter");
     function setURLHost(url2, host) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
       urlParsed.setHost(host);
       return urlParsed.toString();
     }
     __name(setURLHost, "setURLHost");
     function getURLPath(url2) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
       return urlParsed.getPath();
     }
     __name(getURLPath, "getURLPath");
     function getURLScheme(url2) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
       return urlParsed.getScheme();
     }
     __name(getURLScheme, "getURLScheme");
     function getURLPathAndQuery(url2) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
-      var pathString = urlParsed.getPath();
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
+      const pathString = urlParsed.getPath();
       if (!pathString) {
         throw new RangeError("Invalid url without valid path.");
       }
-      var queryString = urlParsed.getQuery() || "";
+      let queryString = urlParsed.getQuery() || "";
       queryString = queryString.trim();
       if (queryString != "") {
-        queryString = queryString.startsWith("?") ? queryString : "?" + queryString;
+        queryString = queryString.startsWith("?") ? queryString : `?${queryString}`;
       }
-      return "" + pathString + queryString;
+      return `${pathString}${queryString}`;
     }
     __name(getURLPathAndQuery, "getURLPathAndQuery");
     function getURLQueries(url2) {
-      var queryString = coreHttp.URLBuilder.parse(url2).getQuery();
+      let queryString = coreHttp.URLBuilder.parse(url2).getQuery();
       if (!queryString) {
         return {};
       }
       queryString = queryString.trim();
       queryString = queryString.startsWith("?") ? queryString.substr(1) : queryString;
-      var querySubStrings = queryString.split("&");
-      querySubStrings = querySubStrings.filter(function(value2) {
-        var indexOfEqual = value2.indexOf("=");
-        var lastIndexOfEqual = value2.lastIndexOf("=");
-        return indexOfEqual > 0 && indexOfEqual === lastIndexOfEqual && lastIndexOfEqual < value2.length - 1;
+      let querySubStrings = queryString.split("&");
+      querySubStrings = querySubStrings.filter((value) => {
+        const indexOfEqual = value.indexOf("=");
+        const lastIndexOfEqual = value.lastIndexOf("=");
+        return indexOfEqual > 0 && indexOfEqual === lastIndexOfEqual && lastIndexOfEqual < value.length - 1;
       });
-      var queries = {};
-      for (var _i = 0, querySubStrings_1 = querySubStrings; _i < querySubStrings_1.length; _i++) {
-        var querySubString = querySubStrings_1[_i];
-        var splitResults = querySubString.split("=");
-        var key = splitResults[0];
-        var value = splitResults[1];
+      const queries = {};
+      for (const querySubString of querySubStrings) {
+        const splitResults = querySubString.split("=");
+        const key = splitResults[0];
+        const value = splitResults[1];
         queries[key] = value;
       }
       return queries;
     }
     __name(getURLQueries, "getURLQueries");
     function appendToURLQuery(url2, queryParts) {
-      var urlParsed = coreHttp.URLBuilder.parse(url2);
-      var query = urlParsed.getQuery();
+      const urlParsed = coreHttp.URLBuilder.parse(url2);
+      let query = urlParsed.getQuery();
       if (query) {
         query += "&" + queryParts;
       } else {
@@ -53847,11 +53383,8 @@ var require_dist9 = __commonJS({
       return urlParsed.toString();
     }
     __name(appendToURLQuery, "appendToURLQuery");
-    function truncatedISO8061Date(date, withMilliseconds) {
-      if (withMilliseconds === void 0) {
-        withMilliseconds = true;
-      }
-      var dateString = date.toISOString();
+    function truncatedISO8061Date(date, withMilliseconds = true) {
+      const dateString = date.toISOString();
       return withMilliseconds ? dateString.substring(0, dateString.length - 1) + "0000Z" : dateString.substring(0, dateString.length - 5) + "Z";
     }
     __name(truncatedISO8061Date, "truncatedISO8061Date");
@@ -53860,46 +53393,39 @@ var require_dist9 = __commonJS({
     }
     __name(base64encode, "base64encode");
     function generateBlockID(blockIDPrefix, blockIndex) {
-      var maxSourceStringLength = 48;
-      var maxBlockIndexLength = 6;
-      var maxAllowedBlockIDPrefixLength = maxSourceStringLength - maxBlockIndexLength;
+      const maxSourceStringLength = 48;
+      const maxBlockIndexLength = 6;
+      const maxAllowedBlockIDPrefixLength = maxSourceStringLength - maxBlockIndexLength;
       if (blockIDPrefix.length > maxAllowedBlockIDPrefixLength) {
         blockIDPrefix = blockIDPrefix.slice(0, maxAllowedBlockIDPrefixLength);
       }
-      var res = blockIDPrefix + padStart(blockIndex.toString(), maxSourceStringLength - blockIDPrefix.length, "0");
+      const res = blockIDPrefix + padStart(blockIndex.toString(), maxSourceStringLength - blockIDPrefix.length, "0");
       return base64encode(res);
     }
     __name(generateBlockID, "generateBlockID");
-    function delay(timeInMs, aborter, abortError) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        return tslib.__generator(this, function(_a) {
-          return [2, new Promise(function(resolve2, reject) {
-            var timeout;
-            var abortHandler = /* @__PURE__ */ __name(function() {
-              if (timeout !== void 0) {
-                clearTimeout(timeout);
-              }
-              reject(abortError);
-            }, "abortHandler");
-            var resolveHandler = /* @__PURE__ */ __name(function() {
-              if (aborter !== void 0) {
-                aborter.removeEventListener("abort", abortHandler);
-              }
-              resolve2();
-            }, "resolveHandler");
-            timeout = setTimeout(resolveHandler, timeInMs);
-            if (aborter !== void 0) {
-              aborter.addEventListener("abort", abortHandler);
-            }
-          })];
-        });
+    async function delay(timeInMs, aborter, abortError) {
+      return new Promise((resolve2, reject) => {
+        let timeout;
+        const abortHandler = /* @__PURE__ */ __name(() => {
+          if (timeout !== void 0) {
+            clearTimeout(timeout);
+          }
+          reject(abortError);
+        }, "abortHandler");
+        const resolveHandler = /* @__PURE__ */ __name(() => {
+          if (aborter !== void 0) {
+            aborter.removeEventListener("abort", abortHandler);
+          }
+          resolve2();
+        }, "resolveHandler");
+        timeout = setTimeout(resolveHandler, timeInMs);
+        if (aborter !== void 0) {
+          aborter.addEventListener("abort", abortHandler);
+        }
       });
     }
     __name(delay, "delay");
-    function padStart(currentString, targetLength, padString) {
-      if (padString === void 0) {
-        padString = " ";
-      }
+    function padStart(currentString, targetLength, padString = " ") {
       if (String.prototype.padStart) {
         return currentString.padStart(targetLength, padString);
       }
@@ -53920,8 +53446,8 @@ var require_dist9 = __commonJS({
     }
     __name(iEqual, "iEqual");
     function getAccountNameFromUrl(url2) {
-      var parsedUrl = coreHttp.URLBuilder.parse(url2);
-      var accountName;
+      const parsedUrl = coreHttp.URLBuilder.parse(url2);
+      let accountName;
       try {
         if (parsedUrl.getHost().split(".")[1] === "blob") {
           accountName = parsedUrl.getHost().split(".")[0];
@@ -53940,7 +53466,7 @@ var require_dist9 = __commonJS({
       if (parsedUrl.getHost() == void 0) {
         return false;
       }
-      var host = parsedUrl.getHost() + (parsedUrl.getPort() == void 0 ? "" : ":" + parsedUrl.getPort());
+      const host = parsedUrl.getHost() + (parsedUrl.getPort() == void 0 ? "" : ":" + parsedUrl.getPort());
       return /^.*:.*:.*$|^localhost(:[0-9]+)?$|^(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])){3}(:[0-9]+)?$/.test(host);
     }
     __name(isIpEndpointStyle, "isIpEndpointStyle");
@@ -53948,11 +53474,11 @@ var require_dist9 = __commonJS({
       if (tags2 === void 0) {
         return void 0;
       }
-      var tagPairs = [];
-      for (var key in tags2) {
+      const tagPairs = [];
+      for (const key in tags2) {
         if (tags2.hasOwnProperty(key)) {
-          var value = tags2[key];
-          tagPairs.push(encodeURIComponent(key) + "=" + encodeURIComponent(value));
+          const value = tags2[key];
+          tagPairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
         }
       }
       return tagPairs.join("&");
@@ -53962,12 +53488,12 @@ var require_dist9 = __commonJS({
       if (tags2 === void 0) {
         return void 0;
       }
-      var res = {
+      const res = {
         blobTagSet: []
       };
-      for (var key in tags2) {
+      for (const key in tags2) {
         if (tags2.hasOwnProperty(key)) {
-          var value = tags2[key];
+          const value = tags2[key];
           res.blobTagSet.push({
             key,
             value
@@ -53981,9 +53507,8 @@ var require_dist9 = __commonJS({
       if (tags2 === void 0) {
         return void 0;
       }
-      var res = {};
-      for (var _i = 0, _a = tags2.blobTagSet; _i < _a.length; _i++) {
-        var blobTag = _a[_i];
+      const res = {};
+      for (const blobTag of tags2.blobTagSet) {
         res[blobTag.key] = blobTag.value;
       }
       return res;
@@ -54037,20 +53562,18 @@ var require_dist9 = __commonJS({
       if ("policy-id" in objectReplicationRecord) {
         return void 0;
       }
-      var orProperties = [];
-      var _loop_1 = /* @__PURE__ */ __name(function(key2) {
-        var ids = key2.split("_");
-        var policyPrefix = "or-";
+      const orProperties = [];
+      for (const key in objectReplicationRecord) {
+        const ids = key.split("_");
+        const policyPrefix = "or-";
         if (ids[0].startsWith(policyPrefix)) {
           ids[0] = ids[0].substring(policyPrefix.length);
         }
-        var rule = {
+        const rule = {
           ruleId: ids[1],
-          replicationStatus: objectReplicationRecord[key2]
+          replicationStatus: objectReplicationRecord[key]
         };
-        var policyIndex = orProperties.findIndex(function(policy) {
-          return policy.policyId === ids[0];
-        });
+        const policyIndex = orProperties.findIndex((policy) => policy.policyId === ids[0]);
         if (policyIndex > -1) {
           orProperties[policyIndex].rules.push(rule);
         } else {
@@ -54059,9 +53582,6 @@ var require_dist9 = __commonJS({
             rules: [rule]
           });
         }
-      }, "_loop_1");
-      for (var key in objectReplicationRecord) {
-        _loop_1(key);
       }
       return orProperties;
     }
@@ -54071,32 +53591,23 @@ var require_dist9 = __commonJS({
       return thing;
     }
     __name(attachCredential, "attachCredential");
-    var StorageBrowserPolicy = function(_super) {
-      tslib.__extends(StorageBrowserPolicy2, _super);
-      function StorageBrowserPolicy2(nextPolicy, options) {
-        return _super.call(this, nextPolicy, options) || this;
+    var StorageBrowserPolicy = class extends coreHttp.BaseRequestPolicy {
+      constructor(nextPolicy, options) {
+        super(nextPolicy, options);
       }
-      __name(StorageBrowserPolicy2, "StorageBrowserPolicy");
-      StorageBrowserPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            {
-              return [2, this._nextPolicy.sendRequest(request)];
-            }
-          });
-        });
-      };
-      return StorageBrowserPolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var StorageBrowserPolicyFactory = function() {
-      function StorageBrowserPolicyFactory2() {
+      async sendRequest(request) {
+        {
+          return this._nextPolicy.sendRequest(request);
+        }
       }
-      __name(StorageBrowserPolicyFactory2, "StorageBrowserPolicyFactory");
-      StorageBrowserPolicyFactory2.prototype.create = function(nextPolicy, options) {
+    };
+    __name(StorageBrowserPolicy, "StorageBrowserPolicy");
+    var StorageBrowserPolicyFactory = class {
+      create(nextPolicy, options) {
         return new StorageBrowserPolicy(nextPolicy, options);
-      };
-      return StorageBrowserPolicyFactory2;
-    }();
+      }
+    };
+    __name(StorageBrowserPolicyFactory, "StorageBrowserPolicyFactory");
     (function(StorageRetryPolicyType) {
       StorageRetryPolicyType[StorageRetryPolicyType["EXPONENTIAL"] = 0] = "EXPONENTIAL";
       StorageRetryPolicyType[StorageRetryPolicyType["FIXED"] = 1] = "FIXED";
@@ -54110,14 +53621,10 @@ var require_dist9 = __commonJS({
       tryTimeoutInMs: void 0
     };
     var RETRY_ABORT_ERROR = new abortController.AbortError("The operation was aborted.");
-    var StorageRetryPolicy = function(_super) {
-      tslib.__extends(StorageRetryPolicy2, _super);
-      function StorageRetryPolicy2(nextPolicy, options, retryOptions) {
-        if (retryOptions === void 0) {
-          retryOptions = DEFAULT_RETRY_OPTIONS;
-        }
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.retryOptions = {
+    var StorageRetryPolicy = class extends coreHttp.BaseRequestPolicy {
+      constructor(nextPolicy, options, retryOptions = DEFAULT_RETRY_OPTIONS) {
+        super(nextPolicy, options);
+        this.retryOptions = {
           retryPolicyType: retryOptions.retryPolicyType ? retryOptions.retryPolicyType : DEFAULT_RETRY_OPTIONS.retryPolicyType,
           maxTries: retryOptions.maxTries && retryOptions.maxTries >= 1 ? Math.floor(retryOptions.maxTries) : DEFAULT_RETRY_OPTIONS.maxTries,
           tryTimeoutInMs: retryOptions.tryTimeoutInMs && retryOptions.tryTimeoutInMs >= 0 ? retryOptions.tryTimeoutInMs : DEFAULT_RETRY_OPTIONS.tryTimeoutInMs,
@@ -54125,66 +53632,42 @@ var require_dist9 = __commonJS({
           maxRetryDelayInMs: retryOptions.maxRetryDelayInMs && retryOptions.maxRetryDelayInMs >= 0 ? retryOptions.maxRetryDelayInMs : DEFAULT_RETRY_OPTIONS.maxRetryDelayInMs,
           secondaryHost: retryOptions.secondaryHost ? retryOptions.secondaryHost : DEFAULT_RETRY_OPTIONS.secondaryHost
         };
-        return _this;
       }
-      __name(StorageRetryPolicy2, "StorageRetryPolicy");
-      StorageRetryPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            return [2, this.attemptSendRequest(request, false, 1)];
-          });
-        });
-      };
-      StorageRetryPolicy2.prototype.attemptSendRequest = function(request, secondaryHas404, attempt) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var newRequest, isPrimaryRetry, response, err_1;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                newRequest = request.clone();
-                isPrimaryRetry = secondaryHas404 || !this.retryOptions.secondaryHost || !(request.method === "GET" || request.method === "HEAD" || request.method === "OPTIONS") || attempt % 2 === 1;
-                if (!isPrimaryRetry) {
-                  newRequest.url = setURLHost(newRequest.url, this.retryOptions.secondaryHost);
-                }
-                if (this.retryOptions.tryTimeoutInMs) {
-                  newRequest.url = setURLParameter(newRequest.url, URLConstants.Parameters.TIMEOUT, Math.floor(this.retryOptions.tryTimeoutInMs / 1e3).toString());
-                }
-                _a.label = 1;
-              case 1:
-                _a.trys.push([1, 3, , 4]);
-                logger.info("RetryPolicy: =====> Try=" + attempt + " " + (isPrimaryRetry ? "Primary" : "Secondary"));
-                return [4, this._nextPolicy.sendRequest(newRequest)];
-              case 2:
-                response = _a.sent();
-                if (!this.shouldRetry(isPrimaryRetry, attempt, response)) {
-                  return [2, response];
-                }
-                secondaryHas404 = secondaryHas404 || !isPrimaryRetry && response.status === 404;
-                return [3, 4];
-              case 3:
-                err_1 = _a.sent();
-                logger.error("RetryPolicy: Caught error, message: " + err_1.message + ", code: " + err_1.code);
-                if (!this.shouldRetry(isPrimaryRetry, attempt, response, err_1)) {
-                  throw err_1;
-                }
-                return [3, 4];
-              case 4:
-                return [4, this.delay(isPrimaryRetry, attempt, request.abortSignal)];
-              case 5:
-                _a.sent();
-                return [4, this.attemptSendRequest(request, secondaryHas404, ++attempt)];
-              case 6:
-                return [2, _a.sent()];
-            }
-          });
-        });
-      };
-      StorageRetryPolicy2.prototype.shouldRetry = function(isPrimaryRetry, attempt, response, err) {
+      async sendRequest(request) {
+        return this.attemptSendRequest(request, false, 1);
+      }
+      async attemptSendRequest(request, secondaryHas404, attempt) {
+        const newRequest = request.clone();
+        const isPrimaryRetry = secondaryHas404 || !this.retryOptions.secondaryHost || !(request.method === "GET" || request.method === "HEAD" || request.method === "OPTIONS") || attempt % 2 === 1;
+        if (!isPrimaryRetry) {
+          newRequest.url = setURLHost(newRequest.url, this.retryOptions.secondaryHost);
+        }
+        if (this.retryOptions.tryTimeoutInMs) {
+          newRequest.url = setURLParameter(newRequest.url, URLConstants.Parameters.TIMEOUT, Math.floor(this.retryOptions.tryTimeoutInMs / 1e3).toString());
+        }
+        let response;
+        try {
+          logger.info(`RetryPolicy: =====> Try=${attempt} ${isPrimaryRetry ? "Primary" : "Secondary"}`);
+          response = await this._nextPolicy.sendRequest(newRequest);
+          if (!this.shouldRetry(isPrimaryRetry, attempt, response)) {
+            return response;
+          }
+          secondaryHas404 = secondaryHas404 || !isPrimaryRetry && response.status === 404;
+        } catch (err) {
+          logger.error(`RetryPolicy: Caught error, message: ${err.message}, code: ${err.code}`);
+          if (!this.shouldRetry(isPrimaryRetry, attempt, response, err)) {
+            throw err;
+          }
+        }
+        await this.delay(isPrimaryRetry, attempt, request.abortSignal);
+        return await this.attemptSendRequest(request, secondaryHas404, ++attempt);
+      }
+      shouldRetry(isPrimaryRetry, attempt, response, err) {
         if (attempt >= this.retryOptions.maxTries) {
-          logger.info("RetryPolicy: Attempt(s) " + attempt + " >= maxTries " + this.retryOptions.maxTries + ", no further try.");
+          logger.info(`RetryPolicy: Attempt(s) ${attempt} >= maxTries ${this.retryOptions.maxTries}, no further try.`);
           return false;
         }
-        var retriableErrors = [
+        const retriableErrors = [
           "ETIMEDOUT",
           "ESOCKETTIMEDOUT",
           "ECONNREFUSED",
@@ -54196,190 +53679,153 @@ var require_dist9 = __commonJS({
           "REQUEST_SEND_ERROR"
         ];
         if (err) {
-          for (var _i = 0, retriableErrors_1 = retriableErrors; _i < retriableErrors_1.length; _i++) {
-            var retriableError = retriableErrors_1[_i];
+          for (const retriableError of retriableErrors) {
             if (err.name.toUpperCase().includes(retriableError) || err.message.toUpperCase().includes(retriableError) || err.code && err.code.toString().toUpperCase() === retriableError) {
-              logger.info("RetryPolicy: Network error " + retriableError + " found, will retry.");
+              logger.info(`RetryPolicy: Network error ${retriableError} found, will retry.`);
               return true;
             }
           }
         }
         if (response || err) {
-          var statusCode = response ? response.status : err ? err.statusCode : 0;
+          const statusCode = response ? response.status : err ? err.statusCode : 0;
           if (!isPrimaryRetry && statusCode === 404) {
-            logger.info("RetryPolicy: Secondary access with 404, will retry.");
+            logger.info(`RetryPolicy: Secondary access with 404, will retry.`);
             return true;
           }
           if (statusCode === 503 || statusCode === 500) {
-            logger.info("RetryPolicy: Will retry for status code " + statusCode + ".");
+            logger.info(`RetryPolicy: Will retry for status code ${statusCode}.`);
             return true;
           }
         }
-        if ((err === null || err === void 0 ? void 0 : err.code) === "PARSE_ERROR" && (err === null || err === void 0 ? void 0 : err.message.startsWith('Error "Error: Unclosed root tag'))) {
+        if ((err === null || err === void 0 ? void 0 : err.code) === "PARSE_ERROR" && (err === null || err === void 0 ? void 0 : err.message.startsWith(`Error "Error: Unclosed root tag`))) {
           logger.info("RetryPolicy: Incomplete XML response likely due to service timeout, will retry.");
           return true;
         }
         return false;
-      };
-      StorageRetryPolicy2.prototype.delay = function(isPrimaryRetry, attempt, abortSignal) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var delayTimeInMs;
-          return tslib.__generator(this, function(_a) {
-            delayTimeInMs = 0;
-            if (isPrimaryRetry) {
-              switch (this.retryOptions.retryPolicyType) {
-                case exports2.StorageRetryPolicyType.EXPONENTIAL:
-                  delayTimeInMs = Math.min((Math.pow(2, attempt - 1) - 1) * this.retryOptions.retryDelayInMs, this.retryOptions.maxRetryDelayInMs);
-                  break;
-                case exports2.StorageRetryPolicyType.FIXED:
-                  delayTimeInMs = this.retryOptions.retryDelayInMs;
-                  break;
-              }
-            } else {
-              delayTimeInMs = Math.random() * 1e3;
-            }
-            logger.info("RetryPolicy: Delay for " + delayTimeInMs + "ms");
-            return [2, delay(delayTimeInMs, abortSignal, RETRY_ABORT_ERROR)];
-          });
-        });
-      };
-      return StorageRetryPolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var StorageRetryPolicyFactory = function() {
-      function StorageRetryPolicyFactory2(retryOptions) {
+      }
+      async delay(isPrimaryRetry, attempt, abortSignal) {
+        let delayTimeInMs = 0;
+        if (isPrimaryRetry) {
+          switch (this.retryOptions.retryPolicyType) {
+            case exports2.StorageRetryPolicyType.EXPONENTIAL:
+              delayTimeInMs = Math.min((Math.pow(2, attempt - 1) - 1) * this.retryOptions.retryDelayInMs, this.retryOptions.maxRetryDelayInMs);
+              break;
+            case exports2.StorageRetryPolicyType.FIXED:
+              delayTimeInMs = this.retryOptions.retryDelayInMs;
+              break;
+          }
+        } else {
+          delayTimeInMs = Math.random() * 1e3;
+        }
+        logger.info(`RetryPolicy: Delay for ${delayTimeInMs}ms`);
+        return delay(delayTimeInMs, abortSignal, RETRY_ABORT_ERROR);
+      }
+    };
+    __name(StorageRetryPolicy, "StorageRetryPolicy");
+    var StorageRetryPolicyFactory = class {
+      constructor(retryOptions) {
         this.retryOptions = retryOptions;
       }
-      __name(StorageRetryPolicyFactory2, "StorageRetryPolicyFactory");
-      StorageRetryPolicyFactory2.prototype.create = function(nextPolicy, options) {
+      create(nextPolicy, options) {
         return new StorageRetryPolicy(nextPolicy, options, this.retryOptions);
-      };
-      return StorageRetryPolicyFactory2;
-    }();
-    var CredentialPolicy = function(_super) {
-      tslib.__extends(CredentialPolicy2, _super);
-      function CredentialPolicy2() {
-        return _super !== null && _super.apply(this, arguments) || this;
       }
-      __name(CredentialPolicy2, "CredentialPolicy");
-      CredentialPolicy2.prototype.sendRequest = function(request) {
+    };
+    __name(StorageRetryPolicyFactory, "StorageRetryPolicyFactory");
+    var CredentialPolicy = class extends coreHttp.BaseRequestPolicy {
+      sendRequest(request) {
         return this._nextPolicy.sendRequest(this.signRequest(request));
-      };
-      CredentialPolicy2.prototype.signRequest = function(request) {
+      }
+      signRequest(request) {
         return request;
-      };
-      return CredentialPolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var AnonymousCredentialPolicy = function(_super) {
-      tslib.__extends(AnonymousCredentialPolicy2, _super);
-      function AnonymousCredentialPolicy2(nextPolicy, options) {
-        return _super.call(this, nextPolicy, options) || this;
       }
-      __name(AnonymousCredentialPolicy2, "AnonymousCredentialPolicy");
-      return AnonymousCredentialPolicy2;
-    }(CredentialPolicy);
-    var Credential = function() {
-      function Credential2() {
+    };
+    __name(CredentialPolicy, "CredentialPolicy");
+    var AnonymousCredentialPolicy = class extends CredentialPolicy {
+      constructor(nextPolicy, options) {
+        super(nextPolicy, options);
       }
-      __name(Credential2, "Credential");
-      Credential2.prototype.create = function(_nextPolicy, _options) {
+    };
+    __name(AnonymousCredentialPolicy, "AnonymousCredentialPolicy");
+    var Credential = class {
+      create(_nextPolicy, _options) {
         throw new Error("Method should be implemented in children classes.");
-      };
-      return Credential2;
-    }();
-    var AnonymousCredential = function(_super) {
-      tslib.__extends(AnonymousCredential2, _super);
-      function AnonymousCredential2() {
-        return _super !== null && _super.apply(this, arguments) || this;
       }
-      __name(AnonymousCredential2, "AnonymousCredential");
-      AnonymousCredential2.prototype.create = function(nextPolicy, options) {
+    };
+    __name(Credential, "Credential");
+    var AnonymousCredential = class extends Credential {
+      create(nextPolicy, options) {
         return new AnonymousCredentialPolicy(nextPolicy, options);
-      };
-      return AnonymousCredential2;
-    }(Credential);
-    var TelemetryPolicy = function(_super) {
-      tslib.__extends(TelemetryPolicy2, _super);
-      function TelemetryPolicy2(nextPolicy, options, telemetry) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.telemetry = telemetry;
-        return _this;
       }
-      __name(TelemetryPolicy2, "TelemetryPolicy");
-      TelemetryPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            {
-              if (!request.headers) {
-                request.headers = new coreHttp.HttpHeaders();
-              }
-              if (!request.headers.get(HeaderConstants.USER_AGENT)) {
-                request.headers.set(HeaderConstants.USER_AGENT, this.telemetry);
-              }
-            }
-            return [2, this._nextPolicy.sendRequest(request)];
-          });
-        });
-      };
-      return TelemetryPolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var TelemetryPolicyFactory = function() {
-      function TelemetryPolicyFactory2(telemetry) {
-        var userAgentInfo = [];
+    };
+    __name(AnonymousCredential, "AnonymousCredential");
+    var TelemetryPolicy = class extends coreHttp.BaseRequestPolicy {
+      constructor(nextPolicy, options, telemetry) {
+        super(nextPolicy, options);
+        this.telemetry = telemetry;
+      }
+      async sendRequest(request) {
+        {
+          if (!request.headers) {
+            request.headers = new coreHttp.HttpHeaders();
+          }
+          if (!request.headers.get(HeaderConstants.USER_AGENT)) {
+            request.headers.set(HeaderConstants.USER_AGENT, this.telemetry);
+          }
+        }
+        return this._nextPolicy.sendRequest(request);
+      }
+    };
+    __name(TelemetryPolicy, "TelemetryPolicy");
+    var TelemetryPolicyFactory = class {
+      constructor(telemetry) {
+        const userAgentInfo = [];
         {
           if (telemetry) {
-            var telemetryString = telemetry.userAgentPrefix || "";
+            const telemetryString = telemetry.userAgentPrefix || "";
             if (telemetryString.length > 0 && userAgentInfo.indexOf(telemetryString) === -1) {
               userAgentInfo.push(telemetryString);
             }
           }
-          var libInfo = "azsdk-js-storageblob/" + SDK_VERSION;
+          const libInfo = `azsdk-js-storageblob/${SDK_VERSION}`;
           if (userAgentInfo.indexOf(libInfo) === -1) {
             userAgentInfo.push(libInfo);
           }
-          var runtimeInfo = "(NODE-VERSION " + process.version + "; " + os.type() + " " + os.release() + ")";
+          const runtimeInfo = `(NODE-VERSION ${process.version}; ${os.type()} ${os.release()})`;
           if (userAgentInfo.indexOf(runtimeInfo) === -1) {
             userAgentInfo.push(runtimeInfo);
           }
         }
         this.telemetryString = userAgentInfo.join(" ");
       }
-      __name(TelemetryPolicyFactory2, "TelemetryPolicyFactory");
-      TelemetryPolicyFactory2.prototype.create = function(nextPolicy, options) {
+      create(nextPolicy, options) {
         return new TelemetryPolicy(nextPolicy, options, this.telemetryString);
-      };
-      return TelemetryPolicyFactory2;
-    }();
+      }
+    };
+    __name(TelemetryPolicyFactory, "TelemetryPolicyFactory");
     var _defaultHttpClient = new coreHttp.DefaultHttpClient();
     function getCachedDefaultHttpClient() {
       return _defaultHttpClient;
     }
     __name(getCachedDefaultHttpClient, "getCachedDefaultHttpClient");
-    var Pipeline = function() {
-      function Pipeline2(factories, options) {
-        if (options === void 0) {
-          options = {};
-        }
+    var Pipeline = class {
+      constructor(factories, options = {}) {
         this.factories = factories;
-        this.options = tslib.__assign(tslib.__assign({}, options), { httpClient: options.httpClient || getCachedDefaultHttpClient() });
+        this.options = Object.assign(Object.assign({}, options), { httpClient: options.httpClient || getCachedDefaultHttpClient() });
       }
-      __name(Pipeline2, "Pipeline");
-      Pipeline2.prototype.toServiceClientOptions = function() {
+      toServiceClientOptions() {
         return {
           httpClient: this.options.httpClient,
           requestPolicyFactories: this.factories
         };
-      };
-      return Pipeline2;
-    }();
-    function newPipeline(credential, pipelineOptions) {
-      if (pipelineOptions === void 0) {
-        pipelineOptions = {};
       }
+    };
+    __name(Pipeline, "Pipeline");
+    function newPipeline(credential, pipelineOptions = {}) {
       if (credential === void 0) {
         credential = new AnonymousCredential();
       }
-      var telemetryPolicy = new TelemetryPolicyFactory(pipelineOptions.userAgentOptions);
-      var factories = [
+      const telemetryPolicy = new TelemetryPolicyFactory(pipelineOptions.userAgentOptions);
+      const factories = [
         coreHttp.tracingPolicy({ userAgent: telemetryPolicy.telemetryString }),
         coreHttp.keepAlivePolicy(pipelineOptions.keepAliveOptions),
         telemetryPolicy,
@@ -54401,20 +53847,17 @@ var require_dist9 = __commonJS({
       return new Pipeline(factories, pipelineOptions);
     }
     __name(newPipeline, "newPipeline");
-    var StorageSharedKeyCredentialPolicy = function(_super) {
-      tslib.__extends(StorageSharedKeyCredentialPolicy2, _super);
-      function StorageSharedKeyCredentialPolicy2(nextPolicy, options, factory) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.factory = factory;
-        return _this;
+    var StorageSharedKeyCredentialPolicy = class extends CredentialPolicy {
+      constructor(nextPolicy, options, factory) {
+        super(nextPolicy, options);
+        this.factory = factory;
       }
-      __name(StorageSharedKeyCredentialPolicy2, "StorageSharedKeyCredentialPolicy");
-      StorageSharedKeyCredentialPolicy2.prototype.signRequest = function(request) {
+      signRequest(request) {
         request.headers.set(HeaderConstants.X_MS_DATE, new Date().toUTCString());
         if (request.body && typeof request.body === "string" && request.body.length > 0) {
           request.headers.set(HeaderConstants.CONTENT_LENGTH, Buffer.byteLength(request.body));
         }
-        var stringToSign = [
+        const stringToSign = [
           request.method.toUpperCase(),
           this.getHeaderValueToSign(request, HeaderConstants.CONTENT_LANGUAGE),
           this.getHeaderValueToSign(request, HeaderConstants.CONTENT_ENCODING),
@@ -54428,12 +53871,12 @@ var require_dist9 = __commonJS({
           this.getHeaderValueToSign(request, HeaderConstants.IF_UNMODIFIED_SINCE),
           this.getHeaderValueToSign(request, HeaderConstants.RANGE)
         ].join("\n") + "\n" + this.getCanonicalizedHeadersString(request) + this.getCanonicalizedResourceString(request);
-        var signature = this.factory.computeHMACSHA256(stringToSign);
-        request.headers.set(HeaderConstants.AUTHORIZATION, "SharedKey " + this.factory.accountName + ":" + signature);
+        const signature = this.factory.computeHMACSHA256(stringToSign);
+        request.headers.set(HeaderConstants.AUTHORIZATION, `SharedKey ${this.factory.accountName}:${signature}`);
         return request;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getHeaderValueToSign = function(request, headerName) {
-        var value = request.headers.get(headerName);
+      }
+      getHeaderValueToSign(request, headerName) {
+        const value = request.headers.get(headerName);
         if (!value) {
           return "";
         }
@@ -54441,74 +53884,70 @@ var require_dist9 = __commonJS({
           return "";
         }
         return value;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedHeadersString = function(request) {
-        var headersArray = request.headers.headersArray().filter(function(value) {
+      }
+      getCanonicalizedHeadersString(request) {
+        let headersArray = request.headers.headersArray().filter((value) => {
           return value.name.toLowerCase().startsWith(HeaderConstants.PREFIX_FOR_STORAGE);
         });
-        headersArray.sort(function(a, b) {
+        headersArray.sort((a, b) => {
           return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
         });
-        headersArray = headersArray.filter(function(value, index, array) {
+        headersArray = headersArray.filter((value, index, array) => {
           if (index > 0 && value.name.toLowerCase() === array[index - 1].name.toLowerCase()) {
             return false;
           }
           return true;
         });
-        var canonicalizedHeadersStringToSign = "";
-        headersArray.forEach(function(header) {
-          canonicalizedHeadersStringToSign += header.name.toLowerCase().trimRight() + ":" + header.value.trimLeft() + "\n";
+        let canonicalizedHeadersStringToSign = "";
+        headersArray.forEach((header) => {
+          canonicalizedHeadersStringToSign += `${header.name.toLowerCase().trimRight()}:${header.value.trimLeft()}
+`;
         });
         return canonicalizedHeadersStringToSign;
-      };
-      StorageSharedKeyCredentialPolicy2.prototype.getCanonicalizedResourceString = function(request) {
-        var path2 = getURLPath(request.url) || "/";
-        var canonicalizedResourceString = "";
-        canonicalizedResourceString += "/" + this.factory.accountName + path2;
-        var queries = getURLQueries(request.url);
-        var lowercaseQueries = {};
+      }
+      getCanonicalizedResourceString(request) {
+        const path2 = getURLPath(request.url) || "/";
+        let canonicalizedResourceString = "";
+        canonicalizedResourceString += `/${this.factory.accountName}${path2}`;
+        const queries = getURLQueries(request.url);
+        const lowercaseQueries = {};
         if (queries) {
-          var queryKeys = [];
-          for (var key in queries) {
+          const queryKeys = [];
+          for (const key in queries) {
             if (queries.hasOwnProperty(key)) {
-              var lowercaseKey = key.toLowerCase();
+              const lowercaseKey = key.toLowerCase();
               lowercaseQueries[lowercaseKey] = queries[key];
               queryKeys.push(lowercaseKey);
             }
           }
           queryKeys.sort();
-          for (var _i = 0, queryKeys_1 = queryKeys; _i < queryKeys_1.length; _i++) {
-            var key = queryKeys_1[_i];
-            canonicalizedResourceString += "\n" + key + ":" + decodeURIComponent(lowercaseQueries[key]);
+          for (const key of queryKeys) {
+            canonicalizedResourceString += `
+${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           }
         }
         return canonicalizedResourceString;
-      };
-      return StorageSharedKeyCredentialPolicy2;
-    }(CredentialPolicy);
-    var StorageSharedKeyCredential = function(_super) {
-      tslib.__extends(StorageSharedKeyCredential2, _super);
-      function StorageSharedKeyCredential2(accountName, accountKey) {
-        var _this = _super.call(this) || this;
-        _this.accountName = accountName;
-        _this.accountKey = Buffer.from(accountKey, "base64");
-        return _this;
       }
-      __name(StorageSharedKeyCredential2, "StorageSharedKeyCredential");
-      StorageSharedKeyCredential2.prototype.create = function(nextPolicy, options) {
+    };
+    __name(StorageSharedKeyCredentialPolicy, "StorageSharedKeyCredentialPolicy");
+    var StorageSharedKeyCredential = class extends Credential {
+      constructor(accountName, accountKey) {
+        super();
+        this.accountName = accountName;
+        this.accountKey = Buffer.from(accountKey, "base64");
+      }
+      create(nextPolicy, options) {
         return new StorageSharedKeyCredentialPolicy(nextPolicy, options, this);
-      };
-      StorageSharedKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
+      }
+      computeHMACSHA256(stringToSign) {
         return crypto.createHmac("sha256", this.accountKey).update(stringToSign, "utf8").digest("base64");
-      };
-      return StorageSharedKeyCredential2;
-    }(Credential);
+      }
+    };
+    __name(StorageSharedKeyCredential, "StorageSharedKeyCredential");
     var packageName = "azure-storage-blob";
     var packageVersion = "12.6.0-beta.1";
-    var StorageClientContext = function(_super) {
-      tslib.__extends(StorageClientContext2, _super);
-      function StorageClientContext2(url2, options) {
-        var _this = this;
+    var StorageClientContext = class extends coreHttp.ServiceClient {
+      constructor(url2, options) {
         if (url2 === void 0) {
           throw new Error("'url' cannot be null");
         }
@@ -54516,41 +53955,37 @@ var require_dist9 = __commonJS({
           options = {};
         }
         if (!options.userAgent) {
-          var defaultUserAgent = coreHttp.getDefaultUserAgentValue();
-          options.userAgent = packageName + "/" + packageVersion + " " + defaultUserAgent;
+          const defaultUserAgent = coreHttp.getDefaultUserAgentValue();
+          options.userAgent = `${packageName}/${packageVersion} ${defaultUserAgent}`;
         }
-        _this = _super.call(this, void 0, options) || this;
-        _this.requestContentType = "application/json; charset=utf-8";
-        _this.baseUri = options.endpoint || "{url}";
-        _this.url = url2;
-        _this.version = options.version || "2020-08-04";
-        return _this;
+        super(void 0, options);
+        this.requestContentType = "application/json; charset=utf-8";
+        this.baseUri = options.endpoint || "{url}";
+        this.url = url2;
+        this.version = options.version || "2020-08-04";
       }
-      __name(StorageClientContext2, "StorageClientContext");
-      return StorageClientContext2;
-    }(coreHttp.ServiceClient);
-    var StorageClient = function() {
-      function StorageClient2(url2, pipeline) {
+    };
+    __name(StorageClientContext, "StorageClientContext");
+    var StorageClient = class {
+      constructor(url2, pipeline) {
         this.url = escapeURLPath(url2);
         this.accountName = getAccountNameFromUrl(url2);
         this.pipeline = pipeline;
         this.storageClientContext = new StorageClientContext(this.url, pipeline.toServiceClientOptions());
         this.isHttps = iEqual(getURLScheme(this.url) || "", "https");
         this.credential = new AnonymousCredential();
-        for (var _i = 0, _a = this.pipeline.factories; _i < _a.length; _i++) {
-          var factory = _a[_i];
+        for (const factory of this.pipeline.factories) {
           if (coreHttp.isNode && factory instanceof StorageSharedKeyCredential || factory instanceof AnonymousCredential) {
             this.credential = factory;
           } else if (coreHttp.isTokenCredential(factory.credential)) {
             this.credential = factory.credential;
           }
         }
-        var storageClientContext = this.storageClientContext;
+        const storageClientContext = this.storageClientContext;
         storageClientContext.requestContentType = void 0;
       }
-      __name(StorageClient2, "StorageClient");
-      return StorageClient2;
-    }();
+    };
+    __name(StorageClient, "StorageClient");
     var createSpan = coreTracing.createSpanFunction({
       packagePrefix: "Azure.Storage.Blob",
       namespace: "Microsoft.Storage"
@@ -54563,8 +53998,8 @@ var require_dist9 = __commonJS({
       };
     }
     __name(convertTracingToRequestOptionsBase, "convertTracingToRequestOptionsBase");
-    var BlobSASPermissions = function() {
-      function BlobSASPermissions2() {
+    var BlobSASPermissions = class {
+      constructor() {
         this.read = false;
         this.add = false;
         this.create = false;
@@ -54575,11 +54010,9 @@ var require_dist9 = __commonJS({
         this.move = false;
         this.execute = false;
       }
-      __name(BlobSASPermissions2, "BlobSASPermissions");
-      BlobSASPermissions2.parse = function(permissions) {
-        var blobSASPermissions = new BlobSASPermissions2();
-        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
-          var char = permissions_1[_i];
+      static parse(permissions) {
+        const blobSASPermissions = new BlobSASPermissions();
+        for (const char of permissions) {
           switch (char) {
             case "r":
               blobSASPermissions.read = true;
@@ -54609,13 +54042,13 @@ var require_dist9 = __commonJS({
               blobSASPermissions.execute = true;
               break;
             default:
-              throw new RangeError("Invalid permission: " + char);
+              throw new RangeError(`Invalid permission: ${char}`);
           }
         }
         return blobSASPermissions;
-      };
-      BlobSASPermissions2.from = function(permissionLike) {
-        var blobSASPermissions = new BlobSASPermissions2();
+      }
+      static from(permissionLike) {
+        const blobSASPermissions = new BlobSASPermissions();
         if (permissionLike.read) {
           blobSASPermissions.read = true;
         }
@@ -54644,9 +54077,9 @@ var require_dist9 = __commonJS({
           blobSASPermissions.execute = true;
         }
         return blobSASPermissions;
-      };
-      BlobSASPermissions2.prototype.toString = function() {
-        var permissions = [];
+      }
+      toString() {
+        const permissions = [];
         if (this.read) {
           permissions.push("r");
         }
@@ -54675,11 +54108,11 @@ var require_dist9 = __commonJS({
           permissions.push("e");
         }
         return permissions.join("");
-      };
-      return BlobSASPermissions2;
-    }();
-    var ContainerSASPermissions = function() {
-      function ContainerSASPermissions2() {
+      }
+    };
+    __name(BlobSASPermissions, "BlobSASPermissions");
+    var ContainerSASPermissions = class {
+      constructor() {
         this.read = false;
         this.add = false;
         this.create = false;
@@ -54691,11 +54124,9 @@ var require_dist9 = __commonJS({
         this.move = false;
         this.execute = false;
       }
-      __name(ContainerSASPermissions2, "ContainerSASPermissions");
-      ContainerSASPermissions2.parse = function(permissions) {
-        var containerSASPermissions = new ContainerSASPermissions2();
-        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
-          var char = permissions_1[_i];
+      static parse(permissions) {
+        const containerSASPermissions = new ContainerSASPermissions();
+        for (const char of permissions) {
           switch (char) {
             case "r":
               containerSASPermissions.read = true;
@@ -54728,13 +54159,13 @@ var require_dist9 = __commonJS({
               containerSASPermissions.execute = true;
               break;
             default:
-              throw new RangeError("Invalid permission " + char);
+              throw new RangeError(`Invalid permission ${char}`);
           }
         }
         return containerSASPermissions;
-      };
-      ContainerSASPermissions2.from = function(permissionLike) {
-        var containerSASPermissions = new ContainerSASPermissions2();
+      }
+      static from(permissionLike) {
+        const containerSASPermissions = new ContainerSASPermissions();
         if (permissionLike.read) {
           containerSASPermissions.read = true;
         }
@@ -54766,9 +54197,9 @@ var require_dist9 = __commonJS({
           containerSASPermissions.execute = true;
         }
         return containerSASPermissions;
-      };
-      ContainerSASPermissions2.prototype.toString = function() {
-        var permissions = [];
+      }
+      toString() {
+        const permissions = [];
         if (this.read) {
           permissions.push("r");
         }
@@ -54800,31 +54231,30 @@ var require_dist9 = __commonJS({
           permissions.push("e");
         }
         return permissions.join("");
-      };
-      return ContainerSASPermissions2;
-    }();
-    var UserDelegationKeyCredential = function() {
-      function UserDelegationKeyCredential2(accountName, userDelegationKey) {
+      }
+    };
+    __name(ContainerSASPermissions, "ContainerSASPermissions");
+    var UserDelegationKeyCredential = class {
+      constructor(accountName, userDelegationKey) {
         this.accountName = accountName;
         this.userDelegationKey = userDelegationKey;
         this.key = Buffer.from(userDelegationKey.value, "base64");
       }
-      __name(UserDelegationKeyCredential2, "UserDelegationKeyCredential");
-      UserDelegationKeyCredential2.prototype.computeHMACSHA256 = function(stringToSign) {
+      computeHMACSHA256(stringToSign) {
         return crypto.createHmac("sha256", this.key).update(stringToSign, "utf8").digest("base64");
-      };
-      return UserDelegationKeyCredential2;
-    }();
+      }
+    };
+    __name(UserDelegationKeyCredential, "UserDelegationKeyCredential");
     function ipRangeToString(ipRange) {
-      return ipRange.end ? ipRange.start + "-" + ipRange.end : ipRange.start;
+      return ipRange.end ? `${ipRange.start}-${ipRange.end}` : ipRange.start;
     }
     __name(ipRangeToString, "ipRangeToString");
     (function(SASProtocol) {
       SASProtocol["Https"] = "https";
       SASProtocol["HttpsAndHttp"] = "https,http";
     })(exports2.SASProtocol || (exports2.SASProtocol = {}));
-    var SASQueryParameters = function() {
-      function SASQueryParameters2(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl2, contentDisposition2, contentEncoding2, contentLanguage2, contentType3, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
+    var SASQueryParameters = class {
+      constructor(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl2, contentDisposition2, contentEncoding2, contentLanguage2, contentType3, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
         this.version = version2;
         this.signature = signature;
         if (permissionsOrOptions !== void 0 && typeof permissionsOrOptions !== "string") {
@@ -54879,22 +54309,17 @@ var require_dist9 = __commonJS({
           }
         }
       }
-      __name(SASQueryParameters2, "SASQueryParameters");
-      Object.defineProperty(SASQueryParameters2.prototype, "ipRange", {
-        get: function() {
-          if (this.ipRangeInner) {
-            return {
-              end: this.ipRangeInner.end,
-              start: this.ipRangeInner.start
-            };
-          }
-          return void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      SASQueryParameters2.prototype.toString = function() {
-        var params = [
+      get ipRange() {
+        if (this.ipRangeInner) {
+          return {
+            end: this.ipRangeInner.end,
+            start: this.ipRangeInner.start
+          };
+        }
+        return void 0;
+      }
+      toString() {
+        const params = [
           "sv",
           "ss",
           "srt",
@@ -54920,9 +54345,8 @@ var require_dist9 = __commonJS({
           "saoid",
           "scid"
         ];
-        var queries = [];
-        for (var _i = 0, params_1 = params; _i < params_1.length; _i++) {
-          var param = params_1[_i];
+        const queries = [];
+        for (const param of params) {
           switch (param) {
             case "sv":
               this.tryAppendQueryParameter(queries, param, this.version);
@@ -54999,23 +54423,23 @@ var require_dist9 = __commonJS({
           }
         }
         return queries.join("&");
-      };
-      SASQueryParameters2.prototype.tryAppendQueryParameter = function(queries, key, value) {
+      }
+      tryAppendQueryParameter(queries, key, value) {
         if (!value) {
           return;
         }
         key = encodeURIComponent(key);
         value = encodeURIComponent(value);
         if (key.length > 0 && value.length > 0) {
-          queries.push(key + "=" + value);
+          queries.push(`${key}=${value}`);
         }
-      };
-      return SASQueryParameters2;
-    }();
+      }
+    };
+    __name(SASQueryParameters, "SASQueryParameters");
     function generateBlobSASQueryParameters(blobSASSignatureValues, sharedKeyCredentialOrUserDelegationKey, accountName) {
-      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
-      var sharedKeyCredential = sharedKeyCredentialOrUserDelegationKey instanceof StorageSharedKeyCredential ? sharedKeyCredentialOrUserDelegationKey : void 0;
-      var userDelegationKeyCredential;
+      const version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
+      const sharedKeyCredential = sharedKeyCredentialOrUserDelegationKey instanceof StorageSharedKeyCredential ? sharedKeyCredentialOrUserDelegationKey : void 0;
+      let userDelegationKeyCredential;
       if (sharedKeyCredential === void 0 && accountName !== void 0) {
         userDelegationKeyCredential = new UserDelegationKeyCredential(accountName, sharedKeyCredentialOrUserDelegationKey);
       }
@@ -55048,11 +54472,11 @@ var require_dist9 = __commonJS({
       if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
         throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
       }
-      var resource = "c";
+      let resource = "c";
       if (blobSASSignatureValues.blobName) {
         resource = "b";
       }
-      var verifiedPermissions;
+      let verifiedPermissions;
       if (blobSASSignatureValues.permissions) {
         if (blobSASSignatureValues.blobName) {
           verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
@@ -55060,7 +54484,7 @@ var require_dist9 = __commonJS({
           verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
         }
       }
-      var stringToSign = [
+      const stringToSign = [
         verifiedPermissions ? verifiedPermissions : "",
         blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
         blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
@@ -55075,7 +54499,7 @@ var require_dist9 = __commonJS({
         blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
         blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
       ].join("\n");
-      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+      const signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
       return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
     }
     __name(generateBlobSASQueryParameters20150405, "generateBlobSASQueryParameters20150405");
@@ -55084,8 +54508,8 @@ var require_dist9 = __commonJS({
       if (!blobSASSignatureValues.identifier && !(blobSASSignatureValues.permissions && blobSASSignatureValues.expiresOn)) {
         throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when 'identifier' is not provided.");
       }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
+      let resource = "c";
+      let timestamp = blobSASSignatureValues.snapshotTime;
       if (blobSASSignatureValues.blobName) {
         resource = "b";
         if (blobSASSignatureValues.snapshotTime) {
@@ -55095,7 +54519,7 @@ var require_dist9 = __commonJS({
           timestamp = blobSASSignatureValues.versionId;
         }
       }
-      var verifiedPermissions;
+      let verifiedPermissions;
       if (blobSASSignatureValues.permissions) {
         if (blobSASSignatureValues.blobName) {
           verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
@@ -55103,7 +54527,7 @@ var require_dist9 = __commonJS({
           verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
         }
       }
-      var stringToSign = [
+      const stringToSign = [
         verifiedPermissions ? verifiedPermissions : "",
         blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
         blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
@@ -55120,7 +54544,7 @@ var require_dist9 = __commonJS({
         blobSASSignatureValues.contentLanguage ? blobSASSignatureValues.contentLanguage : "",
         blobSASSignatureValues.contentType ? blobSASSignatureValues.contentType : ""
       ].join("\n");
-      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+      const signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
       return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType);
     }
     __name(generateBlobSASQueryParameters20181109, "generateBlobSASQueryParameters20181109");
@@ -55129,8 +54553,8 @@ var require_dist9 = __commonJS({
       if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
         throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
       }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
+      let resource = "c";
+      let timestamp = blobSASSignatureValues.snapshotTime;
       if (blobSASSignatureValues.blobName) {
         resource = "b";
         if (blobSASSignatureValues.snapshotTime) {
@@ -55140,7 +54564,7 @@ var require_dist9 = __commonJS({
           timestamp = blobSASSignatureValues.versionId;
         }
       }
-      var verifiedPermissions;
+      let verifiedPermissions;
       if (blobSASSignatureValues.permissions) {
         if (blobSASSignatureValues.blobName) {
           verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
@@ -55148,7 +54572,7 @@ var require_dist9 = __commonJS({
           verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
         }
       }
-      var stringToSign = [
+      const stringToSign = [
         verifiedPermissions ? verifiedPermissions : "",
         blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
         blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
@@ -55170,7 +54594,7 @@ var require_dist9 = __commonJS({
         blobSASSignatureValues.contentLanguage,
         blobSASSignatureValues.contentType
       ].join("\n");
-      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
+      const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
       return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey);
     }
     __name(generateBlobSASQueryParametersUDK20181109, "generateBlobSASQueryParametersUDK20181109");
@@ -55179,8 +54603,8 @@ var require_dist9 = __commonJS({
       if (!blobSASSignatureValues.permissions || !blobSASSignatureValues.expiresOn) {
         throw new RangeError("Must provide 'permissions' and 'expiresOn' for Blob SAS generation when generating user delegation SAS.");
       }
-      var resource = "c";
-      var timestamp = blobSASSignatureValues.snapshotTime;
+      let resource = "c";
+      let timestamp = blobSASSignatureValues.snapshotTime;
       if (blobSASSignatureValues.blobName) {
         resource = "b";
         if (blobSASSignatureValues.snapshotTime) {
@@ -55190,7 +54614,7 @@ var require_dist9 = __commonJS({
           timestamp = blobSASSignatureValues.versionId;
         }
       }
-      var verifiedPermissions;
+      let verifiedPermissions;
       if (blobSASSignatureValues.permissions) {
         if (blobSASSignatureValues.blobName) {
           verifiedPermissions = BlobSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
@@ -55198,7 +54622,7 @@ var require_dist9 = __commonJS({
           verifiedPermissions = ContainerSASPermissions.parse(blobSASSignatureValues.permissions.toString()).toString();
         }
       }
-      var stringToSign = [
+      const stringToSign = [
         verifiedPermissions ? verifiedPermissions : "",
         blobSASSignatureValues.startsOn ? truncatedISO8061Date(blobSASSignatureValues.startsOn, false) : "",
         blobSASSignatureValues.expiresOn ? truncatedISO8061Date(blobSASSignatureValues.expiresOn, false) : "",
@@ -55223,20 +54647,20 @@ var require_dist9 = __commonJS({
         blobSASSignatureValues.contentLanguage,
         blobSASSignatureValues.contentType
       ].join("\n");
-      var signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
+      const signature = userDelegationKeyCredential.computeHMACSHA256(stringToSign);
       return new SASQueryParameters(blobSASSignatureValues.version, signature, verifiedPermissions, void 0, void 0, blobSASSignatureValues.protocol, blobSASSignatureValues.startsOn, blobSASSignatureValues.expiresOn, blobSASSignatureValues.ipRange, blobSASSignatureValues.identifier, resource, blobSASSignatureValues.cacheControl, blobSASSignatureValues.contentDisposition, blobSASSignatureValues.contentEncoding, blobSASSignatureValues.contentLanguage, blobSASSignatureValues.contentType, userDelegationKeyCredential.userDelegationKey, blobSASSignatureValues.preauthorizedAgentObjectId, blobSASSignatureValues.correlationId);
     }
     __name(generateBlobSASQueryParametersUDK20200210, "generateBlobSASQueryParametersUDK20200210");
     function getCanonicalName(accountName, containerName, blobName) {
-      var elements = ["/blob/" + accountName + "/" + containerName];
+      const elements = [`/blob/${accountName}/${containerName}`];
       if (blobName) {
-        elements.push("/" + blobName);
+        elements.push(`/${blobName}`);
       }
       return elements.join("");
     }
     __name(getCanonicalName, "getCanonicalName");
     function SASSignatureValuesSanityCheckAndAutofill(blobSASSignatureValues) {
-      var version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
+      const version2 = blobSASSignatureValues.version ? blobSASSignatureValues.version : SERVICE_VERSION;
       if (blobSASSignatureValues.snapshotTime && version2 < "2018-11-09") {
         throw RangeError("'version' must be >= '2018-11-09' when providing 'snapshotTime'.");
       }
@@ -55265,9 +54689,9 @@ var require_dist9 = __commonJS({
       return blobSASSignatureValues;
     }
     __name(SASSignatureValuesSanityCheckAndAutofill, "SASSignatureValuesSanityCheckAndAutofill");
-    var BlobLeaseClient = function() {
-      function BlobLeaseClient2(client, leaseId2) {
-        var clientContext = new StorageClientContext(client.url, client.pipeline.toServiceClientOptions());
+    var BlobLeaseClient = class {
+      constructor(client, leaseId2) {
+        const clientContext = new StorageClientContext(client.url, client.pipeline.toServiceClientOptions());
         this._url = client.url;
         if (client.name === void 0) {
           this._isContainer = true;
@@ -55281,598 +54705,317 @@ var require_dist9 = __commonJS({
         }
         this._leaseId = leaseId2;
       }
-      __name(BlobLeaseClient2, "BlobLeaseClient");
-      Object.defineProperty(BlobLeaseClient2.prototype, "leaseId", {
-        get: function() {
-          return this._leaseId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobLeaseClient2.prototype, "url", {
-        get: function() {
-          return this._url;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      BlobLeaseClient2.prototype.acquireLease = function(duration2, options) {
+      get leaseId() {
+        return this._leaseId;
+      }
+      get url() {
+        return this._url;
+      }
+      async acquireLease(duration2, options = {}) {
         var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
+        const { span, updatedOptions } = createSpan("BlobLeaseClient-acquireLease", options);
+        if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+          throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, updatedOptions, e_1;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-acquireLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.acquireLease(tslib.__assign({ abortSignal: options.abortSignal, duration: duration2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }), proposedLeaseId: this._leaseId }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_1 = _h.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        try {
+          return await this._containerOrBlobOperation.acquireLease(Object.assign({ abortSignal: options.abortSignal, duration: duration2, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }), proposedLeaseId: this._leaseId }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobLeaseClient2.prototype.changeLease = function(proposedLeaseId2, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async changeLease(proposedLeaseId2, options = {}) {
         var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
+        const { span, updatedOptions } = createSpan("BlobLeaseClient-changeLease", options);
+        if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+          throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, updatedOptions, response, e_2;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-changeLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.changeLease(this._leaseId, proposedLeaseId2, tslib.__assign({ abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _h.sent();
-                this._leaseId = proposedLeaseId2;
-                return [2, response];
-              case 3:
-                e_2 = _h.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_2.message
-                });
-                throw e_2;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        try {
+          const response = await this._containerOrBlobOperation.changeLease(this._leaseId, proposedLeaseId2, Object.assign({ abortSignal: options.abortSignal, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          this._leaseId = proposedLeaseId2;
+          return response;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobLeaseClient2.prototype.releaseLease = function(options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async releaseLease(options = {}) {
         var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
+        const { span, updatedOptions } = createSpan("BlobLeaseClient-releaseLease", options);
+        if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+          throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, updatedOptions, e_3;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-releaseLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.releaseLease(this._leaseId, tslib.__assign({ abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_3 = _h.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_3.message
-                });
-                throw e_3;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        try {
+          return await this._containerOrBlobOperation.releaseLease(this._leaseId, Object.assign({ abortSignal: options.abortSignal, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobLeaseClient2.prototype.renewLease = function(options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async renewLease(options = {}) {
         var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
+        const { span, updatedOptions } = createSpan("BlobLeaseClient-renewLease", options);
+        if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+          throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, updatedOptions, e_4;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-renewLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                return [4, this._containerOrBlobOperation.renewLease(this._leaseId, tslib.__assign({ abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_4 = _h.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_4.message
-                });
-                throw e_4;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        try {
+          return await this._containerOrBlobOperation.renewLease(this._leaseId, Object.assign({ abortSignal: options.abortSignal, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobLeaseClient2.prototype.breakLease = function(breakPeriod2, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async breakLease(breakPeriod2, options = {}) {
         var _a, _b, _c, _d, _e, _f;
-        if (options === void 0) {
-          options = {};
+        const { span, updatedOptions } = createSpan("BlobLeaseClient-breakLease", options);
+        if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
+          throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _g, span, updatedOptions, operationOptions, e_5;
-          return tslib.__generator(this, function(_h) {
-            switch (_h.label) {
-              case 0:
-                _g = createSpan("BlobLeaseClient-breakLease", options), span = _g.span, updatedOptions = _g.updatedOptions;
-                if (this._isContainer && (((_a = options.conditions) === null || _a === void 0 ? void 0 : _a.ifMatch) && ((_b = options.conditions) === null || _b === void 0 ? void 0 : _b.ifMatch) !== ETagNone || ((_c = options.conditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch) && ((_d = options.conditions) === null || _d === void 0 ? void 0 : _d.ifNoneMatch) !== ETagNone || ((_e = options.conditions) === null || _e === void 0 ? void 0 : _e.tagConditions))) {
-                  throw new RangeError("The IfMatch, IfNoneMatch and tags access conditions are ignored by the service. Values other than undefined or their default values are not acceptable.");
-                }
-                _h.label = 1;
-              case 1:
-                _h.trys.push([1, 3, 4, 5]);
-                operationOptions = tslib.__assign({ abortSignal: options.abortSignal, breakPeriod: breakPeriod2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions));
-                return [4, this._containerOrBlobOperation.breakLease(operationOptions)];
-              case 2:
-                return [2, _h.sent()];
-              case 3:
-                e_5 = _h.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_5.message
-                });
-                throw e_5;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        try {
+          const operationOptions = Object.assign({ abortSignal: options.abortSignal, breakPeriod: breakPeriod2, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_f = options.conditions) === null || _f === void 0 ? void 0 : _f.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions));
+          return await this._containerOrBlobOperation.breakLease(operationOptions);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      return BlobLeaseClient2;
-    }();
-    var RetriableReadableStream = function(_super) {
-      tslib.__extends(RetriableReadableStream2, _super);
-      function RetriableReadableStream2(source, getter, offset, count, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        var _this = _super.call(this, { highWaterMark: options.highWaterMark }) || this;
-        _this.retries = 0;
-        _this.sourceDataHandler = function(data) {
-          if (_this.options.doInjectErrorOnce) {
-            _this.options.doInjectErrorOnce = void 0;
-            _this.source.pause();
-            _this.source.removeAllListeners("data");
-            _this.source.emit("end");
+      }
+    };
+    __name(BlobLeaseClient, "BlobLeaseClient");
+    var RetriableReadableStream = class extends stream.Readable {
+      constructor(source, getter, offset, count, options = {}) {
+        super({ highWaterMark: options.highWaterMark });
+        this.retries = 0;
+        this.sourceDataHandler = (data) => {
+          if (this.options.doInjectErrorOnce) {
+            this.options.doInjectErrorOnce = void 0;
+            this.source.pause();
+            this.source.removeAllListeners("data");
+            this.source.emit("end");
             return;
           }
-          _this.offset += data.length;
-          if (_this.onProgress) {
-            _this.onProgress({ loadedBytes: _this.offset - _this.start });
+          this.offset += data.length;
+          if (this.onProgress) {
+            this.onProgress({ loadedBytes: this.offset - this.start });
           }
-          if (!_this.push(data)) {
-            _this.source.pause();
+          if (!this.push(data)) {
+            this.source.pause();
           }
         };
-        _this.sourceErrorOrEndHandler = function(err) {
+        this.sourceErrorOrEndHandler = (err) => {
           if (err && err.name === "AbortError") {
-            _this.destroy(err);
+            this.destroy(err);
             return;
           }
-          _this.removeSourceEventHandlers();
-          if (_this.offset - 1 === _this.end) {
-            _this.push(null);
-          } else if (_this.offset <= _this.end) {
-            if (_this.retries < _this.maxRetryRequests) {
-              _this.retries += 1;
-              _this.getter(_this.offset).then(function(newSource) {
-                _this.source = newSource;
-                _this.setSourceEventHandlers();
-              }).catch(function(error) {
-                _this.destroy(error);
+          this.removeSourceEventHandlers();
+          if (this.offset - 1 === this.end) {
+            this.push(null);
+          } else if (this.offset <= this.end) {
+            if (this.retries < this.maxRetryRequests) {
+              this.retries += 1;
+              this.getter(this.offset).then((newSource) => {
+                this.source = newSource;
+                this.setSourceEventHandlers();
+              }).catch((error) => {
+                this.destroy(error);
               });
             } else {
-              _this.destroy(new Error("Data corruption failure: received less data than required and reached maxRetires limitation. Received data offset: " + (_this.offset - 1) + ", data needed offset: " + _this.end + ", retries: " + _this.retries + ", max retries: " + _this.maxRetryRequests));
+              this.destroy(new Error(`Data corruption failure: received less data than required and reached maxRetires limitation. Received data offset: ${this.offset - 1}, data needed offset: ${this.end}, retries: ${this.retries}, max retries: ${this.maxRetryRequests}`));
             }
           } else {
-            _this.destroy(new Error("Data corruption failure: Received more data than original request, data needed offset is " + _this.end + ", received offset: " + (_this.offset - 1)));
+            this.destroy(new Error(`Data corruption failure: Received more data than original request, data needed offset is ${this.end}, received offset: ${this.offset - 1}`));
           }
         };
-        _this.getter = getter;
-        _this.source = source;
-        _this.start = offset;
-        _this.offset = offset;
-        _this.end = offset + count - 1;
-        _this.maxRetryRequests = options.maxRetryRequests && options.maxRetryRequests >= 0 ? options.maxRetryRequests : 0;
-        _this.onProgress = options.onProgress;
-        _this.options = options;
-        _this.setSourceEventHandlers();
-        return _this;
+        this.getter = getter;
+        this.source = source;
+        this.start = offset;
+        this.offset = offset;
+        this.end = offset + count - 1;
+        this.maxRetryRequests = options.maxRetryRequests && options.maxRetryRequests >= 0 ? options.maxRetryRequests : 0;
+        this.onProgress = options.onProgress;
+        this.options = options;
+        this.setSourceEventHandlers();
       }
-      __name(RetriableReadableStream2, "RetriableReadableStream");
-      RetriableReadableStream2.prototype._read = function() {
+      _read() {
         this.source.resume();
-      };
-      RetriableReadableStream2.prototype.setSourceEventHandlers = function() {
+      }
+      setSourceEventHandlers() {
         this.source.on("data", this.sourceDataHandler);
         this.source.on("end", this.sourceErrorOrEndHandler);
         this.source.on("error", this.sourceErrorOrEndHandler);
-      };
-      RetriableReadableStream2.prototype.removeSourceEventHandlers = function() {
+      }
+      removeSourceEventHandlers() {
         this.source.removeListener("data", this.sourceDataHandler);
         this.source.removeListener("end", this.sourceErrorOrEndHandler);
         this.source.removeListener("error", this.sourceErrorOrEndHandler);
-      };
-      RetriableReadableStream2.prototype._destroy = function(error, callback) {
+      }
+      _destroy(error, callback) {
         this.removeSourceEventHandlers();
         this.source.destroy();
         callback(error === null ? void 0 : error);
-      };
-      return RetriableReadableStream2;
-    }(stream.Readable);
-    var BlobDownloadResponse = function() {
-      function BlobDownloadResponse2(originalResponse, getter, offset, count, options) {
-        if (options === void 0) {
-          options = {};
-        }
+      }
+    };
+    __name(RetriableReadableStream, "RetriableReadableStream");
+    var BlobDownloadResponse = class {
+      constructor(originalResponse, getter, offset, count, options = {}) {
         this.originalResponse = originalResponse;
         this.blobDownloadStream = new RetriableReadableStream(this.originalResponse.readableStreamBody, getter, offset, count, options);
       }
-      __name(BlobDownloadResponse2, "BlobDownloadResponse");
-      Object.defineProperty(BlobDownloadResponse2.prototype, "acceptRanges", {
-        get: function() {
-          return this.originalResponse.acceptRanges;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "cacheControl", {
-        get: function() {
-          return this.originalResponse.cacheControl;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentDisposition", {
-        get: function() {
-          return this.originalResponse.contentDisposition;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentEncoding", {
-        get: function() {
-          return this.originalResponse.contentEncoding;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentLanguage", {
-        get: function() {
-          return this.originalResponse.contentLanguage;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "blobSequenceNumber", {
-        get: function() {
-          return this.originalResponse.blobSequenceNumber;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "blobType", {
-        get: function() {
-          return this.originalResponse.blobType;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentLength", {
-        get: function() {
-          return this.originalResponse.contentLength;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentMD5", {
-        get: function() {
-          return this.originalResponse.contentMD5;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentRange", {
-        get: function() {
-          return this.originalResponse.contentRange;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentType", {
-        get: function() {
-          return this.originalResponse.contentType;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copyCompletedOn", {
-        get: function() {
-          return this.originalResponse.copyCompletedOn;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copyId", {
-        get: function() {
-          return this.originalResponse.copyId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copyProgress", {
-        get: function() {
-          return this.originalResponse.copyProgress;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copySource", {
-        get: function() {
-          return this.originalResponse.copySource;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copyStatus", {
-        get: function() {
-          return this.originalResponse.copyStatus;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "copyStatusDescription", {
-        get: function() {
-          return this.originalResponse.copyStatusDescription;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "leaseDuration", {
-        get: function() {
-          return this.originalResponse.leaseDuration;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "leaseState", {
-        get: function() {
-          return this.originalResponse.leaseState;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "leaseStatus", {
-        get: function() {
-          return this.originalResponse.leaseStatus;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "date", {
-        get: function() {
-          return this.originalResponse.date;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "blobCommittedBlockCount", {
-        get: function() {
-          return this.originalResponse.blobCommittedBlockCount;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "etag", {
-        get: function() {
-          return this.originalResponse.etag;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "tagCount", {
-        get: function() {
-          return this.originalResponse.tagCount;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "errorCode", {
-        get: function() {
-          return this.originalResponse.errorCode;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "isServerEncrypted", {
-        get: function() {
-          return this.originalResponse.isServerEncrypted;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "blobContentMD5", {
-        get: function() {
-          return this.originalResponse.blobContentMD5;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "lastModified", {
-        get: function() {
-          return this.originalResponse.lastModified;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "lastAccessed", {
-        get: function() {
-          return this.originalResponse.lastAccessed;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "metadata", {
-        get: function() {
-          return this.originalResponse.metadata;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "requestId", {
-        get: function() {
-          return this.originalResponse.requestId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "clientRequestId", {
-        get: function() {
-          return this.originalResponse.clientRequestId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "version", {
-        get: function() {
-          return this.originalResponse.version;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "versionId", {
-        get: function() {
-          return this.originalResponse.versionId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "isCurrentVersion", {
-        get: function() {
-          return this.originalResponse.isCurrentVersion;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "encryptionKeySha256", {
-        get: function() {
-          return this.originalResponse.encryptionKeySha256;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentCrc64", {
-        get: function() {
-          return this.originalResponse.contentCrc64;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "objectReplicationDestinationPolicyId", {
-        get: function() {
-          return this.originalResponse.objectReplicationDestinationPolicyId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "objectReplicationSourceProperties", {
-        get: function() {
-          return this.originalResponse.objectReplicationSourceProperties;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "isSealed", {
-        get: function() {
-          return this.originalResponse.isSealed;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "contentAsBlob", {
-        get: function() {
-          return this.originalResponse.blobBody;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "readableStreamBody", {
-        get: function() {
-          return coreHttp.isNode ? this.blobDownloadStream : void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobDownloadResponse2.prototype, "_response", {
-        get: function() {
-          return this.originalResponse._response;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      return BlobDownloadResponse2;
-    }();
+      get acceptRanges() {
+        return this.originalResponse.acceptRanges;
+      }
+      get cacheControl() {
+        return this.originalResponse.cacheControl;
+      }
+      get contentDisposition() {
+        return this.originalResponse.contentDisposition;
+      }
+      get contentEncoding() {
+        return this.originalResponse.contentEncoding;
+      }
+      get contentLanguage() {
+        return this.originalResponse.contentLanguage;
+      }
+      get blobSequenceNumber() {
+        return this.originalResponse.blobSequenceNumber;
+      }
+      get blobType() {
+        return this.originalResponse.blobType;
+      }
+      get contentLength() {
+        return this.originalResponse.contentLength;
+      }
+      get contentMD5() {
+        return this.originalResponse.contentMD5;
+      }
+      get contentRange() {
+        return this.originalResponse.contentRange;
+      }
+      get contentType() {
+        return this.originalResponse.contentType;
+      }
+      get copyCompletedOn() {
+        return this.originalResponse.copyCompletedOn;
+      }
+      get copyId() {
+        return this.originalResponse.copyId;
+      }
+      get copyProgress() {
+        return this.originalResponse.copyProgress;
+      }
+      get copySource() {
+        return this.originalResponse.copySource;
+      }
+      get copyStatus() {
+        return this.originalResponse.copyStatus;
+      }
+      get copyStatusDescription() {
+        return this.originalResponse.copyStatusDescription;
+      }
+      get leaseDuration() {
+        return this.originalResponse.leaseDuration;
+      }
+      get leaseState() {
+        return this.originalResponse.leaseState;
+      }
+      get leaseStatus() {
+        return this.originalResponse.leaseStatus;
+      }
+      get date() {
+        return this.originalResponse.date;
+      }
+      get blobCommittedBlockCount() {
+        return this.originalResponse.blobCommittedBlockCount;
+      }
+      get etag() {
+        return this.originalResponse.etag;
+      }
+      get tagCount() {
+        return this.originalResponse.tagCount;
+      }
+      get errorCode() {
+        return this.originalResponse.errorCode;
+      }
+      get isServerEncrypted() {
+        return this.originalResponse.isServerEncrypted;
+      }
+      get blobContentMD5() {
+        return this.originalResponse.blobContentMD5;
+      }
+      get lastModified() {
+        return this.originalResponse.lastModified;
+      }
+      get lastAccessed() {
+        return this.originalResponse.lastAccessed;
+      }
+      get metadata() {
+        return this.originalResponse.metadata;
+      }
+      get requestId() {
+        return this.originalResponse.requestId;
+      }
+      get clientRequestId() {
+        return this.originalResponse.clientRequestId;
+      }
+      get version() {
+        return this.originalResponse.version;
+      }
+      get versionId() {
+        return this.originalResponse.versionId;
+      }
+      get isCurrentVersion() {
+        return this.originalResponse.isCurrentVersion;
+      }
+      get encryptionKeySha256() {
+        return this.originalResponse.encryptionKeySha256;
+      }
+      get contentCrc64() {
+        return this.originalResponse.contentCrc64;
+      }
+      get objectReplicationDestinationPolicyId() {
+        return this.originalResponse.objectReplicationDestinationPolicyId;
+      }
+      get objectReplicationSourceProperties() {
+        return this.originalResponse.objectReplicationSourceProperties;
+      }
+      get isSealed() {
+        return this.originalResponse.isSealed;
+      }
+      get contentAsBlob() {
+        return this.originalResponse.blobBody;
+      }
+      get readableStreamBody() {
+        return coreHttp.isNode ? this.blobDownloadStream : void 0;
+      }
+      get _response() {
+        return this.originalResponse._response;
+      }
+    };
+    __name(BlobDownloadResponse, "BlobDownloadResponse");
     var AVRO_SYNC_MARKER_SIZE = 16;
     var AVRO_INIT_BYTES = new Uint8Array([79, 98, 106, 1]);
     var AVRO_CODEC_KEY = "avro.codec";
@@ -55884,339 +55027,127 @@ var require_dist9 = __commonJS({
         return false;
       if (a.length != b.length)
         return false;
-      for (var i = 0; i < a.length; ++i) {
+      for (let i = 0; i < a.length; ++i) {
         if (a[i] !== b[i])
           return false;
       }
       return true;
     }
     __name(arraysEqual, "arraysEqual");
-    var AvroParser = function() {
-      function AvroParser2() {
+    var AvroParser = class {
+      static async readFixedBytes(stream2, length, options = {}) {
+        const bytes = await stream2.read(length, { abortSignal: options.abortSignal });
+        if (bytes.length != length) {
+          throw new Error("Hit stream end.");
+        }
+        return bytes;
       }
-      __name(AvroParser2, "AvroParser");
-      AvroParser2.readFixedBytes = function(stream2, length, options) {
-        if (options === void 0) {
-          options = {};
+      static async readByte(stream2, options = {}) {
+        const buf = await AvroParser.readFixedBytes(stream2, 1, options);
+        return buf[0];
+      }
+      static async readZigZagLong(stream2, options = {}) {
+        let zigZagEncoded = 0;
+        let significanceInBit = 0;
+        let byte, haveMoreByte, significanceInFloat;
+        do {
+          byte = await AvroParser.readByte(stream2, options);
+          haveMoreByte = byte & 128;
+          zigZagEncoded |= (byte & 127) << significanceInBit;
+          significanceInBit += 7;
+        } while (haveMoreByte && significanceInBit < 28);
+        if (haveMoreByte) {
+          zigZagEncoded = zigZagEncoded;
+          significanceInFloat = 268435456;
+          do {
+            byte = await AvroParser.readByte(stream2, options);
+            zigZagEncoded += (byte & 127) * significanceInFloat;
+            significanceInFloat *= 128;
+          } while (byte & 128);
+          const res = (zigZagEncoded % 2 ? -(zigZagEncoded + 1) : zigZagEncoded) / 2;
+          if (res < Number.MIN_SAFE_INTEGER || res > Number.MAX_SAFE_INTEGER) {
+            throw new Error("Integer overflow.");
+          }
+          return res;
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var bytes;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, stream2.read(length, { abortSignal: options.abortSignal })];
-              case 1:
-                bytes = _a.sent();
-                if (bytes.length != length) {
-                  throw new Error("Hit stream end.");
-                }
-                return [2, bytes];
-            }
-          });
-        });
-      };
-      AvroParser2.readByte = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+        return zigZagEncoded >> 1 ^ -(zigZagEncoded & 1);
+      }
+      static async readLong(stream2, options = {}) {
+        return AvroParser.readZigZagLong(stream2, options);
+      }
+      static async readInt(stream2, options = {}) {
+        return AvroParser.readZigZagLong(stream2, options);
+      }
+      static async readNull() {
+        return null;
+      }
+      static async readBoolean(stream2, options = {}) {
+        const b = await AvroParser.readByte(stream2, options);
+        if (b == 1) {
+          return true;
+        } else if (b == 0) {
+          return false;
+        } else {
+          throw new Error("Byte was not a boolean.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var buf;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readFixedBytes(stream2, 1, options)];
-              case 1:
-                buf = _a.sent();
-                return [2, buf[0]];
-            }
-          });
-        });
-      };
-      AvroParser2.readZigZagLong = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+      }
+      static async readFloat(stream2, options = {}) {
+        const u8arr = await AvroParser.readFixedBytes(stream2, 4, options);
+        const view = new DataView(u8arr.buffer, u8arr.byteOffset, u8arr.byteLength);
+        return view.getFloat32(0, true);
+      }
+      static async readDouble(stream2, options = {}) {
+        const u8arr = await AvroParser.readFixedBytes(stream2, 8, options);
+        const view = new DataView(u8arr.buffer, u8arr.byteOffset, u8arr.byteLength);
+        return view.getFloat64(0, true);
+      }
+      static async readBytes(stream2, options = {}) {
+        const size = await AvroParser.readLong(stream2, options);
+        if (size < 0) {
+          throw new Error("Bytes size was negative.");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var zigZagEncoded, significanceInBit, byte, haveMoreByte, significanceInFloat, res;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                zigZagEncoded = 0;
-                significanceInBit = 0;
-                _a.label = 1;
-              case 1:
-                return [4, AvroParser2.readByte(stream2, options)];
-              case 2:
-                byte = _a.sent();
-                haveMoreByte = byte & 128;
-                zigZagEncoded |= (byte & 127) << significanceInBit;
-                significanceInBit += 7;
-                _a.label = 3;
-              case 3:
-                if (haveMoreByte && significanceInBit < 28)
-                  return [3, 1];
-                _a.label = 4;
-              case 4:
-                if (!haveMoreByte)
-                  return [3, 9];
-                zigZagEncoded = zigZagEncoded;
-                significanceInFloat = 268435456;
-                _a.label = 5;
-              case 5:
-                return [4, AvroParser2.readByte(stream2, options)];
-              case 6:
-                byte = _a.sent();
-                zigZagEncoded += (byte & 127) * significanceInFloat;
-                significanceInFloat *= 128;
-                _a.label = 7;
-              case 7:
-                if (byte & 128)
-                  return [3, 5];
-                _a.label = 8;
-              case 8:
-                res = (zigZagEncoded % 2 ? -(zigZagEncoded + 1) : zigZagEncoded) / 2;
-                if (res < Number.MIN_SAFE_INTEGER || res > Number.MAX_SAFE_INTEGER) {
-                  throw new Error("Integer overflow.");
-                }
-                return [2, res];
-              case 9:
-                return [2, zigZagEncoded >> 1 ^ -(zigZagEncoded & 1)];
-            }
-          });
-        });
-      };
-      AvroParser2.readLong = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+        return await stream2.read(size, { abortSignal: options.abortSignal });
+      }
+      static async readString(stream2, options = {}) {
+        const u8arr = await AvroParser.readBytes(stream2, options);
+        if (typeof TextDecoder === "undefined" && typeof require !== "undefined") {
+          global.TextDecoder = require("util").TextDecoder;
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            return [2, AvroParser2.readZigZagLong(stream2, options)];
-          });
-        });
-      };
-      AvroParser2.readInt = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+        const utf8decoder = new TextDecoder();
+        return utf8decoder.decode(u8arr);
+      }
+      static async readMapPair(stream2, readItemMethod, options = {}) {
+        const key = await AvroParser.readString(stream2, options);
+        const value = await readItemMethod(stream2, options);
+        return { key, value };
+      }
+      static async readMap(stream2, readItemMethod, options = {}) {
+        const readPairMethod = /* @__PURE__ */ __name(async (stream3, options2 = {}) => {
+          return await AvroParser.readMapPair(stream3, readItemMethod, options2);
+        }, "readPairMethod");
+        const pairs = await AvroParser.readArray(stream2, readPairMethod, options);
+        const dict = {};
+        for (const pair of pairs) {
+          dict[pair.key] = pair.value;
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            return [2, AvroParser2.readZigZagLong(stream2, options)];
-          });
-        });
-      };
-      AvroParser2.readNull = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            return [2, null];
-          });
-        });
-      };
-      AvroParser2.readBoolean = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+        return dict;
+      }
+      static async readArray(stream2, readItemMethod, options = {}) {
+        const items = [];
+        for (let count = await AvroParser.readLong(stream2, options); count != 0; count = await AvroParser.readLong(stream2, options)) {
+          if (count < 0) {
+            await AvroParser.readLong(stream2, options);
+            count = -count;
+          }
+          while (count--) {
+            const item = await readItemMethod(stream2, options);
+            items.push(item);
+          }
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var b;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readByte(stream2, options)];
-              case 1:
-                b = _a.sent();
-                if (b == 1) {
-                  return [2, true];
-                } else if (b == 0) {
-                  return [2, false];
-                } else {
-                  throw new Error("Byte was not a boolean.");
-                }
-            }
-          });
-        });
-      };
-      AvroParser2.readFloat = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var u8arr, view;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readFixedBytes(stream2, 4, options)];
-              case 1:
-                u8arr = _a.sent();
-                view = new DataView(u8arr.buffer, u8arr.byteOffset, u8arr.byteLength);
-                return [2, view.getFloat32(0, true)];
-            }
-          });
-        });
-      };
-      AvroParser2.readDouble = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var u8arr, view;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readFixedBytes(stream2, 8, options)];
-              case 1:
-                u8arr = _a.sent();
-                view = new DataView(u8arr.buffer, u8arr.byteOffset, u8arr.byteLength);
-                return [2, view.getFloat64(0, true)];
-            }
-          });
-        });
-      };
-      AvroParser2.readBytes = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var size;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readLong(stream2, options)];
-              case 1:
-                size = _a.sent();
-                if (size < 0) {
-                  throw new Error("Bytes size was negative.");
-                }
-                return [4, stream2.read(size, { abortSignal: options.abortSignal })];
-              case 2:
-                return [2, _a.sent()];
-            }
-          });
-        });
-      };
-      AvroParser2.readString = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var u8arr, utf8decoder;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readBytes(stream2, options)];
-              case 1:
-                u8arr = _a.sent();
-                if (typeof TextDecoder === "undefined" && typeof require !== "undefined") {
-                  global.TextDecoder = require("util").TextDecoder;
-                }
-                utf8decoder = new TextDecoder();
-                return [2, utf8decoder.decode(u8arr)];
-            }
-          });
-        });
-      };
-      AvroParser2.readMapPair = function(stream2, readItemMethod, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var key, value;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser2.readString(stream2, options)];
-              case 1:
-                key = _a.sent();
-                return [4, readItemMethod(stream2, options)];
-              case 2:
-                value = _a.sent();
-                return [2, { key, value }];
-            }
-          });
-        });
-      };
-      AvroParser2.readMap = function(stream2, readItemMethod, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var readPairMethod, pairs, dict, _i, pairs_1, pair;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                readPairMethod = /* @__PURE__ */ __name(function(stream3, options2) {
-                  if (options2 === void 0) {
-                    options2 = {};
-                  }
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    return tslib.__generator(this, function(_a2) {
-                      switch (_a2.label) {
-                        case 0:
-                          return [4, AvroParser2.readMapPair(stream3, readItemMethod, options2)];
-                        case 1:
-                          return [2, _a2.sent()];
-                      }
-                    });
-                  });
-                }, "readPairMethod");
-                return [4, AvroParser2.readArray(stream2, readPairMethod, options)];
-              case 1:
-                pairs = _a.sent();
-                dict = {};
-                for (_i = 0, pairs_1 = pairs; _i < pairs_1.length; _i++) {
-                  pair = pairs_1[_i];
-                  dict[pair.key] = pair.value;
-                }
-                return [2, dict];
-            }
-          });
-        });
-      };
-      AvroParser2.readArray = function(stream2, readItemMethod, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var items, count, item;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                items = [];
-                return [4, AvroParser2.readLong(stream2, options)];
-              case 1:
-                count = _a.sent();
-                _a.label = 2;
-              case 2:
-                if (!(count != 0))
-                  return [3, 8];
-                if (!(count < 0))
-                  return [3, 4];
-                return [4, AvroParser2.readLong(stream2, options)];
-              case 3:
-                _a.sent();
-                count = -count;
-                _a.label = 4;
-              case 4:
-                if (!count--)
-                  return [3, 6];
-                return [4, readItemMethod(stream2, options)];
-              case 5:
-                item = _a.sent();
-                items.push(item);
-                return [3, 4];
-              case 6:
-                return [4, AvroParser2.readLong(stream2, options)];
-              case 7:
-                count = _a.sent();
-                return [3, 2];
-              case 8:
-                return [2, items];
-            }
-          });
-        });
-      };
-      return AvroParser2;
-    }();
+        return items;
+      }
+    };
+    __name(AvroParser, "AvroParser");
     var AvroComplex;
     (function(AvroComplex2) {
       AvroComplex2["RECORD"] = "record";
@@ -56226,20 +55157,17 @@ var require_dist9 = __commonJS({
       AvroComplex2["UNION"] = "union";
       AvroComplex2["FIXED"] = "fixed";
     })(AvroComplex || (AvroComplex = {}));
-    var AvroType = function() {
-      function AvroType2() {
-      }
-      __name(AvroType2, "AvroType");
-      AvroType2.fromSchema = function(schema) {
+    var AvroType = class {
+      static fromSchema(schema) {
         if (typeof schema === "string") {
-          return AvroType2.fromStringSchema(schema);
+          return AvroType.fromStringSchema(schema);
         } else if (Array.isArray(schema)) {
-          return AvroType2.fromArraySchema(schema);
+          return AvroType.fromArraySchema(schema);
         } else {
-          return AvroType2.fromObjectSchema(schema);
+          return AvroType.fromObjectSchema(schema);
         }
-      };
-      AvroType2.fromStringSchema = function(schema) {
+      }
+      static fromStringSchema(schema) {
         switch (schema) {
           case AvroPrimitive.NULL:
           case AvroPrimitive.BOOLEAN:
@@ -56251,56 +55179,55 @@ var require_dist9 = __commonJS({
           case AvroPrimitive.STRING:
             return new AvroPrimitiveType(schema);
           default:
-            throw new Error("Unexpected Avro type " + schema);
+            throw new Error(`Unexpected Avro type ${schema}`);
         }
-      };
-      AvroType2.fromArraySchema = function(schema) {
-        return new AvroUnionType(schema.map(AvroType2.fromSchema));
-      };
-      AvroType2.fromObjectSchema = function(schema) {
-        var type = schema.type;
+      }
+      static fromArraySchema(schema) {
+        return new AvroUnionType(schema.map(AvroType.fromSchema));
+      }
+      static fromObjectSchema(schema) {
+        const type = schema.type;
         try {
-          return AvroType2.fromStringSchema(type);
+          return AvroType.fromStringSchema(type);
         } catch (err) {
         }
         switch (type) {
           case AvroComplex.RECORD:
             if (schema.aliases) {
-              throw new Error("aliases currently is not supported, schema: " + schema);
+              throw new Error(`aliases currently is not supported, schema: ${schema}`);
             }
             if (!schema.name) {
-              throw new Error("Required attribute 'name' doesn't exist on schema: " + schema);
+              throw new Error(`Required attribute 'name' doesn't exist on schema: ${schema}`);
             }
-            var fields = {};
+            const fields = {};
             if (!schema.fields) {
-              throw new Error("Required attribute 'fields' doesn't exist on schema: " + schema);
+              throw new Error(`Required attribute 'fields' doesn't exist on schema: ${schema}`);
             }
-            for (var _i = 0, _a = schema.fields; _i < _a.length; _i++) {
-              var field = _a[_i];
-              fields[field.name] = AvroType2.fromSchema(field.type);
+            for (const field of schema.fields) {
+              fields[field.name] = AvroType.fromSchema(field.type);
             }
             return new AvroRecordType(fields, schema.name);
           case AvroComplex.ENUM:
             if (schema.aliases) {
-              throw new Error("aliases currently is not supported, schema: " + schema);
+              throw new Error(`aliases currently is not supported, schema: ${schema}`);
             }
             if (!schema.symbols) {
-              throw new Error("Required attribute 'symbols' doesn't exist on schema: " + schema);
+              throw new Error(`Required attribute 'symbols' doesn't exist on schema: ${schema}`);
             }
             return new AvroEnumType(schema.symbols);
           case AvroComplex.MAP:
             if (!schema.values) {
-              throw new Error("Required attribute 'values' doesn't exist on schema: " + schema);
+              throw new Error(`Required attribute 'values' doesn't exist on schema: ${schema}`);
             }
-            return new AvroMapType(AvroType2.fromSchema(schema.values));
+            return new AvroMapType(AvroType.fromSchema(schema.values));
           case AvroComplex.ARRAY:
           case AvroComplex.FIXED:
           default:
-            throw new Error("Unexpected Avro type " + type + " in " + schema);
+            throw new Error(`Unexpected Avro type ${type} in ${schema}`);
         }
-      };
-      return AvroType2;
-    }();
+      }
+    };
+    __name(AvroType, "AvroType");
     var AvroPrimitive;
     (function(AvroPrimitive2) {
       AvroPrimitive2["NULL"] = "null";
@@ -56312,228 +55239,90 @@ var require_dist9 = __commonJS({
       AvroPrimitive2["BYTES"] = "bytes";
       AvroPrimitive2["STRING"] = "string";
     })(AvroPrimitive || (AvroPrimitive = {}));
-    var AvroPrimitiveType = function(_super) {
-      tslib.__extends(AvroPrimitiveType2, _super);
-      function AvroPrimitiveType2(primitive) {
-        var _this = _super.call(this) || this;
-        _this._primitive = primitive;
-        return _this;
+    var AvroPrimitiveType = class extends AvroType {
+      constructor(primitive) {
+        super();
+        this._primitive = primitive;
       }
-      __name(AvroPrimitiveType2, "AvroPrimitiveType");
-      AvroPrimitiveType2.prototype.read = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+      async read(stream2, options = {}) {
+        switch (this._primitive) {
+          case AvroPrimitive.NULL:
+            return await AvroParser.readNull();
+          case AvroPrimitive.BOOLEAN:
+            return await AvroParser.readBoolean(stream2, options);
+          case AvroPrimitive.INT:
+            return await AvroParser.readInt(stream2, options);
+          case AvroPrimitive.LONG:
+            return await AvroParser.readLong(stream2, options);
+          case AvroPrimitive.FLOAT:
+            return await AvroParser.readFloat(stream2, options);
+          case AvroPrimitive.DOUBLE:
+            return await AvroParser.readDouble(stream2, options);
+          case AvroPrimitive.BYTES:
+            return await AvroParser.readBytes(stream2, options);
+          case AvroPrimitive.STRING:
+            return await AvroParser.readString(stream2, options);
+          default:
+            throw new Error("Unknown Avro Primitive");
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = this._primitive;
-                switch (_a) {
-                  case AvroPrimitive.NULL:
-                    return [3, 1];
-                  case AvroPrimitive.BOOLEAN:
-                    return [3, 3];
-                  case AvroPrimitive.INT:
-                    return [3, 5];
-                  case AvroPrimitive.LONG:
-                    return [3, 7];
-                  case AvroPrimitive.FLOAT:
-                    return [3, 9];
-                  case AvroPrimitive.DOUBLE:
-                    return [3, 11];
-                  case AvroPrimitive.BYTES:
-                    return [3, 13];
-                  case AvroPrimitive.STRING:
-                    return [3, 15];
-                }
-                return [3, 17];
-              case 1:
-                return [4, AvroParser.readNull()];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                return [4, AvroParser.readBoolean(stream2, options)];
-              case 4:
-                return [2, _b.sent()];
-              case 5:
-                return [4, AvroParser.readInt(stream2, options)];
-              case 6:
-                return [2, _b.sent()];
-              case 7:
-                return [4, AvroParser.readLong(stream2, options)];
-              case 8:
-                return [2, _b.sent()];
-              case 9:
-                return [4, AvroParser.readFloat(stream2, options)];
-              case 10:
-                return [2, _b.sent()];
-              case 11:
-                return [4, AvroParser.readDouble(stream2, options)];
-              case 12:
-                return [2, _b.sent()];
-              case 13:
-                return [4, AvroParser.readBytes(stream2, options)];
-              case 14:
-                return [2, _b.sent()];
-              case 15:
-                return [4, AvroParser.readString(stream2, options)];
-              case 16:
-                return [2, _b.sent()];
-              case 17:
-                throw new Error("Unknown Avro Primitive");
-            }
-          });
-        });
-      };
-      return AvroPrimitiveType2;
-    }(AvroType);
-    var AvroEnumType = function(_super) {
-      tslib.__extends(AvroEnumType2, _super);
-      function AvroEnumType2(symbols) {
-        var _this = _super.call(this) || this;
-        _this._symbols = symbols;
-        return _this;
       }
-      __name(AvroEnumType2, "AvroEnumType");
-      AvroEnumType2.prototype.read = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var value;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser.readInt(stream2, options)];
-              case 1:
-                value = _a.sent();
-                return [2, this._symbols[value]];
-            }
-          });
-        });
-      };
-      return AvroEnumType2;
-    }(AvroType);
-    var AvroUnionType = function(_super) {
-      tslib.__extends(AvroUnionType2, _super);
-      function AvroUnionType2(types) {
-        var _this = _super.call(this) || this;
-        _this._types = types;
-        return _this;
+    };
+    __name(AvroPrimitiveType, "AvroPrimitiveType");
+    var AvroEnumType = class extends AvroType {
+      constructor(symbols) {
+        super();
+        this._symbols = symbols;
       }
-      __name(AvroUnionType2, "AvroUnionType");
-      AvroUnionType2.prototype.read = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var typeIndex;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, AvroParser.readInt(stream2, options)];
-              case 1:
-                typeIndex = _a.sent();
-                return [4, this._types[typeIndex].read(stream2, options)];
-              case 2:
-                return [2, _a.sent()];
-            }
-          });
-        });
-      };
-      return AvroUnionType2;
-    }(AvroType);
-    var AvroMapType = function(_super) {
-      tslib.__extends(AvroMapType2, _super);
-      function AvroMapType2(itemType) {
-        var _this = _super.call(this) || this;
-        _this._itemType = itemType;
-        return _this;
+      async read(stream2, options = {}) {
+        const value = await AvroParser.readInt(stream2, options);
+        return this._symbols[value];
       }
-      __name(AvroMapType2, "AvroMapType");
-      AvroMapType2.prototype.read = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var readItemMethod;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                readItemMethod = /* @__PURE__ */ __name(function(s, options2) {
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    return tslib.__generator(this, function(_a2) {
-                      switch (_a2.label) {
-                        case 0:
-                          return [4, this._itemType.read(s, options2)];
-                        case 1:
-                          return [2, _a2.sent()];
-                      }
-                    });
-                  });
-                }, "readItemMethod");
-                return [4, AvroParser.readMap(stream2, readItemMethod, options)];
-              case 1:
-                return [2, _a.sent()];
-            }
-          });
-        });
-      };
-      return AvroMapType2;
-    }(AvroType);
-    var AvroRecordType = function(_super) {
-      tslib.__extends(AvroRecordType2, _super);
-      function AvroRecordType2(fields, name) {
-        var _this = _super.call(this) || this;
-        _this._fields = fields;
-        _this._name = name;
-        return _this;
+    };
+    __name(AvroEnumType, "AvroEnumType");
+    var AvroUnionType = class extends AvroType {
+      constructor(types) {
+        super();
+        this._types = types;
       }
-      __name(AvroRecordType2, "AvroRecordType");
-      AvroRecordType2.prototype.read = function(stream2, options) {
-        if (options === void 0) {
-          options = {};
+      async read(stream2, options = {}) {
+        const typeIndex = await AvroParser.readInt(stream2, options);
+        return await this._types[typeIndex].read(stream2, options);
+      }
+    };
+    __name(AvroUnionType, "AvroUnionType");
+    var AvroMapType = class extends AvroType {
+      constructor(itemType) {
+        super();
+        this._itemType = itemType;
+      }
+      async read(stream2, options = {}) {
+        const readItemMethod = /* @__PURE__ */ __name(async (s, options2) => {
+          return await this._itemType.read(s, options2);
+        }, "readItemMethod");
+        return await AvroParser.readMap(stream2, readItemMethod, options);
+      }
+    };
+    __name(AvroMapType, "AvroMapType");
+    var AvroRecordType = class extends AvroType {
+      constructor(fields, name) {
+        super();
+        this._fields = fields;
+        this._name = name;
+      }
+      async read(stream2, options = {}) {
+        const record = {};
+        record["$schema"] = this._name;
+        for (const key in this._fields) {
+          if (this._fields.hasOwnProperty(key)) {
+            record[key] = await this._fields[key].read(stream2, options);
+          }
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var record, _a, _b, _i, key, _c, _d;
-          return tslib.__generator(this, function(_e) {
-            switch (_e.label) {
-              case 0:
-                record = {};
-                record["$schema"] = this._name;
-                _a = [];
-                for (_b in this._fields)
-                  _a.push(_b);
-                _i = 0;
-                _e.label = 1;
-              case 1:
-                if (!(_i < _a.length))
-                  return [3, 4];
-                key = _a[_i];
-                if (!this._fields.hasOwnProperty(key))
-                  return [3, 3];
-                _c = record;
-                _d = key;
-                return [4, this._fields[key].read(stream2, options)];
-              case 2:
-                _c[_d] = _e.sent();
-                _e.label = 3;
-              case 3:
-                _i++;
-                return [3, 1];
-              case 4:
-                return [2, record];
-            }
-          });
-        });
-      };
-      return AvroRecordType2;
-    }(AvroType);
-    var AvroReader = function() {
-      function AvroReader2(dataStream, headerStream, currentBlockOffset, indexWithinCurrentBlock) {
+        return record;
+      }
+    };
+    __name(AvroRecordType, "AvroRecordType");
+    var AvroReader = class {
+      constructor(dataStream, headerStream, currentBlockOffset, indexWithinCurrentBlock) {
         this._dataStream = dataStream;
         this._headerStream = headerStream || dataStream;
         this._initialized = false;
@@ -56541,639 +55330,369 @@ var require_dist9 = __commonJS({
         this._objectIndex = indexWithinCurrentBlock || 0;
         this._initialBlockOffset = currentBlockOffset || 0;
       }
-      __name(AvroReader2, "AvroReader");
-      Object.defineProperty(AvroReader2.prototype, "blockOffset", {
-        get: function() {
-          return this._blockOffset;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(AvroReader2.prototype, "objectIndex", {
-        get: function() {
-          return this._objectIndex;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      AvroReader2.prototype.initialize = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var header, _a, codec, _b, schema, _c, i;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                return [4, AvroParser.readFixedBytes(this._headerStream, AVRO_INIT_BYTES.length, {
-                  abortSignal: options.abortSignal
-                })];
-              case 1:
-                header = _d.sent();
-                if (!arraysEqual(header, AVRO_INIT_BYTES)) {
-                  throw new Error("Stream is not an Avro file.");
-                }
-                _a = this;
-                return [4, AvroParser.readMap(this._headerStream, AvroParser.readString, {
-                  abortSignal: options.abortSignal
-                })];
-              case 2:
-                _a._metadata = _d.sent();
-                codec = this._metadata[AVRO_CODEC_KEY];
-                if (!(codec == void 0 || codec == "null")) {
-                  throw new Error("Codecs are not supported");
-                }
-                _b = this;
-                return [4, AvroParser.readFixedBytes(this._headerStream, AVRO_SYNC_MARKER_SIZE, {
-                  abortSignal: options.abortSignal
-                })];
-              case 3:
-                _b._syncMarker = _d.sent();
-                schema = JSON.parse(this._metadata[AVRO_SCHEMA_KEY]);
-                this._itemType = AvroType.fromSchema(schema);
-                if (this._blockOffset == 0) {
-                  this._blockOffset = this._initialBlockOffset + this._dataStream.position;
-                }
-                _c = this;
-                return [4, AvroParser.readLong(this._dataStream, {
-                  abortSignal: options.abortSignal
-                })];
-              case 4:
-                _c._itemsRemainingInBlock = _d.sent();
-                return [4, AvroParser.readLong(this._dataStream, { abortSignal: options.abortSignal })];
-              case 5:
-                _d.sent();
-                this._initialized = true;
-                if (!(this._objectIndex && this._objectIndex > 0))
-                  return [3, 9];
-                i = 0;
-                _d.label = 6;
-              case 6:
-                if (!(i < this._objectIndex))
-                  return [3, 9];
-                return [4, this._itemType.read(this._dataStream, { abortSignal: options.abortSignal })];
-              case 7:
-                _d.sent();
-                this._itemsRemainingInBlock--;
-                _d.label = 8;
-              case 8:
-                i++;
-                return [3, 6];
-              case 9:
-                return [2];
-            }
-          });
+      get blockOffset() {
+        return this._blockOffset;
+      }
+      get objectIndex() {
+        return this._objectIndex;
+      }
+      async initialize(options = {}) {
+        const header = await AvroParser.readFixedBytes(this._headerStream, AVRO_INIT_BYTES.length, {
+          abortSignal: options.abortSignal
         });
-      };
-      AvroReader2.prototype.hasNext = function() {
-        return !this._initialized || this._itemsRemainingInBlock > 0;
-      };
-      AvroReader2.prototype.parseObjects = function(options) {
-        if (options === void 0) {
-          options = {};
+        if (!arraysEqual(header, AVRO_INIT_BYTES)) {
+          throw new Error("Stream is not an Avro file.");
         }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function parseObjects_1() {
-          var result, marker2, _a, err_1;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!!this._initialized)
-                  return [3, 2];
-                return [4, tslib.__await(this.initialize(options))];
-              case 1:
-                _b.sent();
-                _b.label = 2;
-              case 2:
-                if (!this.hasNext())
-                  return [3, 13];
-                return [4, tslib.__await(this._itemType.read(this._dataStream, {
+        this._metadata = await AvroParser.readMap(this._headerStream, AvroParser.readString, {
+          abortSignal: options.abortSignal
+        });
+        const codec = this._metadata[AVRO_CODEC_KEY];
+        if (!(codec == void 0 || codec == "null")) {
+          throw new Error("Codecs are not supported");
+        }
+        this._syncMarker = await AvroParser.readFixedBytes(this._headerStream, AVRO_SYNC_MARKER_SIZE, {
+          abortSignal: options.abortSignal
+        });
+        const schema = JSON.parse(this._metadata[AVRO_SCHEMA_KEY]);
+        this._itemType = AvroType.fromSchema(schema);
+        if (this._blockOffset == 0) {
+          this._blockOffset = this._initialBlockOffset + this._dataStream.position;
+        }
+        this._itemsRemainingInBlock = await AvroParser.readLong(this._dataStream, {
+          abortSignal: options.abortSignal
+        });
+        await AvroParser.readLong(this._dataStream, { abortSignal: options.abortSignal });
+        this._initialized = true;
+        if (this._objectIndex && this._objectIndex > 0) {
+          for (let i = 0; i < this._objectIndex; i++) {
+            await this._itemType.read(this._dataStream, { abortSignal: options.abortSignal });
+            this._itemsRemainingInBlock--;
+          }
+        }
+      }
+      hasNext() {
+        return !this._initialized || this._itemsRemainingInBlock > 0;
+      }
+      parseObjects(options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* parseObjects_1() {
+          if (!this._initialized) {
+            yield tslib.__await(this.initialize(options));
+          }
+          while (this.hasNext()) {
+            const result = yield tslib.__await(this._itemType.read(this._dataStream, {
+              abortSignal: options.abortSignal
+            }));
+            this._itemsRemainingInBlock--;
+            this._objectIndex++;
+            if (this._itemsRemainingInBlock == 0) {
+              const marker2 = yield tslib.__await(AvroParser.readFixedBytes(this._dataStream, AVRO_SYNC_MARKER_SIZE, {
+                abortSignal: options.abortSignal
+              }));
+              this._blockOffset = this._initialBlockOffset + this._dataStream.position;
+              this._objectIndex = 0;
+              if (!arraysEqual(this._syncMarker, marker2)) {
+                throw new Error("Stream is not a valid Avro file.");
+              }
+              try {
+                this._itemsRemainingInBlock = yield tslib.__await(AvroParser.readLong(this._dataStream, {
                   abortSignal: options.abortSignal
-                }))];
-              case 3:
-                result = _b.sent();
-                this._itemsRemainingInBlock--;
-                this._objectIndex++;
-                if (!(this._itemsRemainingInBlock == 0))
-                  return [3, 10];
-                return [4, tslib.__await(AvroParser.readFixedBytes(this._dataStream, AVRO_SYNC_MARKER_SIZE, {
-                  abortSignal: options.abortSignal
-                }))];
-              case 4:
-                marker2 = _b.sent();
-                this._blockOffset = this._initialBlockOffset + this._dataStream.position;
-                this._objectIndex = 0;
-                if (!arraysEqual(this._syncMarker, marker2)) {
-                  throw new Error("Stream is not a valid Avro file.");
-                }
-                _b.label = 5;
-              case 5:
-                _b.trys.push([5, 7, , 8]);
-                _a = this;
-                return [4, tslib.__await(AvroParser.readLong(this._dataStream, {
-                  abortSignal: options.abortSignal
-                }))];
-              case 6:
-                _a._itemsRemainingInBlock = _b.sent();
-                return [3, 8];
-              case 7:
-                err_1 = _b.sent();
+                }));
+              } catch (err) {
                 this._itemsRemainingInBlock = 0;
-                return [3, 8];
-              case 8:
-                if (!(this._itemsRemainingInBlock > 0))
-                  return [3, 10];
-                return [4, tslib.__await(AvroParser.readLong(this._dataStream, { abortSignal: options.abortSignal }))];
-              case 9:
-                _b.sent();
-                _b.label = 10;
-              case 10:
-                return [4, tslib.__await(result)];
-              case 11:
-                return [4, _b.sent()];
-              case 12:
-                _b.sent();
-                return [3, 2];
-              case 13:
-                return [2];
+              }
+              if (this._itemsRemainingInBlock > 0) {
+                yield tslib.__await(AvroParser.readLong(this._dataStream, { abortSignal: options.abortSignal }));
+              }
             }
-          });
+            yield yield tslib.__await(result);
+          }
         }, "parseObjects_1"));
-      };
-      return AvroReader2;
-    }();
-    var AvroReadable = function() {
-      function AvroReadable2() {
       }
-      __name(AvroReadable2, "AvroReadable");
-      return AvroReadable2;
-    }();
+    };
+    __name(AvroReader, "AvroReader");
+    var AvroReadable = class {
+    };
+    __name(AvroReadable, "AvroReadable");
     var ABORT_ERROR = new abortController.AbortError("Reading from the avro stream was aborted.");
-    var AvroReadableFromStream = function(_super) {
-      tslib.__extends(AvroReadableFromStream2, _super);
-      function AvroReadableFromStream2(readable) {
-        var _this = _super.call(this) || this;
-        _this._readable = readable;
-        _this._position = 0;
-        return _this;
+    var AvroReadableFromStream = class extends AvroReadable {
+      constructor(readable) {
+        super();
+        this._readable = readable;
+        this._position = 0;
       }
-      __name(AvroReadableFromStream2, "AvroReadableFromStream");
-      AvroReadableFromStream2.prototype.toUint8Array = function(data) {
+      toUint8Array(data) {
         if (typeof data === "string") {
           return Buffer.from(data);
         }
         return data;
-      };
-      Object.defineProperty(AvroReadableFromStream2.prototype, "position", {
-        get: function() {
-          return this._position;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      AvroReadableFromStream2.prototype.read = function(size, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var chunk;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            if ((_a = options.abortSignal) === null || _a === void 0 ? void 0 : _a.aborted) {
-              throw ABORT_ERROR;
-            }
-            if (size < 0) {
-              throw new Error("size parameter should be positive: " + size);
-            }
-            if (size === 0) {
-              return [2, new Uint8Array()];
-            }
-            if (!this._readable.readable) {
-              throw new Error("Stream no longer readable.");
-            }
-            chunk = this._readable.read(size);
-            if (chunk) {
-              this._position += chunk.length;
-              return [2, this.toUint8Array(chunk)];
-            } else {
-              return [2, new Promise(function(resolve2, reject) {
-                var cleanUp = /* @__PURE__ */ __name(function() {
-                  _this._readable.removeListener("readable", readableCallback);
-                  _this._readable.removeListener("error", rejectCallback);
-                  _this._readable.removeListener("end", rejectCallback);
-                  _this._readable.removeListener("close", rejectCallback);
-                  if (options.abortSignal) {
-                    options.abortSignal.removeEventListener("abort", abortHandler);
-                  }
-                }, "cleanUp");
-                var readableCallback = /* @__PURE__ */ __name(function() {
-                  var chunk2 = _this._readable.read(size);
-                  if (chunk2) {
-                    _this._position += chunk2.length;
-                    cleanUp();
-                    resolve2(_this.toUint8Array(chunk2));
-                  }
-                }, "readableCallback");
-                var rejectCallback = /* @__PURE__ */ __name(function() {
-                  cleanUp();
-                  reject();
-                }, "rejectCallback");
-                var abortHandler = /* @__PURE__ */ __name(function() {
-                  cleanUp();
-                  reject(ABORT_ERROR);
-                }, "abortHandler");
-                _this._readable.on("readable", readableCallback);
-                _this._readable.once("error", rejectCallback);
-                _this._readable.once("end", rejectCallback);
-                _this._readable.once("close", rejectCallback);
-                if (options.abortSignal) {
-                  options.abortSignal.addEventListener("abort", abortHandler);
-                }
-              })];
-            }
-          });
-        });
-      };
-      return AvroReadableFromStream2;
-    }(AvroReadable);
-    var BlobQuickQueryStream = function(_super) {
-      tslib.__extends(BlobQuickQueryStream2, _super);
-      function BlobQuickQueryStream2(source, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        var _this = _super.call(this) || this;
-        _this.avroPaused = true;
-        _this.source = source;
-        _this.onProgress = options.onProgress;
-        _this.onError = options.onError;
-        _this.avroReader = new AvroReader(new AvroReadableFromStream(_this.source));
-        _this.avroIter = _this.avroReader.parseObjects({ abortSignal: options.abortSignal });
-        return _this;
       }
-      __name(BlobQuickQueryStream2, "BlobQuickQueryStream");
-      BlobQuickQueryStream2.prototype._read = function() {
-        var _this = this;
-        if (this.avroPaused) {
-          this.readInternal().catch(function(err) {
-            _this.emit("error", err);
-          });
+      get position() {
+        return this._position;
+      }
+      async read(size, options = {}) {
+        var _a;
+        if ((_a = options.abortSignal) === null || _a === void 0 ? void 0 : _a.aborted) {
+          throw ABORT_ERROR;
         }
-      };
-      BlobQuickQueryStream2.prototype.readInternal = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var avroNext, obj, schema, data, bytesScanned, totalBytes, fatal, name_1, description, position;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                this.avroPaused = false;
-                _a.label = 1;
-              case 1:
-                return [4, this.avroIter.next()];
-              case 2:
-                avroNext = _a.sent();
-                if (avroNext.done) {
-                  return [3, 4];
-                }
-                obj = avroNext.value;
-                schema = obj.$schema;
-                if (typeof schema !== "string") {
-                  throw Error("Missing schema in avro record.");
-                }
-                switch (schema) {
-                  case "com.microsoft.azure.storage.queryBlobContents.resultData":
-                    data = obj.data;
-                    if (data instanceof Uint8Array === false) {
-                      throw Error("Invalid data in avro result record.");
-                    }
-                    if (!this.push(Buffer.from(data))) {
-                      this.avroPaused = true;
-                    }
-                    break;
-                  case "com.microsoft.azure.storage.queryBlobContents.progress":
-                    bytesScanned = obj.bytesScanned;
-                    if (typeof bytesScanned !== "number") {
-                      throw Error("Invalid bytesScanned in avro progress record.");
-                    }
-                    if (this.onProgress) {
-                      this.onProgress({ loadedBytes: bytesScanned });
-                    }
-                    break;
-                  case "com.microsoft.azure.storage.queryBlobContents.end":
-                    if (this.onProgress) {
-                      totalBytes = obj.totalBytes;
-                      if (typeof totalBytes !== "number") {
-                        throw Error("Invalid totalBytes in avro end record.");
-                      }
-                      this.onProgress({ loadedBytes: totalBytes });
-                    }
-                    this.push(null);
-                    break;
-                  case "com.microsoft.azure.storage.queryBlobContents.error":
-                    if (this.onError) {
-                      fatal = obj.fatal;
-                      if (typeof fatal !== "boolean") {
-                        throw Error("Invalid fatal in avro error record.");
-                      }
-                      name_1 = obj.name;
-                      if (typeof name_1 !== "string") {
-                        throw Error("Invalid name in avro error record.");
-                      }
-                      description = obj.description;
-                      if (typeof description !== "string") {
-                        throw Error("Invalid description in avro error record.");
-                      }
-                      position = obj.position;
-                      if (typeof position !== "number") {
-                        throw Error("Invalid position in avro error record.");
-                      }
-                      this.onError({
-                        position,
-                        name: name_1,
-                        isFatal: fatal,
-                        description
-                      });
-                    }
-                    break;
-                  default:
-                    throw Error("Unknown schema " + schema + " in avro progress record.");
-                }
-                _a.label = 3;
-              case 3:
-                if (!avroNext.done && !this.avroPaused)
-                  return [3, 1];
-                _a.label = 4;
-              case 4:
-                return [2];
+        if (size < 0) {
+          throw new Error(`size parameter should be positive: ${size}`);
+        }
+        if (size === 0) {
+          return new Uint8Array();
+        }
+        if (!this._readable.readable) {
+          throw new Error("Stream no longer readable.");
+        }
+        const chunk = this._readable.read(size);
+        if (chunk) {
+          this._position += chunk.length;
+          return this.toUint8Array(chunk);
+        } else {
+          return new Promise((resolve2, reject) => {
+            const cleanUp = /* @__PURE__ */ __name(() => {
+              this._readable.removeListener("readable", readableCallback);
+              this._readable.removeListener("error", rejectCallback);
+              this._readable.removeListener("end", rejectCallback);
+              this._readable.removeListener("close", rejectCallback);
+              if (options.abortSignal) {
+                options.abortSignal.removeEventListener("abort", abortHandler);
+              }
+            }, "cleanUp");
+            const readableCallback = /* @__PURE__ */ __name(() => {
+              const chunk2 = this._readable.read(size);
+              if (chunk2) {
+                this._position += chunk2.length;
+                cleanUp();
+                resolve2(this.toUint8Array(chunk2));
+              }
+            }, "readableCallback");
+            const rejectCallback = /* @__PURE__ */ __name(() => {
+              cleanUp();
+              reject();
+            }, "rejectCallback");
+            const abortHandler = /* @__PURE__ */ __name(() => {
+              cleanUp();
+              reject(ABORT_ERROR);
+            }, "abortHandler");
+            this._readable.on("readable", readableCallback);
+            this._readable.once("error", rejectCallback);
+            this._readable.once("end", rejectCallback);
+            this._readable.once("close", rejectCallback);
+            if (options.abortSignal) {
+              options.abortSignal.addEventListener("abort", abortHandler);
             }
           });
-        });
-      };
-      return BlobQuickQueryStream2;
-    }(stream.Readable);
-    var BlobQueryResponse = function() {
-      function BlobQueryResponse2(originalResponse, options) {
-        if (options === void 0) {
-          options = {};
         }
+      }
+    };
+    __name(AvroReadableFromStream, "AvroReadableFromStream");
+    var BlobQuickQueryStream = class extends stream.Readable {
+      constructor(source, options = {}) {
+        super();
+        this.avroPaused = true;
+        this.source = source;
+        this.onProgress = options.onProgress;
+        this.onError = options.onError;
+        this.avroReader = new AvroReader(new AvroReadableFromStream(this.source));
+        this.avroIter = this.avroReader.parseObjects({ abortSignal: options.abortSignal });
+      }
+      _read() {
+        if (this.avroPaused) {
+          this.readInternal().catch((err) => {
+            this.emit("error", err);
+          });
+        }
+      }
+      async readInternal() {
+        this.avroPaused = false;
+        let avroNext;
+        do {
+          avroNext = await this.avroIter.next();
+          if (avroNext.done) {
+            break;
+          }
+          const obj = avroNext.value;
+          const schema = obj.$schema;
+          if (typeof schema !== "string") {
+            throw Error("Missing schema in avro record.");
+          }
+          switch (schema) {
+            case "com.microsoft.azure.storage.queryBlobContents.resultData":
+              const data = obj.data;
+              if (data instanceof Uint8Array === false) {
+                throw Error("Invalid data in avro result record.");
+              }
+              if (!this.push(Buffer.from(data))) {
+                this.avroPaused = true;
+              }
+              break;
+            case "com.microsoft.azure.storage.queryBlobContents.progress":
+              const bytesScanned = obj.bytesScanned;
+              if (typeof bytesScanned !== "number") {
+                throw Error("Invalid bytesScanned in avro progress record.");
+              }
+              if (this.onProgress) {
+                this.onProgress({ loadedBytes: bytesScanned });
+              }
+              break;
+            case "com.microsoft.azure.storage.queryBlobContents.end":
+              if (this.onProgress) {
+                const totalBytes = obj.totalBytes;
+                if (typeof totalBytes !== "number") {
+                  throw Error("Invalid totalBytes in avro end record.");
+                }
+                this.onProgress({ loadedBytes: totalBytes });
+              }
+              this.push(null);
+              break;
+            case "com.microsoft.azure.storage.queryBlobContents.error":
+              if (this.onError) {
+                const fatal = obj.fatal;
+                if (typeof fatal !== "boolean") {
+                  throw Error("Invalid fatal in avro error record.");
+                }
+                const name = obj.name;
+                if (typeof name !== "string") {
+                  throw Error("Invalid name in avro error record.");
+                }
+                const description = obj.description;
+                if (typeof description !== "string") {
+                  throw Error("Invalid description in avro error record.");
+                }
+                const position = obj.position;
+                if (typeof position !== "number") {
+                  throw Error("Invalid position in avro error record.");
+                }
+                this.onError({
+                  position,
+                  name,
+                  isFatal: fatal,
+                  description
+                });
+              }
+              break;
+            default:
+              throw Error(`Unknown schema ${schema} in avro progress record.`);
+          }
+        } while (!avroNext.done && !this.avroPaused);
+      }
+    };
+    __name(BlobQuickQueryStream, "BlobQuickQueryStream");
+    var BlobQueryResponse = class {
+      constructor(originalResponse, options = {}) {
         this.originalResponse = originalResponse;
         this.blobDownloadStream = new BlobQuickQueryStream(this.originalResponse.readableStreamBody, options);
       }
-      __name(BlobQueryResponse2, "BlobQueryResponse");
-      Object.defineProperty(BlobQueryResponse2.prototype, "acceptRanges", {
-        get: function() {
-          return this.originalResponse.acceptRanges;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "cacheControl", {
-        get: function() {
-          return this.originalResponse.cacheControl;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentDisposition", {
-        get: function() {
-          return this.originalResponse.contentDisposition;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentEncoding", {
-        get: function() {
-          return this.originalResponse.contentEncoding;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentLanguage", {
-        get: function() {
-          return this.originalResponse.contentLanguage;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "blobSequenceNumber", {
-        get: function() {
-          return this.originalResponse.blobSequenceNumber;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "blobType", {
-        get: function() {
-          return this.originalResponse.blobType;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentLength", {
-        get: function() {
-          return this.originalResponse.contentLength;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentMD5", {
-        get: function() {
-          return this.originalResponse.contentMD5;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentRange", {
-        get: function() {
-          return this.originalResponse.contentRange;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentType", {
-        get: function() {
-          return this.originalResponse.contentType;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copyCompletedOn", {
-        get: function() {
-          return void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copyId", {
-        get: function() {
-          return this.originalResponse.copyId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copyProgress", {
-        get: function() {
-          return this.originalResponse.copyProgress;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copySource", {
-        get: function() {
-          return this.originalResponse.copySource;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copyStatus", {
-        get: function() {
-          return this.originalResponse.copyStatus;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "copyStatusDescription", {
-        get: function() {
-          return this.originalResponse.copyStatusDescription;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "leaseDuration", {
-        get: function() {
-          return this.originalResponse.leaseDuration;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "leaseState", {
-        get: function() {
-          return this.originalResponse.leaseState;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "leaseStatus", {
-        get: function() {
-          return this.originalResponse.leaseStatus;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "date", {
-        get: function() {
-          return this.originalResponse.date;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "blobCommittedBlockCount", {
-        get: function() {
-          return this.originalResponse.blobCommittedBlockCount;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "etag", {
-        get: function() {
-          return this.originalResponse.etag;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "errorCode", {
-        get: function() {
-          return this.originalResponse.errorCode;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "isServerEncrypted", {
-        get: function() {
-          return this.originalResponse.isServerEncrypted;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "blobContentMD5", {
-        get: function() {
-          return this.originalResponse.blobContentMD5;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "lastModified", {
-        get: function() {
-          return this.originalResponse.lastModified;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "metadata", {
-        get: function() {
-          return this.originalResponse.metadata;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "requestId", {
-        get: function() {
-          return this.originalResponse.requestId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "clientRequestId", {
-        get: function() {
-          return this.originalResponse.clientRequestId;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "version", {
-        get: function() {
-          return this.originalResponse.version;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "encryptionKeySha256", {
-        get: function() {
-          return this.originalResponse.encryptionKeySha256;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "contentCrc64", {
-        get: function() {
-          return this.originalResponse.contentCrc64;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "blobBody", {
-        get: function() {
-          return void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "readableStreamBody", {
-        get: function() {
-          return coreHttp.isNode ? this.blobDownloadStream : void 0;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobQueryResponse2.prototype, "_response", {
-        get: function() {
-          return this.originalResponse._response;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      return BlobQueryResponse2;
-    }();
+      get acceptRanges() {
+        return this.originalResponse.acceptRanges;
+      }
+      get cacheControl() {
+        return this.originalResponse.cacheControl;
+      }
+      get contentDisposition() {
+        return this.originalResponse.contentDisposition;
+      }
+      get contentEncoding() {
+        return this.originalResponse.contentEncoding;
+      }
+      get contentLanguage() {
+        return this.originalResponse.contentLanguage;
+      }
+      get blobSequenceNumber() {
+        return this.originalResponse.blobSequenceNumber;
+      }
+      get blobType() {
+        return this.originalResponse.blobType;
+      }
+      get contentLength() {
+        return this.originalResponse.contentLength;
+      }
+      get contentMD5() {
+        return this.originalResponse.contentMD5;
+      }
+      get contentRange() {
+        return this.originalResponse.contentRange;
+      }
+      get contentType() {
+        return this.originalResponse.contentType;
+      }
+      get copyCompletedOn() {
+        return void 0;
+      }
+      get copyId() {
+        return this.originalResponse.copyId;
+      }
+      get copyProgress() {
+        return this.originalResponse.copyProgress;
+      }
+      get copySource() {
+        return this.originalResponse.copySource;
+      }
+      get copyStatus() {
+        return this.originalResponse.copyStatus;
+      }
+      get copyStatusDescription() {
+        return this.originalResponse.copyStatusDescription;
+      }
+      get leaseDuration() {
+        return this.originalResponse.leaseDuration;
+      }
+      get leaseState() {
+        return this.originalResponse.leaseState;
+      }
+      get leaseStatus() {
+        return this.originalResponse.leaseStatus;
+      }
+      get date() {
+        return this.originalResponse.date;
+      }
+      get blobCommittedBlockCount() {
+        return this.originalResponse.blobCommittedBlockCount;
+      }
+      get etag() {
+        return this.originalResponse.etag;
+      }
+      get errorCode() {
+        return this.originalResponse.errorCode;
+      }
+      get isServerEncrypted() {
+        return this.originalResponse.isServerEncrypted;
+      }
+      get blobContentMD5() {
+        return this.originalResponse.blobContentMD5;
+      }
+      get lastModified() {
+        return this.originalResponse.lastModified;
+      }
+      get metadata() {
+        return this.originalResponse.metadata;
+      }
+      get requestId() {
+        return this.originalResponse.requestId;
+      }
+      get clientRequestId() {
+        return this.originalResponse.clientRequestId;
+      }
+      get version() {
+        return this.originalResponse.version;
+      }
+      get encryptionKeySha256() {
+        return this.originalResponse.encryptionKeySha256;
+      }
+      get contentCrc64() {
+        return this.originalResponse.contentCrc64;
+      }
+      get blobBody() {
+        return void 0;
+      }
+      get readableStreamBody() {
+        return coreHttp.isNode ? this.blobDownloadStream : void 0;
+      }
+      get _response() {
+        return this.originalResponse._response;
+      }
+    };
+    __name(BlobQueryResponse, "BlobQueryResponse");
     (function(BlockBlobTier) {
       BlockBlobTier["Hot"] = "Hot";
       BlockBlobTier["Cool"] = "Cool";
@@ -57209,144 +55728,100 @@ var require_dist9 = __commonJS({
     }
     __name(ensureCpkIfSpecified, "ensureCpkIfSpecified");
     function rangeResponseFromModel(response) {
-      var pageRange = (response._response.parsedBody.pageRange || []).map(function(x) {
-        return {
-          offset: x.start,
-          count: x.end - x.start
-        };
-      });
-      var clearRange = (response._response.parsedBody.clearRange || []).map(function(x) {
-        return {
-          offset: x.start,
-          count: x.end - x.start
-        };
-      });
-      return tslib.__assign(tslib.__assign({}, response), {
+      const pageRange = (response._response.parsedBody.pageRange || []).map((x) => ({
+        offset: x.start,
+        count: x.end - x.start
+      }));
+      const clearRange = (response._response.parsedBody.clearRange || []).map((x) => ({
+        offset: x.start,
+        count: x.end - x.start
+      }));
+      return Object.assign(Object.assign({}, response), {
         pageRange,
         clearRange,
-        _response: tslib.__assign(tslib.__assign({}, response._response), { parsedBody: {
+        _response: Object.assign(Object.assign({}, response._response), { parsedBody: {
           pageRange,
           clearRange
         } })
       });
     }
     __name(rangeResponseFromModel, "rangeResponseFromModel");
-    var BlobBeginCopyFromUrlPoller = function(_super) {
-      tslib.__extends(BlobBeginCopyFromUrlPoller2, _super);
-      function BlobBeginCopyFromUrlPoller2(options) {
-        var _this = this;
-        var blobClient = options.blobClient, copySource2 = options.copySource, _a = options.intervalInMs, intervalInMs = _a === void 0 ? 15e3 : _a, onProgress = options.onProgress, resumeFrom = options.resumeFrom, startCopyFromURLOptions = options.startCopyFromURLOptions;
-        var state;
+    var BlobBeginCopyFromUrlPoller = class extends coreLro.Poller {
+      constructor(options) {
+        const { blobClient, copySource: copySource2, intervalInMs = 15e3, onProgress, resumeFrom, startCopyFromURLOptions } = options;
+        let state;
         if (resumeFrom) {
           state = JSON.parse(resumeFrom).state;
         }
-        var operation = makeBlobBeginCopyFromURLPollOperation(tslib.__assign(tslib.__assign({}, state), {
+        const operation = makeBlobBeginCopyFromURLPollOperation(Object.assign(Object.assign({}, state), {
           blobClient,
           copySource: copySource2,
           startCopyFromURLOptions
         }));
-        _this = _super.call(this, operation) || this;
+        super(operation);
         if (typeof onProgress === "function") {
-          _this.onProgress(onProgress);
+          this.onProgress(onProgress);
         }
-        _this.intervalInMs = intervalInMs;
-        return _this;
+        this.intervalInMs = intervalInMs;
       }
-      __name(BlobBeginCopyFromUrlPoller2, "BlobBeginCopyFromUrlPoller");
-      BlobBeginCopyFromUrlPoller2.prototype.delay = function() {
+      delay() {
         return coreHttp.delay(this.intervalInMs);
-      };
-      return BlobBeginCopyFromUrlPoller2;
-    }(coreLro.Poller);
-    var cancel = /* @__PURE__ */ __name(function cancel2(options) {
-      if (options === void 0) {
-        options = {};
       }
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        var state, copyId2;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              state = this.state;
-              copyId2 = state.copyId;
-              if (state.isCompleted) {
-                return [2, makeBlobBeginCopyFromURLPollOperation(state)];
-              }
-              if (!copyId2) {
-                state.isCancelled = true;
-                return [2, makeBlobBeginCopyFromURLPollOperation(state)];
-              }
-              return [4, state.blobClient.abortCopyFromURL(copyId2, {
-                abortSignal: options.abortSignal
-              })];
-            case 1:
-              _a.sent();
-              state.isCancelled = true;
-              return [2, makeBlobBeginCopyFromURLPollOperation(state)];
-          }
-        });
+    };
+    __name(BlobBeginCopyFromUrlPoller, "BlobBeginCopyFromUrlPoller");
+    var cancel = /* @__PURE__ */ __name(async function cancel2(options = {}) {
+      const state = this.state;
+      const { copyId: copyId2 } = state;
+      if (state.isCompleted) {
+        return makeBlobBeginCopyFromURLPollOperation(state);
+      }
+      if (!copyId2) {
+        state.isCancelled = true;
+        return makeBlobBeginCopyFromURLPollOperation(state);
+      }
+      await state.blobClient.abortCopyFromURL(copyId2, {
+        abortSignal: options.abortSignal
       });
+      state.isCancelled = true;
+      return makeBlobBeginCopyFromURLPollOperation(state);
     }, "cancel");
-    var update = /* @__PURE__ */ __name(function update2(options) {
-      if (options === void 0) {
-        options = {};
-      }
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        var state, blobClient, copySource2, startCopyFromURLOptions, result, result, copyStatus, copyProgress, prevCopyProgress, err_1;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              state = this.state;
-              blobClient = state.blobClient, copySource2 = state.copySource, startCopyFromURLOptions = state.startCopyFromURLOptions;
-              if (!!state.isStarted)
-                return [3, 2];
-              state.isStarted = true;
-              return [4, blobClient.startCopyFromURL(copySource2, startCopyFromURLOptions)];
-            case 1:
-              result = _a.sent();
-              state.copyId = result.copyId;
-              if (result.copyStatus === "success") {
-                state.result = result;
-                state.isCompleted = true;
-              }
-              return [3, 6];
-            case 2:
-              if (!!state.isCompleted)
-                return [3, 6];
-              _a.label = 3;
-            case 3:
-              _a.trys.push([3, 5, , 6]);
-              return [4, state.blobClient.getProperties({ abortSignal: options.abortSignal })];
-            case 4:
-              result = _a.sent();
-              copyStatus = result.copyStatus, copyProgress = result.copyProgress;
-              prevCopyProgress = state.copyProgress;
-              if (copyProgress) {
-                state.copyProgress = copyProgress;
-              }
-              if (copyStatus === "pending" && copyProgress !== prevCopyProgress && typeof options.fireProgress === "function") {
-                options.fireProgress(state);
-              } else if (copyStatus === "success") {
-                state.result = result;
-                state.isCompleted = true;
-              } else if (copyStatus === "failed") {
-                state.error = new Error('Blob copy failed with reason: "' + (result.copyStatusDescription || "unknown") + '"');
-                state.isCompleted = true;
-              }
-              return [3, 6];
-            case 5:
-              err_1 = _a.sent();
-              state.error = err_1;
-              state.isCompleted = true;
-              return [3, 6];
-            case 6:
-              return [2, makeBlobBeginCopyFromURLPollOperation(state)];
+    var update = /* @__PURE__ */ __name(async function update2(options = {}) {
+      const state = this.state;
+      const { blobClient, copySource: copySource2, startCopyFromURLOptions } = state;
+      if (!state.isStarted) {
+        state.isStarted = true;
+        const result = await blobClient.startCopyFromURL(copySource2, startCopyFromURLOptions);
+        state.copyId = result.copyId;
+        if (result.copyStatus === "success") {
+          state.result = result;
+          state.isCompleted = true;
+        }
+      } else if (!state.isCompleted) {
+        try {
+          const result = await state.blobClient.getProperties({ abortSignal: options.abortSignal });
+          const { copyStatus, copyProgress } = result;
+          const prevCopyProgress = state.copyProgress;
+          if (copyProgress) {
+            state.copyProgress = copyProgress;
           }
-        });
-      });
+          if (copyStatus === "pending" && copyProgress !== prevCopyProgress && typeof options.fireProgress === "function") {
+            options.fireProgress(state);
+          } else if (copyStatus === "success") {
+            state.result = result;
+            state.isCompleted = true;
+          } else if (copyStatus === "failed") {
+            state.error = new Error(`Blob copy failed with reason: "${result.copyStatusDescription || "unknown"}"`);
+            state.isCompleted = true;
+          }
+        } catch (err) {
+          state.error = err;
+          state.isCompleted = true;
+        }
+      }
+      return makeBlobBeginCopyFromURLPollOperation(state);
     }, "update");
     var toString = /* @__PURE__ */ __name(function toString2() {
-      return JSON.stringify({ state: this.state }, function(key, value) {
+      return JSON.stringify({ state: this.state }, (key, value) => {
         if (key === "blobClient") {
           return void 0;
         }
@@ -57355,7 +55830,7 @@ var require_dist9 = __commonJS({
     }, "toString");
     function makeBlobBeginCopyFromURLPollOperation(state) {
       return {
-        state: tslib.__assign({}, state),
+        state: Object.assign({}, state),
         cancel,
         toString,
         update
@@ -57364,12 +55839,12 @@ var require_dist9 = __commonJS({
     __name(makeBlobBeginCopyFromURLPollOperation, "makeBlobBeginCopyFromURLPollOperation");
     function rangeToString(iRange) {
       if (iRange.offset < 0) {
-        throw new RangeError("Range.offset cannot be smaller than 0.");
+        throw new RangeError(`Range.offset cannot be smaller than 0.`);
       }
       if (iRange.count && iRange.count <= 0) {
-        throw new RangeError("Range.count must be larger than 0. Leave it undefined if you want a range from offset to the end.");
+        throw new RangeError(`Range.count must be larger than 0. Leave it undefined if you want a range from offset to the end.`);
       }
-      return iRange.count ? "bytes=" + iRange.offset + "-" + (iRange.offset + iRange.count - 1) : "bytes=" + iRange.offset + "-";
+      return iRange.count ? `bytes=${iRange.offset}-${iRange.offset + iRange.count - 1}` : `bytes=${iRange.offset}-`;
     }
     __name(rangeToString, "rangeToString");
     var BatchStates;
@@ -57377,11 +55852,8 @@ var require_dist9 = __commonJS({
       BatchStates2[BatchStates2["Good"] = 0] = "Good";
       BatchStates2[BatchStates2["Error"] = 1] = "Error";
     })(BatchStates || (BatchStates = {}));
-    var Batch = function() {
-      function Batch2(concurrency) {
-        if (concurrency === void 0) {
-          concurrency = 5;
-        }
+    var Batch = class {
+      constructor(concurrency = 5) {
         this.actives = 0;
         this.completed = 0;
         this.offset = 0;
@@ -57393,60 +55865,39 @@ var require_dist9 = __commonJS({
         this.concurrency = concurrency;
         this.emitter = new events.EventEmitter();
       }
-      __name(Batch2, "Batch");
-      Batch2.prototype.addOperation = function(operation) {
-        var _this = this;
-        this.operations.push(function() {
-          return tslib.__awaiter(_this, void 0, void 0, function() {
-            var error_1;
-            return tslib.__generator(this, function(_a) {
-              switch (_a.label) {
-                case 0:
-                  _a.trys.push([0, 2, , 3]);
-                  this.actives++;
-                  return [4, operation()];
-                case 1:
-                  _a.sent();
-                  this.actives--;
-                  this.completed++;
-                  this.parallelExecute();
-                  return [3, 3];
-                case 2:
-                  error_1 = _a.sent();
-                  this.emitter.emit("error", error_1);
-                  return [3, 3];
-                case 3:
-                  return [2];
-              }
-            });
-          });
-        });
-      };
-      Batch2.prototype.do = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            if (this.operations.length === 0) {
-              return [2, Promise.resolve()];
-            }
+      addOperation(operation) {
+        this.operations.push(async () => {
+          try {
+            this.actives++;
+            await operation();
+            this.actives--;
+            this.completed++;
             this.parallelExecute();
-            return [2, new Promise(function(resolve2, reject) {
-              _this.emitter.on("finish", resolve2);
-              _this.emitter.on("error", function(error) {
-                _this.state = BatchStates.Error;
-                reject(error);
-              });
-            })];
+          } catch (error) {
+            this.emitter.emit("error", error);
+          }
+        });
+      }
+      async do() {
+        if (this.operations.length === 0) {
+          return Promise.resolve();
+        }
+        this.parallelExecute();
+        return new Promise((resolve2, reject) => {
+          this.emitter.on("finish", resolve2);
+          this.emitter.on("error", (error) => {
+            this.state = BatchStates.Error;
+            reject(error);
           });
         });
-      };
-      Batch2.prototype.nextOperation = function() {
+      }
+      nextOperation() {
         if (this.offset < this.operations.length) {
           return this.operations[this.offset++];
         }
         return null;
-      };
-      Batch2.prototype.parallelExecute = function() {
+      }
+      parallelExecute() {
         if (this.state === BatchStates.Error) {
           return;
         }
@@ -57455,58 +55906,54 @@ var require_dist9 = __commonJS({
           return;
         }
         while (this.actives < this.concurrency) {
-          var operation = this.nextOperation();
+          const operation = this.nextOperation();
           if (operation) {
             operation();
           } else {
             return;
           }
         }
-      };
-      return Batch2;
-    }();
-    var BuffersStream = function(_super) {
-      tslib.__extends(BuffersStream2, _super);
-      function BuffersStream2(buffers, byteLength, options) {
-        var _this = _super.call(this, options) || this;
-        _this.buffers = buffers;
-        _this.byteLength = byteLength;
-        _this.byteOffsetInCurrentBuffer = 0;
-        _this.bufferIndex = 0;
-        _this.pushedBytesLength = 0;
-        var buffersLength = 0;
-        for (var _i = 0, _a = _this.buffers; _i < _a.length; _i++) {
-          var buf = _a[_i];
+      }
+    };
+    __name(Batch, "Batch");
+    var BuffersStream = class extends stream.Readable {
+      constructor(buffers, byteLength, options) {
+        super(options);
+        this.buffers = buffers;
+        this.byteLength = byteLength;
+        this.byteOffsetInCurrentBuffer = 0;
+        this.bufferIndex = 0;
+        this.pushedBytesLength = 0;
+        let buffersLength = 0;
+        for (const buf of this.buffers) {
           buffersLength += buf.byteLength;
         }
-        if (buffersLength < _this.byteLength) {
+        if (buffersLength < this.byteLength) {
           throw new Error("Data size shouldn't be larger than the total length of buffers.");
         }
-        return _this;
       }
-      __name(BuffersStream2, "BuffersStream");
-      BuffersStream2.prototype._read = function(size) {
+      _read(size) {
         if (this.pushedBytesLength >= this.byteLength) {
           this.push(null);
         }
         if (!size) {
           size = this.readableHighWaterMark;
         }
-        var outBuffers = [];
-        var i = 0;
+        const outBuffers = [];
+        let i = 0;
         while (i < size && this.pushedBytesLength < this.byteLength) {
-          var remainingDataInAllBuffers = this.byteLength - this.pushedBytesLength;
-          var remainingCapacityInThisBuffer = this.buffers[this.bufferIndex].byteLength - this.byteOffsetInCurrentBuffer;
-          var remaining = Math.min(remainingCapacityInThisBuffer, remainingDataInAllBuffers);
+          const remainingDataInAllBuffers = this.byteLength - this.pushedBytesLength;
+          const remainingCapacityInThisBuffer = this.buffers[this.bufferIndex].byteLength - this.byteOffsetInCurrentBuffer;
+          const remaining = Math.min(remainingCapacityInThisBuffer, remainingDataInAllBuffers);
           if (remaining > size - i) {
-            var end = this.byteOffsetInCurrentBuffer + size - i;
+            const end = this.byteOffsetInCurrentBuffer + size - i;
             outBuffers.push(this.buffers[this.bufferIndex].slice(this.byteOffsetInCurrentBuffer, end));
             this.pushedBytesLength += size - i;
             this.byteOffsetInCurrentBuffer = end;
             i = size;
             break;
           } else {
-            var end = this.byteOffsetInCurrentBuffer + remaining;
+            const end = this.byteOffsetInCurrentBuffer + remaining;
             outBuffers.push(this.buffers[this.bufferIndex].slice(this.byteOffsetInCurrentBuffer, end));
             if (remaining === remainingCapacityInThisBuffer) {
               this.byteOffsetInCurrentBuffer = 0;
@@ -57523,18 +55970,18 @@ var require_dist9 = __commonJS({
         } else if (outBuffers.length === 1) {
           this.push(outBuffers[0]);
         }
-      };
-      return BuffersStream2;
-    }(stream.Readable);
+      }
+    };
+    __name(BuffersStream, "BuffersStream");
     var maxBufferLength = require("buffer").constants.MAX_LENGTH;
-    var PooledBuffer = function() {
-      function PooledBuffer2(capacity, buffers, totalLength) {
+    var PooledBuffer = class {
+      constructor(capacity, buffers, totalLength) {
         this.buffers = [];
         this.capacity = capacity;
         this._size = 0;
-        var bufferNum = Math.ceil(capacity / maxBufferLength);
-        for (var i = 0; i < bufferNum; i++) {
-          var len = i === bufferNum - 1 ? capacity % maxBufferLength : maxBufferLength;
+        const bufferNum = Math.ceil(capacity / maxBufferLength);
+        for (let i = 0; i < bufferNum; i++) {
+          let len = i === bufferNum - 1 ? capacity % maxBufferLength : maxBufferLength;
           if (len === 0) {
             len = maxBufferLength;
           }
@@ -57544,21 +55991,16 @@ var require_dist9 = __commonJS({
           this.fill(buffers, totalLength);
         }
       }
-      __name(PooledBuffer2, "PooledBuffer");
-      Object.defineProperty(PooledBuffer2.prototype, "size", {
-        get: function() {
-          return this._size;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      PooledBuffer2.prototype.fill = function(buffers, totalLength) {
+      get size() {
+        return this._size;
+      }
+      fill(buffers, totalLength) {
         this._size = Math.min(this.capacity, totalLength);
-        var i = 0, j = 0, targetOffset = 0, sourceOffset = 0, totalCopiedNum = 0;
+        let i = 0, j = 0, targetOffset = 0, sourceOffset = 0, totalCopiedNum = 0;
         while (totalCopiedNum < this._size) {
-          var source = buffers[i];
-          var target = this.buffers[j];
-          var copiedNum = source.copy(target, targetOffset, sourceOffset);
+          const source = buffers[i];
+          const target = this.buffers[j];
+          const copiedNum = source.copy(target, targetOffset, sourceOffset);
           totalCopiedNum += copiedNum;
           sourceOffset += copiedNum;
           targetOffset += copiedNum;
@@ -57575,14 +56017,14 @@ var require_dist9 = __commonJS({
         if (buffers.length > 0) {
           buffers[0] = buffers[0].slice(sourceOffset);
         }
-      };
-      PooledBuffer2.prototype.getReadableStream = function() {
+      }
+      getReadableStream() {
         return new BuffersStream(this.buffers, this.size);
-      };
-      return PooledBuffer2;
-    }();
-    var BufferScheduler = function() {
-      function BufferScheduler2(readable, bufferSize, maxBuffers, outgoingHandler, concurrency, encoding) {
+      }
+    };
+    __name(PooledBuffer, "PooledBuffer");
+    var BufferScheduler = class {
+      constructor(readable, bufferSize, maxBuffers, outgoingHandler, concurrency, encoding) {
         this.emitter = new events.EventEmitter();
         this.offset = 0;
         this.isStreamEnd = false;
@@ -57594,13 +56036,13 @@ var require_dist9 = __commonJS({
         this.incoming = [];
         this.outgoing = [];
         if (bufferSize <= 0) {
-          throw new RangeError("bufferSize must be larger than 0, current is " + bufferSize);
+          throw new RangeError(`bufferSize must be larger than 0, current is ${bufferSize}`);
         }
         if (maxBuffers <= 0) {
-          throw new RangeError("maxBuffers must be larger than 0, current is " + maxBuffers);
+          throw new RangeError(`maxBuffers must be larger than 0, current is ${maxBuffers}`);
         }
         if (concurrency <= 0) {
-          throw new RangeError("concurrency must be larger than 0, current is " + concurrency);
+          throw new RangeError(`concurrency must be larger than 0, current is ${concurrency}`);
         }
         this.bufferSize = bufferSize;
         this.maxBuffers = maxBuffers;
@@ -57609,58 +56051,50 @@ var require_dist9 = __commonJS({
         this.concurrency = concurrency;
         this.encoding = encoding;
       }
-      __name(BufferScheduler2, "BufferScheduler");
-      BufferScheduler2.prototype.do = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            return [2, new Promise(function(resolve2, reject) {
-              _this.readable.on("data", function(data) {
-                data = typeof data === "string" ? Buffer.from(data, _this.encoding) : data;
-                _this.appendUnresolvedData(data);
-                if (!_this.resolveData()) {
-                  _this.readable.pause();
-                }
-              });
-              _this.readable.on("error", function(err) {
-                _this.emitter.emit("error", err);
-              });
-              _this.readable.on("end", function() {
-                _this.isStreamEnd = true;
-                _this.emitter.emit("checkEnd");
-              });
-              _this.emitter.on("error", function(err) {
-                _this.isError = true;
-                _this.readable.pause();
-                reject(err);
-              });
-              _this.emitter.on("checkEnd", function() {
-                if (_this.outgoing.length > 0) {
-                  _this.triggerOutgoingHandlers();
-                  return;
-                }
-                if (_this.isStreamEnd && _this.executingOutgoingHandlers === 0) {
-                  if (_this.unresolvedLength > 0 && _this.unresolvedLength < _this.bufferSize) {
-                    var buffer_1 = _this.shiftBufferFromUnresolvedDataArray();
-                    _this.outgoingHandler(function() {
-                      return buffer_1.getReadableStream();
-                    }, buffer_1.size, _this.offset).then(resolve2).catch(reject);
-                  } else if (_this.unresolvedLength >= _this.bufferSize) {
-                    return;
-                  } else {
-                    resolve2();
-                  }
-                }
-              });
-            })];
+      async do() {
+        return new Promise((resolve2, reject) => {
+          this.readable.on("data", (data) => {
+            data = typeof data === "string" ? Buffer.from(data, this.encoding) : data;
+            this.appendUnresolvedData(data);
+            if (!this.resolveData()) {
+              this.readable.pause();
+            }
+          });
+          this.readable.on("error", (err) => {
+            this.emitter.emit("error", err);
+          });
+          this.readable.on("end", () => {
+            this.isStreamEnd = true;
+            this.emitter.emit("checkEnd");
+          });
+          this.emitter.on("error", (err) => {
+            this.isError = true;
+            this.readable.pause();
+            reject(err);
+          });
+          this.emitter.on("checkEnd", () => {
+            if (this.outgoing.length > 0) {
+              this.triggerOutgoingHandlers();
+              return;
+            }
+            if (this.isStreamEnd && this.executingOutgoingHandlers === 0) {
+              if (this.unresolvedLength > 0 && this.unresolvedLength < this.bufferSize) {
+                const buffer = this.shiftBufferFromUnresolvedDataArray();
+                this.outgoingHandler(() => buffer.getReadableStream(), buffer.size, this.offset).then(resolve2).catch(reject);
+              } else if (this.unresolvedLength >= this.bufferSize) {
+                return;
+              } else {
+                resolve2();
+              }
+            }
           });
         });
-      };
-      BufferScheduler2.prototype.appendUnresolvedData = function(data) {
+      }
+      appendUnresolvedData(data) {
         this.unresolvedDataArray.push(data);
         this.unresolvedLength += data.length;
-      };
-      BufferScheduler2.prototype.shiftBufferFromUnresolvedDataArray = function(buffer) {
+      }
+      shiftBufferFromUnresolvedDataArray(buffer) {
         if (!buffer) {
           buffer = new PooledBuffer(this.bufferSize, this.unresolvedDataArray, this.unresolvedLength);
         } else {
@@ -57668,10 +56102,10 @@ var require_dist9 = __commonJS({
         }
         this.unresolvedLength -= buffer.size;
         return buffer;
-      };
-      BufferScheduler2.prototype.resolveData = function() {
+      }
+      resolveData() {
         while (this.unresolvedLength >= this.bufferSize) {
-          var buffer = void 0;
+          let buffer;
           if (this.incoming.length > 0) {
             buffer = this.incoming.shift();
             this.shiftBufferFromUnresolvedDataArray(buffer);
@@ -57687,157 +56121,118 @@ var require_dist9 = __commonJS({
           this.triggerOutgoingHandlers();
         }
         return true;
-      };
-      BufferScheduler2.prototype.triggerOutgoingHandlers = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var buffer;
-          return tslib.__generator(this, function(_a) {
-            do {
-              if (this.executingOutgoingHandlers >= this.concurrency) {
-                return [2];
-              }
-              buffer = this.outgoing.shift();
-              if (buffer) {
-                this.triggerOutgoingHandler(buffer);
-              }
-            } while (buffer);
-            return [2];
-          });
-        });
-      };
-      BufferScheduler2.prototype.triggerOutgoingHandler = function(buffer) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var bufferLength, err_1;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                bufferLength = buffer.size;
-                this.executingOutgoingHandlers++;
-                this.offset += bufferLength;
-                _a.label = 1;
-              case 1:
-                _a.trys.push([1, 3, , 4]);
-                return [4, this.outgoingHandler(function() {
-                  return buffer.getReadableStream();
-                }, bufferLength, this.offset - bufferLength)];
-              case 2:
-                _a.sent();
-                return [3, 4];
-              case 3:
-                err_1 = _a.sent();
-                this.emitter.emit("error", err_1);
-                return [2];
-              case 4:
-                this.executingOutgoingHandlers--;
-                this.reuseBuffer(buffer);
-                this.emitter.emit("checkEnd");
-                return [2];
-            }
-          });
-        });
-      };
-      BufferScheduler2.prototype.reuseBuffer = function(buffer) {
+      }
+      async triggerOutgoingHandlers() {
+        let buffer;
+        do {
+          if (this.executingOutgoingHandlers >= this.concurrency) {
+            return;
+          }
+          buffer = this.outgoing.shift();
+          if (buffer) {
+            this.triggerOutgoingHandler(buffer);
+          }
+        } while (buffer);
+      }
+      async triggerOutgoingHandler(buffer) {
+        const bufferLength = buffer.size;
+        this.executingOutgoingHandlers++;
+        this.offset += bufferLength;
+        try {
+          await this.outgoingHandler(() => buffer.getReadableStream(), bufferLength, this.offset - bufferLength);
+        } catch (err) {
+          this.emitter.emit("error", err);
+          return;
+        }
+        this.executingOutgoingHandlers--;
+        this.reuseBuffer(buffer);
+        this.emitter.emit("checkEnd");
+      }
+      reuseBuffer(buffer) {
         this.incoming.push(buffer);
         if (!this.isError && this.resolveData() && !this.isStreamEnd) {
           this.readable.resume();
         }
-      };
-      return BufferScheduler2;
-    }();
-    function streamToBuffer(stream2, buffer, offset, end, encoding) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        var pos, count;
-        return tslib.__generator(this, function(_a) {
-          pos = 0;
-          count = end - offset;
-          return [2, new Promise(function(resolve2, reject) {
-            stream2.on("readable", function() {
-              if (pos >= count) {
-                resolve2();
-                return;
-              }
-              var chunk = stream2.read();
-              if (!chunk) {
-                return;
-              }
-              if (typeof chunk === "string") {
-                chunk = Buffer.from(chunk, encoding);
-              }
-              var chunkLength = pos + chunk.length > count ? count - pos : chunk.length;
-              buffer.fill(chunk.slice(0, chunkLength), offset + pos, offset + pos + chunkLength);
-              pos += chunkLength;
-            });
-            stream2.on("end", function() {
-              if (pos < count) {
-                reject(new Error("Stream drains before getting enough data needed. Data read: " + pos + ", data need: " + count));
-              }
-              resolve2();
-            });
-            stream2.on("error", reject);
-          })];
+      }
+    };
+    __name(BufferScheduler, "BufferScheduler");
+    async function streamToBuffer(stream2, buffer, offset, end, encoding) {
+      let pos = 0;
+      const count = end - offset;
+      return new Promise((resolve2, reject) => {
+        stream2.on("readable", () => {
+          if (pos >= count) {
+            resolve2();
+            return;
+          }
+          let chunk = stream2.read();
+          if (!chunk) {
+            return;
+          }
+          if (typeof chunk === "string") {
+            chunk = Buffer.from(chunk, encoding);
+          }
+          const chunkLength = pos + chunk.length > count ? count - pos : chunk.length;
+          buffer.fill(chunk.slice(0, chunkLength), offset + pos, offset + pos + chunkLength);
+          pos += chunkLength;
         });
+        stream2.on("end", () => {
+          if (pos < count) {
+            reject(new Error(`Stream drains before getting enough data needed. Data read: ${pos}, data need: ${count}`));
+          }
+          resolve2();
+        });
+        stream2.on("error", reject);
       });
     }
     __name(streamToBuffer, "streamToBuffer");
-    function streamToBuffer2(stream2, buffer, encoding) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        var pos, bufferSize;
-        return tslib.__generator(this, function(_a) {
-          pos = 0;
-          bufferSize = buffer.length;
-          return [2, new Promise(function(resolve2, reject) {
-            stream2.on("readable", function() {
-              var chunk = stream2.read();
-              if (!chunk) {
-                return;
-              }
-              if (typeof chunk === "string") {
-                chunk = Buffer.from(chunk, encoding);
-              }
-              if (pos + chunk.length > bufferSize) {
-                reject(new Error("Stream exceeds buffer size. Buffer size: " + bufferSize));
-                return;
-              }
-              buffer.fill(chunk, pos, pos + chunk.length);
-              pos += chunk.length;
-            });
-            stream2.on("end", function() {
-              resolve2(pos);
-            });
-            stream2.on("error", reject);
-          })];
+    async function streamToBuffer2(stream2, buffer, encoding) {
+      let pos = 0;
+      const bufferSize = buffer.length;
+      return new Promise((resolve2, reject) => {
+        stream2.on("readable", () => {
+          let chunk = stream2.read();
+          if (!chunk) {
+            return;
+          }
+          if (typeof chunk === "string") {
+            chunk = Buffer.from(chunk, encoding);
+          }
+          if (pos + chunk.length > bufferSize) {
+            reject(new Error(`Stream exceeds buffer size. Buffer size: ${bufferSize}`));
+            return;
+          }
+          buffer.fill(chunk, pos, pos + chunk.length);
+          pos += chunk.length;
         });
+        stream2.on("end", () => {
+          resolve2(pos);
+        });
+        stream2.on("error", reject);
       });
     }
     __name(streamToBuffer2, "streamToBuffer2");
-    function readStreamToLocalFile(rs, file) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        return tslib.__generator(this, function(_a) {
-          return [2, new Promise(function(resolve2, reject) {
-            var ws = fs2.createWriteStream(file);
-            rs.on("error", function(err) {
-              reject(err);
-            });
-            ws.on("error", function(err) {
-              reject(err);
-            });
-            ws.on("close", resolve2);
-            rs.pipe(ws);
-          })];
+    async function readStreamToLocalFile(rs, file) {
+      return new Promise((resolve2, reject) => {
+        const ws = fs2.createWriteStream(file);
+        rs.on("error", (err) => {
+          reject(err);
         });
+        ws.on("error", (err) => {
+          reject(err);
+        });
+        ws.on("close", resolve2);
+        rs.pipe(ws);
       });
     }
     __name(readStreamToLocalFile, "readStreamToLocalFile");
     var fsStat = util2.promisify(fs2.stat);
     var fsCreateReadStream = fs2.createReadStream;
-    var BlobClient = function(_super) {
-      tslib.__extends(BlobClient2, _super);
-      function BlobClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
-        var _a;
-        var _this = this;
+    var BlobClient = class extends StorageClient {
+      constructor(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
         options = options || {};
-        var pipeline;
-        var url2;
+        let pipeline;
+        let url2;
         if (credentialOrPipelineOrContainerName instanceof Pipeline) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
@@ -57849,12 +56244,12 @@ var require_dist9 = __commonJS({
           url2 = urlOrConnectionString;
           pipeline = newPipeline(new AnonymousCredential(), options);
         } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string" && blobNameOrOptions && typeof blobNameOrOptions === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var blobName = blobNameOrOptions;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          const containerName = credentialOrPipelineOrContainerName;
+          const blobName = blobNameOrOptions;
+          const extractedCreds = extractConnectionStringParts(urlOrConnectionString);
           if (extractedCreds.kind === "AccountConnString") {
             {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
               url2 = appendToURLPath(appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)), encodeURIComponent(blobName));
               options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
               pipeline = newPipeline(sharedKeyCredential, options);
@@ -57868,834 +56263,469 @@ var require_dist9 = __commonJS({
         } else {
           throw new Error("Expecting non-empty strings for containerName and blobName parameters");
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _a = _this.getBlobAndContainerNamesFromUrl(), _this._name = _a.blobName, _this._containerName = _a.containerName;
-        _this.blobContext = new Blob$1(_this.storageClientContext);
-        _this._snapshot = getURLParameter(_this.url, URLConstants.Parameters.SNAPSHOT);
-        _this._versionId = getURLParameter(_this.url, URLConstants.Parameters.VERSIONID);
-        return _this;
+        super(url2, pipeline);
+        ({
+          blobName: this._name,
+          containerName: this._containerName
+        } = this.getBlobAndContainerNamesFromUrl());
+        this.blobContext = new Blob$1(this.storageClientContext);
+        this._snapshot = getURLParameter(this.url, URLConstants.Parameters.SNAPSHOT);
+        this._versionId = getURLParameter(this.url, URLConstants.Parameters.VERSIONID);
       }
-      __name(BlobClient2, "BlobClient");
-      Object.defineProperty(BlobClient2.prototype, "name", {
-        get: function() {
-          return this._name;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      Object.defineProperty(BlobClient2.prototype, "containerName", {
-        get: function() {
-          return this._containerName;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      BlobClient2.prototype.withSnapshot = function(snapshot2) {
-        return new BlobClient2(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
-      };
-      BlobClient2.prototype.withVersion = function(versionId2) {
-        return new BlobClient2(setURLParameter(this.url, URLConstants.Parameters.VERSIONID, versionId2.length === 0 ? void 0 : versionId2), this.pipeline);
-      };
-      BlobClient2.prototype.getAppendBlobClient = function() {
+      get name() {
+        return this._name;
+      }
+      get containerName() {
+        return this._containerName;
+      }
+      withSnapshot(snapshot2) {
+        return new BlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
+      }
+      withVersion(versionId2) {
+        return new BlobClient(setURLParameter(this.url, URLConstants.Parameters.VERSIONID, versionId2.length === 0 ? void 0 : versionId2), this.pipeline);
+      }
+      getAppendBlobClient() {
         return new AppendBlobClient(this.url, this.pipeline);
-      };
-      BlobClient2.prototype.getBlockBlobClient = function() {
+      }
+      getBlockBlobClient() {
         return new BlockBlobClient(this.url, this.pipeline);
-      };
-      BlobClient2.prototype.getPageBlobClient = function() {
+      }
+      getPageBlobClient() {
         return new PageBlobClient(this.url, this.pipeline);
-      };
-      BlobClient2.prototype.download = function(offset, count, options) {
+      }
+      async download(offset = 0, count, options = {}) {
         var _a;
-        if (offset === void 0) {
-          offset = 0;
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, res_1, wrappedRes, e_1;
-          var _this = this;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                options.conditions = options.conditions || {};
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                _b = createSpan("BlobClient-download", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.download(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
-                  onDownloadProgress: coreHttp.isNode ? void 0 : options.onProgress
-                }, range: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), rangeGetContentMD5: options.rangeGetContentMD5, rangeGetContentCRC64: options.rangeGetContentCrc64, snapshot: options.snapshot, cpkInfo: options.customerProvidedKey }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                res_1 = _c.sent();
-                wrappedRes = tslib.__assign(tslib.__assign({}, res_1), { _response: res_1._response, objectReplicationDestinationPolicyId: res_1.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res_1.objectReplicationRules) });
-                if (options.maxRetryRequests === void 0 || options.maxRetryRequests < 0) {
-                  options.maxRetryRequests = DEFAULT_MAX_DOWNLOAD_RETRY_REQUESTS;
-                }
-                if (res_1.contentLength === void 0) {
-                  throw new RangeError("File download response doesn't contain valid content length header");
-                }
-                if (!res_1.etag) {
-                  throw new RangeError("File download response doesn't contain valid etag header");
-                }
-                return [2, new BlobDownloadResponse(wrappedRes, function(start) {
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    var updatedOptions2;
-                    var _a2;
-                    return tslib.__generator(this, function(_b2) {
-                      switch (_b2.label) {
-                        case 0:
-                          updatedOptions2 = {
-                            leaseAccessConditions: options.conditions,
-                            modifiedAccessConditions: {
-                              ifMatch: options.conditions.ifMatch || res_1.etag,
-                              ifModifiedSince: options.conditions.ifModifiedSince,
-                              ifNoneMatch: options.conditions.ifNoneMatch,
-                              ifUnmodifiedSince: options.conditions.ifUnmodifiedSince,
-                              ifTags: (_a2 = options.conditions) === null || _a2 === void 0 ? void 0 : _a2.tagConditions
-                            },
-                            range: rangeToString({
-                              count: offset + res_1.contentLength - start,
-                              offset: start
-                            }),
-                            rangeGetContentMD5: options.rangeGetContentMD5,
-                            rangeGetContentCRC64: options.rangeGetContentCrc64,
-                            snapshot: options.snapshot,
-                            cpkInfo: options.customerProvidedKey
-                          };
-                          return [4, this.blobContext.download(tslib.__assign({ abortSignal: options.abortSignal }, updatedOptions2))];
-                        case 1:
-                          return [2, _b2.sent().readableStreamBody];
-                      }
-                    });
-                  });
-                }, offset, res_1.contentLength, {
-                  maxRetryRequests: options.maxRetryRequests,
-                  onProgress: options.onProgress
-                })];
-              case 3:
-                e_1 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.exists = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_2;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobClient-exists", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.getProperties({
-                  abortSignal: options.abortSignal,
-                  customerProvidedKey: options.customerProvidedKey,
-                  conditions: options.conditions,
-                  tracingOptions: updatedOptions.tracingOptions
-                })];
-              case 2:
-                _b.sent();
-                return [2, true];
-              case 3:
-                e_2 = _b.sent();
-                if (e_2.statusCode === 404) {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when checking blob existence"
-                  });
-                  return [2, false];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_2.message
-                });
-                throw e_2;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.getProperties = function(options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, res, e_3;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-getProperties", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                options.conditions = options.conditions || {};
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.getProperties(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                res = _c.sent();
-                return [2, tslib.__assign(tslib.__assign({}, res), { _response: res._response, objectReplicationDestinationPolicyId: res.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res.objectReplicationRules) })];
-              case 3:
-                e_3 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_3.message
-                });
-                throw e_3;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.delete = function(options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_4;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-delete", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.delete(tslib.__assign({ abortSignal: options.abortSignal, deleteSnapshots: options.deleteSnapshots, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_4 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_4.message
-                });
-                throw e_4;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.deleteIfExists = function(options) {
-        var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, updatedOptions, res, e_5;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("BlobClient-deleteIfExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.delete(updatedOptions)];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({ succeeded: true }, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_5 = _d.sent();
-                if (((_a = e_5.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobNotFound") {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when deleting a blob or snapshot only if it exists."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({ succeeded: false }, (_b = e_5.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e_5.response })];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_5.message
-                });
-                throw e_5;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.undelete = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_6;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobClient-undelete", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.undelete(tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_6 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_6.message
-                });
-                throw e_6;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.setHTTPHeaders = function(blobHTTPHeaders, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_7;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-setHTTPHeaders", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.setHttpHeaders(tslib.__assign({ abortSignal: options.abortSignal, blobHttpHeaders: blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_7 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_7.message
-                });
-                throw e_7;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.setMetadata = function(metadata2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_8;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-setMetadata", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.setMetadata(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_8 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_8.message
-                });
-                throw e_8;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.setTags = function(tags2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_9;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-setTags", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.setTags(tslib.__assign(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)), { tags: toBlobTags(tags2) }))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_9 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_9.message
-                });
-                throw e_9;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.getTags = function(options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, response, wrappedResponse, e_10;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-getTags", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.getTags(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _c.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), { _response: response._response, tags: toTags({ blobTagSet: response.blobTagSet }) || {} });
-                return [2, wrappedResponse];
-              case 3:
-                e_10 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_10.message
-                });
-                throw e_10;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.getBlobLeaseClient = function(proposeLeaseId) {
-        return new BlobLeaseClient(this, proposeLeaseId);
-      };
-      BlobClient2.prototype.createSnapshot = function(options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_11;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-createSnapshot", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blobContext.createSnapshot(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_11 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_11.message
-                });
-                throw e_11;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.beginCopyFromURL = function(copySource2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var client, poller;
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                client = {
-                  abortCopyFromURL: function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) {
-                      args[_i] = arguments[_i];
-                    }
-                    return _this.abortCopyFromURL.apply(_this, args);
-                  },
-                  getProperties: function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) {
-                      args[_i] = arguments[_i];
-                    }
-                    return _this.getProperties.apply(_this, args);
-                  },
-                  startCopyFromURL: function() {
-                    var args = [];
-                    for (var _i = 0; _i < arguments.length; _i++) {
-                      args[_i] = arguments[_i];
-                    }
-                    return _this.startCopyFromURL.apply(_this, args);
-                  }
-                };
-                poller = new BlobBeginCopyFromUrlPoller({
-                  blobClient: client,
-                  copySource: copySource2,
-                  intervalInMs: options.intervalInMs,
-                  onProgress: options.onProgress,
-                  resumeFrom: options.resumeFrom,
-                  startCopyFromURLOptions: options
-                });
-                return [4, poller.poll()];
-              case 1:
-                _a.sent();
-                return [2, poller];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.abortCopyFromURL = function(copyId2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_12;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobClient-abortCopyFromURL", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.abortCopyFromURL(copyId2, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_12 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_12.message
-                });
-                throw e_12;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.syncCopyFromURL = function(copySource2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_13;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-syncCopyFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                options.sourceConditions = options.sourceConditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.copyFromURL(copySource2, tslib.__assign({ abortSignal: options.abortSignal, metadata: options.metadata, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
-                  sourceIfMatch: options.sourceConditions.ifMatch,
-                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                }, sourceContentMD5: options.sourceContentMD5, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_13 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_13.message
-                });
-                throw e_13;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.setAccessTier = function(tier2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_14;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-setAccessTier", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.setTier(toAccessTier(tier2), tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), rehydratePriority: options.rehydratePriority }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_14 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_14.message
-                });
-                throw e_14;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.downloadToBuffer = function(param1, param2, param3, param4) {
-        if (param4 === void 0) {
-          param4 = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var buffer, offset, count, options, _a, span, updatedOptions, response, transferProgress_1, batch, _loop_1, off, e_15;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                offset = 0;
-                count = 0;
-                options = param4;
-                if (param1 instanceof Buffer) {
-                  buffer = param1;
-                  offset = param2 || 0;
-                  count = typeof param3 === "number" ? param3 : 0;
-                } else {
-                  offset = typeof param1 === "number" ? param1 : 0;
-                  count = typeof param2 === "number" ? param2 : 0;
-                  options = param3 || {};
-                }
-                _a = createSpan("BlobClient-downloadToBuffer", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 5, 6, 7]);
-                if (!options.blockSize) {
-                  options.blockSize = 0;
-                }
-                if (options.blockSize < 0) {
-                  throw new RangeError("blockSize option must be >= 0");
-                }
-                if (options.blockSize === 0) {
-                  options.blockSize = DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES;
-                }
-                if (offset < 0) {
-                  throw new RangeError("offset option must be >= 0");
-                }
-                if (count && count <= 0) {
-                  throw new RangeError("count option must be greater than 0");
-                }
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                if (!!count)
-                  return [3, 3];
-                return [4, this.getProperties(tslib.__assign(tslib.__assign({}, options), { tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }))];
-              case 2:
-                response = _b.sent();
-                count = response.contentLength - offset;
-                if (count < 0) {
-                  throw new RangeError("offset " + offset + " shouldn't be larger than blob size " + response.contentLength);
-                }
-                _b.label = 3;
-              case 3:
-                if (!buffer) {
-                  try {
-                    buffer = Buffer.alloc(count);
-                  } catch (error) {
-                    throw new Error("Unable to allocate the buffer of size: " + count + '(in bytes). Please try passing your own buffer to the "downloadToBuffer" method or try using other methods like "download" or "downloadToFile".	 ' + error.message);
-                  }
-                }
-                if (buffer.length < count) {
-                  throw new RangeError("The buffer's size should be equal to or larger than the request count of bytes: " + count);
-                }
-                transferProgress_1 = 0;
-                batch = new Batch(options.concurrency);
-                _loop_1 = /* @__PURE__ */ __name(function(off2) {
-                  batch.addOperation(function() {
-                    return tslib.__awaiter(_this, void 0, void 0, function() {
-                      var chunkEnd, response2, stream2;
-                      return tslib.__generator(this, function(_a2) {
-                        switch (_a2.label) {
-                          case 0:
-                            chunkEnd = offset + count;
-                            if (off2 + options.blockSize < chunkEnd) {
-                              chunkEnd = off2 + options.blockSize;
-                            }
-                            return [4, this.download(off2, chunkEnd - off2, {
-                              abortSignal: options.abortSignal,
-                              conditions: options.conditions,
-                              maxRetryRequests: options.maxRetryRequestsPerBlock,
-                              customerProvidedKey: options.customerProvidedKey,
-                              tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))
-                            })];
-                          case 1:
-                            response2 = _a2.sent();
-                            stream2 = response2.readableStreamBody;
-                            return [4, streamToBuffer(stream2, buffer, off2 - offset, chunkEnd - offset)];
-                          case 2:
-                            _a2.sent();
-                            transferProgress_1 += chunkEnd - off2;
-                            if (options.onProgress) {
-                              options.onProgress({ loadedBytes: transferProgress_1 });
-                            }
-                            return [2];
-                        }
-                      });
-                    });
-                  });
-                }, "_loop_1");
-                for (off = offset; off < offset + count; off = off + options.blockSize) {
-                  _loop_1(off);
-                }
-                return [4, batch.do()];
-              case 4:
-                _b.sent();
-                return [2, buffer];
-              case 5:
-                e_15 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_15.message
-                });
-                throw e_15;
-              case 6:
-                span.end();
-                return [7];
-              case 7:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.downloadToFile = function(filePath, offset, count, options) {
-        if (offset === void 0) {
-          offset = 0;
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, e_16;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobClient-downloadToFile", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 5, 6, 7]);
-                return [4, this.download(offset, count, tslib.__assign(tslib.__assign({}, options), { tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }))];
-              case 2:
-                response = _b.sent();
-                if (!response.readableStreamBody)
-                  return [3, 4];
-                return [4, readStreamToLocalFile(response.readableStreamBody, filePath)];
-              case 3:
-                _b.sent();
-                _b.label = 4;
-              case 4:
-                response.blobDownloadStream = void 0;
-                return [2, response];
-              case 5:
-                e_16 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_16.message
-                });
-                throw e_16;
-              case 6:
-                span.end();
-                return [7];
-              case 7:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobClient2.prototype.getBlobAndContainerNamesFromUrl = function() {
-        var containerName;
-        var blobName;
+        options.conditions = options.conditions || {};
+        options.conditions = options.conditions || {};
+        ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+        const { span, updatedOptions } = createSpan("BlobClient-download", options);
         try {
-          var parsedUrl = coreHttp.URLBuilder.parse(this.url);
+          const res = await this.blobContext.download(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
+            onDownloadProgress: coreHttp.isNode ? void 0 : options.onProgress
+          }, range: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), rangeGetContentMD5: options.rangeGetContentMD5, rangeGetContentCRC64: options.rangeGetContentCrc64, snapshot: options.snapshot, cpkInfo: options.customerProvidedKey }, convertTracingToRequestOptionsBase(updatedOptions)));
+          const wrappedRes = Object.assign(Object.assign({}, res), { _response: res._response, objectReplicationDestinationPolicyId: res.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res.objectReplicationRules) });
+          if (false) {
+            return wrappedRes;
+          }
+          if (options.maxRetryRequests === void 0 || options.maxRetryRequests < 0) {
+            options.maxRetryRequests = DEFAULT_MAX_DOWNLOAD_RETRY_REQUESTS;
+          }
+          if (res.contentLength === void 0) {
+            throw new RangeError(`File download response doesn't contain valid content length header`);
+          }
+          if (!res.etag) {
+            throw new RangeError(`File download response doesn't contain valid etag header`);
+          }
+          return new BlobDownloadResponse(wrappedRes, async (start) => {
+            var _a2;
+            const updatedOptions2 = {
+              leaseAccessConditions: options.conditions,
+              modifiedAccessConditions: {
+                ifMatch: options.conditions.ifMatch || res.etag,
+                ifModifiedSince: options.conditions.ifModifiedSince,
+                ifNoneMatch: options.conditions.ifNoneMatch,
+                ifUnmodifiedSince: options.conditions.ifUnmodifiedSince,
+                ifTags: (_a2 = options.conditions) === null || _a2 === void 0 ? void 0 : _a2.tagConditions
+              },
+              range: rangeToString({
+                count: offset + res.contentLength - start,
+                offset: start
+              }),
+              rangeGetContentMD5: options.rangeGetContentMD5,
+              rangeGetContentCRC64: options.rangeGetContentCrc64,
+              snapshot: options.snapshot,
+              cpkInfo: options.customerProvidedKey
+            };
+            return (await this.blobContext.download(Object.assign({ abortSignal: options.abortSignal }, updatedOptions2))).readableStreamBody;
+          }, offset, res.contentLength, {
+            maxRetryRequests: options.maxRetryRequests,
+            onProgress: options.onProgress
+          });
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async exists(options = {}) {
+        const { span, updatedOptions } = createSpan("BlobClient-exists", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          await this.getProperties({
+            abortSignal: options.abortSignal,
+            customerProvidedKey: options.customerProvidedKey,
+            conditions: options.conditions,
+            tracingOptions: updatedOptions.tracingOptions
+          });
+          return true;
+        } catch (e) {
+          if (e.statusCode === 404) {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when checking blob existence"
+            });
+            return false;
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getProperties(options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-getProperties", options);
+        try {
+          options.conditions = options.conditions || {};
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          const res = await this.blobContext.getProperties(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return Object.assign(Object.assign({}, res), { _response: res._response, objectReplicationDestinationPolicyId: res.objectReplicationPolicyId, objectReplicationSourceProperties: parseObjectReplicationRecord(res.objectReplicationRules) });
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async delete(options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-delete", options);
+        options.conditions = options.conditions || {};
+        try {
+          return await this.blobContext.delete(Object.assign({ abortSignal: options.abortSignal, deleteSnapshots: options.deleteSnapshots, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async deleteIfExists(options = {}) {
+        var _a, _b;
+        const { span, updatedOptions } = createSpan("BlobClient-deleteIfExists", options);
+        try {
+          const res = await this.delete(updatedOptions);
+          return Object.assign(Object.assign({ succeeded: true }, res), {
+            _response: res._response
+          });
+        } catch (e) {
+          if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobNotFound") {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when deleting a blob or snapshot only if it exists."
+            });
+            return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async undelete(options = {}) {
+        const { span, updatedOptions } = createSpan("BlobClient-undelete", options);
+        try {
+          return await this.blobContext.undelete(Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setHTTPHeaders(blobHTTPHeaders, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-setHTTPHeaders", options);
+        options.conditions = options.conditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blobContext.setHttpHeaders(Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setMetadata(metadata2, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-setMetadata", options);
+        options.conditions = options.conditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blobContext.setMetadata(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setTags(tags2, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-setTags", options);
+        try {
+          return await this.blobContext.setTags(Object.assign(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)), { tags: toBlobTags(tags2) }));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getTags(options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-getTags", options);
+        try {
+          const response = await this.blobContext.getTags(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          const wrappedResponse = Object.assign(Object.assign({}, response), { _response: response._response, tags: toTags({ blobTagSet: response.blobTagSet }) || {} });
+          return wrappedResponse;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      getBlobLeaseClient(proposeLeaseId) {
+        return new BlobLeaseClient(this, proposeLeaseId);
+      }
+      async createSnapshot(options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-createSnapshot", options);
+        options.conditions = options.conditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blobContext.createSnapshot(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async beginCopyFromURL(copySource2, options = {}) {
+        const client = {
+          abortCopyFromURL: (...args) => this.abortCopyFromURL(...args),
+          getProperties: (...args) => this.getProperties(...args),
+          startCopyFromURL: (...args) => this.startCopyFromURL(...args)
+        };
+        const poller = new BlobBeginCopyFromUrlPoller({
+          blobClient: client,
+          copySource: copySource2,
+          intervalInMs: options.intervalInMs,
+          onProgress: options.onProgress,
+          resumeFrom: options.resumeFrom,
+          startCopyFromURLOptions: options
+        });
+        await poller.poll();
+        return poller;
+      }
+      async abortCopyFromURL(copyId2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobClient-abortCopyFromURL", options);
+        try {
+          return await this.blobContext.abortCopyFromURL(copyId2, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async syncCopyFromURL(copySource2, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-syncCopyFromURL", options);
+        options.conditions = options.conditions || {};
+        options.sourceConditions = options.sourceConditions || {};
+        try {
+          return await this.blobContext.copyFromURL(copySource2, Object.assign({ abortSignal: options.abortSignal, metadata: options.metadata, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
+            sourceIfMatch: options.sourceConditions.ifMatch,
+            sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+            sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+            sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+          }, sourceContentMD5: options.sourceContentMD5, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setAccessTier(tier2, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("BlobClient-setAccessTier", options);
+        try {
+          return await this.blobContext.setTier(toAccessTier(tier2), Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), rehydratePriority: options.rehydratePriority }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async downloadToBuffer(param1, param2, param3, param4 = {}) {
+        let buffer;
+        let offset = 0;
+        let count = 0;
+        let options = param4;
+        if (param1 instanceof Buffer) {
+          buffer = param1;
+          offset = param2 || 0;
+          count = typeof param3 === "number" ? param3 : 0;
+        } else {
+          offset = typeof param1 === "number" ? param1 : 0;
+          count = typeof param2 === "number" ? param2 : 0;
+          options = param3 || {};
+        }
+        const { span, updatedOptions } = createSpan("BlobClient-downloadToBuffer", options);
+        try {
+          if (!options.blockSize) {
+            options.blockSize = 0;
+          }
+          if (options.blockSize < 0) {
+            throw new RangeError("blockSize option must be >= 0");
+          }
+          if (options.blockSize === 0) {
+            options.blockSize = DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES;
+          }
+          if (offset < 0) {
+            throw new RangeError("offset option must be >= 0");
+          }
+          if (count && count <= 0) {
+            throw new RangeError("count option must be greater than 0");
+          }
+          if (!options.conditions) {
+            options.conditions = {};
+          }
+          if (!count) {
+            const response = await this.getProperties(Object.assign(Object.assign({}, options), { tracingOptions: Object.assign(Object.assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }));
+            count = response.contentLength - offset;
+            if (count < 0) {
+              throw new RangeError(`offset ${offset} shouldn't be larger than blob size ${response.contentLength}`);
+            }
+          }
+          if (!buffer) {
+            try {
+              buffer = Buffer.alloc(count);
+            } catch (error) {
+              throw new Error(`Unable to allocate the buffer of size: ${count}(in bytes). Please try passing your own buffer to the "downloadToBuffer" method or try using other methods like "download" or "downloadToFile".	 ${error.message}`);
+            }
+          }
+          if (buffer.length < count) {
+            throw new RangeError(`The buffer's size should be equal to or larger than the request count of bytes: ${count}`);
+          }
+          let transferProgress = 0;
+          const batch = new Batch(options.concurrency);
+          for (let off = offset; off < offset + count; off = off + options.blockSize) {
+            batch.addOperation(async () => {
+              let chunkEnd = offset + count;
+              if (off + options.blockSize < chunkEnd) {
+                chunkEnd = off + options.blockSize;
+              }
+              const response = await this.download(off, chunkEnd - off, {
+                abortSignal: options.abortSignal,
+                conditions: options.conditions,
+                maxRetryRequests: options.maxRetryRequestsPerBlock,
+                customerProvidedKey: options.customerProvidedKey,
+                tracingOptions: Object.assign(Object.assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions))
+              });
+              const stream2 = response.readableStreamBody;
+              await streamToBuffer(stream2, buffer, off - offset, chunkEnd - offset);
+              transferProgress += chunkEnd - off;
+              if (options.onProgress) {
+                options.onProgress({ loadedBytes: transferProgress });
+              }
+            });
+          }
+          await batch.do();
+          return buffer;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async downloadToFile(filePath, offset = 0, count, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobClient-downloadToFile", options);
+        try {
+          const response = await this.download(offset, count, Object.assign(Object.assign({}, options), { tracingOptions: Object.assign(Object.assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }));
+          if (response.readableStreamBody) {
+            await readStreamToLocalFile(response.readableStreamBody, filePath);
+          }
+          response.blobDownloadStream = void 0;
+          return response;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      getBlobAndContainerNamesFromUrl() {
+        let containerName;
+        let blobName;
+        try {
+          const parsedUrl = coreHttp.URLBuilder.parse(this.url);
           if (parsedUrl.getHost().split(".")[1] === "blob") {
-            var pathComponents = parsedUrl.getPath().match("/([^/]*)(/(.*))?");
+            const pathComponents = parsedUrl.getPath().match("/([^/]*)(/(.*))?");
             containerName = pathComponents[1];
             blobName = pathComponents[3];
           } else if (isIpEndpointStyle(parsedUrl)) {
-            var pathComponents = parsedUrl.getPath().match("/([^/]*)/([^/]*)(/(.*))?");
+            const pathComponents = parsedUrl.getPath().match("/([^/]*)/([^/]*)(/(.*))?");
             containerName = pathComponents[2];
             blobName = pathComponents[4];
           } else {
-            var pathComponents = parsedUrl.getPath().match("/([^/]*)(/(.*))?");
+            const pathComponents = parsedUrl.getPath().match("/([^/]*)(/(.*))?");
             containerName = pathComponents[1];
             blobName = pathComponents[3];
           }
@@ -58709,66 +56739,45 @@ var require_dist9 = __commonJS({
         } catch (error) {
           throw new Error("Unable to extract blobName and containerName with provided information.");
         }
-      };
-      BlobClient2.prototype.startCopyFromURL = function(copySource2, options) {
+      }
+      async startCopyFromURL(copySource2, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_17;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobClient-startCopyFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                options.sourceConditions = options.sourceConditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blobContext.startCopyFromURL(copySource2, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
-                  sourceIfMatch: options.sourceConditions.ifMatch,
-                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
-                  sourceIfTags: options.sourceConditions.tagConditions
-                }, rehydratePriority: options.rehydratePriority, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), sealBlob: options.sealBlob }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_17 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_17.message
-                });
-                throw e_17;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("BlobClient-startCopyFromURL", options);
+        options.conditions = options.conditions || {};
+        options.sourceConditions = options.sourceConditions || {};
+        try {
+          return await this.blobContext.startCopyFromURL(copySource2, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
+            sourceIfMatch: options.sourceConditions.ifMatch,
+            sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+            sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+            sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
+            sourceIfTags: options.sourceConditions.tagConditions
+          }, rehydratePriority: options.rehydratePriority, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), sealBlob: options.sealBlob }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobClient2.prototype.generateSasUrl = function(options) {
-        var _this = this;
-        return new Promise(function(resolve2) {
-          if (!(_this.credential instanceof StorageSharedKeyCredential)) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      generateSasUrl(options) {
+        return new Promise((resolve2) => {
+          if (!(this.credential instanceof StorageSharedKeyCredential)) {
             throw new RangeError("Can only generate the SAS when the client is initialized with a shared key credential");
           }
-          var sas = generateBlobSASQueryParameters(tslib.__assign({ containerName: _this._containerName, blobName: _this._name, snapshotTime: _this._snapshot, versionId: _this._versionId }, options), _this.credential).toString();
-          resolve2(appendToURLQuery(_this.url, sas));
+          const sas = generateBlobSASQueryParameters(Object.assign({ containerName: this._containerName, blobName: this._name, snapshotTime: this._snapshot, versionId: this._versionId }, options), this.credential).toString();
+          resolve2(appendToURLQuery(this.url, sas));
         });
-      };
-      return BlobClient2;
-    }(StorageClient);
-    var AppendBlobClient = function(_super) {
-      tslib.__extends(AppendBlobClient2, _super);
-      function AppendBlobClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
-        var _this = this;
-        var pipeline;
-        var url2;
+      }
+    };
+    __name(BlobClient, "BlobClient");
+    var AppendBlobClient = class extends BlobClient {
+      constructor(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
+        let pipeline;
+        let url2;
         options = options || {};
         if (credentialOrPipelineOrContainerName instanceof Pipeline) {
           url2 = urlOrConnectionString;
@@ -58781,12 +56790,12 @@ var require_dist9 = __commonJS({
           url2 = urlOrConnectionString;
           pipeline = newPipeline(new AnonymousCredential(), options);
         } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string" && blobNameOrOptions && typeof blobNameOrOptions === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var blobName = blobNameOrOptions;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          const containerName = credentialOrPipelineOrContainerName;
+          const blobName = blobNameOrOptions;
+          const extractedCreds = extractConnectionStringParts(urlOrConnectionString);
           if (extractedCreds.kind === "AccountConnString") {
             {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
               url2 = appendToURLPath(appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)), encodeURIComponent(blobName));
               options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
               pipeline = newPipeline(sharedKeyCredential, options);
@@ -58800,213 +56809,119 @@ var require_dist9 = __commonJS({
         } else {
           throw new Error("Expecting non-empty strings for containerName and blobName parameters");
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this.appendBlobContext = new AppendBlob(_this.storageClientContext);
-        return _this;
+        super(url2, pipeline);
+        this.appendBlobContext = new AppendBlob(this.storageClientContext);
       }
-      __name(AppendBlobClient2, "AppendBlobClient");
-      AppendBlobClient2.prototype.withSnapshot = function(snapshot2) {
-        return new AppendBlobClient2(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
-      };
-      AppendBlobClient2.prototype.create = function(options) {
+      withSnapshot(snapshot2) {
+        return new AppendBlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
+      }
+      async create(options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_18;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("AppendBlobClient-create", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.create(0, tslib.__assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_18 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_18.message
-                });
-                throw e_18;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("AppendBlobClient-create", options);
+        options.conditions = options.conditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.appendBlobContext.create(0, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      AppendBlobClient2.prototype.createIfNotExists = function(options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async createIfNotExists(options = {}) {
         var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, updatedOptions, conditions, res, e_19;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("AppendBlobClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
-                conditions = { ifNoneMatch: ETagAny };
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.create(tslib.__assign(tslib.__assign({}, updatedOptions), { conditions }))];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({ succeeded: true }, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_19 = _d.sent();
-                if (((_a = e_19.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when creating a blob only if it does not already exist."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({ succeeded: false }, (_b = e_19.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e_19.response })];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_19.message
-                });
-                throw e_19;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("AppendBlobClient-createIfNotExists", options);
+        const conditions = { ifNoneMatch: ETagAny };
+        try {
+          const res = await this.create(Object.assign(Object.assign({}, updatedOptions), { conditions }));
+          return Object.assign(Object.assign({ succeeded: true }, res), {
+            _response: res._response
           });
-        });
-      };
-      AppendBlobClient2.prototype.seal = function(options) {
+        } catch (e) {
+          if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when creating a blob only if it does not already exist."
+            });
+            return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async seal(options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_20;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("AppendBlobClient-seal", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.appendBlobContext.seal(tslib.__assign({ abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_20 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_20.message
-                });
-                throw e_20;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("AppendBlobClient-seal", options);
+        options.conditions = options.conditions || {};
+        try {
+          return await this.appendBlobContext.seal(Object.assign({ abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      AppendBlobClient2.prototype.appendBlock = function(body2, contentLength2, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async appendBlock(body2, contentLength2, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_21;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("AppendBlobClient-appendBlock", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.appendBlock(contentLength2, body2, tslib.__assign({ abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
-                  onUploadProgress: options.onProgress
-                }, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_21 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_21.message
-                });
-                throw e_21;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("AppendBlobClient-appendBlock", options);
+        options.conditions = options.conditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.appendBlobContext.appendBlock(contentLength2, body2, Object.assign({ abortSignal: options.abortSignal, appendPositionAccessConditions: options.conditions, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
+            onUploadProgress: options.onProgress
+          }, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      AppendBlobClient2.prototype.appendBlockFromURL = function(sourceURL, sourceOffset, count, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async appendBlockFromURL(sourceURL, sourceOffset, count, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_22;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("AppendBlobClient-appendBlockFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                options.conditions = options.conditions || {};
-                options.sourceConditions = options.sourceConditions || {};
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.appendBlobContext.appendBlockFromUrl(sourceURL, 0, tslib.__assign({ abortSignal: options.abortSignal, sourceRange: rangeToString({ offset: sourceOffset, count }), sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, appendPositionAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
-                  sourceIfMatch: options.sourceConditions.ifMatch,
-                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_22 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_22.message
-                });
-                throw e_22;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("AppendBlobClient-appendBlockFromURL", options);
+        options.conditions = options.conditions || {};
+        options.sourceConditions = options.sourceConditions || {};
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.appendBlobContext.appendBlockFromUrl(sourceURL, 0, Object.assign({ abortSignal: options.abortSignal, sourceRange: rangeToString({ offset: sourceOffset, count }), sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, appendPositionAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
+            sourceIfMatch: options.sourceConditions.ifMatch,
+            sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+            sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+            sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      return AppendBlobClient2;
-    }(BlobClient);
-    var BlockBlobClient = function(_super) {
-      tslib.__extends(BlockBlobClient2, _super);
-      function BlockBlobClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
-        var _this = this;
-        var pipeline;
-        var url2;
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+    };
+    __name(AppendBlobClient, "AppendBlobClient");
+    var BlockBlobClient = class extends BlobClient {
+      constructor(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
+        let pipeline;
+        let url2;
         options = options || {};
         if (credentialOrPipelineOrContainerName instanceof Pipeline) {
           url2 = urlOrConnectionString;
@@ -59019,12 +56934,12 @@ var require_dist9 = __commonJS({
           url2 = urlOrConnectionString;
           pipeline = newPipeline(new AnonymousCredential(), options);
         } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string" && blobNameOrOptions && typeof blobNameOrOptions === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var blobName = blobNameOrOptions;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          const containerName = credentialOrPipelineOrContainerName;
+          const blobName = blobNameOrOptions;
+          const extractedCreds = extractConnectionStringParts(urlOrConnectionString);
           if (extractedCreds.kind === "AccountConnString") {
             {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
               url2 = appendToURLPath(appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)), encodeURIComponent(blobName));
               options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
               pipeline = newPipeline(sharedKeyCredential, options);
@@ -59038,598 +56953,340 @@ var require_dist9 = __commonJS({
         } else {
           throw new Error("Expecting non-empty strings for containerName and blobName parameters");
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this.blockBlobContext = new BlockBlob(_this.storageClientContext);
-        _this._blobContext = new Blob$1(_this.storageClientContext);
-        return _this;
+        super(url2, pipeline);
+        this.blockBlobContext = new BlockBlob(this.storageClientContext);
+        this._blobContext = new Blob$1(this.storageClientContext);
       }
-      __name(BlockBlobClient2, "BlockBlobClient");
-      BlockBlobClient2.prototype.withSnapshot = function(snapshot2) {
-        return new BlockBlobClient2(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
-      };
-      BlockBlobClient2.prototype.query = function(query, options) {
+      withSnapshot(snapshot2) {
+        return new BlockBlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
+      }
+      async query(query, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, response, e_23;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                _b = createSpan("BlockBlobClient-query", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this._blobContext.query(tslib.__assign({ abortSignal: options.abortSignal, queryRequest: {
-                  queryType: "SQL",
-                  expression: query,
-                  inputSerialization: toQuerySerialization(options.inputTextConfiguration),
-                  outputSerialization: toQuerySerialization(options.outputTextConfiguration)
-                }, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _c.sent();
-                return [2, new BlobQueryResponse(response, {
-                  abortSignal: options.abortSignal,
-                  onProgress: options.onProgress,
-                  onError: options.onError
-                })];
-              case 3:
-                e_23 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_23.message
-                });
-                throw e_23;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+        const { span, updatedOptions } = createSpan("BlockBlobClient-query", options);
+        try {
+          if (false) {
+            throw new Error("This operation currently is only supported in Node.js.");
+          }
+          const response = await this._blobContext.query(Object.assign({ abortSignal: options.abortSignal, queryRequest: {
+            queryType: "SQL",
+            expression: query,
+            inputSerialization: toQuerySerialization(options.inputTextConfiguration),
+            outputSerialization: toQuerySerialization(options.outputTextConfiguration)
+          }, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return new BlobQueryResponse(response, {
+            abortSignal: options.abortSignal,
+            onProgress: options.onProgress,
+            onError: options.onError
           });
-        });
-      };
-      BlockBlobClient2.prototype.upload = function(body2, contentLength2, options) {
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async upload(body2, contentLength2, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_24;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("BlockBlobClient-upload", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.upload(contentLength2, body2, tslib.__assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
-                  onUploadProgress: options.onProgress
-                }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_24 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_24.message
-                });
-                throw e_24;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("BlockBlobClient-upload", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blockBlobContext.upload(contentLength2, body2, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
+            onUploadProgress: options.onProgress
+          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.syncUploadFromURL = function(sourceURL, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async syncUploadFromURL(sourceURL, options = {}) {
         var _a, _b, _c, _d, _e;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _f, span, updatedOptions, e_25;
-          return tslib.__generator(this, function(_g) {
-            switch (_g.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _f = createSpan("BlockBlobClient-syncUploadFromURL", options), span = _f.span, updatedOptions = _f.updatedOptions;
-                _g.label = 1;
-              case 1:
-                _g.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.putBlobFromUrl(0, sourceURL, tslib.__assign(tslib.__assign(tslib.__assign({}, options), { blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: options.conditions.tagConditions }), sourceModifiedAccessConditions: {
-                  sourceIfMatch: (_a = options.sourceConditions) === null || _a === void 0 ? void 0 : _a.ifMatch,
-                  sourceIfModifiedSince: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifModifiedSince,
-                  sourceIfNoneMatch: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch,
-                  sourceIfUnmodifiedSince: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifUnmodifiedSince,
-                  sourceIfTags: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.tagConditions
-                }, cpkInfo: options.customerProvidedKey, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _g.sent()];
-              case 3:
-                e_25 = _g.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_25.message
-                });
-                throw e_25;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("BlockBlobClient-syncUploadFromURL", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blockBlobContext.putBlobFromUrl(0, sourceURL, Object.assign(Object.assign(Object.assign({}, options), { blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: options.conditions.tagConditions }), sourceModifiedAccessConditions: {
+            sourceIfMatch: (_a = options.sourceConditions) === null || _a === void 0 ? void 0 : _a.ifMatch,
+            sourceIfModifiedSince: (_b = options.sourceConditions) === null || _b === void 0 ? void 0 : _b.ifModifiedSince,
+            sourceIfNoneMatch: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch,
+            sourceIfUnmodifiedSince: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifUnmodifiedSince,
+            sourceIfTags: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.tagConditions
+          }, cpkInfo: options.customerProvidedKey, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }), convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.stageBlock = function(blockId2, body2, contentLength2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_26;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlockBlobClient-stageBlock", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.stageBlock(blockId2, contentLength2, body2, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, requestOptions: {
-                  onUploadProgress: options.onProgress
-                }, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_26 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_26.message
-                });
-                throw e_26;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async stageBlock(blockId2, body2, contentLength2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlockBlobClient-stageBlock", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blockBlobContext.stageBlock(blockId2, contentLength2, body2, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, requestOptions: {
+            onUploadProgress: options.onProgress
+          }, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.stageBlockFromURL = function(blockId2, sourceURL, offset, count, options) {
-        if (offset === void 0) {
-          offset = 0;
+          throw e;
+        } finally {
+          span.end();
         }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_27;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlockBlobClient-stageBlockFromURL", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, sourceRange: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_27 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_27.message
-                });
-                throw e_27;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async stageBlockFromURL(blockId2, sourceURL, offset = 0, count, options = {}) {
+        const { span, updatedOptions } = createSpan("BlockBlobClient-stageBlockFromURL", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, sourceRange: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.commitBlockList = function(blocks2, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async commitBlockList(blocks2, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_28;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("BlockBlobClient-commitBlockList", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.blockBlobContext.commitBlockList({ latest: blocks2 }, tslib.__assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_28 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_28.message
-                });
-                throw e_28;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("BlockBlobClient-commitBlockList", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.blockBlobContext.commitBlockList({ latest: blocks2 }, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.getBlockList = function(listType2, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getBlockList(listType2, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, res, e_29;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlockBlobClient-getBlockList", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.blockBlobContext.getBlockList(listType2, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                res = _c.sent();
-                if (!res.committedBlocks) {
-                  res.committedBlocks = [];
-                }
-                if (!res.uncommittedBlocks) {
-                  res.uncommittedBlocks = [];
-                }
-                return [2, res];
-              case 3:
-                e_29 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_29.message
-                });
-                throw e_29;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("BlockBlobClient-getBlockList", options);
+        try {
+          const res = await this.blockBlobContext.getBlockList(listType2, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          if (!res.committedBlocks) {
+            res.committedBlocks = [];
+          }
+          if (!res.uncommittedBlocks) {
+            res.uncommittedBlocks = [];
+          }
+          return res;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.uploadData = function(data, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, buffer_1, browserBlob_1;
-          return tslib.__generator(this, function(_b) {
-            _a = createSpan("BlockBlobClient-uploadData", options), span = _a.span, updatedOptions = _a.updatedOptions;
-            try {
-              if (true) {
-                if (data instanceof Buffer) {
-                  buffer_1 = data;
-                } else if (data instanceof ArrayBuffer) {
-                  buffer_1 = Buffer.from(data);
-                } else {
-                  data = data;
-                  buffer_1 = Buffer.from(data.buffer, data.byteOffset, data.byteLength);
-                }
-                return [2, this.uploadSeekableInternal(function(offset, size) {
-                  return buffer_1.slice(offset, offset + size);
-                }, buffer_1.byteLength, updatedOptions)];
-              } else {
-                browserBlob_1 = new Blob([data]);
-                return [2, this.uploadSeekableInternal(function(offset, size) {
-                  return browserBlob_1.slice(offset, offset + size);
-                }, browserBlob_1.size, updatedOptions)];
-              }
-            } catch (e) {
-              span.setStatus({
-                code: coreTracing.SpanStatusCode.ERROR,
-                message: e.message
+      }
+      async uploadData(data, options = {}) {
+        const { span, updatedOptions } = createSpan("BlockBlobClient-uploadData", options);
+        try {
+          if (true) {
+            let buffer;
+            if (data instanceof Buffer) {
+              buffer = data;
+            } else if (data instanceof ArrayBuffer) {
+              buffer = Buffer.from(data);
+            } else {
+              data = data;
+              buffer = Buffer.from(data.buffer, data.byteOffset, data.byteLength);
+            }
+            return this.uploadSeekableInternal((offset, size) => buffer.slice(offset, offset + size), buffer.byteLength, updatedOptions);
+          } else {
+            const browserBlob = new Blob([data]);
+            return this.uploadSeekableInternal((offset, size) => browserBlob.slice(offset, offset + size), browserBlob.size, updatedOptions);
+          }
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async uploadBrowserData(browserData, options = {}) {
+        const { span, updatedOptions } = createSpan("BlockBlobClient-uploadBrowserData", options);
+        try {
+          const browserBlob = new Blob([browserData]);
+          return await this.uploadSeekableInternal((offset, size) => browserBlob.slice(offset, offset + size), browserBlob.size, updatedOptions);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async uploadSeekableInternal(bodyFactory, size, options = {}) {
+        if (!options.blockSize) {
+          options.blockSize = 0;
+        }
+        if (options.blockSize < 0 || options.blockSize > BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES) {
+          throw new RangeError(`blockSize option must be >= 0 and <= ${BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES}`);
+        }
+        if (options.maxSingleShotSize !== 0 && !options.maxSingleShotSize) {
+          options.maxSingleShotSize = BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES;
+        }
+        if (options.maxSingleShotSize < 0 || options.maxSingleShotSize > BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES) {
+          throw new RangeError(`maxSingleShotSize option must be >= 0 and <= ${BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES}`);
+        }
+        if (options.blockSize === 0) {
+          if (size > BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES * BLOCK_BLOB_MAX_BLOCKS) {
+            throw new RangeError(`${size} is too larger to upload to a block blob.`);
+          }
+          if (size > options.maxSingleShotSize) {
+            options.blockSize = Math.ceil(size / BLOCK_BLOB_MAX_BLOCKS);
+            if (options.blockSize < DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES) {
+              options.blockSize = DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES;
+            }
+          }
+        }
+        if (!options.blobHTTPHeaders) {
+          options.blobHTTPHeaders = {};
+        }
+        if (!options.conditions) {
+          options.conditions = {};
+        }
+        const { span, updatedOptions } = createSpan("BlockBlobClient-uploadSeekableInternal", options);
+        try {
+          if (size <= options.maxSingleShotSize) {
+            return await this.upload(bodyFactory(0, size), size, updatedOptions);
+          }
+          const numBlocks = Math.floor((size - 1) / options.blockSize) + 1;
+          if (numBlocks > BLOCK_BLOB_MAX_BLOCKS) {
+            throw new RangeError(`The buffer's size is too big or the BlockSize is too small;the number of blocks must be <= ${BLOCK_BLOB_MAX_BLOCKS}`);
+          }
+          const blockList = [];
+          const blockIDPrefix = coreHttp.generateUuid();
+          let transferProgress = 0;
+          const batch = new Batch(options.concurrency);
+          for (let i = 0; i < numBlocks; i++) {
+            batch.addOperation(async () => {
+              const blockID = generateBlockID(blockIDPrefix, i);
+              const start = options.blockSize * i;
+              const end = i === numBlocks - 1 ? size : start + options.blockSize;
+              const contentLength2 = end - start;
+              blockList.push(blockID);
+              await this.stageBlock(blockID, bodyFactory(start, contentLength2), contentLength2, {
+                abortSignal: options.abortSignal,
+                conditions: options.conditions,
+                encryptionScope: options.encryptionScope,
+                tracingOptions: updatedOptions.tracingOptions
               });
-              throw e;
-            } finally {
-              span.end();
-            }
-            return [2];
-          });
-        });
-      };
-      BlockBlobClient2.prototype.uploadBrowserData = function(browserData, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, browserBlob_2, e_30;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlockBlobClient-uploadBrowserData", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                browserBlob_2 = new Blob([browserData]);
-                return [4, this.uploadSeekableInternal(function(offset, size) {
-                  return browserBlob_2.slice(offset, offset + size);
-                }, browserBlob_2.size, updatedOptions)];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_30 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_30.message
+              transferProgress += contentLength2;
+              if (options.onProgress) {
+                options.onProgress({
+                  loadedBytes: transferProgress
                 });
-                throw e_30;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+              }
+            });
+          }
+          await batch.do();
+          return this.commitBlockList(blockList, updatedOptions);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.uploadSeekableInternal = function(bodyFactory, size, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, numBlocks_1, blockList_1, blockIDPrefix_1, transferProgress_2, batch, _loop_2, i, e_31;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.blockSize) {
-                  options.blockSize = 0;
-                }
-                if (options.blockSize < 0 || options.blockSize > BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES) {
-                  throw new RangeError("blockSize option must be >= 0 and <= " + BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES);
-                }
-                if (options.maxSingleShotSize !== 0 && !options.maxSingleShotSize) {
-                  options.maxSingleShotSize = BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES;
-                }
-                if (options.maxSingleShotSize < 0 || options.maxSingleShotSize > BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES) {
-                  throw new RangeError("maxSingleShotSize option must be >= 0 and <= " + BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES);
-                }
-                if (options.blockSize === 0) {
-                  if (size > BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES * BLOCK_BLOB_MAX_BLOCKS) {
-                    throw new RangeError(size + " is too larger to upload to a block blob.");
-                  }
-                  if (size > options.maxSingleShotSize) {
-                    options.blockSize = Math.ceil(size / BLOCK_BLOB_MAX_BLOCKS);
-                    if (options.blockSize < DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES) {
-                      options.blockSize = DEFAULT_BLOB_DOWNLOAD_BLOCK_BYTES;
-                    }
-                  }
-                }
-                if (!options.blobHTTPHeaders) {
-                  options.blobHTTPHeaders = {};
-                }
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("BlockBlobClient-uploadSeekableInternal", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 5, 6, 7]);
-                if (!(size <= options.maxSingleShotSize))
-                  return [3, 3];
-                return [4, this.upload(bodyFactory(0, size), size, updatedOptions)];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                numBlocks_1 = Math.floor((size - 1) / options.blockSize) + 1;
-                if (numBlocks_1 > BLOCK_BLOB_MAX_BLOCKS) {
-                  throw new RangeError("The buffer's size is too big or the BlockSize is too small;" + ("the number of blocks must be <= " + BLOCK_BLOB_MAX_BLOCKS));
-                }
-                blockList_1 = [];
-                blockIDPrefix_1 = coreHttp.generateUuid();
-                transferProgress_2 = 0;
-                batch = new Batch(options.concurrency);
-                _loop_2 = /* @__PURE__ */ __name(function(i2) {
-                  batch.addOperation(function() {
-                    return tslib.__awaiter(_this, void 0, void 0, function() {
-                      var blockID, start, end, contentLength2;
-                      return tslib.__generator(this, function(_a2) {
-                        switch (_a2.label) {
-                          case 0:
-                            blockID = generateBlockID(blockIDPrefix_1, i2);
-                            start = options.blockSize * i2;
-                            end = i2 === numBlocks_1 - 1 ? size : start + options.blockSize;
-                            contentLength2 = end - start;
-                            blockList_1.push(blockID);
-                            return [4, this.stageBlock(blockID, bodyFactory(start, contentLength2), contentLength2, {
-                              abortSignal: options.abortSignal,
-                              conditions: options.conditions,
-                              encryptionScope: options.encryptionScope,
-                              tracingOptions: updatedOptions.tracingOptions
-                            })];
-                          case 1:
-                            _a2.sent();
-                            transferProgress_2 += contentLength2;
-                            if (options.onProgress) {
-                              options.onProgress({
-                                loadedBytes: transferProgress_2
-                              });
-                            }
-                            return [2];
-                        }
-                      });
-                    });
-                  });
-                }, "_loop_2");
-                for (i = 0; i < numBlocks_1; i++) {
-                  _loop_2(i);
-                }
-                return [4, batch.do()];
-              case 4:
-                _b.sent();
-                return [2, this.commitBlockList(blockList_1, updatedOptions)];
-              case 5:
-                e_31 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_31.message
-                });
-                throw e_31;
-              case 6:
-                span.end();
-                return [7];
-              case 7:
-                return [2];
-            }
+      }
+      async uploadFile(filePath, options = {}) {
+        const { span, updatedOptions } = createSpan("BlockBlobClient-uploadFile", options);
+        try {
+          const size = (await fsStat(filePath)).size;
+          return await this.uploadSeekableInternal((offset, count) => {
+            return () => fsCreateReadStream(filePath, {
+              autoClose: true,
+              end: count ? offset + count - 1 : Infinity,
+              start: offset
+            });
+          }, size, Object.assign(Object.assign({}, options), { tracingOptions: Object.assign(Object.assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.uploadFile = function(filePath, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, size, e_32;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlockBlobClient-uploadFile", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 4, 5, 6]);
-                return [4, fsStat(filePath)];
-              case 2:
-                size = _b.sent().size;
-                return [4, this.uploadSeekableInternal(function(offset, count) {
-                  return function() {
-                    return fsCreateReadStream(filePath, {
-                      autoClose: true,
-                      end: count ? offset + count - 1 : Infinity,
-                      start: offset
-                    });
-                  };
-                }, size, tslib.__assign(tslib.__assign({}, options), { tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }))];
-              case 3:
-                return [2, _b.sent()];
-              case 4:
-                e_32 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_32.message
-                });
-                throw e_32;
-              case 5:
-                span.end();
-                return [7];
-              case 6:
-                return [2];
+      }
+      async uploadStream(stream2, bufferSize = DEFAULT_BLOCK_BUFFER_SIZE_BYTES, maxConcurrency = 5, options = {}) {
+        if (!options.blobHTTPHeaders) {
+          options.blobHTTPHeaders = {};
+        }
+        if (!options.conditions) {
+          options.conditions = {};
+        }
+        const { span, updatedOptions } = createSpan("BlockBlobClient-uploadStream", options);
+        try {
+          let blockNum = 0;
+          const blockIDPrefix = coreHttp.generateUuid();
+          let transferProgress = 0;
+          const blockList = [];
+          const scheduler = new BufferScheduler(stream2, bufferSize, maxConcurrency, async (body2, length) => {
+            const blockID = generateBlockID(blockIDPrefix, blockNum);
+            blockList.push(blockID);
+            blockNum++;
+            await this.stageBlock(blockID, body2, length, {
+              conditions: options.conditions,
+              encryptionScope: options.encryptionScope,
+              tracingOptions: updatedOptions.tracingOptions
+            });
+            transferProgress += length;
+            if (options.onProgress) {
+              options.onProgress({ loadedBytes: transferProgress });
             }
+          }, Math.ceil(maxConcurrency / 4 * 3));
+          await scheduler.do();
+          return await this.commitBlockList(blockList, Object.assign(Object.assign({}, options), { tracingOptions: Object.assign(Object.assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlockBlobClient2.prototype.uploadStream = function(stream2, bufferSize, maxConcurrency, options) {
-        if (bufferSize === void 0) {
-          bufferSize = DEFAULT_BLOCK_BUFFER_SIZE_BYTES;
+          throw e;
+        } finally {
+          span.end();
         }
-        if (maxConcurrency === void 0) {
-          maxConcurrency = 5;
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, blockNum_1, blockIDPrefix_2, transferProgress_3, blockList_2, scheduler, e_33;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.blobHTTPHeaders) {
-                  options.blobHTTPHeaders = {};
-                }
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("BlockBlobClient-uploadStream", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 4, 5, 6]);
-                blockNum_1 = 0;
-                blockIDPrefix_2 = coreHttp.generateUuid();
-                transferProgress_3 = 0;
-                blockList_2 = [];
-                scheduler = new BufferScheduler(stream2, bufferSize, maxConcurrency, function(body2, length) {
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    var blockID;
-                    return tslib.__generator(this, function(_a2) {
-                      switch (_a2.label) {
-                        case 0:
-                          blockID = generateBlockID(blockIDPrefix_2, blockNum_1);
-                          blockList_2.push(blockID);
-                          blockNum_1++;
-                          return [4, this.stageBlock(blockID, body2, length, {
-                            conditions: options.conditions,
-                            encryptionScope: options.encryptionScope,
-                            tracingOptions: updatedOptions.tracingOptions
-                          })];
-                        case 1:
-                          _a2.sent();
-                          transferProgress_3 += length;
-                          if (options.onProgress) {
-                            options.onProgress({ loadedBytes: transferProgress_3 });
-                          }
-                          return [2];
-                      }
-                    });
-                  });
-                }, Math.ceil(maxConcurrency / 4 * 3));
-                return [4, scheduler.do()];
-              case 2:
-                _b.sent();
-                return [4, this.commitBlockList(blockList_2, tslib.__assign(tslib.__assign({}, options), { tracingOptions: tslib.__assign(tslib.__assign({}, options.tracingOptions), convertTracingToRequestOptionsBase(updatedOptions)) }))];
-              case 3:
-                return [2, _b.sent()];
-              case 4:
-                e_33 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_33.message
-                });
-                throw e_33;
-              case 5:
-                span.end();
-                return [7];
-              case 6:
-                return [2];
-            }
-          });
-        });
-      };
-      return BlockBlobClient2;
-    }(BlobClient);
-    var PageBlobClient = function(_super) {
-      tslib.__extends(PageBlobClient2, _super);
-      function PageBlobClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
-        var _this = this;
-        var pipeline;
-        var url2;
+      }
+    };
+    __name(BlockBlobClient, "BlockBlobClient");
+    var PageBlobClient = class extends BlobClient {
+      constructor(urlOrConnectionString, credentialOrPipelineOrContainerName, blobNameOrOptions, options) {
+        let pipeline;
+        let url2;
         options = options || {};
         if (credentialOrPipelineOrContainerName instanceof Pipeline) {
           url2 = urlOrConnectionString;
@@ -59642,12 +57299,12 @@ var require_dist9 = __commonJS({
           url2 = urlOrConnectionString;
           pipeline = newPipeline(new AnonymousCredential(), options);
         } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string" && blobNameOrOptions && typeof blobNameOrOptions === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var blobName = blobNameOrOptions;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          const containerName = credentialOrPipelineOrContainerName;
+          const blobName = blobNameOrOptions;
+          const extractedCreds = extractConnectionStringParts(urlOrConnectionString);
           if (extractedCreds.kind === "AccountConnString") {
             {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
               url2 = appendToURLPath(appendToURLPath(extractedCreds.url, encodeURIComponent(containerName)), encodeURIComponent(blobName));
               options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
               pipeline = newPipeline(sharedKeyCredential, options);
@@ -59661,431 +57318,215 @@ var require_dist9 = __commonJS({
         } else {
           throw new Error("Expecting non-empty strings for containerName and blobName parameters");
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this.pageBlobContext = new PageBlob(_this.storageClientContext);
-        return _this;
+        super(url2, pipeline);
+        this.pageBlobContext = new PageBlob(this.storageClientContext);
       }
-      __name(PageBlobClient2, "PageBlobClient");
-      PageBlobClient2.prototype.withSnapshot = function(snapshot2) {
-        return new PageBlobClient2(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
-      };
-      PageBlobClient2.prototype.create = function(size, options) {
+      withSnapshot(snapshot2) {
+        return new PageBlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
+      }
+      async create(size, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_34;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-create", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.create(0, size, tslib.__assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, blobSequenceNumber: options.blobSequenceNumber, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_34 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_34.message
-                });
-                throw e_34;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-create", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.pageBlobContext.create(0, size, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, blobSequenceNumber: options.blobSequenceNumber, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      PageBlobClient2.prototype.createIfNotExists = function(size, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async createIfNotExists(size, options = {}) {
         var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, updatedOptions, conditions, res, e_35;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("PageBlobClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                conditions = { ifNoneMatch: ETagAny };
-                return [4, this.create(size, tslib.__assign(tslib.__assign({}, options), { conditions, tracingOptions: updatedOptions.tracingOptions }))];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({ succeeded: true }, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_35 = _d.sent();
-                if (((_a = e_35.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when creating a blob only if it does not already exist."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({ succeeded: false }, (_b = e_35.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e_35.response })];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_35.message
-                });
-                throw e_35;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("PageBlobClient-createIfNotExists", options);
+        try {
+          const conditions = { ifNoneMatch: ETagAny };
+          const res = await this.create(size, Object.assign(Object.assign({}, options), { conditions, tracingOptions: updatedOptions.tracingOptions }));
+          return Object.assign(Object.assign({ succeeded: true }, res), {
+            _response: res._response
           });
-        });
-      };
-      PageBlobClient2.prototype.uploadPages = function(body2, offset, count, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_36;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-uploadPages", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.uploadPages(count, body2, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
-                  onUploadProgress: options.onProgress
-                }, range: rangeToString({ offset, count }), sequenceNumberAccessConditions: options.conditions, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_36 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_36.message
-                });
-                throw e_36;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.uploadPagesFromURL = function(sourceURL, sourceOffset, destOffset, count, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_37;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                options.sourceConditions = options.sourceConditions || {};
-                _b = createSpan("PageBlobClient-uploadPagesFromURL", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-                return [4, this.pageBlobContext.uploadPagesFromURL(sourceURL, rangeToString({ offset: sourceOffset, count }), 0, rangeToString({ offset: destOffset, count }), tslib.__assign({ abortSignal: options.abortSignal, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, sequenceNumberAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
-                  sourceIfMatch: options.sourceConditions.ifMatch,
-                  sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
-                  sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
-                  sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-                }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_37 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_37.message
-                });
-                throw e_37;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.clearPages = function(offset, count, options) {
-        var _a;
-        if (offset === void 0) {
-          offset = 0;
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_38;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-clearPages", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.clearPages(0, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), range: rangeToString({ offset, count }), sequenceNumberAccessConditions: options.conditions, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_38 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_38.message
-                });
-                throw e_38;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.getPageRanges = function(offset, count, options) {
-        var _a;
-        if (offset === void 0) {
-          offset = 0;
-        }
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_39;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-getPageRanges", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRanges(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_39 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_39.message
-                });
-                throw e_39;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.getPageRangesDiff = function(offset, count, prevSnapshot, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_40;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-getPageRangesDiff", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRangesDiff(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), prevsnapshot: prevSnapshot, range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_40 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_40.message
-                });
-                throw e_40;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.getPageRangesDiffForManagedDisks = function(offset, count, prevSnapshotUrl2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_41;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-GetPageRangesDiffForManagedDisks", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.getPageRangesDiff(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), prevSnapshotUrl: prevSnapshotUrl2, range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel)];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_41 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_41.message
-                });
-                throw e_41;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.resize = function(size, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_42;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-resize", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.resize(size, tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_42 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_42.message
-                });
-                throw e_42;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.updateSequenceNumber = function(sequenceNumberAction2, sequenceNumber, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_43;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _b = createSpan("PageBlobClient-updateSequenceNumber", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.updateSequenceNumber(sequenceNumberAction2, tslib.__assign({ abortSignal: options.abortSignal, blobSequenceNumber: sequenceNumber, leaseAccessConditions: options.conditions, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_43 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_43.message
-                });
-                throw e_43;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      PageBlobClient2.prototype.startCopyIncremental = function(copySource2, options) {
-        var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, e_44;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("PageBlobClient-startCopyIncremental", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                return [4, this.pageBlobContext.copyIncremental(copySource2, tslib.__assign({ abortSignal: options.abortSignal, modifiedAccessConditions: tslib.__assign(tslib.__assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_44 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_44.message
-                });
-                throw e_44;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      return PageBlobClient2;
-    }(BlobClient);
-    function getBodyAsText(batchResponse) {
-      return tslib.__awaiter(this, void 0, void 0, function() {
-        var buffer, responseLength;
-        return tslib.__generator(this, function(_a) {
-          switch (_a.label) {
-            case 0:
-              buffer = Buffer.alloc(BATCH_MAX_PAYLOAD_IN_BYTES);
-              return [4, streamToBuffer2(batchResponse.readableStreamBody, buffer)];
-            case 1:
-              responseLength = _a.sent();
-              buffer = buffer.slice(0, responseLength);
-              return [2, buffer.toString()];
+        } catch (e) {
+          if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "BlobAlreadyExists") {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when creating a blob only if it does not already exist."
+            });
+            return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
           }
-        });
-      });
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async uploadPages(body2, offset, count, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-uploadPages", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.pageBlobContext.uploadPages(count, body2, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
+            onUploadProgress: options.onProgress
+          }, range: rangeToString({ offset, count }), sequenceNumberAccessConditions: options.conditions, transactionalContentMD5: options.transactionalContentMD5, transactionalContentCrc64: options.transactionalContentCrc64, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async uploadPagesFromURL(sourceURL, sourceOffset, destOffset, count, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        options.sourceConditions = options.sourceConditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-uploadPagesFromURL", options);
+        try {
+          ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
+          return await this.pageBlobContext.uploadPagesFromURL(sourceURL, rangeToString({ offset: sourceOffset, count }), 0, rangeToString({ offset: destOffset, count }), Object.assign({ abortSignal: options.abortSignal, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, leaseAccessConditions: options.conditions, sequenceNumberAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), sourceModifiedAccessConditions: {
+            sourceIfMatch: options.sourceConditions.ifMatch,
+            sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
+            sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
+            sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
+          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async clearPages(offset = 0, count, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-clearPages", options);
+        try {
+          return await this.pageBlobContext.clearPages(0, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), range: rangeToString({ offset, count }), sequenceNumberAccessConditions: options.conditions, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getPageRanges(offset = 0, count, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-getPageRanges", options);
+        try {
+          return await this.pageBlobContext.getPageRanges(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getPageRangesDiff(offset, count, prevSnapshot, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-getPageRangesDiff", options);
+        try {
+          return await this.pageBlobContext.getPageRangesDiff(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), prevsnapshot: prevSnapshot, range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getPageRangesDiffForManagedDisks(offset, count, prevSnapshotUrl2, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-GetPageRangesDiffForManagedDisks", options);
+        try {
+          return await this.pageBlobContext.getPageRangesDiff(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), prevSnapshotUrl: prevSnapshotUrl2, range: rangeToString({ offset, count }) }, convertTracingToRequestOptionsBase(updatedOptions))).then(rangeResponseFromModel);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async resize(size, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-resize", options);
+        try {
+          return await this.pageBlobContext.resize(size, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async updateSequenceNumber(sequenceNumberAction2, sequenceNumber, options = {}) {
+        var _a;
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("PageBlobClient-updateSequenceNumber", options);
+        try {
+          return await this.pageBlobContext.updateSequenceNumber(sequenceNumberAction2, Object.assign({ abortSignal: options.abortSignal, blobSequenceNumber: sequenceNumber, leaseAccessConditions: options.conditions, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async startCopyIncremental(copySource2, options = {}) {
+        var _a;
+        const { span, updatedOptions } = createSpan("PageBlobClient-startCopyIncremental", options);
+        try {
+          return await this.pageBlobContext.copyIncremental(copySource2, Object.assign({ abortSignal: options.abortSignal, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }) }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+    };
+    __name(PageBlobClient, "PageBlobClient");
+    async function getBodyAsText(batchResponse) {
+      let buffer = Buffer.alloc(BATCH_MAX_PAYLOAD_IN_BYTES);
+      const responseLength = await streamToBuffer2(batchResponse.readableStreamBody, buffer);
+      buffer = buffer.slice(0, responseLength);
+      return buffer.toString();
     }
     __name(getBodyAsText, "getBodyAsText");
     function utf8ByteLength(str) {
@@ -60095,8 +57536,8 @@ var require_dist9 = __commonJS({
     var HTTP_HEADER_DELIMITER = ": ";
     var SPACE_DELIMITER = " ";
     var NOT_FOUND = -1;
-    var BatchResponseParser = function() {
-      function BatchResponseParser2(batchResponse, subRequests) {
+    var BatchResponseParser = class {
+      constructor(batchResponse, subRequests) {
         if (!batchResponse || !batchResponse.contentType) {
           throw new RangeError("batchResponse is malformed or doesn't contain valid content-type.");
         }
@@ -60106,351 +57547,256 @@ var require_dist9 = __commonJS({
         this.batchResponse = batchResponse;
         this.subRequests = subRequests;
         this.responseBatchBoundary = this.batchResponse.contentType.split("=")[1];
-        this.perResponsePrefix = "--" + this.responseBatchBoundary + HTTP_LINE_ENDING;
-        this.batchResponseEnding = "--" + this.responseBatchBoundary + "--";
+        this.perResponsePrefix = `--${this.responseBatchBoundary}${HTTP_LINE_ENDING}`;
+        this.batchResponseEnding = `--${this.responseBatchBoundary}--`;
       }
-      __name(BatchResponseParser2, "BatchResponseParser");
-      BatchResponseParser2.prototype.parseBatchResponse = function() {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var responseBodyAsText, subResponses, subResponseCount, deserializedSubResponses, subResponsesSucceededCount, subResponsesFailedCount, index, subResponse, deserializedSubResponse, responseLines, subRespHeaderStartFound, subRespHeaderEndFound, subRespFailed, contentId, _i, responseLines_1, responseLine, tokens, tokens;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (this.batchResponse._response.status != HTTPURLConnection.HTTP_ACCEPTED) {
-                  throw new Error("Invalid state: batch request failed with status: '" + this.batchResponse._response.status + "'.");
-                }
-                return [4, getBodyAsText(this.batchResponse)];
-              case 1:
-                responseBodyAsText = _a.sent();
-                subResponses = responseBodyAsText.split(this.batchResponseEnding)[0].split(this.perResponsePrefix).slice(1);
-                subResponseCount = subResponses.length;
-                if (subResponseCount != this.subRequests.size && subResponseCount != 1) {
-                  throw new Error("Invalid state: sub responses' count is not equal to sub requests' count.");
-                }
-                deserializedSubResponses = new Array(subResponseCount);
-                subResponsesSucceededCount = 0;
-                subResponsesFailedCount = 0;
-                for (index = 0; index < subResponseCount; index++) {
-                  subResponse = subResponses[index];
-                  deserializedSubResponse = {};
-                  deserializedSubResponse.headers = new coreHttp.HttpHeaders();
-                  responseLines = subResponse.split("" + HTTP_LINE_ENDING);
-                  subRespHeaderStartFound = false;
-                  subRespHeaderEndFound = false;
-                  subRespFailed = false;
-                  contentId = NOT_FOUND;
-                  for (_i = 0, responseLines_1 = responseLines; _i < responseLines_1.length; _i++) {
-                    responseLine = responseLines_1[_i];
-                    if (!subRespHeaderStartFound) {
-                      if (responseLine.startsWith(HeaderConstants.CONTENT_ID)) {
-                        contentId = parseInt(responseLine.split(HTTP_HEADER_DELIMITER)[1]);
-                      }
-                      if (responseLine.startsWith(HTTP_VERSION_1_1)) {
-                        subRespHeaderStartFound = true;
-                        tokens = responseLine.split(SPACE_DELIMITER);
-                        deserializedSubResponse.status = parseInt(tokens[1]);
-                        deserializedSubResponse.statusMessage = tokens.slice(2).join(SPACE_DELIMITER);
-                      }
-                      continue;
-                    }
-                    if (responseLine.trim() === "") {
-                      if (!subRespHeaderEndFound) {
-                        subRespHeaderEndFound = true;
-                      }
-                      continue;
-                    }
-                    if (!subRespHeaderEndFound) {
-                      if (responseLine.indexOf(HTTP_HEADER_DELIMITER) === -1) {
-                        throw new Error("Invalid state: find non-empty line '" + responseLine + "' without HTTP header delimiter '" + HTTP_HEADER_DELIMITER + "'.");
-                      }
-                      tokens = responseLine.split(HTTP_HEADER_DELIMITER);
-                      deserializedSubResponse.headers.set(tokens[0], tokens[1]);
-                      if (tokens[0] === HeaderConstants.X_MS_ERROR_CODE) {
-                        deserializedSubResponse.errorCode = tokens[1];
-                        subRespFailed = true;
-                      }
-                    } else {
-                      if (!deserializedSubResponse.bodyAsText) {
-                        deserializedSubResponse.bodyAsText = "";
-                      }
-                      deserializedSubResponse.bodyAsText += responseLine;
-                    }
-                  }
-                  if (contentId != NOT_FOUND && Number.isInteger(contentId) && contentId >= 0 && contentId < this.subRequests.size && deserializedSubResponses[contentId] === void 0) {
-                    deserializedSubResponse._request = this.subRequests.get(contentId);
-                    deserializedSubResponses[contentId] = deserializedSubResponse;
-                  } else {
-                    logger.error("subResponses[" + index + "] is dropped as the Content-ID is not found or invalid, Content-ID: " + contentId);
-                  }
-                  if (subRespFailed) {
-                    subResponsesFailedCount++;
-                  } else {
-                    subResponsesSucceededCount++;
-                  }
-                }
-                return [2, {
-                  subResponses: deserializedSubResponses,
-                  subResponsesSucceededCount,
-                  subResponsesFailedCount
-                }];
+      async parseBatchResponse() {
+        if (this.batchResponse._response.status != HTTPURLConnection.HTTP_ACCEPTED) {
+          throw new Error(`Invalid state: batch request failed with status: '${this.batchResponse._response.status}'.`);
+        }
+        const responseBodyAsText = await getBodyAsText(this.batchResponse);
+        const subResponses = responseBodyAsText.split(this.batchResponseEnding)[0].split(this.perResponsePrefix).slice(1);
+        const subResponseCount = subResponses.length;
+        if (subResponseCount != this.subRequests.size && subResponseCount != 1) {
+          throw new Error("Invalid state: sub responses' count is not equal to sub requests' count.");
+        }
+        const deserializedSubResponses = new Array(subResponseCount);
+        let subResponsesSucceededCount = 0;
+        let subResponsesFailedCount = 0;
+        for (let index = 0; index < subResponseCount; index++) {
+          const subResponse = subResponses[index];
+          const deserializedSubResponse = {};
+          deserializedSubResponse.headers = new coreHttp.HttpHeaders();
+          const responseLines = subResponse.split(`${HTTP_LINE_ENDING}`);
+          let subRespHeaderStartFound = false;
+          let subRespHeaderEndFound = false;
+          let subRespFailed = false;
+          let contentId = NOT_FOUND;
+          for (const responseLine of responseLines) {
+            if (!subRespHeaderStartFound) {
+              if (responseLine.startsWith(HeaderConstants.CONTENT_ID)) {
+                contentId = parseInt(responseLine.split(HTTP_HEADER_DELIMITER)[1]);
+              }
+              if (responseLine.startsWith(HTTP_VERSION_1_1)) {
+                subRespHeaderStartFound = true;
+                const tokens = responseLine.split(SPACE_DELIMITER);
+                deserializedSubResponse.status = parseInt(tokens[1]);
+                deserializedSubResponse.statusMessage = tokens.slice(2).join(SPACE_DELIMITER);
+              }
+              continue;
             }
-          });
-        });
-      };
-      return BatchResponseParser2;
-    }();
+            if (responseLine.trim() === "") {
+              if (!subRespHeaderEndFound) {
+                subRespHeaderEndFound = true;
+              }
+              continue;
+            }
+            if (!subRespHeaderEndFound) {
+              if (responseLine.indexOf(HTTP_HEADER_DELIMITER) === -1) {
+                throw new Error(`Invalid state: find non-empty line '${responseLine}' without HTTP header delimiter '${HTTP_HEADER_DELIMITER}'.`);
+              }
+              const tokens = responseLine.split(HTTP_HEADER_DELIMITER);
+              deserializedSubResponse.headers.set(tokens[0], tokens[1]);
+              if (tokens[0] === HeaderConstants.X_MS_ERROR_CODE) {
+                deserializedSubResponse.errorCode = tokens[1];
+                subRespFailed = true;
+              }
+            } else {
+              if (!deserializedSubResponse.bodyAsText) {
+                deserializedSubResponse.bodyAsText = "";
+              }
+              deserializedSubResponse.bodyAsText += responseLine;
+            }
+          }
+          if (contentId != NOT_FOUND && Number.isInteger(contentId) && contentId >= 0 && contentId < this.subRequests.size && deserializedSubResponses[contentId] === void 0) {
+            deserializedSubResponse._request = this.subRequests.get(contentId);
+            deserializedSubResponses[contentId] = deserializedSubResponse;
+          } else {
+            logger.error(`subResponses[${index}] is dropped as the Content-ID is not found or invalid, Content-ID: ${contentId}`);
+          }
+          if (subRespFailed) {
+            subResponsesFailedCount++;
+          } else {
+            subResponsesSucceededCount++;
+          }
+        }
+        return {
+          subResponses: deserializedSubResponses,
+          subResponsesSucceededCount,
+          subResponsesFailedCount
+        };
+      }
+    };
+    __name(BatchResponseParser, "BatchResponseParser");
     var MutexLockStatus;
     (function(MutexLockStatus2) {
       MutexLockStatus2[MutexLockStatus2["LOCKED"] = 0] = "LOCKED";
       MutexLockStatus2[MutexLockStatus2["UNLOCKED"] = 1] = "UNLOCKED";
     })(MutexLockStatus || (MutexLockStatus = {}));
-    var Mutex = function() {
-      function Mutex2() {
-      }
-      __name(Mutex2, "Mutex");
-      Mutex2.lock = function(key) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            return [2, new Promise(function(resolve2) {
-              if (_this.keys[key] === void 0 || _this.keys[key] === MutexLockStatus.UNLOCKED) {
-                _this.keys[key] = MutexLockStatus.LOCKED;
-                resolve2();
-              } else {
-                _this.onUnlockEvent(key, function() {
-                  _this.keys[key] = MutexLockStatus.LOCKED;
-                  resolve2();
-                });
-              }
-            })];
-          });
-        });
-      };
-      Mutex2.unlock = function(key) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _this = this;
-          return tslib.__generator(this, function(_a) {
-            return [2, new Promise(function(resolve2) {
-              if (_this.keys[key] === MutexLockStatus.LOCKED) {
-                _this.emitUnlockEvent(key);
-              }
-              delete _this.keys[key];
+    var Mutex = class {
+      static async lock(key) {
+        return new Promise((resolve2) => {
+          if (this.keys[key] === void 0 || this.keys[key] === MutexLockStatus.UNLOCKED) {
+            this.keys[key] = MutexLockStatus.LOCKED;
+            resolve2();
+          } else {
+            this.onUnlockEvent(key, () => {
+              this.keys[key] = MutexLockStatus.LOCKED;
               resolve2();
-            })];
-          });
+            });
+          }
         });
-      };
-      Mutex2.onUnlockEvent = function(key, handler) {
+      }
+      static async unlock(key) {
+        return new Promise((resolve2) => {
+          if (this.keys[key] === MutexLockStatus.LOCKED) {
+            this.emitUnlockEvent(key);
+          }
+          delete this.keys[key];
+          resolve2();
+        });
+      }
+      static onUnlockEvent(key, handler) {
         if (this.listeners[key] === void 0) {
           this.listeners[key] = [handler];
         } else {
           this.listeners[key].push(handler);
         }
-      };
-      Mutex2.emitUnlockEvent = function(key) {
-        var _this = this;
+      }
+      static emitUnlockEvent(key) {
         if (this.listeners[key] !== void 0 && this.listeners[key].length > 0) {
-          var handler_1 = this.listeners[key].shift();
-          setImmediate(function() {
-            handler_1.call(_this);
+          const handler = this.listeners[key].shift();
+          setImmediate(() => {
+            handler.call(this);
           });
         }
-      };
-      Mutex2.keys = {};
-      Mutex2.listeners = {};
-      return Mutex2;
-    }();
-    var BlobBatch = function() {
-      function BlobBatch2() {
+      }
+    };
+    __name(Mutex, "Mutex");
+    Mutex.keys = {};
+    Mutex.listeners = {};
+    var BlobBatch = class {
+      constructor() {
         this.batch = "batch";
         this.batchRequest = new InnerBatchRequest();
       }
-      __name(BlobBatch2, "BlobBatch");
-      BlobBatch2.prototype.getMultiPartContentType = function() {
+      getMultiPartContentType() {
         return this.batchRequest.getMultipartContentType();
-      };
-      BlobBatch2.prototype.getHttpRequestBody = function() {
+      }
+      getHttpRequestBody() {
         return this.batchRequest.getHttpRequestBody();
-      };
-      BlobBatch2.prototype.getSubRequests = function() {
+      }
+      getSubRequests() {
         return this.batchRequest.getSubRequests();
-      };
-      BlobBatch2.prototype.addSubRequestInternal = function(subRequest, assembleSubRequestFunc) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, Mutex.lock(this.batch)];
-              case 1:
-                _a.sent();
-                _a.label = 2;
-              case 2:
-                _a.trys.push([2, , 4, 6]);
-                this.batchRequest.preAddSubRequest(subRequest);
-                return [4, assembleSubRequestFunc()];
-              case 3:
-                _a.sent();
-                this.batchRequest.postAddSubRequest(subRequest);
-                return [3, 6];
-              case 4:
-                return [4, Mutex.unlock(this.batch)];
-              case 5:
-                _a.sent();
-                return [7];
-              case 6:
-                return [2];
-            }
-          });
-        });
-      };
-      BlobBatch2.prototype.setBatchType = function(batchType) {
+      }
+      async addSubRequestInternal(subRequest, assembleSubRequestFunc) {
+        await Mutex.lock(this.batch);
+        try {
+          this.batchRequest.preAddSubRequest(subRequest);
+          await assembleSubRequestFunc();
+          this.batchRequest.postAddSubRequest(subRequest);
+        } finally {
+          await Mutex.unlock(this.batch);
+        }
+      }
+      setBatchType(batchType) {
         if (!this.batchType) {
           this.batchType = batchType;
         }
         if (this.batchType !== batchType) {
-          throw new RangeError("BlobBatch only supports one operation type per batch and it already is being used for " + this.batchType + " operations.");
+          throw new RangeError(`BlobBatch only supports one operation type per batch and it already is being used for ${this.batchType} operations.`);
         }
-      };
-      BlobBatch2.prototype.deleteBlob = function(urlOrBlobClient, credentialOrOptions, options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var url2, credential, _a, span, updatedOptions, e_1;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (typeof urlOrBlobClient === "string" && (coreHttp.isNode && credentialOrOptions instanceof StorageSharedKeyCredential || credentialOrOptions instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrOptions))) {
-                  url2 = urlOrBlobClient;
-                  credential = credentialOrOptions;
-                } else if (urlOrBlobClient instanceof BlobClient) {
-                  url2 = urlOrBlobClient.url;
-                  credential = urlOrBlobClient.credential;
-                  options = credentialOrOptions;
-                } else {
-                  throw new RangeError("Invalid arguments. Either url and credential, or BlobClient need be provided.");
-                }
-                if (!options) {
-                  options = {};
-                }
-                _a = createSpan("BatchDeleteRequest-addSubRequest", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                this.setBatchType("delete");
-                return [4, this.addSubRequestInternal({
-                  url: url2,
-                  credential
-                }, function() {
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    return tslib.__generator(this, function(_a2) {
-                      switch (_a2.label) {
-                        case 0:
-                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).delete(updatedOptions)];
-                        case 1:
-                          _a2.sent();
-                          return [2];
-                      }
-                    });
-                  });
-                })];
-              case 2:
-                _b.sent();
-                return [3, 5];
-              case 3:
-                e_1 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async deleteBlob(urlOrBlobClient, credentialOrOptions, options) {
+        let url2;
+        let credential;
+        if (typeof urlOrBlobClient === "string" && (coreHttp.isNode && credentialOrOptions instanceof StorageSharedKeyCredential || credentialOrOptions instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrOptions))) {
+          url2 = urlOrBlobClient;
+          credential = credentialOrOptions;
+        } else if (urlOrBlobClient instanceof BlobClient) {
+          url2 = urlOrBlobClient.url;
+          credential = urlOrBlobClient.credential;
+          options = credentialOrOptions;
+        } else {
+          throw new RangeError("Invalid arguments. Either url and credential, or BlobClient need be provided.");
+        }
+        if (!options) {
+          options = {};
+        }
+        const { span, updatedOptions } = createSpan("BatchDeleteRequest-addSubRequest", options);
+        try {
+          this.setBatchType("delete");
+          await this.addSubRequestInternal({
+            url: url2,
+            credential
+          }, async () => {
+            await new BlobClient(url2, this.batchRequest.createPipeline(credential)).delete(updatedOptions);
           });
-        });
-      };
-      BlobBatch2.prototype.setBlobAccessTier = function(urlOrBlobClient, credentialOrTier, tierOrOptions, options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var url2, credential, tier2, _a, span, updatedOptions, e_2;
-          var _this = this;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (typeof urlOrBlobClient === "string" && (coreHttp.isNode && credentialOrTier instanceof StorageSharedKeyCredential || credentialOrTier instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrTier))) {
-                  url2 = urlOrBlobClient;
-                  credential = credentialOrTier;
-                  tier2 = tierOrOptions;
-                } else if (urlOrBlobClient instanceof BlobClient) {
-                  url2 = urlOrBlobClient.url;
-                  credential = urlOrBlobClient.credential;
-                  tier2 = credentialOrTier;
-                  options = tierOrOptions;
-                } else {
-                  throw new RangeError("Invalid arguments. Either url and credential, or BlobClient need be provided.");
-                }
-                if (!options) {
-                  options = {};
-                }
-                _a = createSpan("BatchSetTierRequest-addSubRequest", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                this.setBatchType("setAccessTier");
-                return [4, this.addSubRequestInternal({
-                  url: url2,
-                  credential
-                }, function() {
-                  return tslib.__awaiter(_this, void 0, void 0, function() {
-                    return tslib.__generator(this, function(_a2) {
-                      switch (_a2.label) {
-                        case 0:
-                          return [4, new BlobClient(url2, this.batchRequest.createPipeline(credential)).setAccessTier(tier2, updatedOptions)];
-                        case 1:
-                          _a2.sent();
-                          return [2];
-                      }
-                    });
-                  });
-                })];
-              case 2:
-                _b.sent();
-                return [3, 5];
-              case 3:
-                e_2 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_2.message
-                });
-                throw e_2;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      return BlobBatch2;
-    }();
-    var InnerBatchRequest = function() {
-      function InnerBatchRequest2() {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setBlobAccessTier(urlOrBlobClient, credentialOrTier, tierOrOptions, options) {
+        let url2;
+        let credential;
+        let tier2;
+        if (typeof urlOrBlobClient === "string" && (coreHttp.isNode && credentialOrTier instanceof StorageSharedKeyCredential || credentialOrTier instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrTier))) {
+          url2 = urlOrBlobClient;
+          credential = credentialOrTier;
+          tier2 = tierOrOptions;
+        } else if (urlOrBlobClient instanceof BlobClient) {
+          url2 = urlOrBlobClient.url;
+          credential = urlOrBlobClient.credential;
+          tier2 = credentialOrTier;
+          options = tierOrOptions;
+        } else {
+          throw new RangeError("Invalid arguments. Either url and credential, or BlobClient need be provided.");
+        }
+        if (!options) {
+          options = {};
+        }
+        const { span, updatedOptions } = createSpan("BatchSetTierRequest-addSubRequest", options);
+        try {
+          this.setBatchType("setAccessTier");
+          await this.addSubRequestInternal({
+            url: url2,
+            credential
+          }, async () => {
+            await new BlobClient(url2, this.batchRequest.createPipeline(credential)).setAccessTier(tier2, updatedOptions);
+          });
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+    };
+    __name(BlobBatch, "BlobBatch");
+    var InnerBatchRequest = class {
+      constructor() {
         this.operationCount = 0;
         this.body = "";
-        var tempGuid = coreHttp.generateUuid();
-        this.boundary = "batch_" + tempGuid;
-        this.subRequestPrefix = "--" + this.boundary + HTTP_LINE_ENDING + HeaderConstants.CONTENT_TYPE + ": application/http" + HTTP_LINE_ENDING + HeaderConstants.CONTENT_TRANSFER_ENCODING + ": binary";
-        this.multipartContentType = "multipart/mixed; boundary=" + this.boundary;
-        this.batchRequestEnding = "--" + this.boundary + "--";
+        const tempGuid = coreHttp.generateUuid();
+        this.boundary = `batch_${tempGuid}`;
+        this.subRequestPrefix = `--${this.boundary}${HTTP_LINE_ENDING}${HeaderConstants.CONTENT_TYPE}: application/http${HTTP_LINE_ENDING}${HeaderConstants.CONTENT_TRANSFER_ENCODING}: binary`;
+        this.multipartContentType = `multipart/mixed; boundary=${this.boundary}`;
+        this.batchRequestEnding = `--${this.boundary}--`;
         this.subRequests = new Map();
       }
-      __name(InnerBatchRequest2, "InnerBatchRequest");
-      InnerBatchRequest2.prototype.createPipeline = function(credential) {
-        var isAnonymousCreds = credential instanceof AnonymousCredential;
-        var policyFactoryLength = 3 + (isAnonymousCreds ? 0 : 1);
-        var factories = new Array(policyFactoryLength);
+      createPipeline(credential) {
+        const isAnonymousCreds = credential instanceof AnonymousCredential;
+        const policyFactoryLength = 3 + (isAnonymousCreds ? 0 : 1);
+        const factories = new Array(policyFactoryLength);
         factories[0] = coreHttp.deserializationPolicy();
         factories[1] = new BatchHeaderFilterPolicyFactory();
         if (!isAnonymousCreds) {
@@ -60458,120 +57804,97 @@ var require_dist9 = __commonJS({
         }
         factories[policyFactoryLength - 1] = new BatchRequestAssemblePolicyFactory(this);
         return new Pipeline(factories, {});
-      };
-      InnerBatchRequest2.prototype.appendSubRequestToBody = function(request) {
+      }
+      appendSubRequestToBody(request) {
         this.body += [
           this.subRequestPrefix,
-          HeaderConstants.CONTENT_ID + ": " + this.operationCount,
+          `${HeaderConstants.CONTENT_ID}: ${this.operationCount}`,
           "",
-          request.method.toString() + " " + getURLPathAndQuery(request.url) + " " + HTTP_VERSION_1_1 + HTTP_LINE_ENDING
+          `${request.method.toString()} ${getURLPathAndQuery(request.url)} ${HTTP_VERSION_1_1}${HTTP_LINE_ENDING}`
         ].join(HTTP_LINE_ENDING);
-        for (var _i = 0, _a = request.headers.headersArray(); _i < _a.length; _i++) {
-          var header = _a[_i];
-          this.body += header.name + ": " + header.value + HTTP_LINE_ENDING;
+        for (const header of request.headers.headersArray()) {
+          this.body += `${header.name}: ${header.value}${HTTP_LINE_ENDING}`;
         }
         this.body += HTTP_LINE_ENDING;
-      };
-      InnerBatchRequest2.prototype.preAddSubRequest = function(subRequest) {
+      }
+      preAddSubRequest(subRequest) {
         if (this.operationCount >= BATCH_MAX_REQUEST) {
-          throw new RangeError("Cannot exceed " + BATCH_MAX_REQUEST + " sub requests in a single batch");
+          throw new RangeError(`Cannot exceed ${BATCH_MAX_REQUEST} sub requests in a single batch`);
         }
-        var path2 = getURLPath(subRequest.url);
+        const path2 = getURLPath(subRequest.url);
         if (!path2 || path2 == "") {
-          throw new RangeError("Invalid url for sub request: '" + subRequest.url + "'");
+          throw new RangeError(`Invalid url for sub request: '${subRequest.url}'`);
         }
-      };
-      InnerBatchRequest2.prototype.postAddSubRequest = function(subRequest) {
+      }
+      postAddSubRequest(subRequest) {
         this.subRequests.set(this.operationCount, subRequest);
         this.operationCount++;
-      };
-      InnerBatchRequest2.prototype.getHttpRequestBody = function() {
-        return "" + this.body + this.batchRequestEnding + HTTP_LINE_ENDING;
-      };
-      InnerBatchRequest2.prototype.getMultipartContentType = function() {
+      }
+      getHttpRequestBody() {
+        return `${this.body}${this.batchRequestEnding}${HTTP_LINE_ENDING}`;
+      }
+      getMultipartContentType() {
         return this.multipartContentType;
-      };
-      InnerBatchRequest2.prototype.getSubRequests = function() {
+      }
+      getSubRequests() {
         return this.subRequests;
-      };
-      return InnerBatchRequest2;
-    }();
-    var BatchRequestAssemblePolicy = function(_super) {
-      tslib.__extends(BatchRequestAssemblePolicy2, _super);
-      function BatchRequestAssemblePolicy2(batchRequest, nextPolicy, options) {
-        var _this = _super.call(this, nextPolicy, options) || this;
-        _this.dummyResponse = {
+      }
+    };
+    __name(InnerBatchRequest, "InnerBatchRequest");
+    var BatchRequestAssemblePolicy = class extends coreHttp.BaseRequestPolicy {
+      constructor(batchRequest, nextPolicy, options) {
+        super(nextPolicy, options);
+        this.dummyResponse = {
           request: new coreHttp.WebResource(),
           status: 200,
           headers: new coreHttp.HttpHeaders()
         };
-        _this.batchRequest = batchRequest;
-        return _this;
-      }
-      __name(BatchRequestAssemblePolicy2, "BatchRequestAssemblePolicy");
-      BatchRequestAssemblePolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                return [4, this.batchRequest.appendSubRequestToBody(request)];
-              case 1:
-                _a.sent();
-                return [2, this.dummyResponse];
-            }
-          });
-        });
-      };
-      return BatchRequestAssemblePolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var BatchRequestAssemblePolicyFactory = function() {
-      function BatchRequestAssemblePolicyFactory2(batchRequest) {
         this.batchRequest = batchRequest;
       }
-      __name(BatchRequestAssemblePolicyFactory2, "BatchRequestAssemblePolicyFactory");
-      BatchRequestAssemblePolicyFactory2.prototype.create = function(nextPolicy, options) {
+      async sendRequest(request) {
+        await this.batchRequest.appendSubRequestToBody(request);
+        return this.dummyResponse;
+      }
+    };
+    __name(BatchRequestAssemblePolicy, "BatchRequestAssemblePolicy");
+    var BatchRequestAssemblePolicyFactory = class {
+      constructor(batchRequest) {
+        this.batchRequest = batchRequest;
+      }
+      create(nextPolicy, options) {
         return new BatchRequestAssemblePolicy(this.batchRequest, nextPolicy, options);
-      };
-      return BatchRequestAssemblePolicyFactory2;
-    }();
-    var BatchHeaderFilterPolicy = function(_super) {
-      tslib.__extends(BatchHeaderFilterPolicy2, _super);
-      function BatchHeaderFilterPolicy2(nextPolicy, options) {
-        return _super.call(this, nextPolicy, options) || this;
       }
-      __name(BatchHeaderFilterPolicy2, "BatchHeaderFilterPolicy");
-      BatchHeaderFilterPolicy2.prototype.sendRequest = function(request) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var xMsHeaderName, _i, _a, header;
-          return tslib.__generator(this, function(_b) {
-            xMsHeaderName = "";
-            for (_i = 0, _a = request.headers.headersArray(); _i < _a.length; _i++) {
-              header = _a[_i];
-              if (iEqual(header.name, HeaderConstants.X_MS_VERSION)) {
-                xMsHeaderName = header.name;
-              }
-            }
-            if (xMsHeaderName !== "") {
-              request.headers.remove(xMsHeaderName);
-            }
-            return [2, this._nextPolicy.sendRequest(request)];
-          });
-        });
-      };
-      return BatchHeaderFilterPolicy2;
-    }(coreHttp.BaseRequestPolicy);
-    var BatchHeaderFilterPolicyFactory = function() {
-      function BatchHeaderFilterPolicyFactory2() {
+    };
+    __name(BatchRequestAssemblePolicyFactory, "BatchRequestAssemblePolicyFactory");
+    var BatchHeaderFilterPolicy = class extends coreHttp.BaseRequestPolicy {
+      constructor(nextPolicy, options) {
+        super(nextPolicy, options);
       }
-      __name(BatchHeaderFilterPolicyFactory2, "BatchHeaderFilterPolicyFactory");
-      BatchHeaderFilterPolicyFactory2.prototype.create = function(nextPolicy, options) {
+      async sendRequest(request) {
+        let xMsHeaderName = "";
+        for (const header of request.headers.headersArray()) {
+          if (iEqual(header.name, HeaderConstants.X_MS_VERSION)) {
+            xMsHeaderName = header.name;
+          }
+        }
+        if (xMsHeaderName !== "") {
+          request.headers.remove(xMsHeaderName);
+        }
+        return this._nextPolicy.sendRequest(request);
+      }
+    };
+    __name(BatchHeaderFilterPolicy, "BatchHeaderFilterPolicy");
+    var BatchHeaderFilterPolicyFactory = class {
+      constructor() {
+      }
+      create(nextPolicy, options) {
         return new BatchHeaderFilterPolicy(nextPolicy, options);
-      };
-      return BatchHeaderFilterPolicyFactory2;
-    }();
-    var BlobBatchClient = function() {
-      function BlobBatchClient2(url2, credentialOrPipeline, options) {
-        var pipeline;
+      }
+    };
+    __name(BatchHeaderFilterPolicyFactory, "BatchHeaderFilterPolicyFactory");
+    var BlobBatchClient = class {
+      constructor(url2, credentialOrPipeline, options) {
+        let pipeline;
         if (credentialOrPipeline instanceof Pipeline) {
           pipeline = credentialOrPipeline;
         } else if (!credentialOrPipeline) {
@@ -60579,144 +57902,77 @@ var require_dist9 = __commonJS({
         } else {
           pipeline = newPipeline(credentialOrPipeline, options);
         }
-        var storageClientContext = new StorageClientContext(url2, pipeline.toServiceClientOptions());
-        var path2 = getURLPath(url2);
+        const storageClientContext = new StorageClientContext(url2, pipeline.toServiceClientOptions());
+        const path2 = getURLPath(url2);
         if (path2 && path2 !== "/") {
           this.serviceOrContainerContext = new Container(storageClientContext);
         } else {
           this.serviceOrContainerContext = new Service(storageClientContext);
         }
       }
-      __name(BlobBatchClient2, "BlobBatchClient");
-      BlobBatchClient2.prototype.createBatch = function() {
+      createBatch() {
         return new BlobBatch();
-      };
-      BlobBatchClient2.prototype.deleteBlobs = function(urlsOrBlobClients, credentialOrOptions, options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var batch, _i, urlsOrBlobClients_1, urlOrBlobClient;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                batch = new BlobBatch();
-                _i = 0, urlsOrBlobClients_1 = urlsOrBlobClients;
-                _a.label = 1;
-              case 1:
-                if (!(_i < urlsOrBlobClients_1.length))
-                  return [3, 6];
-                urlOrBlobClient = urlsOrBlobClients_1[_i];
-                if (!(typeof urlOrBlobClient === "string"))
-                  return [3, 3];
-                return [4, batch.deleteBlob(urlOrBlobClient, credentialOrOptions, options)];
-              case 2:
-                _a.sent();
-                return [3, 5];
-              case 3:
-                return [4, batch.deleteBlob(urlOrBlobClient, credentialOrOptions)];
-              case 4:
-                _a.sent();
-                _a.label = 5;
-              case 5:
-                _i++;
-                return [3, 1];
-              case 6:
-                return [2, this.submitBatch(batch)];
-            }
-          });
-        });
-      };
-      BlobBatchClient2.prototype.setBlobsAccessTier = function(urlsOrBlobClients, credentialOrTier, tierOrOptions, options) {
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var batch, _i, urlsOrBlobClients_2, urlOrBlobClient;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                batch = new BlobBatch();
-                _i = 0, urlsOrBlobClients_2 = urlsOrBlobClients;
-                _a.label = 1;
-              case 1:
-                if (!(_i < urlsOrBlobClients_2.length))
-                  return [3, 6];
-                urlOrBlobClient = urlsOrBlobClients_2[_i];
-                if (!(typeof urlOrBlobClient === "string"))
-                  return [3, 3];
-                return [4, batch.setBlobAccessTier(urlOrBlobClient, credentialOrTier, tierOrOptions, options)];
-              case 2:
-                _a.sent();
-                return [3, 5];
-              case 3:
-                return [4, batch.setBlobAccessTier(urlOrBlobClient, credentialOrTier, tierOrOptions)];
-              case 4:
-                _a.sent();
-                _a.label = 5;
-              case 5:
-                _i++;
-                return [3, 1];
-              case 6:
-                return [2, this.submitBatch(batch)];
-            }
-          });
-        });
-      };
-      BlobBatchClient2.prototype.submitBatch = function(batchRequest, options) {
-        if (options === void 0) {
-          options = {};
+      }
+      async deleteBlobs(urlsOrBlobClients, credentialOrOptions, options) {
+        const batch = new BlobBatch();
+        for (const urlOrBlobClient of urlsOrBlobClients) {
+          if (typeof urlOrBlobClient === "string") {
+            await batch.deleteBlob(urlOrBlobClient, credentialOrOptions, options);
+          } else {
+            await batch.deleteBlob(urlOrBlobClient, credentialOrOptions);
+          }
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, batchRequestBody, rawBatchResponse, batchResponseParser, responseSummary, res, e_1;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!batchRequest || batchRequest.getSubRequests().size == 0) {
-                  throw new RangeError("Batch request should contain one or more sub requests.");
-                }
-                _a = createSpan("BlobBatchClient-submitBatch", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 4, 5, 6]);
-                batchRequestBody = batchRequest.getHttpRequestBody();
-                return [4, this.serviceOrContainerContext.submitBatch(utf8ByteLength(batchRequestBody), batchRequest.getMultiPartContentType(), batchRequestBody, tslib.__assign(tslib.__assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                rawBatchResponse = _b.sent();
-                batchResponseParser = new BatchResponseParser(rawBatchResponse, batchRequest.getSubRequests());
-                return [4, batchResponseParser.parseBatchResponse()];
-              case 3:
-                responseSummary = _b.sent();
-                res = {
-                  _response: rawBatchResponse._response,
-                  contentType: rawBatchResponse.contentType,
-                  errorCode: rawBatchResponse.errorCode,
-                  requestId: rawBatchResponse.requestId,
-                  clientRequestId: rawBatchResponse.clientRequestId,
-                  version: rawBatchResponse.version,
-                  subResponses: responseSummary.subResponses,
-                  subResponsesSucceededCount: responseSummary.subResponsesSucceededCount,
-                  subResponsesFailedCount: responseSummary.subResponsesFailedCount
-                };
-                return [2, res];
-              case 4:
-                e_1 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 5:
-                span.end();
-                return [7];
-              case 6:
-                return [2];
-            }
+        return this.submitBatch(batch);
+      }
+      async setBlobsAccessTier(urlsOrBlobClients, credentialOrTier, tierOrOptions, options) {
+        const batch = new BlobBatch();
+        for (const urlOrBlobClient of urlsOrBlobClients) {
+          if (typeof urlOrBlobClient === "string") {
+            await batch.setBlobAccessTier(urlOrBlobClient, credentialOrTier, tierOrOptions, options);
+          } else {
+            await batch.setBlobAccessTier(urlOrBlobClient, credentialOrTier, tierOrOptions);
+          }
+        }
+        return this.submitBatch(batch);
+      }
+      async submitBatch(batchRequest, options = {}) {
+        if (!batchRequest || batchRequest.getSubRequests().size == 0) {
+          throw new RangeError("Batch request should contain one or more sub requests.");
+        }
+        const { span, updatedOptions } = createSpan("BlobBatchClient-submitBatch", options);
+        try {
+          const batchRequestBody = batchRequest.getHttpRequestBody();
+          const rawBatchResponse = await this.serviceOrContainerContext.submitBatch(utf8ByteLength(batchRequestBody), batchRequest.getMultiPartContentType(), batchRequestBody, Object.assign(Object.assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)));
+          const batchResponseParser = new BatchResponseParser(rawBatchResponse, batchRequest.getSubRequests());
+          const responseSummary = await batchResponseParser.parseBatchResponse();
+          const res = {
+            _response: rawBatchResponse._response,
+            contentType: rawBatchResponse.contentType,
+            errorCode: rawBatchResponse.errorCode,
+            requestId: rawBatchResponse.requestId,
+            clientRequestId: rawBatchResponse.clientRequestId,
+            version: rawBatchResponse.version,
+            subResponses: responseSummary.subResponses,
+            subResponsesSucceededCount: responseSummary.subResponsesSucceededCount,
+            subResponsesFailedCount: responseSummary.subResponsesFailedCount
+          };
+          return res;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      return BlobBatchClient2;
-    }();
-    var ContainerClient = function(_super) {
-      tslib.__extends(ContainerClient2, _super);
-      function ContainerClient2(urlOrConnectionString, credentialOrPipelineOrContainerName, options) {
-        var _this = this;
-        var pipeline;
-        var url2;
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+    };
+    __name(BlobBatchClient, "BlobBatchClient");
+    var ContainerClient = class extends StorageClient {
+      constructor(urlOrConnectionString, credentialOrPipelineOrContainerName, options) {
+        let pipeline;
+        let url2;
         options = options || {};
         if (credentialOrPipelineOrContainerName instanceof Pipeline) {
           url2 = urlOrConnectionString;
@@ -60728,11 +57984,11 @@ var require_dist9 = __commonJS({
           url2 = urlOrConnectionString;
           pipeline = newPipeline(new AnonymousCredential(), options);
         } else if (credentialOrPipelineOrContainerName && typeof credentialOrPipelineOrContainerName === "string") {
-          var containerName = credentialOrPipelineOrContainerName;
-          var extractedCreds = extractConnectionStringParts(urlOrConnectionString);
+          const containerName = credentialOrPipelineOrContainerName;
+          const extractedCreds = extractConnectionStringParts(urlOrConnectionString);
           if (extractedCreds.kind === "AccountConnString") {
             {
-              var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+              const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
               url2 = appendToURLPath(extractedCreds.url, encodeURIComponent(containerName));
               options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
               pipeline = newPipeline(sharedKeyCredential, options);
@@ -60746,659 +58002,356 @@ var require_dist9 = __commonJS({
         } else {
           throw new Error("Expecting non-empty strings for containerName parameter");
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this._containerName = _this.getContainerNameFromUrl();
-        _this.containerContext = new Container(_this.storageClientContext);
-        return _this;
+        super(url2, pipeline);
+        this._containerName = this.getContainerNameFromUrl();
+        this.containerContext = new Container(this.storageClientContext);
       }
-      __name(ContainerClient2, "ContainerClient");
-      Object.defineProperty(ContainerClient2.prototype, "containerName", {
-        get: function() {
-          return this._containerName;
-        },
-        enumerable: false,
-        configurable: true
-      });
-      ContainerClient2.prototype.create = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_1;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-create", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.create(tslib.__assign(tslib.__assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_1 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      get containerName() {
+        return this._containerName;
+      }
+      async create(options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-create", options);
+        try {
+          return await this.containerContext.create(Object.assign(Object.assign({}, options), convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.createIfNotExists = function(options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async createIfNotExists(options = {}) {
         var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, updatedOptions, res, e_2;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("ContainerClient-createIfNotExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.create(updatedOptions)];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({ succeeded: true }, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_2 = _d.sent();
-                if (((_a = e_2.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerAlreadyExists") {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when creating a container only if it does not already exist."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({ succeeded: false }, (_b = e_2.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e_2.response })];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_2.message
-                });
-                throw e_2;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("ContainerClient-createIfNotExists", options);
+        try {
+          const res = await this.create(updatedOptions);
+          return Object.assign(Object.assign({ succeeded: true }, res), {
+            _response: res._response
           });
-        });
-      };
-      ContainerClient2.prototype.exists = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_3;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-exists", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.getProperties({
-                  abortSignal: options.abortSignal,
-                  tracingOptions: updatedOptions.tracingOptions
-                })];
-              case 2:
-                _b.sent();
-                return [2, true];
-              case 3:
-                e_3 = _b.sent();
-                if (e_3.statusCode === 404) {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when checking container existence"
-                  });
-                  return [2, false];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_3.message
-                });
-                throw e_3;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        } catch (e) {
+          if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerAlreadyExists") {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when creating a container only if it does not already exist."
+            });
+            return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.getBlobClient = function(blobName) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async exists(options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-exists", options);
+        try {
+          await this.getProperties({
+            abortSignal: options.abortSignal,
+            tracingOptions: updatedOptions.tracingOptions
+          });
+          return true;
+        } catch (e) {
+          if (e.statusCode === 404) {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when checking container existence"
+            });
+            return false;
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      getBlobClient(blobName) {
         return new BlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getAppendBlobClient = function(blobName) {
+      }
+      getAppendBlobClient(blobName) {
         return new AppendBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getBlockBlobClient = function(blobName) {
+      }
+      getBlockBlobClient(blobName) {
         return new BlockBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getPageBlobClient = function(blobName) {
+      }
+      getPageBlobClient(blobName) {
         return new PageBlobClient(appendToURLPath(this.url, encodeURIComponent(blobName)), this.pipeline);
-      };
-      ContainerClient2.prototype.getProperties = function(options) {
-        if (options === void 0) {
-          options = {};
+      }
+      async getProperties(options = {}) {
+        if (!options.conditions) {
+          options.conditions = {};
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_4;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-getProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.getProperties(tslib.__assign(tslib.__assign({ abortSignal: options.abortSignal }, options.conditions), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_4 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_4.message
-                });
-                throw e_4;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("ContainerClient-getProperties", options);
+        try {
+          return await this.containerContext.getProperties(Object.assign(Object.assign({ abortSignal: options.abortSignal }, options.conditions), convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.delete = function(options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_5;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-delete", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.delete(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_5 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_5.message
-                });
-                throw e_5;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async delete(options = {}) {
+        if (!options.conditions) {
+          options.conditions = {};
+        }
+        const { span, updatedOptions } = createSpan("ContainerClient-delete", options);
+        try {
+          return await this.containerContext.delete(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.deleteIfExists = function(options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async deleteIfExists(options = {}) {
         var _a, _b;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _c, span, updatedOptions, res, e_6;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _c = createSpan("ContainerClient-deleteIfExists", options), span = _c.span, updatedOptions = _c.updatedOptions;
-                _d.label = 1;
-              case 1:
-                _d.trys.push([1, 3, 4, 5]);
-                return [4, this.delete(updatedOptions)];
-              case 2:
-                res = _d.sent();
-                return [2, tslib.__assign(tslib.__assign({ succeeded: true }, res), {
-                  _response: res._response
-                })];
-              case 3:
-                e_6 = _d.sent();
-                if (((_a = e_6.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerNotFound") {
-                  span.setStatus({
-                    code: coreTracing.SpanStatusCode.ERROR,
-                    message: "Expected exception when deleting a container only if it exists."
-                  });
-                  return [2, tslib.__assign(tslib.__assign({ succeeded: false }, (_b = e_6.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e_6.response })];
-                }
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_6.message
-                });
-                throw e_6;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("ContainerClient-deleteIfExists", options);
+        try {
+          const res = await this.delete(updatedOptions);
+          return Object.assign(Object.assign({ succeeded: true }, res), {
+            _response: res._response
           });
-        });
-      };
-      ContainerClient2.prototype.setMetadata = function(metadata2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_7;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                if (options.conditions.ifUnmodifiedSince) {
-                  throw new RangeError("the IfUnmodifiedSince must have their default values because they are ignored by the blob service");
-                }
-                _a = createSpan("ContainerClient-setMetadata", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.setMetadata(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_7 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_7.message
-                });
-                throw e_7;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        } catch (e) {
+          if (((_a = e.details) === null || _a === void 0 ? void 0 : _a.errorCode) === "ContainerNotFound") {
+            span.setStatus({
+              code: coreTracing.SpanStatusCode.ERROR,
+              message: "Expected exception when deleting a container only if it exists."
+            });
+            return Object.assign(Object.assign({ succeeded: false }, (_b = e.response) === null || _b === void 0 ? void 0 : _b.parsedHeaders), { _response: e.response });
+          }
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.getAccessPolicy = function(options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, res, _i, response_1, identifier, accessPolicy, e_8;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                if (!options.conditions) {
-                  options.conditions = {};
-                }
-                _a = createSpan("ContainerClient-getAccessPolicy", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.getAccessPolicy(tslib.__assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _b.sent();
-                res = {
-                  _response: response._response,
-                  blobPublicAccess: response.blobPublicAccess,
-                  date: response.date,
-                  etag: response.etag,
-                  errorCode: response.errorCode,
-                  lastModified: response.lastModified,
-                  requestId: response.requestId,
-                  clientRequestId: response.clientRequestId,
-                  signedIdentifiers: [],
-                  version: response.version
-                };
-                for (_i = 0, response_1 = response; _i < response_1.length; _i++) {
-                  identifier = response_1[_i];
-                  accessPolicy = void 0;
-                  if (identifier.accessPolicy) {
-                    accessPolicy = {
-                      permissions: identifier.accessPolicy.permissions
-                    };
-                    if (identifier.accessPolicy.expiresOn) {
-                      accessPolicy.expiresOn = new Date(identifier.accessPolicy.expiresOn);
-                    }
-                    if (identifier.accessPolicy.startsOn) {
-                      accessPolicy.startsOn = new Date(identifier.accessPolicy.startsOn);
-                    }
-                  }
-                  res.signedIdentifiers.push({
-                    accessPolicy,
-                    id: identifier.id
-                  });
-                }
-                return [2, res];
-              case 3:
-                e_8 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_8.message
-                });
-                throw e_8;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
-          });
-        });
-      };
-      ContainerClient2.prototype.setAccessPolicy = function(access2, containerAcl2, options) {
-        if (options === void 0) {
-          options = {};
+      }
+      async setMetadata(metadata2, options = {}) {
+        if (!options.conditions) {
+          options.conditions = {};
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, acl, _i, _b, identifier, e_9;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                options.conditions = options.conditions || {};
-                _a = createSpan("ContainerClient-setAccessPolicy", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                acl = [];
-                for (_i = 0, _b = containerAcl2 || []; _i < _b.length; _i++) {
-                  identifier = _b[_i];
-                  acl.push({
-                    accessPolicy: {
-                      expiresOn: identifier.accessPolicy.expiresOn ? truncatedISO8061Date(identifier.accessPolicy.expiresOn) : "",
-                      permissions: identifier.accessPolicy.permissions,
-                      startsOn: identifier.accessPolicy.startsOn ? truncatedISO8061Date(identifier.accessPolicy.startsOn) : ""
-                    },
-                    id: identifier.id
-                  });
-                }
-                return [4, this.containerContext.setAccessPolicy(tslib.__assign({ abortSignal: options.abortSignal, access: access2, containerAcl: acl, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _c.sent()];
-              case 3:
-                e_9 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_9.message
-                });
-                throw e_9;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        if (options.conditions.ifUnmodifiedSince) {
+          throw new RangeError("the IfUnmodifiedSince must have their default values because they are ignored by the blob service");
+        }
+        const { span, updatedOptions } = createSpan("ContainerClient-setMetadata", options);
+        try {
+          return await this.containerContext.setMetadata(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, metadata: metadata2, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.getBlobLeaseClient = function(proposeLeaseId) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async getAccessPolicy(options = {}) {
+        if (!options.conditions) {
+          options.conditions = {};
+        }
+        const { span, updatedOptions } = createSpan("ContainerClient-getAccessPolicy", options);
+        try {
+          const response = await this.containerContext.getAccessPolicy(Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)));
+          const res = {
+            _response: response._response,
+            blobPublicAccess: response.blobPublicAccess,
+            date: response.date,
+            etag: response.etag,
+            errorCode: response.errorCode,
+            lastModified: response.lastModified,
+            requestId: response.requestId,
+            clientRequestId: response.clientRequestId,
+            signedIdentifiers: [],
+            version: response.version
+          };
+          for (const identifier of response) {
+            let accessPolicy = void 0;
+            if (identifier.accessPolicy) {
+              accessPolicy = {
+                permissions: identifier.accessPolicy.permissions
+              };
+              if (identifier.accessPolicy.expiresOn) {
+                accessPolicy.expiresOn = new Date(identifier.accessPolicy.expiresOn);
+              }
+              if (identifier.accessPolicy.startsOn) {
+                accessPolicy.startsOn = new Date(identifier.accessPolicy.startsOn);
+              }
+            }
+            res.signedIdentifiers.push({
+              accessPolicy,
+              id: identifier.id
+            });
+          }
+          return res;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setAccessPolicy(access2, containerAcl2, options = {}) {
+        options.conditions = options.conditions || {};
+        const { span, updatedOptions } = createSpan("ContainerClient-setAccessPolicy", options);
+        try {
+          const acl = [];
+          for (const identifier of containerAcl2 || []) {
+            acl.push({
+              accessPolicy: {
+                expiresOn: identifier.accessPolicy.expiresOn ? truncatedISO8061Date(identifier.accessPolicy.expiresOn) : "",
+                permissions: identifier.accessPolicy.permissions,
+                startsOn: identifier.accessPolicy.startsOn ? truncatedISO8061Date(identifier.accessPolicy.startsOn) : ""
+              },
+              id: identifier.id
+            });
+          }
+          return await this.containerContext.setAccessPolicy(Object.assign({ abortSignal: options.abortSignal, access: access2, containerAcl: acl, leaseAccessConditions: options.conditions, modifiedAccessConditions: options.conditions }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      getBlobLeaseClient(proposeLeaseId) {
         return new BlobLeaseClient(this, proposeLeaseId);
-      };
-      ContainerClient2.prototype.uploadBlockBlob = function(blobName, body2, contentLength2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, blockBlobClient, response, e_10;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-uploadBlockBlob", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                blockBlobClient = this.getBlockBlobClient(blobName);
-                return [4, blockBlobClient.upload(body2, contentLength2, updatedOptions)];
-              case 2:
-                response = _b.sent();
-                return [2, {
-                  blockBlobClient,
-                  response
-                }];
-              case 3:
-                e_10 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_10.message
-                });
-                throw e_10;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async uploadBlockBlob(blobName, body2, contentLength2, options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-uploadBlockBlob", options);
+        try {
+          const blockBlobClient = this.getBlockBlobClient(blobName);
+          const response = await blockBlobClient.upload(body2, contentLength2, updatedOptions);
+          return {
+            blockBlobClient,
+            response
+          };
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.deleteBlob = function(blobName, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, blobClient, e_11;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-deleteBlob", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                blobClient = this.getBlobClient(blobName);
-                if (options.versionId) {
-                  blobClient = blobClient.withVersion(options.versionId);
-                }
-                return [4, blobClient.delete(updatedOptions)];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_11 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_11.message
-                });
-                throw e_11;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async deleteBlob(blobName, options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-deleteBlob", options);
+        try {
+          let blobClient = this.getBlobClient(blobName);
+          if (options.versionId) {
+            blobClient = blobClient.withVersion(options.versionId);
+          }
+          return await blobClient.delete(updatedOptions);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.listBlobFlatSegment = function(marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, wrappedResponse, e_12;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-listBlobFlatSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.listBlobFlatSegment(tslib.__assign(tslib.__assign({ marker: marker2 }, options), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _b.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), { _response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), { blobItems: response.segment.blobItems.map(function(blobItemInteral) {
-                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), { tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata) });
-                  return blobItem;
-                }) }) });
-                return [2, wrappedResponse];
-              case 3:
-                e_12 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_12.message
-                });
-                throw e_12;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async listBlobFlatSegment(marker2, options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-listBlobFlatSegment", options);
+        try {
+          const response = await this.containerContext.listBlobFlatSegment(Object.assign(Object.assign({ marker: marker2 }, options), convertTracingToRequestOptionsBase(updatedOptions)));
+          const wrappedResponse = Object.assign(Object.assign({}, response), { _response: response._response, segment: Object.assign(Object.assign({}, response.segment), { blobItems: response.segment.blobItems.map((blobItemInteral) => {
+            const blobItem = Object.assign(Object.assign({}, blobItemInteral), { tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata) });
+            return blobItem;
+          }) }) });
+          return wrappedResponse;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.listBlobHierarchySegment = function(delimiter2, marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, wrappedResponse, e_13;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("ContainerClient-listBlobHierarchySegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.containerContext.listBlobHierarchySegment(delimiter2, tslib.__assign(tslib.__assign({ marker: marker2 }, options), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _b.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), { _response: response._response, segment: tslib.__assign(tslib.__assign({}, response.segment), { blobItems: response.segment.blobItems.map(function(blobItemInteral) {
-                  var blobItem = tslib.__assign(tslib.__assign({}, blobItemInteral), { tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata) });
-                  return blobItem;
-                }) }) });
-                return [2, wrappedResponse];
-              case 3:
-                e_13 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_13.message
-                });
-                throw e_13;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async listBlobHierarchySegment(delimiter2, marker2, options = {}) {
+        const { span, updatedOptions } = createSpan("ContainerClient-listBlobHierarchySegment", options);
+        try {
+          const response = await this.containerContext.listBlobHierarchySegment(delimiter2, Object.assign(Object.assign({ marker: marker2 }, options), convertTracingToRequestOptionsBase(updatedOptions)));
+          const wrappedResponse = Object.assign(Object.assign({}, response), { _response: response._response, segment: Object.assign(Object.assign({}, response.segment), { blobItems: response.segment.blobItems.map((blobItemInteral) => {
+            const blobItem = Object.assign(Object.assign({}, blobItemInteral), { tags: toTags(blobItemInteral.blobTags), objectReplicationSourceProperties: parseObjectReplicationRecord(blobItemInteral.objectReplicationMetadata) });
+            return blobItem;
+          }) }) });
+          return wrappedResponse;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      ContainerClient2.prototype.listSegments = function(marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listSegments_1() {
-          var listBlobsFlatSegmentResponse;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker2 || marker2 === void 0))
-                  return [3, 7];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.listBlobFlatSegment(marker2, options))];
-              case 2:
-                listBlobsFlatSegmentResponse = _a.sent();
-                marker2 = listBlobsFlatSegmentResponse.continuationToken;
-                return [4, tslib.__await(listBlobsFlatSegmentResponse)];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_a.sent()])];
-              case 4:
-                return [4, _a.sent()];
-              case 5:
-                _a.sent();
-                _a.label = 6;
-              case 6:
-                if (marker2)
-                  return [3, 1];
-                _a.label = 7;
-              case 7:
-                return [2];
-            }
-          });
+      }
+      listSegments(marker2, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listSegments_1() {
+          let listBlobsFlatSegmentResponse;
+          if (!!marker2 || marker2 === void 0) {
+            do {
+              listBlobsFlatSegmentResponse = yield tslib.__await(this.listBlobFlatSegment(marker2, options));
+              marker2 = listBlobsFlatSegmentResponse.continuationToken;
+              yield yield tslib.__await(yield tslib.__await(listBlobsFlatSegmentResponse));
+            } while (marker2);
+          }
         }, "listSegments_1"));
-      };
-      ContainerClient2.prototype.listItems = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItems_1() {
-          var marker2, _a, _b, listBlobsFlatSegmentResponse, e_14_1;
-          var e_14, _c;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _d.trys.push([0, 7, 8, 13]);
-                _a = tslib.__asyncValues(this.listSegments(marker2, options));
-                _d.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _d.sent(), !_b.done))
-                  return [3, 6];
-                listBlobsFlatSegmentResponse = _b.value;
-                return [5, tslib.__values(tslib.__asyncDelegator(tslib.__asyncValues(listBlobsFlatSegmentResponse.segment.blobItems)))];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_d.sent()])];
-              case 4:
-                _d.sent();
-                _d.label = 5;
-              case 5:
-                return [3, 1];
-              case 6:
-                return [3, 13];
-              case 7:
-                e_14_1 = _d.sent();
-                e_14 = { error: e_14_1 };
-                return [3, 13];
-              case 8:
-                _d.trys.push([8, , 11, 12]);
-                if (!(_b && !_b.done && (_c = _a.return)))
-                  return [3, 10];
-                return [4, tslib.__await(_c.call(_a))];
-              case 9:
-                _d.sent();
-                _d.label = 10;
-              case 10:
-                return [3, 12];
-              case 11:
-                if (e_14)
-                  throw e_14.error;
-                return [7];
-              case 12:
-                return [7];
-              case 13:
-                return [2];
+      }
+      listItems(options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listItems_1() {
+          var e_1, _a;
+          let marker2;
+          try {
+            for (var _b = tslib.__asyncValues(this.listSegments(marker2, options)), _c; _c = yield tslib.__await(_b.next()), !_c.done; ) {
+              const listBlobsFlatSegmentResponse = _c.value;
+              yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(listBlobsFlatSegmentResponse.segment.blobItems)));
             }
-          });
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (_c && !_c.done && (_a = _b.return))
+                yield tslib.__await(_a.call(_b));
+            } finally {
+              if (e_1)
+                throw e_1.error;
+            }
+          }
         }, "listItems_1"));
-      };
-      ContainerClient2.prototype.listBlobsFlat = function(options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
-        var include2 = [];
+      }
+      listBlobsFlat(options = {}) {
+        const include2 = [];
         if (options.includeCopy) {
           include2.push("copy");
         }
@@ -61423,149 +58376,67 @@ var require_dist9 = __commonJS({
         if (options.prefix === "") {
           options.prefix = void 0;
         }
-        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include2.length > 0 ? { include: include2 } : {});
-        var iter = this.listItems(updatedOptions);
-        return _a = {
-          next: function() {
+        const updatedOptions = Object.assign(Object.assign({}, options), include2.length > 0 ? { include: include2 } : {});
+        const iter = this.listItems(updatedOptions);
+        return {
+          next() {
             return iter.next();
+          },
+          [Symbol.asyncIterator]() {
+            return this;
+          },
+          byPage: (settings = {}) => {
+            return this.listSegments(settings.continuationToken, Object.assign({ maxPageSize: settings.maxPageSize }, updatedOptions));
           }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
+        };
+      }
+      listHierarchySegments(delimiter2, marker2, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listHierarchySegments_1() {
+          let listBlobsHierarchySegmentResponse;
+          if (!!marker2 || marker2 === void 0) {
+            do {
+              listBlobsHierarchySegmentResponse = yield tslib.__await(this.listBlobHierarchySegment(delimiter2, marker2, options));
+              marker2 = listBlobsHierarchySegmentResponse.continuationToken;
+              yield yield tslib.__await(yield tslib.__await(listBlobsHierarchySegmentResponse));
+            } while (marker2);
           }
-          return _this.listSegments(settings.continuationToken, tslib.__assign({ maxPageSize: settings.maxPageSize }, updatedOptions));
-        }, _a;
-      };
-      ContainerClient2.prototype.listHierarchySegments = function(delimiter2, marker2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listHierarchySegments_1() {
-          var listBlobsHierarchySegmentResponse;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker2 || marker2 === void 0))
-                  return [3, 7];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.listBlobHierarchySegment(delimiter2, marker2, options))];
-              case 2:
-                listBlobsHierarchySegmentResponse = _a.sent();
-                marker2 = listBlobsHierarchySegmentResponse.continuationToken;
-                return [4, tslib.__await(listBlobsHierarchySegmentResponse)];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_a.sent()])];
-              case 4:
-                return [4, _a.sent()];
-              case 5:
-                _a.sent();
-                _a.label = 6;
-              case 6:
-                if (marker2)
-                  return [3, 1];
-                _a.label = 7;
-              case 7:
-                return [2];
-            }
-          });
         }, "listHierarchySegments_1"));
-      };
-      ContainerClient2.prototype.listItemsByHierarchy = function(delimiter2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItemsByHierarchy_1() {
-          var marker2, _a, _b, listBlobsHierarchySegmentResponse, segment, _i, _c, prefix2, _d, _e, blob, e_15_1;
-          var e_15, _f;
-          return tslib.__generator(this, function(_g) {
-            switch (_g.label) {
-              case 0:
-                _g.trys.push([0, 14, 15, 20]);
-                _a = tslib.__asyncValues(this.listHierarchySegments(delimiter2, marker2, options));
-                _g.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _g.sent(), !_b.done))
-                  return [3, 13];
-                listBlobsHierarchySegmentResponse = _b.value;
-                segment = listBlobsHierarchySegmentResponse.segment;
-                if (!segment.blobPrefixes)
-                  return [3, 7];
-                _i = 0, _c = segment.blobPrefixes;
-                _g.label = 3;
-              case 3:
-                if (!(_i < _c.length))
-                  return [3, 7];
-                prefix2 = _c[_i];
-                return [4, tslib.__await(tslib.__assign({ kind: "prefix" }, prefix2))];
-              case 4:
-                return [4, _g.sent()];
-              case 5:
-                _g.sent();
-                _g.label = 6;
-              case 6:
-                _i++;
-                return [3, 3];
-              case 7:
-                _d = 0, _e = segment.blobItems;
-                _g.label = 8;
-              case 8:
-                if (!(_d < _e.length))
-                  return [3, 12];
-                blob = _e[_d];
-                return [4, tslib.__await(tslib.__assign({ kind: "blob" }, blob))];
-              case 9:
-                return [4, _g.sent()];
-              case 10:
-                _g.sent();
-                _g.label = 11;
-              case 11:
-                _d++;
-                return [3, 8];
-              case 12:
-                return [3, 1];
-              case 13:
-                return [3, 20];
-              case 14:
-                e_15_1 = _g.sent();
-                e_15 = { error: e_15_1 };
-                return [3, 20];
-              case 15:
-                _g.trys.push([15, , 18, 19]);
-                if (!(_b && !_b.done && (_f = _a.return)))
-                  return [3, 17];
-                return [4, tslib.__await(_f.call(_a))];
-              case 16:
-                _g.sent();
-                _g.label = 17;
-              case 17:
-                return [3, 19];
-              case 18:
-                if (e_15)
-                  throw e_15.error;
-                return [7];
-              case 19:
-                return [7];
-              case 20:
-                return [2];
+      }
+      listItemsByHierarchy(delimiter2, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listItemsByHierarchy_1() {
+          var e_2, _a;
+          let marker2;
+          try {
+            for (var _b = tslib.__asyncValues(this.listHierarchySegments(delimiter2, marker2, options)), _c; _c = yield tslib.__await(_b.next()), !_c.done; ) {
+              const listBlobsHierarchySegmentResponse = _c.value;
+              const segment = listBlobsHierarchySegmentResponse.segment;
+              if (segment.blobPrefixes) {
+                for (const prefix2 of segment.blobPrefixes) {
+                  yield yield tslib.__await(Object.assign({ kind: "prefix" }, prefix2));
+                }
+              }
+              for (const blob of segment.blobItems) {
+                yield yield tslib.__await(Object.assign({ kind: "blob" }, blob));
+              }
             }
-          });
+          } catch (e_2_1) {
+            e_2 = { error: e_2_1 };
+          } finally {
+            try {
+              if (_c && !_c.done && (_a = _b.return))
+                yield tslib.__await(_a.call(_b));
+            } finally {
+              if (e_2)
+                throw e_2.error;
+            }
+          }
         }, "listItemsByHierarchy_1"));
-      };
-      ContainerClient2.prototype.listBlobsByHierarchy = function(delimiter2, options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
+      }
+      listBlobsByHierarchy(delimiter2, options = {}) {
         if (delimiter2 === "") {
           throw new RangeError("delimiter should contain one or more characters");
         }
-        var include2 = [];
+        const include2 = [];
         if (options.includeCopy) {
           include2.push("copy");
         }
@@ -61590,29 +58461,24 @@ var require_dist9 = __commonJS({
         if (options.prefix === "") {
           options.prefix = void 0;
         }
-        var updatedOptions = tslib.__assign(tslib.__assign({}, options), include2.length > 0 ? { include: include2 } : {});
-        var iter = this.listItemsByHierarchy(delimiter2, updatedOptions);
-        return _a = {
-          next: function() {
-            return tslib.__awaiter(this, void 0, void 0, function() {
-              return tslib.__generator(this, function(_a2) {
-                return [2, iter.next()];
-              });
-            });
+        const updatedOptions = Object.assign(Object.assign({}, options), include2.length > 0 ? { include: include2 } : {});
+        const iter = this.listItemsByHierarchy(delimiter2, updatedOptions);
+        return {
+          async next() {
+            return iter.next();
+          },
+          [Symbol.asyncIterator]() {
+            return this;
+          },
+          byPage: (settings = {}) => {
+            return this.listHierarchySegments(delimiter2, settings.continuationToken, Object.assign({ maxPageSize: settings.maxPageSize }, updatedOptions));
           }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
-          }
-          return _this.listHierarchySegments(delimiter2, settings.continuationToken, tslib.__assign({ maxPageSize: settings.maxPageSize }, updatedOptions));
-        }, _a;
-      };
-      ContainerClient2.prototype.getContainerNameFromUrl = function() {
-        var containerName;
+        };
+      }
+      getContainerNameFromUrl() {
+        let containerName;
         try {
-          var parsedUrl = coreHttp.URLBuilder.parse(this.url);
+          const parsedUrl = coreHttp.URLBuilder.parse(this.url);
           if (parsedUrl.getHost().split(".")[1] === "blob") {
             containerName = parsedUrl.getPath().split("/")[1];
           } else if (isIpEndpointStyle(parsedUrl)) {
@@ -61628,24 +58494,23 @@ var require_dist9 = __commonJS({
         } catch (error) {
           throw new Error("Unable to extract containerName with provided information.");
         }
-      };
-      ContainerClient2.prototype.generateSasUrl = function(options) {
-        var _this = this;
-        return new Promise(function(resolve2) {
-          if (!(_this.credential instanceof StorageSharedKeyCredential)) {
+      }
+      generateSasUrl(options) {
+        return new Promise((resolve2) => {
+          if (!(this.credential instanceof StorageSharedKeyCredential)) {
             throw new RangeError("Can only generate the SAS when the client is initialized with a shared key credential");
           }
-          var sas = generateBlobSASQueryParameters(tslib.__assign({ containerName: _this._containerName }, options), _this.credential).toString();
-          resolve2(appendToURLQuery(_this.url, sas));
+          const sas = generateBlobSASQueryParameters(Object.assign({ containerName: this._containerName }, options), this.credential).toString();
+          resolve2(appendToURLQuery(this.url, sas));
         });
-      };
-      ContainerClient2.prototype.getBlobBatchClient = function() {
+      }
+      getBlobBatchClient() {
         return new BlobBatchClient(this.url, this.pipeline);
-      };
-      return ContainerClient2;
-    }(StorageClient);
-    var AccountSASPermissions = function() {
-      function AccountSASPermissions2() {
+      }
+    };
+    __name(ContainerClient, "ContainerClient");
+    var AccountSASPermissions = class {
+      constructor() {
         this.read = false;
         this.write = false;
         this.delete = false;
@@ -61658,11 +58523,9 @@ var require_dist9 = __commonJS({
         this.tag = false;
         this.filter = false;
       }
-      __name(AccountSASPermissions2, "AccountSASPermissions");
-      AccountSASPermissions2.parse = function(permissions) {
-        var accountSASPermissions = new AccountSASPermissions2();
-        for (var _i = 0, permissions_1 = permissions; _i < permissions_1.length; _i++) {
-          var c = permissions_1[_i];
+      static parse(permissions) {
+        const accountSASPermissions = new AccountSASPermissions();
+        for (const c of permissions) {
           switch (c) {
             case "r":
               accountSASPermissions.read = true;
@@ -61698,13 +58561,13 @@ var require_dist9 = __commonJS({
               accountSASPermissions.filter = true;
               break;
             default:
-              throw new RangeError("Invalid permission character: " + c);
+              throw new RangeError(`Invalid permission character: ${c}`);
           }
         }
         return accountSASPermissions;
-      };
-      AccountSASPermissions2.from = function(permissionLike) {
-        var accountSASPermissions = new AccountSASPermissions2();
+      }
+      static from(permissionLike) {
+        const accountSASPermissions = new AccountSASPermissions();
         if (permissionLike.read) {
           accountSASPermissions.read = true;
         }
@@ -61739,9 +58602,9 @@ var require_dist9 = __commonJS({
           accountSASPermissions.process = true;
         }
         return accountSASPermissions;
-      };
-      AccountSASPermissions2.prototype.toString = function() {
-        var permissions = [];
+      }
+      toString() {
+        const permissions = [];
         if (this.read) {
           permissions.push("r");
         }
@@ -61776,20 +58639,18 @@ var require_dist9 = __commonJS({
           permissions.push("p");
         }
         return permissions.join("");
-      };
-      return AccountSASPermissions2;
-    }();
-    var AccountSASResourceTypes = function() {
-      function AccountSASResourceTypes2() {
+      }
+    };
+    __name(AccountSASPermissions, "AccountSASPermissions");
+    var AccountSASResourceTypes = class {
+      constructor() {
         this.service = false;
         this.container = false;
         this.object = false;
       }
-      __name(AccountSASResourceTypes2, "AccountSASResourceTypes");
-      AccountSASResourceTypes2.parse = function(resourceTypes) {
-        var accountSASResourceTypes = new AccountSASResourceTypes2();
-        for (var _i = 0, resourceTypes_1 = resourceTypes; _i < resourceTypes_1.length; _i++) {
-          var c = resourceTypes_1[_i];
+      static parse(resourceTypes) {
+        const accountSASResourceTypes = new AccountSASResourceTypes();
+        for (const c of resourceTypes) {
           switch (c) {
             case "s":
               accountSASResourceTypes.service = true;
@@ -61801,13 +58662,13 @@ var require_dist9 = __commonJS({
               accountSASResourceTypes.object = true;
               break;
             default:
-              throw new RangeError("Invalid resource type: " + c);
+              throw new RangeError(`Invalid resource type: ${c}`);
           }
         }
         return accountSASResourceTypes;
-      };
-      AccountSASResourceTypes2.prototype.toString = function() {
-        var resourceTypes = [];
+      }
+      toString() {
+        const resourceTypes = [];
         if (this.service) {
           resourceTypes.push("s");
         }
@@ -61818,21 +58679,19 @@ var require_dist9 = __commonJS({
           resourceTypes.push("o");
         }
         return resourceTypes.join("");
-      };
-      return AccountSASResourceTypes2;
-    }();
-    var AccountSASServices = function() {
-      function AccountSASServices2() {
+      }
+    };
+    __name(AccountSASResourceTypes, "AccountSASResourceTypes");
+    var AccountSASServices = class {
+      constructor() {
         this.blob = false;
         this.file = false;
         this.queue = false;
         this.table = false;
       }
-      __name(AccountSASServices2, "AccountSASServices");
-      AccountSASServices2.parse = function(services) {
-        var accountSASServices = new AccountSASServices2();
-        for (var _i = 0, services_1 = services; _i < services_1.length; _i++) {
-          var c = services_1[_i];
+      static parse(services) {
+        const accountSASServices = new AccountSASServices();
+        for (const c of services) {
           switch (c) {
             case "b":
               accountSASServices.blob = true;
@@ -61847,13 +58706,13 @@ var require_dist9 = __commonJS({
               accountSASServices.table = true;
               break;
             default:
-              throw new RangeError("Invalid service character: " + c);
+              throw new RangeError(`Invalid service character: ${c}`);
           }
         }
         return accountSASServices;
-      };
-      AccountSASServices2.prototype.toString = function() {
-        var services = [];
+      }
+      toString() {
+        const services = [];
         if (this.blob) {
           services.push("b");
         }
@@ -61867,11 +58726,11 @@ var require_dist9 = __commonJS({
           services.push("f");
         }
         return services.join("");
-      };
-      return AccountSASServices2;
-    }();
+      }
+    };
+    __name(AccountSASServices, "AccountSASServices");
     function generateAccountSASQueryParameters(accountSASSignatureValues, sharedKeyCredential) {
-      var version2 = accountSASSignatureValues.version ? accountSASSignatureValues.version : SERVICE_VERSION;
+      const version2 = accountSASSignatureValues.version ? accountSASSignatureValues.version : SERVICE_VERSION;
       if (accountSASSignatureValues.permissions && accountSASSignatureValues.permissions.deleteVersion && version2 < "2019-10-10") {
         throw RangeError("'version' must be >= '2019-10-10' when provided 'x' permission.");
       }
@@ -61881,10 +58740,10 @@ var require_dist9 = __commonJS({
       if (accountSASSignatureValues.permissions && accountSASSignatureValues.permissions.filter && version2 < "2019-12-12") {
         throw RangeError("'version' must be >= '2019-12-12' when provided 'f' permission.");
       }
-      var parsedPermissions = AccountSASPermissions.parse(accountSASSignatureValues.permissions.toString());
-      var parsedServices = AccountSASServices.parse(accountSASSignatureValues.services).toString();
-      var parsedResourceTypes = AccountSASResourceTypes.parse(accountSASSignatureValues.resourceTypes).toString();
-      var stringToSign = [
+      const parsedPermissions = AccountSASPermissions.parse(accountSASSignatureValues.permissions.toString());
+      const parsedServices = AccountSASServices.parse(accountSASSignatureValues.services).toString();
+      const parsedResourceTypes = AccountSASResourceTypes.parse(accountSASSignatureValues.resourceTypes).toString();
+      const stringToSign = [
         sharedKeyCredential.accountName,
         parsedPermissions,
         parsedServices,
@@ -61896,15 +58755,13 @@ var require_dist9 = __commonJS({
         version2,
         ""
       ].join("\n");
-      var signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
+      const signature = sharedKeyCredential.computeHMACSHA256(stringToSign);
       return new SASQueryParameters(version2, signature, parsedPermissions.toString(), parsedServices, parsedResourceTypes, accountSASSignatureValues.protocol, accountSASSignatureValues.startsOn, accountSASSignatureValues.expiresOn, accountSASSignatureValues.ipRange);
     }
     __name(generateAccountSASQueryParameters, "generateAccountSASQueryParameters");
-    var BlobServiceClient = function(_super) {
-      tslib.__extends(BlobServiceClient2, _super);
-      function BlobServiceClient2(url2, credentialOrPipeline, options) {
-        var _this = this;
-        var pipeline;
+    var BlobServiceClient = class extends StorageClient {
+      constructor(url2, credentialOrPipeline, options) {
+        let pipeline;
         if (credentialOrPipeline instanceof Pipeline) {
           pipeline = credentialOrPipeline;
         } else if (coreHttp.isNode && credentialOrPipeline instanceof StorageSharedKeyCredential || credentialOrPipeline instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipeline)) {
@@ -61912,684 +58769,353 @@ var require_dist9 = __commonJS({
         } else {
           pipeline = newPipeline(new AnonymousCredential(), options);
         }
-        _this = _super.call(this, url2, pipeline) || this;
-        _this.serviceContext = new Service(_this.storageClientContext);
-        return _this;
+        super(url2, pipeline);
+        this.serviceContext = new Service(this.storageClientContext);
       }
-      __name(BlobServiceClient2, "BlobServiceClient");
-      BlobServiceClient2.fromConnectionString = function(connectionString, options) {
+      static fromConnectionString(connectionString, options) {
         options = options || {};
-        var extractedCreds = extractConnectionStringParts(connectionString);
+        const extractedCreds = extractConnectionStringParts(connectionString);
         if (extractedCreds.kind === "AccountConnString") {
           {
-            var sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
+            const sharedKeyCredential = new StorageSharedKeyCredential(extractedCreds.accountName, extractedCreds.accountKey);
             options.proxyOptions = coreHttp.getDefaultProxySettings(extractedCreds.proxyUri);
-            var pipeline = newPipeline(sharedKeyCredential, options);
-            return new BlobServiceClient2(extractedCreds.url, pipeline);
+            const pipeline = newPipeline(sharedKeyCredential, options);
+            return new BlobServiceClient(extractedCreds.url, pipeline);
           }
         } else if (extractedCreds.kind === "SASConnString") {
-          var pipeline = newPipeline(new AnonymousCredential(), options);
-          return new BlobServiceClient2(extractedCreds.url + "?" + extractedCreds.accountSas, pipeline);
+          const pipeline = newPipeline(new AnonymousCredential(), options);
+          return new BlobServiceClient(extractedCreds.url + "?" + extractedCreds.accountSas, pipeline);
         } else {
           throw new Error("Connection string must be either an Account connection string or a SAS connection string");
         }
-      };
-      BlobServiceClient2.prototype.getContainerClient = function(containerName) {
+      }
+      getContainerClient(containerName) {
         return new ContainerClient(appendToURLPath(this.url, encodeURIComponent(containerName)), this.pipeline);
-      };
-      BlobServiceClient2.prototype.createContainer = function(containerName, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, containerClient, containerCreateResponse, e_1;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-createContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                containerClient = this.getContainerClient(containerName);
-                return [4, containerClient.create(updatedOptions)];
-              case 2:
-                containerCreateResponse = _b.sent();
-                return [2, {
-                  containerClient,
-                  containerCreateResponse
-                }];
-              case 3:
-                e_1 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_1.message
-                });
-                throw e_1;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async createContainer(containerName, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-createContainer", options);
+        try {
+          const containerClient = this.getContainerClient(containerName);
+          const containerCreateResponse = await containerClient.create(updatedOptions);
+          return {
+            containerClient,
+            containerCreateResponse
+          };
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.deleteContainer = function(containerName, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, containerClient, e_2;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-deleteContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                containerClient = this.getContainerClient(containerName);
-                return [4, containerClient.delete(updatedOptions)];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_2 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_2.message
-                });
-                throw e_2;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async deleteContainer(containerName, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-deleteContainer", options);
+        try {
+          const containerClient = this.getContainerClient(containerName);
+          return await containerClient.delete(updatedOptions);
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.undeleteContainer = function(deletedContainerName2, deletedContainerVersion2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, containerClient, containerContext, containerUndeleteResponse, e_3;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-undeleteContainer", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                containerClient = this.getContainerClient(options.destinationContainerName || deletedContainerName2);
-                containerContext = new Container(containerClient["storageClientContext"]);
-                return [4, containerContext.restore(tslib.__assign({
-                  deletedContainerName: deletedContainerName2,
-                  deletedContainerVersion: deletedContainerVersion2
-                }, updatedOptions))];
-              case 2:
-                containerUndeleteResponse = _b.sent();
-                return [2, { containerClient, containerUndeleteResponse }];
-              case 3:
-                e_3 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_3.message
-                });
-                throw e_3;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async undeleteContainer(deletedContainerName2, deletedContainerVersion2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-undeleteContainer", options);
+        try {
+          const containerClient = this.getContainerClient(options.destinationContainerName || deletedContainerName2);
+          const containerContext = new Container(containerClient["storageClientContext"]);
+          const containerUndeleteResponse = await containerContext.restore(Object.assign({
+            deletedContainerName: deletedContainerName2,
+            deletedContainerVersion: deletedContainerVersion2
+          }, updatedOptions));
+          return { containerClient, containerUndeleteResponse };
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.renameContainer = function(sourceContainerName2, destinationContainerName, options) {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async renameContainer(sourceContainerName2, destinationContainerName, options = {}) {
         var _a;
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _b, span, updatedOptions, containerClient, containerContext, containerRenameResponse, e_4;
-          return tslib.__generator(this, function(_c) {
-            switch (_c.label) {
-              case 0:
-                _b = createSpan("BlobServiceClient-renameContainer", options), span = _b.span, updatedOptions = _b.updatedOptions;
-                _c.label = 1;
-              case 1:
-                _c.trys.push([1, 3, 4, 5]);
-                containerClient = this.getContainerClient(destinationContainerName);
-                containerContext = new Container(containerClient["storageClientContext"]);
-                return [4, containerContext.rename(sourceContainerName2, tslib.__assign(tslib.__assign({}, updatedOptions), { sourceLeaseId: (_a = options.sourceCondition) === null || _a === void 0 ? void 0 : _a.leaseId }))];
-              case 2:
-                containerRenameResponse = _c.sent();
-                return [2, { containerClient, containerRenameResponse }];
-              case 3:
-                e_4 = _c.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_4.message
-                });
-                throw e_4;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        const { span, updatedOptions } = createSpan("BlobServiceClient-renameContainer", options);
+        try {
+          const containerClient = this.getContainerClient(destinationContainerName);
+          const containerContext = new Container(containerClient["storageClientContext"]);
+          const containerRenameResponse = await containerContext.rename(sourceContainerName2, Object.assign(Object.assign({}, updatedOptions), { sourceLeaseId: (_a = options.sourceCondition) === null || _a === void 0 ? void 0 : _a.leaseId }));
+          return { containerClient, containerRenameResponse };
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.getProperties = function(options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_5;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-getProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getProperties(tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_5 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_5.message
-                });
-                throw e_5;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async getProperties(options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-getProperties", options);
+        try {
+          return await this.serviceContext.getProperties(Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.setProperties = function(properties, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_6;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-setProperties", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.setProperties(properties, tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_6 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_6.message
-                });
-                throw e_6;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async setProperties(properties, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-setProperties", options);
+        try {
+          return await this.serviceContext.setProperties(properties, Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.getStatistics = function(options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_7;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-getStatistics", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getStatistics(tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_7 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_7.message
-                });
-                throw e_7;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async getStatistics(options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-getStatistics", options);
+        try {
+          return await this.serviceContext.getStatistics(Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.getAccountInfo = function(options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_8;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-getAccountInfo", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getAccountInfo(tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_8 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_8.message
-                });
-                throw e_8;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async getAccountInfo(options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-getAccountInfo", options);
+        try {
+          return await this.serviceContext.getAccountInfo(Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.listContainersSegment = function(marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, e_9;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-listContainersSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.listContainersSegment(tslib.__assign(tslib.__assign(tslib.__assign({ abortSignal: options.abortSignal, marker: marker2 }, options), { include: typeof options.include === "string" ? [options.include] : options.include }), convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                return [2, _b.sent()];
-              case 3:
-                e_9 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_9.message
-                });
-                throw e_9;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+      }
+      async listContainersSegment(marker2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-listContainersSegment", options);
+        try {
+          return await this.serviceContext.listContainersSegment(Object.assign(Object.assign(Object.assign({ abortSignal: options.abortSignal, marker: marker2 }, options), { include: typeof options.include === "string" ? [options.include] : options.include }), convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.findBlobsByTagsSegment = function(tagFilterSqlExpression, marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, wrappedResponse, e_10;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-findBlobsByTagsSegment", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.filterBlobs(tslib.__assign({ abortSignal: options.abortSignal, where: tagFilterSqlExpression, marker: marker2, maxPageSize: options.maxPageSize }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _b.sent();
-                wrappedResponse = tslib.__assign(tslib.__assign({}, response), { _response: response._response, blobs: response.blobs.map(function(blob) {
-                  var _a2;
-                  var tagValue = "";
-                  if (((_a2 = blob.tags) === null || _a2 === void 0 ? void 0 : _a2.blobTagSet.length) === 1) {
-                    tagValue = blob.tags.blobTagSet[0].value;
-                  }
-                  return tslib.__assign(tslib.__assign({}, blob), { tags: toTags(blob.tags), tagValue });
-                }) });
-                return [2, wrappedResponse];
-              case 3:
-                e_10 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_10.message
-                });
-                throw e_10;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
+      }
+      async findBlobsByTagsSegment(tagFilterSqlExpression, marker2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-findBlobsByTagsSegment", options);
+        try {
+          const response = await this.serviceContext.filterBlobs(Object.assign({ abortSignal: options.abortSignal, where: tagFilterSqlExpression, marker: marker2, maxPageSize: options.maxPageSize }, convertTracingToRequestOptionsBase(updatedOptions)));
+          const wrappedResponse = Object.assign(Object.assign({}, response), { _response: response._response, blobs: response.blobs.map((blob) => {
+            var _a;
+            let tagValue = "";
+            if (((_a = blob.tags) === null || _a === void 0 ? void 0 : _a.blobTagSet.length) === 1) {
+              tagValue = blob.tags.blobTagSet[0].value;
             }
+            return Object.assign(Object.assign({}, blob), { tags: toTags(blob.tags), tagValue });
+          }) });
+          return wrappedResponse;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.findBlobsByTagsSegments = function(tagFilterSqlExpression, marker2, options) {
-        if (options === void 0) {
-          options = {};
+          throw e;
+        } finally {
+          span.end();
         }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function findBlobsByTagsSegments_1() {
-          var response;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker2 || marker2 === void 0))
-                  return [3, 6];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.findBlobsByTagsSegment(tagFilterSqlExpression, marker2, options))];
-              case 2:
-                response = _a.sent();
-                response.blobs = response.blobs || [];
-                marker2 = response.continuationToken;
-                return [4, tslib.__await(response)];
-              case 3:
-                return [4, _a.sent()];
-              case 4:
-                _a.sent();
-                _a.label = 5;
-              case 5:
-                if (marker2)
-                  return [3, 1];
-                _a.label = 6;
-              case 6:
-                return [2];
-            }
-          });
+      }
+      findBlobsByTagsSegments(tagFilterSqlExpression, marker2, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* findBlobsByTagsSegments_1() {
+          let response;
+          if (!!marker2 || marker2 === void 0) {
+            do {
+              response = yield tslib.__await(this.findBlobsByTagsSegment(tagFilterSqlExpression, marker2, options));
+              response.blobs = response.blobs || [];
+              marker2 = response.continuationToken;
+              yield yield tslib.__await(response);
+            } while (marker2);
+          }
         }, "findBlobsByTagsSegments_1"));
-      };
-      BlobServiceClient2.prototype.findBlobsByTagsItems = function(tagFilterSqlExpression, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function findBlobsByTagsItems_1() {
-          var marker2, _a, _b, segment, e_11_1;
-          var e_11, _c;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _d.trys.push([0, 7, 8, 13]);
-                _a = tslib.__asyncValues(this.findBlobsByTagsSegments(tagFilterSqlExpression, marker2, options));
-                _d.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _d.sent(), !_b.done))
-                  return [3, 6];
-                segment = _b.value;
-                return [5, tslib.__values(tslib.__asyncDelegator(tslib.__asyncValues(segment.blobs)))];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_d.sent()])];
-              case 4:
-                _d.sent();
-                _d.label = 5;
-              case 5:
-                return [3, 1];
-              case 6:
-                return [3, 13];
-              case 7:
-                e_11_1 = _d.sent();
-                e_11 = { error: e_11_1 };
-                return [3, 13];
-              case 8:
-                _d.trys.push([8, , 11, 12]);
-                if (!(_b && !_b.done && (_c = _a.return)))
-                  return [3, 10];
-                return [4, tslib.__await(_c.call(_a))];
-              case 9:
-                _d.sent();
-                _d.label = 10;
-              case 10:
-                return [3, 12];
-              case 11:
-                if (e_11)
-                  throw e_11.error;
-                return [7];
-              case 12:
-                return [7];
-              case 13:
-                return [2];
+      }
+      findBlobsByTagsItems(tagFilterSqlExpression, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* findBlobsByTagsItems_1() {
+          var e_1, _a;
+          let marker2;
+          try {
+            for (var _b = tslib.__asyncValues(this.findBlobsByTagsSegments(tagFilterSqlExpression, marker2, options)), _c; _c = yield tslib.__await(_b.next()), !_c.done; ) {
+              const segment = _c.value;
+              yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(segment.blobs)));
             }
-          });
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (_c && !_c.done && (_a = _b.return))
+                yield tslib.__await(_a.call(_b));
+            } finally {
+              if (e_1)
+                throw e_1.error;
+            }
+          }
         }, "findBlobsByTagsItems_1"));
-      };
-      BlobServiceClient2.prototype.findBlobsByTags = function(tagFilterSqlExpression, options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
-        var listSegmentOptions = tslib.__assign({}, options);
-        var iter = this.findBlobsByTagsItems(tagFilterSqlExpression, listSegmentOptions);
-        return _a = {
-          next: function() {
+      }
+      findBlobsByTags(tagFilterSqlExpression, options = {}) {
+        const listSegmentOptions = Object.assign({}, options);
+        const iter = this.findBlobsByTagsItems(tagFilterSqlExpression, listSegmentOptions);
+        return {
+          next() {
             return iter.next();
+          },
+          [Symbol.asyncIterator]() {
+            return this;
+          },
+          byPage: (settings = {}) => {
+            return this.findBlobsByTagsSegments(tagFilterSqlExpression, settings.continuationToken, Object.assign({ maxPageSize: settings.maxPageSize }, listSegmentOptions));
           }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
+        };
+      }
+      listSegments(marker2, options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listSegments_1() {
+          let listContainersSegmentResponse;
+          if (!!marker2 || marker2 === void 0) {
+            do {
+              listContainersSegmentResponse = yield tslib.__await(this.listContainersSegment(marker2, options));
+              listContainersSegmentResponse.containerItems = listContainersSegmentResponse.containerItems || [];
+              marker2 = listContainersSegmentResponse.continuationToken;
+              yield yield tslib.__await(yield tslib.__await(listContainersSegmentResponse));
+            } while (marker2);
           }
-          return _this.findBlobsByTagsSegments(tagFilterSqlExpression, settings.continuationToken, tslib.__assign({ maxPageSize: settings.maxPageSize }, listSegmentOptions));
-        }, _a;
-      };
-      BlobServiceClient2.prototype.listSegments = function(marker2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listSegments_1() {
-          var listContainersSegmentResponse;
-          return tslib.__generator(this, function(_a) {
-            switch (_a.label) {
-              case 0:
-                if (!(!!marker2 || marker2 === void 0))
-                  return [3, 7];
-                _a.label = 1;
-              case 1:
-                return [4, tslib.__await(this.listContainersSegment(marker2, options))];
-              case 2:
-                listContainersSegmentResponse = _a.sent();
-                listContainersSegmentResponse.containerItems = listContainersSegmentResponse.containerItems || [];
-                marker2 = listContainersSegmentResponse.continuationToken;
-                return [4, tslib.__await(listContainersSegmentResponse)];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_a.sent()])];
-              case 4:
-                return [4, _a.sent()];
-              case 5:
-                _a.sent();
-                _a.label = 6;
-              case 6:
-                if (marker2)
-                  return [3, 1];
-                _a.label = 7;
-              case 7:
-                return [2];
-            }
-          });
         }, "listSegments_1"));
-      };
-      BlobServiceClient2.prototype.listItems = function(options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function listItems_1() {
-          var marker2, _a, _b, segment, e_12_1;
-          var e_12, _c;
-          return tslib.__generator(this, function(_d) {
-            switch (_d.label) {
-              case 0:
-                _d.trys.push([0, 7, 8, 13]);
-                _a = tslib.__asyncValues(this.listSegments(marker2, options));
-                _d.label = 1;
-              case 1:
-                return [4, tslib.__await(_a.next())];
-              case 2:
-                if (!(_b = _d.sent(), !_b.done))
-                  return [3, 6];
-                segment = _b.value;
-                return [5, tslib.__values(tslib.__asyncDelegator(tslib.__asyncValues(segment.containerItems)))];
-              case 3:
-                return [4, tslib.__await.apply(void 0, [_d.sent()])];
-              case 4:
-                _d.sent();
-                _d.label = 5;
-              case 5:
-                return [3, 1];
-              case 6:
-                return [3, 13];
-              case 7:
-                e_12_1 = _d.sent();
-                e_12 = { error: e_12_1 };
-                return [3, 13];
-              case 8:
-                _d.trys.push([8, , 11, 12]);
-                if (!(_b && !_b.done && (_c = _a.return)))
-                  return [3, 10];
-                return [4, tslib.__await(_c.call(_a))];
-              case 9:
-                _d.sent();
-                _d.label = 10;
-              case 10:
-                return [3, 12];
-              case 11:
-                if (e_12)
-                  throw e_12.error;
-                return [7];
-              case 12:
-                return [7];
-              case 13:
-                return [2];
+      }
+      listItems(options = {}) {
+        return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* listItems_1() {
+          var e_2, _a;
+          let marker2;
+          try {
+            for (var _b = tslib.__asyncValues(this.listSegments(marker2, options)), _c; _c = yield tslib.__await(_b.next()), !_c.done; ) {
+              const segment = _c.value;
+              yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(segment.containerItems)));
             }
-          });
+          } catch (e_2_1) {
+            e_2 = { error: e_2_1 };
+          } finally {
+            try {
+              if (_c && !_c.done && (_a = _b.return))
+                yield tslib.__await(_a.call(_b));
+            } finally {
+              if (e_2)
+                throw e_2.error;
+            }
+          }
         }, "listItems_1"));
-      };
-      BlobServiceClient2.prototype.listContainers = function(options) {
-        var _a;
-        var _this = this;
-        if (options === void 0) {
-          options = {};
-        }
+      }
+      listContainers(options = {}) {
         if (options.prefix === "") {
           options.prefix = void 0;
         }
-        var include2 = [];
+        const include2 = [];
         if (options.includeDeleted) {
           include2.push("deleted");
         }
         if (options.includeMetadata) {
           include2.push("metadata");
         }
-        var listSegmentOptions = tslib.__assign(tslib.__assign({}, options), include2.length > 0 ? { include: include2 } : {});
-        var iter = this.listItems(listSegmentOptions);
-        return _a = {
-          next: function() {
+        const listSegmentOptions = Object.assign(Object.assign({}, options), include2.length > 0 ? { include: include2 } : {});
+        const iter = this.listItems(listSegmentOptions);
+        return {
+          next() {
             return iter.next();
+          },
+          [Symbol.asyncIterator]() {
+            return this;
+          },
+          byPage: (settings = {}) => {
+            return this.listSegments(settings.continuationToken, Object.assign({ maxPageSize: settings.maxPageSize }, listSegmentOptions));
           }
-        }, _a[Symbol.asyncIterator] = function() {
-          return this;
-        }, _a.byPage = function(settings) {
-          if (settings === void 0) {
-            settings = {};
-          }
-          return _this.listSegments(settings.continuationToken, tslib.__assign({ maxPageSize: settings.maxPageSize }, listSegmentOptions));
-        }, _a;
-      };
-      BlobServiceClient2.prototype.getUserDelegationKey = function(startsOn, expiresOn2, options) {
-        if (options === void 0) {
-          options = {};
-        }
-        return tslib.__awaiter(this, void 0, void 0, function() {
-          var _a, span, updatedOptions, response, userDelegationKey, res, e_13;
-          return tslib.__generator(this, function(_b) {
-            switch (_b.label) {
-              case 0:
-                _a = createSpan("BlobServiceClient-getUserDelegationKey", options), span = _a.span, updatedOptions = _a.updatedOptions;
-                _b.label = 1;
-              case 1:
-                _b.trys.push([1, 3, 4, 5]);
-                return [4, this.serviceContext.getUserDelegationKey({
-                  startsOn: truncatedISO8061Date(startsOn, false),
-                  expiresOn: truncatedISO8061Date(expiresOn2, false)
-                }, tslib.__assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)))];
-              case 2:
-                response = _b.sent();
-                userDelegationKey = {
-                  signedObjectId: response.signedObjectId,
-                  signedTenantId: response.signedTenantId,
-                  signedStartsOn: new Date(response.signedStartsOn),
-                  signedExpiresOn: new Date(response.signedExpiresOn),
-                  signedService: response.signedService,
-                  signedVersion: response.signedVersion,
-                  value: response.value
-                };
-                res = tslib.__assign({ _response: response._response, requestId: response.requestId, clientRequestId: response.clientRequestId, version: response.version, date: response.date, errorCode: response.errorCode }, userDelegationKey);
-                return [2, res];
-              case 3:
-                e_13 = _b.sent();
-                span.setStatus({
-                  code: coreTracing.SpanStatusCode.ERROR,
-                  message: e_13.message
-                });
-                throw e_13;
-              case 4:
-                span.end();
-                return [7];
-              case 5:
-                return [2];
-            }
+        };
+      }
+      async getUserDelegationKey(startsOn, expiresOn2, options = {}) {
+        const { span, updatedOptions } = createSpan("BlobServiceClient-getUserDelegationKey", options);
+        try {
+          const response = await this.serviceContext.getUserDelegationKey({
+            startsOn: truncatedISO8061Date(startsOn, false),
+            expiresOn: truncatedISO8061Date(expiresOn2, false)
+          }, Object.assign({ abortSignal: options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+          const userDelegationKey = {
+            signedObjectId: response.signedObjectId,
+            signedTenantId: response.signedTenantId,
+            signedStartsOn: new Date(response.signedStartsOn),
+            signedExpiresOn: new Date(response.signedExpiresOn),
+            signedService: response.signedService,
+            signedVersion: response.signedVersion,
+            value: response.value
+          };
+          const res = Object.assign({ _response: response._response, requestId: response.requestId, clientRequestId: response.clientRequestId, version: response.version, date: response.date, errorCode: response.errorCode }, userDelegationKey);
+          return res;
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
           });
-        });
-      };
-      BlobServiceClient2.prototype.getBlobBatchClient = function() {
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      getBlobBatchClient() {
         return new BlobBatchClient(this.url, this.pipeline);
-      };
-      BlobServiceClient2.prototype.generateAccountSasUrl = function(expiresOn2, permissions, resourceTypes, options) {
-        if (permissions === void 0) {
-          permissions = AccountSASPermissions.parse("r");
-        }
-        if (resourceTypes === void 0) {
-          resourceTypes = "sco";
-        }
-        if (options === void 0) {
-          options = {};
-        }
+      }
+      generateAccountSasUrl(expiresOn2, permissions = AccountSASPermissions.parse("r"), resourceTypes = "sco", options = {}) {
         if (!(this.credential instanceof StorageSharedKeyCredential)) {
           throw RangeError("Can only generate the account SAS when the client is initialized with a shared key credential");
         }
         if (expiresOn2 === void 0) {
-          var now = new Date();
+          const now = new Date();
           expiresOn2 = new Date(now.getTime() + 3600 * 1e3);
         }
-        var sas = generateAccountSASQueryParameters(tslib.__assign({
+        const sas = generateAccountSASQueryParameters(Object.assign({
           permissions,
           expiresOn: expiresOn2,
           resourceTypes,
           services: AccountSASServices.parse("b").toString()
         }, options), this.credential).toString();
         return appendToURLQuery(this.url, sas);
-      };
-      return BlobServiceClient2;
-    }(StorageClient);
+      }
+    };
+    __name(BlobServiceClient, "BlobServiceClient");
     Object.defineProperty(exports2, "BaseRequestPolicy", {
       enumerable: true,
       get: function() {
@@ -63931,13 +60457,6 @@ NpmInstallAction.create().run().catch(import_core2.setFailed);
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
- */
-/*!
- * Copyright (c) Microsoft and contributors. All rights reserved.
- * Licensed under the MIT License. See License.txt in the project root for
- * license information.
- * 
- * Azure Core LRO SDK for JavaScript - 1.0.5
  */
 /*!
  * mime-db
