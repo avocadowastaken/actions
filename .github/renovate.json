@@ -1,5 +1,11 @@
 {
   "extends": ["config:js-lib", "group:all"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "postUpgradeTasks": {
+    "executionMode": "update",
+    "commands": ["yarn build"],
+    "fileFilters": ["**/dist/**/*.js"]
+  },
   "lockFileMaintenance": { "enabled": true, "automerge": true },
   "packageRules": [
     {
