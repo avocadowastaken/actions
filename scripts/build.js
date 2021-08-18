@@ -30,10 +30,12 @@ async function main() {
   const rootDir = path.join(__dirname, "..");
 
   for await (const dir of walk(rootDir)) {
-    await execa("npx", ["rapidbundle"], {
+    const result = await execa("npx", ["rapidbundle"], {
       cwd: dir,
+      reject: false,
       stdio: "inherit",
     });
+    if (result.exitCode) process.exitCode = 1;
   }
 }
 
