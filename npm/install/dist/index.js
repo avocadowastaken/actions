@@ -27239,9 +27239,9 @@ var require_asynckit = __commonJS({
   }
 });
 
-// ../../node_modules/form-data/lib/populate.js
+// ../../node_modules/@azure/core-http/node_modules/form-data/lib/populate.js
 var require_populate = __commonJS({
-  "../../node_modules/form-data/lib/populate.js"(exports2, module2) {
+  "../../node_modules/@azure/core-http/node_modules/form-data/lib/populate.js"(exports2, module2) {
     module2.exports = function(dst, src) {
       Object.keys(src).forEach(function(prop) {
         dst[prop] = dst[prop] || src[prop];
@@ -27251,9 +27251,9 @@ var require_populate = __commonJS({
   }
 });
 
-// ../../node_modules/form-data/lib/form_data.js
+// ../../node_modules/@azure/core-http/node_modules/form-data/lib/form_data.js
 var require_form_data = __commonJS({
-  "../../node_modules/form-data/lib/form_data.js"(exports2, module2) {
+  "../../node_modules/@azure/core-http/node_modules/form-data/lib/form_data.js"(exports2, module2) {
     var CombinedStream = require_combined_stream();
     var util2 = require("util");
     var path2 = require("path");
@@ -27261,6 +27261,7 @@ var require_form_data = __commonJS({
     var https = require("https");
     var parseUrl = require("url").parse;
     var fs2 = require("fs");
+    var Stream = require("stream").Stream;
     var mime = require_mime_types();
     var asynckit = require_asynckit();
     var populate = require_populate();
@@ -27313,7 +27314,7 @@ var require_form_data = __commonJS({
       }
       this._valueLength += valueLength;
       this._overheadLength += Buffer.byteLength(header) + FormData.LINE_BREAK.length;
-      if (!value || !value.path && !(value.readable && value.hasOwnProperty("httpVersion"))) {
+      if (!value || !value.path && !(value.readable && value.hasOwnProperty("httpVersion")) && !(value instanceof Stream)) {
         return;
       }
       if (!options.knownLength) {
@@ -27529,11 +27530,13 @@ var require_form_data = __commonJS({
         request = http.request(options);
       }
       this.getLength(function(err, length) {
-        if (err) {
+        if (err && err !== "Unknown stream") {
           this._error(err);
           return;
         }
-        request.setHeader("Content-Length", length);
+        if (length) {
+          request.setHeader("Content-Length", length);
+        }
         this.pipe(request);
         if (cb) {
           var onResponse;
@@ -33897,6 +33900,397 @@ var require_types = __commonJS({
   }
 });
 
+// ../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js
+var require_globalThis = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2._globalThis = void 0;
+    exports2._globalThis = typeof globalThis === "object" ? globalThis : global;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/platform/node/index.js
+var require_node = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/node/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, { enumerable: true, get: function() {
+        return m[k];
+      } });
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    __exportStar(require_globalThis(), exports2);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/platform/index.js
+var require_platform = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/platform/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, { enumerable: true, get: function() {
+        return m[k];
+      } });
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    __exportStar(require_node(), exports2);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/version.js
+var require_version3 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/version.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.VERSION = void 0;
+    exports2.VERSION = "1.0.3";
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/internal/semver.js
+var require_semver2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/internal/semver.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.isCompatible = exports2._makeCompatibilityCheck = void 0;
+    var version_1 = require_version3();
+    var re = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
+    function _makeCompatibilityCheck(ownVersion) {
+      var acceptedVersions = new Set([ownVersion]);
+      var rejectedVersions = new Set();
+      var myVersionMatch = ownVersion.match(re);
+      if (!myVersionMatch) {
+        return function() {
+          return false;
+        };
+      }
+      var ownVersionParsed = {
+        major: +myVersionMatch[1],
+        minor: +myVersionMatch[2],
+        patch: +myVersionMatch[3],
+        prerelease: myVersionMatch[4]
+      };
+      if (ownVersionParsed.prerelease != null) {
+        return /* @__PURE__ */ __name(function isExactmatch(globalVersion) {
+          return globalVersion === ownVersion;
+        }, "isExactmatch");
+      }
+      function _reject(v) {
+        rejectedVersions.add(v);
+        return false;
+      }
+      __name(_reject, "_reject");
+      function _accept(v) {
+        acceptedVersions.add(v);
+        return true;
+      }
+      __name(_accept, "_accept");
+      return /* @__PURE__ */ __name(function isCompatible(globalVersion) {
+        if (acceptedVersions.has(globalVersion)) {
+          return true;
+        }
+        if (rejectedVersions.has(globalVersion)) {
+          return false;
+        }
+        var globalVersionMatch = globalVersion.match(re);
+        if (!globalVersionMatch) {
+          return _reject(globalVersion);
+        }
+        var globalVersionParsed = {
+          major: +globalVersionMatch[1],
+          minor: +globalVersionMatch[2],
+          patch: +globalVersionMatch[3],
+          prerelease: globalVersionMatch[4]
+        };
+        if (globalVersionParsed.prerelease != null) {
+          return _reject(globalVersion);
+        }
+        if (ownVersionParsed.major !== globalVersionParsed.major) {
+          return _reject(globalVersion);
+        }
+        if (ownVersionParsed.major === 0) {
+          if (ownVersionParsed.minor === globalVersionParsed.minor && ownVersionParsed.patch <= globalVersionParsed.patch) {
+            return _accept(globalVersion);
+          }
+          return _reject(globalVersion);
+        }
+        if (ownVersionParsed.minor <= globalVersionParsed.minor) {
+          return _accept(globalVersion);
+        }
+        return _reject(globalVersion);
+      }, "isCompatible");
+    }
+    __name(_makeCompatibilityCheck, "_makeCompatibilityCheck");
+    exports2._makeCompatibilityCheck = _makeCompatibilityCheck;
+    exports2.isCompatible = _makeCompatibilityCheck(version_1.VERSION);
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/internal/global-utils.js
+var require_global_utils = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/internal/global-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.unregisterGlobal = exports2.getGlobal = exports2.registerGlobal = void 0;
+    var platform_1 = require_platform();
+    var version_1 = require_version3();
+    var semver_1 = require_semver2();
+    var major = version_1.VERSION.split(".")[0];
+    var GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for("opentelemetry.js.api." + major);
+    var _global = platform_1._globalThis;
+    function registerGlobal(type, instance, diag, allowOverride) {
+      var _a;
+      if (allowOverride === void 0) {
+        allowOverride = false;
+      }
+      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : {
+        version: version_1.VERSION
+      };
+      if (!allowOverride && api[type]) {
+        var err = new Error("@opentelemetry/api: Attempted duplicate registration of API: " + type);
+        diag.error(err.stack || err.message);
+        return false;
+      }
+      if (api.version !== version_1.VERSION) {
+        var err = new Error("@opentelemetry/api: All API registration versions must match");
+        diag.error(err.stack || err.message);
+        return false;
+      }
+      api[type] = instance;
+      diag.debug("@opentelemetry/api: Registered a global for " + type + " v" + version_1.VERSION + ".");
+      return true;
+    }
+    __name(registerGlobal, "registerGlobal");
+    exports2.registerGlobal = registerGlobal;
+    function getGlobal(type) {
+      var _a, _b;
+      var globalVersion = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _a === void 0 ? void 0 : _a.version;
+      if (!globalVersion || !semver_1.isCompatible(globalVersion)) {
+        return;
+      }
+      return (_b = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _b === void 0 ? void 0 : _b[type];
+    }
+    __name(getGlobal, "getGlobal");
+    exports2.getGlobal = getGlobal;
+    function unregisterGlobal(type, diag) {
+      diag.debug("@opentelemetry/api: Unregistering a global for " + type + " v" + version_1.VERSION + ".");
+      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
+      if (api) {
+        delete api[type];
+      }
+    }
+    __name(unregisterGlobal, "unregisterGlobal");
+    exports2.unregisterGlobal = unregisterGlobal;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js
+var require_ComponentLogger = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DiagComponentLogger = void 0;
+    var global_utils_1 = require_global_utils();
+    var DiagComponentLogger = function() {
+      function DiagComponentLogger2(props) {
+        this._namespace = props.namespace || "DiagComponentLogger";
+      }
+      __name(DiagComponentLogger2, "DiagComponentLogger");
+      DiagComponentLogger2.prototype.debug = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("debug", this._namespace, args);
+      };
+      DiagComponentLogger2.prototype.error = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("error", this._namespace, args);
+      };
+      DiagComponentLogger2.prototype.info = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("info", this._namespace, args);
+      };
+      DiagComponentLogger2.prototype.warn = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("warn", this._namespace, args);
+      };
+      DiagComponentLogger2.prototype.verbose = function() {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+          args[_i] = arguments[_i];
+        }
+        return logProxy("verbose", this._namespace, args);
+      };
+      return DiagComponentLogger2;
+    }();
+    exports2.DiagComponentLogger = DiagComponentLogger;
+    function logProxy(funcName, namespace, args) {
+      var logger = global_utils_1.getGlobal("diag");
+      if (!logger) {
+        return;
+      }
+      args.unshift(namespace);
+      return logger[funcName].apply(logger, args);
+    }
+    __name(logProxy, "logProxy");
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/diag/types.js
+var require_types2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/diag/types.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DiagLogLevel = void 0;
+    var DiagLogLevel;
+    (function(DiagLogLevel2) {
+      DiagLogLevel2[DiagLogLevel2["NONE"] = 0] = "NONE";
+      DiagLogLevel2[DiagLogLevel2["ERROR"] = 30] = "ERROR";
+      DiagLogLevel2[DiagLogLevel2["WARN"] = 50] = "WARN";
+      DiagLogLevel2[DiagLogLevel2["INFO"] = 60] = "INFO";
+      DiagLogLevel2[DiagLogLevel2["DEBUG"] = 70] = "DEBUG";
+      DiagLogLevel2[DiagLogLevel2["VERBOSE"] = 80] = "VERBOSE";
+      DiagLogLevel2[DiagLogLevel2["ALL"] = 9999] = "ALL";
+    })(DiagLogLevel = exports2.DiagLogLevel || (exports2.DiagLogLevel = {}));
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js
+var require_logLevelLogger = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.createLogLevelDiagLogger = void 0;
+    var types_1 = require_types2();
+    function createLogLevelDiagLogger(maxLevel, logger) {
+      if (maxLevel < types_1.DiagLogLevel.NONE) {
+        maxLevel = types_1.DiagLogLevel.NONE;
+      } else if (maxLevel > types_1.DiagLogLevel.ALL) {
+        maxLevel = types_1.DiagLogLevel.ALL;
+      }
+      logger = logger || {};
+      function _filterFunc(funcName, theLevel) {
+        var theFunc = logger[funcName];
+        if (typeof theFunc === "function" && maxLevel >= theLevel) {
+          return theFunc.bind(logger);
+        }
+        return function() {
+        };
+      }
+      __name(_filterFunc, "_filterFunc");
+      return {
+        error: _filterFunc("error", types_1.DiagLogLevel.ERROR),
+        warn: _filterFunc("warn", types_1.DiagLogLevel.WARN),
+        info: _filterFunc("info", types_1.DiagLogLevel.INFO),
+        debug: _filterFunc("debug", types_1.DiagLogLevel.DEBUG),
+        verbose: _filterFunc("verbose", types_1.DiagLogLevel.VERBOSE)
+      };
+    }
+    __name(createLogLevelDiagLogger, "createLogLevelDiagLogger");
+    exports2.createLogLevelDiagLogger = createLogLevelDiagLogger;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/diag.js
+var require_diag = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/diag.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.DiagAPI = void 0;
+    var ComponentLogger_1 = require_ComponentLogger();
+    var logLevelLogger_1 = require_logLevelLogger();
+    var types_1 = require_types2();
+    var global_utils_1 = require_global_utils();
+    var API_NAME = "diag";
+    var DiagAPI = function() {
+      function DiagAPI2() {
+        function _logProxy(funcName) {
+          return function() {
+            var logger = global_utils_1.getGlobal("diag");
+            if (!logger)
+              return;
+            return logger[funcName].apply(logger, arguments);
+          };
+        }
+        __name(_logProxy, "_logProxy");
+        var self2 = this;
+        self2.setLogger = function(logger, logLevel) {
+          var _a, _b;
+          if (logLevel === void 0) {
+            logLevel = types_1.DiagLogLevel.INFO;
+          }
+          if (logger === self2) {
+            var err = new Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");
+            self2.error((_a = err.stack) !== null && _a !== void 0 ? _a : err.message);
+            return false;
+          }
+          var oldLogger = global_utils_1.getGlobal("diag");
+          var newLogger = logLevelLogger_1.createLogLevelDiagLogger(logLevel, logger);
+          if (oldLogger) {
+            var stack = (_b = new Error().stack) !== null && _b !== void 0 ? _b : "<failed to generate stacktrace>";
+            oldLogger.warn("Current logger will be overwritten from " + stack);
+            newLogger.warn("Current logger will overwrite one already registered from " + stack);
+          }
+          return global_utils_1.registerGlobal("diag", newLogger, self2, true);
+        };
+        self2.disable = function() {
+          global_utils_1.unregisterGlobal(API_NAME, self2);
+        };
+        self2.createComponentLogger = function(options) {
+          return new ComponentLogger_1.DiagComponentLogger(options);
+        };
+        self2.verbose = _logProxy("verbose");
+        self2.debug = _logProxy("debug");
+        self2.info = _logProxy("info");
+        self2.warn = _logProxy("warn");
+        self2.error = _logProxy("error");
+      }
+      __name(DiagAPI2, "DiagAPI");
+      DiagAPI2.instance = function() {
+        if (!this._instance) {
+          this._instance = new DiagAPI2();
+        }
+        return this._instance;
+      };
+      return DiagAPI2;
+    }();
+    exports2.DiagAPI = DiagAPI;
+  }
+});
+
 // ../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js
 var require_baggage_impl = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/baggage/internal/baggage-impl.js"(exports2) {
@@ -33968,9 +34362,10 @@ var require_utils2 = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.baggageEntryMetadataFromString = exports2.createBaggage = void 0;
-    var __1 = require_src();
+    var diag_1 = require_diag();
     var baggage_impl_1 = require_baggage_impl();
     var symbol_1 = require_symbol();
+    var diag = diag_1.DiagAPI.instance();
     function createBaggage(entries) {
       if (entries === void 0) {
         entries = {};
@@ -33981,7 +34376,7 @@ var require_utils2 = __commonJS({
     exports2.createBaggage = createBaggage;
     function baggageEntryMetadataFromString(str) {
       if (typeof str !== "string") {
-        __1.diag.error("Cannot create baggage metadata from unknown type: " + typeof str);
+        diag.error("Cannot create baggage metadata from unknown type: " + typeof str);
         str = "";
       }
       return {
@@ -34053,27 +34448,8 @@ var require_consoleLogger = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/diag/types.js
-var require_types2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/diag/types.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.DiagLogLevel = void 0;
-    var DiagLogLevel;
-    (function(DiagLogLevel2) {
-      DiagLogLevel2[DiagLogLevel2["NONE"] = 0] = "NONE";
-      DiagLogLevel2[DiagLogLevel2["ERROR"] = 30] = "ERROR";
-      DiagLogLevel2[DiagLogLevel2["WARN"] = 50] = "WARN";
-      DiagLogLevel2[DiagLogLevel2["INFO"] = 60] = "INFO";
-      DiagLogLevel2[DiagLogLevel2["DEBUG"] = 70] = "DEBUG";
-      DiagLogLevel2[DiagLogLevel2["VERBOSE"] = 80] = "VERBOSE";
-      DiagLogLevel2[DiagLogLevel2["ALL"] = 9999] = "ALL";
-    })(DiagLogLevel = exports2.DiagLogLevel || (exports2.DiagLogLevel = {}));
-  }
-});
-
 // ../../node_modules/@opentelemetry/api/build/src/diag/index.js
-var require_diag = __commonJS({
+var require_diag2 = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/diag/index.js"(exports2) {
     "use strict";
     var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
@@ -34181,6 +34557,103 @@ var require_context = __commonJS({
   }
 });
 
+// ../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js
+var require_NoopContextManager = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js"(exports2) {
+    "use strict";
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
+      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+      return to;
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.NoopContextManager = void 0;
+    var context_1 = require_context();
+    var NoopContextManager = function() {
+      function NoopContextManager2() {
+      }
+      __name(NoopContextManager2, "NoopContextManager");
+      NoopContextManager2.prototype.active = function() {
+        return context_1.ROOT_CONTEXT;
+      };
+      NoopContextManager2.prototype.with = function(_context, fn, thisArg) {
+        var args = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+          args[_i - 3] = arguments[_i];
+        }
+        return fn.call.apply(fn, __spreadArray([thisArg], args));
+      };
+      NoopContextManager2.prototype.bind = function(_context, target) {
+        return target;
+      };
+      NoopContextManager2.prototype.enable = function() {
+        return this;
+      };
+      NoopContextManager2.prototype.disable = function() {
+        return this;
+      };
+      return NoopContextManager2;
+    }();
+    exports2.NoopContextManager = NoopContextManager;
+  }
+});
+
+// ../../node_modules/@opentelemetry/api/build/src/api/context.js
+var require_context2 = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
+    "use strict";
+    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
+      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+      return to;
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.ContextAPI = void 0;
+    var NoopContextManager_1 = require_NoopContextManager();
+    var global_utils_1 = require_global_utils();
+    var diag_1 = require_diag();
+    var API_NAME = "context";
+    var NOOP_CONTEXT_MANAGER = new NoopContextManager_1.NoopContextManager();
+    var ContextAPI = function() {
+      function ContextAPI2() {
+      }
+      __name(ContextAPI2, "ContextAPI");
+      ContextAPI2.getInstance = function() {
+        if (!this._instance) {
+          this._instance = new ContextAPI2();
+        }
+        return this._instance;
+      };
+      ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
+        return global_utils_1.registerGlobal(API_NAME, contextManager, diag_1.DiagAPI.instance());
+      };
+      ContextAPI2.prototype.active = function() {
+        return this._getContextManager().active();
+      };
+      ContextAPI2.prototype.with = function(context, fn, thisArg) {
+        var _a;
+        var args = [];
+        for (var _i = 3; _i < arguments.length; _i++) {
+          args[_i - 3] = arguments[_i];
+        }
+        return (_a = this._getContextManager()).with.apply(_a, __spreadArray([context, fn, thisArg], args));
+      };
+      ContextAPI2.prototype.bind = function(context, target) {
+        return this._getContextManager().bind(context, target);
+      };
+      ContextAPI2.prototype._getContextManager = function() {
+        return global_utils_1.getGlobal(API_NAME) || NOOP_CONTEXT_MANAGER;
+      };
+      ContextAPI2.prototype.disable = function() {
+        this._getContextManager().disable();
+        global_utils_1.unregisterGlobal(API_NAME, diag_1.DiagAPI.instance());
+      };
+      return ContextAPI2;
+    }();
+    exports2.ContextAPI = ContextAPI;
+  }
+});
+
 // ../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js
 var require_trace_flags = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/trace/trace_flags.js"(exports2) {
@@ -34195,16 +34668,13 @@ var require_trace_flags = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js
-var require_spancontext_utils = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js"(exports2) {
+// ../../node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js
+var require_invalid_span_constants = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/invalid-span-constants.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.wrapSpanContext = exports2.isSpanContextValid = exports2.isValidSpanId = exports2.isValidTraceId = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
-    var NonRecordingSpan_1 = require_NonRecordingSpan();
+    exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = void 0;
     var trace_flags_1 = require_trace_flags();
-    var VALID_TRACEID_REGEX = /^([0-9a-f]{32})$/i;
-    var VALID_SPANID_REGEX = /^[0-9a-f]{16}$/i;
     exports2.INVALID_SPANID = "0000000000000000";
     exports2.INVALID_TRACEID = "00000000000000000000000000000000";
     exports2.INVALID_SPAN_CONTEXT = {
@@ -34212,26 +34682,6 @@ var require_spancontext_utils = __commonJS({
       spanId: exports2.INVALID_SPANID,
       traceFlags: trace_flags_1.TraceFlags.NONE
     };
-    function isValidTraceId(traceId) {
-      return VALID_TRACEID_REGEX.test(traceId) && traceId !== exports2.INVALID_TRACEID;
-    }
-    __name(isValidTraceId, "isValidTraceId");
-    exports2.isValidTraceId = isValidTraceId;
-    function isValidSpanId(spanId) {
-      return VALID_SPANID_REGEX.test(spanId) && spanId !== exports2.INVALID_SPANID;
-    }
-    __name(isValidSpanId, "isValidSpanId");
-    exports2.isValidSpanId = isValidSpanId;
-    function isSpanContextValid(spanContext) {
-      return isValidTraceId(spanContext.traceId) && isValidSpanId(spanContext.spanId);
-    }
-    __name(isSpanContextValid, "isSpanContextValid");
-    exports2.isSpanContextValid = isSpanContextValid;
-    function wrapSpanContext(spanContext) {
-      return new NonRecordingSpan_1.NonRecordingSpan(spanContext);
-    }
-    __name(wrapSpanContext, "wrapSpanContext");
-    exports2.wrapSpanContext = wrapSpanContext;
   }
 });
 
@@ -34241,11 +34691,11 @@ var require_NonRecordingSpan = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.NonRecordingSpan = void 0;
-    var spancontext_utils_1 = require_spancontext_utils();
+    var invalid_span_constants_1 = require_invalid_span_constants();
     var NonRecordingSpan = function() {
       function NonRecordingSpan2(_spanContext) {
         if (_spanContext === void 0) {
-          _spanContext = spancontext_utils_1.INVALID_SPAN_CONTEXT;
+          _spanContext = invalid_span_constants_1.INVALID_SPAN_CONTEXT;
         }
         this._spanContext = _spanContext;
       }
@@ -34319,26 +34769,60 @@ var require_context_utils = __commonJS({
   }
 });
 
+// ../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js
+var require_spancontext_utils = __commonJS({
+  "../../node_modules/@opentelemetry/api/build/src/trace/spancontext-utils.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.wrapSpanContext = exports2.isSpanContextValid = exports2.isValidSpanId = exports2.isValidTraceId = void 0;
+    var invalid_span_constants_1 = require_invalid_span_constants();
+    var NonRecordingSpan_1 = require_NonRecordingSpan();
+    var VALID_TRACEID_REGEX = /^([0-9a-f]{32})$/i;
+    var VALID_SPANID_REGEX = /^[0-9a-f]{16}$/i;
+    function isValidTraceId(traceId) {
+      return VALID_TRACEID_REGEX.test(traceId) && traceId !== invalid_span_constants_1.INVALID_TRACEID;
+    }
+    __name(isValidTraceId, "isValidTraceId");
+    exports2.isValidTraceId = isValidTraceId;
+    function isValidSpanId(spanId) {
+      return VALID_SPANID_REGEX.test(spanId) && spanId !== invalid_span_constants_1.INVALID_SPANID;
+    }
+    __name(isValidSpanId, "isValidSpanId");
+    exports2.isValidSpanId = isValidSpanId;
+    function isSpanContextValid(spanContext) {
+      return isValidTraceId(spanContext.traceId) && isValidSpanId(spanContext.spanId);
+    }
+    __name(isSpanContextValid, "isSpanContextValid");
+    exports2.isSpanContextValid = isSpanContextValid;
+    function wrapSpanContext(spanContext) {
+      return new NonRecordingSpan_1.NonRecordingSpan(spanContext);
+    }
+    __name(wrapSpanContext, "wrapSpanContext");
+    exports2.wrapSpanContext = wrapSpanContext;
+  }
+});
+
 // ../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js
 var require_NoopTracer = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/trace/NoopTracer.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.NoopTracer = void 0;
-    var __1 = require_src();
+    var context_1 = require_context2();
     var context_utils_1 = require_context_utils();
     var NonRecordingSpan_1 = require_NonRecordingSpan();
     var spancontext_utils_1 = require_spancontext_utils();
+    var context = context_1.ContextAPI.getInstance();
     var NoopTracer = function() {
       function NoopTracer2() {
       }
       __name(NoopTracer2, "NoopTracer");
-      NoopTracer2.prototype.startSpan = function(name, options, context) {
+      NoopTracer2.prototype.startSpan = function(name, options, context2) {
         var root = Boolean(options === null || options === void 0 ? void 0 : options.root);
         if (root) {
           return new NonRecordingSpan_1.NonRecordingSpan();
         }
-        var parentFromContext = context && context_utils_1.getSpanContext(context);
+        var parentFromContext = context2 && context_utils_1.getSpanContext(context2);
         if (isSpanContext(parentFromContext) && spancontext_utils_1.isSpanContextValid(parentFromContext)) {
           return new NonRecordingSpan_1.NonRecordingSpan(parentFromContext);
         } else {
@@ -34361,10 +34845,10 @@ var require_NoopTracer = __commonJS({
           ctx = arg3;
           fn = arg4;
         }
-        var parentContext = ctx !== null && ctx !== void 0 ? ctx : __1.context.active();
+        var parentContext = ctx !== null && ctx !== void 0 ? ctx : context.active();
         var span = this.startSpan(name, opts, parentContext);
         var contextWithSpanSet = context_utils_1.setSpan(parentContext, span);
-        return __1.context.with(contextWithSpanSet, fn, void 0, span);
+        return context.with(contextWithSpanSet, fn, void 0, span);
       };
       return NoopTracer2;
     }();
@@ -34580,475 +35064,6 @@ var require_types3 = __commonJS({
   }
 });
 
-// ../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js
-var require_NoopContextManager = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/context/NoopContextManager.js"(exports2) {
-    "use strict";
-    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
-      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-      return to;
-    };
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.NoopContextManager = void 0;
-    var context_1 = require_context();
-    var NoopContextManager = function() {
-      function NoopContextManager2() {
-      }
-      __name(NoopContextManager2, "NoopContextManager");
-      NoopContextManager2.prototype.active = function() {
-        return context_1.ROOT_CONTEXT;
-      };
-      NoopContextManager2.prototype.with = function(_context, fn, thisArg) {
-        var args = [];
-        for (var _i = 3; _i < arguments.length; _i++) {
-          args[_i - 3] = arguments[_i];
-        }
-        return fn.call.apply(fn, __spreadArray([thisArg], args));
-      };
-      NoopContextManager2.prototype.bind = function(_context, target) {
-        return target;
-      };
-      NoopContextManager2.prototype.enable = function() {
-        return this;
-      };
-      NoopContextManager2.prototype.disable = function() {
-        return this;
-      };
-      return NoopContextManager2;
-    }();
-    exports2.NoopContextManager = NoopContextManager;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js
-var require_globalThis = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/node/globalThis.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2._globalThis = void 0;
-    exports2._globalThis = typeof globalThis === "object" ? globalThis : global;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/platform/node/index.js
-var require_node = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/node/index.js"(exports2) {
-    "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      Object.defineProperty(o, k2, { enumerable: true, get: function() {
-        return m[k];
-      } });
-    } : function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      o[k2] = m[k];
-    });
-    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-      for (var p in m)
-        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
-          __createBinding(exports3, m, p);
-    };
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    __exportStar(require_globalThis(), exports2);
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/platform/index.js
-var require_platform = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/platform/index.js"(exports2) {
-    "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      Object.defineProperty(o, k2, { enumerable: true, get: function() {
-        return m[k];
-      } });
-    } : function(o, m, k, k2) {
-      if (k2 === void 0)
-        k2 = k;
-      o[k2] = m[k];
-    });
-    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
-      for (var p in m)
-        if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports3, p))
-          __createBinding(exports3, m, p);
-    };
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    __exportStar(require_node(), exports2);
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/version.js
-var require_version3 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/version.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.VERSION = void 0;
-    exports2.VERSION = "1.0.2";
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/internal/semver.js
-var require_semver2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/internal/semver.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.isCompatible = exports2._makeCompatibilityCheck = void 0;
-    var version_1 = require_version3();
-    var re = /^(\d+)\.(\d+)\.(\d+)(-(.+))?$/;
-    function _makeCompatibilityCheck(ownVersion) {
-      var acceptedVersions = new Set([ownVersion]);
-      var rejectedVersions = new Set();
-      var myVersionMatch = ownVersion.match(re);
-      if (!myVersionMatch) {
-        return function() {
-          return false;
-        };
-      }
-      var ownVersionParsed = {
-        major: +myVersionMatch[1],
-        minor: +myVersionMatch[2],
-        patch: +myVersionMatch[3],
-        prerelease: myVersionMatch[4]
-      };
-      if (ownVersionParsed.prerelease != null) {
-        return /* @__PURE__ */ __name(function isExactmatch(globalVersion) {
-          return globalVersion === ownVersion;
-        }, "isExactmatch");
-      }
-      function _reject(v) {
-        rejectedVersions.add(v);
-        return false;
-      }
-      __name(_reject, "_reject");
-      function _accept(v) {
-        acceptedVersions.add(v);
-        return true;
-      }
-      __name(_accept, "_accept");
-      return /* @__PURE__ */ __name(function isCompatible(globalVersion) {
-        if (acceptedVersions.has(globalVersion)) {
-          return true;
-        }
-        if (rejectedVersions.has(globalVersion)) {
-          return false;
-        }
-        var globalVersionMatch = globalVersion.match(re);
-        if (!globalVersionMatch) {
-          return _reject(globalVersion);
-        }
-        var globalVersionParsed = {
-          major: +globalVersionMatch[1],
-          minor: +globalVersionMatch[2],
-          patch: +globalVersionMatch[3],
-          prerelease: globalVersionMatch[4]
-        };
-        if (globalVersionParsed.prerelease != null) {
-          return _reject(globalVersion);
-        }
-        if (ownVersionParsed.major !== globalVersionParsed.major) {
-          return _reject(globalVersion);
-        }
-        if (ownVersionParsed.major === 0) {
-          if (ownVersionParsed.minor === globalVersionParsed.minor && ownVersionParsed.patch <= globalVersionParsed.patch) {
-            return _accept(globalVersion);
-          }
-          return _reject(globalVersion);
-        }
-        if (ownVersionParsed.minor <= globalVersionParsed.minor) {
-          return _accept(globalVersion);
-        }
-        return _reject(globalVersion);
-      }, "isCompatible");
-    }
-    __name(_makeCompatibilityCheck, "_makeCompatibilityCheck");
-    exports2._makeCompatibilityCheck = _makeCompatibilityCheck;
-    exports2.isCompatible = _makeCompatibilityCheck(version_1.VERSION);
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/internal/global-utils.js
-var require_global_utils = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/internal/global-utils.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.unregisterGlobal = exports2.getGlobal = exports2.registerGlobal = void 0;
-    var platform_1 = require_platform();
-    var version_1 = require_version3();
-    var semver_1 = require_semver2();
-    var major = version_1.VERSION.split(".")[0];
-    var GLOBAL_OPENTELEMETRY_API_KEY = Symbol.for("opentelemetry.js.api." + major);
-    var _global = platform_1._globalThis;
-    function registerGlobal(type, instance, diag, allowOverride) {
-      var _a;
-      if (allowOverride === void 0) {
-        allowOverride = false;
-      }
-      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY] = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) !== null && _a !== void 0 ? _a : {
-        version: version_1.VERSION
-      };
-      if (!allowOverride && api[type]) {
-        var err = new Error("@opentelemetry/api: Attempted duplicate registration of API: " + type);
-        diag.error(err.stack || err.message);
-        return false;
-      }
-      if (api.version !== version_1.VERSION) {
-        var err = new Error("@opentelemetry/api: All API registration versions must match");
-        diag.error(err.stack || err.message);
-        return false;
-      }
-      api[type] = instance;
-      diag.debug("@opentelemetry/api: Registered a global for " + type + " v" + version_1.VERSION + ".");
-      return true;
-    }
-    __name(registerGlobal, "registerGlobal");
-    exports2.registerGlobal = registerGlobal;
-    function getGlobal(type) {
-      var _a, _b;
-      var globalVersion = (_a = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _a === void 0 ? void 0 : _a.version;
-      if (!globalVersion || !semver_1.isCompatible(globalVersion)) {
-        return;
-      }
-      return (_b = _global[GLOBAL_OPENTELEMETRY_API_KEY]) === null || _b === void 0 ? void 0 : _b[type];
-    }
-    __name(getGlobal, "getGlobal");
-    exports2.getGlobal = getGlobal;
-    function unregisterGlobal(type, diag) {
-      diag.debug("@opentelemetry/api: Unregistering a global for " + type + " v" + version_1.VERSION + ".");
-      var api = _global[GLOBAL_OPENTELEMETRY_API_KEY];
-      if (api) {
-        delete api[type];
-      }
-    }
-    __name(unregisterGlobal, "unregisterGlobal");
-    exports2.unregisterGlobal = unregisterGlobal;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js
-var require_ComponentLogger = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/diag/ComponentLogger.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.DiagComponentLogger = void 0;
-    var global_utils_1 = require_global_utils();
-    var DiagComponentLogger = function() {
-      function DiagComponentLogger2(props) {
-        this._namespace = props.namespace || "DiagComponentLogger";
-      }
-      __name(DiagComponentLogger2, "DiagComponentLogger");
-      DiagComponentLogger2.prototype.debug = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return logProxy("debug", this._namespace, args);
-      };
-      DiagComponentLogger2.prototype.error = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return logProxy("error", this._namespace, args);
-      };
-      DiagComponentLogger2.prototype.info = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return logProxy("info", this._namespace, args);
-      };
-      DiagComponentLogger2.prototype.warn = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return logProxy("warn", this._namespace, args);
-      };
-      DiagComponentLogger2.prototype.verbose = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return logProxy("verbose", this._namespace, args);
-      };
-      return DiagComponentLogger2;
-    }();
-    exports2.DiagComponentLogger = DiagComponentLogger;
-    function logProxy(funcName, namespace, args) {
-      var logger = global_utils_1.getGlobal("diag");
-      if (!logger) {
-        return;
-      }
-      args.unshift(namespace);
-      return logger[funcName].apply(logger, args);
-    }
-    __name(logProxy, "logProxy");
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js
-var require_logLevelLogger = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/diag/internal/logLevelLogger.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.createLogLevelDiagLogger = void 0;
-    var types_1 = require_types2();
-    function createLogLevelDiagLogger(maxLevel, logger) {
-      if (maxLevel < types_1.DiagLogLevel.NONE) {
-        maxLevel = types_1.DiagLogLevel.NONE;
-      } else if (maxLevel > types_1.DiagLogLevel.ALL) {
-        maxLevel = types_1.DiagLogLevel.ALL;
-      }
-      logger = logger || {};
-      function _filterFunc(funcName, theLevel) {
-        var theFunc = logger[funcName];
-        if (typeof theFunc === "function" && maxLevel >= theLevel) {
-          return theFunc.bind(logger);
-        }
-        return function() {
-        };
-      }
-      __name(_filterFunc, "_filterFunc");
-      return {
-        error: _filterFunc("error", types_1.DiagLogLevel.ERROR),
-        warn: _filterFunc("warn", types_1.DiagLogLevel.WARN),
-        info: _filterFunc("info", types_1.DiagLogLevel.INFO),
-        debug: _filterFunc("debug", types_1.DiagLogLevel.DEBUG),
-        verbose: _filterFunc("verbose", types_1.DiagLogLevel.VERBOSE)
-      };
-    }
-    __name(createLogLevelDiagLogger, "createLogLevelDiagLogger");
-    exports2.createLogLevelDiagLogger = createLogLevelDiagLogger;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/api/diag.js
-var require_diag2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/diag.js"(exports2) {
-    "use strict";
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.DiagAPI = void 0;
-    var ComponentLogger_1 = require_ComponentLogger();
-    var logLevelLogger_1 = require_logLevelLogger();
-    var types_1 = require_types2();
-    var global_utils_1 = require_global_utils();
-    var API_NAME = "diag";
-    var DiagAPI = function() {
-      function DiagAPI2() {
-        function _logProxy(funcName) {
-          return function() {
-            var logger = global_utils_1.getGlobal("diag");
-            if (!logger)
-              return;
-            return logger[funcName].apply(logger, arguments);
-          };
-        }
-        __name(_logProxy, "_logProxy");
-        var self2 = this;
-        self2.setLogger = function(logger, logLevel) {
-          var _a, _b;
-          if (logLevel === void 0) {
-            logLevel = types_1.DiagLogLevel.INFO;
-          }
-          if (logger === self2) {
-            var err = new Error("Cannot use diag as the logger for itself. Please use a DiagLogger implementation like ConsoleDiagLogger or a custom implementation");
-            self2.error((_a = err.stack) !== null && _a !== void 0 ? _a : err.message);
-            return false;
-          }
-          var oldLogger = global_utils_1.getGlobal("diag");
-          var newLogger = logLevelLogger_1.createLogLevelDiagLogger(logLevel, logger);
-          if (oldLogger) {
-            var stack = (_b = new Error().stack) !== null && _b !== void 0 ? _b : "<failed to generate stacktrace>";
-            oldLogger.warn("Current logger will be overwritten from " + stack);
-            newLogger.warn("Current logger will overwrite one already registered from " + stack);
-          }
-          return global_utils_1.registerGlobal("diag", newLogger, self2, true);
-        };
-        self2.disable = function() {
-          global_utils_1.unregisterGlobal(API_NAME, self2);
-        };
-        self2.createComponentLogger = function(options) {
-          return new ComponentLogger_1.DiagComponentLogger(options);
-        };
-        self2.verbose = _logProxy("verbose");
-        self2.debug = _logProxy("debug");
-        self2.info = _logProxy("info");
-        self2.warn = _logProxy("warn");
-        self2.error = _logProxy("error");
-      }
-      __name(DiagAPI2, "DiagAPI");
-      DiagAPI2.instance = function() {
-        if (!this._instance) {
-          this._instance = new DiagAPI2();
-        }
-        return this._instance;
-      };
-      return DiagAPI2;
-    }();
-    exports2.DiagAPI = DiagAPI;
-  }
-});
-
-// ../../node_modules/@opentelemetry/api/build/src/api/context.js
-var require_context2 = __commonJS({
-  "../../node_modules/@opentelemetry/api/build/src/api/context.js"(exports2) {
-    "use strict";
-    var __spreadArray = exports2 && exports2.__spreadArray || function(to, from) {
-      for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
-        to[j] = from[i];
-      return to;
-    };
-    Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.ContextAPI = void 0;
-    var NoopContextManager_1 = require_NoopContextManager();
-    var global_utils_1 = require_global_utils();
-    var diag_1 = require_diag2();
-    var API_NAME = "context";
-    var NOOP_CONTEXT_MANAGER = new NoopContextManager_1.NoopContextManager();
-    var ContextAPI = function() {
-      function ContextAPI2() {
-      }
-      __name(ContextAPI2, "ContextAPI");
-      ContextAPI2.getInstance = function() {
-        if (!this._instance) {
-          this._instance = new ContextAPI2();
-        }
-        return this._instance;
-      };
-      ContextAPI2.prototype.setGlobalContextManager = function(contextManager) {
-        return global_utils_1.registerGlobal(API_NAME, contextManager, diag_1.DiagAPI.instance());
-      };
-      ContextAPI2.prototype.active = function() {
-        return this._getContextManager().active();
-      };
-      ContextAPI2.prototype.with = function(context, fn, thisArg) {
-        var _a;
-        var args = [];
-        for (var _i = 3; _i < arguments.length; _i++) {
-          args[_i - 3] = arguments[_i];
-        }
-        return (_a = this._getContextManager()).with.apply(_a, __spreadArray([context, fn, thisArg], args));
-      };
-      ContextAPI2.prototype.bind = function(context, target) {
-        return this._getContextManager().bind(context, target);
-      };
-      ContextAPI2.prototype._getContextManager = function() {
-        return global_utils_1.getGlobal(API_NAME) || NOOP_CONTEXT_MANAGER;
-      };
-      ContextAPI2.prototype.disable = function() {
-        this._getContextManager().disable();
-        global_utils_1.unregisterGlobal(API_NAME, diag_1.DiagAPI.instance());
-      };
-      return ContextAPI2;
-    }();
-    exports2.ContextAPI = ContextAPI;
-  }
-});
-
 // ../../node_modules/@opentelemetry/api/build/src/api/trace.js
 var require_trace = __commonJS({
   "../../node_modules/@opentelemetry/api/build/src/api/trace.js"(exports2) {
@@ -35059,7 +35074,7 @@ var require_trace = __commonJS({
     var ProxyTracerProvider_1 = require_ProxyTracerProvider();
     var spancontext_utils_1 = require_spancontext_utils();
     var context_utils_1 = require_context_utils();
-    var diag_1 = require_diag2();
+    var diag_1 = require_diag();
     var API_NAME = "trace";
     var TraceAPI = function() {
       function TraceAPI2() {
@@ -35163,7 +35178,7 @@ var require_propagation = __commonJS({
     var TextMapPropagator_1 = require_TextMapPropagator();
     var context_helpers_1 = require_context_helpers();
     var utils_1 = require_utils2();
-    var diag_1 = require_diag2();
+    var diag_1 = require_diag();
     var API_NAME = "propagation";
     var NOOP_TEXT_MAP_PROPAGATOR = new NoopTextMapPropagator_1.NoopTextMapPropagator();
     var PropagationAPI = function() {
@@ -35231,7 +35246,7 @@ var require_src = __commonJS({
           __createBinding(exports3, m, p);
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.diag = exports2.propagation = exports2.trace = exports2.context = exports2.isValidSpanId = exports2.isValidTraceId = exports2.isSpanContextValid = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = exports2.baggageEntryMetadataFromString = void 0;
+    exports2.diag = exports2.propagation = exports2.trace = exports2.context = exports2.INVALID_SPAN_CONTEXT = exports2.INVALID_TRACEID = exports2.INVALID_SPANID = exports2.isValidSpanId = exports2.isValidTraceId = exports2.isSpanContextValid = exports2.baggageEntryMetadataFromString = void 0;
     __exportStar(require_types(), exports2);
     var utils_1 = require_utils2();
     Object.defineProperty(exports2, "baggageEntryMetadataFromString", { enumerable: true, get: function() {
@@ -35239,7 +35254,7 @@ var require_src = __commonJS({
     } });
     __exportStar(require_Exception(), exports2);
     __exportStar(require_Time(), exports2);
-    __exportStar(require_diag(), exports2);
+    __exportStar(require_diag2(), exports2);
     __exportStar(require_TextMapPropagator(), exports2);
     __exportStar(require_attributes(), exports2);
     __exportStar(require_link(), exports2);
@@ -35257,15 +35272,6 @@ var require_src = __commonJS({
     __exportStar(require_tracer_provider(), exports2);
     __exportStar(require_tracer(), exports2);
     var spancontext_utils_1 = require_spancontext_utils();
-    Object.defineProperty(exports2, "INVALID_SPANID", { enumerable: true, get: function() {
-      return spancontext_utils_1.INVALID_SPANID;
-    } });
-    Object.defineProperty(exports2, "INVALID_TRACEID", { enumerable: true, get: function() {
-      return spancontext_utils_1.INVALID_TRACEID;
-    } });
-    Object.defineProperty(exports2, "INVALID_SPAN_CONTEXT", { enumerable: true, get: function() {
-      return spancontext_utils_1.INVALID_SPAN_CONTEXT;
-    } });
     Object.defineProperty(exports2, "isSpanContextValid", { enumerable: true, get: function() {
       return spancontext_utils_1.isSpanContextValid;
     } });
@@ -35275,6 +35281,16 @@ var require_src = __commonJS({
     Object.defineProperty(exports2, "isValidSpanId", { enumerable: true, get: function() {
       return spancontext_utils_1.isValidSpanId;
     } });
+    var invalid_span_constants_1 = require_invalid_span_constants();
+    Object.defineProperty(exports2, "INVALID_SPANID", { enumerable: true, get: function() {
+      return invalid_span_constants_1.INVALID_SPANID;
+    } });
+    Object.defineProperty(exports2, "INVALID_TRACEID", { enumerable: true, get: function() {
+      return invalid_span_constants_1.INVALID_TRACEID;
+    } });
+    Object.defineProperty(exports2, "INVALID_SPAN_CONTEXT", { enumerable: true, get: function() {
+      return invalid_span_constants_1.INVALID_SPAN_CONTEXT;
+    } });
     __exportStar(require_context(), exports2);
     __exportStar(require_types3(), exports2);
     var context_1 = require_context2();
@@ -35283,7 +35299,7 @@ var require_src = __commonJS({
     exports2.trace = trace_1.TraceAPI.getInstance();
     var propagation_1 = require_propagation();
     exports2.propagation = propagation_1.PropagationAPI.getInstance();
-    var diag_1 = require_diag2();
+    var diag_1 = require_diag();
     exports2.diag = diag_1.DiagAPI.instance();
     exports2.default = {
       trace: exports2.trace,
@@ -35560,7 +35576,7 @@ var require_dist6 = __commonJS({
     }
     __name(decodeString, "decodeString");
     var Constants = {
-      coreHttpVersion: "2.1.0",
+      coreHttpVersion: "2.2.0",
       HTTP: "http:",
       HTTPS: "https:",
       HTTP_PROXY: "HTTP_PROXY",
@@ -37513,14 +37529,15 @@ var require_dist6 = __commonJS({
       HttpPipelineLogLevel[HttpPipelineLogLevel["INFO"] = 3] = "INFO";
     })(exports2.HttpPipelineLogLevel || (exports2.HttpPipelineLogLevel = {}));
     function operationOptionsToRequestOptionsBase(opts) {
+      var _a;
       const { requestOptions, tracingOptions } = opts, additionalOptions = tslib.__rest(opts, ["requestOptions", "tracingOptions"]);
       let result = additionalOptions;
       if (requestOptions) {
         result = Object.assign(Object.assign({}, result), requestOptions);
       }
       if (tracingOptions) {
-        result.spanOptions = tracingOptions.spanOptions;
         result.tracingContext = tracingOptions.tracingContext;
+        result.spanOptions = (_a = tracingOptions) === null || _a === void 0 ? void 0 : _a.spanOptions;
       }
       return result;
     }
@@ -38331,7 +38348,6 @@ var require_dist6 = __commonJS({
           const { token } = await getToken({
             abortSignal: webResource.abortSignal,
             tracingOptions: {
-              spanOptions: webResource.spanOptions,
               tracingContext: webResource.tracingContext
             }
           });
@@ -38648,22 +38664,45 @@ var require_dist6 = __commonJS({
         if (!request.tracingContext) {
           return this._nextPolicy.sendRequest(request);
         }
-        const path2 = URLBuilder.parse(request.url).getPath() || "/";
-        const { span } = createSpan(path2, {
-          tracingOptions: {
-            spanOptions: Object.assign(Object.assign({}, request.spanOptions), { kind: coreTracing.SpanKind.CLIENT }),
-            tracingContext: request.tracingContext
-          }
-        });
-        span.setAttributes({
-          "http.method": request.method,
-          "http.url": request.url,
-          requestId: request.requestId
-        });
-        if (this.userAgent) {
-          span.setAttribute("http.user_agent", this.userAgent);
+        const span = this.tryCreateSpan(request);
+        if (!span) {
+          return this._nextPolicy.sendRequest(request);
         }
         try {
+          const response = await this._nextPolicy.sendRequest(request);
+          this.tryProcessResponse(span, response);
+          return response;
+        } catch (err) {
+          this.tryProcessError(span, err);
+          throw err;
+        }
+      }
+      tryCreateSpan(request) {
+        var _a;
+        try {
+          const path2 = URLBuilder.parse(request.url).getPath() || "/";
+          const { span } = createSpan(path2, {
+            tracingOptions: {
+              spanOptions: Object.assign(Object.assign({}, request.spanOptions), { kind: coreTracing.SpanKind.CLIENT }),
+              tracingContext: request.tracingContext
+            }
+          });
+          if (!span.isRecording()) {
+            span.end();
+            return void 0;
+          }
+          const namespaceFromContext = (_a = request.tracingContext) === null || _a === void 0 ? void 0 : _a.getValue(Symbol.for("az.namespace"));
+          if (typeof namespaceFromContext === "string") {
+            span.setAttribute("az.namespace", namespaceFromContext);
+          }
+          span.setAttributes({
+            "http.method": request.method,
+            "http.url": request.url,
+            requestId: request.requestId
+          });
+          if (this.userAgent) {
+            span.setAttribute("http.user_agent", this.userAgent);
+          }
           const spanContext = span.spanContext();
           const traceParentHeader = coreTracing.getTraceParentHeader(spanContext);
           if (traceParentHeader && coreTracing.isSpanContextValid(spanContext)) {
@@ -38673,7 +38712,28 @@ var require_dist6 = __commonJS({
               request.headers.set("tracestate", traceState);
             }
           }
-          const response = await this._nextPolicy.sendRequest(request);
+          return span;
+        } catch (error) {
+          logger.warning(`Skipping creating a tracing span due to an error: ${error.message}`);
+          return void 0;
+        }
+      }
+      tryProcessError(span, err) {
+        try {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: err.message
+          });
+          if (err.statusCode) {
+            span.setAttribute("http.status_code", err.statusCode);
+          }
+          span.end();
+        } catch (error) {
+          logger.warning(`Skipping tracing span processing due to an error: ${error.message}`);
+        }
+      }
+      tryProcessResponse(span, response) {
+        try {
           span.setAttribute("http.status_code", response.status);
           const serviceRequestId = response.headers.get("x-ms-request-id");
           if (serviceRequestId) {
@@ -38682,16 +38742,9 @@ var require_dist6 = __commonJS({
           span.setStatus({
             code: coreTracing.SpanStatusCode.OK
           });
-          return response;
-        } catch (err) {
-          span.setStatus({
-            code: coreTracing.SpanStatusCode.ERROR,
-            message: err.message
-          });
-          span.setAttribute("http.status_code", err.statusCode);
-          throw err;
-        } finally {
           span.end();
+        } catch (error) {
+          logger.warning(`Skipping tracing span processing due to an error: ${error.message}`);
         }
       }
     };
@@ -39424,6 +39477,65 @@ var require_dist7 = __commonJS({
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
     require_dist_esm();
+    var tslib = require_tslib();
+    function getPagedAsyncIterator(pagedResult) {
+      var _a;
+      const iter = getItemAsyncIterator(pagedResult);
+      return {
+        next() {
+          return iter.next();
+        },
+        [Symbol.asyncIterator]() {
+          return this;
+        },
+        byPage: (_a = pagedResult === null || pagedResult === void 0 ? void 0 : pagedResult.byPage) !== null && _a !== void 0 ? _a : (settings) => {
+          return getPageAsyncIterator(pagedResult, settings === null || settings === void 0 ? void 0 : settings.maxPageSize);
+        }
+      };
+    }
+    __name(getPagedAsyncIterator, "getPagedAsyncIterator");
+    function getItemAsyncIterator(pagedResult, maxPageSize) {
+      return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* getItemAsyncIterator_1() {
+        var e_1, _a;
+        const pages = getPageAsyncIterator(pagedResult, maxPageSize);
+        const firstVal = yield tslib.__await(pages.next());
+        if (!Array.isArray(firstVal.value)) {
+          yield yield tslib.__await(firstVal.value);
+          yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(pages)));
+        } else {
+          yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(firstVal.value)));
+          try {
+            for (var pages_1 = tslib.__asyncValues(pages), pages_1_1; pages_1_1 = yield tslib.__await(pages_1.next()), !pages_1_1.done; ) {
+              const page = pages_1_1.value;
+              yield tslib.__await(yield* tslib.__asyncDelegator(tslib.__asyncValues(page)));
+            }
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (pages_1_1 && !pages_1_1.done && (_a = pages_1.return))
+                yield tslib.__await(_a.call(pages_1));
+            } finally {
+              if (e_1)
+                throw e_1.error;
+            }
+          }
+        }
+      }, "getItemAsyncIterator_1"));
+    }
+    __name(getItemAsyncIterator, "getItemAsyncIterator");
+    function getPageAsyncIterator(pagedResult, maxPageSize) {
+      return tslib.__asyncGenerator(this, arguments, /* @__PURE__ */ __name(function* getPageAsyncIterator_1() {
+        let response = yield tslib.__await(pagedResult.getPage(pagedResult.firstPageLink, maxPageSize));
+        yield yield tslib.__await(response.page);
+        while (response.nextPageLink) {
+          response = yield tslib.__await(pagedResult.getPage(response.nextPageLink, maxPageSize));
+          yield yield tslib.__await(response.page);
+        }
+      }, "getPageAsyncIterator_1"));
+    }
+    __name(getPageAsyncIterator, "getPageAsyncIterator");
+    exports2.getPagedAsyncIterator = getPagedAsyncIterator;
   }
 });
 
