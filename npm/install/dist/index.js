@@ -23,7 +23,10 @@ var __spreadValues = (a, b) => {
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
-var __commonJS = (cb, mod) => function __require() {
+var __require = typeof require !== "undefined" ? require : (x) => {
+  throw new Error('Dynamic require of "' + x + '" is not supported');
+};
+var __commonJS = (cb, mod) => function __require2() {
   return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var __reExport = (target, module2, desc) => {
@@ -40530,6 +40533,13 @@ var require_dist9 = __commonJS({
             type: {
               name: "Number"
             }
+          },
+          isImmutableStorageWithVersioningEnabled: {
+            serializedName: "ImmutableStorageWithVersioningEnabled",
+            xmlName: "ImmutableStorageWithVersioningEnabled",
+            type: {
+              name: "Boolean"
+            }
           }
         }
       }
@@ -40981,6 +40991,13 @@ var require_dist9 = __commonJS({
               name: "Dictionary",
               value: { type: { name: "String" } }
             }
+          },
+          hasVersionsOnly: {
+            serializedName: "HasVersionsOnly",
+            xmlName: "HasVersionsOnly",
+            type: {
+              name: "Boolean"
+            }
           }
         }
       }
@@ -41284,6 +41301,28 @@ var require_dist9 = __commonJS({
             type: {
               name: "DateTimeRfc1123"
             }
+          },
+          immutabilityPolicyExpiresOn: {
+            serializedName: "ImmutabilityPolicyUntilDate",
+            xmlName: "ImmutabilityPolicyUntilDate",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          immutabilityPolicyMode: {
+            serializedName: "ImmutabilityPolicyMode",
+            xmlName: "ImmutabilityPolicyMode",
+            type: {
+              name: "Enum",
+              allowedValues: ["Mutable", "Unlocked", "Locked"]
+            }
+          },
+          legalHold: {
+            serializedName: "LegalHold",
+            xmlName: "LegalHold",
+            type: {
+              name: "Boolean"
+            }
           }
         }
       }
@@ -41408,46 +41447,6 @@ var require_dist9 = __commonJS({
             serializedName: "Name",
             required: true,
             xmlName: "Name",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DataLakeStorageError = {
-      serializedName: "DataLakeStorageError",
-      type: {
-        name: "Composite",
-        className: "DataLakeStorageError",
-        modelProperties: {
-          dataLakeStorageErrorDetails: {
-            serializedName: "error",
-            xmlName: "error",
-            type: {
-              name: "Composite",
-              className: "DataLakeStorageErrorError"
-            }
-          }
-        }
-      }
-    };
-    var DataLakeStorageErrorError = {
-      serializedName: "DataLakeStorageErrorError",
-      type: {
-        name: "Composite",
-        className: "DataLakeStorageErrorError",
-        modelProperties: {
-          code: {
-            serializedName: "Code",
-            xmlName: "Code",
-            type: {
-              name: "String"
-            }
-          },
-          message: {
-            serializedName: "Message",
-            xmlName: "Message",
             type: {
               name: "String"
             }
@@ -41724,10 +41723,11 @@ var require_dist9 = __commonJS({
         modelProperties: {
           type: {
             serializedName: "Type",
+            required: true,
             xmlName: "Type",
             type: {
               name: "Enum",
-              allowedValues: ["delimited", "json", "arrow"]
+              allowedValues: ["delimited", "json", "arrow", "parquet"]
             }
           },
           delimitedTextConfiguration: {
@@ -41753,6 +41753,13 @@ var require_dist9 = __commonJS({
               name: "Composite",
               className: "ArrowConfiguration"
             }
+          },
+          parquetTextConfiguration: {
+            serializedName: "ParquetTextConfiguration",
+            xmlName: "ParquetTextConfiguration",
+            type: {
+              name: "any"
+            }
           }
         }
       }
@@ -41766,7 +41773,6 @@ var require_dist9 = __commonJS({
         modelProperties: {
           columnSeparator: {
             serializedName: "ColumnSeparator",
-            required: true,
             xmlName: "ColumnSeparator",
             type: {
               name: "String"
@@ -41774,7 +41780,6 @@ var require_dist9 = __commonJS({
           },
           fieldQuote: {
             serializedName: "FieldQuote",
-            required: true,
             xmlName: "FieldQuote",
             type: {
               name: "String"
@@ -41782,7 +41787,6 @@ var require_dist9 = __commonJS({
           },
           recordSeparator: {
             serializedName: "RecordSeparator",
-            required: true,
             xmlName: "RecordSeparator",
             type: {
               name: "String"
@@ -41790,7 +41794,6 @@ var require_dist9 = __commonJS({
           },
           escapeChar: {
             serializedName: "EscapeChar",
-            required: true,
             xmlName: "EscapeChar",
             type: {
               name: "String"
@@ -41798,7 +41801,6 @@ var require_dist9 = __commonJS({
           },
           headersPresent: {
             serializedName: "HeadersPresent",
-            required: true,
             xmlName: "HasHeaders",
             type: {
               name: "Boolean"
@@ -41816,7 +41818,6 @@ var require_dist9 = __commonJS({
         modelProperties: {
           recordSeparator: {
             serializedName: "RecordSeparator",
-            required: true,
             xmlName: "RecordSeparator",
             type: {
               name: "String"
@@ -42577,6 +42578,13 @@ var require_dist9 = __commonJS({
           denyEncryptionScopeOverride: {
             serializedName: "x-ms-deny-encryption-scope-override",
             xmlName: "x-ms-deny-encryption-scope-override",
+            type: {
+              name: "Boolean"
+            }
+          },
+          isImmutableStorageWithVersioningEnabled: {
+            serializedName: "x-ms-immutable-storage-with-versioning-enabled",
+            xmlName: "x-ms-immutable-storage-with-versioning-enabled",
             type: {
               name: "Boolean"
             }
@@ -43641,439 +43649,6 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var DirectoryCreateHeaders = {
-      serializedName: "Directory_createHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryCreateHeaders",
-        modelProperties: {
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          },
-          contentLength: {
-            serializedName: "content-length",
-            xmlName: "content-length",
-            type: {
-              name: "Number"
-            }
-          },
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryCreateExceptionHeaders = {
-      serializedName: "Directory_createExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryCreateExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryRenameHeaders = {
-      serializedName: "Directory_renameHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryRenameHeaders",
-        modelProperties: {
-          marker: {
-            serializedName: "x-ms-continuation",
-            xmlName: "x-ms-continuation",
-            type: {
-              name: "String"
-            }
-          },
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          },
-          contentLength: {
-            serializedName: "content-length",
-            xmlName: "content-length",
-            type: {
-              name: "Number"
-            }
-          },
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryRenameExceptionHeaders = {
-      serializedName: "Directory_renameExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryRenameExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryDeleteHeaders = {
-      serializedName: "Directory_deleteHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryDeleteHeaders",
-        modelProperties: {
-          marker: {
-            serializedName: "x-ms-continuation",
-            xmlName: "x-ms-continuation",
-            type: {
-              name: "String"
-            }
-          },
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          },
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryDeleteExceptionHeaders = {
-      serializedName: "Directory_deleteExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryDeleteExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectorySetAccessControlHeaders = {
-      serializedName: "Directory_setAccessControlHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectorySetAccessControlHeaders",
-        modelProperties: {
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectorySetAccessControlExceptionHeaders = {
-      serializedName: "Directory_setAccessControlExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectorySetAccessControlExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryGetAccessControlHeaders = {
-      serializedName: "Directory_getAccessControlHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryGetAccessControlHeaders",
-        modelProperties: {
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          xMsOwner: {
-            serializedName: "x-ms-owner",
-            xmlName: "x-ms-owner",
-            type: {
-              name: "String"
-            }
-          },
-          xMsGroup: {
-            serializedName: "x-ms-group",
-            xmlName: "x-ms-group",
-            type: {
-              name: "String"
-            }
-          },
-          xMsPermissions: {
-            serializedName: "x-ms-permissions",
-            xmlName: "x-ms-permissions",
-            type: {
-              name: "String"
-            }
-          },
-          xMsAcl: {
-            serializedName: "x-ms-acl",
-            xmlName: "x-ms-acl",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var DirectoryGetAccessControlExceptionHeaders = {
-      serializedName: "Directory_getAccessControlExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "DirectoryGetAccessControlExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
     var BlobDownloadHeaders = {
       serializedName: "Blob_downloadHeaders",
       type: {
@@ -44368,11 +43943,26 @@ var require_dist9 = __commonJS({
               name: "DateTimeRfc1123"
             }
           },
-          contentCrc64: {
-            serializedName: "x-ms-content-crc64",
-            xmlName: "x-ms-content-crc64",
+          immutabilityPolicyExpiresOn: {
+            serializedName: "x-ms-immutability-policy-until-date",
+            xmlName: "x-ms-immutability-policy-until-date",
             type: {
-              name: "ByteArray"
+              name: "DateTimeRfc1123"
+            }
+          },
+          immutabilityPolicyMode: {
+            serializedName: "x-ms-immutability-policy-mode",
+            xmlName: "x-ms-immutability-policy-mode",
+            type: {
+              name: "Enum",
+              allowedValues: ["Mutable", "Unlocked", "Locked"]
+            }
+          },
+          legalHold: {
+            serializedName: "x-ms-legal-hold",
+            xmlName: "x-ms-legal-hold",
+            type: {
+              name: "Boolean"
             }
           },
           errorCode: {
@@ -44380,6 +43970,13 @@ var require_dist9 = __commonJS({
             xmlName: "x-ms-error-code",
             type: {
               name: "String"
+            }
+          },
+          contentCrc64: {
+            serializedName: "x-ms-content-crc64",
+            xmlName: "x-ms-content-crc64",
+            type: {
+              name: "ByteArray"
             }
           }
         }
@@ -44745,6 +44342,28 @@ var require_dist9 = __commonJS({
               name: "DateTimeRfc1123"
             }
           },
+          immutabilityPolicyExpiresOn: {
+            serializedName: "x-ms-immutability-policy-until-date",
+            xmlName: "x-ms-immutability-policy-until-date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          immutabilityPolicyMode: {
+            serializedName: "x-ms-immutability-policy-mode",
+            xmlName: "x-ms-immutability-policy-mode",
+            type: {
+              name: "Enum",
+              allowedValues: ["Mutable", "Unlocked", "Locked"]
+            }
+          },
+          legalHold: {
+            serializedName: "x-ms-legal-hold",
+            xmlName: "x-ms-legal-hold",
+            type: {
+              name: "Boolean"
+            }
+          },
           errorCode: {
             serializedName: "x-ms-error-code",
             xmlName: "x-ms-error-code",
@@ -44824,270 +44443,6 @@ var require_dist9 = __commonJS({
           errorCode: {
             serializedName: "x-ms-error-code",
             xmlName: "x-ms-error-code",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var BlobSetAccessControlHeaders = {
-      serializedName: "Blob_setAccessControlHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobSetAccessControlHeaders",
-        modelProperties: {
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var BlobSetAccessControlExceptionHeaders = {
-      serializedName: "Blob_setAccessControlExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobSetAccessControlExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var BlobGetAccessControlHeaders = {
-      serializedName: "Blob_getAccessControlHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobGetAccessControlHeaders",
-        modelProperties: {
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          xMsOwner: {
-            serializedName: "x-ms-owner",
-            xmlName: "x-ms-owner",
-            type: {
-              name: "String"
-            }
-          },
-          xMsGroup: {
-            serializedName: "x-ms-group",
-            xmlName: "x-ms-group",
-            type: {
-              name: "String"
-            }
-          },
-          xMsPermissions: {
-            serializedName: "x-ms-permissions",
-            xmlName: "x-ms-permissions",
-            type: {
-              name: "String"
-            }
-          },
-          xMsAcl: {
-            serializedName: "x-ms-acl",
-            xmlName: "x-ms-acl",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var BlobGetAccessControlExceptionHeaders = {
-      serializedName: "Blob_getAccessControlExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobGetAccessControlExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          }
-        }
-      }
-    };
-    var BlobRenameHeaders = {
-      serializedName: "Blob_renameHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobRenameHeaders",
-        modelProperties: {
-          etag: {
-            serializedName: "etag",
-            xmlName: "etag",
-            type: {
-              name: "String"
-            }
-          },
-          lastModified: {
-            serializedName: "last-modified",
-            xmlName: "last-modified",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          },
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
-            type: {
-              name: "String"
-            }
-          },
-          contentLength: {
-            serializedName: "content-length",
-            xmlName: "content-length",
-            type: {
-              name: "Number"
-            }
-          },
-          date: {
-            serializedName: "date",
-            xmlName: "date",
-            type: {
-              name: "DateTimeRfc1123"
-            }
-          }
-        }
-      }
-    };
-    var BlobRenameExceptionHeaders = {
-      serializedName: "Blob_renameExceptionHeaders",
-      type: {
-        name: "Composite",
-        className: "BlobRenameExceptionHeaders",
-        modelProperties: {
-          clientRequestId: {
-            serializedName: "x-ms-client-request-id",
-            xmlName: "x-ms-client-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          requestId: {
-            serializedName: "x-ms-request-id",
-            xmlName: "x-ms-request-id",
-            type: {
-              name: "String"
-            }
-          },
-          version: {
-            serializedName: "x-ms-version",
-            xmlName: "x-ms-version",
             type: {
               name: "String"
             }
@@ -45292,6 +44647,187 @@ var require_dist9 = __commonJS({
       type: {
         name: "Composite",
         className: "BlobSetHttpHeadersExceptionHeaders",
+        modelProperties: {
+          errorCode: {
+            serializedName: "x-ms-error-code",
+            xmlName: "x-ms-error-code",
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    };
+    var BlobSetImmutabilityPolicyHeaders = {
+      serializedName: "Blob_setImmutabilityPolicyHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobSetImmutabilityPolicyHeaders",
+        modelProperties: {
+          clientRequestId: {
+            serializedName: "x-ms-client-request-id",
+            xmlName: "x-ms-client-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          requestId: {
+            serializedName: "x-ms-request-id",
+            xmlName: "x-ms-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          version: {
+            serializedName: "x-ms-version",
+            xmlName: "x-ms-version",
+            type: {
+              name: "String"
+            }
+          },
+          date: {
+            serializedName: "date",
+            xmlName: "date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          immutabilityPolicyExpiry: {
+            serializedName: "x-ms-immutability-policy-until-date",
+            xmlName: "x-ms-immutability-policy-until-date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          immutabilityPolicyMode: {
+            serializedName: "x-ms-immutability-policy-mode",
+            xmlName: "x-ms-immutability-policy-mode",
+            type: {
+              name: "Enum",
+              allowedValues: ["Mutable", "Unlocked", "Locked"]
+            }
+          }
+        }
+      }
+    };
+    var BlobSetImmutabilityPolicyExceptionHeaders = {
+      serializedName: "Blob_setImmutabilityPolicyExceptionHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobSetImmutabilityPolicyExceptionHeaders",
+        modelProperties: {
+          errorCode: {
+            serializedName: "x-ms-error-code",
+            xmlName: "x-ms-error-code",
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    };
+    var BlobDeleteImmutabilityPolicyHeaders = {
+      serializedName: "Blob_deleteImmutabilityPolicyHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobDeleteImmutabilityPolicyHeaders",
+        modelProperties: {
+          clientRequestId: {
+            serializedName: "x-ms-client-request-id",
+            xmlName: "x-ms-client-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          requestId: {
+            serializedName: "x-ms-request-id",
+            xmlName: "x-ms-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          version: {
+            serializedName: "x-ms-version",
+            xmlName: "x-ms-version",
+            type: {
+              name: "String"
+            }
+          },
+          date: {
+            serializedName: "date",
+            xmlName: "date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          }
+        }
+      }
+    };
+    var BlobDeleteImmutabilityPolicyExceptionHeaders = {
+      serializedName: "Blob_deleteImmutabilityPolicyExceptionHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobDeleteImmutabilityPolicyExceptionHeaders",
+        modelProperties: {
+          errorCode: {
+            serializedName: "x-ms-error-code",
+            xmlName: "x-ms-error-code",
+            type: {
+              name: "String"
+            }
+          }
+        }
+      }
+    };
+    var BlobSetLegalHoldHeaders = {
+      serializedName: "Blob_setLegalHoldHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobSetLegalHoldHeaders",
+        modelProperties: {
+          clientRequestId: {
+            serializedName: "x-ms-client-request-id",
+            xmlName: "x-ms-client-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          requestId: {
+            serializedName: "x-ms-request-id",
+            xmlName: "x-ms-request-id",
+            type: {
+              name: "String"
+            }
+          },
+          version: {
+            serializedName: "x-ms-version",
+            xmlName: "x-ms-version",
+            type: {
+              name: "String"
+            }
+          },
+          date: {
+            serializedName: "date",
+            xmlName: "date",
+            type: {
+              name: "DateTimeRfc1123"
+            }
+          },
+          legalHold: {
+            serializedName: "x-ms-legal-hold",
+            xmlName: "x-ms-legal-hold",
+            type: {
+              name: "Boolean"
+            }
+          }
+        }
+      }
+    };
+    var BlobSetLegalHoldExceptionHeaders = {
+      serializedName: "Blob_setLegalHoldExceptionHeaders",
+      type: {
+        name: "Composite",
+        className: "BlobSetLegalHoldExceptionHeaders",
         modelProperties: {
           errorCode: {
             serializedName: "x-ms-error-code",
@@ -46505,18 +46041,18 @@ var require_dist9 = __commonJS({
               name: "ByteArray"
             }
           },
-          contentCrc64: {
-            serializedName: "x-ms-content-crc64",
-            xmlName: "x-ms-content-crc64",
-            type: {
-              name: "ByteArray"
-            }
-          },
           errorCode: {
             serializedName: "x-ms-error-code",
             xmlName: "x-ms-error-code",
             type: {
               name: "String"
+            }
+          },
+          contentCrc64: {
+            serializedName: "x-ms-content-crc64",
+            xmlName: "x-ms-content-crc64",
+            type: {
+              name: "ByteArray"
             }
           }
         }
@@ -48563,8 +48099,6 @@ var require_dist9 = __commonJS({
       ListBlobsHierarchySegmentResponse,
       BlobHierarchyListSegment,
       BlobPrefix,
-      DataLakeStorageError,
-      DataLakeStorageErrorError,
       BlockLookupList,
       BlockList,
       Block,
@@ -48628,34 +48162,24 @@ var require_dist9 = __commonJS({
       ContainerListBlobHierarchySegmentExceptionHeaders,
       ContainerGetAccountInfoHeaders,
       ContainerGetAccountInfoExceptionHeaders,
-      DirectoryCreateHeaders,
-      DirectoryCreateExceptionHeaders,
-      DirectoryRenameHeaders,
-      DirectoryRenameExceptionHeaders,
-      DirectoryDeleteHeaders,
-      DirectoryDeleteExceptionHeaders,
-      DirectorySetAccessControlHeaders,
-      DirectorySetAccessControlExceptionHeaders,
-      DirectoryGetAccessControlHeaders,
-      DirectoryGetAccessControlExceptionHeaders,
       BlobDownloadHeaders,
       BlobDownloadExceptionHeaders,
       BlobGetPropertiesHeaders,
       BlobGetPropertiesExceptionHeaders,
       BlobDeleteHeaders,
       BlobDeleteExceptionHeaders,
-      BlobSetAccessControlHeaders,
-      BlobSetAccessControlExceptionHeaders,
-      BlobGetAccessControlHeaders,
-      BlobGetAccessControlExceptionHeaders,
-      BlobRenameHeaders,
-      BlobRenameExceptionHeaders,
       BlobUndeleteHeaders,
       BlobUndeleteExceptionHeaders,
       BlobSetExpiryHeaders,
       BlobSetExpiryExceptionHeaders,
       BlobSetHttpHeadersHeaders,
       BlobSetHttpHeadersExceptionHeaders,
+      BlobSetImmutabilityPolicyHeaders,
+      BlobSetImmutabilityPolicyExceptionHeaders,
+      BlobDeleteImmutabilityPolicyHeaders,
+      BlobDeleteImmutabilityPolicyExceptionHeaders,
+      BlobSetLegalHoldHeaders,
+      BlobSetLegalHoldExceptionHeaders,
       BlobSetMetadataHeaders,
       BlobSetMetadataExceptionHeaders,
       BlobAcquireLeaseHeaders,
@@ -48801,7 +48325,7 @@ var require_dist9 = __commonJS({
     var version = {
       parameterPath: "version",
       mapper: {
-        defaultValue: "2020-08-04",
+        defaultValue: "2020-10-02",
         isConstant: true,
         serializedName: "x-ms-version",
         type: {
@@ -49325,7 +48849,10 @@ var require_dist9 = __commonJS({
                 "snapshots",
                 "uncommittedblobs",
                 "versions",
-                "tags"
+                "tags",
+                "immutabilitypolicy",
+                "legalhold",
+                "deletedwithversions"
               ]
             }
           }
@@ -49341,242 +48868,6 @@ var require_dist9 = __commonJS({
         xmlName: "delimiter",
         type: {
           name: "String"
-        }
-      }
-    };
-    var directoryProperties = {
-      parameterPath: ["options", "directoryProperties"],
-      mapper: {
-        serializedName: "x-ms-properties",
-        xmlName: "x-ms-properties",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var posixPermissions = {
-      parameterPath: ["options", "posixPermissions"],
-      mapper: {
-        serializedName: "x-ms-permissions",
-        xmlName: "x-ms-permissions",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var posixUmask = {
-      parameterPath: ["options", "posixUmask"],
-      mapper: {
-        serializedName: "x-ms-umask",
-        xmlName: "x-ms-umask",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var cacheControl = {
-      parameterPath: ["options", "directoryHttpHeaders", "cacheControl"],
-      mapper: {
-        serializedName: "x-ms-cache-control",
-        xmlName: "x-ms-cache-control",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var contentType1 = {
-      parameterPath: ["options", "directoryHttpHeaders", "contentType"],
-      mapper: {
-        serializedName: "x-ms-content-type",
-        xmlName: "x-ms-content-type",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var contentEncoding = {
-      parameterPath: ["options", "directoryHttpHeaders", "contentEncoding"],
-      mapper: {
-        serializedName: "x-ms-content-encoding",
-        xmlName: "x-ms-content-encoding",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var contentLanguage = {
-      parameterPath: ["options", "directoryHttpHeaders", "contentLanguage"],
-      mapper: {
-        serializedName: "x-ms-content-language",
-        xmlName: "x-ms-content-language",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var contentDisposition = {
-      parameterPath: ["options", "directoryHttpHeaders", "contentDisposition"],
-      mapper: {
-        serializedName: "x-ms-content-disposition",
-        xmlName: "x-ms-content-disposition",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var ifMatch = {
-      parameterPath: ["options", "modifiedAccessConditions", "ifMatch"],
-      mapper: {
-        serializedName: "If-Match",
-        xmlName: "If-Match",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var ifNoneMatch = {
-      parameterPath: ["options", "modifiedAccessConditions", "ifNoneMatch"],
-      mapper: {
-        serializedName: "If-None-Match",
-        xmlName: "If-None-Match",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var pathRenameMode = {
-      parameterPath: ["options", "pathRenameMode"],
-      mapper: {
-        serializedName: "mode",
-        xmlName: "mode",
-        type: {
-          name: "Enum",
-          allowedValues: ["legacy", "posix"]
-        }
-      }
-    };
-    var renameSource = {
-      parameterPath: "renameSource",
-      mapper: {
-        serializedName: "x-ms-rename-source",
-        required: true,
-        xmlName: "x-ms-rename-source",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var sourceIfModifiedSince = {
-      parameterPath: [
-        "options",
-        "sourceModifiedAccessConditions",
-        "sourceIfModifiedSince"
-      ],
-      mapper: {
-        serializedName: "x-ms-source-if-modified-since",
-        xmlName: "x-ms-source-if-modified-since",
-        type: {
-          name: "DateTimeRfc1123"
-        }
-      }
-    };
-    var sourceIfUnmodifiedSince = {
-      parameterPath: [
-        "options",
-        "sourceModifiedAccessConditions",
-        "sourceIfUnmodifiedSince"
-      ],
-      mapper: {
-        serializedName: "x-ms-source-if-unmodified-since",
-        xmlName: "x-ms-source-if-unmodified-since",
-        type: {
-          name: "DateTimeRfc1123"
-        }
-      }
-    };
-    var sourceIfMatch = {
-      parameterPath: ["options", "sourceModifiedAccessConditions", "sourceIfMatch"],
-      mapper: {
-        serializedName: "x-ms-source-if-match",
-        xmlName: "x-ms-source-if-match",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var sourceIfNoneMatch = {
-      parameterPath: [
-        "options",
-        "sourceModifiedAccessConditions",
-        "sourceIfNoneMatch"
-      ],
-      mapper: {
-        serializedName: "x-ms-source-if-none-match",
-        xmlName: "x-ms-source-if-none-match",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var action5 = {
-      parameterPath: "action",
-      mapper: {
-        defaultValue: "setAccessControl",
-        isConstant: true,
-        serializedName: "action",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var owner = {
-      parameterPath: ["options", "owner"],
-      mapper: {
-        serializedName: "x-ms-owner",
-        xmlName: "x-ms-owner",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var group2 = {
-      parameterPath: ["options", "group"],
-      mapper: {
-        serializedName: "x-ms-group",
-        xmlName: "x-ms-group",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var posixAcl = {
-      parameterPath: ["options", "posixAcl"],
-      mapper: {
-        serializedName: "x-ms-acl",
-        xmlName: "x-ms-acl",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var action6 = {
-      parameterPath: "action",
-      mapper: {
-        defaultValue: "getAccessControl",
-        isConstant: true,
-        serializedName: "action",
-        type: {
-          name: "String"
-        }
-      }
-    };
-    var upn = {
-      parameterPath: ["options", "upn"],
-      mapper: {
-        serializedName: "upn",
-        xmlName: "upn",
-        type: {
-          name: "Boolean"
         }
       }
     };
@@ -49656,6 +48947,26 @@ var require_dist9 = __commonJS({
         defaultValue: "AES256",
         isConstant: true,
         serializedName: "x-ms-encryption-algorithm",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var ifMatch = {
+      parameterPath: ["options", "modifiedAccessConditions", "ifMatch"],
+      mapper: {
+        serializedName: "If-Match",
+        xmlName: "If-Match",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var ifNoneMatch = {
+      parameterPath: ["options", "modifiedAccessConditions", "ifNoneMatch"],
+      mapper: {
+        serializedName: "If-None-Match",
+        xmlName: "If-None-Match",
         type: {
           name: "String"
         }
@@ -49784,6 +49095,60 @@ var require_dist9 = __commonJS({
         }
       }
     };
+    var comp12 = {
+      parameterPath: "comp",
+      mapper: {
+        defaultValue: "immutabilityPolicies",
+        isConstant: true,
+        serializedName: "comp",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var immutabilityPolicyExpiry = {
+      parameterPath: ["options", "immutabilityPolicyExpiry"],
+      mapper: {
+        serializedName: "x-ms-immutability-policy-until-date",
+        xmlName: "x-ms-immutability-policy-until-date",
+        type: {
+          name: "DateTimeRfc1123"
+        }
+      }
+    };
+    var immutabilityPolicyMode = {
+      parameterPath: ["options", "immutabilityPolicyMode"],
+      mapper: {
+        serializedName: "x-ms-immutability-policy-mode",
+        xmlName: "x-ms-immutability-policy-mode",
+        type: {
+          name: "Enum",
+          allowedValues: ["Mutable", "Unlocked", "Locked"]
+        }
+      }
+    };
+    var comp13 = {
+      parameterPath: "comp",
+      mapper: {
+        defaultValue: "legalhold",
+        isConstant: true,
+        serializedName: "comp",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var legalHold = {
+      parameterPath: "legalHold",
+      mapper: {
+        serializedName: "x-ms-legal-hold",
+        required: true,
+        xmlName: "x-ms-legal-hold",
+        type: {
+          name: "Boolean"
+        }
+      }
+    };
     var encryptionScope = {
       parameterPath: ["options", "encryptionScope"],
       mapper: {
@@ -49794,7 +49159,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp12 = {
+    var comp14 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "snapshot",
@@ -49842,6 +49207,58 @@ var require_dist9 = __commonJS({
         }
       }
     };
+    var sourceIfModifiedSince = {
+      parameterPath: [
+        "options",
+        "sourceModifiedAccessConditions",
+        "sourceIfModifiedSince"
+      ],
+      mapper: {
+        serializedName: "x-ms-source-if-modified-since",
+        xmlName: "x-ms-source-if-modified-since",
+        type: {
+          name: "DateTimeRfc1123"
+        }
+      }
+    };
+    var sourceIfUnmodifiedSince = {
+      parameterPath: [
+        "options",
+        "sourceModifiedAccessConditions",
+        "sourceIfUnmodifiedSince"
+      ],
+      mapper: {
+        serializedName: "x-ms-source-if-unmodified-since",
+        xmlName: "x-ms-source-if-unmodified-since",
+        type: {
+          name: "DateTimeRfc1123"
+        }
+      }
+    };
+    var sourceIfMatch = {
+      parameterPath: ["options", "sourceModifiedAccessConditions", "sourceIfMatch"],
+      mapper: {
+        serializedName: "x-ms-source-if-match",
+        xmlName: "x-ms-source-if-match",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var sourceIfNoneMatch = {
+      parameterPath: [
+        "options",
+        "sourceModifiedAccessConditions",
+        "sourceIfNoneMatch"
+      ],
+      mapper: {
+        serializedName: "x-ms-source-if-none-match",
+        xmlName: "x-ms-source-if-none-match",
+        type: {
+          name: "String"
+        }
+      }
+    };
     var sourceIfTags = {
       parameterPath: ["options", "sourceModifiedAccessConditions", "sourceIfTags"],
       mapper: {
@@ -49883,6 +49300,16 @@ var require_dist9 = __commonJS({
         }
       }
     };
+    var legalHold1 = {
+      parameterPath: ["options", "legalHold"],
+      mapper: {
+        serializedName: "x-ms-legal-hold",
+        xmlName: "x-ms-legal-hold",
+        type: {
+          name: "Boolean"
+        }
+      }
+    };
     var xMsRequiresSync = {
       parameterPath: "xMsRequiresSync",
       mapper: {
@@ -49904,7 +49331,17 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp13 = {
+    var copySourceAuthorization = {
+      parameterPath: ["options", "copySourceAuthorization"],
+      mapper: {
+        serializedName: "x-ms-copy-source-authorization",
+        xmlName: "x-ms-copy-source-authorization",
+        type: {
+          name: "String"
+        }
+      }
+    };
+    var comp15 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "copy",
@@ -49937,7 +49374,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp14 = {
+    var comp16 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "tier",
@@ -49979,7 +49416,7 @@ var require_dist9 = __commonJS({
       parameterPath: ["options", "queryRequest"],
       mapper: QueryRequest
     };
-    var comp15 = {
+    var comp17 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "query",
@@ -49990,7 +49427,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp16 = {
+    var comp18 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "tags",
@@ -50057,7 +49494,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var contentType2 = {
+    var contentType1 = {
       parameterPath: ["options", "contentType"],
       mapper: {
         defaultValue: "application/octet-stream",
@@ -50090,7 +49527,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp17 = {
+    var comp19 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "page",
@@ -50208,7 +49645,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp18 = {
+    var comp20 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "pagelist",
@@ -50251,7 +49688,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp19 = {
+    var comp21 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "incrementalcopy",
@@ -50273,7 +49710,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp20 = {
+    var comp22 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "appendblock",
@@ -50318,7 +49755,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp21 = {
+    var comp23 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "seal",
@@ -50350,7 +49787,7 @@ var require_dist9 = __commonJS({
         }
       }
     };
-    var comp22 = {
+    var comp24 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "block",
@@ -50376,7 +49813,7 @@ var require_dist9 = __commonJS({
       parameterPath: "blocks",
       mapper: BlockLookupList
     };
-    var comp23 = {
+    var comp25 = {
       parameterPath: "comp",
       mapper: {
         defaultValue: "blocklist",
@@ -51325,25 +50762,6 @@ var require_dist9 = __commonJS({
         };
         return this.client.sendOperationRequest(operationArguments, deleteOperationSpec$1);
       }
-      setAccessControl(options) {
-        const operationArguments = {
-          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
-        };
-        return this.client.sendOperationRequest(operationArguments, setAccessControlOperationSpec);
-      }
-      getAccessControl(options) {
-        const operationArguments = {
-          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
-        };
-        return this.client.sendOperationRequest(operationArguments, getAccessControlOperationSpec);
-      }
-      rename(renameSource2, options) {
-        const operationArguments = {
-          renameSource: renameSource2,
-          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
-        };
-        return this.client.sendOperationRequest(operationArguments, renameOperationSpec$1);
-      }
       undelete(options) {
         const operationArguments = {
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
@@ -51362,6 +50780,25 @@ var require_dist9 = __commonJS({
           options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
         };
         return this.client.sendOperationRequest(operationArguments, setHttpHeadersOperationSpec);
+      }
+      setImmutabilityPolicy(options) {
+        const operationArguments = {
+          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
+        };
+        return this.client.sendOperationRequest(operationArguments, setImmutabilityPolicyOperationSpec);
+      }
+      deleteImmutabilityPolicy(options) {
+        const operationArguments = {
+          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
+        };
+        return this.client.sendOperationRequest(operationArguments, deleteImmutabilityPolicyOperationSpec);
+      }
+      setLegalHold(legalHold2, options) {
+        const operationArguments = {
+          legalHold: legalHold2,
+          options: coreHttp.operationOptionsToRequestOptionsBase(options || {})
+        };
+        return this.client.sendOperationRequest(operationArguments, setLegalHoldOperationSpec);
       }
       setMetadata(options) {
         const operationArguments = {
@@ -51500,14 +50937,14 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         range,
         rangeGetContentMD5,
         rangeGetContentCRC64,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags
       ],
       isXML: true,
@@ -51538,11 +50975,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags
       ],
       isXML: true,
@@ -51578,109 +51015,6 @@ var require_dist9 = __commonJS({
         ifNoneMatch,
         ifTags,
         deleteSnapshots
-      ],
-      isXML: true,
-      serializer: xmlSerializer$2
-    };
-    var setAccessControlOperationSpec = {
-      path: "/{filesystem}/{path}",
-      httpMethod: "PATCH",
-      responses: {
-        200: {
-          headersMapper: BlobSetAccessControlHeaders
-        },
-        default: {
-          bodyMapper: DataLakeStorageError,
-          headersMapper: BlobSetAccessControlExceptionHeaders
-        }
-      },
-      queryParameters: [timeoutInSeconds, action5],
-      urlParameters: [url],
-      headerParameters: [
-        version,
-        requestId,
-        accept1,
-        leaseId,
-        ifModifiedSince,
-        ifUnmodifiedSince,
-        posixPermissions,
-        ifMatch,
-        ifNoneMatch,
-        owner,
-        group2,
-        posixAcl
-      ],
-      isXML: true,
-      serializer: xmlSerializer$2
-    };
-    var getAccessControlOperationSpec = {
-      path: "/{filesystem}/{path}",
-      httpMethod: "HEAD",
-      responses: {
-        200: {
-          headersMapper: BlobGetAccessControlHeaders
-        },
-        default: {
-          bodyMapper: DataLakeStorageError,
-          headersMapper: BlobGetAccessControlExceptionHeaders
-        }
-      },
-      queryParameters: [
-        timeoutInSeconds,
-        action6,
-        upn
-      ],
-      urlParameters: [url],
-      headerParameters: [
-        version,
-        requestId,
-        accept1,
-        leaseId,
-        ifModifiedSince,
-        ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch
-      ],
-      isXML: true,
-      serializer: xmlSerializer$2
-    };
-    var renameOperationSpec$1 = {
-      path: "/{filesystem}/{path}",
-      httpMethod: "PUT",
-      responses: {
-        201: {
-          headersMapper: BlobRenameHeaders
-        },
-        default: {
-          bodyMapper: DataLakeStorageError,
-          headersMapper: BlobRenameExceptionHeaders
-        }
-      },
-      queryParameters: [timeoutInSeconds, pathRenameMode],
-      urlParameters: [url],
-      headerParameters: [
-        version,
-        requestId,
-        accept1,
-        leaseId,
-        ifModifiedSince,
-        ifUnmodifiedSince,
-        sourceLeaseId,
-        directoryProperties,
-        posixPermissions,
-        posixUmask,
-        cacheControl,
-        contentType1,
-        contentEncoding,
-        contentLanguage,
-        contentDisposition,
-        ifMatch,
-        ifNoneMatch,
-        renameSource,
-        sourceIfModifiedSince,
-        sourceIfUnmodifiedSince,
-        sourceIfMatch,
-        sourceIfNoneMatch
       ],
       isXML: true,
       serializer: xmlSerializer$2
@@ -51765,6 +51099,76 @@ var require_dist9 = __commonJS({
       isXML: true,
       serializer: xmlSerializer$2
     };
+    var setImmutabilityPolicyOperationSpec = {
+      path: "/{containerName}/{blob}",
+      httpMethod: "PUT",
+      responses: {
+        200: {
+          headersMapper: BlobSetImmutabilityPolicyHeaders
+        },
+        default: {
+          bodyMapper: StorageError,
+          headersMapper: BlobSetImmutabilityPolicyExceptionHeaders
+        }
+      },
+      queryParameters: [timeoutInSeconds, comp12],
+      urlParameters: [url],
+      headerParameters: [
+        version,
+        requestId,
+        accept1,
+        ifUnmodifiedSince,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode
+      ],
+      isXML: true,
+      serializer: xmlSerializer$2
+    };
+    var deleteImmutabilityPolicyOperationSpec = {
+      path: "/{containerName}/{blob}",
+      httpMethod: "DELETE",
+      responses: {
+        200: {
+          headersMapper: BlobDeleteImmutabilityPolicyHeaders
+        },
+        default: {
+          bodyMapper: StorageError,
+          headersMapper: BlobDeleteImmutabilityPolicyExceptionHeaders
+        }
+      },
+      queryParameters: [timeoutInSeconds, comp12],
+      urlParameters: [url],
+      headerParameters: [
+        version,
+        requestId,
+        accept1
+      ],
+      isXML: true,
+      serializer: xmlSerializer$2
+    };
+    var setLegalHoldOperationSpec = {
+      path: "/{containerName}/{blob}",
+      httpMethod: "PUT",
+      responses: {
+        200: {
+          headersMapper: BlobSetLegalHoldHeaders
+        },
+        default: {
+          bodyMapper: StorageError,
+          headersMapper: BlobSetLegalHoldExceptionHeaders
+        }
+      },
+      queryParameters: [timeoutInSeconds, comp13],
+      urlParameters: [url],
+      headerParameters: [
+        version,
+        requestId,
+        accept1,
+        legalHold
+      ],
+      isXML: true,
+      serializer: xmlSerializer$2
+    };
     var setMetadataOperationSpec$1 = {
       path: "/{containerName}/{blob}",
       httpMethod: "PUT",
@@ -51787,11 +51191,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope
       ],
@@ -51957,7 +51361,7 @@ var require_dist9 = __commonJS({
           headersMapper: BlobCreateSnapshotExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp12],
+      queryParameters: [timeoutInSeconds, comp14],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -51967,11 +51371,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope
       ],
@@ -52002,17 +51406,20 @@ var require_dist9 = __commonJS({
         ifUnmodifiedSince,
         ifMatch,
         ifNoneMatch,
+        ifTags,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
+        tier,
+        rehydratePriority,
         sourceIfModifiedSince,
         sourceIfUnmodifiedSince,
         sourceIfMatch,
         sourceIfNoneMatch,
-        ifTags,
-        tier,
-        rehydratePriority,
         sourceIfTags,
         copySource,
         blobTagsString,
-        sealBlob
+        sealBlob,
+        legalHold1
       ],
       isXML: true,
       serializer: xmlSerializer$2
@@ -52041,16 +51448,20 @@ var require_dist9 = __commonJS({
         ifUnmodifiedSince,
         ifMatch,
         ifNoneMatch,
+        ifTags,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
+        tier,
         sourceIfModifiedSince,
         sourceIfUnmodifiedSince,
         sourceIfMatch,
         sourceIfNoneMatch,
-        ifTags,
-        tier,
         copySource,
         blobTagsString,
+        legalHold1,
         xMsRequiresSync,
-        sourceContentMD5
+        sourceContentMD5,
+        copySourceAuthorization
       ],
       isXML: true,
       serializer: xmlSerializer$2
@@ -52069,7 +51480,7 @@ var require_dist9 = __commonJS({
       },
       queryParameters: [
         timeoutInSeconds,
-        comp13,
+        comp15,
         copyId
       ],
       urlParameters: [url],
@@ -52102,7 +51513,7 @@ var require_dist9 = __commonJS({
         timeoutInSeconds,
         snapshot,
         versionId,
-        comp14
+        comp16
       ],
       urlParameters: [url],
       headerParameters: [
@@ -52162,7 +51573,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         snapshot,
-        comp15
+        comp17
       ],
       urlParameters: [url],
       headerParameters: [
@@ -52173,11 +51584,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags
       ],
       isXML: true,
@@ -52202,7 +51613,7 @@ var require_dist9 = __commonJS({
         timeoutInSeconds,
         snapshot,
         versionId,
-        comp16
+        comp18
       ],
       urlParameters: [url],
       headerParameters: [
@@ -52231,7 +51642,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         versionId,
-        comp16
+        comp18
       ],
       urlParameters: [url],
       headerParameters: [
@@ -52346,11 +51757,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         blobCacheControl,
         blobContentType,
@@ -52358,9 +51769,12 @@ var require_dist9 = __commonJS({
         blobContentEncoding,
         blobContentLanguage,
         blobContentDisposition,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
         encryptionScope,
         tier,
         blobTagsString,
+        legalHold1,
         blobType,
         blobContentLength,
         blobSequenceNumber
@@ -52381,7 +51795,7 @@ var require_dist9 = __commonJS({
         }
       },
       requestBody: body1,
-      queryParameters: [timeoutInSeconds, comp17],
+      queryParameters: [timeoutInSeconds, comp19],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52390,17 +51804,17 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         range,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope,
         transactionalContentMD5,
         transactionalContentCrc64,
-        contentType2,
+        contentType1,
         accept2,
         pageWrite,
         ifSequenceNumberLessThanOrEqualTo,
@@ -52422,7 +51836,7 @@ var require_dist9 = __commonJS({
           headersMapper: PageBlobClearPagesExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp17],
+      queryParameters: [timeoutInSeconds, comp19],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52432,12 +51846,12 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         range,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope,
         ifSequenceNumberLessThanOrEqualTo,
@@ -52460,7 +51874,7 @@ var require_dist9 = __commonJS({
           headersMapper: PageBlobUploadPagesFromURLExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp17],
+      queryParameters: [timeoutInSeconds, comp19],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52470,18 +51884,19 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
+        encryptionKey,
+        encryptionKeySha256,
+        encryptionAlgorithm,
         ifMatch,
         ifNoneMatch,
+        ifTags,
+        encryptionScope,
         sourceIfModifiedSince,
         sourceIfUnmodifiedSince,
         sourceIfMatch,
         sourceIfNoneMatch,
-        encryptionKey,
-        encryptionKeySha256,
-        encryptionAlgorithm,
-        ifTags,
-        encryptionScope,
         sourceContentMD5,
+        copySourceAuthorization,
         pageWrite,
         ifSequenceNumberLessThanOrEqualTo,
         ifSequenceNumberLessThan,
@@ -52510,7 +51925,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         snapshot,
-        comp18
+        comp20
       ],
       urlParameters: [url],
       headerParameters: [
@@ -52520,9 +51935,9 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
+        range,
         ifMatch,
         ifNoneMatch,
-        range,
         ifTags
       ],
       isXML: true,
@@ -52544,7 +51959,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         snapshot,
-        comp18,
+        comp20,
         prevsnapshot
       ],
       urlParameters: [url],
@@ -52555,9 +51970,9 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
+        range,
         ifMatch,
         ifNoneMatch,
-        range,
         ifTags,
         prevSnapshotUrl
       ],
@@ -52585,11 +52000,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope,
         blobContentLength
@@ -52639,7 +52054,7 @@ var require_dist9 = __commonJS({
           headersMapper: PageBlobCopyIncrementalExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp19],
+      queryParameters: [timeoutInSeconds, comp21],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52715,11 +52130,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         blobCacheControl,
         blobContentType,
@@ -52727,8 +52142,11 @@ var require_dist9 = __commonJS({
         blobContentEncoding,
         blobContentLanguage,
         blobContentDisposition,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
         encryptionScope,
         blobTagsString,
+        legalHold1,
         blobType1
       ],
       isXML: true,
@@ -52747,7 +52165,7 @@ var require_dist9 = __commonJS({
         }
       },
       requestBody: body1,
-      queryParameters: [timeoutInSeconds, comp20],
+      queryParameters: [timeoutInSeconds, comp22],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52756,16 +52174,16 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         encryptionScope,
         transactionalContentMD5,
         transactionalContentCrc64,
-        contentType2,
+        contentType1,
         accept2,
         maxSize,
         appendPosition
@@ -52785,7 +52203,7 @@ var require_dist9 = __commonJS({
           headersMapper: AppendBlobAppendBlockFromUrlExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp20],
+      queryParameters: [timeoutInSeconds, comp22],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52795,18 +52213,19 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
+        encryptionKey,
+        encryptionKeySha256,
+        encryptionAlgorithm,
         ifMatch,
         ifNoneMatch,
+        ifTags,
+        encryptionScope,
         sourceIfModifiedSince,
         sourceIfUnmodifiedSince,
         sourceIfMatch,
         sourceIfNoneMatch,
-        encryptionKey,
-        encryptionKeySha256,
-        encryptionAlgorithm,
-        ifTags,
-        encryptionScope,
         sourceContentMD5,
+        copySourceAuthorization,
         transactionalContentMD5,
         sourceUrl,
         sourceContentCrc64,
@@ -52829,7 +52248,7 @@ var require_dist9 = __commonJS({
           headersMapper: AppendBlobSealExceptionHeaders
         }
       },
-      queryParameters: [timeoutInSeconds, comp21],
+      queryParameters: [timeoutInSeconds, comp23],
       urlParameters: [url],
       headerParameters: [
         version,
@@ -52924,11 +52343,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         blobCacheControl,
         blobContentType,
@@ -52936,11 +52355,14 @@ var require_dist9 = __commonJS({
         blobContentEncoding,
         blobContentLanguage,
         blobContentDisposition,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
         encryptionScope,
         tier,
         blobTagsString,
+        legalHold1,
         transactionalContentMD5,
-        contentType2,
+        contentType1,
         accept2,
         blobType2
       ],
@@ -52970,15 +52392,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
-        sourceIfModifiedSince,
-        sourceIfUnmodifiedSince,
-        sourceIfMatch,
-        sourceIfNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         blobCacheControl,
         blobContentType,
@@ -52988,10 +52406,15 @@ var require_dist9 = __commonJS({
         blobContentDisposition,
         encryptionScope,
         tier,
+        sourceIfModifiedSince,
+        sourceIfUnmodifiedSince,
+        sourceIfMatch,
+        sourceIfNoneMatch,
         sourceIfTags,
         copySource,
         blobTagsString,
         sourceContentMD5,
+        copySourceAuthorization,
         transactionalContentMD5,
         blobType2,
         copySourceBlobProperties
@@ -53014,7 +52437,7 @@ var require_dist9 = __commonJS({
       requestBody: body1,
       queryParameters: [
         timeoutInSeconds,
-        comp22,
+        comp24,
         blockId
       ],
       urlParameters: [url],
@@ -53029,7 +52452,7 @@ var require_dist9 = __commonJS({
         encryptionScope,
         transactionalContentMD5,
         transactionalContentCrc64,
-        contentType2,
+        contentType1,
         accept2
       ],
       mediaType: "binary",
@@ -53049,7 +52472,7 @@ var require_dist9 = __commonJS({
       },
       queryParameters: [
         timeoutInSeconds,
-        comp22,
+        comp24,
         blockId
       ],
       urlParameters: [url],
@@ -53059,15 +52482,16 @@ var require_dist9 = __commonJS({
         accept1,
         contentLength,
         leaseId,
-        sourceIfModifiedSince,
-        sourceIfUnmodifiedSince,
-        sourceIfMatch,
-        sourceIfNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
         encryptionScope,
+        sourceIfModifiedSince,
+        sourceIfUnmodifiedSince,
+        sourceIfMatch,
+        sourceIfNoneMatch,
         sourceContentMD5,
+        copySourceAuthorization,
         sourceUrl,
         sourceContentCrc64,
         sourceRange1
@@ -53088,7 +52512,7 @@ var require_dist9 = __commonJS({
         }
       },
       requestBody: blocks,
-      queryParameters: [timeoutInSeconds, comp23],
+      queryParameters: [timeoutInSeconds, comp25],
       urlParameters: [url],
       headerParameters: [
         contentType,
@@ -53099,11 +52523,11 @@ var require_dist9 = __commonJS({
         leaseId,
         ifModifiedSince,
         ifUnmodifiedSince,
-        ifMatch,
-        ifNoneMatch,
         encryptionKey,
         encryptionKeySha256,
         encryptionAlgorithm,
+        ifMatch,
+        ifNoneMatch,
         ifTags,
         blobCacheControl,
         blobContentType,
@@ -53111,9 +52535,12 @@ var require_dist9 = __commonJS({
         blobContentEncoding,
         blobContentLanguage,
         blobContentDisposition,
+        immutabilityPolicyExpiry,
+        immutabilityPolicyMode,
         encryptionScope,
         tier,
         blobTagsString,
+        legalHold1,
         transactionalContentMD5,
         transactionalContentCrc64
       ],
@@ -53138,7 +52565,7 @@ var require_dist9 = __commonJS({
       queryParameters: [
         timeoutInSeconds,
         snapshot,
-        comp23,
+        comp25,
         listType
       ],
       urlParameters: [url],
@@ -53153,8 +52580,8 @@ var require_dist9 = __commonJS({
       serializer: xmlSerializer$5
     };
     var logger = logger$1.createClientLogger("storage-blob");
-    var SDK_VERSION = "12.7.0";
-    var SERVICE_VERSION = "2020-08-04";
+    var SDK_VERSION = "12.8.0";
+    var SERVICE_VERSION = "2020-10-02";
     var BLOCK_BLOB_MAX_UPLOAD_BLOB_BYTES = 256 * 1024 * 1024;
     var BLOCK_BLOB_MAX_STAGE_BLOCK_BYTES = 4e3 * 1024 * 1024;
     var BLOCK_BLOB_MAX_BLOCKS = 5e4;
@@ -53473,7 +52900,7 @@ var require_dist9 = __commonJS({
       }
       let queryString = urlParsed.getQuery() || "";
       queryString = queryString.trim();
-      if (queryString != "") {
+      if (queryString !== "") {
         queryString = queryString.startsWith("?") ? queryString : `?${queryString}`;
       }
       return `${pathString}${queryString}`;
@@ -53594,10 +53021,10 @@ var require_dist9 = __commonJS({
     }
     __name(getAccountNameFromUrl, "getAccountNameFromUrl");
     function isIpEndpointStyle(parsedUrl) {
-      if (parsedUrl.getHost() == void 0) {
+      if (parsedUrl.getHost() === void 0) {
         return false;
       }
-      const host = parsedUrl.getHost() + (parsedUrl.getPort() == void 0 ? "" : ":" + parsedUrl.getPort());
+      const host = parsedUrl.getHost() + (parsedUrl.getPort() === void 0 ? "" : ":" + parsedUrl.getPort());
       return /^.*:.*:.*$|^localhost(:[0-9]+)?$|^(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])){3}(:[0-9]+)?$/.test(host);
     }
     __name(isIpEndpointStyle, "isIpEndpointStyle");
@@ -53607,7 +53034,7 @@ var require_dist9 = __commonJS({
       }
       const tagPairs = [];
       for (const key in tags2) {
-        if (tags2.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(tags2, key)) {
           const value = tags2[key];
           tagPairs.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
         }
@@ -53623,7 +53050,7 @@ var require_dist9 = __commonJS({
         blobTagSet: []
       };
       for (const key in tags2) {
-        if (tags2.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(tags2, key)) {
           const value = tags2[key];
           res.blobTagSet.push({
             key,
@@ -53681,6 +53108,12 @@ var require_dist9 = __commonJS({
               }
             }
           };
+        case "parquet":
+          return {
+            format: {
+              type: "parquet"
+            }
+          };
         default:
           throw Error("Invalid BlobQueryTextConfiguration.");
       }
@@ -53722,6 +53155,10 @@ var require_dist9 = __commonJS({
       return thing;
     }
     __name(attachCredential, "attachCredential");
+    function httpAuthorizationToString(httpAuthorization) {
+      return httpAuthorization ? httpAuthorization.scheme + " " + httpAuthorization.value : void 0;
+    }
+    __name(httpAuthorizationToString, "httpAuthorizationToString");
     var StorageBrowserPolicy = class extends coreHttp.BaseRequestPolicy {
       constructor(nextPolicy, options) {
         super(nextPolicy, options);
@@ -53791,7 +53228,7 @@ var require_dist9 = __commonJS({
           }
         }
         await this.delay(isPrimaryRetry, attempt, request.abortSignal);
-        return await this.attemptSendRequest(request, secondaryHas404, ++attempt);
+        return this.attemptSendRequest(request, secondaryHas404, ++attempt);
       }
       shouldRetry(isPrimaryRetry, attempt, response, err) {
         if (attempt >= this.retryOptions.maxTries) {
@@ -53938,6 +53375,14 @@ var require_dist9 = __commonJS({
       return _defaultHttpClient;
     }
     __name(getCachedDefaultHttpClient, "getCachedDefaultHttpClient");
+    function isPipelineLike(pipeline) {
+      if (!pipeline || typeof pipeline !== "object") {
+        return false;
+      }
+      const castPipeline = pipeline;
+      return Array.isArray(castPipeline.factories) && typeof castPipeline.options === "object" && typeof castPipeline.toServiceClientOptions === "function";
+    }
+    __name(isPipelineLike, "isPipelineLike");
     var Pipeline = class {
       constructor(factories, options = {}) {
         this.factories = factories;
@@ -54045,7 +53490,7 @@ var require_dist9 = __commonJS({
         if (queries) {
           const queryKeys = [];
           for (const key in queries) {
-            if (queries.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(queries, key)) {
               const lowercaseKey = key.toLowerCase();
               lowercaseQueries[lowercaseKey] = queries[key];
               queryKeys.push(lowercaseKey);
@@ -54076,7 +53521,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     };
     __name(StorageSharedKeyCredential, "StorageSharedKeyCredential");
     var packageName = "azure-storage-blob";
-    var packageVersion = "12.6.0-beta.1";
+    var packageVersion = "12.8.0";
     var StorageClientContext = class extends coreHttp.ServiceClient {
       constructor(url2, options) {
         if (url2 === void 0) {
@@ -54093,7 +53538,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         this.requestContentType = "application/json; charset=utf-8";
         this.baseUri = options.endpoint || "{url}";
         this.url = url2;
-        this.version = options.version || "2020-08-04";
+        this.version = options.version || "2020-10-02";
       }
     };
     __name(StorageClientContext, "StorageClientContext");
@@ -54140,6 +53585,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         this.tag = false;
         this.move = false;
         this.execute = false;
+        this.setImmutabilityPolicy = false;
       }
       static parse(permissions) {
         const blobSASPermissions = new BlobSASPermissions();
@@ -54171,6 +53617,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               break;
             case "e":
               blobSASPermissions.execute = true;
+              break;
+            case "i":
+              blobSASPermissions.setImmutabilityPolicy = true;
               break;
             default:
               throw new RangeError(`Invalid permission: ${char}`);
@@ -54207,6 +53656,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (permissionLike.execute) {
           blobSASPermissions.execute = true;
         }
+        if (permissionLike.setImmutabilityPolicy) {
+          blobSASPermissions.setImmutabilityPolicy = true;
+        }
         return blobSASPermissions;
       }
       toString() {
@@ -54238,6 +53690,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (this.execute) {
           permissions.push("e");
         }
+        if (this.setImmutabilityPolicy) {
+          permissions.push("i");
+        }
         return permissions.join("");
       }
     };
@@ -54254,6 +53709,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         this.tag = false;
         this.move = false;
         this.execute = false;
+        this.setImmutabilityPolicy = false;
       }
       static parse(permissions) {
         const containerSASPermissions = new ContainerSASPermissions();
@@ -54288,6 +53744,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               break;
             case "e":
               containerSASPermissions.execute = true;
+              break;
+            case "i":
+              containerSASPermissions.setImmutabilityPolicy = true;
               break;
             default:
               throw new RangeError(`Invalid permission ${char}`);
@@ -54327,6 +53786,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (permissionLike.execute) {
           containerSASPermissions.execute = true;
         }
+        if (permissionLike.setImmutabilityPolicy) {
+          containerSASPermissions.setImmutabilityPolicy = true;
+        }
         return containerSASPermissions;
       }
       toString() {
@@ -54361,6 +53823,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (this.execute) {
           permissions.push("e");
         }
+        if (this.setImmutabilityPolicy) {
+          permissions.push("i");
+        }
         return permissions.join("");
       }
     };
@@ -54385,7 +53850,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
       SASProtocol["HttpsAndHttp"] = "https,http";
     })(exports2.SASProtocol || (exports2.SASProtocol = {}));
     var SASQueryParameters = class {
-      constructor(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl2, contentDisposition2, contentEncoding2, contentLanguage2, contentType3, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
+      constructor(version2, signature, permissionsOrOptions, services, resourceTypes, protocol, startsOn, expiresOn2, ipRange, identifier, resource, cacheControl, contentDisposition, contentEncoding, contentLanguage, contentType2, userDelegationKey, preauthorizedAgentObjectId, correlationId) {
         this.version = version2;
         this.signature = signature;
         if (permissionsOrOptions !== void 0 && typeof permissionsOrOptions !== "string") {
@@ -54423,11 +53888,11 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           this.ipRangeInner = ipRange;
           this.identifier = identifier;
           this.resource = resource;
-          this.cacheControl = cacheControl2;
-          this.contentDisposition = contentDisposition2;
-          this.contentEncoding = contentEncoding2;
-          this.contentLanguage = contentLanguage2;
-          this.contentType = contentType3;
+          this.cacheControl = cacheControl;
+          this.contentDisposition = contentDisposition;
+          this.contentEncoding = contentEncoding;
+          this.contentLanguage = contentLanguage;
+          this.contentType = contentType2;
           if (userDelegationKey) {
             this.signedOid = userDelegationKey.signedObjectId;
             this.signedTenantId = userDelegationKey.signedTenantId;
@@ -54804,6 +54269,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
       if (blobSASSignatureValues.blobName === void 0 && blobSASSignatureValues.versionId) {
         throw RangeError("Must provide 'blobName' when providing 'versionId'.");
       }
+      if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.setImmutabilityPolicy && version2 < "2020-08-04") {
+        throw RangeError("'version' must be >= '2020-08-04' when provided 'i' permission.");
+      }
       if (blobSASSignatureValues.permissions && blobSASSignatureValues.permissions.deleteVersion && version2 < "2019-10-10") {
         throw RangeError("'version' must be >= '2019-10-10' when providing 'x' permission.");
       }
@@ -54971,6 +54439,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               this.getter(this.offset).then((newSource) => {
                 this.source = newSource;
                 this.setSourceEventHandlers();
+                return;
               }).catch((error) => {
                 this.destroy(error);
               });
@@ -55135,6 +54604,15 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
       }
       get isSealed() {
         return this.originalResponse.isSealed;
+      }
+      get immutabilityPolicyExpiresOn() {
+        return this.originalResponse.immutabilityPolicyExpiresOn;
+      }
+      get immutabilityPolicyMode() {
+        return this.originalResponse.immutabilityPolicyMode;
+      }
+      get legalHold() {
+        return this.originalResponse.legalHold;
       }
       get contentAsBlob() {
         return this.originalResponse.blobBody;
@@ -55649,21 +55127,25 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           }
           switch (schema) {
             case "com.microsoft.azure.storage.queryBlobContents.resultData":
-              const data = obj.data;
-              if (data instanceof Uint8Array === false) {
-                throw Error("Invalid data in avro result record.");
-              }
-              if (!this.push(Buffer.from(data))) {
-                this.avroPaused = true;
+              {
+                const data = obj.data;
+                if (data instanceof Uint8Array === false) {
+                  throw Error("Invalid data in avro result record.");
+                }
+                if (!this.push(Buffer.from(data))) {
+                  this.avroPaused = true;
+                }
               }
               break;
             case "com.microsoft.azure.storage.queryBlobContents.progress":
-              const bytesScanned = obj.bytesScanned;
-              if (typeof bytesScanned !== "number") {
-                throw Error("Invalid bytesScanned in avro progress record.");
-              }
-              if (this.onProgress) {
-                this.onProgress({ loadedBytes: bytesScanned });
+              {
+                const bytesScanned = obj.bytesScanned;
+                if (typeof bytesScanned !== "number") {
+                  throw Error("Invalid bytesScanned in avro progress record.");
+                }
+                if (this.onProgress) {
+                  this.onProgress({ loadedBytes: bytesScanned });
+                }
               }
               break;
             case "com.microsoft.azure.storage.queryBlobContents.end":
@@ -55843,7 +55325,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
       PremiumPageBlobTier["P80"] = "P80";
     })(exports2.PremiumPageBlobTier || (exports2.PremiumPageBlobTier = {}));
     function toAccessTier(tier2) {
-      if (tier2 == void 0) {
+      if (tier2 === void 0) {
         return void 0;
       }
       return tier2;
@@ -56364,7 +55846,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         options = options || {};
         let pipeline;
         let url2;
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipelineOrContainerName)) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
         } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
@@ -56449,7 +55931,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           }
           return new BlobDownloadResponse(wrappedRes, async (start) => {
             var _a2;
-            const updatedOptions2 = {
+            const updatedDownloadOptions = {
               leaseAccessConditions: options.conditions,
               modifiedAccessConditions: {
                 ifMatch: options.conditions.ifMatch || res.etag,
@@ -56467,7 +55949,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               snapshot: options.snapshot,
               cpkInfo: options.customerProvidedKey
             };
-            return (await this.blobContext.download(Object.assign({ abortSignal: options.abortSignal }, updatedOptions2))).readableStreamBody;
+            return (await this.blobContext.download(Object.assign({ abortSignal: options.abortSignal }, updatedDownloadOptions))).readableStreamBody;
           }, offset, res.contentLength, {
             maxRetryRequests: options.maxRetryRequests,
             onProgress: options.onProgress
@@ -56701,7 +56183,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         }
       }
       async syncCopyFromURL(copySource2, options = {}) {
-        var _a;
+        var _a, _b, _c;
         const { span, updatedOptions } = createSpan("BlobClient-syncCopyFromURL", options);
         options.conditions = options.conditions || {};
         options.sourceConditions = options.sourceConditions || {};
@@ -56711,7 +56193,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
             sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
             sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
             sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-          }, sourceContentMD5: options.sourceContentMD5, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          }, sourceContentMD5: options.sourceContentMD5, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization), blobTagsString: toBlobTagsString(options.tags), immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -56872,7 +56354,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         }
       }
       async startCopyFromURL(copySource2, options = {}) {
-        var _a;
+        var _a, _b, _c;
         const { span, updatedOptions } = createSpan("BlobClient-startCopyFromURL", options);
         options.conditions = options.conditions || {};
         options.sourceConditions = options.sourceConditions || {};
@@ -56883,7 +56365,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
             sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
             sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince,
             sourceIfTags: options.sourceConditions.tagConditions
-          }, rehydratePriority: options.rehydratePriority, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), sealBlob: options.sealBlob }, convertTracingToRequestOptionsBase(updatedOptions)));
+          }, immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold, rehydratePriority: options.rehydratePriority, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags), sealBlob: options.sealBlob }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -56903,6 +56385,48 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           resolve2(appendToURLQuery(this.url, sas));
         });
       }
+      async deleteImmutabilityPolicy(options) {
+        const { span, updatedOptions } = createSpan("BlobClient-deleteImmutabilityPolicy", options);
+        try {
+          return await this.blobContext.deleteImmutabilityPolicy(Object.assign({ abortSignal: options === null || options === void 0 ? void 0 : options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setImmutabilityPolicy(immutabilityPolicy, options) {
+        const { span, updatedOptions } = createSpan("BlobClient-setImmutabilityPolicy", options);
+        try {
+          return await this.blobContext.setImmutabilityPolicy(Object.assign({ abortSignal: options === null || options === void 0 ? void 0 : options.abortSignal, immutabilityPolicyExpiry: immutabilityPolicy.expiriesOn, immutabilityPolicyMode: immutabilityPolicy.policyMode, modifiedAccessConditions: options === null || options === void 0 ? void 0 : options.modifiedAccessCondition }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
+      async setLegalHold(legalHoldEnabled, options) {
+        const { span, updatedOptions } = createSpan("BlobClient-setLegalHold", options);
+        try {
+          return await this.blobContext.setLegalHold(legalHoldEnabled, Object.assign({ abortSignal: options === null || options === void 0 ? void 0 : options.abortSignal }, convertTracingToRequestOptionsBase(updatedOptions)));
+        } catch (e) {
+          span.setStatus({
+            code: coreTracing.SpanStatusCode.ERROR,
+            message: e.message
+          });
+          throw e;
+        } finally {
+          span.end();
+        }
+      }
     };
     __name(BlobClient, "BlobClient");
     var AppendBlobClient = class extends BlobClient {
@@ -56910,7 +56434,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         let pipeline;
         let url2;
         options = options || {};
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipelineOrContainerName)) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
         } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
@@ -56947,12 +56471,12 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         return new AppendBlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
       }
       async create(options = {}) {
-        var _a;
+        var _a, _b, _c;
         const { span, updatedOptions } = createSpan("AppendBlobClient-create", options);
         options.conditions = options.conditions || {};
         try {
           ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-          return await this.appendBlobContext.create(0, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return await this.appendBlobContext.create(0, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold, blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57036,7 +56560,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
             sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
             sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
             sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+          }, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57054,7 +56578,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         let pipeline;
         let url2;
         options = options || {};
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipelineOrContainerName)) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
         } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
@@ -57121,14 +56645,14 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         }
       }
       async upload(body2, contentLength2, options = {}) {
-        var _a;
+        var _a, _b, _c;
         options.conditions = options.conditions || {};
         const { span, updatedOptions } = createSpan("BlockBlobClient-upload", options);
         try {
           ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
           return await this.blockBlobContext.upload(contentLength2, body2, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), requestOptions: {
             onUploadProgress: options.onProgress
-          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57151,7 +56675,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
             sourceIfNoneMatch: (_c = options.sourceConditions) === null || _c === void 0 ? void 0 : _c.ifNoneMatch,
             sourceIfUnmodifiedSince: (_d = options.sourceConditions) === null || _d === void 0 ? void 0 : _d.ifUnmodifiedSince,
             sourceIfTags: (_e = options.sourceConditions) === null || _e === void 0 ? void 0 : _e.tagConditions
-          }, cpkInfo: options.customerProvidedKey, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }), convertTracingToRequestOptionsBase(updatedOptions)));
+          }, cpkInfo: options.customerProvidedKey, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization), tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }), convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57183,7 +56707,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         const { span, updatedOptions } = createSpan("BlockBlobClient-stageBlockFromURL", options);
         try {
           ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-          return await this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, sourceRange: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return await this.blockBlobContext.stageBlockFromURL(blockId2, 0, sourceURL, Object.assign({ abortSignal: options.abortSignal, leaseAccessConditions: options.conditions, sourceContentMD5: options.sourceContentMD5, sourceContentCrc64: options.sourceContentCrc64, sourceRange: offset === 0 && !count ? void 0 : rangeToString({ offset, count }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57195,12 +56719,12 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         }
       }
       async commitBlockList(blocks2, options = {}) {
-        var _a;
+        var _a, _b, _c;
         options.conditions = options.conditions || {};
         const { span, updatedOptions } = createSpan("BlockBlobClient-commitBlockList", options);
         try {
           ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-          return await this.blockBlobContext.commitBlockList({ latest: blocks2 }, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return await this.blockBlobContext.commitBlockList({ latest: blocks2 }, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57419,7 +56943,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         let pipeline;
         let url2;
         options = options || {};
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipelineOrContainerName)) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
         } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
@@ -57456,12 +56980,12 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         return new PageBlobClient(setURLParameter(this.url, URLConstants.Parameters.SNAPSHOT, snapshot2.length === 0 ? void 0 : snapshot2), this.pipeline);
       }
       async create(size, options = {}) {
-        var _a;
+        var _a, _b, _c;
         options.conditions = options.conditions || {};
         const { span, updatedOptions } = createSpan("PageBlobClient-create", options);
         try {
           ensureCpkIfSpecified(options.customerProvidedKey, this.isHttps);
-          return await this.pageBlobContext.create(0, size, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, blobSequenceNumber: options.blobSequenceNumber, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
+          return await this.pageBlobContext.create(0, size, Object.assign({ abortSignal: options.abortSignal, blobHttpHeaders: options.blobHTTPHeaders, blobSequenceNumber: options.blobSequenceNumber, leaseAccessConditions: options.conditions, metadata: options.metadata, modifiedAccessConditions: Object.assign(Object.assign({}, options.conditions), { ifTags: (_a = options.conditions) === null || _a === void 0 ? void 0 : _a.tagConditions }), cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, immutabilityPolicyExpiry: (_b = options.immutabilityPolicy) === null || _b === void 0 ? void 0 : _b.expiriesOn, immutabilityPolicyMode: (_c = options.immutabilityPolicy) === null || _c === void 0 ? void 0 : _c.policyMode, legalHold: options.legalHold, tier: toAccessTier(options.tier), blobTagsString: toBlobTagsString(options.tags) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57529,7 +57053,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
             sourceIfModifiedSince: options.sourceConditions.ifModifiedSince,
             sourceIfNoneMatch: options.sourceConditions.ifNoneMatch,
             sourceIfUnmodifiedSince: options.sourceConditions.ifUnmodifiedSince
-          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope }, convertTracingToRequestOptionsBase(updatedOptions)));
+          }, cpkInfo: options.customerProvidedKey, encryptionScope: options.encryptionScope, copySourceAuthorization: httpAuthorizationToString(options.sourceAuthorization) }, convertTracingToRequestOptionsBase(updatedOptions)));
         } catch (e) {
           span.setStatus({
             code: coreTracing.SpanStatusCode.ERROR,
@@ -57682,13 +57206,13 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         this.batchResponseEnding = `--${this.responseBatchBoundary}--`;
       }
       async parseBatchResponse() {
-        if (this.batchResponse._response.status != HTTPURLConnection.HTTP_ACCEPTED) {
+        if (this.batchResponse._response.status !== HTTPURLConnection.HTTP_ACCEPTED) {
           throw new Error(`Invalid state: batch request failed with status: '${this.batchResponse._response.status}'.`);
         }
         const responseBodyAsText = await getBodyAsText(this.batchResponse);
         const subResponses = responseBodyAsText.split(this.batchResponseEnding)[0].split(this.perResponsePrefix).slice(1);
         const subResponseCount = subResponses.length;
-        if (subResponseCount != this.subRequests.size && subResponseCount != 1) {
+        if (subResponseCount !== this.subRequests.size && subResponseCount !== 1) {
           throw new Error("Invalid state: sub responses' count is not equal to sub requests' count.");
         }
         const deserializedSubResponses = new Array(subResponseCount);
@@ -57739,7 +57263,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               deserializedSubResponse.bodyAsText += responseLine;
             }
           }
-          if (contentId != NOT_FOUND && Number.isInteger(contentId) && contentId >= 0 && contentId < this.subRequests.size && deserializedSubResponses[contentId] === void 0) {
+          if (contentId !== NOT_FOUND && Number.isInteger(contentId) && contentId >= 0 && contentId < this.subRequests.size && deserializedSubResponses[contentId] === void 0) {
             deserializedSubResponse._request = this.subRequests.get(contentId);
             deserializedSubResponses[contentId] = deserializedSubResponse;
           } else {
@@ -57953,7 +57477,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
           throw new RangeError(`Cannot exceed ${BATCH_MAX_REQUEST} sub requests in a single batch`);
         }
         const path2 = getURLPath(subRequest.url);
-        if (!path2 || path2 == "") {
+        if (!path2 || path2 === "") {
           throw new RangeError(`Invalid url for sub request: '${subRequest.url}'`);
         }
       }
@@ -58016,8 +57540,6 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     };
     __name(BatchHeaderFilterPolicy, "BatchHeaderFilterPolicy");
     var BatchHeaderFilterPolicyFactory = class {
-      constructor() {
-      }
       create(nextPolicy, options) {
         return new BatchHeaderFilterPolicy(nextPolicy, options);
       }
@@ -58026,7 +57548,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     var BlobBatchClient = class {
       constructor(url2, credentialOrPipeline, options) {
         let pipeline;
-        if (credentialOrPipeline instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipeline)) {
           pipeline = credentialOrPipeline;
         } else if (!credentialOrPipeline) {
           pipeline = newPipeline(new AnonymousCredential(), options);
@@ -58067,7 +57589,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         return this.submitBatch(batch);
       }
       async submitBatch(batchRequest, options = {}) {
-        if (!batchRequest || batchRequest.getSubRequests().size == 0) {
+        if (!batchRequest || batchRequest.getSubRequests().size === 0) {
           throw new RangeError("Batch request should contain one or more sub requests.");
         }
         const { span, updatedOptions } = createSpan("BlobBatchClient-submitBatch", options);
@@ -58105,7 +57627,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         let pipeline;
         let url2;
         options = options || {};
-        if (credentialOrPipelineOrContainerName instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipelineOrContainerName)) {
           url2 = urlOrConnectionString;
           pipeline = credentialOrPipelineOrContainerName;
         } else if (coreHttp.isNode && credentialOrPipelineOrContainerName instanceof StorageSharedKeyCredential || credentialOrPipelineOrContainerName instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipelineOrContainerName)) {
@@ -58504,6 +58026,15 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (options.includeTags) {
           include2.push("tags");
         }
+        if (options.includeDeletedWithVersions) {
+          include2.push("deletedwithversions");
+        }
+        if (options.includeImmutabilityPolicy) {
+          include2.push("immutabilitypolicy");
+        }
+        if (options.includeLegalHold) {
+          include2.push("legalhold");
+        }
         if (options.prefix === "") {
           options.prefix = void 0;
         }
@@ -58589,6 +58120,15 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (options.includeTags) {
           include2.push("tags");
         }
+        if (options.includeDeletedWithVersions) {
+          include2.push("deletedwithversions");
+        }
+        if (options.includeImmutabilityPolicy) {
+          include2.push("immutabilitypolicy");
+        }
+        if (options.includeLegalHold) {
+          include2.push("legalhold");
+        }
         if (options.prefix === "") {
           options.prefix = void 0;
         }
@@ -58653,6 +58193,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         this.process = false;
         this.tag = false;
         this.filter = false;
+        this.setImmutabilityPolicy = false;
       }
       static parse(permissions) {
         const accountSASPermissions = new AccountSASPermissions();
@@ -58690,6 +58231,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
               break;
             case "f":
               accountSASPermissions.filter = true;
+              break;
+            case "i":
+              accountSASPermissions.setImmutabilityPolicy = true;
               break;
             default:
               throw new RangeError(`Invalid permission character: ${c}`);
@@ -58732,6 +58276,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         if (permissionLike.process) {
           accountSASPermissions.process = true;
         }
+        if (permissionLike.setImmutabilityPolicy) {
+          accountSASPermissions.setImmutabilityPolicy = true;
+        }
         return accountSASPermissions;
       }
       toString() {
@@ -58768,6 +58315,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
         }
         if (this.process) {
           permissions.push("p");
+        }
+        if (this.setImmutabilityPolicy) {
+          permissions.push("i");
         }
         return permissions.join("");
       }
@@ -58862,6 +58412,9 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     __name(AccountSASServices, "AccountSASServices");
     function generateAccountSASQueryParameters(accountSASSignatureValues, sharedKeyCredential) {
       const version2 = accountSASSignatureValues.version ? accountSASSignatureValues.version : SERVICE_VERSION;
+      if (accountSASSignatureValues.permissions && accountSASSignatureValues.permissions.setImmutabilityPolicy && version2 < "2020-08-04") {
+        throw RangeError("'version' must be >= '2020-08-04' when provided 'i' permission.");
+      }
       if (accountSASSignatureValues.permissions && accountSASSignatureValues.permissions.deleteVersion && version2 < "2019-10-10") {
         throw RangeError("'version' must be >= '2019-10-10' when provided 'x' permission.");
       }
@@ -58893,7 +58446,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     var BlobServiceClient = class extends StorageClient {
       constructor(url2, credentialOrPipeline, options) {
         let pipeline;
-        if (credentialOrPipeline instanceof Pipeline) {
+        if (isPipelineLike(credentialOrPipeline)) {
           pipeline = credentialOrPipeline;
         } else if (coreHttp.isNode && credentialOrPipeline instanceof StorageSharedKeyCredential || credentialOrPipeline instanceof AnonymousCredential || coreHttp.isTokenCredential(credentialOrPipeline)) {
           pipeline = newPipeline(credentialOrPipeline, options);
@@ -59312,6 +58865,7 @@ ${key}:${decodeURIComponent(lowercaseQueries[key])}`;
     exports2.StorageSharedKeyCredentialPolicy = StorageSharedKeyCredentialPolicy;
     exports2.generateAccountSASQueryParameters = generateAccountSASQueryParameters;
     exports2.generateBlobSASQueryParameters = generateBlobSASQueryParameters;
+    exports2.isPipelineLike = isPipelineLike;
     exports2.logger = logger;
     exports2.newPipeline = newPipeline;
   }
