@@ -24,9 +24,9 @@
     "execa": "5.1.1",
     "listr": "0.14.3",
     "np": "7.5.0",
-    "prettier": "2.4.0",
+    "prettier": "2.4.1",
     "prettier-plugin-organize-imports": "2.3.3",
-    "prettier-plugin-packagejson": "2.2.11",
+    "prettier-plugin-packagejson": "2.2.12",
     "rapidbundle": "0.12.0",
     "typescript": "4.4.3"
   }
