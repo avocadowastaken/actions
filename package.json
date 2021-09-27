@@ -6,9 +6,8 @@
   "author": "Umidbek Karimov",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.js",
     "lint": "prettier . -wc",
-    "prerelease": "npm ci && npx tsc && npm run lint && npm run build",
+    "prerelease": "npm ci && npx tsc && npm run lint",
     "release": "np --no-publish --no-release-draft",
     "postrelease": "node scripts/post-release.js"
   },
