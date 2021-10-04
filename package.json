@@ -7,8 +7,8 @@
   "main": "index.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "lint": "prettier . --check",
-    "prerelease": "yarn install --force && yarn tsc && yarn lint && yarn build",
+    "lint": "prettier . -wc",
+    "prerelease": "npm ci && npx tsc && npm run lint && npm run build",
     "release": "np --no-publish --no-release-draft",
     "postrelease": "node scripts/post-release.js"
   },
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/listr": "0.14.4",
+    "@umidbekk/configs": "0.1.0",
     "execa": "5.1.1",
     "listr": "0.14.3",
     "np": "7.5.0",
@@ -29,5 +30,9 @@
     "prettier-plugin-packagejson": "2.2.13",
     "rapidbundle": "0.12.0",
     "typescript": "4.4.3"
+  },
+  "engines": {
+    "node": ">=12",
+    "npm": ">=7"
   }
 }
