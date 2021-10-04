@@ -18,9 +18,9 @@ jobs:
 
       - uses: ./npm/install
 
-      - run: yarn tsc
-      - run: yarn lint
-      - run: yarn build
+      - run: npx tsc
+      - run: npm run lint -- --no-write
+      - run: npm run build
 
       - uses: EndBug/add-and-commit@v7
         if: ${{ failure() && github.event_name == 'pull_request' }}
