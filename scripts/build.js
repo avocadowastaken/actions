@@ -1,13 +1,14 @@
-const path = require("path");
-const execa = require("execa");
-const { promises: fs } = require("fs");
+import execa from "execa";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 /**
  * @param {string} dir
  * @returns {AsyncGenerator<string, void>}
  */
 async function* walk(dir) {
-  const items = await fs.readdir(dir);
+  const items = await fs.promises.readdir(dir);
 
   if (items.includes("action.yml")) {
     yield dir;
@@ -17,7 +18,7 @@ async function* walk(dir) {
       if (item === "node_modules") continue;
 
       const itemPath = path.join(dir, item);
-      const itemStat = await fs.stat(itemPath);
+      const itemStat = await fs.promises.stat(itemPath);
 
       if (itemStat.isDirectory()) {
         yield* walk(itemPath);
@@ -27,7 +28,7 @@ async function* walk(dir) {
 }
 
 async function main() {
-  const rootDir = path.join(__dirname, "..");
+  const rootDir = path.join(fileURLToPath(import.meta.url), "..", "..");
 
   for await (const dir of walk(rootDir)) {
     const result = await execa("npx", ["rapidbundle"], {

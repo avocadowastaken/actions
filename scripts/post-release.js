@@ -1,7 +1,7 @@
 "use strict";
 
-const Listr = require("listr");
-const execa = require("execa");
+import execa from "execa";
+import Listr from "listr";
 
 /**
  * @type {Listr<{ tag: string, latestTags: string[] }>}
@@ -9,8 +9,8 @@ const execa = require("execa");
 const tasks = new Listr([
   {
     title: "Getting latest tags",
-    task(ctx, task) {
-      const { version } = require("../package.json");
+    async task(ctx, task) {
+      const { version } = await import("../package.json");
       task.output = `Parsing version: ${version}`;
 
       const [major, minor] = version.split(".");

@@ -4,7 +4,7 @@
   "repository": "git@github.com:umidbekk/actions.git",
   "license": "MIT",
   "author": "Umidbek Karimov",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "node scripts/build.js",
     "lint": "prettier . -wc",
