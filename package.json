@@ -1,6 +1,7 @@
 {
   "name": "actions",
   "version": "2.0.0",
+  "private": true,
   "repository": "git@github.com:umidbekk/actions.git",
   "license": "MIT",
   "author": "Umidbek Karimov",

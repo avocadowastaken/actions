@@ -1,5 +1,8 @@
 import execa from "execa";
+import fs from "fs";
 import Listr from "listr";
+import path from "path";
+import { fileURLToPath } from "url";
 
 /**
  * @type {Listr<{ tag: string, latestTags: string[] }>}
@@ -8,7 +11,17 @@ const tasks = new Listr([
   {
     title: "Getting latest tags",
     async task(ctx, task) {
-      const { version } = await import("../package.json");
+      const pkg = await fs.promises.readFile(
+        path.join(
+          path.dirname(fileURLToPath(import.meta.url)),
+          "..",
+          "package.json"
+        ),
+        "utf8"
+      );
+
+      const { version } = JSON.parse(pkg);
+
       task.output = `Parsing version: ${version}`;
 
       const [major, minor] = version.split(".");
