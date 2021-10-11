@@ -5,12 +5,60 @@ author: "umidbekk"
 inputs:
   working-directory:
     required: false
+    default: "${{ github.workspace }}"
     description: "The default working directory"
 
   cache-key:
     required: false
+    default: "npm-v2-"
     description: "An explicit key for restoring and saving the cache"
 
 runs:
-  using: "node12"
-  main: "dist/index.js"
+  using: "composite"
+  steps:
+    - name: "Getting package managers info"
+      id: vars
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        echo "::set-output name=restore-keys::${{ inputs.cache-key }}${{ runner.os }}-"
+
+        echo "::set-output name=npm-cache-dir::$(npm config get cache)"
+        echo "::set-output name=npm-lock-hash::${{ hashFiles('**/package-lock.json') }}"
+
+        echo "::set-output name=yarn-cache-dir::$(yarn cache dir)"
+        echo "::set-output name=yarn-lock-hash::${{ hashFiles('**/yarn.lock') }}"
+
+    - name: "Validating package managers"
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        if [[ "${{ steps.vars.outputs.npm-lock-hash || steps.vars.outputs.yarn-lock-hash }}" == "" ]]; then 
+          echo 'Could not find any supported lock file' && exit 1;
+        fi
+
+    - name: "Restoring cache"
+      id: cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ${{ inputs.working-directory }}/node_modules
+          ${{ steps.vars.outputs.npm-cache-dir }}
+          ${{ steps.vars.outputs.yarn-cache-dir }}
+        key: ${{ steps.vars.outputs.restore-keys }}${{ steps.vars.outputs.npm-lock-hash || steps.vars.outputs.yarn-lock-hash }}
+        restore-keys: ${{ steps.vars.outputs.restore-keys }}
+
+    - name: "Installing dependencies"
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        if [[ "${{ steps.cache.outputs.cache-hit }}" == "true" ]]
+        then 
+          echo 'Cache is valid, skipping installation'
+        elif [[ "${{ steps.vars.outputs.npm-lock-hash }}" != "" ]]
+        then
+          npm ci
+        elif [[ "${{ steps.vars.outputs.yarn-lock-hash }}" != "" ]]
+        then
+          yarn install --force --frozen-lockfile
+        fi
