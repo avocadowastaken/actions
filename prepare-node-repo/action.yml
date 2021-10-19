@@ -15,7 +15,6 @@ inputs:
 
   cache-key:
     required: false
-    default: "npm-v2-"
     description: "An explicit key for restoring and saving the cache"
 
 runs:
@@ -39,7 +38,7 @@ runs:
         cache-dependency-path: ${{ inputs.package-manager-dependency-path }}
 
     - name: "Installing dependencies"
-      uses: ./npm/install
+      uses: umidbekk/actions/npm/install@v2
       with:
         cache-key: ${{ inputs.cache-key }}
         working-directory: ${{ inputs.working-directory }}
