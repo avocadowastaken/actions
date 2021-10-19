@@ -16,5 +16,5 @@ jobs:
       - uses: styfle/cancel-workflow-action@0.9.1
       - uses: actions/checkout@v2
 
-      - uses: ./npm/install
+      - uses: ./prepare-node-repo
       - run: npm run lint -- --no-write

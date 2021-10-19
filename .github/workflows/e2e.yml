@@ -33,3 +33,29 @@ jobs:
 
       - run: yarn test
         working-directory: ./examples/cypress-yarn
+
+  prepare-node-repo-cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./prepare-node-repo
+        with:
+          working-directory: ./examples/cypress-npm
+          cache-key: prepare-node-repo-cypress-npm-${{ github.sha }}-
+
+      - run: npm test
+        working-directory: ./examples/cypress-npm
+
+  prepare-node-repo-cypress-yarn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./prepare-node-repo
+        with:
+          working-directory: ./examples/cypress-yarn
+          cache-key: prepare-node-repo-cypress-yarn-${{ github.sha }}-
+
+      - run: yarn test
+        working-directory: ./examples/cypress-yarn
