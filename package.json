@@ -6,6 +6,9 @@
   "license": "MIT",
   "author": "Umidbek Karimov",
   "type": "module",
+  "files": [
+    "**/action.yml"
+  ],
   "scripts": {
     "lint": "prettier . -wc",
     "prerelease": "npm ci && npx tsc && npm run lint",
