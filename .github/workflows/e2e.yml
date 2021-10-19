@@ -1,0 +1,35 @@
+name: E2E
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  npm-install-cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          cache-key: npm-install-cypress-${{ github.sha }}-
+          working-directory: ./examples/cypress-npm
+
+      - run: npm test
+        working-directory: ./examples/cypress-npm
+
+  npm-install-cypress-yarn:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./npm/install
+        with:
+          cache-key: yarn-install-cypress-${{ github.sha }}-
+          working-directory: ./examples/cypress-yarn
+
+      - run: yarn test
+        working-directory: ./examples/cypress-yarn
