@@ -60,21 +60,13 @@ const tasks = new Listr([
   {
     title: "Pushing updated tags",
     task() {
-      return execa("git", ["push", "origin", "--tags"]);
-    },
-  },
-
-  {
-    title: "Creating release draft",
-    task() {
-      return execa("npx", ["np", "--release-draft-only"]);
+      return execa("git", ["push", "origin", "--tags", "--force"]);
     },
   },
 ]);
 
 tasks.run().catch((error) => {
   process.exitCode = error.exitCode || 1;
-
   if (error.stderr) console.error(error.stderr);
   else console.error(error);
 });
