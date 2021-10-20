@@ -15,6 +15,7 @@ jobs:
       - uses: ./npm/install
         with:
           working-directory: ./examples/cypress-npm
+          cache-key: npm-install-cypress-v1-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
@@ -27,7 +28,7 @@ jobs:
 
       - uses: ./npm/install
         with:
-          cache-key: yarn-install-cypress-${{ github.sha }}-
+          cache-key: yarn-install-cypress-v1-${{ github.sha }}-
           working-directory: ./examples/cypress-yarn
 
       - run: yarn test
@@ -41,6 +42,7 @@ jobs:
       - uses: ./prepare-node-repo
         with:
           working-directory: ./examples/cypress-npm
+          cache-key: prepare-node-repo-cypress-v1-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
@@ -53,7 +55,7 @@ jobs:
       - uses: ./prepare-node-repo
         with:
           working-directory: ./examples/cypress-yarn
-          cache-key: prepare-node-repo-cypress-yarn-${{ github.sha }}-
+          cache-key: prepare-node-repo-cypress-yarn-v1-${{ github.sha }}-
 
       - run: yarn test
         working-directory: ./examples/cypress-yarn

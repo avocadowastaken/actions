@@ -21,21 +21,22 @@ runs:
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: |
-        echo "::set-output name=restore-keys::${{ inputs.cache-key }}${{ runner.os }}-"
+        NPM_LOCKFILE_HASH=${{ hashFiles(format('{0}/package-lock.json', inputs.working-directory)) }};
+        YARN_LOCKFILE_HASH=${{ hashFiles(format('{0}/yarn.lock', inputs.working-directory)) }};
 
-        echo "::set-output name=npm-cache-dir::$(npm config get cache)"
-        echo "::set-output name=npm-lock-hash::${{ hashFiles(format('{0}/package-lock.json', inputs.working-directory)) }}"
+        if [[ $NPM_LOCKFILE_HASH != "" ]]; then
+          echo "::set-output name=package-manager::npm";
+          echo "::set-output name=lockfile-hash::$NPM_LOCKFILE_HASH";
+        elif [[ $YARN_LOCKFILE_HASH != "" ]]; then
+          echo "::set-output name=package-manager::yarn";
+          echo "::set-output name=lockfile-hash::$YARN_LOCKFILE_HASH";
+        else
+          echo "Could not find any supported lock file" && exit 1;
+        fi;
 
-        echo "::set-output name=yarn-cache-dir::$(yarn cache dir)"
-        echo "::set-output name=yarn-lock-hash::${{ hashFiles(format('{0}/yarn.lock', inputs.working-directory)) }}"
-
-    - name: "Validating package managers"
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-      run: |
-        if [[ "${{ steps.vars.outputs.npm-lock-hash || steps.vars.outputs.yarn-lock-hash }}" == "" ]]; then 
-          echo 'Could not find any supported lock file' && exit 1;
-        fi
+        echo "::set-output name=npm-cache-dir::$(npm config get cache)";
+        echo "::set-output name=yarn-cache-dir::$(yarn cache dir)";
+        echo "::set-output name=restore-key-prefix::${{ inputs.cache-key }}${{ runner.os }}-";
 
     - name: "Restoring cache"
       id: cache
@@ -45,20 +46,26 @@ runs:
           ${{ steps.vars.outputs.npm-cache-dir }}
           ${{ steps.vars.outputs.yarn-cache-dir }}
           ${{ inputs.working-directory }}/node_modules
-        key: ${{ steps.vars.outputs.restore-keys }}${{ steps.vars.outputs.npm-lock-hash || steps.vars.outputs.yarn-lock-hash }}
-        restore-keys: ${{ steps.vars.outputs.restore-keys }}
+        key: ${{ steps.vars.outputs.restore-key-prefix }}${{ steps.vars.outputs.lockfile-hash }}
+        restore-keys: ${{ steps.vars.outputs.restore-key-prefix }}
 
     - name: "Installing dependencies"
       shell: bash
       working-directory: ${{ inputs.working-directory }}
       run: |
-        if [[ "${{ steps.cache.outputs.cache-hit }}" == "true" ]]
-        then 
-          echo 'Cache is valid, skipping installation'
-        elif [[ "${{ steps.vars.outputs.npm-lock-hash }}" != "" ]]
-        then
-          npm ci
-        elif [[ "${{ steps.vars.outputs.yarn-lock-hash }}" != "" ]]
-        then
-          yarn install --force --frozen-lockfile
-        fi
+        if [[ "${{ steps.cache.outputs.cache-hit }}" == "true" ]]; then
+          echo 'Cache is valid, skipping installation';
+          exit 0;
+        fi;
+
+        echo "::group::Installing dependencies with ${{ steps.vars.outputs.package-manager }}";
+        case "${{ steps.vars.outputs.package-manager }}" in
+          npm)
+            npm ci;
+            ;;
+
+          yarn)
+            yarn install --force --frozen-lockfile;
+            ;;
+        esac;
+        echo "::endgroup::";
