@@ -20,7 +20,7 @@
     "@umidbekk/configs": "0.1.0",
     "execa": "5.1.1",
     "listr": "0.14.3",
-    "np": "7.5.0",
+    "np": "7.6.0",
     "prettier": "2.4.1",
     "prettier-plugin-organize-imports": "2.3.4",
     "prettier-plugin-packagejson": "2.2.15",
