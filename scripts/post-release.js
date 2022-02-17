@@ -1,6 +1,6 @@
-import execa from "execa";
-import fs from "fs";
-import Listr from "listr";
+import { execa } from "execa";
+import { promises as fs } from "fs";
+import { Listr } from "listr2";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -11,7 +11,7 @@ const tasks = new Listr([
   {
     title: "Getting latest tags",
     async task(ctx, task) {
-      const pkg = await fs.promises.readFile(
+      const pkg = await fs.readFile(
         path.join(
           path.dirname(fileURLToPath(import.meta.url)),
           "..",
@@ -36,10 +36,10 @@ const tasks = new Listr([
 
   {
     title: "Removing tags",
-    task({ latestTags }, task) {
+    async task({ latestTags }, task) {
       task.output = `Removing: ${latestTags.join(", ")}`;
 
-      return execa("git", ["push", "--delete", "origin", ...latestTags]).catch(
+      await execa("git", ["push", "--delete", "origin", ...latestTags]).catch(
         () => {
           task.skip(`Failed to remove tags: ${latestTags.join(", ")}`);
         }
@@ -59,8 +59,8 @@ const tasks = new Listr([
 
   {
     title: "Pushing updated tags",
-    task() {
-      return execa("git", ["push", "origin", "--tags", "--force"]);
+    async task() {
+      await execa("git", ["push", "origin", "--tags", "--force"]);
     },
   },
 ]);
