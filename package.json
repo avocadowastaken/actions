@@ -11,16 +11,13 @@
   ],
   "scripts": {
     "lint": "prettier . -wc",
-    "prerelease": "npm ci && npx tsc && npm run lint",
-    "release": "np --no-tests --no-publish --no-release-draft",
-    "postrelease": "node scripts/post-release.js"
+    "postrelease": "node scripts/post-release.js",
+    "version": "npm ci && npx tsc && npm run lint"
   },
   "devDependencies": {
-    "@types/listr": "0.14.4",
     "@umidbekk/configs": "0.1.0",
-    "execa": "5.1.1",
-    "listr": "0.14.3",
-    "np": "7.6.0",
+    "execa": "6.1.0",
+    "listr2": "4.0.4",
     "prettier": "2.5.1",
     "prettier-plugin-organize-imports": "2.3.4",
     "prettier-plugin-packagejson": "2.2.15",
