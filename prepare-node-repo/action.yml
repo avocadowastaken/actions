@@ -42,12 +42,12 @@ runs:
           echo '::set-output name=version::$(cat ${{ inputs.node-version-file }})'
         fi
 
-    - run: echo ${{ steps.node-version-file.version }}
+    - run: echo ${{ steps.node-version-file.outputs.version }}
       shell: bash
     - name: "Setting up Node"
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ steps.node-version-file.version || inputs.node-version }}
+        node-version: ${{ steps.node-version-file.outputs.version || inputs.node-version }}
         cache: ${{ inputs.package-manager }}
         cache-dependency-path: ${{ inputs.package-manager-dependency-path }}
 
