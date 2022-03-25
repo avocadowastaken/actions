@@ -42,6 +42,8 @@ runs:
           echo "##[set-output name=version;]$(cat ${{ inputs.node-version-file }})"
         fi
 
+    - run: echo ${{ steps.node-version-file.version }}
+      shell: bash
     - name: "Setting up Node"
       uses: actions/setup-node@v2
       with:
