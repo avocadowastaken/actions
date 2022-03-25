@@ -16,7 +16,7 @@ inputs:
   node-version-file:
     required: false
     default: ".nvmrc"
-    description: "Node version specifier."
+    description: "File for Node version specifier."
 
   cache-key:
     required: false
