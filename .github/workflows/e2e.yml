@@ -71,12 +71,10 @@ jobs:
 
       - run: |
           VERSION=$(node -v)
-          
+
           echo "Installed node version: $VERSION"
-          
+
           if [[ "v10.1.1" != "$VERSION" ]]; then
             echo "::error::Node version does not match with nvmrc"
             exit 1
           fi
-          
-      
