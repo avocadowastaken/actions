@@ -59,3 +59,21 @@ jobs:
 
       - run: yarn test
         working-directory: ./examples/cypress-yarn
+
+  prepare-node-repo-node-version-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./prepare-node-repo
+        with:
+          working-directory: ./examples/node-version-file
+
+      - run: |
+          VERSION=$(node -v)
+          
+          if [[ "v10.1.1" != $(node -v) ]]; then
+            echo "::error::Node version does not match with nvmrc" 
+          fi
+          
+      

@@ -13,6 +13,11 @@ inputs:
     default: "lts/*"
     description: "Node version specifier."
 
+  node-version-file:
+    required: false
+    default: ".nvmrc"
+    description: "Node version specifier."
+
   cache-key:
     required: false
     description: "An explicit key for restoring and saving the cache"
@@ -30,10 +35,17 @@ runs:
     - name: "Checking out the repository repository"
       uses: actions/checkout@v2
 
+    - id: node-version-file
+      shell: bash
+      run: |
+        if [ -f "${{ inputs.node-version-file }}" ]; then
+          echo "##[set-output name=version;]$(cat ${{ inputs.node-version-file }})"
+        fi
+
     - name: "Setting up Node"
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ inputs.node-version }}
+        node-version: ${{ steps.node-version-file.version || inputs.node-version }}
         cache: ${{ inputs.package-manager }}
         cache-dependency-path: ${{ inputs.package-manager-dependency-path }}
 
