@@ -40,8 +40,7 @@ runs:
       working-directory: ${{ inputs.working-directory }}
       run: |
         if [ -f "${{ inputs.node-version-file }}" ]; then
-          echo $(cat ${{ inputs.node-version-file }})
-          echo '::set-output name=version::$(cat ${{ inputs.node-version-file }})'
+          echo "::set-output name=version::$(cat ${{ inputs.node-version-file }})"
         fi
 
     - run: echo ${{ steps.node-version-file.outputs.version }}
