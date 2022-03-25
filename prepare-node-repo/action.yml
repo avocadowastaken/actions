@@ -39,6 +39,7 @@ runs:
       shell: bash
       run: |
         if [ -f "${{ inputs.node-version-file }}" ]; then
+          echo $(cat ${{ inputs.node-version-file }})
           echo '::set-output name=version::$(cat ${{ inputs.node-version-file }})'
         fi
 
