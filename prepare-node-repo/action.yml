@@ -37,6 +37,7 @@ runs:
 
     - id: node-version-file
       shell: bash
+      working-directory: ${{ inputs.working-directory }}
       run: |
         if [ -f "${{ inputs.node-version-file }}" ]; then
           echo $(cat ${{ inputs.node-version-file }})
