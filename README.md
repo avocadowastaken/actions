@@ -32,7 +32,7 @@ Passing `cache-key`
 ```yaml
 strategy:
   matrix:
-    node: ["12", "14"]
+    node: ["14", "16", "18"]
 steps:
   - uses: actions/checkout@v2
   - uses: actions/setup-node@v2
