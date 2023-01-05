@@ -15,13 +15,13 @@
     "version": "npm ci && npx tsc && npm run lint"
   },
   "devDependencies": {
-    "@umidbekk/configs": "0.1.0",
+    "@umidbekk/configs": "0.2.0",
     "execa": "6.1.0",
-    "listr2": "4.0.5",
-    "prettier": "2.5.1",
-    "prettier-plugin-organize-imports": "2.3.4",
-    "prettier-plugin-packagejson": "2.2.15",
-    "typescript": "4.6.2"
+    "listr2": "5.0.6",
+    "prettier": "2.8.1",
+    "prettier-plugin-organize-imports": "3.2.1",
+    "prettier-plugin-packagejson": "2.3.0",
+    "typescript": "4.9.4"
   },
   "engines": {
     "node": ">=12",
