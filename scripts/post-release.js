@@ -4,9 +4,7 @@ import { Listr } from "listr2";
 import path from "path";
 import { fileURLToPath } from "url";
 
-/**
- * @type {Listr<{ tag: string, latestTags: string[] }>}
- */
+/** @type {Listr<{ tag: string, latestTags: string[] }>} */
 const tasks = new Listr([
   {
     title: "Getting latest tags",
