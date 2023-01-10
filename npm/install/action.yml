@@ -47,6 +47,6 @@ runs:
           echo 'Cache is valid, skipping installation';
         else
           echo "::group::Installing dependencies";
-          npx @antfu/ni --force
+          npx @antfu/ni --frozen
           echo "::endgroup::";
         fi;
