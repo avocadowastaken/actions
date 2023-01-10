@@ -11,9 +11,9 @@
   ],
   "scripts": {
     "lint": "prettier . -wc",
-    "prerelease": "npm ci && npx tsc && npm run lint",
-    "release": "np --no-tests --no-publish --no-release-draft",
-    "postrelease": "node scripts/post-release.js"
+    "release": "np --no-publish --no-release-draft",
+    "postrelease": "node scripts/post-release.js",
+    "test": "npx tsc && npm run lint"
   },
   "devDependencies": {
     "@umidbekk/configs": "0.2.0",
