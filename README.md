@@ -23,8 +23,8 @@ Collection of reusable GitHub Actions
 
 ```yaml
 steps:
-  - uses: actions/checkout@v2
-  - uses: umidbekk/actions/npm/install@v1
+  - uses: actions/checkout@v3
+  - uses: umidbekk/actions/npm/install@v2
 ```
 
 Passing `cache-key`
@@ -32,13 +32,13 @@ Passing `cache-key`
 ```yaml
 strategy:
   matrix:
-    node: ["14", "16", "18"]
+    node: [14, 16, 18]
 steps:
-  - uses: actions/checkout@v2
-  - uses: actions/setup-node@v2
+  - uses: actions/checkout@v3
+  - uses: actions/setup-node@v3
     with:
       node-version: ${{ matrix.node }}
-  - uses: umidbekk/actions/npm/install@v1
+  - uses: umidbekk/actions/npm/install@v2
     with:
       cache-key: npm-${{ matrix.node }}-
 ```

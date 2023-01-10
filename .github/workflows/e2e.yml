@@ -9,13 +9,18 @@ jobs:
   npm-install-cypress:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node: [14, 16, 18]
     steps:
       - uses: actions/checkout@v3
-
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
       - uses: ./npm/install
         with:
           working-directory: ./examples/cypress-npm
-          cache-key: npm-install-cypress-v1-${{ github.sha }}-
+          cache-key: npm-install-cypress-v2-${{ matrix.node }}-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
@@ -23,12 +28,17 @@ jobs:
   npm-install-cypress-yarn:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node: [14, 16, 18]
     steps:
       - uses: actions/checkout@v3
-
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
       - uses: ./npm/install
         with:
-          cache-key: yarn-install-cypress-v1-${{ github.sha }}-
+          cache-key: yarn-install-cypress-v2-${{ matrix.node }}-${{ github.sha }}-
           working-directory: ./examples/cypress-yarn
 
       - run: yarn test
@@ -36,26 +46,36 @@ jobs:
 
   prepare-node-repo-cypress:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [14, 16, 18]
     steps:
       - uses: actions/checkout@v3
 
       - uses: ./prepare-node-repo
         with:
+          node-version: ${{ matrix.node }}
           working-directory: ./examples/cypress-npm
-          cache-key: prepare-node-repo-cypress-v1-${{ github.sha }}-
+          cache-key: prepare-node-repo-cypress-v2-${{ matrix.node }}-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
 
   prepare-node-repo-cypress-yarn:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [14, 16, 18]
     steps:
       - uses: actions/checkout@v3
 
       - uses: ./prepare-node-repo
         with:
+          node-version: ${{ matrix.node }}
           working-directory: ./examples/cypress-yarn
-          cache-key: prepare-node-repo-cypress-yarn-v1-${{ github.sha }}-
+          cache-key: prepare-node-repo-cypress-yarn-v2-${{ matrix.node }}-${{ github.sha }}-
 
       - run: yarn test
         working-directory: ./examples/cypress-yarn
