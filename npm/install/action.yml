@@ -40,11 +40,13 @@ runs:
     - name: "Installing dependencies"
       shell: bash
       working-directory: ${{ inputs.working-directory }}
+      env:
+        npm_config_yes: "true"
       run: |
         if [[ "${{ steps.cache.outputs.cache-hit }}" == "true" ]]; then
           echo 'Cache is valid, skipping installation';
         else
           echo "::group::Installing dependencies";
-          npx --yes @antfu/ni --frozen
+          npx @antfu/ni --force
           echo "::endgroup::";
         fi;
