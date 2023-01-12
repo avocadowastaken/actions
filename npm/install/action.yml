@@ -23,7 +23,7 @@ runs:
       run: |
         echo "npm-cache-dir=$(npm config get cache || "")" >> $GITHUB_OUTPUT
         echo "yarn-cache-dir=$(yarn cache dir || "")" >> $GITHUB_OUTPUT
-        echo "restore-key-prefix=${{ inputs.cache-key }}${{ runner.os }}-" >> $GITHUB_OUTPUT
+        echo "restore-key-prefix=${{ inputs.cache-key }}os@${{ runner.os }}-" >> $GITHUB_OUTPUT
         echo "lockfile-hash=${{ hashFiles(format('{0}/yarn.lock', inputs.working-directory), format('{0}/pnpm-lock.yaml', inputs.working-directory), format('{0}/package-lock.json', inputs.working-directory)) }}" >> $GITHUB_OUTPUT
 
     - name: "Restoring cache"

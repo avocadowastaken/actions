@@ -27,7 +27,7 @@ runs:
       shell: bash
       run: git config --global core.autocrlf false
 
-    - name: "Checking out the repository repository"
+    - name: "Checking out the repository"
       uses: actions/checkout@v3
 
     - name: "Setting up Node"
@@ -40,5 +40,5 @@ runs:
     - name: "Installing dependencies"
       uses: umidbekk/actions/npm/install@v2
       with:
-        cache-key: ${{ inputs.cache-key }}
+        cache-key: ${{ inputs.cache-key }}node@${{ inputs.node-version }}-
         working-directory: ${{ inputs.working-directory }}
