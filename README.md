@@ -58,8 +58,6 @@ jobs:
 
 #### Features:
 
-- Stops previous runs of workflow (
-  see [styfle/cancel-workflow-action](https://github.com/styfle/cancel-workflow-action))
 - Disables `autocrlf` in `git config`
 - Checks out repository
 - Downloads required Node version (see `node-version` option)
