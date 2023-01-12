@@ -24,6 +24,7 @@ runs:
         NPM_LOCK_HASH="${{ hashFiles(format('{0}/package-lock.json', inputs.working-directory)) }}"
         YARN_LOCK_HASH="${{ hashFiles(format('{0}/yarn.lock', inputs.working-directory)) }}" 
         PNPM_LOCK_HASH="${{ hashFiles(format('{0}/pnpm-lock.yaml', inputs.working-directory)) }}" 
+        PACKAGE_JSON_HASH="${{ hashFiles(format('{0}/package.json', inputs.working-directory)) }}"
 
         if [[ $YARN_LOCK_HASH != "" ]] 
         then
@@ -55,7 +56,6 @@ runs:
 
         echo "::group::Detected agent"
         echo "Agent: $AGENT@$AGENT_VERSION"
-        echo "Lock hash: $AGENT_LOCK_HASH"
         echo "Cache directory: $AGENT_CACHE_DIR"
         echo "Cache key: $CACHE_KEY"
         echo "::endgroup::"
@@ -63,7 +63,7 @@ runs:
         echo "agent=$AGENT" >> $GITHUB_OUTPUT
         echo "agent-cache-dir=$AGENT_CACHE_DIR" >> $GITHUB_OUTPUT
         echo "agent-lock-hash=$AGENT_LOCK_HASH" >> $GITHUB_OUTPUT
-
+        echo "package-json-hash=$PACKAGE_JSON_HASH" >> $GITHUB_OUTPUT
         echo "cache-key=$CACHE_KEY" >> $GITHUB_OUTPUT
 
     - name: "Restoring cache"
@@ -73,8 +73,10 @@ runs:
         path: |
           ${{ steps.vars.outputs.agent-cache-dir }}
           ${{ inputs.working-directory }}/node_modules
-        key: ${{ steps.vars.outputs.cache-key }}${{ steps.vars.outputs.agent-lock-hash }}
-        restore-keys: ${{ steps.vars.outputs.cache-key }}
+        key: ${{ steps.vars.outputs.cache-key }}${{ steps.vars.outputs.agent-lock-hash }}-${{ steps.vars.outputs.package-json-hash }}
+        restore-keys: |
+          ${{ steps.vars.outputs.cache-key }}${{ steps.vars.outputs.agent-lock-hash }}-
+          ${{ steps.vars.outputs.cache-key }}
 
     - name: "Installing with NPM"
       shell: bash
