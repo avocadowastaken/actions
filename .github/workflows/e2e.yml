@@ -40,7 +40,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: ./npm/install
         with:
-          cache-key: yarn-install-cypress-${{ github.sha }}-
+          cache-key: yarn-install-cypress-${{ matrix.node }}-${{ github.sha }}-
           working-directory: ./examples/cypress-yarn
 
       - run: yarn test
