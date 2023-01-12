@@ -11,7 +11,7 @@ Collection of reusable GitHub Actions
 - Install packages using `npm`, `yarn` or `pnpm`
 - Caches whole `node_modules` directory
 - Skips installation step when lockfile cache is hit
-- Automatically appends OS to the `cache-key`
+- Automatically appends OS and Node version to the `cache-key`
 
 #### Options:
 
@@ -50,7 +50,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: avocadowastaken/actions/npm/install@v2
         with:
-          cache-key: node@${{ matrix.node }}-
+          cache-key: ${{ github.sha }}-
       - run: npm test
 ```
 
@@ -63,10 +63,7 @@ jobs:
 - Disables `autocrlf` in `git config`
 - Checks out repository
 - Downloads required Node version (see `node-version` option)
-- Install packages using `npm` or `yarn`
-- Caches whole `node_modules` directory
-- Skips installation step when lockfile cache is hit
-- Automatically appends OS and Node version to the `cache-key`
+- Installs packages (see [avocadowastaken/actions/npm/install](https://github.com/avocadowastaken/actions#npminstall))
 
 #### Options:
 
