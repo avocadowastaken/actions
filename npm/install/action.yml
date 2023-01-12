@@ -10,7 +10,7 @@ inputs:
 
   cache-key:
     required: false
-    default: "npm-v2-"
+    default: "npm-install-"
     description: "An explicit key for restoring and saving the cache"
 
 runs:
