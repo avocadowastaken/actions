@@ -81,6 +81,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     steps:
       - uses: avocadowastaken/actions/setup-node-repo@v2
+        with:
+          node-version: ${{ matrix.node }}
       - run: npm test
 ```
 
@@ -98,5 +100,6 @@ jobs:
       - uses: avocadowastaken/actions/setup-node-repo@v2
         with:
           cache-key: ${{ github.sha }}-
+          node-version: ${{ matrix.node }}
       - run: npm test
 ```
