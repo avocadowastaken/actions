@@ -21,7 +21,7 @@ jobs:
       - uses: ./npm/install
         with:
           working-directory: ./examples/cypress-npm
-          cache-key: npm-install-cypress-v2-${{ matrix.node }}-${{ github.sha }}-
+          cache-key: npm-install-cypress-${{ matrix.node }}-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
@@ -40,7 +40,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: ./npm/install
         with:
-          cache-key: yarn-install-cypress-v2-${{ github.sha }}-
+          cache-key: yarn-install-cypress-${{ github.sha }}-
           working-directory: ./examples/cypress-yarn
 
       - run: yarn test
@@ -60,7 +60,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           working-directory: ./examples/cypress-npm
-          cache-key: prepare-node-repo-cypress-v2-${{ github.sha }}-
+          cache-key: prepare-node-repo-cypress-${{ github.sha }}-
 
       - run: npm test
         working-directory: ./examples/cypress-npm
@@ -79,7 +79,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           working-directory: ./examples/cypress-yarn
-          cache-key: prepare-node-repo-cypress-yarn-v2-${{ matrix.node }}-${{ github.sha }}-
+          cache-key: prepare-node-repo-cypress-yarn-${{ github.sha }}-
 
       - run: yarn test
         working-directory: ./examples/cypress-yarn
