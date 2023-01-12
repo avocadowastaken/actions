@@ -12,7 +12,7 @@
   "scripts": {
     "checks": "npx tsc && npm run lint -- --no-write",
     "lint": "prettier . --check --write",
-    "release": "np --no-publish --no-release-draft --test-script checks",
+    "release": "np --no-publish --test-script checks",
     "postrelease": "node scripts/post-release.js"
   },
   "devDependencies": {
