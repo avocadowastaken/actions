@@ -18,7 +18,7 @@
   "devDependencies": {
     "@umidbekk/configs": "0.2.0",
     "execa": "6.1.0",
-    "listr2": "5.0.6",
+    "listr2": "5.0.8",
     "np": "7.6.3",
     "prettier": "2.8.1",
     "prettier-plugin-organize-imports": "3.2.1",
